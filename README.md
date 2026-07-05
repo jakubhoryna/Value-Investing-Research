@@ -19,3 +19,5 @@ https://raw.githubusercontent.com/jakubhoryna/Value-Investing-Model/main/_REGIST
 - No secrets in this repo. Auth tokens live only in the local git credential store.
 
 *Framework output, not investment advice.*
+
+<!-- Obsidian Git sync test — 2026-07-05 -->
