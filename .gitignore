@@ -1,0 +1,14 @@
+# Secrets / credentials
+.env
+*.key
+*.pem
+credentials
+
+# Claude Code local tooling config
+.claude/
+
+# Obsidian local state
+.obsidian/workspace*
+
+# OS junk
+.DS_Store
