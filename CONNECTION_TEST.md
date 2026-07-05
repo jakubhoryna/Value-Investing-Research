@@ -1,0 +1,1 @@
+GSC backend connection test — write/delete round-trip. Safe to delete.
