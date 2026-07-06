@@ -1,14 +1,14 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v10
-register_date: 2026-07-06
-names_total: 46
-verdict_split: "WATCH 21 · AVOID 25 · BUY 0 · DNAF 0"
+register_version: v11
+register_date: 2026-07-07
+names_total: 47
+verdict_split: "WATCH 21 · AVOID 26 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v10 · 2026-07-06)
+# GSC Register — Master Watchlist (v11 · 2026-07-07)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -72,6 +72,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | BTI | British American Tobacco p.l.c. | 2026-07-02 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $61.76 ADR (≈£46.59) | CHEAP < ≈ $22–28 / £17–21 (EV/OI strict → MCap/FCF w/allowance) — moot given AVOID | — | FY2026 results (Feb 2027) or structural return break (Reynolds intangibles, Canada drag lapped, New Categories reach combustibles ROCE) |
 | CRM | Salesforce, Inc. | 2026-06-12 | v1 | AVOID (Past WEAK + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | $166.45 | CHEAP < ≈ $55 (EV/OI @1.25×). Cheapness EXPENSIVE | — | FY27 10-K (~Mar 2027) status check; BUY needs Past upgrade (~FY2030 earliest) + deleverage + price |
 | DSY | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
+| DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
@@ -103,6 +104,8 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+
+- **v11 — 2026-07-07** — DUOL ANALYSE v1 (memo produced under MODEL v3.2.0; analytically identical under v3.2.1 — PATCH, commit plumbing only; this commit is the first under the v3.2.1 base-verification protocol, re-merged from a v9 base onto the live v10 head): **AVOID on three gates.** Past WEAK (6y record only, IPO 2021; worst-of-four normalized ROCE_wc 1.0% ≪ 10%; cash-excluded variants n.m. on negative denominators; 2025 improving at 9.4%/15.4% but record governs). Future WEAK (supplier breadth FAIL — Apple/Google distribution-payment duopoly, ~82% of revenue billed through the stores, Apple 62.5% of AR, no ready alternatives; 2 strong forces: supplier power + substitutes/free LLM tutors). SF FAIL (P19 hard strike — Q1 2026 repurchases 262k sh @ $98.45 avg on a ~$400M program at implied EV/OI 27.4× conservative / 35.8× flattering, > 20×; below-worth exception inapplicable at 2.4× the framework worth line; P17 clean: top SCT $5.39M vs $18.0M limit, von Ahn 2021-PSU $114.9M 2025 realization logged as context; directors max $236K; RPT clean; dual-class caveat). Cheapness EXPENSIVE (MCap/FCF 16.8×, EV/OI 37.1/45.5×, qualifiers 4.5/4.7×). Band ≈ $41 (EV/OI binding). 46 → 47 names, WATCH 21 · AVOID 26.
 
 - **v10 — 2026-07-06** — **Merge commit after a lost-update collision.** Two parallel sessions each committed a "v9" built from v8: the ROK register commit (4a3b7c2e, 10:20 UTC) was overwritten six minutes later by the BKNG register commit (260332e8, 10:26 UTC, built from the v8 base — SHA-guarding prevents 409s, not content merges). Both memos were always intact in `memos/`; memo-wins, so the ROK changes are re-applied here on top of the BKNG state. **ROK REVIEW v2 restored (third Tier-1 P17/P19 re-examination): SF PASS → FAIL** (P19 hard strike — FY2021–25 program repurchases of $1.93B at implied MCap/FCF 23.6–48.5×, every year above the 20× line, and implied EV/OI 16.8–29.5×, four of five years above 20×, per FY 10-K equity statements via EDGAR; buybacks ran 3.5–6× SBC so the sterilisation limb does not strike — the price limb alone decides; P17 clean under v3: $15.4M vs $43.5M proportional cap, NI the lower leg). Verdict WATCH → AVOID (SF gate). Band on v3 mechanics: strict ≈$77 (EV/OI binds) replaces the stale ≈$77–96 range (upper bound rested on the one-average allowance, now P12-gated to Past STRONG). Px at memo ~$472 (close 3 Jul 2026). BKNG v9 changes retained unchanged. **Tier-1 queue complete.** WATCH 21 · AVOID 25.
 - **v9 — 2026-07-06** — BKNG REVIEW v2 (third Tier-1 P17/P19 re-examination): **SF PASS retained — no flip.** P19 worksheet from FY2025 10-K equity data: 2022–25 program repurchases of $30.0B at implied EV/OI 15.5×/17.8×/17.4×/18.5× and MCap/FCF 12.7×/14.6×/16.6×/17.8× — every year flags, none breaches the 20× hard line on either basis (Q1 2026: $4.0B at ~16.3× TTM, corroborating); sterilisation limb clean (repurchases ≫ SBC, count −22% since 2022 net of issuance); no second independent negative (P17 clean both limbs — Fogel $35.4M = 0.66% of NI, < ≈$40m indexed; Chair Mylod $474k < $500k stop; RPT section read, v1 gap closed). One flag = logged, not FAIL (§2·1C). Verdict WATCH unchanged; band ≈$94 unchanged (TTM cross-check ≈$91); Px $184.56, Dist +74% → +96%, WATCH re-sorted. Tier-1 queue reduced to ROK. WATCH 22 · AVOID 24.
