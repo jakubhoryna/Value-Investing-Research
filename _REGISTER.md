@@ -1,13 +1,13 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v5
+register_version: v6
 register_date: 2026-07-06
 names_total: 46
 verdict_split: "WATCH 23 · AVOID 23 · BUY 0 · DNAF 0"
-portfolio_names: 0
+portfolio_names: 4
 ---
 
-# GSC Register — Master Watchlist (v5 · 2026-07-06)
+# GSC Register — Master Watchlist (v6 · 2026-07-06)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1). The single **†** row (LLY) has no memo file anywhere — rebuild required; the row stands on chat-record data until then.
 
@@ -17,11 +17,14 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 ## Portfolio table (HELD names — §7.2)
 
-*(empty — no positions held)*
+*Positions mirrored from the IBKR account snapshot of 2026-07-06 (§7.3). Entry dates are not in the snapshot — user to supply. Zone distances at 2026-07-06 IBKR prices; NVO ADR converted at USDDKK 6.536 (Investing.com, 2026-07-06). Bias tick-through run before the zone statements: consistency and lossophobia named on HFG — neither invalidates; the SELL-FLAG stems from the v2 quality re-verdict, not the −42% price move. No other bias live.*
 
 | Ticker | Entry date(s) | Avg cost | Verdict | Zone | ADD band (P21) | Sell-flag line (P9) | Last zone check | Next review |
 |--------|---------------|----------|---------|------|----------------|---------------------|-----------------|-------------|
-| — | — | — | — | — | — | — | — | — |
+| CROX (size redacted) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ $93 (no P12 — Past ADEQUATE; ex-impairment FY25 OI basis) — price −25.8% away | ≈ $417 (ex-imp OI). Reported-OI line ≈ $45 trips today — HEYDUDE-impairment artifact, mitigated per P9; resets at FY2026 results | 2026-07-06 @ $125.28 | Q2'26 (6 Aug 2026, optional); FY2026 (~mid-Feb 2027) resets EV/OI basis |
+| HFG (size redacted, XETRA) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (sell-reason 2: v2 re-verdict Past WEAK + Future WEAK + SF FAIL — consistency bias named and fought) | n/a — AVOID; adding excluded | P9 not the driver: ≈ €14.5 on FY25 adj. OI (reported EBIT n.m.), price €4.02 far below. Flag is quality, not price | 2026-07-06 @ €4.02 | User decision on the flag; else FY2026 (~mid-Mar 2027) |
+| NOVO-B (NVO ADR, 1:1) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ DKK 172 ≈ $26 ADR (P12 edge DKK 222 excluded from ADD — Future ADEQUATE) — price −47.7% away | ≈ DKK 696 ≈ $106 ADR (+112%) | 2026-07-06 @ $50.27 ADR ≈ DKK 328.6 | H1-2026 results 5 Aug 2026; Tier-2 P17/P19 re-exam now priority (HELD) |
+| TROW (size redacted) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ $55 strict (the ≈$69 P12 band excluded from ADD — Future ADEQUATE) — price −53.4% away | ≈ $268 (+126%) | 2026-07-06 @ $118.55 | FY2026 (~Feb 2027); earlier if price → ≈$84 or H2 TDF flows soften |
 
 ---
 
@@ -93,12 +96,15 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 - **LLY memo missing.** No memo file exists in the repo or project knowledge; the register row is reconstructed from chat records (†). Rebuild via a fresh ANALYSE/REVIEW — it also cleanly documents the P19 buyback strike (~32× EV/OI at execution).
 - **P17/P19 re-examination queue (pre-v3 SF verdicts, stale on mechanics per §7.1 — verdicts stand until a REVIEW produces a new memo).** Tier 1, likely flip WATCH → AVOID on the buyback strike: **ROK, ABNB, BKNG** (MSFT confirmed flipped, v2 memo 2026-07-06). Tier 2, pending EV/OI-at-execution confirmation: **GOOGL, ASML, NOVO-B**. Tier 3, borderline: **META, QCOM, SIE, ABB**. Also **NKE** (comp-near-ceiling + premium buybacks + dual-class = candidate flag pair). Confirmed clean under v3: ADYEN, AMZN (v2), BABA, BKE, BRK.B, CROX, KSPI, TROW, TSM, SDZ. Sequencing: LLY rebuild, then Tier 1, then Tier 2, then Tier 3.
+- **HFG held position carries a SELL-FLAG** (sell-reason 2). The framework flags; the user decides. A decision either way should be logged here with the realised outcome if sold.
+- **Held-name housekeeping:** entry dates missing from the IBKR snapshot — supply to complete the portfolio rows. NOVO-B moves to the front of the Tier-2 P17/P19 queue (held names first, §8.3 logic). CROX sell-flag line is impairment-distorted on reported OI — recheck at FY2026 results.
 - **INPST** delists on offer settlement (expected H2 2026) — archive the row then, per its next_review.
 
 ---
 
 ## Change log
 
+- **v6 — 2026-07-06** — **Portfolio layer activated** from the IBKR account snapshot (position event, §7.3): four HELD rows added — CROX @ [redacted], HFG @ [redacted] (XETRA), NOVO-B via NVO ADR 1:1 @ [redacted], TROW @ [redacted]. Zones at 2026-07-06 prices: CROX HOLD, NOVO-B HOLD, TROW HOLD, **HFG SELL-FLAG** (sell-reason 2 — v2 memo re-verdict AVOID; P9 line €14.5 not the driver). Sell-flag lines per P9 from the 2026-07-04 memo Appendix-F inputs: CROX ≈$417 (ex-imp; reported-OI artifact mitigated), NOVO-B ≈DKK 696, TROW ≈$268. ADD bands per P21 (P12 edges excluded for NOVO-B and TROW — Future ADEQUATE). Entry dates n/a in snapshot. Master rows and verdict split unchanged — HELD is a state, not a verdict.
 - **v5 — 2026-07-06** — MSFT REVIEW v2 (first Tier-1 P17/P19 re-examination): SF PASS → FAIL (P19 hard strike — FY2023–25 program repurchases at implied EV/OI 22.5–25.5×, all above the 20× line, per FY2025 10-K equity note; sterilisation pattern corroborates: FY24–25 net share reduction ≈0.05%/yr vs $12B SBC; P17 absolute flag $96.5m > ≈$40m indexed). Verdict WATCH → AVOID (SF gate). Band recomputed on v3 mechanics: ≈$105 (EV/OI conservative, P20 maintenance basis) replaces the stale qualifier-bound ≈$80–100. WATCH 23 · AVOID 23. Tier 1 remainder: ROK, ABNB, BKNG.
 - **v4 — 2026-07-06** — Confirmation & cleanup pass against uploaded memos. Confirmed 12 of 13 reconstructed rows against memo front matter and cleared their † flags; filled all placeholder cells (AXP $348.08 / band $184; V $362.13 / band $72; SAP €139.24 / band €48.6; NFLX $77.65; ADS band ≈€47; Samsung SF PASS with MCap/FCF binding). Corrected CROX version v3 → v2 per memo (§7.1 memo-wins). Replaced AMZN row with v2 memo (2026-07-05; P20 basis formalised, band ≈$56). Added IBKR (WATCH) and NVS (WATCH). LLY keeps † — memo file missing, rebuild queued. Removed one-pass RECONCILE scaffolding (upload batch, reconstruction notes, per-row re-test markers) and collapsed the P17/P19 queue into Open items. 44 → 46 names, WATCH 24 · AVOID 22.
 - **v3 — 2026-07-05** — RECONCILE pass. Added 10 rows (MA from PK memo; V, AXP, SAP, NFLX, NKE, ADS, 005930.KS, GAP, LLY reconstructed from chats, all †). Replaced 4 REVIEW rows (CROX, HFG v2, NOVO-B v3, TROW v3; verdicts unchanged). First register under Project Instructions v3. 34 → 44 names, WATCH 22 · AVOID 22. Queued the v3 P17/P19 SF re-examination.
