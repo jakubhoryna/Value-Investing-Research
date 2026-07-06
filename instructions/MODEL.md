@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v3.2.0
-model_date: 2026-07-06
+model_version: v3.2.1
+model_date: 2026-07-07
 status: live
 bootstrap_required: BOOTSTRAP v1.0.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.2.0 · 2026-07-06)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.2.1 · 2026-07-07)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -363,15 +363,15 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 **Session end (ANALYSE / REVIEW / RECONCILE).** After the memo file is final: print the register diff (old row → new row, or "new name") and the file list, then on the user's "commit" (or under a standing session "auto-commit", immediately — diff still printed):
 
 1. **PUT memo** → `contents/memos/<TICKER>_<date>_GSC.md` with body `{"message":"GSC: <TICKER> <ver> <verdict>","content":"<base64>","branch":"main"}`. Overwriting an existing path (same-day rerun) requires that file's current `sha` in the body.
-2. **GET** `contents/_REGISTER.md` → capture the current `"sha"`.
+2. **GET** `contents/_REGISTER.md` (raw + metadata) → **base verification [v3.2.1]:** confirm the live file is byte-identical to the base this register build started from — equivalently, that the live change-log head is exactly the entry the new version increments. On mismatch, a parallel commit landed since the base fetch: **abort the PUT**, re-merge this session's rows onto the fresh live state (memo-wins), renumber to live-head + 1, re-print the diff, then proceed. Capture the current `"sha"` from this same fetch.
 3. **PUT register** → `{"message":"GSC: register — <TICKER> <verdict>","content":"<base64>","sha":"<sha>","branch":"main"}`.
 4. Report both commit URLs in the chat reply.
 
-409 / sha-mismatch: re-fetch, re-merge the row, retry once; then stop and report.
+409 / sha-mismatch: re-fetch, re-run base verification, re-merge the row, retry once; then stop and report. **A fresh `sha` is not safety:** the sha guard rejects only files changed *after* the sha capture — a register built from a stale base and PUT with a freshly captured sha commits cleanly and silently erases the parallel work (lost update). Base verification is the guard against this; the sha guards only the fetch-to-PUT window. Precedent: the 2026-07-06 register-v9 collision (parallel ROK and BKNG sessions, both built from v8), repaired by the v10 merge commit.
 
 **Register generation rule.** Every committed `_REGISTER.md` is the **complete file** — front matter version and date bumped, portfolio table, master table **sectioned and ordered per §7.1 (BUY → WATCH → AVOID; Dist % recomputed, WATCH re-sorted)** with the new/replaced row merged into its verdict section, change log appended — never a fragment. On commit success, the §6.5 paste-block is skipped; on any API failure, fall back to the paste-block so nothing is lost.
 
-**Framework commits (MODEL mode only).** Governed by §0 and §8.4: outgoing version archived to `instructions/archive/MODEL_v{old}_{date}.md` (PUT, new path, no sha), then new `instructions/MODEL.md` PUT with its current sha — both under the explicit "commit model" confirm.
+**Framework commits (MODEL mode only).** Governed by §0 and §8.4: outgoing version archived to `instructions/archive/MODEL_v{old}_{date}.md` (PUT, new path, no sha), then new `instructions/MODEL.md` PUT with its current sha — both under the explicit "commit model" confirm. The same base verification applies: before the MODEL.md PUT, confirm the live file still matches the version this draft amends; on mismatch, rebase the amendment and re-print the diff.
 
 **Mobile / no-bash sessions.** Paste-blocks per §6.5; the next PC session or RECONCILE commits the backlog.
 
@@ -435,6 +435,11 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 - The token is a secret: never echo or print it in chat prose, memos, or committed files, and never transmit it anywhere other than `api.github.com`. These guardrails restate the bootstrap's resident set; the bootstrap wins on any conflict.
 
 -----
+
+## v3.2.1 CHANGE LOG (2026-07-07)
+
+- **Base verification added to the commit protocol (§7.4a: step 2, sha-mismatch note, framework-commits paragraph).** Before any PUT to a shared mutable file (`_REGISTER.md`, `MODEL.md`), the live file must be confirmed identical to the base the edit was built from — equivalently, the live change-log head must be the entry the new version increments. On mismatch, abort, re-merge onto the fresh live state (memo-wins), renumber to live-head + 1, re-print the diff, then PUT. Motivation: the sha guard rejects only changes landing *after* the sha capture; an edit built from a stale base with a freshly captured sha commits cleanly and silently erases parallel work. Precedent: the 2026-07-06 register-v9 lost-update collision (parallel ROK and BKNG sessions, both built from v8; the ROK flip was erased for ~1 h), repaired by the v10 merge commit.
+- **PATCH release** — commit plumbing only; no parameter, verdict, zone, band, or register-row impact.
 
 ## v3.2.0 CHANGE LOG (2026-07-06)
 
