@@ -3,13 +3,13 @@ register_title: GSC Register — Master Watchlist
 register_version: v5
 register_date: 2026-07-06
 names_total: 46
-verdict_split: "WATCH 24 · AVOID 22 · BUY 0 · DNAF 0"
+verdict_split: "WATCH 23 · AVOID 23 · BUY 0 · DNAF 0"
 portfolio_names: 0
 ---
 
 # GSC Register — Master Watchlist (v5 · 2026-07-06)
 
-Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
+Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1). The single **†** row (LLY) has no memo file anywhere — rebuild required; the row stands on chat-record data until then.
 
 **Legend.** Verdict: BUY / WATCH / AVOID / DNAF · Past & Future: STRONG / ADEQUATE / WEAK · SF: PASS / FAIL · Trigger band: approximate price below which cheapness flips to CHEAP (binding metric in brackets) · Next review: date, event, or price condition that should prompt a REVIEW chat.
 
@@ -52,11 +52,11 @@ Source of truth for every name analysed in this project. **One row per company, 
 |INPST|InPost S.A.|2026-07-03|v1|AVOID (Past WEAK + Future WEAK + SF FAIL)|WEAK|WEAK|FAIL|€15.40 (≈PLN 66.05)|CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer|Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price|
 |KER|Kering SA|2026-07-02|v1|AVOID (Past WEAK + Future WEAK + SF FAIL)|WEAK|WEAK|FAIL|€266.30|CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE|FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves|
 |KSPI|JSC Kaspi.kz|2026-06-12|v1|WATCH|ADEQUATE|ADEQUATE|PASS (Hepsiburada flag)|$78.58 ADS|CHEAP < ≈ $42–52 (MCap/TBV binding; EV-build dependent). Cheapness FAIR|FY2026 results (~Mar 2027), price < $58, or Rabobank close / Türkiye update|
-|LLY|Eli Lilly and Company|2026-07-06|v2|AVOID (SF FAIL: buybacks)|STRONG|ADEQUATE|FAIL|$1,213|CHEAP < ≈ $119 (MCap/FCF, P20 maintenance basis; EV/OI leg ≈ $156; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE|FY2026 10-K (~Feb 2027) re-anchors band; 2027 proxy (Apr 2027) re-tests P19 execution multiples. SF FAIL = P19 hard strike (FY25 buybacks @ ~$856 → ~31× EV/OI, sterilisation pattern corroborates); P17 now PASSES under v3 (Ricks $36.7m = 0.3% of FCF, below $40m indexed trigger). Price ~10× band|
+|LLY|Eli Lilly and Company|2026-07-04|v1|AVOID (SF FAIL)|STRONG|ADEQUATE|FAIL|$1,212 (MCap ~$1.14T) †|CHEAP < ≈ $150 (EV/OI, 45× now). Cheapness EXPENSIVE †|FY2026 / 2027 proxy. Comp strike (Ricks $36.7m) AND P19 buyback strike (~32× EV/OI at execution). † memo file missing everywhere — rebuild required; row stands on chat-record data|
 |LULU|lululemon athletica inc.|2026-07-03|v1|AVOID (Future WEAK)|ADEQUATE|WEAK|PASS|$118.77|CHEAP < ≈ $64 (MCap/FCF, reported FY2025 FCF); ≈ $76–96 on 5–3yr normalized FCF. Cheapness FAIR — academic given AVOID|Fiscal 2026 results / permanent-CEO appointment / US comp-sales inflection; or price into normalized trigger (~$76–96)|
 |MA|Mastercard Incorporated|2026-07-03|v1|AVOID (SF FAIL)|STRONG|ADEQUATE|FAIL|$535.82 (close 2 Jul 2026)|CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds)|2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band|
 |META|Meta Platforms, Inc.|2026-06-16|v1|WATCH|STRONG|ADEQUATE|PASS|$566.98|CHEAP < ≈ $180 (MCap/FCF; strict all-pass ≈ $143). Cheapness EXPENSIVE. Dual-class flag|FY2026 results (~late Jan 2027), price < ~$230, capex/FCF change, or FTC appeal ruling|
-|MSFT|Microsoft Corporation|2026-07-02|v1|WATCH|STRONG|ADEQUATE|PASS|~$385|CHEAP < ≈ $80–100 (MCap/TBV; MCap/FCF suspended per P20 capex cycle). Cheapness EXPENSIVE|FY2026 10-K, results 28 Jul 2026 — band moves on new FY|
+|MSFT|Microsoft Corporation|2026-07-06|v2|AVOID (SF FAIL: buybacks)|STRONG|ADEQUATE|FAIL|~$390|CHEAP < ≈ $105 (EV/OI, conservative EV, P20 maintenance basis; P12 edge ≈ $113; strict all-capex ≈ $77). Cheapness EXPENSIVE|FY2026 10-K, results 28 Jul 2026 — band moves on new FY; SF re-test on FY2026 buyback table. Flip needs a full FY of buyback discipline (P19 strike: FY23–25 repurchases at 22.5–25.5× EV/OI)|
 |NFLX|Netflix, Inc.|2026-07-04|v1|AVOID (Future WEAK + SF FAIL)|ADEQUATE|WEAK|FAIL|$77.65 (close 2 Jul 2026; post 10:1 split)|CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE|FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m)|
 |NKE|NIKE, Inc.|2026-07-04|v1|WATCH|ADEQUATE|ADEQUATE|PASS (flags)|$44.09 (close 2 Jul 2026)|CHEAP < ≈ $10.5 (EV/OI, conservative EV, FY2026 prelim OI; ≈ $16.6 all-cash-excess; MCap/FCF leg ≈ $17.7). No P12 edge. Cheapness EXPENSIVE|FY2026 10-K (~mid/late Jul 2026, imminent) re-anchors both band legs; Sept 2026 proxy (Hill's first full-year comp vs $30m ceiling); or price < ≈ $19 (NEAR)|
 |NOVO-B (NVO 1:1)|Novo Nordisk A/S|2026-07-04|v3|WATCH|STRONG|ADEQUATE|PASS (3 flags)|DKK 326.9 (3 Jul 2026 close)|CHEAP < ≈ DKK 172 (EV/OI binding, conservative EV; maintenance-capex-basis MCap/FCF concurs ≈ DKK 173–188, P20). P12 edge ≈ DKK 222. Cheapness FAIR|H1-2026 results (5 Aug 2026); price < DKK 220 (P12 edge); or semaglutide LoE / CagriSema FDA (late 2026) / orforglipron uptake / US 2027 pricing / 2026 capex trajectory|
@@ -82,8 +82,8 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 | Verdict | Count | Names |
 |---|---|---|
-| **WATCH** | 24 | ABB, ABNB, ADYEN, AMZN, ASML, BABA, BKE, BKNG, BRK.B, CROX, GOOGL, IBKR, KSPI, META, MSFT, NKE, NOVO-B, NVS, QCOM, ROK, SDZ, SIE, TROW, TSM |
-| **AVOID** | 22 | AAPL, ADS, AXP, BTI, CRM, DSY, GAP, HFG, INPST, KER, LLY, LULU, MA, NFLX, NVDA, ORCL, PYPL, SAP, TSLA, UNH, V, 005930.KS |
+| **WATCH** | 23 | ABB, ABNB, ADYEN, AMZN, ASML, BABA, BKE, BKNG, BRK.B, CROX, GOOGL, IBKR, KSPI, META, NKE, NOVO-B, NVS, QCOM, ROK, SDZ, SIE, TROW, TSM |
+| **AVOID** | 23 | AAPL, ADS, AXP, BTI, CRM, DSY, GAP, HFG, INPST, KER, LLY, LULU, MA, MSFT, NFLX, NVDA, ORCL, PYPL, SAP, TSLA, UNH, V, 005930.KS |
 | **BUY (framework)** | 0 | — |
 | **DNAF** | 0 | — |
 
@@ -91,14 +91,15 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 ## Open items
 
-- **P17/P19 re-examination queue (pre-v3 SF verdicts, stale on mechanics per §7.1 — verdicts stand until a REVIEW produces a new memo).** Tier 1, likely flip WATCH → AVOID on the buyback strike: **MSFT, ROK, ABNB, BKNG**. Tier 2, pending EV/OI-at-execution confirmation: **GOOGL, ASML, NOVO-B**. Tier 3, borderline: **META, QCOM, SIE, ABB**. Also **NKE** (comp-near-ceiling + premium buybacks + dual-class = candidate flag pair). Confirmed clean under v3: ADYEN, AMZN (v2), BABA, BKE, BRK.B, CROX, KSPI, TROW, TSM, SDZ. Sequencing: LLY rebuild done (v2, 2026-07-06); next Tier 1, then Tier 2, then Tier 3.
+- **LLY memo missing.** No memo file exists in the repo or project knowledge; the register row is reconstructed from chat records (†). Rebuild via a fresh ANALYSE/REVIEW — it also cleanly documents the P19 buyback strike (~32× EV/OI at execution).
+- **P17/P19 re-examination queue (pre-v3 SF verdicts, stale on mechanics per §7.1 — verdicts stand until a REVIEW produces a new memo).** Tier 1, likely flip WATCH → AVOID on the buyback strike: **ROK, ABNB, BKNG** (MSFT confirmed flipped, v2 memo 2026-07-06). Tier 2, pending EV/OI-at-execution confirmation: **GOOGL, ASML, NOVO-B**. Tier 3, borderline: **META, QCOM, SIE, ABB**. Also **NKE** (comp-near-ceiling + premium buybacks + dual-class = candidate flag pair). Confirmed clean under v3: ADYEN, AMZN (v2), BABA, BKE, BRK.B, CROX, KSPI, TROW, TSM, SDZ. Sequencing: LLY rebuild, then Tier 1, then Tier 2, then Tier 3.
 - **INPST** delists on offer settlement (expected H2 2026) — archive the row then, per its next_review.
 
 ---
 
 ## Change log
 
-- **v5 — 2026-07-06** — LLY rebuilt (v2 memo from fresh EDGAR pull; v1 file was lost). Verdict unchanged AVOID; gate reason changed compensation → buybacks under v3 mechanics: P17 now PASSES (Ricks $36.7m = 0.3% of FCF, below the $40m indexed trigger), SF FAIL rests on the P19 hard strike alone (FY25 buybacks ~$856 avg → ~31× EV/OI at execution). Band recomputed on P20 dual basis: ≈$150 → ≈$119 (MCap/FCF maintenance-basis binding; P12 edge ≈$149). Worst-of-four 19.0%/11.3% on documented NIBCL composition. † flag cleared — no reconstructed rows remain. Counts unchanged: 46 names, WATCH 24 · AVOID 22.
+- **v5 — 2026-07-06** — MSFT REVIEW v2 (first Tier-1 P17/P19 re-examination): SF PASS → FAIL (P19 hard strike — FY2023–25 program repurchases at implied EV/OI 22.5–25.5×, all above the 20× line, per FY2025 10-K equity note; sterilisation pattern corroborates: FY24–25 net share reduction ≈0.05%/yr vs $12B SBC; P17 absolute flag $96.5m > ≈$40m indexed). Verdict WATCH → AVOID (SF gate). Band recomputed on v3 mechanics: ≈$105 (EV/OI conservative, P20 maintenance basis) replaces the stale qualifier-bound ≈$80–100. WATCH 23 · AVOID 23. Tier 1 remainder: ROK, ABNB, BKNG.
 - **v4 — 2026-07-06** — Confirmation & cleanup pass against uploaded memos. Confirmed 12 of 13 reconstructed rows against memo front matter and cleared their † flags; filled all placeholder cells (AXP $348.08 / band $184; V $362.13 / band $72; SAP €139.24 / band €48.6; NFLX $77.65; ADS band ≈€47; Samsung SF PASS with MCap/FCF binding). Corrected CROX version v3 → v2 per memo (§7.1 memo-wins). Replaced AMZN row with v2 memo (2026-07-05; P20 basis formalised, band ≈$56). Added IBKR (WATCH) and NVS (WATCH). LLY keeps † — memo file missing, rebuild queued. Removed one-pass RECONCILE scaffolding (upload batch, reconstruction notes, per-row re-test markers) and collapsed the P17/P19 queue into Open items. 44 → 46 names, WATCH 24 · AVOID 22.
 - **v3 — 2026-07-05** — RECONCILE pass. Added 10 rows (MA from PK memo; V, AXP, SAP, NFLX, NKE, ADS, 005930.KS, GAP, LLY reconstructed from chats, all †). Replaced 4 REVIEW rows (CROX, HFG v2, NOVO-B v3, TROW v3; verdicts unchanged). First register under Project Instructions v3. 34 → 44 names, WATCH 22 · AVOID 22. Queued the v3 P17/P19 SF re-examination.
 - **v2 — 2026-07-03** — Added AAPL, INPST, LULU, NVDA, UNH (all AVOID). 29 → 34, WATCH 21 · AVOID 13.
