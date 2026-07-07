@@ -1,14 +1,14 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v15
+register_version: v16
 register_date: 2026-07-07
-names_total: 48
-verdict_split: "WATCH 18 · AVOID 30 · BUY 0 · DNAF 0"
+names_total: 49
+verdict_split: "WATCH 18 · AVOID 31 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v15 · 2026-07-07)
+# GSC Register — Master Watchlist (v16 · 2026-07-07)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -58,12 +58,13 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SIE | Siemens AG | 2026-07-02 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | €273.45 | CHEAP < ≈ €25–36 mechanical (EV/OI, then TBV); ≈ €36–45 with SFS-debt adjustment. Cheapness EXPENSIVE | +660% | Healthineers 30% spin-off (2026–27), FY2026 results (~Dec 2026), or price < €60 |
 | ABB (ABBNY ADR 1:1) | ABB Ltd | 2026-07-02 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | $105.78 ADR (≈CHF 84) | CHEAP < ≈ $10–12 ADR (MCap/TBV; EV/OI caps ≈$21 even if TBV excused) | +782% | SoftBank Robotics sale close (mid–late 2026) or FY2026 results (early Feb 2027) |
 
-### AVOID — 30 names, alphabetical
+### AVOID — 31 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
 | AAPL | Apple Inc. | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | ~$308 | CHEAP < ≈ $53 (MCap/FCF; P12 edge ≈ $55 via EV/OI) | — | FY2026 10-K (~Oct/Nov 2026) or Jan 2027 proxy — SF flip requires comp reform; earlier if price < ~$60 |
 | ABNB | Airbnb, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | $149.20 | CHEAP < ≈ $43 (EV/OI, conservative EV; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K + 2027 proxy (~Feb–Apr 2027) — flip needs a full program year of buyback discipline (P19 hard strike: 2022–25 repurchases at 27.4–49.2× EV/OI) |
+| AD | Koninklijke Ahold Delhaize N.V. | 2026-07-07 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 P19 flag) | €36.33 | CHEAP < ≈ €7 (EV/OI, conservative EV, lease-heavy; all-cash-excess leg ≈ €11; MCap/FCF leg ≈ €33) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 results (~mid-Feb 2027), low priority — AVOID structural: worst-of-four ROCE 8.4% vs 10% floor, L/E 246%; price can never flip it. P19 flag logged (2020/23/24 executions 14.7–16.5× EV/OI, no year > 20×) |
 | ADS | adidas AG | 2026-07-04 | v1 | AVOID (Past WEAK: leverage + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | €185.30 | CHEAP < ≈ €47 (EV/OI leg, conservative EV; MCap/FCF n.m. on WC-depressed FY2025 FCF, ≈ €46 on 5y-avg FCF) — moot given AVOID | — | FY2026 results (~early Mar 2027) — FCF and leverage reset; earlier if price < ≈ €52 |
 | ASML | ASML Holding N.V. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €1,628 (~6 Jul 2026) | CHEAP < ≈ €140 (MCap/TBV, one-average allowance) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 results (Jan 2027 / 20-F Feb 2027) re-anchors band; flip needs a full year of buyback pricing discipline (P19 hard strike: 2018–25 repurchases at 23.4–37.0× EV/OI at execution, all eight years > 20×; 2026 pgm running at far higher price levels) |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
@@ -107,6 +108,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v16 — 2026-07-07** — AD (Ahold Delhaize) ANALYSE v1: **AVOID (Past WEAK)** — worst-of-four normalized ROCE 8.4% over FY2017–25 (best variant 9.6%), below the 10% floor on all four bases; L/E 246% breaches P5 without P6 cover. Nine-year post-merger window (FY2016 merger-hybrid excluded from averages, flagged); FY2016–17 lease-capitalised per P18 (PV ratio 0.78 anchored on the IFRS 16 transition); IFRS interest-paid reclassified into CFO and lease interest deducted from FCF throughout. Future ADEQUATE (breadth PASS, 0 strong forces, regional cost/density moat). SF PASS with one P19 flag — nine €1bn programmes, every execution 11.1–16.5× EV/OI lower-variant, no year over 20×; Profi (€1,239m, pre-profit) judgmental, no strike; P17 clean (Muller €7.9m vs €113m cap). Cheapness EXPENSIVE (EV/OI 14.4× conservative, MCap/FCF 8.8×); band ≈ €7 (EV/OI binding, lease-heavy EV). 48 → 49 names, WATCH 18 · AVOID 31.
 - **v15 — 2026-07-07** — COPN ANALYSE v1: **AVOID** — Past WEAK (worst-of-four normalized ROCE 2.9% over FY2017–25; operating losses in 4 of 9 years; 2024 OI carried by €185m non-recurring Medtronic recognition), Future WEAK (customer-breadth FAIL: top-3 customers 58.9% of FY2025 revenue; 2 strong forces), SF FAIL (P19 hard strikes: FY2023 buybacks at ~140× EV/OI / 46.9× MCap/FCF; FY2025 loss-year buybacks; treasury shares recycled into option exercises). Cheapness EXPENSIVE — both primaries n.m. on negative FY2025 OI/FCF; no computable band. 47 → 48 names, WATCH 18 · AVOID 30.
 - **v14 — 2026-07-07** — ASML REVIEW v2 (third and final Tier-2 P17/P19 re-examination — the queued EV/OI-at-execution confirmation): **SF PASS → FAIL** (P19 hard strike — repurchases breached 20× at execution in **every year 2018–2025** on the lower-EV variant, per SEC XBRL payments/shares data: 2021 €8.56bn at avg €596 → 35.9× EV/OI; 2022 €4.64bn at €543 → 32.8×; 2024 €0.5bn at €870 → 37.0×; 2025 €5.95bn at €715 → 23.8× EV/OI / 25.1× MCap/FCF; 2018 23.4× on the alternate share tag — the primary tag's avg sits above that year's trading range, logged. 2026 programme (announced 28 Jan 2026) running at €1,100–1,700 price levels — far above any strike line on FY2025 OI, inference from range, avg not computed. No below-worth defence; not sterilisation, count −12% over the decade. P17 re-confirmed clean under v3 two-tier: CEO €7.02m vs ≈€480m proportional cap). **Verdict WATCH → AVOID** (SF gate). Band ≈ €140 unchanged (MCap/TBV, one-average allowance; no P20 — capex/sales ≈5–7%, no super-cycle), informational under AVOID. Px €1,628 (~6 Jul 2026). Not held — no zone impact. No new FY (Q2 2026 reports 15 Jul 2026). **Commit note:** built from a v12 base in parallel with the GOOGL session; the v3.2.1 base verification caught the mismatch pre-PUT (first live catch of the protocol), re-merged here onto the live v13 — no lost update. **P17/P19 re-examination Tiers 1 & 2 complete.** WATCH 18 · AVOID 29. Queue remainder: Tier 3 borderlines (META, QCOM, SIE, ABB) + NKE flag pair.
 - **v13 — 2026-07-07** — GOOGL REVIEW v2 (second Tier-2 P17/P19 re-examination): **SF PASS → FAIL** (P19 hard strike — FY2025 10-K equity statement: 2023 repurchases 528M sh / $62.18B at avg $117.77 → implied MCap/FCF 21.6× on reported FCF (P20 inactive that year), and 2024 repurchases 379M sh / $62.05B at avg $163.71 → 23.7× on the P20 maintenance basis (28.0× all-capex) — both > 20×; 2025 240M sh / $45.40B at avg $189.16 → 19.4× maint, flag; implied EV/OI 16.6×/17.4×/17.3× flags all three years; sterilisation limb clean at 1.8–2.8× SBC, count −9.7% since 2021; below-worth exception inapplicable; P17 clean on FY2024 data, Apr-2026 proxy grant-cycle figure queued). **Verdict WATCH → AVOID** (SF gate). Band rebuilt on v3 + P20 mechanics: ≈ $67 (EV/OI, conservative EV, Q1-26 debt $79.5B) replaces the stale ≈ $60 MCap/FCF band; P20 formalised (anchor 11.3% pre-cycle capex/sales). Px $359.69. Delta noted: ad-tech remedy ruling still pending; search remedies behavioural, on appeal; EU €4.1bn fine upheld; Dow inclusion 29 Jun 2026. WATCH 19 · AVOID 28. Tier 2 remainder: ASML.
