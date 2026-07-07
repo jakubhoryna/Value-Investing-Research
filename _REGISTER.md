@@ -1,14 +1,14 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v14
+register_version: v15
 register_date: 2026-07-07
-names_total: 47
-verdict_split: "WATCH 18 · AVOID 29 · BUY 0 · DNAF 0"
+names_total: 48
+verdict_split: "WATCH 18 · AVOID 30 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v14 · 2026-07-07)
+# GSC Register — Master Watchlist (v15 · 2026-07-07)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -58,7 +58,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SIE | Siemens AG | 2026-07-02 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | €273.45 | CHEAP < ≈ €25–36 mechanical (EV/OI, then TBV); ≈ €36–45 with SFS-debt adjustment. Cheapness EXPENSIVE | +660% | Healthineers 30% spin-off (2026–27), FY2026 results (~Dec 2026), or price < €60 |
 | ABB (ABBNY ADR 1:1) | ABB Ltd | 2026-07-02 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | $105.78 ADR (≈CHF 84) | CHEAP < ≈ $10–12 ADR (MCap/TBV; EV/OI caps ≈$21 even if TBV excused) | +782% | SoftBank Robotics sale close (mid–late 2026) or FY2026 results (early Feb 2027) |
 
-### AVOID — 29 names, alphabetical
+### AVOID — 30 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -68,6 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ASML | ASML Holding N.V. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €1,628 (~6 Jul 2026) | CHEAP < ≈ €140 (MCap/TBV, one-average allowance) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 results (Jan 2027 / 20-F Feb 2027) re-anchors band; flip needs a full year of buyback pricing discipline (P19 hard strike: 2018–25 repurchases at 23.4–37.0× EV/OI at execution, all eight years > 20×; 2026 pgm running at far higher price levels) |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
 | BTI | British American Tobacco p.l.c. | 2026-07-02 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $61.76 ADR (≈£46.59) | CHEAP < ≈ $22–28 / £17–21 (EV/OI strict → MCap/FCF w/allowance) — moot given AVOID | — | FY2026 results (Feb 2027) or structural return break (Reynolds intangibles, Canada drag lapped, New Categories reach combustibles ROCE) |
+| COPN | Cosmo N.V. | 2026-07-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | CHF 67.70 | n.m. — FY25 OI & FCF negative | — | FY2026 results (~Mar 2027); Clascoterone-5% AGA 12-mo readout only if it changes the revenue mix |
 | CRM | Salesforce, Inc. | 2026-06-12 | v1 | AVOID (Past WEAK + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | $166.45 | CHEAP < ≈ $55 (EV/OI @1.25×). Cheapness EXPENSIVE | — | FY27 10-K (~Mar 2027) status check; BUY needs Past upgrade (~FY2030 earliest) + deleverage + price |
 | DSY | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
@@ -106,6 +107,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v15 — 2026-07-07** — COPN ANALYSE v1: **AVOID** — Past WEAK (worst-of-four normalized ROCE 2.9% over FY2017–25; operating losses in 4 of 9 years; 2024 OI carried by €185m non-recurring Medtronic recognition), Future WEAK (customer-breadth FAIL: top-3 customers 58.9% of FY2025 revenue; 2 strong forces), SF FAIL (P19 hard strikes: FY2023 buybacks at ~140× EV/OI / 46.9× MCap/FCF; FY2025 loss-year buybacks; treasury shares recycled into option exercises). Cheapness EXPENSIVE — both primaries n.m. on negative FY2025 OI/FCF; no computable band. 47 → 48 names, WATCH 18 · AVOID 30.
 - **v14 — 2026-07-07** — ASML REVIEW v2 (third and final Tier-2 P17/P19 re-examination — the queued EV/OI-at-execution confirmation): **SF PASS → FAIL** (P19 hard strike — repurchases breached 20× at execution in **every year 2018–2025** on the lower-EV variant, per SEC XBRL payments/shares data: 2021 €8.56bn at avg €596 → 35.9× EV/OI; 2022 €4.64bn at €543 → 32.8×; 2024 €0.5bn at €870 → 37.0×; 2025 €5.95bn at €715 → 23.8× EV/OI / 25.1× MCap/FCF; 2018 23.4× on the alternate share tag — the primary tag's avg sits above that year's trading range, logged. 2026 programme (announced 28 Jan 2026) running at €1,100–1,700 price levels — far above any strike line on FY2025 OI, inference from range, avg not computed. No below-worth defence; not sterilisation, count −12% over the decade. P17 re-confirmed clean under v3 two-tier: CEO €7.02m vs ≈€480m proportional cap). **Verdict WATCH → AVOID** (SF gate). Band ≈ €140 unchanged (MCap/TBV, one-average allowance; no P20 — capex/sales ≈5–7%, no super-cycle), informational under AVOID. Px €1,628 (~6 Jul 2026). Not held — no zone impact. No new FY (Q2 2026 reports 15 Jul 2026). **Commit note:** built from a v12 base in parallel with the GOOGL session; the v3.2.1 base verification caught the mismatch pre-PUT (first live catch of the protocol), re-merged here onto the live v13 — no lost update. **P17/P19 re-examination Tiers 1 & 2 complete.** WATCH 18 · AVOID 29. Queue remainder: Tier 3 borderlines (META, QCOM, SIE, ABB) + NKE flag pair.
 - **v13 — 2026-07-07** — GOOGL REVIEW v2 (second Tier-2 P17/P19 re-examination): **SF PASS → FAIL** (P19 hard strike — FY2025 10-K equity statement: 2023 repurchases 528M sh / $62.18B at avg $117.77 → implied MCap/FCF 21.6× on reported FCF (P20 inactive that year), and 2024 repurchases 379M sh / $62.05B at avg $163.71 → 23.7× on the P20 maintenance basis (28.0× all-capex) — both > 20×; 2025 240M sh / $45.40B at avg $189.16 → 19.4× maint, flag; implied EV/OI 16.6×/17.4×/17.3× flags all three years; sterilisation limb clean at 1.8–2.8× SBC, count −9.7% since 2021; below-worth exception inapplicable; P17 clean on FY2024 data, Apr-2026 proxy grant-cycle figure queued). **Verdict WATCH → AVOID** (SF gate). Band rebuilt on v3 + P20 mechanics: ≈ $67 (EV/OI, conservative EV, Q1-26 debt $79.5B) replaces the stale ≈ $60 MCap/FCF band; P20 formalised (anchor 11.3% pre-cycle capex/sales). Px $359.69. Delta noted: ad-tech remedy ruling still pending; search remedies behavioural, on appeal; EU €4.1bn fine upheld; Dow inclusion 29 Jun 2026. WATCH 19 · AVOID 28. Tier 2 remainder: ASML.
 - **v12 — 2026-07-07** — NOVO-B REVIEW v4 (first Tier-2 P17/P19 re-examination — the queued EV/OI-at-execution confirmation): **SF PASS (3 flags) → FAIL** (P19 hard strike — 2024 programme repurchases of DKK 12.13bn at avg DKK 873.01 → implied EV/OI 30.9× conservative / 30.4× flattering on FY24 OI; Nov-23–Jan-24 tranche DKK 3.65bn at avg DKK 699.15 → 30.8× on FY23 OI; both ≫ 20×, per SEC 6-Ks of 30 Jan / 6 Aug / 5 Nov 2024. 2026 programme clean: avg DKK 268.02 to 26 Jun 2026 → 10.1× EV/OI, 11.6× maint-MCap/FCF, below flag lines. 2021–22 avgs unsourced — moot. P17 re-confirmed clean under v3). **Verdict WATCH → AVOID** (SF gate); **HELD zone HOLD → SELL-FLAG** (sell-reason 2; bias tick-through run — consistency and endowment named). Band ≈ DKK 172 unchanged, informational under AVOID. Stale v11 section-header counts corrected (WATCH header 22 → 20 actual; AVOID header 24 → 27 actual). WATCH 20 · AVOID 27. Tier 2 remainder: GOOGL, ASML. (Superseded by v13: ASML only.)
