@@ -1,14 +1,14 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v16
+register_version: v17
 register_date: 2026-07-07
-names_total: 49
-verdict_split: "WATCH 18 · AVOID 31 · BUY 0 · DNAF 0"
+names_total: 50
+verdict_split: "WATCH 19 · AVOID 31 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v16 · 2026-07-07)
+# GSC Register — Master Watchlist (v17 · 2026-07-07)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -35,7 +35,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 18 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 19 names, ascending by Dist % (closest to the buy zone first)
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -54,6 +54,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NKE | NIKE, Inc. | 2026-07-04 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (flags) | $44.09 (close 2 Jul 2026) | CHEAP < ≈ $10.5 (EV/OI, conservative EV, FY2026 prelim OI; ≈ $16.6 all-cash-excess; MCap/FCF leg ≈ $17.7). No P12 edge. Cheapness EXPENSIVE | +320% | FY2026 10-K (~mid/late Jul 2026, imminent) re-anchors both band legs; Sept 2026 proxy (Hill's first full-year comp vs $30m ceiling); or price < ≈ $19 (NEAR) |
 | AMZN | Amazon.com, Inc. | 2026-07-05 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS | ~$243 | CHEAP < ≈ $56 (EV/OI binding; maintenance-basis MCap/FCF corroborates ≈ $50–72 per anchor, P20). Cheapness EXPENSIVE | +334% | FY2026 10-K (~Feb 2027); Q2 2026 results (30 Jul 2026) for AWS growth/capex; earlier if < $90 or AI-capex guidance cut materially |
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
+| AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 year-end (~28 Jan 2027) — City Gross profitability + ROCE-trend re-test (STRONG re-opens ≥15%); Q2'26 (15 Jul 2026) optional. Soft SF: strict P19 sterilisation read of the de-minimis LTIP-hedge buybacks (18–23× EV/OI at execution) would strike — NVS-style sensitivity |
 | QCOM | QUALCOMM Incorporated | 2026-07-02 | v1 | WATCH | STRONG | ADEQUATE | PASS | $189.50 | CHEAP < ≈ $31 (MCap/TBV @allowance; TBV buyback-depressed). Cheapness EXPENSIVE | +511% | FY2026 Q3 (~Jul 2026) & FY (~Nov 2026); Apple licence expiry (2027) / modem wind-down (2028); or price < $34 (NEAR) |
 | SIE | Siemens AG | 2026-07-02 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | €273.45 | CHEAP < ≈ €25–36 mechanical (EV/OI, then TBV); ≈ €36–45 with SFS-debt adjustment. Cheapness EXPENSIVE | +660% | Healthineers 30% spin-off (2026–27), FY2026 results (~Dec 2026), or price < €60 |
 | ABB (ABBNY ADR 1:1) | ABB Ltd | 2026-07-02 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | $105.78 ADR (≈CHF 84) | CHEAP < ≈ $10–12 ADR (MCap/TBV; EV/OI caps ≈$21 even if TBV excused) | +782% | SoftBank Robotics sale close (mid–late 2026) or FY2026 results (early Feb 2027) |
@@ -108,6 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v17 — 2026-07-07** — AXFO (Axfood) ANALYSE v1: **WATCH.** Past ADEQUATE — worst-of-four normalized ROCE 16.6% / FCFROCE 21.1% over FY2016–25 clear both STRONG bars and growth clears the 3% floor, but ROCE stepped from a 17–21% plateau to 13.2%/13.9% in 2024–25 on the City Gross consolidation (no-decline condition not met cleanly); L/E 387% excused under the P6 rational-distribution parenthetical (~80% payout, net debt ex-IFRS16 0.4× EBITDA). FY2015–18 lease-capitalised per P18 at the 2% IBR (method validated against the company's own 2018 transition PV). Future STRONG (breadth PASS both sides, 0 strong forces, strengthening Dagab/Willys cost moat — 11 consecutive years of share gains to 25%). SF PASS with one P19 flag: Axfood's only buybacks are AGM-authorised LTIP-delivery hedges (SEK 25–115m/yr, treasury 0.4%) executed at 18.4–23.1× EV/OI — sterilisation in purpose, de-minimis in scale per the ADS/NVS precedent; strict book-pure P19 would strike → soft WATCH. Comp clean (CEO SEK 17.0m vs SEK 118.8m cap); acquisition audits pass (Bergendahls 2021 SEK 1,893m ~0.2× sales; City Gross 2024 SEK 1,825m pre-profit judgmental). Cheapness EXPENSIVE (EV/OI 20.5–20.8×, MCap/FCF 11.6×); band ≈ SEK 46 (EV/OI binding, lease-heavy conservative EV). 49 → 50 names, WATCH 19 · AVOID 31.
 - **v16 — 2026-07-07** — AD (Ahold Delhaize) ANALYSE v1: **AVOID (Past WEAK)** — worst-of-four normalized ROCE 8.4% over FY2017–25 (best variant 9.6%), below the 10% floor on all four bases; L/E 246% breaches P5 without P6 cover. Nine-year post-merger window (FY2016 merger-hybrid excluded from averages, flagged); FY2016–17 lease-capitalised per P18 (PV ratio 0.78 anchored on the IFRS 16 transition); IFRS interest-paid reclassified into CFO and lease interest deducted from FCF throughout. Future ADEQUATE (breadth PASS, 0 strong forces, regional cost/density moat). SF PASS with one P19 flag — nine €1bn programmes, every execution 11.1–16.5× EV/OI lower-variant, no year over 20×; Profi (€1,239m, pre-profit) judgmental, no strike; P17 clean (Muller €7.9m vs €113m cap). Cheapness EXPENSIVE (EV/OI 14.4× conservative, MCap/FCF 8.8×); band ≈ €7 (EV/OI binding, lease-heavy EV). 48 → 49 names, WATCH 18 · AVOID 31.
 - **v15 — 2026-07-07** — COPN ANALYSE v1: **AVOID** — Past WEAK (worst-of-four normalized ROCE 2.9% over FY2017–25; operating losses in 4 of 9 years; 2024 OI carried by €185m non-recurring Medtronic recognition), Future WEAK (customer-breadth FAIL: top-3 customers 58.9% of FY2025 revenue; 2 strong forces), SF FAIL (P19 hard strikes: FY2023 buybacks at ~140× EV/OI / 46.9× MCap/FCF; FY2025 loss-year buybacks; treasury shares recycled into option exercises). Cheapness EXPENSIVE — both primaries n.m. on negative FY2025 OI/FCF; no computable band. 47 → 48 names, WATCH 18 · AVOID 30.
 - **v14 — 2026-07-07** — ASML REVIEW v2 (third and final Tier-2 P17/P19 re-examination — the queued EV/OI-at-execution confirmation): **SF PASS → FAIL** (P19 hard strike — repurchases breached 20× at execution in **every year 2018–2025** on the lower-EV variant, per SEC XBRL payments/shares data: 2021 €8.56bn at avg €596 → 35.9× EV/OI; 2022 €4.64bn at €543 → 32.8×; 2024 €0.5bn at €870 → 37.0×; 2025 €5.95bn at €715 → 23.8× EV/OI / 25.1× MCap/FCF; 2018 23.4× on the alternate share tag — the primary tag's avg sits above that year's trading range, logged. 2026 programme (announced 28 Jan 2026) running at €1,100–1,700 price levels — far above any strike line on FY2025 OI, inference from range, avg not computed. No below-worth defence; not sterilisation, count −12% over the decade. P17 re-confirmed clean under v3 two-tier: CEO €7.02m vs ≈€480m proportional cap). **Verdict WATCH → AVOID** (SF gate). Band ≈ €140 unchanged (MCap/TBV, one-average allowance; no P20 — capex/sales ≈5–7%, no super-cycle), informational under AVOID. Px €1,628 (~6 Jul 2026). Not held — no zone impact. No new FY (Q2 2026 reports 15 Jul 2026). **Commit note:** built from a v12 base in parallel with the GOOGL session; the v3.2.1 base verification caught the mismatch pre-PUT (first live catch of the protocol), re-merged here onto the live v13 — no lost update. **P17/P19 re-examination Tiers 1 & 2 complete.** WATCH 18 · AVOID 29. Queue remainder: Tier 3 borderlines (META, QCOM, SIE, ABB) + NKE flag pair.
