@@ -1,14 +1,14 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v24
+register_version: v25
 register_date: 2026-07-09
-names_total: 51
-verdict_split: "WATCH 14 · AVOID 37 · BUY 0 · DNAF 0"
+names_total: 52
+verdict_split: "WATCH 15 · AVOID 37 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v24 · 2026-07-09)
+# GSC Register — Master Watchlist (v25 · 2026-07-09)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -35,11 +35,12 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 14 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 15 names, ascending by Dist % (closest to the buy zone first)
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
 | BRK.B | Berkshire Hathaway Inc. | 2026-06-24 | v1 | WATCH | STRONG | ADEQUATE | PASS | $488.70 | No usable CF trigger. Operative gauge P/B ≤1.2× ≈ $400 (MCap/BV & SOTP; substitution rule). Cheapness FAIR | +22% | FY2026 results (Feb 2027, Abel's first full year), or price < ~1.3× book (~$430) |
+| INVE-B | Investor AB | 2026-07-09 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 soft P19 flag; dual-class caveat) | SEK 392 (8 Jul 2026; 7 Jul close 398.20) | CHEAP < ≈ SEK 294 (price/adjusted NAV at ~20% discount; substitution rule — no CF/EV metric applies; strict 25% ≈ SEK 275; reported-NAV line ≈ SEK 321). Cheapness EXPENSIVE (~+7% premium to adj NAV) | +33% | Q2'26 interim (16 Jul 2026); FY2026 (~late Jan 2027) re-anchors NAV; or price < ≈ SEK 330 |
 | CROX | Crocs, Inc. | 2026-07-04 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (HEYDUDE caveat) | $125.28 (close 2 Jul 2026) | CHEAP < ≈ $93 (EV/OI at 7× on ex-impairment FY25 OI, conservative EV incl. leases; reported-OI leg unreachable at any positive price). Cheapness EXPENSIVE (reported) / FAIR (ex-imp) | +35% | Price < ≈$93; FY2026 results (~mid-Feb 2027, resets EV/OI basis); HEYDUDE / litigation / tariff development. Optional checkpoint Q2'26 (6 Aug 2026) |
 | BKE | The Buckle, Inc. | 2026-06-16 | v1 | WATCH | STRONG | ADEQUATE | PASS | $44.01 | CHEAP < ≈ $31 (MCap/TBV @allowance; strict all-four ≈ $25). Cheapness FAIR | +42% | FY2026 results (~Mar 2027) or price → band; watch Axis Denim single-vendor, CEO succession |
 | KSPI | JSC Kaspi.kz | 2026-06-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (Hepsiburada flag) | $78.58 ADS | CHEAP < ≈ $42–52 (MCap/TBV binding; EV-build dependent). Cheapness FAIR | +51% | FY2026 results (~Mar 2027), price < $58, or Rabobank close / Türkiye update |
@@ -109,6 +110,8 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+
+- **v25 — 2026-07-09** — INVE-B (Investor AB) ANALYSE v1 (new name): **WATCH**. Financial-institution / holdco **substitution rule** applied (BRK.B lineage — securities-heavy permanent-capital holding company): ROE substitutes for ROCE; FCFROCE / EV-OI / MCap-FCF n.m.; cheapness anchored on price-to-adjusted-NAV. Past **ADEQUATE** (borderline STRONG — 7-yr full-cycle FY2019–25 worst-variant ΣNI/Σequity **15.1%**, adj NAV/sh CAGR **14.8%/yr** STRONG-tier, one recovered −12% year (2022); held conservative pending FY2016–18 re-sourcing — strict 10-yr likely ~14–15%). Future **ADEQUATE** (moat-floored: Wallenberg Network/Ingrainedness + ~0.07% cost + permanent capital, stable; operating breadth/forces substituted — 0 strong, substitutes nearest-to-strong via index-replication of the listed book; single-name concentration ABB 16% + Atlas Copco 13% ≈29% of assets). SF **PASS** (P17 unreachable — 5%×NI = SEK 7,875m vs Swedish-norm comp; FAM AB HQ-property RPT SEK 1.4bn = 0.13% NAV, independently appraised & directors recused — immaterial; 1 soft P19 flag — de-minimis SEK 154m LTI-hedge buybacks, treasury net *falling*, resolved charitably per AXFO/NVS; Wallenberg dual-class ≈29% cap / ~50% votes a documented caveat, not a strike — rational allocation, rising dividend SEK 4.00→5.60). Cheapness **EXPENSIVE** — Px SEK 392 (8 Jul 2026) = ~+7% premium to Q1'26 adjusted NAV SEK 367 (≈+10% at wk high; +22% to reported NAV SEK 321), vs 7–13% *discounts* every year-end 2021–25. Band **CHEAP < ≈ SEK 294** (20% discount to adj NAV, operative; strict 25% ≈ SEK 275; reported-NAV line ≈ SEK 321) — project calibration for holdco discounts (no book figure exists; Marshall margin-of-safety doctrine + Investor discount history, BRK.B ≈1.2×-book precedent). Dist **+33%**; inserted in WATCH between BRK.B (+22%) and CROX (+35%). Data: FY2025 AR + Q1 2026 interim. Open for REVIEW: FY2016–18 for the strict 10-yr ROE (STRONG-confirmation); Q2 2026 NAV (16 Jul 2026); CEO Cederholm total comp. **Commit note:** session base was v21; the v3.2.1 base verification caught the parallel v22 (NKE flip), v23 (LULU SF flip) and v24 (PSH ANALYSE) landings pre-PUT (sixth live catch of the protocol) — re-merged INVE-B onto live v24 → v25, no lost update; the memo had already committed as a new file (additive, no conflict). Not held. **WATCH 15 · AVOID 37.**
 
 - **v24 — 2026-07-09** — PSH ANALYSE v1 (new name): **AVOID (SF FAIL)** — closed-end fund; §2·1A securities-holdco substitution rule applied. The 1.5% management + 16% performance fee is a manager-compensation extraction — substance P17 hard strike (~$650–750m 2025 fee inference vs ~$2.7bn NI: ~5× the 5%-of-NI hard-strike line, ~25× the ~$40m CPI-indexed absolute trigger; holds at the Ackman-personal level via PSCM ownership) — corroborated by the PSCM relationship as the dominant RPT. Empirical seal: net-of-fee NAV return trails the S&P 500 on four of five standard windows (10y 17.3% the only win; 5y 10.5%; ITD-since-2012 12.7% vs 15.0%). Past **ADEQUATE** (raw 10y ≥15% STRONG downgraded for the FY2015–18 four-year decline + benchmark lag; STRONG-on-raw alternate logged), Future **ADEQUATE** (permanent-capital floor vs key-man + fee drag), cheapness **CHEAP** on the MCap/NAV anchor (≈0.65×, ~35% discount vs BRK ~1.2× precedent) but structurally-justified and NAV struck before accrued performance fee — moot given SF FAIL. Leverage ~20.5% debt/total capital (passes). Not held; carried AVOID, no zone/band actionability. Inserted alphabetically (ORCL → PSH → PYPL). Px £37.96 (PSH.L 8 Jul close). **Commit note:** session base was v21; the v3.2.1 base verification caught the parallel v22 (NKE flip) and v23 (LULU SF flip) landings pre-PUT (fifth live catch of the protocol) and re-merged PSH onto live v23 → v24 — no lost update. Split **WATCH 14 · AVOID 37**.
 
