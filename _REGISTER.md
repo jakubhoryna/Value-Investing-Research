@@ -1,14 +1,14 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v23
+register_version: v24
 register_date: 2026-07-09
-names_total: 50
-verdict_split: "WATCH 14 · AVOID 36 · BUY 0 · DNAF 0"
+names_total: 51
+verdict_split: "WATCH 14 · AVOID 37 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v23 · 2026-07-09)
+# GSC Register — Master Watchlist (v24 · 2026-07-09)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -54,7 +54,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 year-end (~28 Jan 2027) — City Gross profitability + ROCE-trend re-test (STRONG re-opens ≥15%); Q2'26 (15 Jul 2026) optional. Soft SF: strict P19 sterilisation read of the de-minimis LTIP-hedge buybacks (18–23× EV/OI at execution) would strike — NVS-style sensitivity |
 
-### AVOID — 36 names, alphabetical
+### AVOID — 37 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -85,6 +85,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NOVO-B (NVO 1:1) | Novo Nordisk A/S | 2026-07-07 | v4 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | DKK 324.0 (6 Jul 2026 close) | CHEAP < ≈ DKK 172 (EV/OI binding, conservative EV; maint-basis MCap/FCF ≈ 173–188, P20) — moot given AVOID. Cheapness FAIR | — | AR-2026 / 2027 remuneration season (~Feb–Mar 2027) re-tests execution table (P19 hard strike: 2023–24 repurchases at ~31× EV/OI; 2026 pgm clean at 10.1×); H1-2026 (5 Aug 2026) band refresh only. **HELD — SELL-FLAG (sell-reason 2)** |
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $194.28 | CHEAP < ≈ $31.5 (MCap/FCF; P12 edge ≈ $37, where EV/OI binds) | — | FY2027 results (~Feb 2027), or structural change (customer deconcentration <10%s + comp reform) |
 | ORCL | Oracle Corporation | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $143.39 | No positive limit price on conservative EV; ≈$5–16 all-cash-excess (EV/OI; FCF n.m.) — academic. Cheapness EXPENSIVE | — | Sept 2026 proxy / FY2027 results — flip needs multi-year deleveraging + FCF inflection + comp reform |
+| PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PYPL | PayPal Holdings, Inc. | 2026-06-10 | v1 | AVOID (Future WEAK) | STRONG | WEAK | PASS | $41.46 | CHEAP < ≈ $38 (MCap/TBV @1.25×). Cheapness FAIR | — | FY2026 results (early Feb 2027), or ≥4 quarters branded-checkout TPV-share stabilisation under Lores |
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors band + re-tests FY26 buyback table (P19 hard strike: FY2020/FY2022 repurchases at 20.6×/24.8× MCap/FCF at execution; H1 FY26 running 13.4×/14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs a sustained change in buyback discipline (P19 hard strike: FY2021–25 repurchases at 23.6–48.5× MCap/FCF, 16.8–29.5× EV/OI); Q3 print 4 Aug 2026 optional |
@@ -108,6 +109,8 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+
+- **v24 — 2026-07-09** — PSH ANALYSE v1 (new name): **AVOID (SF FAIL)** — closed-end fund; §2·1A securities-holdco substitution rule applied. The 1.5% management + 16% performance fee is a manager-compensation extraction — substance P17 hard strike (~$650–750m 2025 fee inference vs ~$2.7bn NI: ~5× the 5%-of-NI hard-strike line, ~25× the ~$40m CPI-indexed absolute trigger; holds at the Ackman-personal level via PSCM ownership) — corroborated by the PSCM relationship as the dominant RPT. Empirical seal: net-of-fee NAV return trails the S&P 500 on four of five standard windows (10y 17.3% the only win; 5y 10.5%; ITD-since-2012 12.7% vs 15.0%). Past **ADEQUATE** (raw 10y ≥15% STRONG downgraded for the FY2015–18 four-year decline + benchmark lag; STRONG-on-raw alternate logged), Future **ADEQUATE** (permanent-capital floor vs key-man + fee drag), cheapness **CHEAP** on the MCap/NAV anchor (≈0.65×, ~35% discount vs BRK ~1.2× precedent) but structurally-justified and NAV struck before accrued performance fee — moot given SF FAIL. Leverage ~20.5% debt/total capital (passes). Not held; carried AVOID, no zone/band actionability. Inserted alphabetically (ORCL → PSH → PYPL). Px £37.96 (PSH.L 8 Jul close). **Commit note:** session base was v21; the v3.2.1 base verification caught the parallel v22 (NKE flip) and v23 (LULU SF flip) landings pre-PUT (fifth live catch of the protocol) and re-merged PSH onto live v23 → v24 — no lost update. Split **WATCH 14 · AVOID 37**.
 
 - **v23 — 2026-07-09** — LULU REVIEW v2: **SF PASS → FAIL** (P19 hard strike — the buyback caveat v1 flagged but declined to score, now computed at execution: FY2023 repurchases 1.5M sh / $559M at avg ~$373 → **21.2× EV/OI** lower-EV variant **and 28.8× MCap/FCF** on FY2023 figures — both > 20×, high-price year, no depressed-FCF caveat; FY2024 ~$313–321 avg → ~25× MCap/FCF (15× EV/OI flag); FY2025 ~$236 avg → 30.5× MCap/FCF (11.9× EV/OI, FCF tariff-depressed). Below-worth exception inapplicable (3–6× the ~$64 worth line); not sterilisation (count-reducing 122M→119M) — the price limb alone strikes, per the ROK/META/GOOGL/NKE precedent. P17 clean, restated. Corrects a v1 averaging-away of the price-limb strike.) **Verdict AVOID unchanged — now on two gates (Future WEAK + SF FAIL)**; not held, no zone impact. Governance delta (both v1 next-review triggers fired, both mis-recorded in v1 as unresolved): permanent CEO **Heidi O'Neill** (ex-Nike Pres. Consumer/Product/Brand) named 22 Apr 2026, effective 8 Sep 2026 (interim co-CEOs Frank/Maestrini bridge) — reduces the leadership-vacuum risk, does not touch the forces; **Wilson proxy contest settled** via cooperation agreement (AGM 25 Jun 2026) — 2 of 3 Wilson nominees (Gentile, Maurer) added to the board, declassification path (non-binding proposal → 2027 amendment → 2028 effective), Wilson standstill — softens the classified-board caveat, corroborates the substitutes/new-entrants calls (Wilson advises Alo & Vuori). Quality gates and band unchanged (no new FY). Px $118.77 → $113.62 (8 Jul close), still ~18–49% above the normalized band; cheapness FAIR. Split unchanged by LULU: WATCH 14 · AVOID 36 (LULU already AVOID). **Commit note:** the LULU register build (drafted as v22) collided with the parallel NKE v22 commit; the v3.2.1 base verification caught the mismatch pre-PUT (fourth live catch of the protocol), re-merged here onto the live v22 (NKE flip retained) and renumbered to v23 — no lost update.
 
