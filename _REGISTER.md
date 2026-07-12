@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v44
+register_version: v45
 register_date: 2026-07-12
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 69
-verdict_split: "WATCH 15 · AVOID 54 · BUY 0 · DNAF 0"
+names_total: 70
+verdict_split: "WATCH 15 · AVOID 55 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v44 · 2026-07-12)
+# GSC Register — Master Watchlist (v45 · 2026-07-12)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,7 +56,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike |
 
-### AVOID — 54 names, alphabetical
+### AVOID — 55 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -79,6 +79,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
 | GOOGL | Alphabet Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $359.69 (close 6 Jul 2026) | CHEAP < ≈ $67 (EV/OI, conservative EV, Q1-26 debt; maint MCap/FCF ≈ $78, P20; P12 edge ≈ $78; strict all-capex ≈ $48) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) + Apr 2027 proxy re-test P19 & Pichai comp; ad-tech remedy pending; alert < $120 |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
+| HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $207.48 (10 Jul 2026 close) | n.m. — EV/OI ≤ 7 unreachable at FY25 OI $7.4m (conservative EV); all-cash leg ≈ $28, MCap/FCF leg ≈ $88 — EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors OI/band; P19 watch — $1.0B 2026 pgm |
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
 | KER | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
@@ -129,10 +130,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v45 — 2026-07-12** — HUBS ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P17 8.8× line; P19 $500m tranche ≈ 46× MCap/FCF). 69 → 70 names.
 - **v44 — 2026-07-12** — Format migration (MODEL v3.3.0): cells to the §7.1 contract, log trimmed to 5 one-liners, open items tightened; v43 archived verbatim. No verdict/band/zone/ordering change.
 - **v43 — 2026-07-12** — CRM REVIEW v2: **AVOID unchanged** (Past WEAK + SF FAIL, each disqualifying); band < ≈ $55 unchanged; Future ADEQUATE retained with an Agentforce-deceleration tripwire.
 - **v42 — 2026-07-12** — TOTO (5332.T) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL — P19 strike on the FY3/26 tranche, 22.5× MCap/FCF). 68 → 69 names.
 - **v41 — 2026-07-11** — SONY (6758.T) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike, FYE3/24 tranche 32.1×); post-SFGI-spin perimeter; parallel-v40 base-verify catch (13th). 67 → 68 names.
-- **v40 — 2026-07-11** — EA ANALYSE v1: **AVOID** (Future WEAK + SF FAIL — five straight buyback years > 20×; Glu audit adverse); $210 take-private context, row terminal pending close. 66 → 67 names.
 
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 and back). Older log entries live inside the snapshots.*
+*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v44 and back). Older log entries live inside the snapshots.*
