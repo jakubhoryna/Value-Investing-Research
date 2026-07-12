@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v3.2.1
-model_date: 2026-07-07
+model_version: v3.3.0
+model_date: 2026-07-12
 status: live
 bootstrap_required: BOOTSTRAP v1.0.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.2.1 · 2026-07-07)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.3.0 · 2026-07-12)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -305,7 +305,7 @@ Front matter (verdict DNAF) + §1 Verdict + §2 Understanding explaining precise
 
 ### §6.5 After every memo
 
-End the chat reply with the §7.4a commit: print the register diff (old row → new row, or "new name") and the file list, obtain the one-word confirm ("commit"; a session-level "auto-commit" waives the gate, diff still printed), commit the memo + the full regenerated register, and report both commit URLs — plus the portfolio-table row if the name is HELD. On FILE fallback or any API failure, instead print the register row(s) as plain text for copy-paste and remind the user to save the memo to project knowledge and append/replace the row(s) in `_REGISTER.md` manually. Project-knowledge memo uploads are optional under the active backend (search convenience only).
+End the chat reply with the §7.4a commit: print the register diff (old row → new row, or "new name") and the file list, obtain the one-word confirm ("commit"; a session-level "auto-commit" waives the gate, diff still printed), commit the memo + the §7.5 snapshot + the full regenerated register, and report the commit URLs — plus the portfolio-table row if the name is HELD. On FILE fallback or any API failure, instead print the register row(s) as plain text for copy-paste and remind the user to save the memo to project knowledge and append/replace the row(s) in `_REGISTER.md` manually. Project-knowledge memo uploads are optional under the active backend (search convenience only).
 
 -----
 
@@ -318,6 +318,8 @@ End the chat reply with the §7.4a commit: print the register diff (old row → 
 ```
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px @ memo | Trigger band | Dist % | Next review / notes |
 ```
+
+**Format contract [v3.3.0] — the register is a lookup table, not a document.** A cell is a token, never a sentence chain. Hard caps: no cell exceeds **160 characters**. `Trigger band` carries the binding band, its metric, and at most one basis tag (e.g. `CHEAP < ≈ $93 (EV/OI, ex-imp FY25 OI) — EXPENSIVE`); `Next review / notes` carries the review date or event token, at most one flag token, and any price alert (e.g. `FY2026 10-K (~Feb 2027) re-tests P19; alert < ≈ $120`). Alternate band legs, execution tables, flip narratives, force tallies, and rationale of any kind live in the memo (§6.2 body, §6.3 appendices) — **the register points, the memo explains.** Portfolio-table cells follow the same discipline: `Zone` is the zone word plus a reason code (e.g. `SELL-FLAG (SR2)`); band and sell-line cells are figure + basis tag. `## Open items` entries are one line each. Anything a cap forces out is, by construction, already in a memo; if it is not, it goes into the memo at the next touch — never back into the register.
 
 **Ordering rule [v3.2].** The PORTFOLIO table always precedes the master table. The master table is sectioned by verdict in fixed order — **BUY → WATCH → AVOID** (DNAF, if any, last). Within BUY and WATCH, rows sort **ascending by relative distance to the buy zone**, shown in the `Dist %` column: `Dist % = last recorded price ÷ operative trigger − 1`. The **operative trigger** is the first headline "CHEAP < ≈ X" figure in the trigger-band cell — the memo's binding band; where that binding figure is printed as a range (data-treatment uncertainty), use its upper bound; substitution-rule names use their stated cheapness anchor; allowances, alternates, and P12 edges printed after the binding figure are never the ordering key. The **last recorded price** is Px @ memo, superseded by a fresher SWEEP price where one has been logged. Names with no computable trigger sort to the section bottom marked `n.m.`; AVOID rows stay alphabetical and print `—` (their bands are moot). Ordering and Dist % recompute at every register regeneration; distances on memo prices are stale by construction between sweeps — a SWEEP refreshes them (§8.3). No separate in-register verdict-summary section — the split lives in the register front matter.
 
@@ -364,18 +366,30 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 
 1. **PUT memo** → `contents/memos/<TICKER>_<date>_GSC.md` with body `{"message":"GSC: <TICKER> <ver> <verdict>","content":"<base64>","branch":"main"}`. Overwriting an existing path (same-day rerun) requires that file's current `sha` in the body.
 2. **GET** `contents/_REGISTER.md` (raw + metadata) → **base verification [v3.2.1]:** confirm the live file is byte-identical to the base this register build started from — equivalently, that the live change-log head is exactly the entry the new version increments. On mismatch, a parallel commit landed since the base fetch: **abort the PUT**, re-merge this session's rows onto the fresh live state (memo-wins), renumber to live-head + 1, re-print the diff, then proceed. Capture the current `"sha"` from this same fetch.
-3. **PUT register** → `{"message":"GSC: register — <TICKER> <verdict>","content":"<base64>","sha":"<sha>","branch":"main"}`.
-4. Report both commit URLs in the chat reply.
+3. **PUT snapshot [v3.3.0]** → `contents/registers/archive/REGISTER_v{N}_{YYYY-MM-DD}.md`, body = the outgoing register bytes captured in step 2, unchanged (new path, no sha; §7.5). On snapshot failure: abort before step 4 — nothing has changed.
+4. **PUT register** → `{"message":"GSC: register — <TICKER> <verdict>","content":"<base64>","sha":"<sha>","branch":"main"}`. On failure after a successful snapshot: retry this step only — the snapshot is idempotent for that version.
+5. Report the commit URLs in the chat reply.
 
 409 / sha-mismatch: re-fetch, re-run base verification, re-merge the row, retry once; then stop and report. **A fresh `sha` is not safety:** the sha guard rejects only files changed *after* the sha capture — a register built from a stale base and PUT with a freshly captured sha commits cleanly and silently erases the parallel work (lost update). Base verification is the guard against this; the sha guards only the fetch-to-PUT window. Precedent: the 2026-07-06 register-v9 collision (parallel ROK and BKNG sessions, both built from v8), repaired by the v10 merge commit.
 
-**Register generation rule.** Every committed `_REGISTER.md` is the **complete file** — front matter version and date bumped, portfolio table, master table **sectioned and ordered per §7.1 (BUY → WATCH → AVOID; Dist % recomputed, WATCH re-sorted)** with the new/replaced row merged into its verdict section, change log appended — never a fragment. On commit success, the §6.5 paste-block is skipped; on any API failure, fall back to the paste-block so nothing is lost.
+**Register generation rule.** Every committed `_REGISTER.md` is the **complete file** — front matter version and date bumped, portfolio table, master table **sectioned and ordered per §7.1 (BUY → WATCH → AVOID; Dist % recomputed, WATCH re-sorted)** with the new/replaced row merged into its verdict section, a one-line change-log entry prepended and the live log trimmed to the newest 5 (§7.5), all cells within the §7.1 format contract — never a fragment. On commit success, the §6.5 paste-block is skipped; on any API failure, fall back to the paste-block so nothing is lost.
 
 **Framework commits (MODEL mode only).** Governed by §0 and §8.4: outgoing version archived to `instructions/archive/MODEL_v{old}_{date}.md` (PUT, new path, no sha), then new `instructions/MODEL.md` PUT with its current sha — both under the explicit "commit model" confirm. The same base verification applies: before the MODEL.md PUT, confirm the live file still matches the version this draft amends; on mismatch, rebase the amendment and re-print the diff.
 
 **Mobile / no-bash sessions.** Paste-blocks per §6.5; the next PC session or RECONCILE commits the backlog.
 
 -----
+
+### §7.5 Register hygiene & archival [v3.3.0]
+
+The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`.
+
+- **Per-version snapshots.** Every register commit archives the outgoing version before the live PUT: the exact bytes captured for §7.4a base verification are PUT unchanged to `registers/archive/REGISTER_v{N}_{YYYY-MM-DD}.md` (N and date from the outgoing front matter; new path, no sha). Ordering makes this fail-safe: snapshot failure aborts before the live PUT (nothing has changed); live-PUT failure after a successful snapshot retries the live PUT only — the snapshot is idempotent for that version. Snapshots are append-only history, the register's counterpart to `instructions/archive/`; git history is the secondary net.
+- **Change-log cap.** The live change log keeps only the **newest 5 entries, one line each, ≤ 200 characters**: `vN — date — TICKER(s) action: verdict (deciding gate); note`. A standing pointer line below the log names the archive folder. Trimmed entries are never lost — each survives verbatim in the snapshot of every version that carried it, and every full register state is one file in the archive. Narrative belongs in the memo (§6.3 G is the per-name change log); the register log is a pointer log.
+- **General hygiene rule.** Any standing repo artifact that accrues history follows the same pattern: capped in-file tail, full outgoing versions archived to a sibling `archive/` folder in the same commit that supersedes them, live file kept lean. `MODEL.md` already does this under §0; the register does it here; apply it by default to any future standing artifact.
+
+-----
+
 
 ## §8. MODE PLAYBOOKS
 
@@ -419,7 +433,7 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 
 1. Fetch the current register per §7.4a and note its `register_date` and version.
 2. Search past chats (conversation_search / recent_chats) for every ANALYSE, REVIEW, and position event since that date; cross-check against the memo files actually present in the repo `memos/` folder (and project knowledge).
-3. Output, in one reply: (a) the complete replacement register file — front matter version bumped, all new/changed master rows merged into their verdict sections per the §7.1 ordering rule, portfolio table current, change log appended; (b) the list of memo files produced in chats but missing from the repo, committed in the same pass where recoverable; (c) any memo-vs-register conflicts, resolved memo-wins with a note.
+3. Output, in one reply: (a) the complete replacement register file — front matter version bumped, all new/changed master rows merged into their verdict sections per the §7.1 ordering rule, portfolio table current, one-line change-log entries prepended and the log trimmed per §7.5 (a batch reconcile is one commit — one snapshot of the pre-reconcile base); (b) the list of memo files produced in chats but missing from the repo, committed in the same pass where recoverable; (c) any memo-vs-register conflicts, resolved memo-wins with a note.
 4. Commit the register (and any recovered memos) per §7.4a and report the commit URLs; on API failure deliver everything as one paste-ready block/file. No web work; past-chats tools only.
 
 -----
@@ -435,6 +449,12 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 - The token is a secret: never echo or print it in chat prose, memos, or committed files, and never transmit it anywhere other than `api.github.com`. These guardrails restate the bootstrap's resident set; the bootstrap wins on any conflict.
 
 -----
+
+## v3.3.0 CHANGE LOG (2026-07-12)
+
+- **Register format contract (§7.1).** The register is a lookup table: 160-character cell cap; trigger-band cells carry binding band + metric + one basis tag; notes cells carry review token + one flag + price alert; open items one line each. Alternate legs, execution tables, flip narratives, and rationale live in the memo — the register points, the memo explains. Existing rows compress at the v44 migration; thereafter enforced at every row touch.
+- **Register hygiene & archival (new §7.5; §7.4a step 3 + generation rule; §6.5, §8.5 consequentials).** Every register commit snapshots the outgoing version verbatim to `registers/archive/REGISTER_v{N}_{date}.md` before the live PUT (fail-safe ordering: snapshot failure aborts; live-PUT failure retries live only). Live change log capped at the newest 5 one-line entries (≤ 200 chars) with a standing archive pointer; trimmed entries survive verbatim in snapshots. General rule: standing artifacts keep capped in-file tails and archive outgoing versions to sibling `archive/` folders in the same commit — `MODEL.md` already does under §0.
+- **MINOR release** — register-generation rules change; no gate, parameter, verdict, zone, band, or ordering impact. §8.4 step 3 scan: format-only, **zero names flip**. No bootstrap territory touched (config paths, guardrails, mode table unchanged; `registers/archive/` is defined here, not in bootstrap config).
 
 ## v3.2.1 CHANGE LOG (2026-07-07)
 
