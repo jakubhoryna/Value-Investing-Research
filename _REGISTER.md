@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v46
+register_version: v47
 register_date: 2026-07-13
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 71
-verdict_split: "WATCH 15 · AVOID 56 · BUY 0 · DNAF 0"
+names_total: 72
+verdict_split: "WATCH 15 · AVOID 57 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v46 · 2026-07-13)
+# GSC Register — Master Watchlist (v47 · 2026-07-13)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,7 +56,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike |
 
-### AVOID — 56 names, alphabetical
+### AVOID — 57 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -88,6 +88,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-10 | v1 | AVOID (SF FAIL: P19 buybacks + acquisition) | ADEQUATE | STRONG | FAIL | €492.95 (10 Jul 2026) | CHEAP < ≈ €179 (EV/OI, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 (~Jan 2027) + 2027 URD re-test P19 (strikes 2019–24; Tiffany audit adverse) — structural at family control. Past watch: 2 ROCE down-yrs |
 | META | Meta Platforms, Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $618.98 (7 Jul 2026 intraday) | CHEAP < ≈ $193 (EV/OI, conservative EV, P20; maint MCap/FCF ≈ $230 = P12 edge; strict all-capex ≈ $143) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jan 2027) + Apr 2027 proxy re-test P19 & option grants (2021–25: 4 of 5 yrs > 20×); FTC appeal pending |
+| MORN | Morningstar, Inc. | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $165.18 (13 Jul 2026) | CHEAP < ≈ $61 (EV/OI, conservative EV, Q1'26 debt; MCap/FCF leg ≈ $93; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test FY26 tranche & L/E (Q1'26 ~291% pro-forma); flip needs a below-flag pgm year (FY22 & FY25 > 20×); alert < ≈ $75 |
 | MSFT | Microsoft Corporation | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | STRONG | ADEQUATE | FAIL | ~$390 | CHEAP < ≈ $105 (EV/OI, conservative EV, P20 maintenance basis; P12 edge ≈ $113; strict all-capex ≈ $77). Cheapness EXPENSIVE | — | FY2026 10-K, results 28 Jul 2026 — band moves; P19 re-test on FY26 buyback table (FY23–25 at 22.5–25.5× EV/OI) |
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
@@ -131,10 +132,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v47 — 2026-07-13** — MORN ANALYSE v1: **AVOID** (SF FAIL — P19 hard strikes: FY25 tranche $787M @ 22.9× MCap/FCF / 20.6× EV/OI; FY22 65×). 71 → 72 names.
 - **v46 — 2026-07-13** — DOCU ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P19 hard strikes ×4, FY24 tranche 286× EV/OI; P17). 70 → 71 names.
 - **v45 — 2026-07-12** — HUBS ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P17 8.8× line; P19 $500m tranche ≈ 46× MCap/FCF). 69 → 70 names.
 - **v44 — 2026-07-12** — Format migration (MODEL v3.3.0): cells to the §7.1 contract, log trimmed to 5 one-liners, open items tightened; v43 archived verbatim. No verdict/band/zone/ordering change.
 - **v43 — 2026-07-12** — CRM REVIEW v2: **AVOID unchanged** (Past WEAK + SF FAIL, each disqualifying); band < ≈ $55 unchanged; Future ADEQUATE retained with an Agentforce-deceleration tripwire.
-- **v42 — 2026-07-12** — TOTO (5332.T) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL — P19 strike on the FY3/26 tranche, 22.5× MCap/FCF). 68 → 69 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v44 and back). Older log entries live inside the snapshots.*
