@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v45
-register_date: 2026-07-12
+register_version: v46
+register_date: 2026-07-13
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 70
-verdict_split: "WATCH 15 · AVOID 55 · BUY 0 · DNAF 0"
+names_total: 71
+verdict_split: "WATCH 15 · AVOID 56 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v45 · 2026-07-12)
+# GSC Register — Master Watchlist (v46 · 2026-07-13)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,7 +56,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike |
 
-### AVOID — 55 names, alphabetical
+### AVOID — 56 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -73,6 +73,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | COST | Costco Wholesale Corporation | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | STRONG | FAIL | $912.97 | CHEAP < ≈ $141 (MCap/FCF binding; EV/OI leg ≈ $175; P12 edge ≈ $175) — moot given AVOID. Cheapness EXPENSIVE (51.8× MCap/FCF, 38.6× EV/OI) | — | FY2026 (~Sep 2026) P19 re-test (FY21–25 all > 20× EV/OI); flip needs a below-worth year or a halt; alert < ≈ $210 |
 | CRM | Salesforce, Inc. | 2026-07-12 | v2 | AVOID (Past WEAK + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | $163.32 | CHEAP < ≈ $55 (EV/OI @1.25×). Cheapness EXPENSIVE | — | Q2 FY27 (~2 Sep 2026, optional Agentforce-ARR check); FY27 10-K (~Mar 2027) status check; BUY needs Past upgrade (~FY2030 earliest) + deleverage + price |
 | CSG | CSG N.V. (Czechoslovak Group) | 2026-07-10 | v1 | AVOID (Past WEAK: leverage + Future WEAK: breadth + SF FAIL: flag pair) | WEAK | WEAK | FAIL | €13.60 (10 Jul 2026) | n.m. — FY2025 FCF −€470m, no price satisfies both primaries (EV/OI-leg context ≈ €7.8–8.6; no P12). Cheapness EXPENSIVE | — | H1 7 Aug 2026 (FCF, leverage, Ammo+); FY2026 AR (~Mar 2027); NSPA/Belgian-probe news reviews immediately |
+| DOCU | Docusign, Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: buybacks + comp) | WEAK | WEAK | FAIL | $49.18 | CHEAP < ≈ $9.7 (EV/OI, consv EV) — EXPENSIVE | — | FY2027 10-K (~Mar 2027) re-anchors band |
 | DSY | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
@@ -130,10 +131,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v46 — 2026-07-13** — DOCU ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P19 hard strikes ×4, FY24 tranche 286× EV/OI; P17). 70 → 71 names.
 - **v45 — 2026-07-12** — HUBS ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P17 8.8× line; P19 $500m tranche ≈ 46× MCap/FCF). 69 → 70 names.
 - **v44 — 2026-07-12** — Format migration (MODEL v3.3.0): cells to the §7.1 contract, log trimmed to 5 one-liners, open items tightened; v43 archived verbatim. No verdict/band/zone/ordering change.
 - **v43 — 2026-07-12** — CRM REVIEW v2: **AVOID unchanged** (Past WEAK + SF FAIL, each disqualifying); band < ≈ $55 unchanged; Future ADEQUATE retained with an Agentforce-deceleration tripwire.
 - **v42 — 2026-07-12** — TOTO (5332.T) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL — P19 strike on the FY3/26 tranche, 22.5× MCap/FCF). 68 → 69 names.
-- **v41 — 2026-07-11** — SONY (6758.T) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike, FYE3/24 tranche 32.1×); post-SFGI-spin perimeter; parallel-v40 base-verify catch (13th). 67 → 68 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v44 and back). Older log entries live inside the snapshots.*
