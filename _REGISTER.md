@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v57
+register_version: v58
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 81
-verdict_split: "WATCH 16 · AVOID 65 · BUY 0 · DNAF 0"
+names_total: 82
+verdict_split: "WATCH 16 · AVOID 66 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v57 · 2026-07-14)
+# GSC Register — Master Watchlist (v58 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -93,6 +93,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MAERSK-B | A.P. Møller - Mærsk A/S | 2026-07-14 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | DKK 16,685 (14 Jul 2026) | CHEAP < ≈ DKK 12,000 (EV/OI, FY25 OI; MCap/FCF leg ≈ DKK 18,000 passes) — FAIR | — | FY2026 AR (~Feb 2027); FY26 guid. EBIT −1.5–1.0bn → band n.m.; structural: 2 strong forces, no moat |
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-10 | v1 | AVOID (SF FAIL: P19 buybacks + acquisition) | ADEQUATE | STRONG | FAIL | €492.95 (10 Jul 2026) | CHEAP < ≈ €179 (EV/OI, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 (~Jan 2027) + 2027 URD re-test P19 (strikes 2019–24; Tiffany audit adverse) — structural at family control. Past watch: 2 ROCE down-yrs |
 | META | Meta Platforms, Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $618.98 (7 Jul 2026 intraday) | CHEAP < ≈ $193 (EV/OI, conservative EV, P20; maint MCap/FCF ≈ $230 = P12 edge; strict all-capex ≈ $143) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jan 2027) + Apr 2027 proxy re-test P19 & option grants (2021–25: 4 of 5 yrs > 20×); FTC appeal pending |
+| MICC | The Magnum Ice Cream Company N.V. | 2026-07-14 | v1 | AVOID (Past WEAK: L/E ~1,097% + thin history · Future WEAK: 2 strong forces) | WEAK | WEAK | PASS (2 flags) | €16.31 (14 Jul 2026; $18.53 NYSE) | n.m. for entry (AVOID) — context CHEAP < ≈ €3.8 (EV/OI, norm FY24 OI; net debt €3.0bn); ≈ €1.7 as-reported FY25 | — | FY2026 results (~Feb–Mar 2027) reset returns/FCF + normalize B/S; alert < ≈ €4; confirm CEO comp vs €6.3m P17 line |
 | MORN | Morningstar, Inc. | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $165.18 (13 Jul 2026) | CHEAP < ≈ $61 (EV/OI, conservative EV, Q1'26 debt; MCap/FCF leg ≈ $93; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test FY26 tranche & L/E (Q1'26 ~291% pro-forma); flip needs a below-flag pgm year (FY22 & FY25 > 20×); alert < ≈ $75 |
 | MSFT | Microsoft Corporation | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | STRONG | ADEQUATE | FAIL | ~$390 | CHEAP < ≈ $105 (EV/OI, conservative EV, P20 maintenance basis; P12 edge ≈ $113; strict all-capex ≈ $77). Cheapness EXPENSIVE | — | FY2026 10-K, results 28 Jul 2026 — band moves; P19 re-test on FY26 buyback table (FY23–25 at 22.5–25.5× EV/OI) |
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
@@ -141,10 +142,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v58 — 2026-07-14** — MICC ANALYSE v1: **AVOID** (Past WEAK — L/E ~1,097% leveraged spin + thin carve-out history; Future WEAK — 2 strong forces). EXPENSIVE ~22× EV/OI FY25. 81 → 82 names.
 - **v57 — 2026-07-14** — ULVR ANALYSE v1: **WATCH** (Past STRONG ROCE 18.2%; Future ADEQUATE, 1 strong force; SF PASS, 1 P19 flag; EXPENSIVE ~16× EV/OI). Trigger ≈ €17.3, +209%. 80 → 81 names.
 - **v56 — 2026-07-14** — TEAM ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE −17.4%, 6 loss-yrs of 10; SF FAIL — P17 vs negative NI + P19 FY25 tranche 36.3× & FY23–25 sterilisation). 79 → 80 names.
 - **v55 — 2026-07-14** — SWEEP price/ordering refresh (Yahoo, 14 Jul): 15 WATCH Dist % + ordering recomputed, none IN RANGE/NEAR (closest BRK.B +24%); portfolio zone checks refreshed, zones unchanged.
 - **v54 — 2026-07-14** — MAERSK-B ANALYSE v1: **AVOID** (Future WEAK — 2 strong forces, no group moat; Past ADEQUATE, windfall-carried; SF PASS; FAIR at DKK 16,685). 78 → 79 names.
-- **v53 — 2026-07-14** — SHOP ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 0.5%, 6 loss-yrs of 10; SF FAIL — P17 hard strike: FY24 CEO comp $150m = 1.9× cap, FY23 $76m = 11.5×). 77 → 78 names.
 
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v54 and back). Older log entries live inside the snapshots.*
+*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
