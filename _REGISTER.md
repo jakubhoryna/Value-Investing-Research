@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v53
+register_version: v54
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 78
-verdict_split: "WATCH 15 · AVOID 63 · BUY 0 · DNAF 0"
+names_total: 79
+verdict_split: "WATCH 15 · AVOID 64 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v53 · 2026-07-14)
+# GSC Register — Master Watchlist (v54 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,7 +56,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike |
 
-### AVOID — 63 names, alphabetical
+### AVOID — 64 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -89,6 +89,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
 | LULU | lululemon athletica inc. | 2026-07-09 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $113.62 (8 Jul 2026 close) | CHEAP < ≈ $64 (MCap/FCF, reported FY2025 FCF); ≈ $76–96 on 5–3yr normalized FCF. Cheapness FAIR — academic given AVOID | — | Q2 FY26 (~Sep 2026) — O'Neill's first quarter; FY2026 10-K (~Mar 2027) re-anchors. Governance triggers cleared |
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
+| MAERSK-B | A.P. Møller - Mærsk A/S | 2026-07-14 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | DKK 16,685 (14 Jul 2026) | CHEAP < ≈ DKK 12,000 (EV/OI, FY25 OI; MCap/FCF leg ≈ DKK 18,000 passes) — FAIR | — | FY2026 AR (~Feb 2027); FY26 guid. EBIT −1.5–1.0bn → band n.m.; structural: 2 strong forces, no moat |
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-10 | v1 | AVOID (SF FAIL: P19 buybacks + acquisition) | ADEQUATE | STRONG | FAIL | €492.95 (10 Jul 2026) | CHEAP < ≈ €179 (EV/OI, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 (~Jan 2027) + 2027 URD re-test P19 (strikes 2019–24; Tiffany audit adverse) — structural at family control. Past watch: 2 ROCE down-yrs |
 | META | Meta Platforms, Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $618.98 (7 Jul 2026 intraday) | CHEAP < ≈ $193 (EV/OI, conservative EV, P20; maint MCap/FCF ≈ $230 = P12 edge; strict all-capex ≈ $143) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jan 2027) + Apr 2027 proxy re-test P19 & option grants (2021–25: 4 of 5 yrs > 20×); FTC appeal pending |
 | MORN | Morningstar, Inc. | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $165.18 (13 Jul 2026) | CHEAP < ≈ $61 (EV/OI, conservative EV, Q1'26 debt; MCap/FCF leg ≈ $93; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test FY26 tranche & L/E (Q1'26 ~291% pro-forma); flip needs a below-flag pgm year (FY22 & FY25 > 20×); alert < ≈ $75 |
@@ -138,10 +139,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v54 — 2026-07-14** — MAERSK-B ANALYSE v1: **AVOID** (Future WEAK — 2 strong forces, no group moat; Past ADEQUATE, windfall-carried; SF PASS; FAIR at DKK 16,685). 78 → 79 names.
 - **v53 — 2026-07-14** — SHOP ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 0.5%, 6 loss-yrs of 10; SF FAIL — P17 hard strike: FY24 CEO comp $150m = 1.9× cap, FY23 $76m = 11.5×). 77 → 78 names.
 - **v52 — 2026-07-14** — HHH ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 3.2%, FCFROCE < 0; Future WEAK — breadth FAIL; SF FAIL — P17 comp + P19 FY22 buyback 21×). 76 → 77 names.
 - **v51 — 2026-07-14** — BRZE ANALYSE v1: **AVOID** (Past WEAK — 7 yrs OI < 0, all four norm. ROCE negative; Future WEAK — 2 strong forces; SF FAIL — P17 comp 4.9× FCF line + P19 sterilisation ASR ≈52–58× MCap/FCF). 75 → 76 names.
 - **v50 — 2026-07-13** — 6503.T ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 7.3%; SF FAIL — P19: FY25/FY26 tranches 21.1×/20.6× MCap/FCF strict + Nozomi audit). 74 → 75 names.
-- **v49 — 2026-07-13** — SU ANALYSE v1: **AVOID** (SF FAIL — P19 hard strikes: FY25 buybacks 28.1× MCap/FCF / 21.5× EV/OI + sterilisation; AVEVA minority buyout ≈45× flattering basis). 73 → 74 names.
 
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v52 and back). Older log entries live inside the snapshots.*
+*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v53 and back). Older log entries live inside the snapshots.*
