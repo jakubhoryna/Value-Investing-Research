@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v63
+register_version: v64
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 86
-verdict_split: "WATCH 17 · AVOID 69 · BUY 0 · DNAF 0"
+names_total: 87
+verdict_split: "WATCH 17 · AVOID 70 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v63 · 2026-07-14)
+# GSC Register — Master Watchlist (v64 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -58,7 +58,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 69 names, alphabetical
+### AVOID — 70 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -106,6 +106,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $194.28 | CHEAP < ≈ $31.5 (MCap/FCF; P12 edge ≈ $37, where EV/OI binds) | — | FY2027 results (~Feb 2027), or structural change (customer deconcentration <10%s + comp reform) |
 | ORCL | Oracle Corporation | 2026-07-14 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $129.68 (14 Jul 2026) | No positive limit price on conservative EV; ≈$5–16 all-cash-excess (EV/OI; FCF n.m.) — academic. Cheapness EXPENSIVE | — | Q1 FY2027 (~Sept 2026); S&P BBB- (Jul'26) confirms leverage; flip needs deleveraging + FCF inflection + comp reform |
 | PAH3 (POAHY ADR) | Porsche Automobil Holding SE | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €28.08 (9 Jul 2026; mcap ≈ €8.4bn) | CHEAP < ≈ €22 (NAV-discount anchor ≈45% vs ~33% structural; substitution rule) — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027) — VW/Porsche AG impairment trend + NAV re-anchor; H1 2026 (~mid-Aug 2026); or price < ≈ €22 |
+| PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL | $134.83 (14 Jul 2026) | CHEAP < ≈ $6.6 (MCap/FCF 8×; EV/OI all-cash ≈ $6.6; strict ≈ $3.8; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) extends thin ~6y record; 2027 proxy re-tests governance; structural — no price flips |
 | PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PYPL | PayPal Holdings, Inc. | 2026-06-10 | v1 | AVOID (Future WEAK) | STRONG | WEAK | PASS | $41.46 | CHEAP < ≈ $38 (MCap/TBV @1.25×). Cheapness FAIR | — | FY2026 results (early Feb 2027), or ≥4 quarters branded-checkout TPV-share stabilisation under Lores |
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors + FY26 buyback re-test (H1 running 13.4–14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
@@ -146,10 +147,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v64 — 2026-07-14** — PLTR ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE 0.4%/5.4% vs 10% floor + ~6y thin history; SF FAIL — flag pair: dual-class entrenchment + 2020–21 SPAC-RPT). Future ADEQUATE; EXPENSIVE ~224× EV/OI / ~154× FCF; trigger ≈ $6.6, +1,958% (widest). 86 → 87 names.
 - **v63 — 2026-07-14** — IBM ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.6–8.4% < 10% on GW-laden CE; L/E 365%). Future ADEQUATE, SF PASS, EXPENSIVE 17× FCF/~21× EV/OI. 85→86 names.
 - **v62 — 2026-07-14** — ENB ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 4.2%, L/E 245%, per-share BV/TBV growth ≤ floor). EXPENSIVE 26× EV/OI; no positive-price trigger (net debt ≈ 10.5× OI). 84 → 85 names.
 - **v61 — 2026-07-14** — ORCL REVIEW v2: **AVOID** unchanged (triple gate). Px $143.39→$129.68; EV/OI ~26×→24.6×, EXPENSIVE. New: S&P BBB-, FY27 ~$95B capex/$40B fin, OpenAI erosion; band unchanged.
 - **v60 — 2026-07-14** — CSU ANALYSE v1: **WATCH** (Past ADEQUATE [P1-capped; STRONG-tier ROCE ~17%/FCFROCE ~25%]; Future STRONG; SF PASS). EXPENSIVE ~15.5× FCF / ~23–25× EV/OI; trigger ≈ CAD 513, +434%. 83 → 84 names.
-- **v59 — 2026-07-14** — TRI ANALYSE v1: **AVOID** (SF FAIL — P19 buybacks 2021–25 at ~27–40× OI/FCF, >20× every yr). Past ADEQUATE (ROCE ~11% w-o-4), Future ADEQUATE (1 strong force: AI substitutes), EXPENSIVE ~20× post-49% crash. Trigger ≈ $30, +202%. 82 → 83 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
