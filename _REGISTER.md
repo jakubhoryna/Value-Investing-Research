@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v64
+register_version: v65
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 87
-verdict_split: "WATCH 17 · AVOID 70 · BUY 0 · DNAF 0"
+names_total: 88
+verdict_split: "WATCH 17 · AVOID 71 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v64 · 2026-07-14)
+# GSC Register — Master Watchlist (v65 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -58,7 +58,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 70 names, alphabetical
+### AVOID — 71 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -90,6 +90,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBM | International Business Machines Corp. | 2026-07-14 | v1 | AVOID (Past WEAK: ROCE w-o-4 6.6–8.4% < 10%; L/E 365%) | WEAK | ADEQUATE | PASS | $218.80 | CHEAP < ≈ $37 (EV/OI binding; MCap/FCF leg ≈ $103) — EXPENSIVE | — | FY2026 10-K (~Feb 2027); or price < ≈ $103 (MCap/FCF leg) |
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
 | KER | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
+| LIN | Linde plc | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P19 buybacks) | WEAK | STRONG | FAIL | $522.97 | CHEAP < ≈ $81 (EV/OI, consv EV, GW-laden CE; MCap/FCF leg ≈ $86; no P12) — EXPENSIVE ~30× | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test P19; Past-WEAK structural (worst-of-4 ROCE ~8%) |
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
 | LULU | lululemon athletica inc. | 2026-07-09 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $113.62 (8 Jul 2026 close) | CHEAP < ≈ $64 (MCap/FCF, reported FY2025 FCF); ≈ $76–96 on 5–3yr normalized FCF. Cheapness FAIR — academic given AVOID | — | Q2 FY26 (~Sep 2026) — O'Neill's first quarter; FY2026 10-K (~Mar 2027) re-anchors. Governance triggers cleared |
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
@@ -147,10 +148,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v65 — 2026-07-14** — LIN ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE ~8.1%/FCFROCE ~6.6% < floor on merger-GW-laden CE; SF FAIL — P19 hard strike, FY25 buybacks ~27× EV/OI). Future STRONG, comp clean; EXPENSIVE ~30× EV/OI / ~48× FCF; trigger ≈ $81, +547%. 87 → 88 names.
 - **v64 — 2026-07-14** — PLTR ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE 0.4%/5.4% vs 10% floor + ~6y thin history; SF FAIL — flag pair: dual-class entrenchment + 2020–21 SPAC-RPT). Future ADEQUATE; EXPENSIVE ~224× EV/OI / ~154× FCF; trigger ≈ $6.6, +1,958% (widest). 86 → 87 names.
 - **v63 — 2026-07-14** — IBM ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.6–8.4% < 10% on GW-laden CE; L/E 365%). Future ADEQUATE, SF PASS, EXPENSIVE 17× FCF/~21× EV/OI. 85→86 names.
 - **v62 — 2026-07-14** — ENB ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 4.2%, L/E 245%, per-share BV/TBV growth ≤ floor). EXPENSIVE 26× EV/OI; no positive-price trigger (net debt ≈ 10.5× OI). 84 → 85 names.
 - **v61 — 2026-07-14** — ORCL REVIEW v2: **AVOID** unchanged (triple gate). Px $143.39→$129.68; EV/OI ~26×→24.6×, EXPENSIVE. New: S&P BBB-, FY27 ~$95B capex/$40B fin, OpenAI erosion; band unchanged.
-- **v60 — 2026-07-14** — CSU ANALYSE v1: **WATCH** (Past ADEQUATE [P1-capped; STRONG-tier ROCE ~17%/FCFROCE ~25%]; Future STRONG; SF PASS). EXPENSIVE ~15.5× FCF / ~23–25× EV/OI; trigger ≈ CAD 513, +434%. 83 → 84 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
