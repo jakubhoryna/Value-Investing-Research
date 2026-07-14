@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v56
+register_version: v57
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 80
-verdict_split: "WATCH 15 · AVOID 65 · BUY 0 · DNAF 0"
+names_total: 81
+verdict_split: "WATCH 16 · AVOID 65 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v56 · 2026-07-14)
+# GSC Register — Master Watchlist (v57 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 15 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 16 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,6 +51,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NVS (NOVN SIX; ADR 1:1) | Novartis AG                     | 2026-07-05 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 flag)                             | ~$152 ADR (≈CHF 122)                     | CHEAP < ≈ $55 (EV/OI binding, conservative EV; MCap/FCF leg ≈ $73). No P12 edge. Cheapness EXPENSIVE                                    | +179%  | FY2026 (~Feb 2027) Entresto-trough resets band; alert < ~$75; IRA/MFN or pelacarsen readout. Soft WATCH                                             |
 | SDZ (SDZNY ADR 1:1)     | Sandoz Group AG                 | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$84.2 (CHF 67.04)                       | CHEAP < ≈ $28 (mgmt-FCF) to ≈ $20 (strict). Cheapness EXPENSIVE. Thin spin-off history caveat                                           | +192%  | FY2026 results (~Feb 2027), or USD into high-$20s/low-$30s; watch generic-semaglutide decision & penicillin-API normalisation                       |
 | ADYEN                   | Adyen N.V.                      | 2026-06-11 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | €817.40                                  | CHEAP < ≈ €286 (MCap/FCF @1.25×; strict all-four ≈ €229)                                                                                | +195%  | H1 2026 results (Aug 2026), Talon.One integration, or price < €350                                                                                  |
+| ULVR (LSE; UNA; UL 1:1) | Unilever PLC                    | 2026-07-14 | v1  | WATCH   | STRONG   | ADEQUATE | PASS (1 P19 flag)                         | €53.53 (UNA); £45.64 ULVR; $61.16 UL     | CHEAP < ≈ €17.3 (EV/OI, consv EV; MCap/FCF leg ≈ €21.6; P12 edge ≈ €24.5). Cheapness EXPENSIVE                                          | +209%  | FY2026 (~Feb 2027) resets continuing-ops base; watch 2026 buyback multiple (2025 ~18× MCap/FCF, near P19 strike); alert < ≈ €25          |
 | TSM (2330; ADR 1:5)     | Taiwan Semiconductor Mfg Co     | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | NT$2,490                                 | CHEAP < ≈ NT$600 (EV/OI; MCap/FCF suspended — P20 AI-capex cycle). Cheapness EXPENSIVE                                                  | +303%  | FY2026 results (Feb 2027), price < NT$700 (NEAR), or process-lead loss / Taiwan-Strait / export-control shift                                       |
 | AMZN                    | Amazon.com, Inc.                | 2026-07-05 | v2  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$243                                    | CHEAP < ≈ $56 (EV/OI binding; maintenance-basis MCap/FCF corroborates ≈ $50–72 per anchor, P20). Cheapness EXPENSIVE                    | +342%  | FY2026 10-K (~Feb 2027); Q2 2026 results (30 Jul 2026) for AWS growth/capex; earlier if < $90 or AI-capex guidance cut materially                   |
 | IBKR                    | Interactive Brokers Group, Inc. | 2026-07-05 | v2  | WATCH   | STRONG   | STRONG   | PASS                                      | $91.65                                   | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +368%  | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income                                                       |
@@ -140,10 +141,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v57 — 2026-07-14** — ULVR ANALYSE v1: **WATCH** (Past STRONG ROCE 18.2%; Future ADEQUATE, 1 strong force; SF PASS, 1 P19 flag; EXPENSIVE ~16× EV/OI). Trigger ≈ €17.3, +209%. 80 → 81 names.
 - **v56 — 2026-07-14** — TEAM ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE −17.4%, 6 loss-yrs of 10; SF FAIL — P17 vs negative NI + P19 FY25 tranche 36.3× & FY23–25 sterilisation). 79 → 80 names.
 - **v55 — 2026-07-14** — SWEEP price/ordering refresh (Yahoo, 14 Jul): 15 WATCH Dist % + ordering recomputed, none IN RANGE/NEAR (closest BRK.B +24%); portfolio zone checks refreshed, zones unchanged.
 - **v54 — 2026-07-14** — MAERSK-B ANALYSE v1: **AVOID** (Future WEAK — 2 strong forces, no group moat; Past ADEQUATE, windfall-carried; SF PASS; FAIR at DKK 16,685). 78 → 79 names.
 - **v53 — 2026-07-14** — SHOP ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 0.5%, 6 loss-yrs of 10; SF FAIL — P17 hard strike: FY24 CEO comp $150m = 1.9× cap, FY23 $76m = 11.5×). 77 → 78 names.
-- **v52 — 2026-07-14** — HHH ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 3.2%, FCFROCE < 0; Future WEAK — breadth FAIL; SF FAIL — P17 comp + P19 FY22 buyback 21×). 76 → 77 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v54 and back). Older log entries live inside the snapshots.*
