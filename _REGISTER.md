@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v52
+register_version: v53
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 77
-verdict_split: "WATCH 15 · AVOID 62 · BUY 0 · DNAF 0"
+names_total: 78
+verdict_split: "WATCH 15 · AVOID 63 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v52 · 2026-07-14)
+# GSC Register — Master Watchlist (v53 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,7 +56,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike |
 
-### AVOID — 62 names, alphabetical
+### AVOID — 63 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -105,6 +105,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors + FY26 buyback re-test (H1 running 13.4–14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs sustained buyback discipline (FY21–25 strikes both bases); Q3 4 Aug 2026 opt. |
 | SAP | SAP SE | 2026-07-04 | v1 | AVOID (SF FAIL: buybacks to service SBC) | ADEQUATE | STRONG | FAIL | €139.24 (Xetra, 3 Jul 2026) | CHEAP < ≈ €48.6 (EV/OI, no-excess-cash variant binding; MCap/FCF ≈ €56.3) — moot given AVOID | — | FY2026 results (~late Jan 2027), buyback-policy change (€5bn 2023–25 at ~18–30× EV/OI; €10bn 2026–27 entrenches), or price < ≈ €55 |
+| SHOP | Shopify Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 comp) | WEAK | STRONG | FAIL | $124.74 (14 Jul 2026) | CHEAP < ≈ $7.7 (EV/OI, consv EV; MCap/FCF leg ≈ $12.3; no P12) — EXPENSIVE, moot given AVOID | — | 2027 proxy (~Apr 2027) re-tests P17 (FY24 comp $150m = 1.9× cap); FY2026 10-K (~Feb 2027) re-anchors; Past flip ~FY2028 earliest |
 | SIE | Siemens AG | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | €269.60 | CHEAP < ≈ €25–36 mechanical (EV/OI, then TBV); ≈ €36–45 with SFS-debt adjustment — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Dec 2026) re-tests FY26 buyback (strikes FY17/20/21/25); Feb 2027 AGM spin vote forces full quality re-base |
 | SONY (6758.T, ADR 1:1) | Sony Group Corporation | 2026-07-11 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | ¥3,359 ≈ $20.85 ADR (10 Jul 2026) | CHEAP < ≈ ¥1,342 ≈ $8.3 ADR (EV/OI, conservative EV; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~May 2027); H1 ~Nov 2026 re-tests ¥500bn facility under P19. Ex-FS ROCE on the 10% floor — one weak year flips Past. Alert < ¥2,000 |
 | SPCX | Space Exploration Technologies Corp. | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $152.88 (9 Jul 2026 intraday) | n.m. — FY2025 OI −$2.6bn & FCF −$14.0bn; no positive price clears either primary | — | First public 10-K (~Feb–Mar 2027) informational; triple-gate structural. Starlink spin-out filing → fresh ANALYSE |
@@ -137,10 +138,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v53 — 2026-07-14** — SHOP ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 0.5%, 6 loss-yrs of 10; SF FAIL — P17 hard strike: FY24 CEO comp $150m = 1.9× cap, FY23 $76m = 11.5×). 77 → 78 names.
 - **v52 — 2026-07-14** — HHH ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 3.2%, FCFROCE < 0; Future WEAK — breadth FAIL; SF FAIL — P17 comp + P19 FY22 buyback 21×). 76 → 77 names.
 - **v51 — 2026-07-14** — BRZE ANALYSE v1: **AVOID** (Past WEAK — 7 yrs OI < 0, all four norm. ROCE negative; Future WEAK — 2 strong forces; SF FAIL — P17 comp 4.9× FCF line + P19 sterilisation ASR ≈52–58× MCap/FCF). 75 → 76 names.
 - **v50 — 2026-07-13** — 6503.T ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 7.3%; SF FAIL — P19: FY25/FY26 tranches 21.1×/20.6× MCap/FCF strict + Nozomi audit). 74 → 75 names.
 - **v49 — 2026-07-13** — SU ANALYSE v1: **AVOID** (SF FAIL — P19 hard strikes: FY25 buybacks 28.1× MCap/FCF / 21.5× EV/OI + sterilisation; AVEVA minority buyout ≈45× flattering basis). 73 → 74 names.
-- **v48 — 2026-07-13** — GTLB ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P17 comp 6.1× the FCF line, NI negative; P19 Q1 FY27 tranche 16.1× MCap/FCF, OI < 0). 72 → 73 names.
 
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v51 and back). Older log entries live inside the snapshots.*
+*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v52 and back). Older log entries live inside the snapshots.*
