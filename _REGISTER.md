@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v59
+register_version: v60
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 83
-verdict_split: "WATCH 16 · AVOID 67 · BUY 0 · DNAF 0"
+names_total: 84
+verdict_split: "WATCH 17 · AVOID 67 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v59 · 2026-07-14)
+# GSC Register — Master Watchlist (v60 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 16 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 17 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,6 +55,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | TSM (2330; ADR 1:5)     | Taiwan Semiconductor Mfg Co     | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | NT$2,490                                 | CHEAP < ≈ NT$600 (EV/OI; MCap/FCF suspended — P20 AI-capex cycle). Cheapness EXPENSIVE                                                  | +303%  | FY2026 results (Feb 2027), price < NT$700 (NEAR), or process-lead loss / Taiwan-Strait / export-control shift                                       |
 | AMZN                    | Amazon.com, Inc.                | 2026-07-05 | v2  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$243                                    | CHEAP < ≈ $56 (EV/OI binding; maintenance-basis MCap/FCF corroborates ≈ $50–72 per anchor, P20). Cheapness EXPENSIVE                    | +342%  | FY2026 10-K (~Feb 2027); Q2 2026 results (30 Jul 2026) for AWS growth/capex; earlier if < $90 or AI-capex guidance cut materially                   |
 | IBKR                    | Interactive Brokers Group, Inc. | 2026-07-05 | v2  | WATCH   | STRONG   | STRONG   | PASS                                      | $91.65                                   | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +368%  | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income                                                       |
+| CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
 ### AVOID — 67 names, alphabetical
@@ -143,10 +144,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v60 — 2026-07-14** — CSU ANALYSE v1: **WATCH** (Past ADEQUATE [P1-capped; STRONG-tier ROCE ~17%/FCFROCE ~25%]; Future STRONG; SF PASS). EXPENSIVE ~15.5× FCF / ~23–25× EV/OI; trigger ≈ CAD 513, +434%. 83 → 84 names.
 - **v59 — 2026-07-14** — TRI ANALYSE v1: **AVOID** (SF FAIL — P19 buybacks 2021–25 at ~27–40× OI/FCF, >20× every yr). Past ADEQUATE (ROCE ~11% w-o-4), Future ADEQUATE (1 strong force: AI substitutes), EXPENSIVE ~20× post-49% crash. Trigger ≈ $30, +202%. 82 → 83 names.
 - **v58 — 2026-07-14** — MICC ANALYSE v1: **AVOID** (Past WEAK — L/E ~1,097% leveraged spin + thin carve-out history; Future WEAK — 2 strong forces). EXPENSIVE ~22× EV/OI FY25. 81 → 82 names.
 - **v57 — 2026-07-14** — ULVR ANALYSE v1: **WATCH** (Past STRONG ROCE 18.2%; Future ADEQUATE, 1 strong force; SF PASS, 1 P19 flag; EXPENSIVE ~16× EV/OI). Trigger ≈ €17.3, +209%. 80 → 81 names.
 - **v56 — 2026-07-14** — TEAM ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE −17.4%, 6 loss-yrs of 10; SF FAIL — P17 vs negative NI + P19 FY25 tranche 36.3× & FY23–25 sterilisation). 79 → 80 names.
-- **v55 — 2026-07-14** — SWEEP price/ordering refresh (Yahoo, 14 Jul): 15 WATCH Dist % + ordering recomputed, none IN RANGE/NEAR (closest BRK.B +24%); portfolio zone checks refreshed, zones unchanged.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
