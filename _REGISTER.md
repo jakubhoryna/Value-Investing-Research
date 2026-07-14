@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v65
+register_version: v66
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 88
-verdict_split: "WATCH 17 · AVOID 71 · BUY 0 · DNAF 0"
+names_total: 89
+verdict_split: "WATCH 17 · AVOID 72 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v65 · 2026-07-14)
+# GSC Register — Master Watchlist (v66 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -128,6 +128,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | UNH | UnitedHealth Group Incorporated | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | ~$425 (close 2 Jul 2026) | CHEAP < ≈ $52 (EV/OI, conservative EV, FY2025 trough OI; MCap/FCF leg ≈ $142). Band trough-anchored | — | FY2026 10-K (~Feb–Mar 2027); 2027 proxy (Apr 2027) re-tests the comp strike |
 | V | Visa Inc. | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $362.13 | CHEAP < ≈ $72 (EV/OI, conservative EV; P12 edge ≈ $88, where MCap/FCF binds). Cheapness EXPENSIVE (~32× FCF) | — | FY2026 10-K (~Nov 2026) re-tests the 11%-client disclosure (hard P15 breach, waiver denied); Jan 2027 proxy re-tests comp strike ($31.56m) |
 | VOW3 (VOW ord.) | Volkswagen AG (pref.) | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €72.14 (VOW3 close 9 Jul 2026; ord. €73.90) | n.m. — no positive price clears EV/OI ≤ 7 (captive debt €265bn); SOTP 0.19× BV — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027); structural only — VW-Law/Porsche-SE control + ~3–4% ROCE, no price flips it |
+| WISE | Wise Group plc | 2026-07-14 | v1 | AVOID (SF FAIL: P19 EST dilution-sterilisation strike + dual-class ext.) | ADEQUATE | ADEQUATE | FAIL | $12.60 / 945.8p (14 Jul 2026) | — | — | FY2027 results (~Jun 2027) + 2026 proxy re-test dual-class/comp; EXPENSIVE ~23× EV/OI / ~26× owner-FCF; strong business, un-ownable on capital allocation |
 | WMT | Walmart Inc. | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | $112.21 | CHEAP < ≈ $15 (MCap/FCF binding; EV/OI leg ≈ $18; no P12 — Past ADEQUATE). Cheapness EXPENSIVE — moot given AVOID | — | FY2027 10-K + 2027 proxy (~Mar–Apr 2027) P19 re-test (strikes every FY22–26); structural at 44–46% family control |
 | 2502.T | Asahi Group Holdings, Ltd. | 2026-07-09 | v1 | AVOID (Past WEAK + SF FAIL: P19) | WEAK | ADEQUATE | FAIL | ¥1,626.5 (9 Jul 2026; 8 Jul close ¥1,660.5) | CHEAP < ≈ ¥377 (EV/OI, conservative EV, FY2024 clean OI; no P12; FY25 20.3× a cyberattack artifact) — EXPENSIVE, moot | — | FY2026 (~Feb 2027) resets cyberattack-hit OI basis. Structural: ROCE ~6% + SF FAIL (CUB audit, buybacks, EABL debt). Not held |
 | 005930.KS | Samsung Electronics Co., Ltd. | 2026-07-04 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | ₩309,500 ord. (3 Jul 2026 close) | CHEAP < ≈ ₩41,700 (MCap/FCF binding; EV/OI conservative ≈ ₩42,100 nearly coincident). Cheapness EXPENSIVE | — | FY2026 audited FS (≈ Mar 2027); low priority — AVOID is structural (3 of 4 forces STRONG), not price-driven |
@@ -148,10 +149,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v66 — 2026-07-14** — WISE ANALYSE v1: **AVOID** (SF FAIL — P19 EST dilution-sterilisation strike + dual-class 9:1 ext. to ~2036; Past/Future ADEQUATE; EXPENSIVE ~23× EV/OI). 88 → 89 names.
 - **v65 — 2026-07-14** — LIN ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE ~8.1%/FCFROCE ~6.6% < floor on merger-GW-laden CE; SF FAIL — P19 hard strike, FY25 buybacks ~27× EV/OI). Future STRONG, comp clean; EXPENSIVE ~30× EV/OI / ~48× FCF; trigger ≈ $81, +547%. 87 → 88 names.
 - **v64 — 2026-07-14** — PLTR ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE 0.4%/5.4% vs 10% floor + ~6y thin history; SF FAIL — flag pair: dual-class entrenchment + 2020–21 SPAC-RPT). Future ADEQUATE; EXPENSIVE ~224× EV/OI / ~154× FCF; trigger ≈ $6.6, +1,958% (widest). 86 → 87 names.
 - **v63 — 2026-07-14** — IBM ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.6–8.4% < 10% on GW-laden CE; L/E 365%). Future ADEQUATE, SF PASS, EXPENSIVE 17× FCF/~21× EV/OI. 85→86 names.
 - **v62 — 2026-07-14** — ENB ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 4.2%, L/E 245%, per-share BV/TBV growth ≤ floor). EXPENSIVE 26× EV/OI; no positive-price trigger (net debt ≈ 10.5× OI). 84 → 85 names.
-- **v61 — 2026-07-14** — ORCL REVIEW v2: **AVOID** unchanged (triple gate). Px $143.39→$129.68; EV/OI ~26×→24.6×, EXPENSIVE. New: S&P BBB-, FY27 ~$95B capex/$40B fin, OpenAI erosion; band unchanged.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
