@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v61
+register_version: v62
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 84
-verdict_split: "WATCH 17 · AVOID 67 · BUY 0 · DNAF 0"
+names_total: 85
+verdict_split: "WATCH 17 · AVOID 68 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v61 · 2026-07-14)
+# GSC Register — Master Watchlist (v62 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -58,7 +58,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 67 names, alphabetical
+### AVOID — 68 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -80,6 +80,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DSY | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
+| ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
 | GOOGL | Alphabet Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $359.69 (close 6 Jul 2026) | CHEAP < ≈ $67 (EV/OI, conservative EV, Q1-26 debt; maint MCap/FCF ≈ $78, P20; P12 edge ≈ $78; strict all-capex ≈ $48) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) + Apr 2027 proxy re-test P19 & Pichai comp; ad-tech remedy pending; alert < $120 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
@@ -144,10 +145,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v62 — 2026-07-14** — ENB ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 4.2%, L/E 245%, per-share BV/TBV growth ≤ floor). EXPENSIVE 26× EV/OI; no positive-price trigger (net debt ≈ 10.5× OI). 84 → 85 names.
 - **v61 — 2026-07-14** — ORCL REVIEW v2: **AVOID** unchanged (triple gate). Px $143.39→$129.68; EV/OI ~26×→24.6×, EXPENSIVE. New: S&P BBB-, FY27 ~$95B capex/$40B fin, OpenAI erosion; band unchanged.
 - **v60 — 2026-07-14** — CSU ANALYSE v1: **WATCH** (Past ADEQUATE [P1-capped; STRONG-tier ROCE ~17%/FCFROCE ~25%]; Future STRONG; SF PASS). EXPENSIVE ~15.5× FCF / ~23–25× EV/OI; trigger ≈ CAD 513, +434%. 83 → 84 names.
 - **v59 — 2026-07-14** — TRI ANALYSE v1: **AVOID** (SF FAIL — P19 buybacks 2021–25 at ~27–40× OI/FCF, >20× every yr). Past ADEQUATE (ROCE ~11% w-o-4), Future ADEQUATE (1 strong force: AI substitutes), EXPENSIVE ~20× post-49% crash. Trigger ≈ $30, +202%. 82 → 83 names.
 - **v58 — 2026-07-14** — MICC ANALYSE v1: **AVOID** (Past WEAK — L/E ~1,097% leveraged spin + thin carve-out history; Future WEAK — 2 strong forces). EXPENSIVE ~22× EV/OI FY25. 81 → 82 names.
-- **v57 — 2026-07-14** — ULVR ANALYSE v1: **WATCH** (Past STRONG ROCE 18.2%; Future ADEQUATE, 1 strong force; SF PASS, 1 P19 flag; EXPENSIVE ~16× EV/OI). Trigger ≈ €17.3, +209%. 80 → 81 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
