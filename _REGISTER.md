@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v51
+register_version: v52
 register_date: 2026-07-14
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 76
-verdict_split: "WATCH 15 · AVOID 61 · BUY 0 · DNAF 0"
+names_total: 77
+verdict_split: "WATCH 15 · AVOID 62 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v51 · 2026-07-14)
+# GSC Register — Master Watchlist (v52 · 2026-07-14)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,7 +56,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR | Interactive Brokers Group, Inc. | 2026-07-05 | v2 | WATCH | STRONG | STRONG | PASS | $91.65 | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +358% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income |
 | AXFO | Axfood AB | 2026-07-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 P19 flag) | SEK 268.70 | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | +478% | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike |
 
-### AVOID — 61 names, alphabetical
+### AVOID — 62 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -82,6 +82,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GOOGL | Alphabet Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $359.69 (close 6 Jul 2026) | CHEAP < ≈ $67 (EV/OI, conservative EV, Q1-26 debt; maint MCap/FCF ≈ $78, P20; P12 edge ≈ $78; strict all-capex ≈ $48) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) + Apr 2027 proxy re-test P19 & Pichai comp; ad-tech remedy pending; alert < $120 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
+| HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
 | HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $207.48 (10 Jul 2026 close) | n.m. — EV/OI ≤ 7 unreachable at FY25 OI $7.4m (conservative EV); all-cash leg ≈ $28, MCap/FCF leg ≈ $88 — EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors OI/band; P19 watch — $1.0B 2026 pgm |
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
 | KER | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
@@ -136,10 +137,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v52 — 2026-07-14** — HHH ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 3.2%, FCFROCE < 0; Future WEAK — breadth FAIL; SF FAIL — P17 comp + P19 FY22 buyback 21×). 76 → 77 names.
 - **v51 — 2026-07-14** — BRZE ANALYSE v1: **AVOID** (Past WEAK — 7 yrs OI < 0, all four norm. ROCE negative; Future WEAK — 2 strong forces; SF FAIL — P17 comp 4.9× FCF line + P19 sterilisation ASR ≈52–58× MCap/FCF). 75 → 76 names.
 - **v50 — 2026-07-13** — 6503.T ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 7.3%; SF FAIL — P19: FY25/FY26 tranches 21.1×/20.6× MCap/FCF strict + Nozomi audit). 74 → 75 names.
 - **v49 — 2026-07-13** — SU ANALYSE v1: **AVOID** (SF FAIL — P19 hard strikes: FY25 buybacks 28.1× MCap/FCF / 21.5× EV/OI + sterilisation; AVEVA minority buyout ≈45× flattering basis). 73 → 74 names.
 - **v48 — 2026-07-13** — GTLB ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL — P17 comp 6.1× the FCF line, NI negative; P19 Q1 FY27 tranche 16.1× MCap/FCF, OI < 0). 72 → 73 names.
-- **v47 — 2026-07-13** — MORN ANALYSE v1: **AVOID** (SF FAIL — P19 hard strikes: FY25 tranche $787M @ 22.9× MCap/FCF / 20.6× EV/OI; FY22 65×). 71 → 72 names.
 
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v50 and back). Older log entries live inside the snapshots.*
+*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v51 and back). Older log entries live inside the snapshots.*
