@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v68
-register_date: 2026-07-14
+register_version: v69
+register_date: 2026-07-15
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 91
-verdict_split: "WATCH 18 · AVOID 73 · BUY 0 · DNAF 0"
+names_total: 92
+verdict_split: "WATCH 18 · AVOID 74 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v68 · 2026-07-14)
+# GSC Register — Master Watchlist (v69 · 2026-07-15)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -59,7 +59,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 73 names, alphabetical
+### AVOID — 74 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -83,6 +83,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
+| GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID (Past WEAK: L/E 497% + Future WEAK: 2 strong forces + SF FAIL: acq flag pair) | WEAK | WEAK | FAIL | $26.57 (14 Jul 2026) | CHEAP < ≈ $11.3 (EV/OI, consv EV; MCap/FCF leg ≈ $19.7; no P12) — FAIR, moot given AVOID | — | FY2027 (~May 2027) 1st full MoneyLion yr re-anchors OI/FCF; Avast ≈19–20× audit; alert < ≈ $12 |
 | GOOGL | Alphabet Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $359.69 (close 6 Jul 2026) | CHEAP < ≈ $67 (EV/OI, conservative EV, Q1-26 debt; maint MCap/FCF ≈ $78, P20; P12 edge ≈ $78; strict all-capex ≈ $48) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) + Apr 2027 proxy re-test P19 & Pichai comp; ad-tech remedy pending; alert < $120 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
@@ -151,10 +152,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v69 — 2026-07-15** — GEN (Gen Digital) ANALYSE v1: **AVOID** (Past WEAK — L/E 497% P5 breach, no P6, + non-continuous record: 2 divestitures/3 acquisitions, STRONG unavailable; worst-of-4 ROCE 10.5–13.1% only ADEQUATE). Future WEAK (2 strong forces — free OS-bundled AV substitute + big-tech entrants; eroding moat; MoneyLion no-moat). SF FAIL (acq flag pair: Avast ≈19–20× pre-deal OI + MoneyLion ≈$1bn break-even fintech; comp & buybacks clean). FAIR ≈11× both primaries; band ≈$11.3, +136%. 91 → 92 names.
 - **v68 — 2026-07-14** — NESN (Nestlé) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike: CHF 20bn 2022–24 buyback, 187.4m sh @ avg CHF 106.74 ≈ 23× EV/OI / 26× MCap/FCF). Past ADEQUATE (ROCE ~12–14%, L/E 287% FX-inflated), Future ADEQUATE (substitutes strong; brand moat), EXPENSIVE ~22× EV/OI; band ≈ CHF 13, +534%. 90 → 91 names.
 - **v67 — 2026-07-14** — GSK ANALYSE v1: **WATCH** (Past ADEQUATE — worst-of-4 ROCE 14.5%/FCFROCE 11.3% on FY22–25 clean post-Haleon window; L/E 276% flag; STRONG unavailable on ~4y history). Future ADEQUATE, SF PASS, FAIR 13.8× FCF/~12× EV/OI; band ≈ £9.08, +111%. 89 → 90 names.
 - **v66 — 2026-07-14** — WISE ANALYSE v1: **AVOID** (SF FAIL — P19 EST dilution-sterilisation strike + dual-class 9:1 ext. to ~2036; Past/Future ADEQUATE; EXPENSIVE ~23× EV/OI). 88 → 89 names.
 - **v65 — 2026-07-14** — LIN ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE ~8.1%/FCFROCE ~6.6% < floor on merger-GW-laden CE; SF FAIL — P19 hard strike, FY25 buybacks ~27× EV/OI). Future STRONG, comp clean; EXPENSIVE ~30× EV/OI / ~48× FCF; trigger ≈ $81, +547%. 87 → 88 names.
-- **v64 — 2026-07-14** — PLTR ANALYSE v1: **AVOID** (Past WEAK — worst-of-4 ROCE 0.4%/5.4% vs 10% floor + ~6y thin history; SF FAIL — flag pair: dual-class entrenchment + 2020–21 SPAC-RPT). Future ADEQUATE; EXPENSIVE ~224× EV/OI / ~154× FCF; trigger ≈ $6.6, +1,958% (widest). 86 → 87 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
