@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v81
+register_version: v82
 register_date: 2026-07-16
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 103
-verdict_split: "WATCH 19 · AVOID 84 · BUY 0 · DNAF 0"
+names_total: 104
+verdict_split: "WATCH 19 · AVOID 85 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v81 · 2026-07-16)
+# GSC Register — Master Watchlist (v82 · 2026-07-16)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 84 names, alphabetical
+### AVOID — 85 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -71,6 +71,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ADS | adidas AG | 2026-07-04 | v1 | AVOID (Past WEAK: leverage + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | €185.30 | CHEAP < ≈ €47 (EV/OI leg, conservative EV; MCap/FCF n.m. on WC-depressed FY2025 FCF, ≈ €46 on 5y-avg FCF) — moot given AVOID | — | FY2026 results (~early Mar 2027) — FCF and leverage reset; earlier if price < ≈ €52 |
 | ASML | ASML Holding N.V. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €1,628 (~6 Jul 2026) | CHEAP < ≈ €140 (MCap/TBV, one-average allowance) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (Jan 2027) re-anchors band; flip needs a disciplined buyback year (2018–25 all > 20× EV/OI) |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
+| BAYN | Bayer AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €47.17 (16 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ €17.0 on FY25 co-def FCF €2.08bn). Cheapness EXPENSIVE | — | FY2026 (~Mar 2027): first positive-OI print restores a band; Roundup class-settlement approval + post-Durnell provisioning check (H2 2026) |
 | BRZE | Braze, Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $26.60 (13 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $4.1, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on FY27 buyback table ($50m Q1 ASR — sterilisation) |
 | BTI | British American Tobacco p.l.c. | 2026-07-16 | v2 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $58.73 ADR (≈£43.97) | CHEAP < ≈ $23/£17 (EV/OI, consv EV; MCap/FCF leg ≈ $29/£21.5; no P12) — moot given AVOID | — | FY2026 (~Feb 2027) or returns re-rate; H1 ~30 Jul 2026 opt.; Fit2Win charges hit FY26 OI |
 | BYD (1211.HK / 002594.SZ) | BYD Company Limited | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | HK$83.00 / RMB 86.26 (9/7 Jul 2026) | CHEAP < ≈ RMB 10–26/sh (MCap/FCF on norm. FCF ≈ RMB 10; EV/OI ≈ RMB 26; reported FCF negative → n.m.); no P12 — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Mar 2027); structural — 3 strong forces + sub-10% ROCE + FY25 FCF −RMB 97.7bn; H1 (~Aug 2026) opt. |
@@ -163,9 +164,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v82 — 2026-07-16** — BAYN (Bayer) ANALYSE v1: **AVOID** (triple gate). Worst-of-4 ROCE 1.5% (5y window, perimeter break flagged), L/E 302%; 2 strong forces; P17 strike (comp vs −€3.6bn NI). Band n.m. while OI < 0. 103 → 104 names.
 - **v81 — 2026-07-16** — BTI REVIEW v2: **AVOID** unchanged (Past WEAK structural). Px $58.73/£43.97; band re-cut strict ≈$23/£17 (v1 P12 misapply fixed); Fit2Win charges hit FY26 OI. 103 names.
 - **v80 — 2026-07-16** — TKA (thyssenkrupp) ANALYSE v1: **AVOID** (triple gate). 10y worst-of-4 ROCE −1.2% / FCFROCE −5.6% (Σ FCF −€10bn); 2 strong forces, no group moat; P17 hard strike (CEO €3.44m > €1.5m = 5% × FCF €30m). Sub-book (0.76×) but primaries 121–326× — EXPENSIVE, band n.m. 102 → 103 names. Merge onto parallel v79 (SHA0).
 - **v79 — 2026-07-16** — SHA0 (Schaeffler AG) ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL). Worst-of-4 ROCE 8.0% <10%, decline 16%→1.2%, L/E 619%; 2 strong forces + breadth FAIL (VW est. ≥10%); P17 strike (CEO €5.7m vs −€424m NI). Band n.m. 101 → 102 names.
 - **v78 — 2026-07-15** — SAN (Sanofi) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL: P19). Worst-of-4 ROCE 7.4% <10% floor (€67bn acquired goodwill+intangibles stays in CE vs as-reported OI struck after ~€4–5bn/yr amortisation; OI/sh flat +0.3%, TBV/sh −5%). Future ADEQUATE (1 strong force — biosimilar/generic substitution; breadth PASS, largest customer ~10%). SF FAIL — 2025 €5bn cancellation buyback, €3bn L'Oréal block @ €101.50 ≈ 21.3× EV/OI > 20× hard strike (blended ~20.1×; business-OI ≈10× caveat; RPT flag); P17 clean (Hudson €10.5m). EXPENSIVE ~16× EV/OI; band ≈ €27.6, +176%. 100 → 101 names.
-- **v77 — 2026-07-15** — GEBN (Geberit) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike: buybacks-for-cancellation at 22–26× EV/OI / 24–26× MCap/FCF, all >20×; 2025 tranche 145k sh @ avg CHF 559 ≈ 25.1×/26.4×; no discount-to-worth). Past ADEQUATE (worst-of-4 ROCE 25.9% / FCFROCE 22.4%; per-sh OI −2.1%/yr fails 3% floor; L/E 154%). Future STRONG (plumber-ingrainedness moat, 0 strong forces, breadth PASS). EXPENSIVE ~24× FCF / ~24× EV/OI; band ≈ CHF 139, +275%. 99 → 100 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
