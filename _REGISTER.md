@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v82
+register_version: v83
 register_date: 2026-07-16
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 104
-verdict_split: "WATCH 19 · AVOID 85 · BUY 0 · DNAF 0"
+names_total: 105
+verdict_split: "WATCH 19 · AVOID 86 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v82 · 2026-07-16)
+# GSC Register — Master Watchlist (v83 · 2026-07-16)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -90,6 +90,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GOOGL | Alphabet Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $359.69 (close 6 Jul 2026) | CHEAP < ≈ $67 (EV/OI, conservative EV, Q1-26 debt; maint MCap/FCF ≈ $78, P20; P12 edge ≈ $78; strict all-capex ≈ $48) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) + Apr 2027 proxy re-test P19 & Pichai comp; ad-tech remedy pending; alert < $120 |
 | GRMN | Garmin Ltd | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback) | STRONG | ADEQUATE | FAIL | $241.64 (15 Jul 2026) | CHEAP < ≈ $56 (MCap/FCF; EV/OI leg ≈ $88; P12 edge ≈ $70) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-tests P19; would be WATCH absent strike, deeply OOR (+329%); alert < ≈ $70 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
+| HEN3 | Henkel AG & Co. KGaA | 2026-07-16 | v1 | AVOID (Past WEAK + SF FAIL: P19 2022 buyback hard strike) | WEAK | ADEQUATE | FAIL | €74.98 (16 Jul 2026) | CHEAP < ≈ €34 (MCap/FCF binding; EV/OI leg ≈ €39; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027): P19 re-test on full 2025/26 program + Stahl/Olaplex/ATP acq audit |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
 | HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $207.48 (10 Jul 2026 close) | n.m. — EV/OI ≤ 7 unreachable at FY25 OI $7.4m (conservative EV); all-cash leg ≈ $28, MCap/FCF leg ≈ $88 — EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors OI/band; P19 watch — $1.0B 2026 pgm |
@@ -164,9 +165,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v83 — 2026-07-16** — HEN3 (Henkel) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL: P19 2022 buyback tranche ≈51× MCap/FCF hard strike). ΔFCF/sh −2.4%/yr, ROCE floor knife-edge 9.5–10.3%; Future ADEQUATE. EXPENSIVE 17× MCap/FCF; band ≈ €34, +119%. 104 → 105 names.
 - **v82 — 2026-07-16** — BAYN (Bayer) ANALYSE v1: **AVOID** (triple gate). Worst-of-4 ROCE 1.5% (5y window, perimeter break flagged), L/E 302%; 2 strong forces; P17 strike (comp vs −€3.6bn NI). Band n.m. while OI < 0. 103 → 104 names.
 - **v81 — 2026-07-16** — BTI REVIEW v2: **AVOID** unchanged (Past WEAK structural). Px $58.73/£43.97; band re-cut strict ≈$23/£17 (v1 P12 misapply fixed); Fit2Win charges hit FY26 OI. 103 names.
 - **v80 — 2026-07-16** — TKA (thyssenkrupp) ANALYSE v1: **AVOID** (triple gate). 10y worst-of-4 ROCE −1.2% / FCFROCE −5.6% (Σ FCF −€10bn); 2 strong forces, no group moat; P17 hard strike (CEO €3.44m > €1.5m = 5% × FCF €30m). Sub-book (0.76×) but primaries 121–326× — EXPENSIVE, band n.m. 102 → 103 names. Merge onto parallel v79 (SHA0).
 - **v79 — 2026-07-16** — SHA0 (Schaeffler AG) ANALYSE v1: **AVOID** (Past WEAK + Future WEAK + SF FAIL). Worst-of-4 ROCE 8.0% <10%, decline 16%→1.2%, L/E 619%; 2 strong forces + breadth FAIL (VW est. ≥10%); P17 strike (CEO €5.7m vs −€424m NI). Band n.m. 101 → 102 names.
-- **v78 — 2026-07-15** — SAN (Sanofi) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL: P19). Worst-of-4 ROCE 7.4% <10% floor (€67bn acquired goodwill+intangibles stays in CE vs as-reported OI struck after ~€4–5bn/yr amortisation; OI/sh flat +0.3%, TBV/sh −5%). Future ADEQUATE (1 strong force — biosimilar/generic substitution; breadth PASS, largest customer ~10%). SF FAIL — 2025 €5bn cancellation buyback, €3bn L'Oréal block @ €101.50 ≈ 21.3× EV/OI > 20× hard strike (blended ~20.1×; business-OI ≈10× caveat; RPT flag); P17 clean (Hudson €10.5m). EXPENSIVE ~16× EV/OI; band ≈ €27.6, +176%. 100 → 101 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
