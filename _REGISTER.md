@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v86
+register_version: v87
 register_date: 2026-07-16
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 105
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v86 · 2026-07-16)
+# GSC Register — Master Watchlist (v87 · 2026-07-16)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -25,7 +25,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 |--------|---------------|----------|---------|------|----------------|---------------------|-----------------|-------------|
 | CROX (size redacted) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ $90 strict (ex-imp FY25 OI; P12 edge $106 not ADD-eligible — Future ADEQUATE) — −34.2% away | ≈ $414 (ex-imp OI); reported-OI line ≈ $43 trips — impairment artifact, mitigated per P9 | 2026-07-16 @ $137.34 | Q2 6 Aug 2026 opt.; FY2026 (~Feb 2027) resets basis |
 | HFG (size redacted, XETRA) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (SR2 — v2 re-verdict: Past WEAK + Future WEAK + SF FAIL) | n/a — AVOID | n.m. — flag is quality, not price (P9 line ≈ €14.5 adj. OI) | 2026-07-14 @ €3.65 | User decision; else FY2026 (~Mar 2027) |
-| NOVO-B (NVO ADR, 1:1) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (SR2 — v5 re-confirms SF FAIL under v3.4.0 dual-read) | n/a — AVOID | n.m. — flag is governance, not price (P9 line ≈ DKK 696 ≈ $106 ADR) | 2026-07-16 @ DKK 335.80 ≈ $51.48 ADR | User decision; else AR-2026 / proxy (~Feb–Mar 2027); H1 5 Aug 2026 band only |
+| NOVO-B (NVO ADR, 1:1) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (SR2, v5) — **user 2026-07-16: HOLD against flag (§7.2)** | n/a — AVOID | n.m. — flag is governance, not price (P9 line ≈ DKK 696 ≈ $106 ADR) | 2026-07-16 @ DKK 335.80 ≈ $51.48 ADR | User decision; else AR-2026 / proxy (~Feb–Mar 2027); H1 5 Aug 2026 band only |
 | TROW (size redacted) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ $55 strict (P12 ≈ $69 excluded — Future ADEQUATE) — −51.6% away | ≈ $268 (+126%) | 2026-07-14 @ $113.65 | FY2026 (~Feb 2027); earlier if price → ≈ $84 or H2 TDF flows soften |
 
 ---
@@ -113,7 +113,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NESN | Nestlé S.A. | 2026-07-14 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 83.88 (14 Jul 2026) | CHEAP < ≈ CHF 13 (EV/OI, consv EV, FY25 op. profit; MCap/FCF leg ≈ CHF 34 all-capex / ≈ CHF 28 run-rate; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) + 2026 gov/comp report re-test P19 (CHF 20bn 2022–24 pgm @ CHF 106.74 ≈ 23× EV/OI); flip needs below-worth buyback discipline |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
 | NKE | NIKE, Inc. | 2026-07-09 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $42.89 (close 8 Jul 2026) | CHEAP < ≈ $10.5 (EV/OI, conservative EV, FY2026 prelim OI; all-cash-excess leg ≈ $16.6; MCap/FCF leg ≈ $17.7) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jul 2026, imminent) re-anchors; Sep 2026 proxy — Hill + Denton comp; flip needs a below-flag pgm year (FY20–25 all > 20×) |
-| NOVO-B (NVO 1:1) | Novo Nordisk A/S | 2026-07-16 | v5 | AVOID (SF FAIL: P19 — confirmed on v3.4.0 dual-read) | STRONG | ADEQUATE | FAIL | DKK 335.8 (16 Jul 2026) | CHEAP < ≈ DKK 172 (EV/OI binding, conservative EV; maint-basis MCap/FCF ≈ 173–188, P20) — moot given AVOID. Cheapness FAIR | — | AR-2026 / 2027 proxy (~Feb–Mar 2027) re-tests execution table (2023–24 strike both reads: 31× yr / 39–40× norm; 2026 pgm clean 10.1×); H1 5 Aug 2026 band only. **HELD — SELL-FLAG (SR2)** |
+| NOVO-B (NVO 1:1) | Novo Nordisk A/S | 2026-07-16 | v5 | AVOID (SF FAIL: P19 — confirmed on v3.4.0 dual-read) | STRONG | ADEQUATE | FAIL | DKK 335.8 (16 Jul 2026) | CHEAP < ≈ DKK 172 (EV/OI binding, conservative EV; maint-basis MCap/FCF ≈ 173–188, P20) — moot given AVOID. Cheapness FAIR | — | AR-2026/2027 proxy re-tests execution + v3.5.0 redemption limbs (policy · bargain-yr/refusal · turnover — all fail today); 2026 pgm clean 10.1×; H1 5 Aug band only. **HELD — SELL-FLAG; user HOLD against flag** |
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $194.28 | CHEAP < ≈ $31.5 (MCap/FCF; P12 edge ≈ $37, where EV/OI binds) | — | FY2027 results (~Feb 2027), or structural change (customer deconcentration <10%s + comp reform) |
 | ORCL | Oracle Corporation | 2026-07-14 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $129.68 (14 Jul 2026) | No positive limit price on conservative EV; ≈$5–16 all-cash-excess (EV/OI; FCF n.m.) — academic. Cheapness EXPENSIVE | — | Q1 FY2027 (~Sept 2026); S&P BBB- (Jul'26) confirms leverage; flip needs deleveraging + FCF inflection + comp reform |
 | PAH3 (POAHY ADR) | Porsche Automobil Holding SE | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €28.08 (9 Jul 2026; mcap ≈ €8.4bn) | CHEAP < ≈ €22 (NAV-discount anchor ≈45% vs ~33% structural; substitution rule) — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027) — VW/Porsche AG impairment trend + NAV re-anchor; H1 2026 (~mid-Aug 2026); or price < ≈ €22 |
@@ -157,18 +157,18 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 - P17/P19 re-examination queue **closed** (Tiers 1–3 complete; last flip NKE v2 2026-07-09). Clean under v3: ADYEN, AMZN, BABA, BKE, BKNG (1 flag), BRK.B, KSPI, TROW, TSM, SDZ. CROX flipped v84 on fresh FY2016–19 data (v3 memo), re-cleared v85 under MODEL v3.4.0 (v4 memo: SF PASS, 1 P19 flag, HEYDUDE indeterminate).
 - HFG (held) **SELL-FLAG** (SR2) — user decision pending; log the decision and realised outcome here.
-- NOVO-B (held) **SELL-FLAG** (SR2, v4 memo 2026-07-07, P19) — user decision pending; log here.
+- NOVO-B (held) **SELL-FLAG** (SR2, confirmed v5) — **user decision 2026-07-16: HOLD against flag** (§7.2 judgment: quality + expected discipline under new CEO; framework verdict unchanged). Track realised outcome vs the flag; re-test at AR-2026 (~Feb 2027) incl. v3.5.0 redemption limbs (all three fail today).
 - Held-name entry dates missing (not in the IBKR snapshot) — user to supply.
 - INPST delists on offer settlement (exp. H2 2026) — archive the row then.
-- **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy.
+- **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD.
 
 ---
 
 ## Change log
 
+- **v87 — 2026-07-16** — MODEL v3.5.0 committed (P19 worth-check on flags; strict strike-redemption clause — NOVO-B fails all three limbs today). NOVO-B user decision logged: **HOLD against flag** (§7.2). No verdict changes.
 - **v86 — 2026-07-16** — NOVO-B REVIEW v5: **AVOID / SELL-FLAG (SR2) stand** — v3.4.0 dual-read confirms both P19 strikes (2024 pgm 30.9× yr / 38.9× norm; Nov-23 tranche 30.8× / 40.2×; no rescue leg). 2026 pgm clean. Px DKK 335.8.
 - **v85 — 2026-07-16** — MODEL v3.4.0 committed (P17 loss-leg + empirical seat norms; P19 dual-read + rescue; flag aggregation) → CROX REVIEW v4: **WATCH restored**, SF PASS (1 P19 flag), SELL-FLAG lifted → HOLD. WATCH 19 · AVOID 86. P19 re-test queue opened.
 - **v84 — 2026-07-16** — CROX fresh ANALYSE v3 (held): **AVOID** (SF FAIL: P17 comp $10.96m vs −$81m NI + P19 FY2019 tranche 32.4× MCap/FCF). Past ↑ STRONG (w-o-4 ROCE 21.0%). HELD → SELL-FLAG (SR2). WATCH 18 · AVOID 87.
 - **v83 — 2026-07-16** — HEN3 (Henkel) ANALYSE v1: **AVOID** (Past WEAK + SF FAIL: P19 2022 buyback tranche ≈51× MCap/FCF hard strike). ΔFCF/sh −2.4%/yr, ROCE floor knife-edge 9.5–10.3%; Future ADEQUATE. EXPENSIVE 17× MCap/FCF; band ≈ €34, +119%. 104 → 105 names.
-- **v82 — 2026-07-16** — BAYN (Bayer) ANALYSE v1: **AVOID** (triple gate). Worst-of-4 ROCE 1.5% (5y window, perimeter break flagged), L/E 302%; 2 strong forces; P17 strike (comp vs −€3.6bn NI). Band n.m. while OI < 0. 103 → 104 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
