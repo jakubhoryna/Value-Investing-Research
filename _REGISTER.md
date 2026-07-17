@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v88
+register_version: v89
 register_date: 2026-07-17
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 106
-verdict_split: "WATCH 19 · AVOID 87 · BUY 0 · DNAF 0"
+names_total: 107
+verdict_split: "WATCH 19 · AVOID 88 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v88 · 2026-07-17)
+# GSC Register — Master Watchlist (v89 · 2026-07-17)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 87 names, alphabetical
+### AVOID — 88 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -94,6 +94,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | HEN3 | Henkel AG & Co. KGaA | 2026-07-16 | v1 | AVOID (Past WEAK + SF FAIL: P19 2022 buyback hard strike) | WEAK | ADEQUATE | FAIL | €74.98 (16 Jul 2026) | CHEAP < ≈ €34 (MCap/FCF binding; EV/OI leg ≈ €39; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027): P19 re-test on full 2025/26 program + Stahl/Olaplex/ATP acq audit |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
+| HOT | Hochtief AG | 2026-07-17 | v1 | AVOID (Past WEAK + SF FAIL: RPT + accounting-quality flag pair) | WEAK | ADEQUATE | FAIL | €455.60 (17 Jul 2026) | CHEAP < ≈ €30 (EV/OI, consv EV; flattering-EV ≈ €124; MCap/FCF ≈ €172) — EXPENSIVE | — | FY2026 GR (~Feb 2027); structural AVOID — re-test on ACS squeeze-out or balance-sheet regime change |
 | HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $207.48 (10 Jul 2026 close) | n.m. — EV/OI ≤ 7 unreachable at FY25 OI $7.4m (conservative EV); all-cash leg ≈ $28, MCap/FCF leg ≈ $88 — EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors OI/band; P19 watch — $1.0B 2026 pgm |
 | IBM | International Business Machines Corp. | 2026-07-14 | v1 | AVOID (Past WEAK: ROCE w-o-4 6.6–8.4% < 10%; L/E 365%) | WEAK | ADEQUATE | PASS | $218.80 | CHEAP < ≈ $37 (EV/OI binding; MCap/FCF leg ≈ $103) — EXPENSIVE | — | FY2026 10-K (~Feb 2027); or price < ≈ $103 (MCap/FCF leg) |
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
@@ -167,9 +168,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v89 — 2026-07-17** — HOT (Hochtief) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 7.2% + L/E 1,816%; SF FAIL: ACS RPT + accounting-quality pair). EXPENSIVE 22.5× EV/OI; band ≈ €30. 106 → 107 names.
 - **v88 — 2026-07-17** — BAS (BASF) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 5.8% + Future WEAK 2 strong forces + SF FAIL: P19 FY25 tranche 35.6×/30.7× EV/OI hard strike). EXPENSIVE ~32× FCF; band n.m. 105 → 106 names.
 - **v87 — 2026-07-16** — MODEL v3.5.0 committed (P19 worth-check on flags; strict strike-redemption clause — NOVO-B fails all three limbs today). NOVO-B user decision logged: **HOLD against flag** (§7.2). No verdict changes.
 - **v86 — 2026-07-16** — NOVO-B REVIEW v5: **AVOID / SELL-FLAG (SR2) stand** — v3.4.0 dual-read confirms both P19 strikes (2024 pgm 30.9× yr / 38.9× norm; Nov-23 tranche 30.8× / 40.2×; no rescue leg). 2026 pgm clean. Px DKK 335.8.
 - **v85 — 2026-07-16** — MODEL v3.4.0 committed (P17 loss-leg + empirical seat norms; P19 dual-read + rescue; flag aggregation) → CROX REVIEW v4: **WATCH restored**, SF PASS (1 P19 flag), SELL-FLAG lifted → HOLD. WATCH 19 · AVOID 86. P19 re-test queue opened.
-- **v84 — 2026-07-16** — CROX fresh ANALYSE v3 (held): **AVOID** (SF FAIL: P17 comp $10.96m vs −$81m NI + P19 FY2019 tranche 32.4× MCap/FCF). Past ↑ STRONG (w-o-4 ROCE 21.0%). HELD → SELL-FLAG (SR2). WATCH 18 · AVOID 87.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
