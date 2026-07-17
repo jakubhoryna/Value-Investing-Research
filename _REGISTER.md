@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v91
+register_version: v92
 register_date: 2026-07-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 108
-verdict_split: "WATCH 19 · AVOID 89 · BUY 0 · DNAF 0"
+names_total: 109
+verdict_split: "WATCH 19 · AVOID 90 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v91 · 2026-07-18)
+# GSC Register — Master Watchlist (v92 · 2026-07-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 89 names, alphabetical
+### AVOID — 90 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -76,6 +76,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | BRZE | Braze, Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $26.60 (13 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $4.1, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on FY27 buyback table ($50m Q1 ASR — sterilisation) |
 | BTI | British American Tobacco p.l.c. | 2026-07-16 | v2 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $58.73 ADR (≈£43.97) | CHEAP < ≈ $23/£17 (EV/OI, consv EV; MCap/FCF leg ≈ $29/£21.5; no P12) — moot given AVOID | — | FY2026 (~Feb 2027) or returns re-rate; H1 ~30 Jul 2026 opt.; Fit2Win charges hit FY26 OI |
 | BYD (1211.HK / 002594.SZ) | BYD Company Limited | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | HK$83.00 / RMB 86.26 (9/7 Jul 2026) | CHEAP < ≈ RMB 10–26/sh (MCap/FCF on norm. FCF ≈ RMB 10; EV/OI ≈ RMB 26; reported FCF negative → n.m.); no P12 — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Mar 2027); structural — 3 strong forces + sub-10% ROCE + FY25 FCF −RMB 97.7bn; H1 (~Aug 2026) opt. |
+| CON | Continental AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €72.28 (18 Jul 2026) | CHEAP < ≈ €36 (EV/OI, FY25 adj-EBIT, consv EV; MCap/FCF leg ≈ €38; reported-OI leg n.m. — spin/OESL effects) — EXPENSIVE | — | FY2026 AR (~Mar 2027) pure-play basis re-analysis; ContiTech close H2'26 (€4.0bn) shifts EV/band; P19 first-test on any buyback pgm |
 | COPN | Cosmo N.V. | 2026-07-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | CHF 67.70 | n.m. — FY25 OI & FCF negative | — | FY2026 results (~Mar 2027); Clascoterone-5% AGA 12-mo readout only if it changes the revenue mix |
 | COST | Costco Wholesale Corporation | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | STRONG | FAIL | $912.97 | CHEAP < ≈ $141 (MCap/FCF binding; EV/OI leg ≈ $175; P12 edge ≈ $175) — moot given AVOID. Cheapness EXPENSIVE (51.8× MCap/FCF, 38.6× EV/OI) | — | FY2026 (~Sep 2026) P19 re-test (FY21–25 all > 20× EV/OI); flip needs a below-worth year or a halt; alert < ≈ $210 |
 | CRM | Salesforce, Inc. | 2026-07-12 | v2 | AVOID (Past WEAK + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | $163.32 | CHEAP < ≈ $55 (EV/OI @1.25×). Cheapness EXPENSIVE | — | Q2 FY27 (~2 Sep 2026, optional Agentforce-ARR check); FY27 10-K (~Mar 2027) status check; BUY needs Past upgrade (~FY2030 earliest) + deleverage + price |
@@ -169,9 +170,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v92 — 2026-07-18** — CON (Continental) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 6.6%, L/E 347%; SF PASS). Band ≈ €36 adj-EBIT (reported-OI n.m.); FY2026 pure-play re-test. 108 → 109 names.
 - **v91 — 2026-07-18** — ONON (On Holding) ANALYSE v1: **AVOID** (Past WEAK: worst-of-four ROCE 8.2%, 7y record w/ IPO-era losses + 2022 CFO shock). SF PASS, EXPENSIVE 38.6× FCF; band ≈ $7.7. 107 → 108 names.
 - **v90 — 2026-07-18** — Holdings sweep @ 17 Jul closes: CROX HOLD −34% to ADD; TROW HOLD, Dist 65→70%; HFG SELL-FLAG open (user decision); NOVO-B HOLD-against-flag. No verdict changes.
 - **v89 — 2026-07-17** — HOT (Hochtief) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 7.2% + L/E 1,816%; SF FAIL: ACS RPT + accounting-quality pair). EXPENSIVE 22.5× EV/OI; band ≈ €30. 106 → 107 names.
 - **v88 — 2026-07-17** — BAS (BASF) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 5.8% + Future WEAK 2 strong forces + SF FAIL: P19 FY25 tranche 35.6×/30.7× EV/OI hard strike). EXPENSIVE ~32× FCF; band n.m. 105 → 106 names.
-- **v87 — 2026-07-16** — MODEL v3.5.0 committed (P19 worth-check on flags; strict strike-redemption clause — NOVO-B fails all three limbs today). NOVO-B user decision logged: **HOLD against flag** (§7.2). No verdict changes.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
