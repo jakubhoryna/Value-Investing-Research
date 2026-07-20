@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v95
+register_version: v96
 register_date: 2026-07-20
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 112
-verdict_split: "WATCH 19 · AVOID 93 · BUY 0 · DNAF 0"
+names_total: 113
+verdict_split: "WATCH 19 · AVOID 94 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v95 · 2026-07-20)
+# GSC Register — Master Watchlist (v96 · 2026-07-20)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 93 names, alphabetical
+### AVOID — 94 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -86,6 +86,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
+| ENR | Siemens Energy AG | 2026-07-20 | v1 | AVOID (Past WEAK ROCE 0.1% + SF FAIL: P19) | WEAK | WEAK | FAIL | €152.00 (20 Jul 2026) | CHEAP < ≈ €12 strict (EV/OI, no-cash EV; ≈ €26 all-cash leg; MCap/FCF leg ≈ €37) — moot given AVOID. EXPENSIVE 64.4× EV/OI | — | FY2026 AR (~Dec 2026): 1st clean-cycle year + P19 re-test of the €2bn/€6bn buyback |
 | FRE | Fresenius SE & Co. KGaA | 2026-07-20 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.1% + Future WEAK: breadth FAIL + 2 strong forces) | WEAK | WEAK | PASS | €42.63 (20 Jul 2026) | CHEAP < ≈ €6.35 (EV/OI, consv EV; MCap/FCF leg ≈ €20.9) — EXPENSIVE | — | FY2026 AR (~Mar 2027); hospital-reform Leistungsgruppen from 2027; SF capital-allocation flag standing |
 | FTK | flatexDEGIRO SE | 2026-07-20 | v1 | AVOID (Future WEAK: 2 strong forces) | ADEQUATE | WEAK | PASS (1 flag: BaFin §44 special audit) | €35.58 (20 Jul 2026) | CHEAP < ≈ €12.55 (MCap/FCF anchor, §2·1A substitution; NI-proxy leg ≈ €11.94; EV/OI n.m.) — moot given AVOID. EXPENSIVE | — | FY2026 (~Mar 2027); NII 31% of revenue is ECB-rate-linked; 8y record caps Past; alert < ≈ €15 |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
@@ -168,15 +169,15 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **FTK** — named re-tests at FY2026: supplier-breadth evidence (venue fee split undisclosed) and the FY2020–21 SARs-era comp quantum (INDETERMINATE, cannot pair).
 - Held-name entry dates missing (not in the IBKR snapshot) — user to supply.
 - INPST delists on offer settlement (exp. H2 2026) — archive the row then.
-- **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD.
+- **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD. ENR: FY2026 €2bn programme purpose undisclosed in the H1 note — determine at FY2026 AR (3rd-strike candidate at ≈58× EV/OI).
 
 ---
 
 ## Change log
 
+- **v96 — 2026-07-20** — ENR (Siemens Energy) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 0.1% on 5y post-spin record; SF FAIL: P19 dilution-sterilisation strike + FY25 tranche 32.2×/203.9× EV/OI). EXPENSIVE 64.4× EV/OI; band ≈ €12. 112 → 113 names.
 - **v95 — 2026-07-20** — FTK (flatexDEGIRO) ANALYSE v1: **AVOID** (Future WEAK: substitutes + entrants STRONG). Past ADEQUATE (§2·1A substitution, ROE 13.8%); SF PASS. Band ≈ €12.55. 111 → 112 names.
 - **v94 — 2026-07-20** — TLX (Talanx) ANALYSE v1: **AVOID** (Future WEAK: customer power + substitutes; Past ADEQUATE, w-o-4 ROE 11.4%; SF PASS). Band ≈ €48 (MCap/BV anchor). 110 → 111 names.
 - **v93 — 2026-07-20** — FRE (Fresenius SE) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 5.1%; Future WEAK: breadth FAIL + 2 strong forces). SF PASS w/ allocation flag. Band ≈ €6.35 EV/OI. 109 → 110 names.
 - **v92 — 2026-07-18** — CON (Continental) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 6.6%, L/E 347%; SF PASS). Band ≈ €36 adj-EBIT (reported-OI n.m.); FY2026 pure-play re-test. 108 → 109 names.
-- **v91 — 2026-07-18** — ONON (On Holding) ANALYSE v1: **AVOID** (Past WEAK: worst-of-four ROCE 8.2%, 7y record w/ IPO-era losses + 2022 CFO shock). SF PASS, EXPENSIVE 38.6× FCF; band ≈ $7.7. 107 → 108 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
