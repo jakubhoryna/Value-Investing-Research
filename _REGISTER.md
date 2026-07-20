@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v96
-register_date: 2026-07-20
+register_version: v97
+register_date: 2026-07-21
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 113
-verdict_split: "WATCH 19 · AVOID 94 · BUY 0 · DNAF 0"
+names_total: 114
+verdict_split: "WATCH 19 · AVOID 95 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v96 · 2026-07-20)
+# GSC Register — Master Watchlist (v97 · 2026-07-21)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 94 names, alphabetical
+### AVOID — 95 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -98,6 +98,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | HEN3 | Henkel AG & Co. KGaA | 2026-07-16 | v1 | AVOID (Past WEAK + SF FAIL: P19 2022 buyback hard strike) | WEAK | ADEQUATE | FAIL | €74.98 (16 Jul 2026) | CHEAP < ≈ €34 (MCap/FCF binding; EV/OI leg ≈ €39; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027): P19 re-test on full 2025/26 program + Stahl/Olaplex/ATP acq audit |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
+| HLAG | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID (Future WEAK: customer power + entrants STRONG, no moat) | ADEQUATE | WEAK | PASS | €123.20 (20 Jul 2026) | CHEAP < ≈ €20.3 (EV/OI, consv EV; MCap/FCF leg ≈ €32; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 AR (~Mar 2027); ZIM close → mandatory 1C acquisition audit |
 | HOT | Hochtief AG | 2026-07-17 | v1 | AVOID (Past WEAK + SF FAIL: RPT + accounting-quality flag pair) | WEAK | ADEQUATE | FAIL | €455.60 (17 Jul 2026) | CHEAP < ≈ €30 (EV/OI, consv EV; flattering-EV ≈ €124; MCap/FCF ≈ €172) — EXPENSIVE | — | FY2026 GR (~Feb 2027); structural AVOID — re-test on ACS squeeze-out or balance-sheet regime change |
 | HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $207.48 (10 Jul 2026 close) | n.m. — EV/OI ≤ 7 unreachable at FY25 OI $7.4m (conservative EV); all-cash leg ≈ $28, MCap/FCF leg ≈ $88 — EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors OI/band; P19 watch — $1.0B 2026 pgm |
 | IBM | International Business Machines Corp. | 2026-07-14 | v1 | AVOID (Past WEAK: ROCE w-o-4 6.6–8.4% < 10%; L/E 365%) | WEAK | ADEQUATE | PASS | $218.80 | CHEAP < ≈ $37 (EV/OI binding; MCap/FCF leg ≈ $103) — EXPENSIVE | — | FY2026 10-K (~Feb 2027); or price < ≈ $103 (MCap/FCF leg) |
@@ -175,9 +176,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v97 — 2026-07-21** — HLAG (Hapag-Lloyd) ANALYSE v1: **AVOID** (Future WEAK: 2 strong forces, no moat). Past ADEQUATE (w-o-4 ROCE 17.8%, boom-skewed); SF PASS. Band ≈ €20.3. 113 → 114 names.
 - **v96 — 2026-07-20** — ENR (Siemens Energy) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 0.1% on 5y post-spin record; SF FAIL: P19 dilution-sterilisation strike + FY25 tranche 32.2×/203.9× EV/OI). EXPENSIVE 64.4× EV/OI; band ≈ €12. 112 → 113 names.
 - **v95 — 2026-07-20** — FTK (flatexDEGIRO) ANALYSE v1: **AVOID** (Future WEAK: substitutes + entrants STRONG). Past ADEQUATE (§2·1A substitution, ROE 13.8%); SF PASS. Band ≈ €12.55. 111 → 112 names.
 - **v94 — 2026-07-20** — TLX (Talanx) ANALYSE v1: **AVOID** (Future WEAK: customer power + substitutes; Past ADEQUATE, w-o-4 ROE 11.4%; SF PASS). Band ≈ €48 (MCap/BV anchor). 110 → 111 names.
 - **v93 — 2026-07-20** — FRE (Fresenius SE) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 5.1%; Future WEAK: breadth FAIL + 2 strong forces). SF PASS w/ allocation flag. Band ≈ €6.35 EV/OI. 109 → 110 names.
-- **v92 — 2026-07-18** — CON (Continental) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 6.6%, L/E 347%; SF PASS). Band ≈ €36 adj-EBIT (reported-OI n.m.); FY2026 pure-play re-test. 108 → 109 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
