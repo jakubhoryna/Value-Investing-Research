@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v92
-register_date: 2026-07-18
+register_version: v93
+register_date: 2026-07-20
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 109
-verdict_split: "WATCH 19 · AVOID 90 · BUY 0 · DNAF 0"
+names_total: 110
+verdict_split: "WATCH 19 · AVOID 91 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v92 · 2026-07-18)
+# GSC Register — Master Watchlist (v93 · 2026-07-20)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 90 names, alphabetical
+### AVOID — 91 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -86,6 +86,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
+| FRE | Fresenius SE & Co. KGaA | 2026-07-20 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.1% + Future WEAK: breadth FAIL + 2 strong forces) | WEAK | WEAK | PASS | €42.63 (20 Jul 2026) | CHEAP < ≈ €6.35 (EV/OI, consv EV; MCap/FCF leg ≈ €20.9) — EXPENSIVE | — | FY2026 AR (~Mar 2027); hospital-reform Leistungsgruppen from 2027; SF capital-allocation flag standing |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
 | GEBN | Geberit AG | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback hard strike) | ADEQUATE | STRONG | FAIL | CHF 520.20 (15 Jul 2026) | CHEAP < ≈ CHF 139 (EV/OI, consv EV; MCap/FCF leg ≈ CHF 170; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 (~Mar 2027) re-tests P19; STRONG-future WATCH absent strike, OOR +275%; alert < ≈ CHF 200 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID (Past WEAK: L/E 497% + Future WEAK: 2 strong forces + SF FAIL: acq flag pair) | WEAK | WEAK | FAIL | $26.57 (14 Jul 2026) | CHEAP < ≈ $11.3 (EV/OI, consv EV; MCap/FCF leg ≈ $19.7; no P12) — FAIR, moot given AVOID | — | FY2027 (~May 2027) 1st full MoneyLion yr re-anchors OI/FCF; Avast ≈19–20× audit; alert < ≈ $12 |
@@ -170,9 +171,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v93 — 2026-07-20** — FRE (Fresenius SE) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 5.1%; Future WEAK: breadth FAIL + 2 strong forces). SF PASS w/ allocation flag. Band ≈ €6.35 EV/OI. 109 → 110 names.
 - **v92 — 2026-07-18** — CON (Continental) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 6.6%, L/E 347%; SF PASS). Band ≈ €36 adj-EBIT (reported-OI n.m.); FY2026 pure-play re-test. 108 → 109 names.
 - **v91 — 2026-07-18** — ONON (On Holding) ANALYSE v1: **AVOID** (Past WEAK: worst-of-four ROCE 8.2%, 7y record w/ IPO-era losses + 2022 CFO shock). SF PASS, EXPENSIVE 38.6× FCF; band ≈ $7.7. 107 → 108 names.
 - **v90 — 2026-07-18** — Holdings sweep @ 17 Jul closes: CROX HOLD −34% to ADD; TROW HOLD, Dist 65→70%; HFG SELL-FLAG open (user decision); NOVO-B HOLD-against-flag. No verdict changes.
 - **v89 — 2026-07-17** — HOT (Hochtief) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 7.2% + L/E 1,816%; SF FAIL: ACS RPT + accounting-quality pair). EXPENSIVE 22.5× EV/OI; band ≈ €30. 106 → 107 names.
-- **v88 — 2026-07-17** — BAS (BASF) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 5.8% + Future WEAK 2 strong forces + SF FAIL: P19 FY25 tranche 35.6×/30.7× EV/OI hard strike). EXPENSIVE ~32× FCF; band n.m. 105 → 106 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
