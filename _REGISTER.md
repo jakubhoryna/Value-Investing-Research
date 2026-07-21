@@ -183,5 +183,5 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **v99 — 2026-07-21** — KNIN (Kuehne+Nagel) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE/FCFROCE 23.1%; Future ADEQUATE; SF PASS, 1 P19 flag 2023 tranche). EXPENSIVE 23.6× EV/OI; band ≈ CHF 34. 115 → 116 names.
 - **v98 — 2026-07-21** — SIKA (Sika AG) ANALYSE v1: **AVOID** (SF FAIL: P19 hard strike — 2018 SWH buyback 33–58× both reads; Past ADEQUATE w-o-4 ROCE 14.1%; Future STRONG). EXPENSIVE; band ≈ CHF 30.5 EV/OI. 114 → 115 names.
 - **v97 — 2026-07-21** — HLAG (Hapag-Lloyd) ANALYSE v1: **AVOID** (Future WEAK: 2 strong forces, no moat). Past ADEQUATE (w-o-4 ROCE 17.8%, boom-skewed); SF PASS. Band ≈ €20.3. 113 → 114 names.
-- **v95 — 2026-07-20** — FTK (flatexDEGIRO) ANALYSE v1: **AVOID** (Future WEAK: substitutes + entrants STRONG). Past ADEQUATE (§2·1A substitution, ROE 13.8%); SF PASS. Band ≈ €12.55. 111 → 112 names.
+- **v96 — 2026-07-20** — ENR (Siemens Energy) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 0.1% on 5y post-spin record; SF FAIL: P19 dilution-sterilisation strike + FY25 tranche 32.2×/203.9× EV/OI). EXPENSIVE 64.4× EV/OI; band ≈ €12. 112 → 113 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
