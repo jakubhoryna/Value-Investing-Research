@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v100
-register_date: 2026-07-21
+register_version: v101
+register_date: 2026-07-22
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 117
-verdict_split: "WATCH 20 · AVOID 97 · BUY 0 · DNAF 0"
+names_total: 118
+verdict_split: "WATCH 20 · AVOID 98 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v100 · 2026-07-21)
+# GSC Register — Master Watchlist (v101 · 2026-07-22)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -109,6 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIN | Linde plc | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P19 buybacks) | WEAK | STRONG | FAIL | $522.97 | CHEAP < ≈ $81 (EV/OI, consv EV, GW-laden CE; MCap/FCF leg ≈ $86; no P12) — EXPENSIVE ~30× | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test P19; Past-WEAK structural (worst-of-4 ROCE ~8%) |
 | LISN (SIX; PS LISP; ~10:1) | Chocoladefabriken Lindt & Sprüngli AG | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | CHF 96,500 reg / CHF 9,440 PS (15 Jul 2026) | CHEAP < ≈ CHF 16,700 reg (≈ CHF 1,670 PS; MCap/FCF norm-leg; EV/OI leg ≈ CHF 21,600; no P12) — EXPENSIVE ~24× EV/OI, moot | — | FY2026 (~Mar 2027) P19 re-test vs new CHF 1bn programme (2026–29); structural — buybacks strike at 20×+; strong brand, un-ownable on capital allocation |
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
+| LOGI | Logitech International S.A. | 2026-07-22 | v1 | AVOID (Future WEAK + SF FAIL: P19) | STRONG | WEAK | FAIL | $102.91 (22 Jul 2026) | CHEAP < ≈ $47.8 (EV/OI, low-EV; P12 ≈ $52.7) — EXPENSIVE | — | FY2027 10-K (~May 2027); 2026 proxy re-tests P17; structural — no price flips |
 | LULU | lululemon athletica inc. | 2026-07-09 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $113.62 (8 Jul 2026 close) | CHEAP < ≈ $64 (MCap/FCF, reported FY2025 FCF); ≈ $76–96 on 5–3yr normalized FCF. Cheapness FAIR — academic given AVOID | — | Q2 FY26 (~Sep 2026) — O'Neill's first quarter; FY2026 10-K (~Mar 2027) re-anchors. Governance triggers cleared |
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
 | MAERSK-B | A.P. Møller - Mærsk A/S | 2026-07-14 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | DKK 16,685 (14 Jul 2026) | CHEAP < ≈ DKK 12,000 (EV/OI, FY25 OI; MCap/FCF leg ≈ DKK 18,000 passes) — FAIR | — | FY2026 AR (~Feb 2027); FY26 guid. EBIT −1.5–1.0bn → band n.m.; structural: 2 strong forces, no moat |
@@ -179,9 +180,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v101 — 2026-07-22** — LOGI (Logitech) ANALYSE v1: **AVOID** (Future WEAK: breadth FAIL — Amazon 18%/Ingram 14%/Synnex 12%, no waiver; SF FAIL: P19 hard strikes — FY22 dual-read 72.8×/23.1× MCap/FCF + FY24 sterilisation). Past STRONG (w-o-4 ROCE 27.2%). EXPENSIVE; band ≈ $47.8. 117 → 118 names.
 - **v100 — 2026-07-21** — STMN (Straumann) ANALYSE v1: **AVOID** (SF FAIL: P19 dilution-sterilisation buybacks [SAP/ENR precedent] + DTC write-off flag ≈ CHF 0.3bn). Past STRONG (w-o-4 ROCE 19.0%), Future STRONG; EXPENSIVE 28.8×; band ≈ CHF 14.1. 116 → 117 names.
 - **v99 — 2026-07-21** — KNIN (Kuehne+Nagel) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE/FCFROCE 23.1%; Future ADEQUATE; SF PASS, 1 P19 flag 2023 tranche). EXPENSIVE 23.6× EV/OI; band ≈ CHF 34. 115 → 116 names.
 - **v98 — 2026-07-21** — SIKA (Sika AG) ANALYSE v1: **AVOID** (SF FAIL: P19 hard strike — 2018 SWH buyback 33–58× both reads; Past ADEQUATE w-o-4 ROCE 14.1%; Future STRONG). EXPENSIVE; band ≈ CHF 30.5 EV/OI. 114 → 115 names.
 - **v97 — 2026-07-21** — HLAG (Hapag-Lloyd) ANALYSE v1: **AVOID** (Future WEAK: 2 strong forces, no moat). Past ADEQUATE (w-o-4 ROCE 17.8%, boom-skewed); SF PASS. Band ≈ €20.3. 113 → 114 names.
-- **v96 — 2026-07-20** — ENR (Siemens Energy) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 0.1% on 5y post-spin record; SF FAIL: P19 dilution-sterilisation strike + FY25 tranche 32.2×/203.9× EV/OI). EXPENSIVE 64.4× EV/OI; band ≈ €12. 112 → 113 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
