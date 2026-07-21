@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v97
+register_version: v98
 register_date: 2026-07-21
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 114
-verdict_split: "WATCH 19 · AVOID 95 · BUY 0 · DNAF 0"
+names_total: 115
+verdict_split: "WATCH 19 · AVOID 96 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v97 · 2026-07-21)
+# GSC Register — Master Watchlist (v98 · 2026-07-21)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -60,7 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 
-### AVOID — 95 names, alphabetical
+### AVOID — 96 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -137,6 +137,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SHA0 | Schaeffler AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €8.53 (16 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt = 29× OI); MCap/FCF leg ≈ €3.23 ref only | — | FY2026 AR (~Mar 2027) — restructuring inflection + P17 re-test on positive NI |
 | SHOP | Shopify Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 comp) | WEAK | STRONG | FAIL | $124.74 (14 Jul 2026) | CHEAP < ≈ $7.7 (EV/OI, consv EV; MCap/FCF leg ≈ $12.3; no P12) — EXPENSIVE, moot given AVOID | — | 2027 proxy (~Apr 2027) re-tests P17 (FY24 comp $150m = 1.9× cap); FY2026 10-K (~Feb 2027) re-anchors; Past flip ~FY2028 earliest |
 | SIE | Siemens AG | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | €269.60 | CHEAP < ≈ €25–36 mechanical (EV/OI, then TBV); ≈ €36–45 with SFS-debt adjustment — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Dec 2026) re-tests FY26 buyback (strikes FY17/20/21/25); Feb 2027 AGM spin vote forces full quality re-base |
+| SIKA | Sika AG | 2026-07-21 | v1 | AVOID (SF FAIL: P19 hard strike, 2018 SWH buyback) | ADEQUATE | STRONG | FAIL | CHF 155.40 (21 Jul 2026) | CHEAP < ≈ CHF 30.5 (EV/OI, consv EV; MCap/FCF leg ≈ CHF 66.4; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 results 19 Feb 2027 (Akkim audit); SF window re-test FY2028 AR (~Feb 2029); Parex/MBCC pre-deal OI re-test if statutory accounts surface |
 | SONY (6758.T, ADR 1:1) | Sony Group Corporation | 2026-07-11 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | ¥3,359 ≈ $20.85 ADR (10 Jul 2026) | CHEAP < ≈ ¥1,342 ≈ $8.3 ADR (EV/OI, conservative EV; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~May 2027); H1 ~Nov 2026 re-tests ¥500bn facility under P19. Ex-FS ROCE on the 10% floor — one weak year flips Past. Alert < ¥2,000 |
 | SPCX | Space Exploration Technologies Corp. | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $152.88 (9 Jul 2026 intraday) | n.m. — FY2025 OI −$2.6bn & FCF −$14.0bn; no positive price clears either primary | — | First public 10-K (~Feb–Mar 2027) informational; triple-gate structural. Starlink spin-out filing → fresh ANALYSE |
 | SPOT | Spotify Technology S.A. | 2026-07-10 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | $485.88 (9 Jul 2026; ≈€424.63) | CHEAP < ≈ $73 / €64 (EV/OI, conservative EV; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) informational — structural: ROCE 4.3% + supplier breadth FAIL + P19 strikes on every tranche ever executed |
@@ -176,9 +177,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v98 — 2026-07-21** — SIKA (Sika AG) ANALYSE v1: **AVOID** (SF FAIL: P19 hard strike — 2018 SWH buyback 33–58× both reads; Past ADEQUATE w-o-4 ROCE 14.1%; Future STRONG). EXPENSIVE; band ≈ CHF 30.5 EV/OI. 114 → 115 names.
 - **v97 — 2026-07-21** — HLAG (Hapag-Lloyd) ANALYSE v1: **AVOID** (Future WEAK: 2 strong forces, no moat). Past ADEQUATE (w-o-4 ROCE 17.8%, boom-skewed); SF PASS. Band ≈ €20.3. 113 → 114 names.
 - **v96 — 2026-07-20** — ENR (Siemens Energy) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 0.1% on 5y post-spin record; SF FAIL: P19 dilution-sterilisation strike + FY25 tranche 32.2×/203.9× EV/OI). EXPENSIVE 64.4× EV/OI; band ≈ €12. 112 → 113 names.
 - **v95 — 2026-07-20** — FTK (flatexDEGIRO) ANALYSE v1: **AVOID** (Future WEAK: substitutes + entrants STRONG). Past ADEQUATE (§2·1A substitution, ROE 13.8%); SF PASS. Band ≈ €12.55. 111 → 112 names.
 - **v94 — 2026-07-20** — TLX (Talanx) ANALYSE v1: **AVOID** (Future WEAK: customer power + substitutes; Past ADEQUATE, w-o-4 ROE 11.4%; SF PASS). Band ≈ €48 (MCap/BV anchor). 110 → 111 names.
-- **v93 — 2026-07-20** — FRE (Fresenius SE) ANALYSE v1: **AVOID** (Past WEAK: w-o-4 ROCE 5.1%; Future WEAK: breadth FAIL + 2 strong forces). SF PASS w/ allocation flag. Band ≈ €6.35 EV/OI. 109 → 110 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
