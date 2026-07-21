@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v102
+register_version: v103
 register_date: 2026-07-22
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 119
-verdict_split: "WATCH 20 · AVOID 99 · BUY 0 · DNAF 0"
+names_total: 120
+verdict_split: "WATCH 21 · AVOID 99 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v102 · 2026-07-22)
+# GSC Register — Master Watchlist (v103 · 2026-07-22)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 20 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 21 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,6 +60,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
+| IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
 ### AVOID — 99 names, alphabetical
 
@@ -181,9 +182,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v103 — 2026-07-22** — IFCN (INFICON) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE 22.2%/FCFROCE 12.3%; Future ADEQUATE; SF PASS — clean, no flags). EXPENSIVE 42.8× EV/OI / 70× MCap/FCF; band ≈ CHF 18. 119 → 120 names.
 - **v102 — 2026-07-22** — SOON ANALYSE v1: **AVOID** (SF FAIL: P19 — 4/4 tranches 2018–23 at 21–35× dual-read). Past/Future ADEQUATE; EXPENSIVE; band ≈ CHF 50. 118→119; v101 AVOID header fixed.
 - **v101 — 2026-07-22** — LOGI (Logitech) ANALYSE v1: **AVOID** (Future WEAK: breadth FAIL — Amazon 18%/Ingram 14%/Synnex 12%, no waiver; SF FAIL: P19 hard strikes — FY22 dual-read 72.8×/23.1× MCap/FCF + FY24 sterilisation). Past STRONG (w-o-4 ROCE 27.2%). EXPENSIVE; band ≈ $47.8. 117 → 118 names.
 - **v100 — 2026-07-21** — STMN (Straumann) ANALYSE v1: **AVOID** (SF FAIL: P19 dilution-sterilisation buybacks [SAP/ENR precedent] + DTC write-off flag ≈ CHF 0.3bn). Past STRONG (w-o-4 ROCE 19.0%), Future STRONG; EXPENSIVE 28.8×; band ≈ CHF 14.1. 116 → 117 names.
 - **v99 — 2026-07-21** — KNIN (Kuehne+Nagel) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE/FCFROCE 23.1%; Future ADEQUATE; SF PASS, 1 P19 flag 2023 tranche). EXPENSIVE 23.6× EV/OI; band ≈ CHF 34. 115 → 116 names.
-- **v98 — 2026-07-21** — SIKA (Sika AG) ANALYSE v1: **AVOID** (SF FAIL: P19 hard strike — 2018 SWH buyback 33–58× both reads; Past ADEQUATE w-o-4 ROCE 14.1%; Future STRONG). EXPENSIVE; band ≈ CHF 30.5 EV/OI. 114 → 115 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
