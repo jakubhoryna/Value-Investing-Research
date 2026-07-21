@@ -181,7 +181,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
-- **v102 — 2026-07-22** — SOON (Sonova) ANALYSE v1: **AVOID** (SF FAIL: P19 hard strikes — 4/4 pgm tranches 2018–23 at 21–35× dual-read; redemption limb (a) absent). Past ADEQUATE (w-o-4 ROCE 13.9%), Future ADEQUATE; EXPENSIVE; band ≈ CHF 50. 118 → 119 names; v101 AVOID-header count repaired.
+- **v102 — 2026-07-22** — SOON ANALYSE v1: **AVOID** (SF FAIL: P19 — 4/4 tranches 2018–23 at 21–35× dual-read). Past/Future ADEQUATE; EXPENSIVE; band ≈ CHF 50. 118→119; v101 AVOID header fixed.
 - **v101 — 2026-07-22** — LOGI (Logitech) ANALYSE v1: **AVOID** (Future WEAK: breadth FAIL — Amazon 18%/Ingram 14%/Synnex 12%, no waiver; SF FAIL: P19 hard strikes — FY22 dual-read 72.8×/23.1× MCap/FCF + FY24 sterilisation). Past STRONG (w-o-4 ROCE 27.2%). EXPENSIVE; band ≈ $47.8. 117 → 118 names.
 - **v100 — 2026-07-21** — STMN (Straumann) ANALYSE v1: **AVOID** (SF FAIL: P19 dilution-sterilisation buybacks [SAP/ENR precedent] + DTC write-off flag ≈ CHF 0.3bn). Past STRONG (w-o-4 ROCE 19.0%), Future STRONG; EXPENSIVE 28.8×; band ≈ CHF 14.1. 116 → 117 names.
 - **v99 — 2026-07-21** — KNIN (Kuehne+Nagel) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE/FCFROCE 23.1%; Future ADEQUATE; SF PASS, 1 P19 flag 2023 tranche). EXPENSIVE 23.6× EV/OI; band ≈ CHF 34. 115 → 116 names.
