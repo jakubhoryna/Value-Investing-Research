@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v104
+register_version: v105
 register_date: 2026-07-22
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 121
-verdict_split: "WATCH 21 · AVOID 100 · BUY 0 · DNAF 0"
+names_total: 122
+verdict_split: "WATCH 21 · AVOID 101 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v104 · 2026-07-22)
+# GSC Register — Master Watchlist (v105 · 2026-07-22)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 100 names, alphabetical
+### AVOID — 101 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -105,6 +105,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | HUBN | Huber+Suhner AG | 2026-07-22 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 191.40 (22 Jul 2026) | CHEAP < ≈ CHF 31 (MCap/FCF; EV/OI leg ≈ CHF 34) — EXPENSIVE | — | FY2026 AR (~Mar 2027) P19 re-test; flip needs a programme year at/below bargain lines |
 | HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $207.48 (10 Jul 2026 close) | n.m. — EV/OI ≤ 7 unreachable at FY25 OI $7.4m (conservative EV); all-cash leg ≈ $28, MCap/FCF leg ≈ $88 — EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors OI/band; P19 watch — $1.0B 2026 pgm |
 | IBM | International Business Machines Corp. | 2026-07-14 | v1 | AVOID (Past WEAK: ROCE w-o-4 6.6–8.4% < 10%; L/E 365%) | WEAK | ADEQUATE | PASS | $218.80 | CHEAP < ≈ $37 (EV/OI binding; MCap/FCF leg ≈ $103) — EXPENSIVE | — | FY2026 10-K (~Feb 2027); or price < ≈ $103 (MCap/FCF leg) |
+| INIO | INNIO N.V. | 2026-07-22 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: 88% control + recap) | WEAK | WEAK | FAIL | $30.37 (21 Jul 2026) | n.m. — EV/OI ≤7 unreachable (7×FY25 OI < debt+NCI); MCap/FCF leg ≈ $4.02 — EXPENSIVE | — | FY2026 10-K + first DEF 14A (~Feb–Mar 2027): P17/P19 first live test; P20 limb (i) re-test |
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
 | KER | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
 | KNEBV | KONE Oyj | 2026-07-15 | v1 | AVOID (SF FAIL: P19 acquisition strike — TKE ~21.6× pre-deal EBIT) | ADEQUATE | STRONG | FAIL | €48.48 (KONE B, 15 Jul 2026) | CHEAP < ≈ €17.1 (EV/OI, standalone; no P12) — EXPENSIVE ~19×, moot given AVOID | — | TKE deal block-or-close (earliest Q2 2027) → flips WATCH if blocked; FY2026 (~Jan 2027); price → ≈€17 |
@@ -183,9 +184,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v105 — 2026-07-22** — INIO ANALYSE v1: **AVOID** (Past WEAK ROCE 9.1%, L/E 2,146%; Future WEAK breadth FAIL; SF FAIL — 88% control + $887m recap). EXPENSIVE 74.2×; band n.m. 121 → 122 names.
 - **v104 — 2026-07-22** — HUBN (Huber+Suhner) ANALYSE v1: **AVOID** (SF FAIL: P19 strike — 2021–23 buyback @ CHF 80.61, MCap/FCF 30.8–36.1× both reads). Past/Future ADEQUATE. Band ≈ CHF 31. 120 → 121.
 - **v103 — 2026-07-22** — IFCN (INFICON) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE 22.2%/FCFROCE 12.3%; Future ADEQUATE; SF PASS — clean, no flags). EXPENSIVE 42.8× EV/OI / 70× MCap/FCF; band ≈ CHF 18. 119 → 120 names.
 - **v102 — 2026-07-22** — SOON ANALYSE v1: **AVOID** (SF FAIL: P19 — 4/4 tranches 2018–23 at 21–35× dual-read). Past/Future ADEQUATE; EXPENSIVE; band ≈ CHF 50. 118→119; v101 AVOID header fixed.
 - **v101 — 2026-07-22** — LOGI (Logitech) ANALYSE v1: **AVOID** (Future WEAK: breadth FAIL — Amazon 18%/Ingram 14%/Synnex 12%, no waiver; SF FAIL: P19 hard strikes — FY22 dual-read 72.8×/23.1× MCap/FCF + FY24 sterilisation). Past STRONG (w-o-4 ROCE 27.2%). EXPENSIVE; band ≈ $47.8. 117 → 118 names.
-- **v100 — 2026-07-21** — STMN (Straumann) ANALYSE v1: **AVOID** (SF FAIL: P19 dilution-sterilisation buybacks [SAP/ENR precedent] + DTC write-off flag ≈ CHF 0.3bn). Past STRONG (w-o-4 ROCE 19.0%), Future STRONG; EXPENSIVE 28.8×; band ≈ CHF 14.1. 116 → 117 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
