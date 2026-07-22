@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v107
+register_version: v108
 register_date: 2026-07-22
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 124
-verdict_split: "WATCH 21 · AVOID 103 · BUY 0 · DNAF 0"
+names_total: 125
+verdict_split: "WATCH 21 · AVOID 104 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v107 · 2026-07-22)
+# GSC Register — Master Watchlist (v108 · 2026-07-22)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -147,6 +147,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SOON | Sonova Holding AG | 2026-07-22 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 200.40 (21 Jul 2026) | CHEAP < ≈ CHF 50 (EV/OI strict; cash-excess leg ≈ 62; MCap/FCF leg ≈ 78; no P12) — EXPENSIVE 19–21×, moot given AVOID | — | FY2026/27 AR (~May 2027): new CEO/CFO/Chair first allocation year (redemption limbs a+b; limb c met); Consumer Hearing divestment close; alert < ≈ CHF 60 |
 | SPCX | Space Exploration Technologies Corp. | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $152.88 (9 Jul 2026 intraday) | n.m. — FY2025 OI −$2.6bn & FCF −$14.0bn; no positive price clears either primary | — | First public 10-K (~Feb–Mar 2027) informational; triple-gate structural. Starlink spin-out filing → fresh ANALYSE |
 | SPOT | Spotify Technology S.A. | 2026-07-10 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | $485.88 (9 Jul 2026; ≈€424.63) | CHEAP < ≈ $73 / €64 (EV/OI, conservative EV; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) informational — structural: ROCE 4.3% + supplier breadth FAIL + P19 strikes on every tranche ever executed |
+| SRT3 | Sartorius AG | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Polyplus) | WEAK | STRONG | FAIL | €215.85 pref / €174.00 ord (22 Jul 2026) | n.m. — EV/OI ≤7 unreachable at any price (net debt+NCI = 9.0× FY25 OI); MCap/FCF leg ≈ €24.8 | — | FY2026 AR (~Feb 2027); P19 acquisition strike stands to FY2032 |
 | STMN | Straumann Holding AG | 2026-07-21 | v1 | AVOID (SF FAIL: P19 sterilisation buybacks + DTC allocation flag) | STRONG | STRONG | FAIL | CHF 99.18 (21 Jul 2026) | CHEAP < ≈ CHF 14.1 (MCap/FCF; EV/OI leg ≈ 24.1; P12 edge ≈ 17.6) — EXPENSIVE 28.8× EV/OI | — | FY2026 AR (~Feb 2027) re-tests P19 practice & VBP 2.0 margin; quality gates STRONG — SF-only AVOID |
 | SU | Schneider Electric SE | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks + AVEVA audit) | ADEQUATE | STRONG | FAIL | €267.75 (10 Jul 2026) | CHEAP < ≈ €55 (EV/OI, consv EV incl. leases; MCap/FCF leg ≈ €65; no P12) — EXPENSIVE | — | FY2026 (~Feb 2027) P19 re-test; Motivair put 2028; alert < ≈ €65 |
 | TEAM | Atlassian Corporation | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 + P19) | WEAK | ADEQUATE | FAIL | $90.69 (14 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $43, SBC-flattered FCF) | — | FY2026 10-K (~Aug 2026): OI-inflection check + P19 re-test of $1.5bn 2024 pgm; structural, low priority |
@@ -186,9 +187,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v108 — 2026-07-22** — SRT3 (Sartorius) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 9.5%/FCFROCE 4.8%, L/E 216%; SF FAIL: P19 Polyplus ≥24× pre-deal OI). Future STRONG; band n.m. 124 → 125 names.
 - **v107 — 2026-07-22** — 8TRA (TRATON) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 4.4%/FCFROCE −1.6%, L/E 266%; SF FAIL: P19 Navistar 23.1× normalized). Future ADEQUATE; no computable band. 123 → 124 names.
 - **v106 — 2026-07-22** — UN0 (Uniper) ANALYSE v1: **AVOID** (triple gate — Past WEAK w-o-4 ROCE −1.3%; Future WEAK breadth FAIL + 3/4 forces + no moat; SF FAIL flag pair: €2,551m RPT to 99.12% state holder + ~€8bn capex at 3–5% ROCE). Band n.m. 122 → 123 names.
 - **v105 — 2026-07-22** — INIO ANALYSE v1: **AVOID** (Past WEAK ROCE 9.1%, L/E 2,146%; Future WEAK breadth FAIL; SF FAIL — 88% control + $887m recap). EXPENSIVE 74.2×; band n.m. 121 → 122 names.
 - **v104 — 2026-07-22** — HUBN (Huber+Suhner) ANALYSE v1: **AVOID** (SF FAIL: P19 strike — 2021–23 buyback @ CHF 80.61, MCap/FCF 30.8–36.1× both reads). Past/Future ADEQUATE. Band ≈ CHF 31. 120 → 121.
-- **v103 — 2026-07-22** — IFCN (INFICON) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE 22.2%/FCFROCE 12.3%; Future ADEQUATE; SF PASS — clean, no flags). EXPENSIVE 42.8× EV/OI / 70× MCap/FCF; band ≈ CHF 18. 119 → 120 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
