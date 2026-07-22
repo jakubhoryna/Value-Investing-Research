@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v105
+register_version: v106
 register_date: 2026-07-22
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 122
-verdict_split: "WATCH 21 · AVOID 101 · BUY 0 · DNAF 0"
+names_total: 123
+verdict_split: "WATCH 21 · AVOID 102 · BUY 0 · DNAF 0"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v105 · 2026-07-22)
+# GSC Register — Master Watchlist (v106 · 2026-07-22)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 101 names, alphabetical
+### AVOID — 102 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -158,6 +158,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | TSLA | Tesla, Inc. | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $425.30 | CHEAP < ≈ $13–16 (MCap/FCF strict / EV/OI w/allowance) — academic. Cheapness EXPENSIVE | — | None scheduled. Re-examine only on structural governance change + durable ROCE_xc recovery ≥15% |
 | TTWO | Take-Two Interactive Software | 2026-07-11 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | ~$243 | n.m. — EV/OI leg unattainable (FY26 OI −$104m); FCF-leg ref ≈ $20 | — | FY2027 10-K (~May 2027): first GTA VI year restores a computable band; structural findings durable |
 | U | Unity Software Inc. | 2026-07-11 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $30.89 | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $7.4, reference only, SBC-flattered FCF) | — | FY2026 10-K (~Feb 2027): first annual print after ironSource network sunset + Supersonic divestiture; or any new buyback authorisation while OI < 0 |
+| UN0 (UN01.DE) | Uniper SE | 2026-07-22 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: RPT + allocation flags) | WEAK | WEAK | FAIL | €43.20 (21 Jul 2026) | n.m. — FY25 FCF −€1,588m, no price clears both primaries (EV/OI leg ≈ €11.66 consv EV) — EXPENSIVE 15.0×/20.8× | — | FY2026 AR (~Mar 2027) informational; structural — no price flips it; 0.88% free float, state sell-down to ≤25% by end-2028 |
 | UNH | UnitedHealth Group Incorporated | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | ~$425 (close 2 Jul 2026) | CHEAP < ≈ $52 (EV/OI, conservative EV, FY2025 trough OI; MCap/FCF leg ≈ $142). Band trough-anchored | — | FY2026 10-K (~Feb–Mar 2027); 2027 proxy (Apr 2027) re-tests the comp strike |
 | V | Visa Inc. | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $362.13 | CHEAP < ≈ $72 (EV/OI, conservative EV; P12 edge ≈ $88, where MCap/FCF binds). Cheapness EXPENSIVE (~32× FCF) | — | FY2026 10-K (~Nov 2026) re-tests the 11%-client disclosure (hard P15 breach, waiver denied); Jan 2027 proxy re-tests comp strike ($31.56m) |
 | VOW3 (VOW ord.) | Volkswagen AG (pref.) | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €72.14 (VOW3 close 9 Jul 2026; ord. €73.90) | n.m. — no positive price clears EV/OI ≤ 7 (captive debt €265bn); SOTP 0.19× BV — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027); structural only — VW-Law/Porsche-SE control + ~3–4% ROCE, no price flips it |
@@ -184,9 +185,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v106 — 2026-07-22** — UN0 (Uniper) ANALYSE v1: **AVOID** (triple gate — Past WEAK w-o-4 ROCE −1.3%; Future WEAK breadth FAIL + 3/4 forces + no moat; SF FAIL flag pair: €2,551m RPT to 99.12% state holder + ~€8bn capex at 3–5% ROCE). Band n.m. 122 → 123 names.
 - **v105 — 2026-07-22** — INIO ANALYSE v1: **AVOID** (Past WEAK ROCE 9.1%, L/E 2,146%; Future WEAK breadth FAIL; SF FAIL — 88% control + $887m recap). EXPENSIVE 74.2×; band n.m. 121 → 122 names.
 - **v104 — 2026-07-22** — HUBN (Huber+Suhner) ANALYSE v1: **AVOID** (SF FAIL: P19 strike — 2021–23 buyback @ CHF 80.61, MCap/FCF 30.8–36.1× both reads). Past/Future ADEQUATE. Band ≈ CHF 31. 120 → 121.
 - **v103 — 2026-07-22** — IFCN (INFICON) ANALYSE v1: **WATCH** (Past STRONG w-o-4 ROCE 22.2%/FCFROCE 12.3%; Future ADEQUATE; SF PASS — clean, no flags). EXPENSIVE 42.8× EV/OI / 70× MCap/FCF; band ≈ CHF 18. 119 → 120 names.
 - **v102 — 2026-07-22** — SOON ANALYSE v1: **AVOID** (SF FAIL: P19 — 4/4 tranches 2018–23 at 21–35× dual-read). Past/Future ADEQUATE; EXPENSIVE; band ≈ CHF 50. 118→119; v101 AVOID header fixed.
-- **v101 — 2026-07-22** — LOGI (Logitech) ANALYSE v1: **AVOID** (Future WEAK: breadth FAIL — Amazon 18%/Ingram 14%/Synnex 12%, no waiver; SF FAIL: P19 hard strikes — FY22 dual-read 72.8×/23.1× MCap/FCF + FY24 sterilisation). Past STRONG (w-o-4 ROCE 27.2%). EXPENSIVE; band ≈ $47.8. 117 → 118 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
