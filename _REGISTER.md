@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v114
+register_version: v115
 register_date: 2026-07-23
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 131
-verdict_split: "WATCH 21 · AVOID 109 · BUY 0 · DNAF 1"
+names_total: 132
+verdict_split: "WATCH 21 · AVOID 110 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v114 · 2026-07-23)
+# GSC Register — Master Watchlist (v115 · 2026-07-23)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 108 names, alphabetical
+### AVOID — 110 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -75,6 +75,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
 | BAS | BASF SE | 2026-07-17 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buyback) | WEAK | WEAK | FAIL | €48.44 (17 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt+NCI ≈ 11.9× OI); MCap/FCF leg ≈ €12.1; backvalued FY21 band ≈ €33.6 | — | FY2026 AR (~Feb 2027): P19 re-test on €1.5bn pgm 2026 tranches; Ag Solutions separation watch |
 | BAYN | Bayer AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €47.17 (16 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ €17.0 on FY25 co-def FCF €2.08bn). Cheapness EXPENSIVE | — | FY2026 (~Mar 2027): first positive-OI print restores a band; Roundup class-settlement approval + post-Durnell provisioning check (H2 2026) |
+| BC8 | Bechtle AG | 2026-07-23 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €30.88 | CHEAP < ≈ €9.2 (MCap/FCF, FY25 WC-trough; EV/OI leg ≈ €12.6 consv) — EXPENSIVE | — | FY2026 AR (~Mar 2027): ROCE-decline arrest test; trough-FCF basis resets; CEO succession |
 | BEI | Beiersdorf Aktiengesellschaft | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19) | WEAK | ADEQUATE | FAIL | €77.44 (22 Jul 2026) | CHEAP < ≈ €19 (MCap/FCF, P20 maint. basis; EV/OI leg ≈ €41; strict all-capex ≈ €11) — moot given AVOID | — | FY2026 AR (~Mar 2027): P19 re-test on 2026 pgm; 2024 & 2025 tranches both strike >20× on both reads |
 | BNR | Brenntag SE | 2026-07-23 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €59.10 (23 Jul 2026) | CHEAP < ≈ €12 (EV/OI, consv EV, FY25 trough OI; MCap/FCF leg ≈ €37; peak-OI leg ≈ €49) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027) ROCE-inflection + P19 re-test on any 2026 buyback; H1 ~Aug 2026 opt.; alert < ≈ €40 |
 | BRZE | Braze, Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $26.60 (13 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $4.1, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on FY27 buyback table ($50m Q1 ASR — sterilisation) |
@@ -200,9 +201,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v115 — 2026-07-23** — BC8 (Bechtle) ANALYSE v1: **AVOID** (Past WEAK — sustained ROCE decline FY21–25, end-CE 14.8%→10.2%; w-o-4 13.0%). Future ADEQUATE; SF PASS clean (no buybacks in window). EXPENSIVE 13.9× EV/OI. 131→132; stale AVOID header (108) repaired.
 - **v114 — 2026-07-23** — SY1 (Symrise) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.9%, goodwill drag; FY25 EBIT −€299m impairments). Future STRONG; SF PASS. EXPENSIVE 30–32× EV/OI. 130→131.
 - **v113 — 2026-07-23** — BNR (Brenntag) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 11.5%, 3-yr decline 16%→7%, OI/sh −2.8%). Future ADEQUATE; SF PASS (1 INDET P19 flag). Band ≈ €12. 129→130.
 - **v112 — 2026-07-23** — SYAB (SYNLAB) ANALYSE v1: **DNAF** (no listed security — FSE delisting Jul 2024, squeeze-out completed Jul 2025, 100% Cinven/Ephios). Re-analyse only on re-listing. 128 → 129 names.
 - **v111 — 2026-07-22** — KBX (Knorr-Bremse) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 14.5%, sustained decline 17.8%→11.8%). Future ADEQUATE; SF PASS. Band ≈ €19.6. 127 → 128 names.
-- **v110 — 2026-07-22** — 1COV (Covestro) ANALYSE v1: **AVOID** (triple gate — Past WEAK w-o-4 ROCE 7.4%/FCFROCE 3.8% FY18–25; Future WEAK 2 forces + eroding cost moat; SF FAIL P17 strike €4.44m pay vs negative NI & FCF). Band n.m.; XRG squeeze-out €59.46. 126 → 127 names.
+
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
