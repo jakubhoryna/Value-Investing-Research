@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v115
+register_version: v116
 register_date: 2026-07-23
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 132
-verdict_split: "WATCH 21 · AVOID 110 · BUY 0 · DNAF 1"
+names_total: 133
+verdict_split: "WATCH 21 · AVOID 111 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v115 · 2026-07-23)
+# GSC Register — Master Watchlist (v116 · 2026-07-23)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 110 names, alphabetical
+### AVOID — 111 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -92,6 +92,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | ENR | Siemens Energy AG | 2026-07-20 | v1 | AVOID (Past WEAK ROCE 0.1% + SF FAIL: P19) | WEAK | WEAK | FAIL | €152.00 (20 Jul 2026) | CHEAP < ≈ €12 strict (EV/OI, no-cash EV; ≈ €26 all-cash leg; MCap/FCF leg ≈ €37) — moot given AVOID. EXPENSIVE 64.4× EV/OI | — | FY2026 AR (~Dec 2026): 1st clean-cycle year + P19 re-test of the €2bn/€6bn buyback |
+| EVK | Evonik Industries AG | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 INDET: 2017 APD audit) | €16.68 (22 Jul 2026) | CHEAP < ≈ €0.24 (EV/OI, consv EV; all-cash leg ≈ €1.30; MCap/FCF leg ≈ €10.20) — moot given AVOID. EXPENSIVE 20.3× | — | FY2026 AR (~Mar 2027): 1st full year of 3-segment structure; structural — no price flips it |
 | FRE | Fresenius SE & Co. KGaA | 2026-07-20 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.1% + Future WEAK: breadth FAIL + 2 strong forces) | WEAK | WEAK | PASS | €42.63 (20 Jul 2026) | CHEAP < ≈ €6.35 (EV/OI, consv EV; MCap/FCF leg ≈ €20.9) — EXPENSIVE | — | FY2026 AR (~Mar 2027); hospital-reform Leistungsgruppen from 2027; SF capital-allocation flag standing |
 | FTK | flatexDEGIRO SE | 2026-07-20 | v1 | AVOID (Future WEAK: 2 strong forces) | ADEQUATE | WEAK | PASS (1 flag: BaFin §44 special audit) | €35.58 (20 Jul 2026) | CHEAP < ≈ €12.55 (MCap/FCF anchor, §2·1A substitution; NI-proxy leg ≈ €11.94; EV/OI n.m.) — moot given AVOID. EXPENSIVE | — | FY2026 (~Mar 2027); NII 31% of revenue is ECB-rate-linked; 8y record caps Past; alert < ≈ €15 |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
@@ -201,10 +202,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v116 — 2026-07-23** — EVK (Evonik) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 4.6%/FCFROCE 3.5%; Future WEAK — 3 strong forces). SF PASS (APD audit INDET). EXPENSIVE 20.3×. 132→133.
 - **v115 — 2026-07-23** — BC8 (Bechtle) ANALYSE v1: **AVOID** (Past WEAK — sustained ROCE decline FY21–25, end-CE 14.8%→10.2%; w-o-4 13.0%). Future ADEQUATE; SF PASS clean (no buybacks in window). EXPENSIVE 13.9× EV/OI. 131→132; stale AVOID header (108) repaired.
 - **v114 — 2026-07-23** — SY1 (Symrise) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.9%, goodwill drag; FY25 EBIT −€299m impairments). Future STRONG; SF PASS. EXPENSIVE 30–32× EV/OI. 130→131.
 - **v113 — 2026-07-23** — BNR (Brenntag) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 11.5%, 3-yr decline 16%→7%, OI/sh −2.8%). Future ADEQUATE; SF PASS (1 INDET P19 flag). Band ≈ €12. 129→130.
 - **v112 — 2026-07-23** — SYAB (SYNLAB) ANALYSE v1: **DNAF** (no listed security — FSE delisting Jul 2024, squeeze-out completed Jul 2025, 100% Cinven/Ephios). Re-analyse only on re-listing. 128 → 129 names.
-- **v111 — 2026-07-22** — KBX (Knorr-Bremse) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 14.5%, sustained decline 17.8%→11.8%). Future ADEQUATE; SF PASS. Band ≈ €19.6. 127 → 128 names.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
