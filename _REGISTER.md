@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v111
-register_date: 2026-07-22
+register_version: v112
+register_date: 2026-07-23
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 128
-verdict_split: "WATCH 21 · AVOID 107 · BUY 0 · DNAF 0"
+names_total: 129
+verdict_split: "WATCH 21 · AVOID 107 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v111 · 2026-07-22)
+# GSC Register — Master Watchlist (v112 · 2026-07-23)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -176,6 +176,14 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ---
 
+### DNAF — 1 name
+
+| Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px @ memo | Trigger band | Dist % | Next review / notes |
+|--------|---------|-----------|-----|---------|------|--------|----|-----------|--------------|--------|---------------------|
+| SYAB | SYNLAB AG | 2026-07-23 | v1 | DNAF (no listed security) | n/a | n/a | n/a | n/a — delisted | n.m. — 100% private (Cinven/Ephios) since Jul 2025 squeeze-out | — | Re-listing/IPO event only |
+
+---
+
 ## Open items
 
 - P17/P19 re-examination queue **closed** (Tiers 1–3 complete; last flip NKE v2 2026-07-09). Clean under v3: ADYEN, AMZN, BABA, BKE, BKNG (1 flag), BRK.B, KSPI, TROW, TSM, SDZ. CROX flipped v84 on fresh FY2016–19 data (v3 memo), re-cleared v85 under MODEL v3.4.0 (v4 memo: SF PASS, 1 P19 flag, HEYDUDE indeterminate).
@@ -190,9 +198,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v112 — 2026-07-23** — SYAB (SYNLAB) ANALYSE v1: **DNAF** (no listed security — FSE delisting Jul 2024, squeeze-out completed Jul 2025, 100% Cinven/Ephios). Re-analyse only on re-listing. 128 → 129 names.
 - **v111 — 2026-07-22** — KBX (Knorr-Bremse) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 14.5%, sustained decline 17.8%→11.8%). Future ADEQUATE; SF PASS. Band ≈ €19.6. 127 → 128 names.
 - **v110 — 2026-07-22** — 1COV (Covestro) ANALYSE v1: **AVOID** (triple gate — Past WEAK w-o-4 ROCE 7.4%/FCFROCE 3.8% FY18–25; Future WEAK 2 forces + eroding cost moat; SF FAIL P17 strike €4.44m pay vs negative NI & FCF). Band n.m.; XRG squeeze-out €59.46. 126 → 127 names.
 - **v109 — 2026-07-22** — BEI (Beiersdorf) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 13.5%/FCFROCE 7.0%; SF FAIL: P19 strikes on 2024 & 2025 tranches). Future ADEQUATE. Band ≈ €19. 125 → 126 names.
 - **v108 — 2026-07-22** — SRT3 (Sartorius) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 9.5%/FCFROCE 4.8%, L/E 216%; SF FAIL: P19 Polyplus ≥24× pre-deal OI). Future STRONG; band n.m. 124 → 125 names.
-- **v107 — 2026-07-22** — 8TRA (TRATON) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 4.4%/FCFROCE −1.6%, L/E 266%; SF FAIL: P19 Navistar 23.1× normalized). Future ADEQUATE; no computable band. 123 → 124 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
