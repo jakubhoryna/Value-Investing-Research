@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v121
-register_date: 2026-07-23
+register_version: v122
+register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 138
-verdict_split: "WATCH 21 · AVOID 116 · BUY 0 · DNAF 1"
+names_total: 139
+verdict_split: "WATCH 21 · AVOID 117 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v121 · 2026-07-23)
+# GSC Register — Master Watchlist (v122 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 116 names, alphabetical
+### AVOID — 117 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -169,6 +169,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | TRI | Thomson Reuters Corporation | 2026-07-14 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $92.05 (13 Jul 2026) | CHEAP < ≈ $30 (EV/OI, consv EV; MCap/FCF leg ≈ $37; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) + 2027 circular re-test P19 (2021–25 buybacks ~27–40×); AI-substitution watch; alert < ≈ $45 |
 | TSLA | Tesla, Inc. | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $425.30 | CHEAP < ≈ $13–16 (MCap/FCF strict / EV/OI w/allowance) — academic. Cheapness EXPENSIVE | — | None scheduled. Re-examine only on structural governance change + durable ROCE_xc recovery ≥15% |
 | TTWO | Take-Two Interactive Software | 2026-07-11 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | ~$243 | n.m. — EV/OI leg unattainable (FY26 OI −$104m); FCF-leg ref ≈ $20 | — | FY2027 10-K (~May 2027): first GTA VI year restores a computable band; structural findings durable |
+| TUI1 | TUI AG | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €6.662 (23 Jul 2026) | CHEAP < ≈ €7.48 (EV/OI, consv EV; MCap/FCF leg ≈ €14.18) — price inside band, moot given AVOID | — | FY2026 AR (~Dec 2026) informational; COVID years exit window FY2031; L/E 877% |
 | U | Unity Software Inc. | 2026-07-11 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $30.89 | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $7.4, reference only, SBC-flattered FCF) | — | FY2026 10-K (~Feb 2027): first annual print after ironSource network sunset + Supersonic divestiture; or any new buyback authorisation while OI < 0 |
 | UN0 (UN01.DE) | Uniper SE | 2026-07-22 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: RPT + allocation flags) | WEAK | WEAK | FAIL | €43.20 (21 Jul 2026) | n.m. — FY25 FCF −€1,588m, no price clears both primaries (EV/OI leg ≈ €11.66 consv EV) — EXPENSIVE 15.0×/20.8× | — | FY2026 AR (~Mar 2027) informational; structural — no price flips it; 0.88% free float, state sell-down to ≤25% by end-2028 |
 | UNH | UnitedHealth Group Incorporated | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | ~$425 (close 2 Jul 2026) | CHEAP < ≈ $52 (EV/OI, conservative EV, FY2025 trough OI; MCap/FCF leg ≈ $142). Band trough-anchored | — | FY2026 10-K (~Feb–Mar 2027); 2027 proxy (Apr 2027) re-tests the comp strike |
@@ -207,10 +208,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v122 — 2026-07-24** — TUI1 (TUI AG) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 2.9%/FCFROCE 1.8%, L/E 877%, OI/sh −18.6% p.a.; Future WEAK — 2 strong forces). SF PASS. CHEAP 6.4×/3.4×, moot. 138→139.
 - **v121 — 2026-07-23** — LIGHT (Signify) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 8.3%; Future WEAK — 2 strong forces, eroding moat, shrinking market). SF PASS (one P19 flag, 2022). FAIR 9.6×/5.0×; band CHEAP < ≈ €8.1. 137→138.
 - **v120 — 2026-07-23** — AKZA (AkzoNobel) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.6%/FCFROCE 3.0%; SF FAIL — P19 hard strikes 2017/2019/2021, 16–59× reads, zero clean tranches). Future ADEQUATE; EXPENSIVE 16.0×/12.6×. Next review: Axalta merger close. 136→137.
 - **v119 — 2026-07-23** — PHIA (Philips) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 3.5%/FCFROCE 4.4%; SF FAIL — P19 hard strikes 2019–24, dominant pattern). Future ADEQUATE; EXPENSIVE 28.3×/19–21×. 135→136.
 - **v118 — 2026-07-23** — AMV0 (Aumovio) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE −1.6%, ΣOI −€741m over 4y record; Future WEAK — top customer 22.6%, 3 strong forces). SF PASS clean. EXPENSIVE 32.1× MCap/FCF, EV/OI n.m. 134→135.
-- **v117 — 2026-07-23** — HLE (FORVIA HELLA) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.1%, FCFROCE 2.3%; Future WEAK — one customer 22.6% of sales, 3 strong forces). SF PASS. EXPENSIVE 30.3× EV/OI. 133→134.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
