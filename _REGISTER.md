@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v120
+register_version: v121
 register_date: 2026-07-23
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 137
-verdict_split: "WATCH 21 · AVOID 115 · BUY 0 · DNAF 1"
+names_total: 138
+verdict_split: "WATCH 21 · AVOID 116 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v120 · 2026-07-23)
+# GSC Register — Master Watchlist (v121 · 2026-07-23)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 115 names, alphabetical
+### AVOID — 116 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -117,6 +117,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KBX | Knorr-Bremse AG | 2026-07-22 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (acq audit INDETERMINATE; 59% control caveat) | €101.70 (22 Jul 2026) | CHEAP < ≈ €19.6 (EV/OI, consv EV; all-cash-excess leg ≈ €30.4; MCap/FCF leg ≈ €32.7) — EXPENSIVE | — | FY2026 AR (~Mar 2027): ROCE off 11–13% plateau?; duagon capital add; Alstom-signalling audit re-test |
 | KER | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
 | KNEBV | KONE Oyj | 2026-07-15 | v1 | AVOID (SF FAIL: P19 acquisition strike — TKE ~21.6× pre-deal EBIT) | ADEQUATE | STRONG | FAIL | €48.48 (KONE B, 15 Jul 2026) | CHEAP < ≈ €17.1 (EV/OI, standalone; no P12) — EXPENSIVE ~19×, moot given AVOID | — | TKE deal block-or-close (earliest Q2 2027) → flips WATCH if blocked; FY2026 (~Jan 2027); price → ≈€17 |
+| LIGHT | Signify N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €15.98 (23 Jul 2026) | CHEAP < ≈ €8.1 (EV/OI, cons EV; no P12) — FAIR 9.6×/5.0× | — | FY2026 AR (~Feb 2027) re-tests quality gates; P19 2022 flag logged |
 | LIN | Linde plc | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P19 buybacks) | WEAK | STRONG | FAIL | $522.97 | CHEAP < ≈ $81 (EV/OI, consv EV, GW-laden CE; MCap/FCF leg ≈ $86; no P12) — EXPENSIVE ~30× | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test P19; Past-WEAK structural (worst-of-4 ROCE ~8%) |
 | LISN (SIX; PS LISP; ~10:1) | Chocoladefabriken Lindt & Sprüngli AG | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | CHF 96,500 reg / CHF 9,440 PS (15 Jul 2026) | CHEAP < ≈ CHF 16,700 reg (≈ CHF 1,670 PS; MCap/FCF norm-leg; EV/OI leg ≈ CHF 21,600; no P12) — EXPENSIVE ~24× EV/OI, moot | — | FY2026 (~Mar 2027) P19 re-test vs new CHF 1bn programme (2026–29); structural — buybacks strike at 20×+; strong brand, un-ownable on capital allocation |
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
@@ -206,10 +207,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v121 — 2026-07-23** — LIGHT (Signify) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 8.3%; Future WEAK — 2 strong forces, eroding moat, shrinking market). SF PASS (one P19 flag, 2022). FAIR 9.6×/5.0×; band CHEAP < ≈ €8.1. 137→138.
 - **v120 — 2026-07-23** — AKZA (AkzoNobel) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.6%/FCFROCE 3.0%; SF FAIL — P19 hard strikes 2017/2019/2021, 16–59× reads, zero clean tranches). Future ADEQUATE; EXPENSIVE 16.0×/12.6×. Next review: Axalta merger close. 136→137.
 - **v119 — 2026-07-23** — PHIA (Philips) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 3.5%/FCFROCE 4.4%; SF FAIL — P19 hard strikes 2019–24, dominant pattern). Future ADEQUATE; EXPENSIVE 28.3×/19–21×. 135→136.
 - **v118 — 2026-07-23** — AMV0 (Aumovio) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE −1.6%, ΣOI −€741m over 4y record; Future WEAK — top customer 22.6%, 3 strong forces). SF PASS clean. EXPENSIVE 32.1× MCap/FCF, EV/OI n.m. 134→135.
 - **v117 — 2026-07-23** — HLE (FORVIA HELLA) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.1%, FCFROCE 2.3%; Future WEAK — one customer 22.6% of sales, 3 strong forces). SF PASS. EXPENSIVE 30.3× EV/OI. 133→134.
-- **v116 — 2026-07-23** — EVK (Evonik) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 4.6%/FCFROCE 3.5%; Future WEAK — 3 strong forces). SF PASS (APD audit INDET). EXPENSIVE 20.3×. 132→133.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
