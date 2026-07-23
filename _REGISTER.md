@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v118
+register_version: v119
 register_date: 2026-07-23
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 135
-verdict_split: "WATCH 21 · AVOID 113 · BUY 0 · DNAF 1"
+names_total: 136
+verdict_split: "WATCH 21 · AVOID 114 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v118 · 2026-07-23)
+# GSC Register — Master Watchlist (v119 · 2026-07-23)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -62,7 +62,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 113 names, alphabetical
+### AVOID — 114 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -137,6 +137,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ONON | On Holding AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $37.20 (17 Jul 2026; ≈CHF 30.0) | CHEAP < ≈ CHF 6.2 ≈ $7.7 (MCap/FCF binding; EV/OI leg ≈ CHF 6.3; no P12 — Past WEAK) — EXPENSIVE | — | FY2026 20-F (~Mar 2027): worst-leg ROCE crosses 10% at OI ≈ CHF 450–480m — live flip; P17 headroom 4% re-test; Vietnam tariff watch; alert < ≈ $11 |
 | ORCL | Oracle Corporation | 2026-07-14 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $129.68 (14 Jul 2026) | No positive limit price on conservative EV; ≈$5–16 all-cash-excess (EV/OI; FCF n.m.) — academic. Cheapness EXPENSIVE | — | Q1 FY2027 (~Sept 2026); S&P BBB- (Jul'26) confirms leverage; flip needs deleveraging + FCF inflection + comp reform |
 | PAH3 (POAHY ADR) | Porsche Automobil Holding SE | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €28.08 (9 Jul 2026; mcap ≈ €8.4bn) | CHEAP < ≈ €22 (NAV-discount anchor ≈45% vs ~33% structural; substitution rule) — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027) — VW/Porsche AG impairment trend + NAV re-anchor; H1 2026 (~mid-Aug 2026); or price < ≈ €22 |
+| PHIA (PHG ADR) | Koninklijke Philips N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL: P19 strikes) | WEAK | ADEQUATE | FAIL | €22.83 (23 Jul 2026) | CHEAP < ≈ €4.9 (EV/OI leg binding; strict ≈ €1.95; FCF leg ≈ €6.45; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) info-only; P19 pattern structural (5 strike tranches 2019–24) |
 | PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL | $134.83 (14 Jul 2026) | CHEAP < ≈ $6.6 (MCap/FCF 8×; EV/OI all-cash ≈ $6.6; strict ≈ $3.8; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) extends thin ~6y record; 2027 proxy re-tests governance; structural — no price flips |
 | PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PYPL | PayPal Holdings, Inc. | 2026-06-10 | v1 | AVOID (Future WEAK) | STRONG | WEAK | PASS | $41.46 | CHEAP < ≈ $38 (MCap/TBV @1.25×). Cheapness FAIR | — | FY2026 results (early Feb 2027), or ≥4 quarters branded-checkout TPV-share stabilisation under Lores |
@@ -204,10 +205,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v119 — 2026-07-23** — PHIA (Philips) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 3.5%/FCFROCE 4.4%; SF FAIL — P19 hard strikes 2019–24, dominant pattern). Future ADEQUATE; EXPENSIVE 28.3×/19–21×. 135→136.
 - **v118 — 2026-07-23** — AMV0 (Aumovio) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE −1.6%, ΣOI −€741m over 4y record; Future WEAK — top customer 22.6%, 3 strong forces). SF PASS clean. EXPENSIVE 32.1× MCap/FCF, EV/OI n.m. 134→135.
 - **v117 — 2026-07-23** — HLE (FORVIA HELLA) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.1%, FCFROCE 2.3%; Future WEAK — one customer 22.6% of sales, 3 strong forces). SF PASS. EXPENSIVE 30.3× EV/OI. 133→134.
 - **v116 — 2026-07-23** — EVK (Evonik) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 4.6%/FCFROCE 3.5%; Future WEAK — 3 strong forces). SF PASS (APD audit INDET). EXPENSIVE 20.3×. 132→133.
 - **v115 — 2026-07-23** — BC8 (Bechtle) ANALYSE v1: **AVOID** (Past WEAK — sustained ROCE decline FY21–25, end-CE 14.8%→10.2%; w-o-4 13.0%). Future ADEQUATE; SF PASS clean (no buybacks in window). EXPENSIVE 13.9× EV/OI. 131→132; stale AVOID header (108) repaired.
-- **v114 — 2026-07-23** — SY1 (Symrise) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.9%, goodwill drag; FY25 EBIT −€299m impairments). Future STRONG; SF PASS. EXPENSIVE 30–32× EV/OI. 130→131.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
