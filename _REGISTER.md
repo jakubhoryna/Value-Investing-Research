@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v113
+register_version: v114
 register_date: 2026-07-23
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 130
-verdict_split: "WATCH 21 · AVOID 108 · BUY 0 · DNAF 1"
+names_total: 131
+verdict_split: "WATCH 21 · AVOID 109 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v113 · 2026-07-23)
+# GSC Register — Master Watchlist (v114 · 2026-07-23)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -153,6 +153,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SRT3 | Sartorius AG | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Polyplus) | WEAK | STRONG | FAIL | €215.85 pref / €174.00 ord (22 Jul 2026) | n.m. — EV/OI ≤7 unreachable at any price (net debt+NCI = 9.0× FY25 OI); MCap/FCF leg ≈ €24.8 | — | FY2026 AR (~Feb 2027); P19 acquisition strike stands to FY2032 |
 | STMN | Straumann Holding AG | 2026-07-21 | v1 | AVOID (SF FAIL: P19 sterilisation buybacks + DTC allocation flag) | STRONG | STRONG | FAIL | CHF 99.18 (21 Jul 2026) | CHEAP < ≈ CHF 14.1 (MCap/FCF; EV/OI leg ≈ 24.1; P12 edge ≈ 17.6) — EXPENSIVE 28.8× EV/OI | — | FY2026 AR (~Feb 2027) re-tests P19 practice & VBP 2.0 margin; quality gates STRONG — SF-only AVOID |
 | SU | Schneider Electric SE | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks + AVEVA audit) | ADEQUATE | STRONG | FAIL | €267.75 (10 Jul 2026) | CHEAP < ≈ €55 (EV/OI, consv EV incl. leases; MCap/FCF leg ≈ €65; no P12) — EXPENSIVE | — | FY2026 (~Feb 2027) P19 re-test; Motivair put 2028; alert < ≈ €65 |
+| SY1 | Symrise AG | 2026-07-23 | v1 | AVOID (Past WEAK) | WEAK | STRONG | PASS | €87.94 (23 Jul 2026) | CHEAP < ≈ €11.5 (EV/OI, reported OI; ≈ €26.5 underlying OI; FCF leg ≈ €28.8; no P12) — EXPENSIVE 30–32× EV/OI, moot given AVOID | — | FY2026 AR (~Mar 2027) first post-impairment basis; watch €400m buyback execution price (P19) |
 | TEAM | Atlassian Corporation | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 + P19) | WEAK | ADEQUATE | FAIL | $90.69 (14 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $43, SBC-flattered FCF) | — | FY2026 10-K (~Aug 2026): OI-inflection check + P19 re-test of $1.5bn 2024 pgm; structural, low priority |
 | TER | Teradyne, Inc. | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $353.23 (15 Jul 2026) | CHEAP < ≈ $22.56 (MCap/FCF; EV/OI leg ≈ $26.72; P12 edge ≈ $26.72) — EXPENSIVE, moot | — | FY2026 10-K (~Feb 2027) re-test P19 (FY25 $702m @ ~40× MCap/FCF); customer conc. 19% watch; alert < ≈ $27 |
 | TKA | thyssenkrupp AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 comp) | WEAK | WEAK | FAIL | €12.00 (16 Jul 2026) | n.m. — FY25 FCF €30m ⇒ FCF leg ≈ €0.4 (EV/OI leg ≈ €6.9); sub-book qualifiers 0.76× BV — EXPENSIVE | — | Break-up in progress (TKMS out 10/25, MS spin ann. 7/26, steel 50:50 pending); re-ANALYSE as stabilised holdco; FY2026 AR (~Dec 2026) informational |
@@ -199,9 +200,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v114 — 2026-07-23** — SY1 (Symrise) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.9%, goodwill drag; FY25 EBIT −€299m impairments). Future STRONG; SF PASS. EXPENSIVE 30–32× EV/OI. 130→131.
 - **v113 — 2026-07-23** — BNR (Brenntag) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 11.5%, 3-yr decline 16%→7%, OI/sh −2.8%). Future ADEQUATE; SF PASS (1 INDET P19 flag). Band ≈ €12. 129→130.
 - **v112 — 2026-07-23** — SYAB (SYNLAB) ANALYSE v1: **DNAF** (no listed security — FSE delisting Jul 2024, squeeze-out completed Jul 2025, 100% Cinven/Ephios). Re-analyse only on re-listing. 128 → 129 names.
 - **v111 — 2026-07-22** — KBX (Knorr-Bremse) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 14.5%, sustained decline 17.8%→11.8%). Future ADEQUATE; SF PASS. Band ≈ €19.6. 127 → 128 names.
 - **v110 — 2026-07-22** — 1COV (Covestro) ANALYSE v1: **AVOID** (triple gate — Past WEAK w-o-4 ROCE 7.4%/FCFROCE 3.8% FY18–25; Future WEAK 2 forces + eroding cost moat; SF FAIL P17 strike €4.44m pay vs negative NI & FCF). Band n.m.; XRG squeeze-out €59.46. 126 → 127 names.
-- **v109 — 2026-07-22** — BEI (Beiersdorf) ANALYSE v1: **AVOID** (Past WEAK w-o-4 ROCE 13.5%/FCFROCE 7.0%; SF FAIL: P19 strikes on 2024 & 2025 tranches). Future ADEQUATE. Band ≈ €19. 125 → 126 names.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
