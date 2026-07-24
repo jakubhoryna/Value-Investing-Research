@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v123
+register_version: v124
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 140
-verdict_split: "WATCH 21 · AVOID 118 · BUY 0 · DNAF 1"
+names_total: 141
+verdict_split: "WATCH 22 · AVOID 118 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v123 · 2026-07-24)
+# GSC Register — Master Watchlist (v124 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 21 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 22 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,6 +48,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KSPI                    | JSC Kaspi.kz                    | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (Hepsiburada flag)                   | $78.58 ADS                               | CHEAP < ≈ $42–52 (MCap/TBV binding; EV-build dependent). Cheapness FAIR                                                                 | +71%   | FY2026 results (~Mar 2027), price < $58, or Rabobank close / Türkiye update                                                                         |
 | BKNG                    | Booking Holdings Inc.           | 2026-07-06 | v2  | WATCH   | STRONG   | ADEQUATE | PASS (P19 flag)                           | $184.56 (close 2 Jul 2026)               | CHEAP < ≈ $94 (MCap/FCF @8×; EV/OI on 1.25× allowance; TTM cross-check ≈ $91)                                                           | +87%   | FY2026 results (~Feb 2027) re-anchor band + FY26 buyback re-test (2025 at 18.5× EV/OI); alert < ≈ $120                                              |
 | BABA                    | Alibaba Group Holding Ltd       | 2026-07-02 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | $95.51 ADS                               | CHEAP < ≈ $59 (EV/OI, normalised OI); ≈ $74 w/ allowance. Cheapness FAIR                                                                | +90%   | FY2027 Q1 (Aug 2026), price < ≈$74, Anthropic/Pentagon resolution, or capex revision                                                                |
+| FIE | Fielmann Group AG | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 P19 acq flag; Shopko >20× INDETERMINATE) | €39.20 (23 Jul 2026) | CHEAP < ≈ €19.44 (EV/OI, consv EV; MCap/FCF leg ≈ €33.25; no P12 — Past ADEQUATE). Cheapness FAIR | +102% | FY2026 AR (~Apr 2027): Shopko audit re-test + window rolls to 9y (only 8y retrievable); alert < ≈ €26 |
 | GSK | GSK plc | 2026-07-14 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | £19.205 (1920.5p LSE 14 Jul; ADR $51.42) | CHEAP < ≈ £9.08 (EV/OI, consv no-cash EV; MCap/FCF leg ≈ £11.10; no P12 — Past ADEQUATE). Cheapness FAIR | +111% | FY2026 (~Feb 2027) resets litigation-trough OI; ViiV HIV cliff ~2028 & IRA are Future watch; L/E 276% flag; alert < ≈ £12 |
 | ROG (SIX; RO bearer; RHHBY 8:1) | Roche Holding AG | 2026-07-15 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; dual-class caveat) | CHF 327.3 (ROP 15 Jul; RO 333.2; RHHBY $50.16) | CHEAP < ≈ CHF 138 (MCap/FCF; EV/OI leg ≈154; P12 edge ≈154) — EXPENSIVE | +138% | FY2026 (~Feb 2027) resets OI/FCF; obesity Ph3 (CT-388) & US IRA/MFN pricing; alert < ≈ CHF 200 |
 | NVS (NOVN SIX; ADR 1:1) | Novartis AG                     | 2026-07-05 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 flag)                             | ~$152 ADR (≈CHF 122)                     | CHEAP < ≈ $55 (EV/OI binding, conservative EV; MCap/FCF leg ≈ $73). No P12 edge. Cheapness EXPENSIVE                                    | +179%  | FY2026 (~Feb 2027) Entresto-trough resets band; alert < ~$75; IRA/MFN or pelacarsen readout. Soft WATCH                                             |
@@ -200,6 +201,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - P17/P19 re-examination queue **closed** (Tiers 1–3 complete; last flip NKE v2 2026-07-09). Clean under v3: ADYEN, AMZN, BABA, BKE, BKNG (1 flag), BRK.B, KSPI, TROW, TSM, SDZ. CROX flipped v84 on fresh FY2016–19 data (v3 memo), re-cleared v85 under MODEL v3.4.0 (v4 memo: SF PASS, 1 P19 flag, HEYDUDE indeterminate).
 - HFG (held) **SELL-FLAG** (SR2) — user decision pending; log the decision and realised outcome here.
 - NOVO-B (held) **SELL-FLAG** (SR2, confirmed v5) — **user decision 2026-07-16: HOLD against flag** (§7.2 judgment: quality + expected discipline under new CEO; framework verdict unchanged). Track realised outcome vs the flag; re-test at AR-2026 (~Feb 2027) incl. v3.5.0 redemption limbs (all three fail today).
+- **FIE** — named re-test at FY2026 AR: Shopko Optical acquisition multiple. Deal EV €312.5m; only the IFRS 3 pro-forma line is disclosed (sales €171.4m, after-tax income €4.8m). 15× flag robust on every build; >20× strike INDETERMINATE on estimated tax/PPA/lease add-backs (central build ≈ 24×). History window is 8y — pre-2018 reports are not published.
 - **FTK** — named re-tests at FY2026: supplier-breadth evidence (venue fee split undisclosed) and the FY2020–21 SARs-era comp quantum (INDETERMINATE, cannot pair).
 - Held-name entry dates missing (not in the IBKR snapshot) — user to supply.
 - INPST delists on offer settlement (exp. H2 2026) — archive the row then.
@@ -210,10 +212,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v124 — 2026-07-24** — FIE (Fielmann) ANALYSE v1: **WATCH** (Past ADEQUATE, w-o-4 ROCE 14.9%; SF PASS — 1 P19 acq flag, Shopko strike INDETERMINATE). FAIR 9.4×/12.7×; band < ≈ €19.44. 140→141.
 - **v123 — 2026-07-24** — KRN (Krones) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 9.3% vs P3 10%). Future ADEQUATE; SF PASS (zero buybacks). FAIR 13.4×/8.8×; band CHEAP < ≈ €66.1. 139→140.
 - **v122 — 2026-07-24** — TUI1 (TUI AG) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 2.9%/FCFROCE 1.8%, L/E 877%, OI/sh −18.6% p.a.; Future WEAK — 2 strong forces). SF PASS. CHEAP 6.4×/3.4×, moot. 138→139.
 - **v121 — 2026-07-23** — LIGHT (Signify) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 8.3%; Future WEAK — 2 strong forces, eroding moat, shrinking market). SF PASS (one P19 flag, 2022). FAIR 9.6×/5.0×; band CHEAP < ≈ €8.1. 137→138.
 - **v120 — 2026-07-23** — AKZA (AkzoNobel) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.6%/FCFROCE 3.0%; SF FAIL — P19 hard strikes 2017/2019/2021, 16–59× reads, zero clean tranches). Future ADEQUATE; EXPENSIVE 16.0×/12.6×. Next review: Axalta merger close. 136→137.
-- **v119 — 2026-07-23** — PHIA (Philips) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 3.5%/FCFROCE 4.4%; SF FAIL — P19 hard strikes 2019–24, dominant pattern). Future ADEQUATE; EXPENSIVE 28.3×/19–21×. 135→136.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
