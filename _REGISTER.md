@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v130
+register_version: v131
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 147
-verdict_split: "WATCH 22 · AVOID 124 · BUY 0 · DNAF 1"
+names_total: 148
+verdict_split: "WATCH 22 · AVOID 125 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v130 · 2026-07-24)
+# GSC Register — Master Watchlist (v131 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -110,6 +110,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GRMN | Garmin Ltd | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback) | STRONG | ADEQUATE | FAIL | $241.64 (15 Jul 2026) | CHEAP < ≈ $56 (MCap/FCF; EV/OI leg ≈ $88; P12 edge ≈ $70) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-tests P19; would be WATCH absent strike, deeply OOR (+329%); alert < ≈ $70 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
 | HEN3 | Henkel AG & Co. KGaA | 2026-07-16 | v1 | AVOID (Past WEAK + SF FAIL: P19 2022 buyback hard strike) | WEAK | ADEQUATE | FAIL | €74.98 (16 Jul 2026) | CHEAP < ≈ €34 (MCap/FCF binding; EV/OI leg ≈ €39; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027): P19 re-test on full 2025/26 program + Stahl/Olaplex/ATP acq audit |
+| HEXA-B | Hexagon AB | 2026-07-24 | v1 | AVOID (Past WEAK + SF FAIL: P19 dilution-sterilisation strike) | WEAK | ADEQUATE | FAIL | SEK 82.38 (24 Jul 2026) | CHEAP < ≈ SEK 14.3 (EV/OI, FY25 continuing reported OI; adj-EBIT1 leg ≈ SEK 25) — EXPENSIVE, provisional pre-Q2 | — | Q2 2026 interim (~late Jul) — first clean post-Octave basis; FY2026 AR: Waygate audit |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
 | HLAG | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID (Future WEAK: customer power + entrants STRONG, no moat) | ADEQUATE | WEAK | PASS | €123.20 (20 Jul 2026) | CHEAP < ≈ €20.3 (EV/OI, consv EV; MCap/FCF leg ≈ €32; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 AR (~Mar 2027); ZIM close → mandatory 1C acquisition audit |
@@ -220,10 +221,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v131 — 2026-07-24** — HEXA-B (Hexagon) ANALYSE v1: **AVOID** (Past WEAK, w-o-4 ROCE 9.25%; SF FAIL, P19 dilution-sterilisation strike — 21.1m sh, LTIP hedge only). EXPENSIVE 30.8×. 147→148.
 - **v130 — 2026-07-24** — ERIC-B (Ericsson) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 4.7%; Future WEAK, customer breadth ~14%; SF FAIL, 2 hard strikes). Cheapness FAIR.
 - **v129 — 2026-07-24** — ASSA-B (ASSA ABLOY) ANALYSE v1: **AVOID** (Past WEAK — 3y ROCE decline; w-o-4 12.5%). Future STRONG; SF PASS (P19 HHI flag; strike INDETERMINATE). Band ≈ SEK 88. 145→146.
 - **v128 — 2026-07-24** — EPI-A (Epiroc) ANALYSE v1: **AVOID** (SF FAIL — P19: buybacks are option-plan delivery only). Past ADEQUATE (5y), Future STRONG; band ≈ SEK 54.3 A. 144→145.
 - **v127 — 2026-07-24** — GBF (Bilfinger) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 2.1%; Future WEAK, 3 forces; SF FAIL, P19 strike 2017–18). Band CHEAP < ≈ €42.96. 143→144.
-- **v126 — 2026-07-24** — ATCO-B (Atlas Copco) ANALYSE v1: **AVOID** (SF FAIL — P19 dilution-sterilisation strike: SEK 9,955m of 10y repurchases all option-plan delivery, +0.12% share count; plus >20× dual-read strike). Past/Future STRONG; EXPENSIVE 28.6×/35.6×; band CHEAP < ≈ SEK 38.4 B. 142→143.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
