@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v124
+register_version: v125
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 141
-verdict_split: "WATCH 22 · AVOID 118 · BUY 0 · DNAF 1"
+names_total: 142
+verdict_split: "WATCH 22 · AVOID 119 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v124 · 2026-07-24)
+# GSC Register — Master Watchlist (v125 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -63,7 +63,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 118 names, alphabetical
+### AVOID — 119 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -149,6 +149,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs sustained buyback discipline (FY21–25 strikes both bases); Q3 4 Aug 2026 opt. |
 | SAF | Safran SA | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | €330.8 (SAF.PA, 15 Jul 2026) | CHEAP < ≈ €75 (EV/OI & MCap/FCF converge; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) P19 re-test on €5bn pgm (2025 tranche 22–25× EV/OI, >20×); H1'26 ~Sep 2026; alert < ≈ €90 |
 | SAN | Sanofi | 2026-07-15 | v1 | AVOID (Past WEAK + SF FAIL: P19 buyback) | WEAK | ADEQUATE | FAIL | €76.26 (15 Jul 2026) | CHEAP < ≈ €27.6 (EV/OI, consv EV, as-reported OI; MCap/FCF leg ≈ €47; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) resets Opella-deconsol basis + P19 re-test (2026 €1bn pgm); business-OI ≈10× caveat; alert < ≈ €35 |
+| SAND | Sandvik AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 acquisition strike) | ADEQUATE | ADEQUATE | FAIL | SEK 343.90 (23 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, consv EV; MCap/FCF leg ≈ SEK 98; no P12) — EXPENSIVE 22.7×/28.1×, moot given AVOID | — | FY2026 AR (~Mar 2027); P19 strike stands to FY2031 (CNC Software 2021 at 28.7–38.1× pre-deal OI); DSI margin INDETERMINATE; alert < ≈ SEK 110 |
 | SAP | SAP SE | 2026-07-04 | v1 | AVOID (SF FAIL: buybacks to service SBC) | ADEQUATE | STRONG | FAIL | €139.24 (Xetra, 3 Jul 2026) | CHEAP < ≈ €48.6 (EV/OI, no-excess-cash variant binding; MCap/FCF ≈ €56.3) — moot given AVOID | — | FY2026 results (~late Jan 2027), buyback-policy change (€5bn 2023–25 at ~18–30× EV/OI; €10bn 2026–27 entrenches), or price < ≈ €55 |
 | SCHN (SCHP PC) | Schindler Holding AG | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback hard strike) | ADEQUATE | STRONG | FAIL | CHF 256.5 N / 263.6 PC (15 Jul 2026) | CHEAP < ≈ CHF 103 (MCap/FCF binds; EV/OI leg ≈ CHF 123; no P12 — Past ADEQUATE) — EXPENSIVE ~20× FCF / 18–21× EV/OI | +151% | FY2026 (~Feb 2027) P19 re-test — FY2025 buyback CHF 231m @ ~CHF 281 = 21.8× MCap/FCF strikes; programme to Nov 2026; alert if repurchases cease / turn to discount |
 | SHA0 | Schaeffler AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €8.53 (16 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt = 29× OI); MCap/FCF leg ≈ €3.23 ref only | — | FY2026 AR (~Mar 2027) — restructuring inflection + P17 re-test on positive NI |
@@ -212,10 +213,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v125 — 2026-07-24** — SAND (Sandvik) ANALYSE v1: **AVOID** (SF FAIL — P19 acquisition strike, CNC Software 2021 at 28.7–38.1× pre-deal OI). Past/Future ADEQUATE; EXPENSIVE; band ≈ SEK 88. 141→142.
 - **v124 — 2026-07-24** — FIE (Fielmann) ANALYSE v1: **WATCH** (Past ADEQUATE, w-o-4 ROCE 14.9%; SF PASS — 1 P19 acq flag, Shopko strike INDETERMINATE). FAIR 9.4×/12.7×; band < ≈ €19.44. 140→141.
 - **v123 — 2026-07-24** — KRN (Krones) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 9.3% vs P3 10%). Future ADEQUATE; SF PASS (zero buybacks). FAIR 13.4×/8.8×; band CHEAP < ≈ €66.1. 139→140.
 - **v122 — 2026-07-24** — TUI1 (TUI AG) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 2.9%/FCFROCE 1.8%, L/E 877%, OI/sh −18.6% p.a.; Future WEAK — 2 strong forces). SF PASS. CHEAP 6.4×/3.4×, moot. 138→139.
 - **v121 — 2026-07-23** — LIGHT (Signify) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 8.3%; Future WEAK — 2 strong forces, eroding moat, shrinking market). SF PASS (one P19 flag, 2022). FAIR 9.6×/5.0×; band CHEAP < ≈ €8.1. 137→138.
-- **v120 — 2026-07-23** — AKZA (AkzoNobel) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.6%/FCFROCE 3.0%; SF FAIL — P19 hard strikes 2017/2019/2021, 16–59× reads, zero clean tranches). Future ADEQUATE; EXPENSIVE 16.0×/12.6×. Next review: Axalta merger close. 136→137.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
