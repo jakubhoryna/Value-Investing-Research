@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v128
+register_version: v129
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 145
-verdict_split: "WATCH 22 · AVOID 122 · BUY 0 · DNAF 1"
+names_total: 146
+verdict_split: "WATCH 22 · AVOID 123 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v128 · 2026-07-24)
+# GSC Register — Master Watchlist (v129 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -63,7 +63,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 122 names, alphabetical
+### AVOID — 123 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -75,6 +75,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AKZA | Akzo Nobel N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | ADEQUATE | FAIL | €56.28 (23 Jul 2026) | CHEAP < ≈ €28 (MCap/FCF; EV/OI leg ≈ €29; no P12) — EXPENSIVE 16.0×/12.6× | — | Axalta merger close (late 2026/early 2027) → fresh ANALYSE of MergeCo; price embeds ~€2.5bn special div; P19 struck 2017/19/21 |
 | AMV0 | Aumovio SE | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €35.90 (23 Jul 2026) | No CHEAP band — EV/OI n.m. (FY25 OI −€70m); FCF-leg ref ≈ €9.0. Cheapness EXPENSIVE 32.1× MCap/FCF | — | FY2026 AR (~Mar 2027) — first clean standalone year; thin history 4y (carve-out 2022–24) |
 | ASML | ASML Holding N.V. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €1,628 (~6 Jul 2026) | CHEAP < ≈ €140 (MCap/TBV, one-average allowance) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (Jan 2027) re-anchors band; flip needs a disciplined buyback year (2018–25 all > 20× EV/OI) |
+| ASSA-B | ASSA ABLOY AB | 2026-07-24 | v1 | AVOID (Past WEAK: 3y ROCE decline) | WEAK | STRONG | PASS | SEK 347.10 (24 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, cons. EV) — academic given AVOID | — | FY2026 AR (~Mar 2027): ROCE-trend re-test; HHI P19 re-test |
 | ATCO-B | Atlas Copco AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 dilution-sterilisation + >20× dual-read) | STRONG | STRONG | FAIL | SEK 177.00 B (23 Jul 2026) | CHEAP < ≈ SEK 38.4 (EV/OI, cons EV, B sh; A ≈ 43.5) — EXPENSIVE 28.6×/35.6× | — | FY2026 AR (~Mar 2027): P19 re-test once swap replaces repurchase; Isra Vision 2020 multiple INDETERMINATE |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
 | BAS | BASF SE | 2026-07-17 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buyback) | WEAK | WEAK | FAIL | €48.44 (17 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt+NCI ≈ 11.9× OI); MCap/FCF leg ≈ €12.1; backvalued FY21 band ≈ €33.6 | — | FY2026 AR (~Feb 2027): P19 re-test on €1.5bn pgm 2026 tranches; Ag Solutions separation watch |
@@ -211,16 +212,17 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - INPST delists on offer settlement (exp. H2 2026) — archive the row then.
 - **KRN** — verdict turns on the current-"other provisions" NIBCL call (conservative 9.26% ROCE = WEAK; alternate 10.03% = ADEQUATE/WATCH). FY2026 window roll clears 10% on both; SB chair fee + Netstal multiple INDETERMINATE.
 - **EPI-A** — named re-tests at FY2026 AR: complete the FY2016–20 framework-basis record (5y window caps Past at ADEQUATE; pre-2021 reports unreachable); Stanley Infrastructure multiple INDETERMINATE (≈10.6–15.4× pre-deal OI; EBITDA-margin band and D&A estimated); battery-cell supplier concentration undisclosed.
+- **ASSA-B** — named re-test: HHI (2023) acquisition multiple. Deal EV ≈ SEK 48.3bn; only after-tax disc-ops income retrievable (SPB XBRL): 15× flag robust on every tax build, >20× strike INDETERMINATE (3y normalized 19.3–21.8×). Source: Spectrum Brands FY2022 10-K disc-ops note.
 - **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD. ENR: FY2026 €2bn programme purpose undisclosed in the H1 note — determine at FY2026 AR (3rd-strike candidate at ≈58× EV/OI).
 
 ---
 
 ## Change log
 
+- **v129 — 2026-07-24** — ASSA-B (ASSA ABLOY) ANALYSE v1: **AVOID** (Past WEAK — 3y ROCE decline; w-o-4 12.5%). Future STRONG; SF PASS (P19 HHI flag; strike INDETERMINATE). Band ≈ SEK 88. 145→146.
 - **v128 — 2026-07-24** — EPI-A (Epiroc) ANALYSE v1: **AVOID** (SF FAIL — P19: buybacks are option-plan delivery only). Past ADEQUATE (5y), Future STRONG; band ≈ SEK 54.3 A. 144→145.
 - **v127 — 2026-07-24** — GBF (Bilfinger) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 2.1%; Future WEAK, 3 forces; SF FAIL, P19 strike 2017–18). Band CHEAP < ≈ €42.96. 143→144.
 - **v126 — 2026-07-24** — ATCO-B (Atlas Copco) ANALYSE v1: **AVOID** (SF FAIL — P19 dilution-sterilisation strike: SEK 9,955m of 10y repurchases all option-plan delivery, +0.12% share count; plus >20× dual-read strike). Past/Future STRONG; EXPENSIVE 28.6×/35.6×; band CHEAP < ≈ SEK 38.4 B. 142→143.
 - **v125 — 2026-07-24** — SAND (Sandvik) ANALYSE v1: **AVOID** (SF FAIL — P19 acquisition strike, CNC Software 2021 at 28.7–38.1× pre-deal OI). Past/Future ADEQUATE; EXPENSIVE; band ≈ SEK 88. 141→142.
-- **v124 — 2026-07-24** — FIE (Fielmann) ANALYSE v1: **WATCH** (Past ADEQUATE, w-o-4 ROCE 14.9%; SF PASS — 1 P19 acq flag, Shopko strike INDETERMINATE). FAIR 9.4×/12.7×; band < ≈ €19.44. 140→141.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
