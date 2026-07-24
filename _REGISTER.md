@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v125
+register_version: v126
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 142
-verdict_split: "WATCH 22 · AVOID 119 · BUY 0 · DNAF 1"
+names_total: 143
+verdict_split: "WATCH 22 · AVOID 120 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v125 · 2026-07-24)
+# GSC Register — Master Watchlist (v126 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -63,7 +63,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 119 names, alphabetical
+### AVOID — 120 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -75,6 +75,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AKZA | Akzo Nobel N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | ADEQUATE | FAIL | €56.28 (23 Jul 2026) | CHEAP < ≈ €28 (MCap/FCF; EV/OI leg ≈ €29; no P12) — EXPENSIVE 16.0×/12.6× | — | Axalta merger close (late 2026/early 2027) → fresh ANALYSE of MergeCo; price embeds ~€2.5bn special div; P19 struck 2017/19/21 |
 | AMV0 | Aumovio SE | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €35.90 (23 Jul 2026) | No CHEAP band — EV/OI n.m. (FY25 OI −€70m); FCF-leg ref ≈ €9.0. Cheapness EXPENSIVE 32.1× MCap/FCF | — | FY2026 AR (~Mar 2027) — first clean standalone year; thin history 4y (carve-out 2022–24) |
 | ASML | ASML Holding N.V. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €1,628 (~6 Jul 2026) | CHEAP < ≈ €140 (MCap/TBV, one-average allowance) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (Jan 2027) re-anchors band; flip needs a disciplined buyback year (2018–25 all > 20× EV/OI) |
+| ATCO-B | Atlas Copco AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 dilution-sterilisation + >20× dual-read) | STRONG | STRONG | FAIL | SEK 177.00 B (23 Jul 2026) | CHEAP < ≈ SEK 38.4 (EV/OI, cons EV, B sh; A ≈ 43.5) — EXPENSIVE 28.6×/35.6× | — | FY2026 AR (~Mar 2027): P19 re-test once swap replaces repurchase; Isra Vision 2020 multiple INDETERMINATE |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
 | BAS | BASF SE | 2026-07-17 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buyback) | WEAK | WEAK | FAIL | €48.44 (17 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt+NCI ≈ 11.9× OI); MCap/FCF leg ≈ €12.1; backvalued FY21 band ≈ €33.6 | — | FY2026 AR (~Feb 2027): P19 re-test on €1.5bn pgm 2026 tranches; Ag Solutions separation watch |
 | BAYN | Bayer AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €47.17 (16 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ €17.0 on FY25 co-def FCF €2.08bn). Cheapness EXPENSIVE | — | FY2026 (~Mar 2027): first positive-OI print restores a band; Roundup class-settlement approval + post-Durnell provisioning check (H2 2026) |
@@ -213,10 +214,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v126 — 2026-07-24** — ATCO-B (Atlas Copco) ANALYSE v1: **AVOID** (SF FAIL — P19 dilution-sterilisation strike: SEK 9,955m of 10y repurchases all option-plan delivery, +0.12% share count; plus >20× dual-read strike). Past/Future STRONG; EXPENSIVE 28.6×/35.6×; band CHEAP < ≈ SEK 38.4 B. 142→143.
 - **v125 — 2026-07-24** — SAND (Sandvik) ANALYSE v1: **AVOID** (SF FAIL — P19 acquisition strike, CNC Software 2021 at 28.7–38.1× pre-deal OI). Past/Future ADEQUATE; EXPENSIVE; band ≈ SEK 88. 141→142.
 - **v124 — 2026-07-24** — FIE (Fielmann) ANALYSE v1: **WATCH** (Past ADEQUATE, w-o-4 ROCE 14.9%; SF PASS — 1 P19 acq flag, Shopko strike INDETERMINATE). FAIR 9.4×/12.7×; band < ≈ €19.44. 140→141.
 - **v123 — 2026-07-24** — KRN (Krones) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 9.3% vs P3 10%). Future ADEQUATE; SF PASS (zero buybacks). FAIR 13.4×/8.8×; band CHEAP < ≈ €66.1. 139→140.
 - **v122 — 2026-07-24** — TUI1 (TUI AG) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 2.9%/FCFROCE 1.8%, L/E 877%, OI/sh −18.6% p.a.; Future WEAK — 2 strong forces). SF PASS. CHEAP 6.4×/3.4×, moot. 138→139.
-- **v121 — 2026-07-23** — LIGHT (Signify) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 8.3%; Future WEAK — 2 strong forces, eroding moat, shrinking market). SF PASS (one P19 flag, 2022). FAIR 9.6×/5.0×; band CHEAP < ≈ €8.1. 137→138.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
