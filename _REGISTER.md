@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v136
+register_version: v137
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 153
-verdict_split: "WATCH 23 · AVOID 129 · BUY 0 · DNAF 1"
+names_total: 154
+verdict_split: "WATCH 23 · AVOID 130 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v136 · 2026-07-24)
+# GSC Register — Master Watchlist (v137 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -64,7 +64,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 128 names, alphabetical
+### AVOID — 129 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -162,6 +162,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SAN | Sanofi | 2026-07-15 | v1 | AVOID (Past WEAK + SF FAIL: P19 buyback) | WEAK | ADEQUATE | FAIL | €76.26 (15 Jul 2026) | CHEAP < ≈ €27.6 (EV/OI, consv EV, as-reported OI; MCap/FCF leg ≈ €47; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) resets Opella-deconsol basis + P19 re-test (2026 €1bn pgm); business-OI ≈10× caveat; alert < ≈ €35 |
 | SAND | Sandvik AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 acquisition strike) | ADEQUATE | ADEQUATE | FAIL | SEK 343.90 (23 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, consv EV; MCap/FCF leg ≈ SEK 98; no P12) — EXPENSIVE 22.7×/28.1×, moot given AVOID | — | FY2026 AR (~Mar 2027); P19 strike stands to FY2031 (CNC Software 2021 at 28.7–38.1× pre-deal OI); DSI margin INDETERMINATE; alert < ≈ SEK 110 |
 | SAP | SAP SE | 2026-07-04 | v1 | AVOID (SF FAIL: buybacks to service SBC) | ADEQUATE | STRONG | FAIL | €139.24 (Xetra, 3 Jul 2026) | CHEAP < ≈ €48.6 (EV/OI, no-excess-cash variant binding; MCap/FCF ≈ €56.3) — moot given AVOID | — | FY2026 results (~late Jan 2027), buyback-policy change (€5bn 2023–25 at ~18–30× EV/OI; €10bn 2026–27 entrenches), or price < ≈ €55 |
+| SAVE | Nordnet AB (publ) | 2026-07-24 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | SEK 362.40 (24 Jul 2026) | CHEAP < ≈ SEK 98 (MCap/NI 8×, substitution anchor; TTM leg ≈ 106; 3×BV ≈ 98) — EXPENSIVE 29.7×, moot given AVOID | — | FY2026 AR (~Mar 2027): P19 re-test on 2026 pgm; window rolls to 10y (STRONG then available); Germany cost ramp |
 | SCHN (SCHP PC) | Schindler Holding AG | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback hard strike) | ADEQUATE | STRONG | FAIL | CHF 256.5 N / 263.6 PC (15 Jul 2026) | CHEAP < ≈ CHF 103 (MCap/FCF binds; EV/OI leg ≈ CHF 123; no P12 — Past ADEQUATE) — EXPENSIVE ~20× FCF / 18–21× EV/OI | +151% | FY2026 (~Feb 2027) P19 re-test — FY2025 buyback CHF 231m @ ~CHF 281 = 21.8× MCap/FCF strikes; programme to Nov 2026; alert if repurchases cease / turn to discount |
 | SHA0 | Schaeffler AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €8.53 (16 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt = 29× OI); MCap/FCF leg ≈ €3.23 ref only | — | FY2026 AR (~Mar 2027) — restructuring inflection + P17 re-test on positive NI |
 | SHOP | Shopify Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 comp) | WEAK | STRONG | FAIL | $124.74 (14 Jul 2026) | CHEAP < ≈ $7.7 (EV/OI, consv EV; MCap/FCF leg ≈ $12.3; no P12) — EXPENSIVE, moot given AVOID | — | 2027 proxy (~Apr 2027) re-tests P17 (FY24 comp $150m = 1.9× cap); FY2026 10-K (~Feb 2027) re-anchors; Past flip ~FY2028 earliest |
@@ -210,6 +211,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Open items
 
+- **SAVE** — verdict rests on rejecting MCap/FCF for a deposit-funded lender (FY25 literal 5.2× would rescue the tranche; 3y read 33.2×, FY23 FCF −12.6bn). NI-proxy used. Pre-FY2024 repurchase record not disclosed.
 - P17/P19 re-examination queue **closed** (Tiers 1–3 complete; last flip NKE v2 2026-07-09). Clean under v3: ADYEN, AMZN, BABA, BKE, BKNG (1 flag), BRK.B, KSPI, TROW, TSM, SDZ. CROX flipped v84 on fresh FY2016–19 data (v3 memo), re-cleared v85 under MODEL v3.4.0 (v4 memo: SF PASS, 1 P19 flag, HEYDUDE indeterminate).
 - HFG (held) **SELL-FLAG** (SR2) — user decision pending; log the decision and realised outcome here.
 - NOVO-B (held) **SELL-FLAG** (SR2, confirmed v5) — **user decision 2026-07-16: HOLD against flag** (§7.2 judgment: quality + expected discipline under new CEO; framework verdict unchanged). Track realised outcome vs the flag; re-test at AR-2026 (~Feb 2027) incl. v3.5.0 redemption limbs (all three fail today).
@@ -227,10 +229,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v137 — 2026-07-24** — SAVE (Nordnet) ANALYSE v1: **AVOID** (SF FAIL — P19: FY24 & FY25 buyback tranches 20.2–24.2× implied MCap/NI on both reads, 0 clean). Past/Future ADEQUATE; band ≈ SEK 98. 153→154.
 - **v136 — 2026-07-24** — BOL (Boliden) ANALYSE v1: **AVOID** (Future WEAK — P15 customer-breadth FAIL, 3 customers 15/14/13% of group revenue, forces 2-strong; SF FAIL — P19 dilution-sterilisation strike, 230k sh/SEK 91m for LTIP delivery). Past ADEQUATE (w-o-4 ROCE 14.1%). EXPENSIVE 26.3× MCap/FCF. 152→153.
 - **v135 — 2026-07-24** — EVO (Evolution) ANALYSE v1: **AVOID** (Future WEAK — breadth 12%, 2 forces, eroding moat; SF FAIL — 3 P19 buyback strikes + NetEnt 48× acq). FAIR, band ≈ SEK 475. 151→152.
 - **v134 — 2026-07-24** — LIFCO-B (Lifco) ANALYSE v1: **WATCH** (SF PASS, zero strikes — acquisitions 6.6–8.1× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.4%. EXPENSIVE 29.2×. 150→151.
 - **v133 — 2026-07-24** — ALFA (Alfa Laval) ANALYSE v1: **AVOID** (SF FAIL — P19: Fives Cryogenics 21.2–22.2× pre-deal OI + 2021/22 buybacks >20× both reads). Past ADEQUATE, Future STRONG. 149→150.
-- **v132 — 2026-07-24** — ESSITY-B (Essity) ANALYSE v1: **AVOID** (SF FAIL — P19: FY2024 tranche 21.6× yr / 23.8× 3y MCap/FCF, all-capex; maint basis 2 flagged / 0 clean = dominant pattern). Past/Future ADEQUATE; band ≈ SEK 124. 148→149.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
