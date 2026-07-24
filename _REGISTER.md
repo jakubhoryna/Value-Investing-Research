@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v137
+register_version: v138
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 154
-verdict_split: "WATCH 23 · AVOID 130 · BUY 0 · DNAF 1"
+names_total: 155
+verdict_split: "WATCH 23 · AVOID 131 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v137 · 2026-07-24)
+# GSC Register — Master Watchlist (v138 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -64,7 +64,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 130 names, alphabetical
+### AVOID — 131 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -128,6 +128,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | INPST | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
 | KBX | Knorr-Bremse AG | 2026-07-22 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (acq audit INDETERMINATE; 59% control caveat) | €101.70 (22 Jul 2026) | CHEAP < ≈ €19.6 (EV/OI, consv EV; all-cash-excess leg ≈ €30.4; MCap/FCF leg ≈ €32.7) — EXPENSIVE | — | FY2026 AR (~Mar 2027): ROCE off 11–13% plateau?; duagon capital add; Alstom-signalling audit re-test |
 | KER | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
+| KLAR | Klarna Group plc | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 comp) | WEAK | WEAK | FAIL | $17.36 (24 Jul 2026) | n.m. — NI-proxy anchor (§2·1A lender), no positive price while NI < 0; MCap/BV 2.61× context | — | FY2026 20-F (~Feb–Mar 2027) informational; structural — loss record + 2 strong forces + comp posture; first clean post-IPO comp year |
 | KNEBV | KONE Oyj | 2026-07-15 | v1 | AVOID (SF FAIL: P19 acquisition strike — TKE ~21.6× pre-deal EBIT) | ADEQUATE | STRONG | FAIL | €48.48 (KONE B, 15 Jul 2026) | CHEAP < ≈ €17.1 (EV/OI, standalone; no P12) — EXPENSIVE ~19×, moot given AVOID | — | TKE deal block-or-close (earliest Q2 2027) → flips WATCH if blocked; FY2026 (~Jan 2027); price → ≈€17 |
 | KRN | Krones AG | 2026-07-24 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €110.60 (23 Jul 2026) | CHEAP < ≈ €66.1 (MCap/FCF; EV/OI leg ≈ €86.4, cons EV; no P12) — FAIR 13.4×/8.8× | — | FY2026 AR (~Mar 2027) — window roll flips Past ≥10%; alert < ≈ €75 |
 | LIGHT | Signify N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €15.98 (23 Jul 2026) | CHEAP < ≈ €8.1 (EV/OI, cons EV; no P12) — FAIR 9.6×/5.0× | — | FY2026 AR (~Feb 2027) re-tests quality gates; P19 2022 flag logged |
@@ -229,10 +230,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v138 — 2026-07-24** — KLAR (Klarna) ANALYSE v1: **AVOID** (Past WEAK — norm. ROE −7.3%, §2·1A lender substitution; Future WEAK — 2 strong forces; SF FAIL — P17 CEO $45.1m vs −$273m NI + director-fee strikes). Band n.m. while NI < 0. 154→155.
 - **v137 — 2026-07-24** — SAVE (Nordnet) ANALYSE v1: **AVOID** (SF FAIL — P19: FY24 & FY25 buyback tranches 20.2–24.2× implied MCap/NI on both reads, 0 clean). Past/Future ADEQUATE; band ≈ SEK 98. 153→154.
 - **v136 — 2026-07-24** — BOL (Boliden) ANALYSE v1: **AVOID** (Future WEAK — P15 customer-breadth FAIL, 3 customers 15/14/13% of group revenue, forces 2-strong; SF FAIL — P19 dilution-sterilisation strike, 230k sh/SEK 91m for LTIP delivery). Past ADEQUATE (w-o-4 ROCE 14.1%). EXPENSIVE 26.3× MCap/FCF. 152→153.
 - **v135 — 2026-07-24** — EVO (Evolution) ANALYSE v1: **AVOID** (Future WEAK — breadth 12%, 2 forces, eroding moat; SF FAIL — 3 P19 buyback strikes + NetEnt 48× acq). FAIR, band ≈ SEK 475. 151→152.
 - **v134 — 2026-07-24** — LIFCO-B (Lifco) ANALYSE v1: **WATCH** (SF PASS, zero strikes — acquisitions 6.6–8.1× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.4%. EXPENSIVE 29.2×. 150→151.
-- **v133 — 2026-07-24** — ALFA (Alfa Laval) ANALYSE v1: **AVOID** (SF FAIL — P19: Fives Cryogenics 21.2–22.2× pre-deal OI + 2021/22 buybacks >20× both reads). Past ADEQUATE, Future STRONG. 149→150.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
