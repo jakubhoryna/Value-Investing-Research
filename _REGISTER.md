@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v138
+register_version: v139
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 155
-verdict_split: "WATCH 23 · AVOID 131 · BUY 0 · DNAF 1"
+names_total: 156
+verdict_split: "WATCH 24 · AVOID 131 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v138 · 2026-07-24)
+# GSC Register — Master Watchlist (v139 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 23 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 24 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -53,6 +53,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ROG (SIX; RO bearer; RHHBY 8:1) | Roche Holding AG | 2026-07-15 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; dual-class caveat) | CHF 327.3 (ROP 15 Jul; RO 333.2; RHHBY $50.16) | CHEAP < ≈ CHF 138 (MCap/FCF; EV/OI leg ≈154; P12 edge ≈154) — EXPENSIVE | +138% | FY2026 (~Feb 2027) resets OI/FCF; obesity Ph3 (CT-388) & US IRA/MFN pricing; alert < ≈ CHF 200 |
 | NVS (NOVN SIX; ADR 1:1) | Novartis AG                     | 2026-07-05 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 flag)                             | ~$152 ADR (≈CHF 122)                     | CHEAP < ≈ $55 (EV/OI binding, conservative EV; MCap/FCF leg ≈ $73). No P12 edge. Cheapness EXPENSIVE                                    | +179%  | FY2026 (~Feb 2027) Entresto-trough resets band; alert < ~$75; IRA/MFN or pelacarsen readout. Soft WATCH                                             |
 | SDZ (SDZNY ADR 1:1)     | Sandoz Group AG                 | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$84.2 (CHF 67.04)                       | CHEAP < ≈ $28 (mgmt-FCF) to ≈ $20 (strict). Cheapness EXPENSIVE. Thin spin-off history caveat                                           | +192%  | FY2026 results (~Feb 2027), or USD into high-$20s/low-$30s; watch generic-semaglutide decision & penicillin-API normalisation                       |
+| AZA | Avanza Bank Holding AB | 2026-07-24 | v1 | WATCH | STRONG | STRONG | PASS | SEK 388.40 (24 Jul 2026) | CHEAP < ≈ SEK 132 (MCap/NI 8×, substitution rule — EV/OI n.m.; P12 edge ≈ SEK 165). Cheapness EXPENSIVE | +194% | FY2026 prelim (~21 Jan 2027) re-anchors band (TTM drift → ≈ SEK 145); alert < ≈ SEK 165 |
 | ADYEN                   | Adyen N.V.                      | 2026-06-11 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | €817.40                                  | CHEAP < ≈ €286 (MCap/FCF @1.25×; strict all-four ≈ €229)                                                                                | +195%  | H1 2026 results (Aug 2026), Talon.One integration, or price < €350                                                                                  |
 | ULVR (LSE; UNA; UL 1:1) | Unilever PLC                    | 2026-07-14 | v1  | WATCH   | STRONG   | ADEQUATE | PASS (1 P19 flag)                         | €53.53 (UNA); £45.64 ULVR; $61.16 UL     | CHEAP < ≈ €17.3 (EV/OI, consv EV; MCap/FCF leg ≈ €21.6; P12 edge ≈ €24.5). Cheapness EXPENSIVE                                          | +209%  | FY2026 (~Feb 2027) resets continuing-ops base; watch 2026 buyback multiple (2025 ~18× MCap/FCF, near P19 strike); alert < ≈ €25          |
 | TSM (2330; ADR 1:5)     | Taiwan Semiconductor Mfg Co     | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | NT$2,490                                 | CHEAP < ≈ NT$600 (EV/OI; MCap/FCF suspended — P20 AI-capex cycle). Cheapness EXPENSIVE                                                  | +303%  | FY2026 results (Feb 2027), price < NT$700 (NEAR), or process-lead loss / Taiwan-Strait / export-control shift                                       |
@@ -230,10 +231,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v139 — 2026-07-24** — AZA (Avanza) ANALYSE v1: **WATCH** (Past STRONG — worst norm. ROE 35.1%, §2·1A substitution; Future STRONG — 0 forces, strengthening cost moat; SF PASS — zero strikes, no buybacks since 2012). EXPENSIVE 23.5× NI-proxy; band ≈ SEK 132. 155→156.
 - **v138 — 2026-07-24** — KLAR (Klarna) ANALYSE v1: **AVOID** (Past WEAK — norm. ROE −7.3%, §2·1A lender substitution; Future WEAK — 2 strong forces; SF FAIL — P17 CEO $45.1m vs −$273m NI + director-fee strikes). Band n.m. while NI < 0. 154→155.
 - **v137 — 2026-07-24** — SAVE (Nordnet) ANALYSE v1: **AVOID** (SF FAIL — P19: FY24 & FY25 buyback tranches 20.2–24.2× implied MCap/NI on both reads, 0 clean). Past/Future ADEQUATE; band ≈ SEK 98. 153→154.
 - **v136 — 2026-07-24** — BOL (Boliden) ANALYSE v1: **AVOID** (Future WEAK — P15 customer-breadth FAIL, 3 customers 15/14/13% of group revenue, forces 2-strong; SF FAIL — P19 dilution-sterilisation strike, 230k sh/SEK 91m for LTIP delivery). Past ADEQUATE (w-o-4 ROCE 14.1%). EXPENSIVE 26.3× MCap/FCF. 152→153.
 - **v135 — 2026-07-24** — EVO (Evolution) ANALYSE v1: **AVOID** (Future WEAK — breadth 12%, 2 forces, eroding moat; SF FAIL — 3 P19 buyback strikes + NetEnt 48× acq). FAIR, band ≈ SEK 475. 151→152.
-- **v134 — 2026-07-24** — LIFCO-B (Lifco) ANALYSE v1: **WATCH** (SF PASS, zero strikes — acquisitions 6.6–8.1× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.4%. EXPENSIVE 29.2×. 150→151.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
