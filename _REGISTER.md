@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v139
+register_version: v140
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 156
-verdict_split: "WATCH 24 · AVOID 131 · BUY 0 · DNAF 1"
+names_total: 157
+verdict_split: "WATCH 25 · AVOID 131 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v139 · 2026-07-24)
+# GSC Register — Master Watchlist (v140 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 24 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 25 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,6 +61,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IBKR                    | Interactive Brokers Group, Inc. | 2026-07-05 | v2  | WATCH   | STRONG   | STRONG   | PASS                                      | $91.65                                   | CHEAP < ≈ $20 (EV/OI, classical treatment w/ customer-float adjustment; P12 edge ≈ $25; alt P/B-anchor band ≈ $36). Cheapness EXPENSIVE | +368%  | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income                                                       |
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 311.60 (24 Jul 2026) | CHEAP < ≈ SEK 59.30 (EV/OI, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12 — Past ADEQUATE) — EXPENSIVE | +425% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | CSU (TSX) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 2,740.35 (14 Jul 2026) | CHEAP < ≈ CAD 513 (EV/OI, consv EV, USD FY25; all-cash ≈ 718; MCap/FCF leg ≈ 1,415; no P12) — EXPENSIVE | +434% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
+| INDT | Indutrade AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 242.40 (24 Jul 2026) | CHEAP < ≈ SEK 44.50 (EV/OI, consv EV, LTM OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE 25.1× | +444% | FY2026 AR (~Mar 2027): 3rd-yr ROCE-decline test (w-o-4 14.1%; FY25 12.8%); alert < ≈ SEK 90 |
 | AXFO                    | Axfood AB                       | 2026-07-07 | v1  | WATCH   | ADEQUATE | STRONG   | PASS (1 P19 flag)                         | SEK 268.70                               | CHEAP < ≈ SEK 46 (EV/OI, conservative EV, lease-heavy; MCap/FCF leg ≈ SEK 185; no P12 — Past ADEQUATE). Cheapness EXPENSIVE             | +474%  | FY2026 (~28 Jan 2027) ROCE-trend re-test; Q2 15 Jul 2026 opt. Soft SF — strict P19 read of LTIP-hedge buybacks would strike                         |
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
@@ -225,16 +226,17 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **EPI-A** — named re-tests at FY2026 AR: complete the FY2016–20 framework-basis record (5y window caps Past at ADEQUATE; pre-2021 reports unreachable); Stanley Infrastructure multiple INDETERMINATE (≈10.6–15.4× pre-deal OI; EBITDA-margin band and D&A estimated); battery-cell supplier concentration undisclosed.
 - **ASSA-B** — named re-test: HHI (2023) acquisition multiple. Deal EV ≈ SEK 48.3bn; only after-tax disc-ops income retrievable (SPB XBRL): 15× flag robust on every tax build, >20× strike INDETERMINATE (3y normalized 19.3–21.8×). Source: Spectrum Brands FY2022 10-K disc-ops note.
 - **ESSITY-B** — named re-tests at FY2026 AR: BSN Medical (2017) acquisition multiple INDETERMINATE (pre-deal normalized OI not in Essity filings); P19 read on the SEK 3bn programme launched 12 May 2026. FY2024 tranche strikes on all-capex (21.6× yr / 23.8× 3y) but the maintenance-basis 3y read is 19.94× — six hundredths from a second strike route; the maintenance-basis FAIL rests on the §2·1C dominant-pattern clause (2 flagged tranches, 0 clean).
+- **INDT** — named re-test at FY2026 AR: ROCE_wc has fallen two straight years (15.2→13.3→12.8%); a third fires the P4 sustained-decline clause, turns Past WEAK and the verdict AVOID. Also re-read the FY2026 acquisition cohort multiple (FY25 9.2×, FY24 8.9× pre-deal EBITA). Highest-paid subsidiary MD not disclosed (immaterial: 5% stop SEK 128m vs CEO SEK 23.5m).
 - **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD. ENR: FY2026 €2bn programme purpose undisclosed in the H1 note — determine at FY2026 AR (3rd-strike candidate at ≈58× EV/OI).
 
 ---
 
 ## Change log
 
+- **v140 — 2026-07-24** — INDT (Indutrade) ANALYSE v1: **WATCH** (SF PASS, no strikes; acquisitions 8.9–9.2× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.1%. EXPENSIVE 25.1×. 156→157.
 - **v139 — 2026-07-24** — AZA (Avanza) ANALYSE v1: **WATCH** (Past STRONG — worst norm. ROE 35.1%, §2·1A substitution; Future STRONG — 0 forces, strengthening cost moat; SF PASS — zero strikes, no buybacks since 2012). EXPENSIVE 23.5× NI-proxy; band ≈ SEK 132. 155→156.
 - **v138 — 2026-07-24** — KLAR (Klarna) ANALYSE v1: **AVOID** (Past WEAK — norm. ROE −7.3%, §2·1A lender substitution; Future WEAK — 2 strong forces; SF FAIL — P17 CEO $45.1m vs −$273m NI + director-fee strikes). Band n.m. while NI < 0. 154→155.
 - **v137 — 2026-07-24** — SAVE (Nordnet) ANALYSE v1: **AVOID** (SF FAIL — P19: FY24 & FY25 buyback tranches 20.2–24.2× implied MCap/NI on both reads, 0 clean). Past/Future ADEQUATE; band ≈ SEK 98. 153→154.
 - **v136 — 2026-07-24** — BOL (Boliden) ANALYSE v1: **AVOID** (Future WEAK — P15 customer-breadth FAIL, 3 customers 15/14/13% of group revenue, forces 2-strong; SF FAIL — P19 dilution-sterilisation strike, 230k sh/SEK 91m for LTIP delivery). Past ADEQUATE (w-o-4 ROCE 14.1%). EXPENSIVE 26.3× MCap/FCF. 152→153.
-- **v135 — 2026-07-24** — EVO (Evolution) ANALYSE v1: **AVOID** (Future WEAK — breadth 12%, 2 forces, eroding moat; SF FAIL — 3 P19 buyback strikes + NetEnt 48× acq). FAIR, band ≈ SEK 475. 151→152.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
