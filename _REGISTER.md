@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v134
+register_version: v135
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 151
-verdict_split: "WATCH 23 · AVOID 127 · BUY 0 · DNAF 1"
+names_total: 152
+verdict_split: "WATCH 23 · AVOID 128 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v134 · 2026-07-24)
+# GSC Register — Master Watchlist (v135 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -64,7 +64,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 127 names, alphabetical
+### AVOID — 128 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -103,6 +103,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ERIC-B | Telefonaktiebolaget LM Ericsson (publ) | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | SEK 91.06 (24 Jul 2026) | CHEAP < ≈ SEK 68.6 (EV/OI, consv EV; ex-iconectiv-gain leg ≈ 52.7) — FAIR 8.9× | — | FY2026 (~late Jan 2027): 1st clean post-iconectiv OI; SEK 15bn buyback = 1st P19 test |
 | ESSITY-B | Essity Aktiebolag (publ) | 2026-07-24 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | SEK 274.40 (24 Jul 2026) | CHEAP < ≈ SEK 124 (MCap/FCF, maint-capex basis; EV/OI consv leg ≈ 128; strict all-capex ≈ 99) — EXPENSIVE 12.4×/22.3× | — | FY2026 (~21 Jan 2027) + AR: P19 re-test of the 2026 SEK 3bn programme; BSN Medical audit INDETERMINATE; Consumer Tissue strategic review |
 | EVK | Evonik Industries AG | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 INDET: 2017 APD audit) | €16.68 (22 Jul 2026) | CHEAP < ≈ €0.24 (EV/OI, consv EV; all-cash leg ≈ €1.30; MCap/FCF leg ≈ €10.20) — moot given AVOID. EXPENSIVE 20.3× | — | FY2026 AR (~Mar 2027): 1st full year of 3-segment structure; structural — no price flips it |
+| EVO | Evolution AB (publ) | 2026-07-24 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | SEK 694.40 (24 Jul 2026) | CHEAP < ≈ SEK 475 (EV/OI, consv EV; MCap/FCF leg ≈ 518; P12 edge ≈ 595) — FAIR 10.2× | — | FY2026 YE (4 Feb 2027): flip needs cust <10% + worth-ref buyback policy; P19 3 strikes ('21–'23) + NetEnt 48× acq; BTG INDET |
 | FRE | Fresenius SE & Co. KGaA | 2026-07-20 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.1% + Future WEAK: breadth FAIL + 2 strong forces) | WEAK | WEAK | PASS | €42.63 (20 Jul 2026) | CHEAP < ≈ €6.35 (EV/OI, consv EV; MCap/FCF leg ≈ €20.9) — EXPENSIVE | — | FY2026 AR (~Mar 2027); hospital-reform Leistungsgruppen from 2027; SF capital-allocation flag standing |
 | FTK | flatexDEGIRO SE | 2026-07-20 | v1 | AVOID (Future WEAK: 2 strong forces) | ADEQUATE | WEAK | PASS (1 flag: BaFin §44 special audit) | €35.58 (20 Jul 2026) | CHEAP < ≈ €12.55 (MCap/FCF anchor, §2·1A substitution; NI-proxy leg ≈ €11.94; EV/OI n.m.) — moot given AVOID. EXPENSIVE | — | FY2026 (~Mar 2027); NII 31% of revenue is ECB-rate-linked; 8y record caps Past; alert < ≈ €15 |
 | GAP | The Gap, Inc. | 2026-07-04 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | $18.83 (close 2 Jul 2026) | CHEAP < ≈ $9–17 (EV/OI binding; range = operating-lease treatment; MCap/FCF leg ≈ $18). Cheapness FAIR. No P12 edge | — | FY2026 10-K (~Mar 2027) or Q2 FY2026 results (~26 Aug 2026); flip needs a structural quality change, not price |
@@ -225,10 +226,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v135 — 2026-07-24** — EVO (Evolution) ANALYSE v1: **AVOID** (Future WEAK — breadth 12%, 2 forces, eroding moat; SF FAIL — 3 P19 buyback strikes + NetEnt 48× acq). FAIR, band ≈ SEK 475. 151→152.
 - **v134 — 2026-07-24** — LIFCO-B (Lifco) ANALYSE v1: **WATCH** (SF PASS, zero strikes — acquisitions 6.6–8.1× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.4%. EXPENSIVE 29.2×. 150→151.
 - **v133 — 2026-07-24** — ALFA (Alfa Laval) ANALYSE v1: **AVOID** (SF FAIL — P19: Fives Cryogenics 21.2–22.2× pre-deal OI + 2021/22 buybacks >20× both reads). Past ADEQUATE, Future STRONG. 149→150.
 - **v132 — 2026-07-24** — ESSITY-B (Essity) ANALYSE v1: **AVOID** (SF FAIL — P19: FY2024 tranche 21.6× yr / 23.8× 3y MCap/FCF, all-capex; maint basis 2 flagged / 0 clean = dominant pattern). Past/Future ADEQUATE; band ≈ SEK 124. 148→149.
 - **v131 — 2026-07-24** — HEXA-B (Hexagon) ANALYSE v1: **AVOID** (Past WEAK, w-o-4 ROCE 9.25%; SF FAIL, P19 dilution-sterilisation strike — 21.1m sh, LTIP hedge only). EXPENSIVE 30.8×. 147→148.
-- **v130 — 2026-07-24** — ERIC-B (Ericsson) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 4.7%; Future WEAK, customer breadth ~14%; SF FAIL, 2 hard strikes). Cheapness FAIR.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
