@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v132
+register_version: v133
 register_date: 2026-07-24
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 149
-verdict_split: "WATCH 22 · AVOID 126 · BUY 0 · DNAF 1"
+names_total: 150
+verdict_split: "WATCH 22 · AVOID 127 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v132 · 2026-07-24)
+# GSC Register — Master Watchlist (v133 · 2026-07-24)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -63,7 +63,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 126 names, alphabetical
+### AVOID — 127 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -73,6 +73,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AD | Koninklijke Ahold Delhaize N.V. | 2026-07-07 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 P19 flag) | €36.33 | CHEAP < ≈ €7 (EV/OI, conservative EV, lease-heavy; all-cash-excess leg ≈ €11; MCap/FCF leg ≈ €33) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Feb 2027), low priority — structural (ROCE 8.4%, L/E 246%); P19 flag logged, no strike |
 | ADS | adidas AG | 2026-07-04 | v1 | AVOID (Past WEAK: leverage + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | €185.30 | CHEAP < ≈ €47 (EV/OI leg, conservative EV; MCap/FCF n.m. on WC-depressed FY2025 FCF, ≈ €46 on 5y-avg FCF) — moot given AVOID | — | FY2026 results (~early Mar 2027) — FCF and leverage reset; earlier if price < ≈ €52 |
 | AKZA | Akzo Nobel N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | ADEQUATE | FAIL | €56.28 (23 Jul 2026) | CHEAP < ≈ €28 (MCap/FCF; EV/OI leg ≈ €29; no P12) — EXPENSIVE 16.0×/12.6× | — | Axalta merger close (late 2026/early 2027) → fresh ANALYSE of MergeCo; price embeds ~€2.5bn special div; P19 struck 2017/19/21 |
+| ALFA | Alfa Laval AB (publ) | 2026-07-24 | v1 | AVOID (SF FAIL: P19 acquisition + 2 buyback strikes) | ADEQUATE | STRONG | FAIL | SEK 578.80 (24 Jul 2026) | CHEAP < ≈ SEK 119 (MCap/FCF; EV/OI consv leg ≈ 147; no P12) — EXPENSIVE 22.2×/38.9× | — | FY2026 AR (~Mar 2027): P19 re-test; Fives PPA final; v3.5.0 redemption limbs all fail |
 | AMV0 | Aumovio SE | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €35.90 (23 Jul 2026) | No CHEAP band — EV/OI n.m. (FY25 OI −€70m); FCF-leg ref ≈ €9.0. Cheapness EXPENSIVE 32.1× MCap/FCF | — | FY2026 AR (~Mar 2027) — first clean standalone year; thin history 4y (carve-out 2022–24) |
 | ASML | ASML Holding N.V. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €1,628 (~6 Jul 2026) | CHEAP < ≈ €140 (MCap/TBV, one-average allowance) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (Jan 2027) re-anchors band; flip needs a disciplined buyback year (2018–25 all > 20× EV/OI) |
 | ASSA-B | ASSA ABLOY AB | 2026-07-24 | v1 | AVOID (Past WEAK: 3y ROCE decline) | WEAK | STRONG | PASS | SEK 347.10 (24 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, cons. EV) — academic given AVOID | — | FY2026 AR (~Mar 2027): ROCE-trend re-test; HHI P19 re-test |
@@ -223,10 +224,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v133 — 2026-07-24** — ALFA (Alfa Laval) ANALYSE v1: **AVOID** (SF FAIL — P19: Fives Cryogenics 21.2–22.2× pre-deal OI + 2021/22 buybacks >20× both reads). Past ADEQUATE, Future STRONG. 149→150.
 - **v132 — 2026-07-24** — ESSITY-B (Essity) ANALYSE v1: **AVOID** (SF FAIL — P19: FY2024 tranche 21.6× yr / 23.8× 3y MCap/FCF, all-capex; maint basis 2 flagged / 0 clean = dominant pattern). Past/Future ADEQUATE; band ≈ SEK 124. 148→149.
 - **v131 — 2026-07-24** — HEXA-B (Hexagon) ANALYSE v1: **AVOID** (Past WEAK, w-o-4 ROCE 9.25%; SF FAIL, P19 dilution-sterilisation strike — 21.1m sh, LTIP hedge only). EXPENSIVE 30.8×. 147→148.
 - **v130 — 2026-07-24** — ERIC-B (Ericsson) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 4.7%; Future WEAK, customer breadth ~14%; SF FAIL, 2 hard strikes). Cheapness FAIR.
 - **v129 — 2026-07-24** — ASSA-B (ASSA ABLOY) ANALYSE v1: **AVOID** (Past WEAK — 3y ROCE decline; w-o-4 12.5%). Future STRONG; SF PASS (P19 HHI flag; strike INDETERMINATE). Band ≈ SEK 88. 145→146.
-- **v128 — 2026-07-24** — EPI-A (Epiroc) ANALYSE v1: **AVOID** (SF FAIL — P19: buybacks are option-plan delivery only). Past ADEQUATE (5y), Future STRONG; band ≈ SEK 54.3 A. 144→145.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
