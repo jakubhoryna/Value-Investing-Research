@@ -1,4 +1,4 @@
-# GSC Analysis Queue — TODO.md
+# GSC Analysis Queue — TODO.md (v2 · 2026-07-25)
 
 **Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
 
@@ -8,8 +8,20 @@
 
 ## Priority — next up
 
-- Gen Digital — GEN (US)
-- Teradyne — TER (US)
+*(empty — GEN and TER completed; user to set the next batch. Largest coherent remaining blocks: Japan majors (12), France (16), US backlog (~77).)*
+
+---
+
+## Scheduled reviews — near-term calendar
+
+*Derived 2026-07-25 from register v149 row cells and Open items — non-authoritative, the register wins; refresh at RECONCILE/SWEEP touches. Dated triggers only; price-alert triggers live in the rows.*
+
+**Jul 2026 (imminent):** NKE FY2026 10-K re-anchor · INPST offer closes 27 Jul (settlement H2 → delist, archive row) · AMZN Q2 30 Jul (AWS growth/capex).
+**Aug 2026:** ROK Q3 4 Aug opt. · NOVO-B H1 5 Aug (band only; held) · CROX Q2 6 Aug opt. (held) · CSG H1 7 Aug (FCF/leverage/Ammo+) · TEAM FY2026 10-K (OI inflection + P19) · BABA FY27 Q1 · ADYEN H1 · PAH3 H1 · BNR H1 opt. · BYD H1 opt. · GAP Q2 ~26 Aug.
+**Sep 2026:** CRM Q2 FY27 ~2 Sep opt. · LULU Q2 (O'Neill's first quarter) · COST FY2026 P19 re-test (FY21–25 all >20×) · NKE proxy (Hill + Denton comp) · SAF H1 · ORCL Q1 FY27 · EA deal outside date 28 Sep (close → delist; lapse → REVIEW).
+**Oct–Nov 2026:** MU 10-K ~Oct · AAPL 10-K ~Oct/Nov (SF comp flip check) · QCOM 10-K ~Nov (FY26 buyback re-test) · ROK 10-K ~Nov (buyback discipline) · V 10-K ~Nov (P15 11%-client + comp) · SONY H1 ~Nov (¥500bn facility, P19) · EKTA-B H1 ~Nov · SCHN repurchase-cessation watch (programme to Nov 2026).
+**Dec 2026 / Q4 events:** ENR FY2026 AR (first clean-cycle year + P19 €2bn/€6bn) · SIE FY2026 (buyback re-test; Feb 2027 AGM spin vote → full re-base) · SKF-B Automotive Lex Asea separation ~Q4 (resets basis, both entities re-underwritten) · TKA / TUI1 FY2026 ARs informational.
+**Q1–Q2 2027 — FY2026 annual season:** bulk of the WATCH list re-anchors (all four held names incl. HFG/NOVO-B decisions if still open) plus the named re-test queue — P19 dual-read (SCHN, GEBN, SAF, TER, MORN, GRMN, SU), acquisition-audit INDETERMINATEs (FIE Shopko, ASSA-B HHI, ESSITY-B BSN, GETI-B Paragonix, EPI-A Stanley, MYCR cohort, KRN Netstal), P4 third-decline tests (INDT, SKF-B), ONON arithmetic flip check, CON tyre re-basis, SHA0/BAYN P17 columns, MA comp (Apr 2027 proxy), worth-check flag-clears (CROX, BKNG, AD) — **detail: register `## Open items`.**
 
 ---
 
@@ -36,85 +48,11 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 
 ---
 
-## Backlog by market
+## Backlog by market — 138 names remaining
 
-Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history.
+Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed at v2: Switzerland (13/13), Germany (30/30), Netherlands (3/3).*
 
-### Switzerland
-- Roche — ROG.SW
-- Lindt & Sprüngli — LISN.SW
-- Garmin — GRMN (US-listed, CH-domiciled)
-- Schindler — SCHP.SW
-- Sika — SIKA.SW
-- Kühne + Nagel — KNIN.SW
-- Geberit — GEBN.SW
-- Straumann — STMN.SW
-- Sonova — SOON.SW
-- Logitech — LOGN.SW / LOGI (US)
-- On Holding — ONON (US)
-- Inficon — IFCN.SW
-- HUBER+SUHNER — HUBN.SW
-
-### Germany
-- Thyssenkrupp — TKA.DE
-- Schaeffler — SHA.DE
-- Siemens Energy — ENR.DE
-- Bayer — BAYN.DE
-- BASF — BAS.DE
-- Hochtief — HOT.DE
-- Henkel — HEN3.DE
-- Talanx — TLX.DE
-- Fresenius — FRE.DE
-- Hapag-Lloyd — HLAG.DE
-- INNIO — ⚑ listing status uncertain (PE-owned; confirm public)
-- Uniper — UN01.DE  ⚑ (listed as "Unipet" — read as Uniper; confirm)
-- Traton — 8TRA.DE
-- Beiersdorf — BEI.DE  (listed as "Baiersdorf")
-- Knorr-Bremse — KBX.DE
-- Continental — CON.DE
-- Sartorius — SRT3.DE
-- Covestro — 1COV.DE  ⚑ (Adnoc/XRG takeover in progress; confirm still analysable)
-- Symrise — SY1.DE
-- Brenntag — BNR.DE
-- Hella (Forvia Hella) — HLE.DE
-- Evonik Industries — EVK.DE
-- flatexDEGIRO — FTK.DE
-- Bechtle — BC8.DE
-- Aumovio — AUV.DE  ⚠ (2025 Continental spin-off; thin history)
-- TUI — TUI1.DE
-- Krones — KRN.DE
-- Fielmann — FIE.DE
-- Bilfinger — GBF.DE
-- Synlab — ⚑ likely delisted (Cinven take-private, 2024) — confirm before queueing
-
-### Netherlands
-- Philips — PHIA.AS
-- Akzo Nobel — AKZA.AS
-- Signify — LIGHT.AS
-
-### Sweden
-- Atlas Copco — ATCO-A.ST
-- Sandvik — SAND.ST
-- Ericsson — ERIC-B.ST
-- Assa Abloy — ASSA-B.ST
-- Epiroc — EPI-A.ST
-- Alfa Laval — ALFA.ST
-- Hexagon — HEXA-B.ST
-- Essity — ESSITY-B.ST
-- Lifco — LIFCO-B.ST
-- Boliden — BOL.ST
-- Evolution — EVO.ST
-- SKF — SKF-B.ST
-- Nordnet — SAVE.ST
-- Indutrade — INDT.ST
-- Klarna — KLAR (US)  ⚠ (2025 IPO)
-- Avanza — AZA.ST
-- Mycronic — MYCR.ST
-- Getinge — GETI-B.ST
-- Thule — THULE.ST
-- Husqvarna — HUSQ-B.ST
-- Electrolux — ELUX-B.ST
-- Elekta — EKTA-B.ST
+### Sweden — 4 remaining (21 completed at v2)
 - Paradox Interactive — PDX.ST
 - Nolato — NOLA-B.ST
 - Rusta — RUSTA.ST
@@ -128,16 +66,14 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Brunello Cucinelli — BC.MI
 - De'Longhi — DLG.MI
 
-### Finland
+### Finland — 4 remaining (Kone completed)
 - Nokia — NOKIA.HE
-- Kone — KNEBV.HE
 - Neste — NESTE.HE
 - Fortum — FORTUM.HE
 - Amer Sports — AS (US)  ⚠ (2024 IPO)
 
-### Japan
+### Japan — 12 remaining (Sony completed)
 - Hitachi — 6501.T
-- Sony — 6758.T
 - Mitsubishi Heavy Industries — 7011.T
 - Panasonic — 6752.T
 - Nintendo — 7974.T
@@ -150,11 +86,9 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Bridgestone — 5108.T
 - Canon — 7751.T
 
-### France
+### France — 16 remaining (Safran, Sanofi completed)
 - L'Oréal — OR.PA
 - Hermès — RMS.PA
-- Safran — SAF.PA
-- Sanofi — SAN.PA
 - Christian Dior — CDI.PA
 - EssilorLuxottica — EL.PA
 - Vinci — DG.PA
@@ -168,7 +102,7 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Bureau Veritas — BVI.PA
 - Valeo — FR.PA
 - Lagardère — MMB.PA
-- Trigano — TRI.PA
+- Trigano — TRI.PA  ⚑ ticker collision: register key `TRI` = Thomson Reuters — use a distinct register key (e.g. `TRI.PA`) at analysis time
 
 ### Brazil
 - Nu Holdings — NU (US)
@@ -182,12 +116,11 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - CD Projekt — CDR.WA
 - Asseco Poland — ACP.WA
 
-### United Kingdom
+### United Kingdom — 2 remaining (Wise completed)
 - BAE Systems — BA.L
 - Haleon — HLN.L  (2022 GSK spin-off)
-- Wise — WISE.L
 
-### United States
+### United States — 78 remaining (Gen Digital, Unity, DocuSign completed; dup lines removed)
 - Lyft — LYFT
 - Lemonade — LMND
 - Klaviyo — KVYO  ⚠ (2023 IPO)
@@ -258,18 +191,14 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Twilio — TWLO
 - Zoom — ZM
 - Okta — OKTA
-- Gen Digital — GEN  (dup — see Priority)
-- Unity Software — U
 - Zebra Technologies — ZBRA
 - Figma — FIG  ⚠ (2025 IPO)
-- DocuSign — DOCU
 - FactSet — FDS
 - Compass — COMP
 - Mobileye — MBLY  ⚠ (2022 IPO)
 - Dropbox — DBX
 - SentinelOne — S
 - UiPath — PATH
-- Upstart — UPST  (dup — appears twice in source list)
 
 ### Energy
 - CATL — 300750.SZ (Shenzhen); 2025 HK dual-listing
@@ -287,15 +216,13 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 
 ## Flags — confirm before analysis
 
-- **Uniper** (listed "Unipet") — read as UN01.DE; confirm.
-- **INNIO** — confirm public listing (PE-owned).
-- **Synlab** — likely delisted (Cinven take-private 2024); confirm before queueing.
-- **Covestro** — XRG/Adnoc takeover in progress; confirm still analysable as a going independent name.
 - **"Cartara"** — no known US listing under this spelling; confirm intended name/ticker.
 - **Bed Bath & Beyond** — original bankrupt; brand now under Beyond Inc (BYON). Confirm entity.
+- **Trigano** — TRI.PA; register key `TRI` is taken by Thomson Reuters — assign a distinct key at analysis time.
 - **Thin-history names** (⚠ throughout) — recent IPOs/spin-offs may not clear the Past gate; expect `INCOMPLETE` or Past = WEAK on insufficient data.
 
 ---
 
 ## Change log
-- 2026-07-15 — File created. Seeded with priority names (Gen Digital, Teradyne) + long backlog by market. Overnight-runner design sketch recorded for later build.
+- **v2 — 2026-07-25** — RECONCILE prune: 75 completed names removed (all of CH 13, DE 30, NL 3; SE 21; FI Kone; JP Sony; FR SAF+SAN; UK Wise; US GEN/U/DOCU + priority GEN/TER; dup lines dropped). 4 flags resolved (Uniper→UN0, INNIO→INIO, Synlab→SYAB DNAF, Covestro→1COV — all analysed). Trigano/TRI collision flagged. Added near-term review calendar (derived from register v149). 138 names remain. v1 archived → `queue/archive/TODO_v1_2026-07-15.md`.
+- **v1 — 2026-07-15** — File created. Seeded with priority names (Gen Digital, Teradyne) + long backlog by market. Overnight-runner design sketch recorded for later build.
