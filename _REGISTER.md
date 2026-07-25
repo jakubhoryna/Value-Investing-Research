@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v140
-register_date: 2026-07-24
+register_version: v141
+register_date: 2026-07-25
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 157
-verdict_split: "WATCH 25 · AVOID 131 · BUY 0 · DNAF 1"
+names_total: 158
+verdict_split: "WATCH 25 · AVOID 132 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v140 · 2026-07-24)
+# GSC Register — Master Watchlist (v141 · 2026-07-25)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -100,6 +100,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DSY | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
+| ELUX-B | AB Electrolux (publ) | 2026-07-25 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | SEK 22.83 (24 Jul 2026) | n.m. — FY25 FCF negative; no positive price clears EV/OI ≤ 7 (net debt+leases ≈ 6.9× OI); EXPENSIVE 17.2×/11.9× | — | FY2026 AR (~Mar 2027): 1st post-rights-issue year + Midea NA terms; Q2 (29 Jul 2026) optional |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | ENR | Siemens Energy AG | 2026-07-20 | v1 | AVOID (Past WEAK ROCE 0.1% + SF FAIL: P19) | WEAK | WEAK | FAIL | €152.00 (20 Jul 2026) | CHEAP < ≈ €12 strict (EV/OI, no-cash EV; ≈ €26 all-cash leg; MCap/FCF leg ≈ €37) — moot given AVOID. EXPENSIVE 64.4× EV/OI | — | FY2026 AR (~Dec 2026): 1st clean-cycle year + P19 re-test of the €2bn/€6bn buyback |
 | EPI-A | Epiroc AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 dilution-sterilisation) | ADEQUATE | STRONG | FAIL | SEK 248.10 A (24 Jul 2026) | CHEAP < ≈ SEK 54.3 A (EV/OI, cons EV; B ≈ 46.2; MCap/FCF leg ≈ 60.3 A; no P12) — EXPENSIVE 25.7×/32.9× | — | FY2026 AR (~Mar 2027): P19 re-test if mandate purpose changes; 5y framework window caps Past; Stanley multiple INDETERMINATE |
@@ -233,10 +234,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v141 — 2026-07-25** — ELUX-B (Electrolux) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 5.0%, L/E 1,217%; Future WEAK, 2-strong forces, no moat; SF FAIL — P19 2021 tranche 58.8×/21.7× MCap/FCF, both reads > 20×). Post-rights-issue base (2-for-1 @ SEK 16.75, Jun 2026); band n.m. 157→158.
 - **v140 — 2026-07-24** — INDT (Indutrade) ANALYSE v1: **WATCH** (SF PASS, no strikes; acquisitions 8.9–9.2× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.1%. EXPENSIVE 25.1×. 156→157.
 - **v139 — 2026-07-24** — AZA (Avanza) ANALYSE v1: **WATCH** (Past STRONG — worst norm. ROE 35.1%, §2·1A substitution; Future STRONG — 0 forces, strengthening cost moat; SF PASS — zero strikes, no buybacks since 2012). EXPENSIVE 23.5× NI-proxy; band ≈ SEK 132. 155→156.
 - **v138 — 2026-07-24** — KLAR (Klarna) ANALYSE v1: **AVOID** (Past WEAK — norm. ROE −7.3%, §2·1A lender substitution; Future WEAK — 2 strong forces; SF FAIL — P17 CEO $45.1m vs −$273m NI + director-fee strikes). Band n.m. while NI < 0. 154→155.
 - **v137 — 2026-07-24** — SAVE (Nordnet) ANALYSE v1: **AVOID** (SF FAIL — P19: FY24 & FY25 buyback tranches 20.2–24.2× implied MCap/NI on both reads, 0 clean). Past/Future ADEQUATE; band ≈ SEK 98. 153→154.
-- **v136 — 2026-07-24** — BOL (Boliden) ANALYSE v1: **AVOID** (Future WEAK — P15 customer-breadth FAIL, 3 customers 15/14/13% of group revenue, forces 2-strong; SF FAIL — P19 dilution-sterilisation strike, 230k sh/SEK 91m for LTIP delivery). Past ADEQUATE (w-o-4 ROCE 14.1%). EXPENSIVE 26.3× MCap/FCF. 152→153.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
