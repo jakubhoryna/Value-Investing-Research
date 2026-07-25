@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v141
+register_version: v142
 register_date: 2026-07-25
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 158
-verdict_split: "WATCH 25 · AVOID 132 · BUY 0 · DNAF 1"
+names_total: 159
+verdict_split: "WATCH 25 · AVOID 133 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v141 · 2026-07-25)
+# GSC Register — Master Watchlist (v142 · 2026-07-25)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -66,7 +66,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +505% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +777% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 131 names, alphabetical
+### AVOID — 132 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -114,6 +114,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GBF | Bilfinger SE | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €85.35 (23 Jul 2026) | CHEAP < ≈ €42.96 (EV/OI, cons EV; MCap/FCF leg ≈ €63.2; no P12) — FAIR 10.8×/12.6× | — | FY2026 AR (~Mar 2027) re-tests P19 redemption; P3 unreachable before FY2030 window |
 | GEBN | Geberit AG | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback hard strike) | ADEQUATE | STRONG | FAIL | CHF 520.20 (15 Jul 2026) | CHEAP < ≈ CHF 139 (EV/OI, consv EV; MCap/FCF leg ≈ CHF 170; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 (~Mar 2027) re-tests P19; STRONG-future WATCH absent strike, OOR +275%; alert < ≈ CHF 200 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID (Past WEAK: L/E 497% + Future WEAK: 2 strong forces + SF FAIL: acq flag pair) | WEAK | WEAK | FAIL | $26.57 (14 Jul 2026) | CHEAP < ≈ $11.3 (EV/OI, consv EV; MCap/FCF leg ≈ $19.7; no P12) — FAIR, moot given AVOID | — | FY2027 (~May 2027) 1st full MoneyLion yr re-anchors OI/FCF; Avast ≈19–20× audit; alert < ≈ $12 |
+| GETI-B | Getinge AB (publ) | 2026-07-25 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | SEK 230.30 (24 Jul 2026) | CHEAP < ≈ SEK 48.5 (EV/OI, consv EV; MCap/FCF leg ≈ SEK 77; no P12) — EXPENSIVE 23.8×/20.1× | — | FY2026 AR (~Mar 2027) re-tests Paragonix multiple (INDETERMINATE); P3 needs OI ≈ SEK 4.9bn sustained |
 | GOOGL | Alphabet Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $359.69 (close 6 Jul 2026) | CHEAP < ≈ $67 (EV/OI, conservative EV, Q1-26 debt; maint MCap/FCF ≈ $78, P20; P12 edge ≈ $78; strict all-capex ≈ $48) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) + Apr 2027 proxy re-test P19 & Pichai comp; ad-tech remedy pending; alert < $120 |
 | GRMN | Garmin Ltd | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback) | STRONG | ADEQUATE | FAIL | $241.64 (15 Jul 2026) | CHEAP < ≈ $56 (MCap/FCF; EV/OI leg ≈ $88; P12 edge ≈ $70) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-tests P19; would be WATCH absent strike, deeply OOR (+329%); alert < ≈ $70 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
@@ -228,16 +229,17 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **ASSA-B** — named re-test: HHI (2023) acquisition multiple. Deal EV ≈ SEK 48.3bn; only after-tax disc-ops income retrievable (SPB XBRL): 15× flag robust on every tax build, >20× strike INDETERMINATE (3y normalized 19.3–21.8×). Source: Spectrum Brands FY2022 10-K disc-ops note.
 - **ESSITY-B** — named re-tests at FY2026 AR: BSN Medical (2017) acquisition multiple INDETERMINATE (pre-deal normalized OI not in Essity filings); P19 read on the SEK 3bn programme launched 12 May 2026. FY2024 tranche strikes on all-capex (21.6× yr / 23.8× 3y) but the maintenance-basis 3y read is 19.94× — six hundredths from a second strike route; the maintenance-basis FAIL rests on the §2·1C dominant-pattern clause (2 flagged tranches, 0 clean).
 - **INDT** — named re-test at FY2026 AR: ROCE_wc has fallen two straight years (15.2→13.3→12.8%); a third fires the P4 sustained-decline clause, turns Past WEAK and the verdict AVOID. Also re-read the FY2026 acquisition cohort multiple (FY25 9.2×, FY24 8.9× pre-deal EBITA). Highest-paid subsidiary MD not disclosed (immaterial: 5% stop SEK 128m vs CEO SEK 23.5m).
+- **GETI-B** — named re-tests at FY2026 AR: Paragonix (2024) acquisition multiple INDETERMINATE (pre-deal OI undisclosed; ≈9× target sales, flag/strike lines need >60%/>45% margins to clear); supplier-breadth evidence not disclosed by Swedish filers. SF PASS rests on zero strikes and zero buybacks ever executed.
 - **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD. ENR: FY2026 €2bn programme purpose undisclosed in the H1 note — determine at FY2026 AR (3rd-strike candidate at ≈58× EV/OI).
 
 ---
 
 ## Change log
 
+- **v142 — 2026-07-25** — GETI-B (Getinge) ANALYSE v1: **AVOID** (Past WEAK — worst-of-four 10y ROCE 6.8% / FCFROCE 6.6%; clean FY18–25 sub-window 7.3%). Future ADEQUATE; SF PASS — zero strikes, no buyback ever executed. EXPENSIVE 23.8×/20.1×; band ≈ SEK 48.5. 158→159.
 - **v141 — 2026-07-25** — ELUX-B (Electrolux) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 5.0%, L/E 1,217%; Future WEAK, 2-strong forces, no moat; SF FAIL — P19 2021 tranche 58.8×/21.7× MCap/FCF, both reads > 20×). Post-rights-issue base (2-for-1 @ SEK 16.75, Jun 2026); band n.m. 157→158.
 - **v140 — 2026-07-24** — INDT (Indutrade) ANALYSE v1: **WATCH** (SF PASS, no strikes; acquisitions 8.9–9.2× pre-deal EBITA, no buybacks). Past ADEQUATE, w-o-4 ROCE 14.1%. EXPENSIVE 25.1×. 156→157.
 - **v139 — 2026-07-24** — AZA (Avanza) ANALYSE v1: **WATCH** (Past STRONG — worst norm. ROE 35.1%, §2·1A substitution; Future STRONG — 0 forces, strengthening cost moat; SF PASS — zero strikes, no buybacks since 2012). EXPENSIVE 23.5× NI-proxy; band ≈ SEK 132. 155→156.
 - **v138 — 2026-07-24** — KLAR (Klarna) ANALYSE v1: **AVOID** (Past WEAK — norm. ROE −7.3%, §2·1A lender substitution; Future WEAK — 2 strong forces; SF FAIL — P17 CEO $45.1m vs −$273m NI + director-fee strikes). Band n.m. while NI < 0. 154→155.
-- **v137 — 2026-07-24** — SAVE (Nordnet) ANALYSE v1: **AVOID** (SF FAIL — P19: FY24 & FY25 buyback tranches 20.2–24.2× implied MCap/NI on both reads, 0 clean). Past/Future ADEQUATE; band ≈ SEK 98. 153→154.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
