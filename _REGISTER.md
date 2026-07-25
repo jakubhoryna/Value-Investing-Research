@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v145
+register_version: v146
 register_date: 2026-07-25
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 162
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v145 · 2026-07-25)
+# GSC Register — Master Watchlist (v146 · 2026-07-25)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -151,7 +151,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MORN | Morningstar, Inc. | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $165.18 (13 Jul 2026) | CHEAP < ≈ $61 (EV/OI, conservative EV, Q1'26 debt; MCap/FCF leg ≈ $93; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test FY26 tranche & L/E (Q1'26 ~291% pro-forma); flip needs a below-flag pgm year (FY22 & FY25 > 20×); alert < ≈ $75 |
 | MSFT | Microsoft Corporation | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | STRONG | ADEQUATE | FAIL | ~$390 | CHEAP < ≈ $105 (EV/OI, conservative EV, P20 maintenance basis; P12 edge ≈ $113; strict all-capex ≈ $77). Cheapness EXPENSIVE | — | FY2026 10-K, results 28 Jul 2026 — band moves; P19 re-test on FY26 buyback table (FY23–25 at 22.5–25.5× EV/OI) |
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
-| MYCR | Mycronic AB (publ) | 2026-07-25 | v1 | AVOID (SF FAIL: P19 dilution-sterilisation) | ADEQUATE | ADEQUATE | FAIL | SEK 342.80 (24 Jul 2026) | CHEAP < ≈ SEK 50.9 (MCap/FCF; EV/OI leg ≈ SEK 67.8; no P12) — moot given AVOID. EXPENSIVE 53.9×/34.7× | — | FY2026 AR (~Apr 2027) re-tests P19 + acq cohort; WATCH absent strike, OOR +574%; Past capped ADEQUATE on 7y window |
+| MYCR | Mycronic AB (publ) | 2026-07-25 | v2 | AVOID (SF FAIL: P19 dilution-sterilisation) | STRONG | ADEQUATE | FAIL | SEK 342.80 (24 Jul 2026) | CHEAP < ≈ SEK 50.9 (MCap/FCF; EV/OI leg ≈ SEK 67.4; P12 edge ≈ SEK 64) — moot given AVOID. EXPENSIVE 53.9×/34.7× | — | FY2026 AR (~Apr 2027) re-tests P19 + acq cohort; WATCH absent strike, OOR +574%; 10y window completed v2 |
 | NESN | Nestlé S.A. | 2026-07-14 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 83.88 (14 Jul 2026) | CHEAP < ≈ CHF 13 (EV/OI, consv EV, FY25 op. profit; MCap/FCF leg ≈ CHF 34 all-capex / ≈ CHF 28 run-rate; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) + 2026 gov/comp report re-test P19 (CHF 20bn 2022–24 pgm @ CHF 106.74 ≈ 23× EV/OI); flip needs below-worth buyback discipline |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
 | NKE | NIKE, Inc. | 2026-07-09 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $42.89 (close 8 Jul 2026) | CHEAP < ≈ $10.5 (EV/OI, conservative EV, FY2026 prelim OI; all-cash-excess leg ≈ $16.6; MCap/FCF leg ≈ $17.7) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jul 2026, imminent) re-anchors; Sep 2026 proxy — Hill + Denton comp; flip needs a below-flag pgm year (FY20–25 all > 20×) |
@@ -234,16 +234,16 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **INDT** — named re-test at FY2026 AR: ROCE_wc has fallen two straight years (15.2→13.3→12.8%); a third fires the P4 sustained-decline clause, turns Past WEAK and the verdict AVOID. Also re-read the FY2026 acquisition cohort multiple (FY25 9.2×, FY24 8.9× pre-deal EBITA). Highest-paid subsidiary MD not disclosed (immaterial: 5% stop SEK 128m vs CEO SEK 23.5m).
 - **GETI-B** — named re-tests at FY2026 AR: Paragonix (2024) acquisition multiple INDETERMINATE (pre-deal OI undisclosed; ≈9× target sales, flag/strike lines need >60%/>45% margins to clear); supplier-breadth evidence not disclosed by Swedish filers. SF PASS rests on zero strikes and zero buybacks ever executed.
 - **SKF-B** — named re-tests: a third consecutive ROCE_wc decline (12.1→11.1→7.8%) fires P4 → Past WEAK; John Sample Group (2024) acquisition multiple INDETERMINATE (pre-deal OI not disclosed); the Automotive Lex Asea separation (~Q4 2026) resets the basis — both entities re-underwritten from scratch.
-- **MYCR** — P19 strike is LTIP-hedging repurchases only (SEK 16–26m/yr, 0.3% of capital in treasury); no discretionary priced tranche exists, so dual-read and below-worth rescue are unavailable by construction. Named re-tests at FY2026 AR: 2025 acquisition cohort (5 deals, SEK 1,524m, pre-deal OI undisclosed — INDETERMINATE); supplier breadth. **FY2016–FY2018 annual reports unobtainable from the company site — 7y window caps Past at ADEQUATE; record clears P2 in full (w-o-4 ROCE 22.3%).** P19 de-minimis threshold queued for MODEL-mode discussion.
+- **MYCR** — two independent P19 hard strikes: LTIP-hedging repurchases (sterilisation, price-independent) and the FY2025 tranche at 30.0× yr / 26.1× 3y implied MCap/FCF. FY2016–FY2018 reports recovered via the Datablocks archive endpoint (v2 memo, App. A) — 10y window complete, Past STRONG. Named re-tests at FY2026 AR: FY2025 acquisition cohort (3 deals consolidated, SEK 1,210m, pre-deal OI undisclosed — INDETERMINATE); supplier spend concentration. P19 de-minimis threshold queued for MODEL-mode discussion.
 - **P19 dual-read re-test queue [MODEL v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU — SF-only AVOIDs struck on single-tranche/single-basis reads; re-test at (or before) scheduled reviews. SHA0/BAYN SF columns re-test at next touch (P17 loss-leg; verdicts hold on quality gates). MA comp strike predates two-tier P17 — re-test at Apr 2027 proxy. Worth-check (v3.5.0) flag-clear candidates at next touch (bookkeeping only): CROX, BKNG, AD. ENR: FY2026 €2bn programme purpose undisclosed in the H1 note — determine at FY2026 AR (3rd-strike candidate at ≈58× EV/OI).
 
 ---
 
 ## Change log
 
+- **v146 — 2026-07-25** — MYCR (Mycronic) v2: FY2016–18 reports recovered → 10y window complete, **Past ADEQUATE→STRONG** (w-o-4 ROCE 24.5%, FCFROCE 19.4%); P12 edge ≈ SEK 64; second P19 hard strike on the FY2025 tranche (30.0×/26.1×). Verdict AVOID unchanged. 162.
 - **v145 — 2026-07-25** — THULE (Thule Group) ANALYSE v1: **WATCH** (Past ADEQUATE, w-o-4 ROCE 16.6%/FCFROCE 10.8%; STRONG lost on ΔFCF/sh −0.1%; Future ADEQUATE; SF PASS — no buyback ever, Quad Lock 10.5×). EXPENSIVE 29.7×; band ≈ SEK 58. 161→162.
 - **v144 — 2026-07-25** — MYCR (Mycronic) ANALYSE v1: **AVOID** (SF FAIL — P19 dilution-sterilisation: FY21–25 repurchases for LTIP delivery; 5 register precedents). Past ADEQUATE (7y window cap; w-o-4 ROCE 22.3%), Future ADEQUATE. EXPENSIVE 53.9×; band ≈ SEK 50.9. 160→161.
 - **v143 — 2026-07-25** — SKF-B ANALYSE v1: **WATCH** (Past ADEQUATE, w-o-4 ROCE 11.3%/FCFROCE 5.5%; Future ADEQUATE; SF PASS — no buybacks, zero strikes). EXPENSIVE 25.5×; band ≈ SEK 80. 159→160.
 - **v142 — 2026-07-25** — GETI-B (Getinge) ANALYSE v1: **AVOID** (Past WEAK — worst-of-four 10y ROCE 6.8% / FCFROCE 6.6%; clean FY18–25 sub-window 7.3%). Future ADEQUATE; SF PASS — zero strikes, no buyback ever executed. EXPENSIVE 23.8×/20.1×; band ≈ SEK 48.5. 158→159.
-- **v141 — 2026-07-25** — ELUX-B (Electrolux) ANALYSE v1: **AVOID** (triple gate — Past WEAK, w-o-4 ROCE 5.0%, L/E 1,217%; Future WEAK, 2-strong forces, no moat; SF FAIL — P19 2021 tranche 58.8×/21.7× MCap/FCF, both reads > 20×). Post-rights-issue base (2-for-1 @ SEK 16.75, Jun 2026); band n.m. 157→158.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v57 and back). Older log entries live inside the snapshots.*
