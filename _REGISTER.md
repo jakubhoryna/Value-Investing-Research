@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v150
-register_date: 2026-07-25
+register_version: v151
+register_date: 2026-07-26
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 164
-verdict_split: "WATCH 27 · AVOID 136 · BUY 0 · DNAF 1"
+names_total: 165
+verdict_split: "WATCH 27 · AVOID 137 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v150 · 2026-07-25)
+# GSC Register — Master Watchlist (v151 · 2026-07-26)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +502% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +799% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 136 names, alphabetical
+### AVOID — 137 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -162,6 +162,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ONON | On Holding AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $37.20 (17 Jul 2026; ≈CHF 30.0) | CHEAP < ≈ CHF 6.2 ≈ $7.7 (MCap/FCF binding; EV/OI leg ≈ CHF 6.3; no P12 — Past WEAK) — EXPENSIVE | — | FY2026 20-F (~Mar 2027): worst-leg ROCE crosses 10% at OI ≈ CHF 450–480m — live flip; P17 headroom 4% re-test; Vietnam tariff watch; alert < ≈ $11 |
 | ORCL | Oracle Corporation | 2026-07-14 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $129.68 (14 Jul 2026) | No positive limit price on conservative EV; ≈$5–16 all-cash-excess (EV/OI; FCF n.m.) — academic. Cheapness EXPENSIVE | — | Q1 FY2027 (~Sept 2026); S&P BBB- (Jul'26) confirms leverage; flip needs deleveraging + FCF inflection + comp reform |
 | PAH3 (POAHY ADR) | Porsche Automobil Holding SE | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €28.08 (9 Jul 2026; mcap ≈ €8.4bn) | CHEAP < ≈ €22 (NAV-discount anchor ≈45% vs ~33% structural; substitution rule) — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027) — VW/Porsche AG impairment trend + NAV re-anchor; H1 2026 (~mid-Aug 2026); or price < ≈ €22 |
+| PDX | Paradox Interactive AB | 2026-07-26 | v1 | AVOID (Future WEAK: Steam 84.6% of revenue) | ADEQUATE | WEAK | PASS | SEK 127.50 (24 Jul 2026) | CHEAP < ≈ SEK 8 (EV/OI, consv EV, write-down FY25 OI; FCF leg ≈ SEK 44; no P12) — EXPENSIVE 23.2×/93.4× | — | FY2026 AR (~Apr 2027) informational — Future FAIL structural (platform concentration) |
 | PHIA (PHG ADR) | Koninklijke Philips N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL: P19 strikes) | WEAK | ADEQUATE | FAIL | €22.83 (23 Jul 2026) | CHEAP < ≈ €4.9 (EV/OI leg binding; strict ≈ €1.95; FCF leg ≈ €6.45; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) info-only; P19 pattern structural (5 strike tranches 2019–24) |
 | PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL | $134.83 (14 Jul 2026) | CHEAP < ≈ $6.6 (MCap/FCF 8×; EV/OI all-cash ≈ $6.6; strict ≈ $3.8; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) extends thin ~6y record; 2027 proxy re-tests governance; structural — no price flips |
 | PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
@@ -243,9 +244,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v151 — 2026-07-26** — PDX (Paradox Interactive) ANALYSE v1: **AVOID** (Future WEAK — Steam 84.6% of revenue, waiver denied). Past ADEQUATE (w-o-4 ROCE 25.3%/FCFROCE 17.7%); SF PASS (zero buybacks 10y; CEO comp SEK 4k). EXPENSIVE 23.2×/93.4×. 164→165.
 - **v150 — 2026-07-25** — SWEEP @ 24 Jul closes: all 27 WATCH FAR (min BRK.B +24%); re-ordered — AXFO +474→+409 top mover, KSPI Dist per §7.1 upper bound; held zones unchanged (2 HOLD, 2 SELL-FLAG). Open items compressed per §7.1.
 - **v149 — 2026-07-25** — RECONCILE audit: 164 names ↔ 188 memo files, 1:1 — every row at its latest memo. Header counts corrected 165→164, WATCH 28→27 (v148 miscount). No row changes.
 - **v148 — 2026-07-25** — EKTA-B (Elekta) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 7.6%/FCFROCE 5.4%; ΔOI/sh −34.3% CAGR; L/E 280%). Future ADEQUATE; SF PASS — no buyback ever executed, P19 untested. Band n.m.; EXPENSIVE 94.7×. WATCH header corrected 27→28 (actual); 164→165.
 - **v147 — 2026-07-25** — HUSQ-B ANALYSE v1: **AVOID** (Past WEAK, w-o-4 ROCE 9.1%; Future WEAK — 2 strong forces, eroding moat). SF PASS, P19 flag Orbit 17.1×. FAIR 11.9×; band ≈ SEK 12.4. 162→163.
-- **v146 — 2026-07-25** — MYCR (Mycronic) v2: FY2016–18 reports recovered → 10y window complete, **Past ADEQUATE→STRONG** (w-o-4 ROCE 24.5%, FCFROCE 19.4%); P12 edge ≈ SEK 64; second P19 hard strike on the FY2025 tranche (30.0×/26.1×). Verdict AVOID unchanged. 162.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
