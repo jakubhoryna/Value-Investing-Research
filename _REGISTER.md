@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v153
+register_version: v154
 register_date: 2026-07-27
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 167
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v153 · 2026-07-27)
+# GSC Register — Master Watchlist (v154 · 2026-07-27)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -157,7 +157,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NESN | Nestlé S.A. | 2026-07-14 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 83.88 (14 Jul 2026) | CHEAP < ≈ CHF 13 (EV/OI, consv EV, FY25 op. profit; MCap/FCF leg ≈ CHF 34 all-capex / ≈ CHF 28 run-rate; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) + 2026 gov/comp report re-test P19 (CHF 20bn 2022–24 pgm @ CHF 106.74 ≈ 23× EV/OI); flip needs below-worth buyback discipline |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
 | NKE | NIKE, Inc. | 2026-07-09 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $42.89 (close 8 Jul 2026) | CHEAP < ≈ $10.5 (EV/OI, conservative EV, FY2026 prelim OI; all-cash-excess leg ≈ $16.6; MCap/FCF leg ≈ $17.7) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jul 2026, imminent) re-anchors; Sep 2026 proxy — Hill + Denton comp; flip needs a below-flag pgm year (FY20–25 all > 20×) |
-| NOLA-B | Nolato AB | 2026-07-26 | v1 | AVOID (SF FAIL: P17 hard strike, FY25 FCF leg) | ADEQUATE | ADEQUATE | FAIL | SEK 47.25 (24 Jul 2026) | CHEAP < ≈ SEK 8 (MCap/FCF, all-capex FY25; EV/OI leg ≈ SEK 22) — EXPENSIVE 14.0×/46.6× | — | FY2026 AR (~Apr 2027) — P17 re-test on FY26 FCF; GW Plastics ≈15–16× P19 flag logged |
+| NOLA-B | Nolato AB | 2026-07-27 | v2 | AVOID (SF FAIL: flag pair — P17 year-read flag [v3.6.0] + P19 GW Plastics flag) | ADEQUATE | ADEQUATE | FAIL | SEK 48.20 (27 Jul 2026) | CHEAP < ≈ SEK 8 (MCap/FCF, all-capex FY25; EV/OI leg ≈ SEK 22.3) — EXPENSIVE 14.3×/47.6× | — | FY2026 AR (~Apr 2027) — P17 year-read re-test on FY26 FCF; either flag clearing → WATCH |
 | NOVO-B (NVO 1:1) | Novo Nordisk A/S | 2026-07-16 | v5 | AVOID (SF FAIL: P19 — confirmed on v3.4.0 dual-read) | STRONG | ADEQUATE | FAIL | DKK 335.8 (16 Jul 2026) | CHEAP < ≈ DKK 172 (EV/OI binding, conservative EV; maint-basis MCap/FCF ≈ 173–188, P20) — moot given AVOID. Cheapness FAIR | — | AR-2026/2027 proxy re-tests execution + v3.5.0 redemption limbs (policy · bargain-yr/refusal · turnover — all fail today); 2026 pgm clean 10.1×; H1 5 Aug band only. **HELD — SELL-FLAG; user HOLD against flag** |
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $194.28 | CHEAP < ≈ $31.5 (MCap/FCF; P12 edge ≈ $37, where EV/OI binds) | — | FY2027 results (~Feb 2027), or structural change (customer deconcentration <10%s + comp reform) |
 | ONON | On Holding AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $37.20 (17 Jul 2026; ≈CHF 30.0) | CHEAP < ≈ CHF 6.2 ≈ $7.7 (MCap/FCF binding; EV/OI leg ≈ CHF 6.3; no P12 — Past WEAK) — EXPENSIVE | — | FY2026 20-F (~Mar 2027): worst-leg ROCE crosses 10% at OI ≈ CHF 450–480m — live flip; P17 headroom 4% re-test; Vietnam tariff watch; alert < ≈ $11 |
@@ -246,9 +246,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v154 — 2026-07-27** — NOLA-B REVIEW v2 under MODEL v3.6.0: **AVOID holds**, SF FAIL mechanism P17 hard strike → flag pair (P17 year-read flag + P19 GW Plastics flag; INDETERMINATE reclassification denied — disclosed rounded inputs). Price 48.20; 14.3×/47.6×. Flip path eased: either flag clearing → WATCH.
 - **v153 — 2026-07-27** — RUSTA (Rusta) ANALYSE v1: **AVOID** (Past WEAK — L/E 344–595% all years, thin 5y history; SF FAIL — P19 LTIP-sterilisation buybacks FY23/24+24/25, 2nd de-minimis exhibit). Future ADEQUATE; P17 clean on v3.6.0 dual-read. EXPENSIVE 19.3×/11.0×. 166→167.
 - **v152 — 2026-07-26** — NOLA-B (Nolato) ANALYSE v1: **AVOID** (SF FAIL — P17 hard strike: CEO SEK 14.76m > 13.65m FY25 FCF leg; P20 denied). Past ADEQUATE (w-o-4 15.1%/8.0%); Future ADEQUATE; GW Plastics ≈15–16× P19 flag. EXPENSIVE 14.0×/46.6×. 165→166.
 - **v151 — 2026-07-26** — PDX (Paradox Interactive) ANALYSE v1: **AVOID** (Future WEAK — Steam 84.6% of revenue, waiver denied). Past ADEQUATE (w-o-4 ROCE 25.3%/FCFROCE 17.7%); SF PASS (zero buybacks 10y; CEO comp SEK 4k). EXPENSIVE 23.2×/93.4×. 164→165.
 - **v150 — 2026-07-25** — SWEEP @ 24 Jul closes: all 27 WATCH FAR (min BRK.B +24%); re-ordered — AXFO +474→+409 top mover, KSPI Dist per §7.1 upper bound; held zones unchanged (2 HOLD, 2 SELL-FLAG). Open items compressed per §7.1.
-- **v149 — 2026-07-25** — RECONCILE audit: 164 names ↔ 188 memo files, 1:1 — every row at its latest memo. Header counts corrected 165→164, WATCH 28→27 (v148 miscount). No row changes.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
