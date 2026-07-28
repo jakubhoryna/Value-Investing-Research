@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v174
+register_version: v175
 register_date: 2026-07-29
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 174
-verdict_split: "WATCH 27 · AVOID 146 · BUY 0 · DNAF 1"
+names_total: 175
+verdict_split: "WATCH 27 · AVOID 147 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v174 · 2026-07-29)
+# GSC Register — Master Watchlist (v175 · 2026-07-29)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 146 names, alphabetical
+### AVOID — 147 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -212,6 +212,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | VOW3 (VOW ord.) | Volkswagen AG (pref.) | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €72.14 (VOW3 close 9 Jul 2026; ord. €73.90) | n.m. — no positive price clears EV/OI ≤ 7 (captive debt €265bn); SOTP 0.19× BV — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027); structural only — VW-Law/Porsche-SE control + ~3–4% ROCE, no price flips it |
 | WISE | Wise Group plc | 2026-07-28 | v2 | AVOID (SF FAIL: P19 sterilisation escalated + governance pair) | ADEQUATE | ADEQUATE | FAIL | $11.86 / 894.6p (28 Jul 2026) | — | — | FY2027 (~Jun 2027) + 20-F: FY24/25 tranche cash INDETERMINATE; 2026 proxy comp/dual-class |
 | WMT | Walmart Inc. | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | $112.21 | CHEAP < ≈ $15 (MCap/FCF binding; EV/OI leg ≈ $18; no P12 — Past ADEQUATE). Cheapness EXPENSIVE — moot given AVOID | — | FY2027 10-K + 2027 proxy (~Mar–Apr 2027) P19 re-test (strikes every FY22–26); structural at 44–46% family control |
+| ZM | Zoom Communications, Inc. | 2026-07-29 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | $91.48 (28 Jul 2026) | CHEAP ≈ $26.00–51.27 (EV/OI no-cash / MCap/FCF all-cash; no P12) — EXPENSIVE, moot given AVOID | — | FY2027 10-K + 2027 proxy (~Mar–Apr 2027) P19 re-test + ROCE re-read (9.9% vs 10.0% floor) |
 | 1COV | Covestro AG | 2026-07-22 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €59.46 (squeeze-out cash comp.; no reg-mkt quote since 5 May 2026) | n.m. — FY25 OI −€347m, FCF −€415m; backvalued FY21-peak band ≈ €52 (MCap/FCF; EV/OI leg ≈ €61) — EXPENSIVE | — | Archive row on Handelsregister entry of §327a squeeze-out; H1 31 Jul 2026 |
 | 8TRA | TRATON SE | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Navistar audit) | WEAK | ADEQUATE | FAIL | €36.04 (22 Jul 2026; 52-wk high €37.34) | n.m. — no positive price clears EV/OI ≤7 (captive debt €27.4bn) or MCap/FCF (FCF −€1.9bn); captive-adj. alt ≈ €16.7 — EXPENSIVE, moot | — | FY2026 AR (~mid-Mar 2027); structural — w-o-4 ROCE 4.4% + P19 strike (ages out ≥FY2031); no price flips it |
 | 2502.T | Asahi Group Holdings, Ltd. | 2026-07-09 | v1 | AVOID (Past WEAK + SF FAIL: P19) | WEAK | ADEQUATE | FAIL | ¥1,626.5 (9 Jul 2026; 8 Jul close ¥1,660.5) | CHEAP < ≈ ¥377 (EV/OI, conservative EV, FY2024 clean OI; no P12; FY25 20.3× a cyberattack artifact) — EXPENSIVE, moot | — | FY2026 (~Feb 2027) resets cyberattack-hit OI basis. Structural: ROCE ~6% + SF FAIL (CUB audit, buybacks, EABL debt). Not held |
@@ -262,9 +263,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v175 — 2026-07-29** — ZM ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 9.9% vs the 10% floor; Future WEAK — 2 strong forces + eroding moat; SF FAIL — P19 repetition + FY23 89.3×).
 - **v174 — 2026-07-29** — TER REVIEW v2: **AVOID holds** (SF FAIL — P19 now two independent hard strikes: 7 flagged tranche-years + FY25 >20× on both reads). Q1-26 10-Q added; band $22.56 → $22.86.
 - **v173 — 2026-07-29** — PIRC ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.2%, 7.4% ex-goodwill, vs the 10% floor). Future STRONG, SF PASS w/ control flag. Italy block complete.
 - **v172 — 2026-07-28** — HEXA-B SF re-test v2: **FAIL holds**, AVOID unchanged (sterilisation escalates — FY20–23 tranche-years 14.2–25.4× EV/OI at their annual lows; repetition strikes independently). **v3.9.0 queue closed.**
 - **v171 — 2026-07-28** — WISE REVIEW v2: **AVOID holds** (SF FAIL — sterilisation escalates, FY26 23.4× EV/OI, 19.0× at the year low). FY26 20-F parsed: 3 repurchase years not 1; debt and MCap/BV corrected. v3.9.0 queue cleared.
-- **v170 — 2026-07-28** — ESSITY-B REVIEW v2: **AVOID holds** (SF FAIL — P19 repetition; FY24 17.71×, FY25 17.39× maint basis). v1 struck on the wrong basis (P20 active); dominant-pattern route retired at v3.9.0.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
