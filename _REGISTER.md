@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v167
+register_version: v168
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 173
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v167 · 2026-07-28)
+# GSC Register — Master Watchlist (v168 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -110,7 +110,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ELUX-B | AB Electrolux (publ) | 2026-07-25 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | SEK 22.83 (24 Jul 2026) | n.m. — FY25 FCF negative; no positive price clears EV/OI ≤ 7 (net debt+leases ≈ 6.9× OI); EXPENSIVE 17.2×/11.9× | — | FY2026 AR (~Mar 2027): 1st post-rights-issue year + Midea NA terms; Q2 (29 Jul 2026) optional |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | ENR | Siemens Energy AG | 2026-07-20 | v1 | AVOID (Past WEAK ROCE 0.1% + SF FAIL: P19) | WEAK | WEAK | FAIL | €152.00 (20 Jul 2026) | CHEAP < ≈ €12 strict (EV/OI, no-cash EV; ≈ €26 all-cash leg; MCap/FCF leg ≈ €37) — moot given AVOID. EXPENSIVE 64.4× EV/OI | — | FY2026 AR (~Dec 2026): 1st clean-cycle year + P19 re-test of the €2bn/€6bn buyback |
-| EPI-A | Epiroc AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 dilution-sterilisation) | ADEQUATE | STRONG | FAIL | SEK 248.10 A (24 Jul 2026) | CHEAP < ≈ SEK 54.3 A (EV/OI, cons EV; B ≈ 46.2; MCap/FCF leg ≈ 60.3 A; no P12) — EXPENSIVE 25.7×/32.9× | — | FY2026 AR (~Mar 2027): P19 re-test if mandate purpose changes; 5y framework window caps Past; Stanley multiple INDETERMINATE |
+| EPI-A | Epiroc AB | 2026-07-28 | v2 | AVOID (SF FAIL: P19 sterilisation, escalated on price) | ADEQUATE | STRONG | FAIL | SEK 239.70 A (28 Jul 2026) | CHEAP ≈ SEK 54.2–63.7 A (EV/OI no-cash/all-cash; MCap/FCF leg 60.3) — EXPENSIVE 24.9×/31.8× | — | FY2026 AR (~Mar 2027): mandate purpose + 4th refusal year; Past capped ADEQUATE until FY2027 |
 | ERIC-B | Telefonaktiebolaget LM Ericsson (publ) | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | SEK 91.06 (24 Jul 2026) | CHEAP < ≈ SEK 68.6 (EV/OI, consv EV; ex-iconectiv-gain leg ≈ 52.7) — FAIR 8.9× | — | FY2026 (~late Jan 2027): 1st clean post-iconectiv OI; SEK 15bn buyback = 1st P19 test |
 | ESSITY-B | Essity Aktiebolag (publ) | 2026-07-24 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | SEK 274.40 (24 Jul 2026) | CHEAP < ≈ SEK 124 (MCap/FCF, maint-capex basis; EV/OI consv leg ≈ 128; strict all-capex ≈ 99) — EXPENSIVE 12.4×/22.3× | — | FY2026 (~21 Jan 2027) + AR: P19 re-test of the 2026 SEK 3bn programme; BSN Medical audit INDETERMINATE; Consumer Tissue strategic review |
 | EVK | Evonik Industries AG | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 INDET: 2017 APD audit) | €16.68 (22 Jul 2026) | CHEAP < ≈ €0.24 (EV/OI, consv EV; all-cash leg ≈ €1.30; MCap/FCF leg ≈ €10.20) — moot given AVOID. EXPENSIVE 20.3× | — | FY2026 AR (~Mar 2027): 1st full year of 3-segment structure; structural — no price flips it |
@@ -240,14 +240,14 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **FIE** — FY2026 AR: Shopko multiple re-test (15× flag robust; >20× INDETERMINATE) + window rolls to 9y — FIE memo App. E.
 - **FTK** — FY2026: supplier-breadth evidence + FY2020–21 SARs-era comp quantum (INDETERMINATE) — FTK memo App. E.
 - **KRN** — verdict turns on the current-provisions NIBCL call (ROCE 9.26% vs 10.03%); FY2026 window roll clears 10% on both — KRN memo App. C.
-- **EPI-A** — FY2026 AR: complete the FY2016–20 record (5y window caps Past at ADEQUATE); Stanley multiple INDETERMINATE — EPI-A memo App. A/E.
+- **EPI-A** — FY2026 AR: mandate purpose + a 4th refusal year (redemption limb b arguable, a/c fail); retrieve FY2018–20 ARs (5y→8y; STRONG impossible pre-FY2027); Stanley INDETERMINATE — EPI-A memo App. A/C/E.
 - **ASSA-B** — FY2026: HHI (2023) multiple re-test (15× flag robust; >20× INDETERMINATE, 3y 19.3–21.8×) — ASSA-B memo App. E.
 - **ESSITY-B** — FY2026 AR: BSN multiple INDETERMINATE + P19 read of the May-2026 SEK 3bn programme; maintenance-basis FAIL rests on the dominant-pattern clause — memo App. E.
 - **INDT** — FY2026 AR: a 3rd straight ROCE_wc decline fires P4 → Past WEAK/AVOID; re-read the FY2026 acquisition cohort — INDT memo App. D.
 - **GETI-B** — FY2026 AR: Paragonix multiple INDETERMINATE; supplier breadth undisclosed; SF PASS rests on zero buybacks ever executed — GETI-B memo App. E.
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
-- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. Verdict candidates: **EPI-A**, **ESSITY-B**, **WISE**; **HEXA-B** SF column only (AVOID holds on Past WEAK). No flip: ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
+- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. Verdict candidates: **ESSITY-B**, **WISE**; **HEXA-B** SF column only (AVOID holds on Past WEAK). No flip: **EPI-A** (v2 — FY21/22 sterilising years read 17.7–24.9× EV/OI), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
@@ -256,9 +256,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v168 — 2026-07-28** — EPI-A REVIEW v2: **AVOID holds** (SF FAIL — P19 sterilisation escalates; FY22 17.7×/42.8×, FY21 range 19.6–24.9×). v3.9.0 queue cleared for EPI-A; v1 dividend error fixed.
 - **v167 — 2026-07-28** — MODEL v3.9.0 + v3.9.1 released. P19 ladder rebuilt (repetition strike, de-minimis, sterilisation→flag); acquisition rescue ≤7×; 5 corrections; editorial dedup. Re-test queue opened; P5/P6 declined.
 - **v166 — 2026-07-28** — MONC ANALYSE v1: **AVOID** (SF FAIL — P19 FY22 buyback flag + Stone Island acquisition-audit flag; RPT third). EXPENSIVE 17.5×. 5y window, retrieval-limited.
 - **v165 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 held; Dist % and ordering recomputed on v3.7.0 upper-bound triggers. GSK 10→8. No IN RANGE or NEAR name; no verdict change.
 - **v164 — 2026-07-28** — MODEL v3.7.0 restatement complete: 15 EV/OI bands now print labelled no-cash/all-cash ranges; 11 headlines had used the all-cash leg. SWEEP due to re-sort.
-- **v163 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 HELD; Dist % and ordering updated. None in the buy zone (closest BRK.B +27%). CSU re-keyed to its all-cash bound (+488%→+320%).
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
