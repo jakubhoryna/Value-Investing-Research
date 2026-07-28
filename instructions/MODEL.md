@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v3.7.0
+model_version: v3.8.0
 model_date: 2026-07-28
 status: live
 bootstrap_required: BOOTSTRAP v1.0.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.7.0 · 2026-07-28)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.8.0 · 2026-07-28)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -153,7 +153,7 @@ All tunable numbers live here; MODEL-mode changes are edits to this table (and �
 |P11|MCap/TBV threshold — qualifier         |≤ 3                                                                                                                              |B  |
 |P12|Bending allowance (entry)              |One **primary** metric ≤ 1.25× threshold, only when Past = STRONG                                                                |P  |
 |P13|Memo body word cap                     |800                                                                                                                              |P  |
-|P14|Search budget: ANALYSE / REVIEW / SWEEP|~12 / ~4 / ~1 per name (RECONCILE: past-chats tools only, no web). GitHub API calls per §7.4a never count against this budget     |P  |
+|P14|Web-operation budget                   |Counts **exploratory search only** — search-engine queries and speculative page fetches: ~5 / ~2 / ~1 per name for ANALYSE / REVIEW / SWEEP. **Primary-document retrieval is uncounted**: filings, proxy / remuneration / governance / RPT documents, the IR index pages needed to locate them, and price or quote endpoints — §4's hierarchy mandates them, so the cap must not fight it. Report the document count in Appendix A; > 10 documents on one name is itself a disclosure-quality observation worth a line in the memo. **Directed enquiry** (a user question arriving after a memo is delivered) carries its own ~6 exploratory ops, logged separately, and never draws down the originating ANALYSE budget. An aggregator rejected on verification (§4 tier 2) licenses the primary rebuild at no exploratory cost. RECONCILE: past-chats tools only, no web. GitHub API calls per §7.4a never count|P  |
 |P15|Breadth thresholds                     |Customer: no single customer > 10% of revenue. Supplier: no single supplier > 10% of COGS + opex (ready-alternatives exception)  |B  |
 |P16|Forces rule                            |Four forces, binary STRONG/WEAK. 0 strong → favourable; 1 strong (contained) → ADEQUATE zone; ≥ 2 strong → Future WEAK           |B  |
 |P17|Compensation strikes                   |**Proportionality dual-read [v3.6.0]:** top-employee total vs 5% of lower(levered FCF, NI) — fiscal-year read **and** trailing-3y-average read (positive legs only per read; one leg negative: positive leg alone, degeneration logged; both year-legs negative: any more-than-token pay strikes [v3.4.0]). **Hard strike:** breach on both reads. **Flag:** breach on either read alone. FCF on the P20 basis where active. **Scrutiny trigger (flag):** absolute total > US$30m (2017 dollars) CPI-indexed ≈ $40m (2026), restated at use; FAILs only paired with a second negative. **Hard strike:** highest-paid outside director > 2× the current empirical norm for the seat (US 2026: chair/lead ≈ $509k norm → stop ≈ $1.02m; ordinary ≈ $336k → stop ≈ $672k; CPI-indexed $333k → $666k floor default) [v3.4.0]. Scale to local norms; log calibration and source|B/P|
@@ -169,7 +169,7 @@ All tunable numbers live here; MODEL-mode changes are edits to this table (and �
 - **Source hierarchy** [BOOK: filings beat data services — legally accountable, uninterpreted]: (1) company filings — latest 10-K / 20-F / annual report, and the latest proxy for Gate 1C; quarterlies for numbers that must be timely more than audited (current share count, latest balance sheet for EV); (2) one dense aggregated-fundamentals page (e.g., stockanalysis.com, macrotrends, or the SEC XBRL companyfacts API) for the multi-year series — verify judgment-sensitive items (NIBCL composition, lease tables, comp, RPT) against the primary filing; (3) any quote source for current price and market cap. IR e-mail is a legitimate tool for factual questions where feasible; note that the quality of the reply is itself information. List every source in Appendix A.
 - **Never invent a number.** Write "n/a — not disclosed" rather than guessing. Label every derived figure (e.g., "FCF derived = CFO − capex"). Flag every data gap prominently in Appendix A and in the memo body if it affects a verdict.
 - **Currency & listings:** keep the reporting currency throughout; note ADR ratios. Fewer than P1 years (IPO/spin-off): proceed with what exists, flag it, and apply the §2 thin-history cap.
-- **Budget:** respect P14. Prefer one dense source over many shallow ones. Never re-fetch data already in a prior memo — that is REVIEW mode's delta approach.
+- **Budget:** respect P14 — the cap binds *exploratory search*, not the retrieval of documents this hierarchy already calls for. Never economise on primary sources: when the tier-2 aggregate source fails verification against the filing, rebuild the series from filings and report the document count in Appendix A rather than trimming the evidence. Prefer one dense source over many shallow ones. Never re-fetch data already in a prior memo — that is REVIEW mode's delta approach.
 
 -----
 
@@ -451,6 +451,15 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`
 - The token is a secret: never echo or print it in chat prose, memos, or committed files, and never transmit it anywhere other than `api.github.com`. These guardrails restate the bootstrap's resident set; the bootstrap wins on any conflict.
 
 -----
+
+## v3.8.0 CHANGE LOG (2026-07-28)
+
+- **P14 re-based from a flat operation count onto exploratory search only.** The old rule counted a `web_fetch` of a named annual-report PDF identically to a speculative search-engine query, putting it in direct tension with §4's source hierarchy: obeying "filings beat data services" on a filing-heavy name mechanically breached the cap. Primary-document retrieval is now uncounted and instead *reported* in Appendix A; exploratory search — the genuinely noisy, non-reproducible activity — tightens from ~12 / ~4 / ~1 to **~5 / ~2 / ~1**.
+- **Directed-enquiry allowance (new).** A user question arriving after a memo is delivered carries its own ~6 exploratory ops, logged separately, and never draws down the originating ANALYSE budget. Such follow-ups previously had no allowance and were charged against a budget already spent.
+- **Aggregator-rejection licence.** Where a §4 tier-2 aggregate source fails verification against the filing, the primary rebuild is explicitly at no exploratory cost.
+- **Repeatability.** The change tightens rather than loosens the §0 reproducibility mandate: primary documents are stable across runs, search-engine results are not, so moving the cap onto search narrows the variance between two chats given the same name.
+- Precedent: DLG v1/v2 (2026-07-28) — six annual reports plus the RPT information document, remuneration report and governance report ran to ~22 counted operations against a ~12 cap, of which roughly five were actual searches; one of those (category share) returned mutually contradictory SEO vendor pages and was discarded unused.
+- **MINOR release** — amended P-row, workflow scope only. Rebased onto v3.7.0 (trigger-band EV bracket); no overlap with that change. §8.4 step 3 scan: **zero names flip**; no gate, threshold, verdict, zone, band, or ordering touched. No bootstrap territory (config paths, guardrails, mode table unchanged).
 
 ## v3.7.0 CHANGE LOG (2026-07-28)
 
