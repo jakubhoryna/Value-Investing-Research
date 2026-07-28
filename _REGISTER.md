@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v170
+register_version: v171
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 173
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v170 · 2026-07-28)
+# GSC Register — Master Watchlist (v171 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -209,7 +209,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | UNH | UnitedHealth Group Incorporated | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | ~$425 (close 2 Jul 2026) | CHEAP < ≈ $52 (EV/OI, conservative EV, FY2025 trough OI; MCap/FCF leg ≈ $142). Band trough-anchored | — | FY2026 10-K (~Feb–Mar 2027); 2027 proxy (Apr 2027) re-tests the comp strike |
 | V | Visa Inc. | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $362.13 | CHEAP < ≈ $72 (EV/OI, conservative EV; P12 edge ≈ $88, where MCap/FCF binds). Cheapness EXPENSIVE (~32× FCF) | — | FY2026 10-K (~Nov 2026) re-tests the 11%-client disclosure (hard P15 breach, waiver denied); Jan 2027 proxy re-tests comp strike ($31.56m) |
 | VOW3 (VOW ord.) | Volkswagen AG (pref.) | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €72.14 (VOW3 close 9 Jul 2026; ord. €73.90) | n.m. — no positive price clears EV/OI ≤ 7 (captive debt €265bn); SOTP 0.19× BV — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027); structural only — VW-Law/Porsche-SE control + ~3–4% ROCE, no price flips it |
-| WISE | Wise Group plc | 2026-07-14 | v1 | AVOID (SF FAIL: P19 EST dilution-sterilisation strike + dual-class ext.) | ADEQUATE | ADEQUATE | FAIL | $12.60 / 945.8p (14 Jul 2026) | — | — | FY2027 results (~Jun 2027) + 2026 proxy re-test dual-class/comp; EXPENSIVE ~23× EV/OI / ~26× owner-FCF; strong business, un-ownable on capital allocation |
+| WISE | Wise Group plc | 2026-07-28 | v2 | AVOID (SF FAIL: P19 sterilisation escalated + governance pair) | ADEQUATE | ADEQUATE | FAIL | $11.86 / 894.6p (28 Jul 2026) | — | — | FY2027 (~Jun 2027) + 20-F: FY24/25 tranche cash INDETERMINATE; 2026 proxy comp/dual-class |
 | WMT | Walmart Inc. | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | $112.21 | CHEAP < ≈ $15 (MCap/FCF binding; EV/OI leg ≈ $18; no P12 — Past ADEQUATE). Cheapness EXPENSIVE — moot given AVOID | — | FY2027 10-K + 2027 proxy (~Mar–Apr 2027) P19 re-test (strikes every FY22–26); structural at 44–46% family control |
 | 1COV | Covestro AG | 2026-07-22 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €59.46 (squeeze-out cash comp.; no reg-mkt quote since 5 May 2026) | n.m. — FY25 OI −€347m, FCF −€415m; backvalued FY21-peak band ≈ €52 (MCap/FCF; EV/OI leg ≈ €61) — EXPENSIVE | — | Archive row on Handelsregister entry of §327a squeeze-out; H1 31 Jul 2026 |
 | 8TRA | TRATON SE | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Navistar audit) | WEAK | ADEQUATE | FAIL | €36.04 (22 Jul 2026; 52-wk high €37.34) | n.m. — no positive price clears EV/OI ≤7 (captive debt €27.4bn) or MCap/FCF (FCF −€1.9bn); captive-adj. alt ≈ €16.7 — EXPENSIVE, moot | — | FY2026 AR (~mid-Mar 2027); structural — w-o-4 ROCE 4.4% + P19 strike (ages out ≥FY2031); no price flips it |
@@ -246,8 +246,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **INDT** — FY2026 AR: a 3rd straight ROCE_wc decline fires P4 → Past WEAK/AVOID; re-read the FY2026 acquisition cohort — INDT memo App. D.
 - **GETI-B** — FY2026 AR: Paragonix multiple INDETERMINATE; supplier breadth undisclosed; SF PASS rests on zero buybacks ever executed — GETI-B memo App. E.
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
+- **WISE** — FY24/FY25 repurchase cash not XBRL-tagged (ranges straddle: 10.3–15.1× / 10.5–15.5× EV/OI) → escalation INDETERMINATE; own-cash split unseparable, all-cash EV a bound — WISE memo App. A/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
-- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. Verdict candidates: **WISE**; **HEXA-B** SF column only (AVOID holds on Past WEAK). No flip: **EPI-A** (v2 — FY21/22 sterilising years read 17.7–24.9× EV/OI), **ESSITY-B** (v2 — repetition limb replaces both v1 routes), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
+- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. **Verdict candidates cleared 2026-07-28 — all three held AVOID.** **HEXA-B** SF column only remains (AVOID holds on Past WEAK). No flip: **EPI-A** (v2 — FY21/22 sterilising years 17.7–24.9× EV/OI), **ESSITY-B** (v2 — repetition limb replaces both v1 routes), **WISE** (v2 — FY26 sterilising year 19.0–23.4×, robust), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
 - **MODEL v3.11.0 re-test queue** — P19 flag now fires on **either read** (year or 3y-normalized) and de-minimis withdrawal trips on **either cumulative bar** (FCF or OI); no candidates enumerable from register cells — applies at every P19 name's next touch alongside the v3.4.0/v3.9.0 queues (App E logs both reads since v3.4.0).
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
@@ -257,9 +258,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v171 — 2026-07-28** — WISE REVIEW v2: **AVOID holds** (SF FAIL — sterilisation escalates, FY26 23.4× EV/OI, 19.0× at the year low). FY26 20-F parsed: 3 repurchase years not 1; debt and MCap/BV corrected. v3.9.0 queue cleared.
 - **v170 — 2026-07-28** — ESSITY-B REVIEW v2: **AVOID holds** (SF FAIL — P19 repetition; FY24 17.71×, FY25 17.39× maint basis). v1 struck on the wrong basis (P20 active); dominant-pattern route retired at v3.9.0.
 - **v169 — 2026-07-28** — MODEL v3.11.0 released: P19 flag either-read + de-minimis cumulative fix; re-test joins every P19 name's next touch. Open item added; no rows changed.
 - **v168 — 2026-07-28** — EPI-A REVIEW v2: **AVOID holds** (SF FAIL — P19 sterilisation escalates; FY22 17.7×/42.8×, FY21 range 19.6–24.9×). v3.9.0 queue cleared for EPI-A; v1 dividend error fixed.
 - **v167 — 2026-07-28** — MODEL v3.9.0 + v3.9.1 released. P19 ladder rebuilt (repetition strike, de-minimis, sterilisation→flag); acquisition rescue ≤7×; 5 corrections; editorial dedup. Re-test queue opened; P5/P6 declined.
-- **v166 — 2026-07-28** — MONC ANALYSE v1: **AVOID** (SF FAIL — P19 FY22 buyback flag + Stone Island acquisition-audit flag; RPT third). EXPENSIVE 17.5×. 5y window, retrieval-limited.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
