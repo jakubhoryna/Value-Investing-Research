@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v165
+register_version: v166
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 172
-verdict_split: "WATCH 27 · AVOID 144 · BUY 0 · DNAF 1"
+names_total: 173
+verdict_split: "WATCH 27 · AVOID 145 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v165 · 2026-07-28)
+# GSC Register — Master Watchlist (v166 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 144 names, alphabetical
+### AVOID — 145 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -154,6 +154,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-10 | v1 | AVOID (SF FAIL: P19 buybacks + acquisition) | ADEQUATE | STRONG | FAIL | €492.95 (10 Jul 2026) | CHEAP < ≈ €179 (EV/OI, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 (~Jan 2027) + 2027 URD re-test P19 (strikes 2019–24; Tiffany audit adverse) — structural at family control. Past watch: 2 ROCE down-yrs |
 | META | Meta Platforms, Inc. | 2026-07-07 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $618.98 (7 Jul 2026 intraday) | CHEAP < ≈ $193 (EV/OI, conservative EV, P20; maint MCap/FCF ≈ $230 = P12 edge; strict all-capex ≈ $143) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jan 2027) + Apr 2027 proxy re-test P19 & option grants (2021–25: 4 of 5 yrs > 20×); FTC appeal pending |
 | MICC | The Magnum Ice Cream Company N.V. | 2026-07-14 | v1 | AVOID (Past WEAK: L/E ~1,097% + thin history · Future WEAK: 2 strong forces) | WEAK | WEAK | PASS (2 flags) | €16.31 (14 Jul 2026; $18.53 NYSE) | n.m. for entry (AVOID) — context CHEAP < ≈ €3.8 (EV/OI, norm FY24 OI; net debt €3.0bn); ≈ €1.7 as-reported FY25 | — | FY2026 results (~Feb–Mar 2027) reset returns/FCF + normalize B/S; alert < ≈ €4; confirm CEO comp vs €6.3m P17 line |
+| MONC | Moncler S.p.A. | 2026-07-28 | v1 | AVOID (SF FAIL: flag pair — P19 FY22 buyback + Stone Island acquisition audit) | ADEQUATE (5y window) | ADEQUATE | FAIL | €47.60 (28 Jul 2026) | CHEAP < ≈ €19.4–21.8 (EV/OI no-cash / MCap/FCF all-cash) — EXPENSIVE 15.4×/13.8×, 17.5× | — | FY2026 AR (~Feb 2027): 3rd ROCE_wc decline fires P4; Rem. Report verifies P17; SPW D&A + FY22 tranche price INDETERMINATE |
 | MORN | Morningstar, Inc. | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $165.18 (13 Jul 2026) | CHEAP < ≈ $61 (EV/OI, conservative EV, Q1'26 debt; MCap/FCF leg ≈ $93; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test FY26 tranche & L/E (Q1'26 ~291% pro-forma); flip needs a below-flag pgm year (FY22 & FY25 > 20×); alert < ≈ $75 |
 | MSFT | Microsoft Corporation | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | STRONG | ADEQUATE | FAIL | ~$390 | CHEAP < ≈ $105 (EV/OI, conservative EV, P20 maintenance basis; P12 edge ≈ $113; strict all-capex ≈ $77). Cheapness EXPENSIVE | — | FY2026 10-K, results 28 Jul 2026 — band moves; P19 re-test on FY26 buyback table (FY23–25 at 22.5–25.5× EV/OI) |
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
@@ -246,6 +247,8 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **GETI-B** — FY2026 AR: Paragonix multiple INDETERMINATE; supplier breadth undisclosed; SF PASS rests on zero buybacks ever executed — GETI-B memo App. E.
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 de-minimis → MODEL queue — MYCR memo App. E.
+- **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
+- **P19 dominant-pattern clause [MODEL queue]** — one flagged tranche in-window triggers the literal "no clean execution since" text; a single-tranche/de-minimis qualifier is needed (MONC, MYCR) — MONC memo App. E.
 - **P5/P6 lease-heavy reading [MODEL queue]** — IFRS-16 leases are the sole cause of BC's Past WEAK (54% of the L/E numerator; ex-lease 122.9%) and bit at BILI-A/RUSTA/1913.HK; a dual inclusive+exclusive L/E test would move a class of retail names — BC memo App. B3/G.
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
 
@@ -253,9 +256,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v166 — 2026-07-28** — MONC ANALYSE v1: **AVOID** (SF FAIL — P19 FY22 buyback flag + Stone Island acquisition-audit flag; RPT third). EXPENSIVE 17.5×. 5y window, retrieval-limited.
 - **v165 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 held; Dist % and ordering recomputed on v3.7.0 upper-bound triggers. GSK 10→8. No IN RANGE or NEAR name; no verdict change.
 - **v164 — 2026-07-28** — MODEL v3.7.0 restatement complete: 15 EV/OI bands now print labelled no-cash/all-cash ranges; 11 headlines had used the all-cash leg. SWEEP due to re-sort.
 - **v163 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 HELD; Dist % and ordering updated. None in the buy zone (closest BRK.B +27%). CSU re-keyed to its all-cash bound (+488%→+320%).
 - **v162 — 2026-07-28** — MODEL v3.7.0 follow-up: EV/OI bands restated as labelled no-cash/all-cash ranges. PYPL, TROW (held), BABA, TSM, AMZN, LIFCO-B. No verdict, zone, Dist % or ordering change.
-- **v161 — 2026-07-28** — DLG REVIEW v2: **AVOID holds**, deciding gate moves 1B → 1C. Future WEAK→ADEQUATE (customer-power corrected on margin evidence); SF PASS→FAIL (La Marzocco flag pair). FAIR.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
