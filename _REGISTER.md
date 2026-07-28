@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v155
+register_version: v156
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 168
-verdict_split: "WATCH 27 · AVOID 140 · BUY 0 · DNAF 1"
+names_total: 169
+verdict_split: "WATCH 27 · AVOID 141 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v155 · 2026-07-28)
+# GSC Register — Master Watchlist (v156 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +502% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +799% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 140 names, alphabetical
+### AVOID — 141 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -170,6 +170,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PYPL | PayPal Holdings, Inc. | 2026-06-10 | v1 | AVOID (Future WEAK) | STRONG | WEAK | PASS | $41.46 | CHEAP < ≈ $38 (MCap/TBV @1.25×). Cheapness FAIR | — | FY2026 results (early Feb 2027), or ≥4 quarters branded-checkout TPV-share stabilisation under Lores |
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors + FY26 buyback re-test (H1 running 13.4–14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
+| RACE | Ferrari N.V. | 2026-07-28 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €331.80 (27 Jul 2026) | CHEAP < ≈ €63 (MCap/FCF; EV/OI consv leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 42.1×/28.7× | — | FY2026 20-F (~Feb 2027): 1st year of €3.5bn 2026–30 programme, P19 re-test; v3.5.0 redemption limbs all fail |
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs sustained buyback discipline (FY21–25 strikes both bases); Q3 4 Aug 2026 opt. |
 | RUSTA | Rusta AB | 2026-07-27 | v1 | AVOID (Past WEAK: L/E 344–595%, thin hist. · SF FAIL: P19 sterilisation) | WEAK | ADEQUATE | FAIL | SEK 84.90 (24 Jul 2026) | CHEAP < ≈ SEK 8.1 (EV/OI, consv EV; FCF leg ≈ SEK 62 lease-flattered) — EXPENSIVE 19.3×/11.0× | — | AR 25/26 (~Aug 2026) + AGM (~Sep 2026) P19 authorisation watch; de-minimis MODEL item, 2nd exhibit |
 | SAF | Safran SA | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | €330.8 (SAF.PA, 15 Jul 2026) | CHEAP < ≈ €75 (EV/OI & MCap/FCF converge; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) P19 re-test on €5bn pgm (2025 tranche 22–25× EV/OI, >20×); H1'26 ~Sep 2026; alert < ≈ €90 |
@@ -247,9 +248,8 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v156 — 2026-07-28** — RACE (Ferrari) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike: FY25 buybacks 35.0× EV/OI, 51.6× MCap/FCF, both reads). Past STRONG. EXPENSIVE 42.1×/28.7×. 168→169.
 - **v155 — 2026-07-28** — BILI-A (Bilia) ANALYSE v1: **AVOID** (Past WEAK: L/E+fade; Future WEAK: OEM breadth, Volvo 2020; SF FAIL: P17+P19 pair). EXPENSIVE 23.5×/17.7×. 167→168; Sweden done; hdr fix.
 - **v154 — 2026-07-27** — NOLA-B REVIEW v2 under MODEL v3.6.0: **AVOID holds**, SF FAIL mechanism P17 hard strike → flag pair (P17 year-read flag + P19 GW Plastics flag; INDETERMINATE reclassification denied — disclosed rounded inputs). Price 48.20; 14.3×/47.6×. Flip path eased: either flag clearing → WATCH.
 - **v153 — 2026-07-27** — RUSTA (Rusta) ANALYSE v1: **AVOID** (Past WEAK — L/E 344–595% all years, thin 5y history; SF FAIL — P19 LTIP-sterilisation buybacks FY23/24+24/25, 2nd de-minimis exhibit). Future ADEQUATE; P17 clean on v3.6.0 dual-read. EXPENSIVE 19.3×/11.0×. 166→167.
-- **v152 — 2026-07-26** — NOLA-B (Nolato) ANALYSE v1: **AVOID** (SF FAIL — P17 hard strike: CEO SEK 14.76m > 13.65m FY25 FCF leg; P20 denied). Past ADEQUATE (w-o-4 15.1%/8.0%); Future ADEQUATE; GW Plastics ≈15–16× P19 flag. EXPENSIVE 14.0×/46.6×. 165→166.
-- **v151 — 2026-07-26** — PDX (Paradox Interactive) ANALYSE v1: **AVOID** (Future WEAK — Steam 84.6% of revenue, waiver denied). Past ADEQUATE (w-o-4 ROCE 25.3%/FCFROCE 17.7%); SF PASS (zero buybacks 10y; CEO comp SEK 4k). EXPENSIVE 23.2×/93.4×. 164→165.
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
+- **v152 — 2026-07-26** — NOLA-B (Nolato) ANALYSE v1: **AVOID** (SF FAIL — P17 hard strike: CEO SEK 14.76m > 13.65m FY25 FCF leg; P20 denied). Past ADEQUATE (w-o-4 15.1%/8.0%); Future ADEQUATE; GW Plastics ≈15–16× P19 flag. EXPENSIVE 14.0×/46.6×. 165→166.*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
