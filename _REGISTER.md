@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v158
+register_version: v159
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 171
-verdict_split: "WATCH 27 · AVOID 143 · BUY 0 · DNAF 1"
+names_total: 172
+verdict_split: "WATCH 27 · AVOID 144 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v158 · 2026-07-28)
+# GSC Register — Master Watchlist (v159 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNIN (SIX) | Kuehne + Nagel International AG | 2026-07-21 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; Apex/IMC audits indeterminate) | CHF 207.60 (20 Jul 2026) | CHEAP < ≈ CHF 34 (EV/OI, consv EV incl. put liabs; P12 edge ≈ 53; MCap/FCF leg ≈ 100) — EXPENSIVE | +502% | FY2026 AR (~Mar 2027): IMC P19 re-test + ROCE-trend check; alert < ≈ CHF 70 |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 158.2 (20 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8×, FY25; EV/OI leg ≈ CHF 24.5; P12 edge ≈ CHF 22.5) — EXPENSIVE | +799% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 143 names, alphabetical
+### AVOID — 144 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -87,6 +87,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
 | BAS | BASF SE | 2026-07-17 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buyback) | WEAK | WEAK | FAIL | €48.44 (17 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt+NCI ≈ 11.9× OI); MCap/FCF leg ≈ €12.1; backvalued FY21 band ≈ €33.6 | — | FY2026 AR (~Feb 2027): P19 re-test on €1.5bn pgm 2026 tranches; Ag Solutions separation watch |
 | BAYN | Bayer AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €47.17 (16 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ €17.0 on FY25 co-def FCF €2.08bn). Cheapness EXPENSIVE | — | FY2026 (~Mar 2027): first positive-OI print restores a band; Roundup class-settlement approval + post-Durnell provisioning check (H2 2026) |
+| BC | Brunello Cucinelli S.p.A. | 2026-07-28 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 dilution-sterilisation) | WEAK | WEAK | FAIL | €83.56 (28 Jul 2026) | CHEAP < ≈ €8.71 (EV/OI consv, €787m IFRS-16 leases in EV; MCap/FCF leg ≈ €11.78; no P12) — EXPENSIVE 56.7×/29.3× | — | FY2026 AR (~Mar 2027): P17 individual quantum INDETERMINATE (Remuneration Report); P19 re-test if any non-plan buyback; L/E window roll |
 | BC8 | Bechtle AG | 2026-07-23 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €30.88 | CHEAP < ≈ €9.2 (MCap/FCF, FY25 WC-trough; EV/OI leg ≈ €12.6 consv) — EXPENSIVE | — | FY2026 AR (~Mar 2027): ROCE-decline arrest test; trough-FCF basis resets; CEO succession |
 | BEI | Beiersdorf Aktiengesellschaft | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19) | WEAK | ADEQUATE | FAIL | €77.44 (22 Jul 2026) | CHEAP < ≈ €19 (MCap/FCF, P20 maint. basis; EV/OI leg ≈ €41; strict all-capex ≈ €11) — moot given AVOID | — | FY2026 AR (~Mar 2027): P19 re-test on 2026 pgm; 2024 & 2025 tranches both strike >20× on both reads |
 | BILI-A | Bilia AB | 2026-07-28 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17+P19 flag pair) | WEAK | WEAK | FAIL | SEK 152.40 (27 Jul 2026) | n.m. — no realistic price clears EV/OI ≤7 (lease-heavy EV, SEK 5.8bn IFRS-16; MCap/FCF leg ≈ SEK 52) — EXPENSIVE 23.5×/17.7× | — | FY2026 AR (~Mar 2027): P17 normalized flag likely clears on window roll (SF path only); AVOID structural on quality gates |
@@ -244,15 +245,17 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **GETI-B** — FY2026 AR: Paragonix multiple INDETERMINATE; supplier breadth undisclosed; SF PASS rests on zero buybacks ever executed — GETI-B memo App. E.
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 de-minimis → MODEL queue — MYCR memo App. E.
+- **P5/P6 lease-heavy reading [MODEL queue]** — IFRS-16 leases are the sole cause of BC's Past WEAK (54% of the L/E numerator; ex-lease 122.9%) and bit at BILI-A/RUSTA/1913.HK; a dual inclusive+exclusive L/E test would move a class of retail names — BC memo App. B3/G.
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
 
 ---
 
 ## Change log
 
+- **v159 — 2026-07-28** — BC (Cucinelli) ANALYSE v1: **AVOID** (Past WEAK L/E 267%; Future WEAK 2 forces; SF FAIL P19 Stock-Grant sterilisation). EXPENSIVE 56.7×/29.3×. 171→172.
 - **v158 — 2026-07-28** — DLG (De' Longhi) ANALYSE v1: **AVOID** (Future WEAK — customer power + substitutes). Past ADEQUATE (w-o-4 13.3%); SF PASS, 1 flag (La Marzocco ≈16–21× OI). FAIR. 170→171.
 - **v157 — 2026-07-28** — 1913.HK (Prada) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 9.4% vs 10%; P18 leases FY16–18 decisive, alt 10.2%). Future ADEQUATE; SF PASS (RPT flag). FAIR 10.7×. 169→170.
 - **v156 — 2026-07-28** — RACE (Ferrari) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike: FY25 buybacks 35.0× EV/OI, 51.6× MCap/FCF, both reads). Past STRONG. EXPENSIVE 42.1×/28.7×. 168→169.
 - **v155 — 2026-07-28** — BILI-A (Bilia) ANALYSE v1: **AVOID** (Past WEAK: L/E+fade; Future WEAK: OEM breadth, Volvo 2020; SF FAIL: P17+P19 pair). EXPENSIVE 23.5×/17.7×. 167→168; Sweden done; hdr fix.
-- **v154 — 2026-07-27** — NOLA-B REVIEW v2 under MODEL v3.6.0: **AVOID holds**, SF FAIL mechanism P17 hard strike → flag pair (P17 year-read flag + P19 GW Plastics flag; INDETERMINATE reclassification denied — disclosed rounded inputs). Price 48.20; 14.3×/47.6×. Flip path eased: either flag clearing → WATCH.
+
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
