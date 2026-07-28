@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v171
+register_version: v172
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 173
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v171 · 2026-07-28)
+# GSC Register — Master Watchlist (v172 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -126,7 +126,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GRMN | Garmin Ltd | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buyback) | STRONG | ADEQUATE | FAIL | $241.64 (15 Jul 2026) | CHEAP < ≈ $56 (MCap/FCF; EV/OI leg ≈ $88; P12 edge ≈ $70) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-tests P19; would be WATCH absent strike, deeply OOR (+329%); alert < ≈ $70 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
 | HEN3 | Henkel AG & Co. KGaA | 2026-07-16 | v1 | AVOID (Past WEAK + SF FAIL: P19 2022 buyback hard strike) | WEAK | ADEQUATE | FAIL | €74.98 (16 Jul 2026) | CHEAP < ≈ €34 (MCap/FCF binding; EV/OI leg ≈ €39; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027): P19 re-test on full 2025/26 program + Stahl/Olaplex/ATP acq audit |
-| HEXA-B | Hexagon AB | 2026-07-24 | v1 | AVOID (Past WEAK + SF FAIL: P19 dilution-sterilisation strike) | WEAK | ADEQUATE | FAIL | SEK 82.38 (24 Jul 2026) | CHEAP < ≈ SEK 14.3 (EV/OI, FY25 continuing reported OI; adj-EBIT1 leg ≈ SEK 25) — EXPENSIVE, provisional pre-Q2 | — | Q2 2026 interim (~late Jul) — first clean post-Octave basis; FY2026 AR: Waygate audit |
+| HEXA-B | Hexagon AB | 2026-07-28 | v2 | AVOID (Past WEAK + SF FAIL: P19 sterilisation escalated + repetition) | WEAK | ADEQUATE | FAIL | SEK 85.54 (28 Jul 2026) | CHEAP < ≈ SEK 6.2 / 14.2 (EV/OI no-cash/all-cash, FY25 continuing reported OI) — EXPENSIVE 35.1×/32.2×, provisional pre-Q2 | — | Q2 2026 interim 29 Jul 2026 — re-base Past + Cheapness; FY2026 AR: Waygate audit |
 | HFG | HelloFresh SE | 2026-07-04 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €4.20 | CHEAP < ≈ €2.7 (EV/OI @1.25×, FY25 adj. OI); strict all-pass ≈ €1.4. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or reformed pay system at 2027 AGM. Say-on-pay rejected 4th time (54.7% against) |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
 | HLAG | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID (Future WEAK: customer power + entrants STRONG, no moat) | ADEQUATE | WEAK | PASS | €123.20 (20 Jul 2026) | CHEAP < ≈ €20.3 (EV/OI, consv EV; MCap/FCF leg ≈ €32; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 AR (~Mar 2027); ZIM close → mandatory 1C acquisition audit |
@@ -246,9 +246,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **INDT** — FY2026 AR: a 3rd straight ROCE_wc decline fires P4 → Past WEAK/AVOID; re-read the FY2026 acquisition cohort — INDT memo App. D.
 - **GETI-B** — FY2026 AR: Paragonix multiple INDETERMINATE; supplier breadth undisclosed; SF PASS rests on zero buybacks ever executed — GETI-B memo App. E.
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
+- **HEXA-B** — Q2 2026 interim (29 Jul 2026) is the first clean post-Octave basis: re-base Past and Cheapness on it; per-tranche repurchase cash still undisclosed, finding carried by the range fallback — HEXA-B memo App. A/C/E.
 - **WISE** — FY24/FY25 repurchase cash not XBRL-tagged (ranges straddle: 10.3–15.1× / 10.5–15.5× EV/OI) → escalation INDETERMINATE; own-cash split unseparable, all-cash EV a bound — WISE memo App. A/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
-- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. **Verdict candidates cleared 2026-07-28 — all three held AVOID.** **HEXA-B** SF column only remains (AVOID holds on Past WEAK). No flip: **EPI-A** (v2 — FY21/22 sterilising years 17.7–24.9× EV/OI), **ESSITY-B** (v2 — repetition limb replaces both v1 routes), **WISE** (v2 — FY26 sterilising year 19.0–23.4×, robust), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
+- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. **QUEUE CLOSED 2026-07-28 — no verdict or column moved.** Verdict candidates all held AVOID; **HEXA-B** SF column re-tested, FAIL holds on the range fallback (FY20–23 tranche-years 14.2–25.4× at their annual lows). No flip: **EPI-A** (v2 — FY21/22 sterilising years 17.7–24.9× EV/OI), **ESSITY-B** (v2 — repetition limb replaces both v1 routes), **WISE** (v2 — FY26 sterilising year 19.0–23.4×, robust), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
 - **MODEL v3.11.0 re-test queue** — P19 flag now fires on **either read** (year or 3y-normalized) and de-minimis withdrawal trips on **either cumulative bar** (FCF or OI); no candidates enumerable from register cells — applies at every P19 name's next touch alongside the v3.4.0/v3.9.0 queues (App E logs both reads since v3.4.0).
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
@@ -258,9 +259,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v172 — 2026-07-28** — HEXA-B SF re-test v2: **FAIL holds**, AVOID unchanged (sterilisation escalates — FY20–23 tranche-years 14.2–25.4× EV/OI at their annual lows; repetition strikes independently). **v3.9.0 queue closed.**
 - **v171 — 2026-07-28** — WISE REVIEW v2: **AVOID holds** (SF FAIL — sterilisation escalates, FY26 23.4× EV/OI, 19.0× at the year low). FY26 20-F parsed: 3 repurchase years not 1; debt and MCap/BV corrected. v3.9.0 queue cleared.
 - **v170 — 2026-07-28** — ESSITY-B REVIEW v2: **AVOID holds** (SF FAIL — P19 repetition; FY24 17.71×, FY25 17.39× maint basis). v1 struck on the wrong basis (P20 active); dominant-pattern route retired at v3.9.0.
 - **v169 — 2026-07-28** — MODEL v3.11.0 released: P19 flag either-read + de-minimis cumulative fix; re-test joins every P19 name's next touch. Open item added; no rows changed.
 - **v168 — 2026-07-28** — EPI-A REVIEW v2: **AVOID holds** (SF FAIL — P19 sterilisation escalates; FY22 17.7×/42.8×, FY21 range 19.6–24.9×). v3.9.0 queue cleared for EPI-A; v1 dividend error fixed.
-- **v167 — 2026-07-28** — MODEL v3.9.0 + v3.9.1 released. P19 ladder rebuilt (repetition strike, de-minimis, sterilisation→flag); acquisition rescue ≤7×; 5 corrections; editorial dedup. Re-test queue opened; P5/P6 declined.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
