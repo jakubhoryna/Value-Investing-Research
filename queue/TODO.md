@@ -1,4 +1,4 @@
-# GSC Analysis Queue — TODO.md (v3 · 2026-07-28)
+# GSC Analysis Queue — TODO.md (v4 · 2026-07-29)
 
 **Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
 
@@ -8,20 +8,22 @@
 
 ## Priority — next up
 
-**Italy block, in list order** (user-set 2026-07-28). Ferrari done → next up **Moncler (MONC.MI)**, then Prada (1913.HK), Pirelli (PIRC.MI), Brunello Cucinelli (BC.MI), De'Longhi (DLG.MI). Largest coherent blocks after Italy: Japan majors (12), France (16), US backlog (~78).
+**France block, in list order** (user-set 2026-07-29). Italy closed 6/6 → next up **L'Oréal (OR.PA)**, then Hermès (RMS.PA), Christian Dior (CDI.PA), EssilorLuxottica (EL.PA), Vinci (DG.PA), Danone (BN.PA), Saint-Gobain (SGO.PA), Legrand (LR.PA), Michelin (ML.PA), Sodexo (SW.PA), Edenred (EDEN.PA), JCDecaux (DEC.PA), Bureau Veritas (BVI.PA), Valeo (FR.PA), Lagardère (MMB.PA), Trigano (TRI.PA — key collision, see Flags). Largest coherent blocks after France: US backlog (78), Japan majors (12), Poland (6).
+
+*France note.* Six French names already carry register rows from earlier runs — SAF, SAN, MC.PA (LVMH), KER, DSY, SU — and are REVIEW territory, not part of this ANALYSE block. CDI.PA is a ~42% holding company over LVMH (MC.PA, analysed): expect the §2·1A securities-heavy-holdco substitution question at Gate 1A and a MCap/NAV anchor at Gate 2, not a re-underwrite of LVMH.
 
 ---
 
 ## Scheduled reviews — near-term calendar
 
-*Derived 2026-07-25 from register v149 row cells and Open items — non-authoritative, the register wins; refresh at RECONCILE/SWEEP touches. Dated triggers only; price-alert triggers live in the rows.*
+*Refreshed 2026-07-29 against register v173 row cells and Open items — non-authoritative, the register wins; refresh at RECONCILE/SWEEP touches. Dated triggers only; price-alert triggers live in the rows.*
 
-**Jul 2026 (imminent):** NKE FY2026 10-K re-anchor · INPST offer closes 27 Jul (settlement H2 → delist, archive row) · AMZN Q2 30 Jul (AWS growth/capex).
+**Jul 2026 (imminent):** HEXA-B Q2 interim 29 Jul — first clean post-Octave basis, re-base Past + Cheapness · AMZN Q2 30 Jul (AWS growth/capex) · NKE FY2026 10-K re-anchor · INPST offer closed 27 Jul (settlement H2 → delist, archive row).
 **Aug 2026:** ROK Q3 4 Aug opt. · NOVO-B H1 5 Aug (band only; held) · CROX Q2 6 Aug opt. (held) · CSG H1 7 Aug (FCF/leverage/Ammo+) · TEAM FY2026 10-K (OI inflection + P19) · BABA FY27 Q1 · ADYEN H1 · PAH3 H1 · BNR H1 opt. · BYD H1 opt. · GAP Q2 ~26 Aug.
 **Sep 2026:** CRM Q2 FY27 ~2 Sep opt. · LULU Q2 (O'Neill's first quarter) · COST FY2026 P19 re-test (FY21–25 all >20×) · NKE proxy (Hill + Denton comp) · SAF H1 · ORCL Q1 FY27 · EA deal outside date 28 Sep (close → delist; lapse → REVIEW).
 **Oct–Nov 2026:** MU 10-K ~Oct · AAPL 10-K ~Oct/Nov (SF comp flip check) · QCOM 10-K ~Nov (FY26 buyback re-test) · ROK 10-K ~Nov (buyback discipline) · V 10-K ~Nov (P15 11%-client + comp) · SONY H1 ~Nov (¥500bn facility, P19) · EKTA-B H1 ~Nov · SCHN repurchase-cessation watch (programme to Nov 2026).
 **Dec 2026 / Q4 events:** ENR FY2026 AR (first clean-cycle year + P19 €2bn/€6bn) · SIE FY2026 (buyback re-test; Feb 2027 AGM spin vote → full re-base) · SKF-B Automotive Lex Asea separation ~Q4 (resets basis, both entities re-underwritten) · TKA / TUI1 FY2026 ARs informational.
-**Q1–Q2 2027 — FY2026 annual season:** bulk of the WATCH list re-anchors (all four held names incl. HFG/NOVO-B decisions if still open) plus the named re-test queue — P19 dual-read (SCHN, GEBN, SAF, TER, MORN, GRMN, SU), acquisition-audit INDETERMINATEs (FIE Shopko, ASSA-B HHI, ESSITY-B BSN, GETI-B Paragonix, EPI-A Stanley, MYCR cohort, KRN Netstal), P4 third-decline tests (INDT, SKF-B), ONON arithmetic flip check, CON tyre re-basis, SHA0/BAYN P17 columns, MA comp (Apr 2027 proxy), worth-check flag-clears (CROX, BKNG, AD) — **detail: register `## Open items`.**
+**Q1–Q2 2027 — FY2026 annual season:** bulk of the WATCH list re-anchors (all four held names incl. HFG/NOVO-B decisions if still open) plus the named re-test queue — P19 dual-read (SCHN, GEBN, SAF, TER, MORN, GRMN, SU), acquisition-audit INDETERMINATEs (FIE Shopko, ASSA-B HHI, ESSITY-B BSN, GETI-B Paragonix, EPI-A Stanley, MYCR cohort, KRN Netstal), P4 third-decline tests (INDT, SKF-B), ONON arithmetic flip check, CON tyre re-basis, SHA0/BAYN P17 columns, MA comp (Apr 2027 proxy), worth-check flag-clears (CROX, BKNG, AD), PIRC control determination (Camfin–MPI agreement lapsed 28 Feb 2026), MONC FY2016–20 record rebuild (CDN-blocked, cap liftable) — **detail: register `## Open items`.**
 
 ---
 
@@ -48,16 +50,9 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 
 ---
 
-## Backlog by market — 133 names remaining
+## Backlog by market — 128 names remaining
 
-Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed: Switzerland (13/13), Germany (30/30), Netherlands (3/3) at v2; Sweden (25/25) at v3.*
-
-### Italy — 5 remaining (Ferrari completed)
-- Moncler — MONC.MI
-- Prada — 1913.HK (Hong Kong-listed)
-- Pirelli — PIRC.MI
-- Brunello Cucinelli — BC.MI
-- De'Longhi — DLG.MI
+Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed: Switzerland (13/13), Germany (30/30), Netherlands (3/3) at v2; Sweden (25/25) at v3; Italy (6/6) at v4.*
 
 ### Finland — 4 remaining (Kone completed)
 - Nokia — NOKIA.HE
@@ -79,7 +74,7 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Bridgestone — 5108.T
 - Canon — 7751.T
 
-### France — 16 remaining (Safran, Sanofi completed)
+### France — 16 remaining ◄ ACTIVE BLOCK (Safran, Sanofi + LVMH, Kering, Dassault Systèmes, Schneider already in register)
 - L'Oréal — OR.PA
 - Hermès — RMS.PA
 - Christian Dior — CDI.PA
@@ -217,6 +212,7 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 ---
 
 ## Change log
+- **v4 — 2026-07-29** — Italy block completed 6/6 (MONC, 1913.HK, PIRC, BC, DLG all carry register rows at v173) → block removed. Priority switched to **France, in list order** (user-set). Calendar refreshed against register v173. 133 → 128 names. v3 archived → `queue/archive/TODO_v3_2026-07-28.md`.
 - **v3 — 2026-07-28** — Prune after the Sweden run: PDX, NOLA-B, RUSTA, BILI-A completed → Sweden block removed (25/25 done). Ferrari (RACE) completed → Italy down to 5. Priority set to the Italy block in list order. 138 → 133 names. v2 archived → `queue/archive/TODO_v2_2026-07-25.md`.
 - **v2 — 2026-07-25** — RECONCILE prune: 75 completed names removed (all of CH 13, DE 30, NL 3; SE 21; FI Kone; JP Sony; FR SAF+SAN; UK Wise; US GEN/U/DOCU + priority GEN/TER; dup lines dropped). 4 flags resolved (Uniper→UN0, INNIO→INIO, Synlab→SYAB DNAF, Covestro→1COV — all analysed). Trigano/TRI collision flagged. Added near-term review calendar (derived from register v149). 138 names remain. v1 archived → `queue/archive/TODO_v1_2026-07-15.md`.
 - **v1 — 2026-07-15** — File created. Seeded with priority names (Gen Digital, Teradyne) + long backlog by market. Overnight-runner design sketch recorded for later build.
