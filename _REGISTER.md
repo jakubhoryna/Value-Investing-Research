@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v173
+register_version: v174
 register_date: 2026-07-29
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 174
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v173 · 2026-07-29)
+# GSC Register — Master Watchlist (v174 · 2026-07-29)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -197,7 +197,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SU | Schneider Electric SE | 2026-07-13 | v1 | AVOID (SF FAIL: P19 buybacks + AVEVA audit) | ADEQUATE | STRONG | FAIL | €267.75 (10 Jul 2026) | CHEAP < ≈ €55 (EV/OI, consv EV incl. leases; MCap/FCF leg ≈ €65; no P12) — EXPENSIVE | — | FY2026 (~Feb 2027) P19 re-test; Motivair put 2028; alert < ≈ €65 |
 | SY1 | Symrise AG | 2026-07-23 | v1 | AVOID (Past WEAK) | WEAK | STRONG | PASS | €87.94 (23 Jul 2026) | CHEAP < ≈ €11.5 (EV/OI, reported OI; ≈ €26.5 underlying OI; FCF leg ≈ €28.8; no P12) — EXPENSIVE 30–32× EV/OI, moot given AVOID | — | FY2026 AR (~Mar 2027) first post-impairment basis; watch €400m buyback execution price (P19) |
 | TEAM | Atlassian Corporation | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 + P19) | WEAK | ADEQUATE | FAIL | $90.69 (14 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $43, SBC-flattered FCF) | — | FY2026 10-K (~Aug 2026): OI-inflection check + P19 re-test of $1.5bn 2024 pgm; structural, low priority |
-| TER | Teradyne, Inc. | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $353.23 (15 Jul 2026) | CHEAP < ≈ $22.56 (MCap/FCF; EV/OI leg ≈ $26.72; P12 edge ≈ $26.72) — EXPENSIVE, moot | — | FY2026 10-K (~Feb 2027) re-test P19 (FY25 $702m @ ~40× MCap/FCF); customer conc. 19% watch; alert < ≈ $27 |
+| TER | Teradyne, Inc. | 2026-07-29 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $320.65 (28 Jul 2026) | CHEAP < ≈ $22.86 (MCap/FCF; EV/OI leg $28.35/$29.90 no-cash/all-cash; P12 edge ≈ $28.35) — EXPENSIVE, moot | — | FY2026 10-K (~Feb 2027) P19 re-test on full-yr record; Q1-26 buybacks $5.5m vs $157m; alert < ≈ $29 |
 | TKA | thyssenkrupp AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 comp) | WEAK | WEAK | FAIL | €12.00 (16 Jul 2026) | n.m. — FY25 FCF €30m ⇒ FCF leg ≈ €0.4 (EV/OI leg ≈ €6.9); sub-book qualifiers 0.76× BV — EXPENSIVE | — | Break-up in progress (TKMS out 10/25, MS spin ann. 7/26, steel 50:50 pending); re-ANALYSE as stabilised holdco; FY2026 AR (~Dec 2026) informational |
 | TLX | Talanx AG | 2026-07-20 | v1 | AVOID (Future WEAK: 2 strong forces) | ADEQUATE | WEAK | PASS | €112.70 (20 Jul 2026) | CHEAP < ≈ €48 (MCap/BV anchor 0.91× = 8 × w-o-4 ROE 11.4%; substitution rule §2·1A; literal P10 ≤3× read ≈ €156 logged, not operative) — EXPENSIVE, moot given AVOID | — | FY2026 AR (~Mar 2027) forces/moat re-test, first year on €2.7bn guidance; earlier if price → ≈ €55 or combined ratio > ~95% |
 | TOTO (5332.T) | TOTO Ltd. | 2026-07-12 | v1 | AVOID | WEAK | ADEQUATE | FAIL | ¥8,059 | CHEAP < ≈ ¥1,366 (MCap/FCF, capex incl. intangibles; ¥1,692 PP&E-only; EV/OI-implied ≈ ¥2,650) | — | FY2027 results (~late Apr 2027); optional 10y data rebuild (FY3/2016–21) |
@@ -254,16 +254,17 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **MODEL v3.11.0 re-test queue** — P19 flag now fires on **either read** (year or 3y-normalized) and de-minimis withdrawal trips on **either cumulative bar** (FCF or OI); no candidates enumerable from register cells — applies at every P19 name's next touch alongside the v3.4.0/v3.9.0 queues (App E logs both reads since v3.4.0).
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
-- **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
+- **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, MORN, GRMN, SU re-test at scheduled reviews (**TER cleared 2026-07-29 — v2**); SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
+- **TER** — FY2026 10-K: P19 re-test on the full-year record (Q1-26 restraint is redemption limb (b) in progress only, limbs a/c fail); insider-sale volume since Apr 2026 untested vs P17 — TER memo App. E.
 - **PIRC** — control flag standing: Camfin–MPI shareholders' agreement lapsed 28 Feb 2026; IFRS 10 control determination carried 9–6 with Sinochem directors against. Re-test at FY2026 AR.
 
 ---
 
 ## Change log
 
+- **v174 — 2026-07-29** — TER REVIEW v2: **AVOID holds** (SF FAIL — P19 now two independent hard strikes: 7 flagged tranche-years + FY25 >20× on both reads). Q1-26 10-Q added; band $22.56 → $22.86.
 - **v173 — 2026-07-29** — PIRC ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.2%, 7.4% ex-goodwill, vs the 10% floor). Future STRONG, SF PASS w/ control flag. Italy block complete.
 - **v172 — 2026-07-28** — HEXA-B SF re-test v2: **FAIL holds**, AVOID unchanged (sterilisation escalates — FY20–23 tranche-years 14.2–25.4× EV/OI at their annual lows; repetition strikes independently). **v3.9.0 queue closed.**
 - **v171 — 2026-07-28** — WISE REVIEW v2: **AVOID holds** (SF FAIL — sterilisation escalates, FY26 23.4× EV/OI, 19.0× at the year low). FY26 20-F parsed: 3 repurchase years not 1; debt and MCap/BV corrected. v3.9.0 queue cleared.
 - **v170 — 2026-07-28** — ESSITY-B REVIEW v2: **AVOID holds** (SF FAIL — P19 repetition; FY24 17.71×, FY25 17.39× maint basis). v1 struck on the wrong basis (P20 active); dominant-pattern route retired at v3.9.0.
-- **v169 — 2026-07-28** — MODEL v3.11.0 released: P19 flag either-read + de-minimis cumulative fix; re-test joins every P19 name's next touch. Open item added; no rows changed.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
