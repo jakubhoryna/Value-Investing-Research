@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v166
+register_version: v167
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 173
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v166 · 2026-07-28)
+# GSC Register — Master Watchlist (v167 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -176,7 +176,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors + FY26 buyback re-test (H1 running 13.4–14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
 | RACE | Ferrari N.V. | 2026-07-28 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €331.80 (27 Jul 2026) | CHEAP < ≈ €63 (MCap/FCF; EV/OI consv leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 42.1×/28.7× | — | FY2026 20-F (~Feb 2027): 1st year of €3.5bn 2026–30 programme, P19 re-test; v3.5.0 redemption limbs all fail |
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs sustained buyback discipline (FY21–25 strikes both bases); Q3 4 Aug 2026 opt. |
-| RUSTA | Rusta AB | 2026-07-27 | v1 | AVOID (Past WEAK: L/E 344–595%, thin hist. · SF FAIL: P19 sterilisation) | WEAK | ADEQUATE | FAIL | SEK 84.90 (24 Jul 2026) | CHEAP < ≈ SEK 8.1 (EV/OI, consv EV; FCF leg ≈ SEK 62 lease-flattered) — EXPENSIVE 19.3×/11.0× | — | AR 25/26 (~Aug 2026) + AGM (~Sep 2026) P19 authorisation watch; de-minimis MODEL item, 2nd exhibit |
+| RUSTA | Rusta AB | 2026-07-27 | v1 | AVOID (Past WEAK: L/E 344–595%, thin hist. · SF FAIL: P19 sterilisation) | WEAK | ADEQUATE | FAIL | SEK 84.90 (24 Jul 2026) | CHEAP < ≈ SEK 8.1 (EV/OI, consv EV; FCF leg ≈ SEK 62 lease-flattered) — EXPENSIVE 19.3×/11.0× | — | AR 25/26 (~Aug 2026) + AGM (~Sep 2026) P19 authorisation watch; P19 v3.9.0 de-minimis re-test |
 | SAF | Safran SA | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | €330.8 (SAF.PA, 15 Jul 2026) | CHEAP < ≈ €75 (EV/OI & MCap/FCF converge; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) P19 re-test on €5bn pgm (2025 tranche 22–25× EV/OI, >20×); H1'26 ~Sep 2026; alert < ≈ €90 |
 | SAN | Sanofi | 2026-07-15 | v1 | AVOID (Past WEAK + SF FAIL: P19 buyback) | WEAK | ADEQUATE | FAIL | €76.26 (15 Jul 2026) | CHEAP < ≈ €27.6 (EV/OI, consv EV, as-reported OI; MCap/FCF leg ≈ €47; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) resets Opella-deconsol basis + P19 re-test (2026 €1bn pgm); business-OI ≈10× caveat; alert < ≈ €35 |
 | SAND | Sandvik AB | 2026-07-24 | v1 | AVOID (SF FAIL: P19 acquisition strike) | ADEQUATE | ADEQUATE | FAIL | SEK 343.90 (23 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, consv EV; MCap/FCF leg ≈ SEK 98; no P12) — EXPENSIVE 22.7×/28.1×, moot given AVOID | — | FY2026 AR (~Mar 2027); P19 strike stands to FY2031 (CNC Software 2021 at 28.7–38.1× pre-deal OI); DSI margin INDETERMINATE; alert < ≈ SEK 110 |
@@ -246,19 +246,19 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **INDT** — FY2026 AR: a 3rd straight ROCE_wc decline fires P4 → Past WEAK/AVOID; re-read the FY2026 acquisition cohort — INDT memo App. D.
 - **GETI-B** — FY2026 AR: Paragonix multiple INDETERMINATE; supplier breadth undisclosed; SF PASS rests on zero buybacks ever executed — GETI-B memo App. E.
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
-- **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 de-minimis → MODEL queue — MYCR memo App. E.
+- **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
+- **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. Verdict candidates: **EPI-A**, **ESSITY-B**, **WISE**; **HEXA-B** SF column only (AVOID holds on Past WEAK). No flip: ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
+- **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
-- **P19 dominant-pattern clause [MODEL queue]** — one flagged tranche in-window triggers the literal "no clean execution since" text; a single-tranche/de-minimis qualifier is needed (MONC, MYCR) — MONC memo App. E.
-- **P5/P6 lease-heavy reading [MODEL queue]** — IFRS-16 leases are the sole cause of BC's Past WEAK (54% of the L/E numerator; ex-lease 122.9%) and bit at BILI-A/RUSTA/1913.HK; a dual inclusive+exclusive L/E test would move a class of retail names — BC memo App. B3/G.
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
 
 ---
 
 ## Change log
 
+- **v167 — 2026-07-28** — MODEL v3.9.0 + v3.9.1 released. P19 ladder rebuilt (repetition strike, de-minimis, sterilisation→flag); acquisition rescue ≤7×; 5 corrections; editorial dedup. Re-test queue opened; P5/P6 declined.
 - **v166 — 2026-07-28** — MONC ANALYSE v1: **AVOID** (SF FAIL — P19 FY22 buyback flag + Stone Island acquisition-audit flag; RPT third). EXPENSIVE 17.5×. 5y window, retrieval-limited.
 - **v165 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 held; Dist % and ordering recomputed on v3.7.0 upper-bound triggers. GSK 10→8. No IN RANGE or NEAR name; no verdict change.
 - **v164 — 2026-07-28** — MODEL v3.7.0 restatement complete: 15 EV/OI bands now print labelled no-cash/all-cash ranges; 11 headlines had used the all-cash leg. SWEEP due to re-sort.
 - **v163 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 HELD; Dist % and ordering updated. None in the buy zone (closest BRK.B +27%). CSU re-keyed to its all-cash bound (+488%→+320%).
-- **v162 — 2026-07-28** — MODEL v3.7.0 follow-up: EV/OI bands restated as labelled no-cash/all-cash ranges. PYPL, TROW (held), BABA, TSM, AMZN, LIFCO-B. No verdict, zone, Dist % or ordering change.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
