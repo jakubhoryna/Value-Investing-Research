@@ -1,4 +1,4 @@
-# GSC Analysis Queue — TODO.md (v2 · 2026-07-25)
+# GSC Analysis Queue — TODO.md (v3 · 2026-07-28)
 
 **Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
 
@@ -8,7 +8,7 @@
 
 ## Priority — next up
 
-*(empty — GEN and TER completed; user to set the next batch. Largest coherent remaining blocks: Japan majors (12), France (16), US backlog (~77).)*
+**Italy block, in list order** (user-set 2026-07-28). Ferrari done → next up **Moncler (MONC.MI)**, then Prada (1913.HK), Pirelli (PIRC.MI), Brunello Cucinelli (BC.MI), De'Longhi (DLG.MI). Largest coherent blocks after Italy: Japan majors (12), France (16), US backlog (~78).
 
 ---
 
@@ -48,18 +48,11 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 
 ---
 
-## Backlog by market — 138 names remaining
+## Backlog by market — 133 names remaining
 
-Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed at v2: Switzerland (13/13), Germany (30/30), Netherlands (3/3).*
+Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed: Switzerland (13/13), Germany (30/30), Netherlands (3/3) at v2; Sweden (25/25) at v3.*
 
-### Sweden — 4 remaining (21 completed at v2)
-- Paradox Interactive — PDX.ST
-- Nolato — NOLA-B.ST
-- Rusta — RUSTA.ST
-- Bilia — BILI-A.ST
-
-### Italy
-- Ferrari — RACE (US) / RACE.MI
+### Italy — 5 remaining (Ferrari completed)
 - Moncler — MONC.MI
 - Prada — 1913.HK (Hong Kong-listed)
 - Pirelli — PIRC.MI
@@ -224,5 +217,6 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 ---
 
 ## Change log
+- **v3 — 2026-07-28** — Prune after the Sweden run: PDX, NOLA-B, RUSTA, BILI-A completed → Sweden block removed (25/25 done). Ferrari (RACE) completed → Italy down to 5. Priority set to the Italy block in list order. 138 → 133 names. v2 archived → `queue/archive/TODO_v2_2026-07-25.md`.
 - **v2 — 2026-07-25** — RECONCILE prune: 75 completed names removed (all of CH 13, DE 30, NL 3; SE 21; FI Kone; JP Sony; FR SAF+SAN; UK Wise; US GEN/U/DOCU + priority GEN/TER; dup lines dropped). 4 flags resolved (Uniper→UN0, INNIO→INIO, Synlab→SYAB DNAF, Covestro→1COV — all analysed). Trigano/TRI collision flagged. Added near-term review calendar (derived from register v149). 138 names remain. v1 archived → `queue/archive/TODO_v1_2026-07-15.md`.
 - **v1 — 2026-07-15** — File created. Seeded with priority names (Gen Digital, Teradyne) + long backlog by market. Overnight-runner design sketch recorded for later build.
