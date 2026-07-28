@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v177
+register_version: v178
 register_date: 2026-07-29
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 177
-verdict_split: "WATCH 27 · AVOID 149 · BUY 0 · DNAF 1"
+names_total: 178
+verdict_split: "WATCH 27 · AVOID 150 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v177 · 2026-07-29)
+# GSC Register — Master Watchlist (v178 · 2026-07-29)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 149 names, alphabetical
+### AVOID — 150 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -96,6 +96,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | BRZE | Braze, Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $26.60 (13 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ $4.1, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on FY27 buyback table ($50m Q1 ASR — sterilisation) |
 | BTI | British American Tobacco p.l.c. | 2026-07-16 | v2 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $58.73 ADR (≈£43.97) | CHEAP < ≈ $23/£17 (EV/OI, consv EV; MCap/FCF leg ≈ $29/£21.5; no P12) — moot given AVOID | — | FY2026 (~Feb 2027) or returns re-rate; H1 ~30 Jul 2026 opt.; Fit2Win charges hit FY26 OI |
 | BYD (1211.HK / 002594.SZ) | BYD Company Limited | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | HK$83.00 / RMB 86.26 (9/7 Jul 2026) | CHEAP < ≈ RMB 10–26/sh (MCap/FCF on norm. FCF ≈ RMB 10; EV/OI ≈ RMB 26; reported FCF negative → n.m.); no P12 — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Mar 2027); structural — 3 strong forces + sub-10% ROCE + FY25 FCF −RMB 97.7bn; H1 (~Aug 2026) opt. |
+| CDI.PA | Christian Dior SE | 2026-07-29 | v1 | AVOID (Past WEAK + SF FAIL: P19 acquisition + control clause) | WEAK | STRONG | FAIL | €434.00 (28 Jul 2026) | n.m. — EV/OI leg negative on market-NCI (book-NCI read ≈ €194–270, artifact). Cheapness EXPENSIVE 15.1×/14.3× | — | FY2026 (~late Jan 2027) + 2027 AR re-tests P19 alongside MC.PA; MODEL item: holdco/NCI rule |
 | CON | Continental AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €72.28 (18 Jul 2026) | CHEAP < ≈ €36 (EV/OI, FY25 adj-EBIT, consv EV; MCap/FCF leg ≈ €38; reported-OI leg n.m. — spin/OESL effects) — EXPENSIVE | — | FY2026 AR (~Mar 2027) pure-play basis re-analysis; ContiTech close H2'26 (€4.0bn) shifts EV/band; P19 first-test on any buyback pgm |
 | COPN | Cosmo N.V. | 2026-07-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | CHF 67.70 | n.m. — FY25 OI & FCF negative | — | FY2026 results (~Mar 2027); Clascoterone-5% AGA 12-mo readout only if it changes the revenue mix |
 | COST | Costco Wholesale Corporation | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | STRONG | FAIL | $912.97 | CHEAP < ≈ $141 (MCap/FCF binding; EV/OI leg ≈ $175; P12 edge ≈ $175) — moot given AVOID. Cheapness EXPENSIVE (51.8× MCap/FCF, 38.6× EV/OI) | — | FY2026 (~Sep 2026) P19 re-test (FY21–25 all > 20× EV/OI); flip needs a below-worth year or a halt; alert < ≈ $210 |
@@ -235,6 +236,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ## Open items
 
 - **MODEL v3.7.0 band restatement — complete.** Every EV/OI band now prints a labelled no-cash/all-cash range (or one figure where the bounds converge). Eleven memo headlines had been built on the all-cash leg — BABA, TSM, AMZN, LIFCO-B, TROW, BKNG, ROG, FIE, ULVR, AXFO, NVS — five of them labelled "conservative EV" over add-back arithmetic; each memo's App. F restates at next REVIEW. **IBKR** upper bound not derivable (firm-vs-customer cash split is a logged judgment) — single figure, flagged. **Dist %/ordering recomputed at the 2026-07-28 sweep (v165)** — GSK moved up on the higher upper-bound trigger; KNIN and INDT up, AXFO and LIFCO-B down.
+- **MODEL — holdco / large-NCI substitution rule.** CDI.PA v1: full consolidation of a 42%-owned listed subsidiary breaks two rules in opposite directions — L/E ex-NCI 296% (109% incl. NCI) forces Past WEAK, while consolidated MCap/FCF 5.5× (13.5× look-through) screens cheap; NCI at book understates the claim by ≈€95bn vs market. Needs a §2·1A-style substitution — CDI memo App. C.
 - **SAVE** — SF rests on rejecting MCap/FCF for a deposit-funded lender (NI-proxy); pre-FY2024 repurchase record undisclosed — detail: SAVE memo App. E.
 - P17/P19 re-examination queue **closed** (Tiers 1–3 complete; last flip NKE v2 2026-07-09); v3-clean cohort + CROX flip history in the memo App. G trails.
 - HFG (held) **SELL-FLAG** (SR2) — user decision pending; log decision + realised outcome here.
@@ -267,9 +269,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v178 — 2026-07-29** — CDI.PA ANALYSE v1: **AVOID** on two gates (Past WEAK — L/E 296% ex-NCI; SF FAIL — Tiffany 22.1× in-consolidation + 97.5% control clause). MODEL item: holdco/NCI rule.
 - **v177 — 2026-07-29** — RMS ANALYSE v1: **AVOID** (SF FAIL — P19 on three independent routes: repetition, FY2021 32.4×/43.2× EV/OI, sterilisation escalation). Past & Future STRONG; band ≈ €321.
 - **v176 — 2026-07-29** — OR.PA ANALYSE v1: **AVOID** (SF FAIL — P19: 7 tranche-yrs strike >20× on both reads, incl. €8.9bn Nestlé block at €400). Past ADEQUATE (P4 3rd ROCE decline). France block opened.
 - **v175 — 2026-07-29** — ZM ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 9.9% vs the 10% floor; Future WEAK — 2 strong forces + eroding moat; SF FAIL — P19 repetition + FY23 89.3×).
 - **v174 — 2026-07-29** — TER REVIEW v2: **AVOID holds** (SF FAIL — P19 now two independent hard strikes: 7 flagged tranche-years + FY25 >20× on both reads). Q1-26 10-Q added; band $22.56 → $22.86.
-- **v173 — 2026-07-29** — PIRC ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.2%, 7.4% ex-goodwill, vs the 10% floor). Future STRONG, SF PASS w/ control flag. Italy block complete.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
