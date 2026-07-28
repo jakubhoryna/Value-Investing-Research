@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v159
+register_version: v160
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 172
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v159 · 2026-07-28)
+# GSC Register — Master Watchlist (v160 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -171,7 +171,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PHIA (PHG ADR) | Koninklijke Philips N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL: P19 strikes) | WEAK | ADEQUATE | FAIL | €22.83 (23 Jul 2026) | CHEAP < ≈ €4.9 (EV/OI leg binding; strict ≈ €1.95; FCF leg ≈ €6.45; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) info-only; P19 pattern structural (5 strike tranches 2019–24) |
 | PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL | $134.83 (14 Jul 2026) | CHEAP < ≈ $6.6 (MCap/FCF 8×; EV/OI all-cash ≈ $6.6; strict ≈ $3.8; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) extends thin ~6y record; 2027 proxy re-tests governance; structural — no price flips |
 | PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
-| PYPL | PayPal Holdings, Inc. | 2026-06-10 | v1 | AVOID (Future WEAK) | STRONG | WEAK | PASS | $41.46 | CHEAP < ≈ $38 (MCap/TBV @1.25×). Cheapness FAIR | — | FY2026 results (early Feb 2027), or ≥4 quarters branded-checkout TPV-share stabilisation under Lores |
+| PYPL | PayPal Holdings, Inc. | 2026-07-28 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $56.07 (27 Jul 2026) | CHEAP < ≈ $33.7 (EV/OI, consv no-cash EV; MCap/FCF leg ≈ $51.6; no P12) — FAIR 8.7×/8.3× | — | FY2026 (~Feb 2027) drops FY2016 tranche + FY26 buyback re-test; v3.5.0 redemption limbs (a),(b) fail |
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors + FY26 buyback re-test (H1 running 13.4–14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
 | RACE | Ferrari N.V. | 2026-07-28 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €331.80 (27 Jul 2026) | CHEAP < ≈ €63 (MCap/FCF; EV/OI consv leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 42.1×/28.7× | — | FY2026 20-F (~Feb 2027): 1st year of €3.5bn 2026–30 programme, P19 re-test; v3.5.0 redemption limbs all fail |
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs sustained buyback discipline (FY21–25 strikes both bases); Q3 4 Aug 2026 opt. |
@@ -252,10 +252,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v160 — 2026-07-28** — PYPL REVIEW v2: **AVOID** holds, 2 gates now (Future WEAK + SF FAIL — P19 strikes FY16–22; redemption a/b fail). Past STRONG→ADEQUATE (w-o-4 13.2%). Band $38→$33.7.
 - **v159 — 2026-07-28** — BC (Cucinelli) ANALYSE v1: **AVOID** (Past WEAK L/E 267%; Future WEAK 2 forces; SF FAIL P19 Stock-Grant sterilisation). EXPENSIVE 56.7×/29.3×. 171→172.
 - **v158 — 2026-07-28** — DLG (De' Longhi) ANALYSE v1: **AVOID** (Future WEAK — customer power + substitutes). Past ADEQUATE (w-o-4 13.3%); SF PASS, 1 flag (La Marzocco ≈16–21× OI). FAIR. 170→171.
 - **v157 — 2026-07-28** — 1913.HK (Prada) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 9.4% vs 10%; P18 leases FY16–18 decisive, alt 10.2%). Future ADEQUATE; SF PASS (RPT flag). FAIR 10.7×. 169→170.
 - **v156 — 2026-07-28** — RACE (Ferrari) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike: FY25 buybacks 35.0× EV/OI, 51.6× MCap/FCF, both reads). Past STRONG. EXPENSIVE 42.1×/28.7×. 168→169.
-- **v155 — 2026-07-28** — BILI-A (Bilia) ANALYSE v1: **AVOID** (Past WEAK: L/E+fade; Future WEAK: OEM breadth, Volvo 2020; SF FAIL: P17+P19 pair). EXPENSIVE 23.5×/17.7×. 167→168; Sweden done; hdr fix.
 
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
