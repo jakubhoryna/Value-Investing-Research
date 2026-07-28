@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v172
-register_date: 2026-07-28
+register_version: v173
+register_date: 2026-07-29
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 173
-verdict_split: "WATCH 27 · AVOID 145 · BUY 0 · DNAF 1"
+names_total: 174
+verdict_split: "WATCH 27 · AVOID 146 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v172 · 2026-07-28)
+# GSC Register — Master Watchlist (v173 · 2026-07-29)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 145 names, alphabetical
+### AVOID — 146 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -170,6 +170,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PAH3 (POAHY ADR) | Porsche Automobil Holding SE | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €28.08 (9 Jul 2026; mcap ≈ €8.4bn) | CHEAP < ≈ €22 (NAV-discount anchor ≈45% vs ~33% structural; substitution rule) — FAIR, moot given AVOID | — | FY2026 results (~mid-Mar 2027) — VW/Porsche AG impairment trend + NAV re-anchor; H1 2026 (~mid-Aug 2026); or price < ≈ €22 |
 | PDX | Paradox Interactive AB | 2026-07-26 | v1 | AVOID (Future WEAK: Steam 84.6% of revenue) | ADEQUATE | WEAK | PASS | SEK 127.50 (24 Jul 2026) | CHEAP < ≈ SEK 8 (EV/OI, consv EV, write-down FY25 OI; FCF leg ≈ SEK 44; no P12) — EXPENSIVE 23.2×/93.4× | — | FY2026 AR (~Apr 2027) informational — Future FAIL structural (platform concentration) |
 | PHIA (PHG ADR) | Koninklijke Philips N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL: P19 strikes) | WEAK | ADEQUATE | FAIL | €22.83 (23 Jul 2026) | CHEAP < ≈ €4.9 (EV/OI leg binding; strict ≈ €1.95; FCF leg ≈ €6.45; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) info-only; P19 pattern structural (5 strike tranches 2019–24) |
+| PIRC | Pirelli & C. S.p.A. | 2026-07-29 | v1 | AVOID (Past WEAK) | WEAK | STRONG | PASS (1 control flag) | €6.495 (28 Jul 2026) | CHEAP ≈ €2.86–4.34 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €5.73) — FAIR 11.4×/9.6× | — | FY2026 AR (~Mar 2027); US connected-vehicle rule + Sinochem control dispute; ex-GW worst-of-four 7.4% still <10% |
 | PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL | $134.83 (14 Jul 2026) | CHEAP < ≈ $6.6 (MCap/FCF 8×; EV/OI all-cash ≈ $6.6; strict ≈ $3.8; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) extends thin ~6y record; 2027 proxy re-tests governance; structural — no price flips |
 | PSH | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PYPL | PayPal Holdings, Inc. | 2026-07-28 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $56.07 (27 Jul 2026) | CHEAP ≈ $33.7–46.8 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ $51.6; no P12) — FAIR 8.7×/8.3× | — | FY2026 (~Feb 2027) drops FY2016 tranche + FY26 buyback re-test; v3.5.0 redemption limbs (a),(b) fail |
@@ -254,14 +255,15 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
+- **PIRC** — control flag standing: Camfin–MPI shareholders' agreement lapsed 28 Feb 2026; IFRS 10 control determination carried 9–6 with Sinochem directors against. Re-test at FY2026 AR.
 
 ---
 
 ## Change log
 
+- **v173 — 2026-07-29** — PIRC ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.2%, 7.4% ex-goodwill, vs the 10% floor). Future STRONG, SF PASS w/ control flag. Italy block complete.
 - **v172 — 2026-07-28** — HEXA-B SF re-test v2: **FAIL holds**, AVOID unchanged (sterilisation escalates — FY20–23 tranche-years 14.2–25.4× EV/OI at their annual lows; repetition strikes independently). **v3.9.0 queue closed.**
 - **v171 — 2026-07-28** — WISE REVIEW v2: **AVOID holds** (SF FAIL — sterilisation escalates, FY26 23.4× EV/OI, 19.0× at the year low). FY26 20-F parsed: 3 repurchase years not 1; debt and MCap/BV corrected. v3.9.0 queue cleared.
 - **v170 — 2026-07-28** — ESSITY-B REVIEW v2: **AVOID holds** (SF FAIL — P19 repetition; FY24 17.71×, FY25 17.39× maint basis). v1 struck on the wrong basis (P20 active); dominant-pattern route retired at v3.9.0.
 - **v169 — 2026-07-28** — MODEL v3.11.0 released: P19 flag either-read + de-minimis cumulative fix; re-test joins every P19 name's next touch. Open item added; no rows changed.
-- **v168 — 2026-07-28** — EPI-A REVIEW v2: **AVOID holds** (SF FAIL — P19 sterilisation escalates; FY22 17.7×/42.8×, FY21 range 19.6–24.9×). v3.9.0 queue cleared for EPI-A; v1 dividend error fixed.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
