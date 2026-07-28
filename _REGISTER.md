@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v168
+register_version: v169
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 173
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v168 · 2026-07-28)
+# GSC Register — Master Watchlist (v169 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -248,6 +248,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **SKF-B** — a 3rd ROCE_wc decline fires P4 → Past WEAK; John Sample multiple INDETERMINATE; Lex Asea separation ~Q4 2026 resets basis — SKF-B memo App. D/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
 - **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. Verdict candidates: **ESSITY-B**, **WISE**; **HEXA-B** SF column only (AVOID holds on Past WEAK). No flip: **EPI-A** (v2 — FY21/22 sterilising years read 17.7–24.9× EV/OI), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
+- **MODEL v3.11.0 re-test queue** — P19 flag now fires on **either read** (year or 3y-normalized) and de-minimis withdrawal trips on **either cumulative bar** (FCF or OI); no candidates enumerable from register cells — applies at every P19 name's next touch alongside the v3.4.0/v3.9.0 queues (App E logs both reads since v3.4.0).
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, TER, MORN, GRMN, SU re-test at scheduled reviews; SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
@@ -256,9 +257,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v169 — 2026-07-28** — MODEL v3.11.0 released: P19 flag either-read + de-minimis cumulative fix; re-test joins every P19 name's next touch. Open item added; no rows changed.
 - **v168 — 2026-07-28** — EPI-A REVIEW v2: **AVOID holds** (SF FAIL — P19 sterilisation escalates; FY22 17.7×/42.8×, FY21 range 19.6–24.9×). v3.9.0 queue cleared for EPI-A; v1 dividend error fixed.
 - **v167 — 2026-07-28** — MODEL v3.9.0 + v3.9.1 released. P19 ladder rebuilt (repetition strike, de-minimis, sterilisation→flag); acquisition rescue ≤7×; 5 corrections; editorial dedup. Re-test queue opened; P5/P6 declined.
 - **v166 — 2026-07-28** — MONC ANALYSE v1: **AVOID** (SF FAIL — P19 FY22 buyback flag + Stone Island acquisition-audit flag; RPT third). EXPENSIVE 17.5×. 5y window, retrieval-limited.
 - **v165 — 2026-07-28** — SWEEP: prices refreshed, 27 WATCH + 4 held; Dist % and ordering recomputed on v3.7.0 upper-bound triggers. GSK 10→8. No IN RANGE or NEAR name; no verdict change.
-- **v164 — 2026-07-28** — MODEL v3.7.0 restatement complete: 15 EV/OI bands now print labelled no-cash/all-cash ranges; 11 headlines had used the all-cash leg. SWEEP due to re-sort.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
