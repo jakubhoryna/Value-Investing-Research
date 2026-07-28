@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v3.9.0
+model_version: v3.9.1
 model_date: 2026-07-28
 status: live
 bootstrap_required: BOOTSTRAP v1.0.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.9.0 · 2026-07-28)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.9.1 · 2026-07-28)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -32,12 +32,6 @@ Doctrine and book derivations: `instructions/BOOK_EXTRACT.md` — reference only
 Repeatability is mandatory: two chats given the same data must reach the same verdicts. Apply the §3 rubrics rather than improvised criteria, never deviate from the §6 template, and record every judgment call in the memo appendix. Avoid making excuses for unremarkable companies — the model is designed to flag them.
 
 -----
-## §1. OPERATING MODES
-
-Mode detection lives in the **bootstrap** (it is needed before this file is fetched): ANALYSE · REVIEW · SWEEP · MODEL · RECONCILE, with a bare ticker on an analysed name defaulting to REVIEW and position events handled inside any mode per §7.3. The playbooks are §8.1–§8.5 of this file. **Before any web work in any register-touching mode:** the live register has been fetched per §7.4a (bootstrap session-start step) and the repo `memos/` folder checked for any existing memo for the ticker (project knowledge as fallback).
-
------
-
 ## §2. THE MODEL
 
 Three questions, in strict order: **Do I understand it? Is it good? Is it cheap?**
@@ -119,7 +113,7 @@ At the current price (EV = market cap + total debt + preferred + minority intere
 
 **Primaries decide.** CHEAP requires both primaries at or under threshold (with both EV variants in the bargain bin); when Past is STRONG, one primary may run to ≤ 1.25× its threshold (P12).
 
-**Qualifiers investigate.** A qualifier breach never blocks mechanically; it mandates a named check whose adverse finding blocks: BV ≫ TBV → run the Gate-1C acquisition audit; TBV depleted/negative from buybacks → both qualifiers are distorted identically — mark inapplicable and say so; both qualifiers high and similar with modest goodwill → check for understated tangible assets (informational); qualifier breach on an asset-light franchise with STRONG returns → log and proceed (Nike-at-3×-book precedent). For names on the 1A substitution rule: securities-heavy holdcos and insurers anchor cheapness and the band on **MCap/BV** [precedent BRK.B ≈ 1.2× book]; deposit-funded lenders anchor on **MCap/FCF where CFO is economically meaningful, else an NI-proxy**, with EV/OI marked n.m. — state the anchor and its reasoning per name.
+**Qualifiers investigate.** A qualifier breach never blocks mechanically; it mandates a named check whose adverse finding blocks: BV ≫ TBV → run the Gate-1C acquisition audit; TBV depleted/negative from buybacks → both qualifiers are distorted identically — mark inapplicable and say so; both qualifiers high and similar with modest goodwill → check for understated tangible assets (informational); qualifier breach on an asset-light franchise with STRONG returns → log and proceed (Nike-at-3×-book precedent). Under the §2·1A substitution rule: securities-heavy holdcos and insurers anchor on **MCap/BV** [BRK.B ≈ 1.2× book]; deposit-funded lenders on **MCap/FCF where CFO is economically meaningful, else an NI-proxy**, EV/OI n.m. State the anchor per name.
 
 **Maintenance-capex basis (P20).** Where P20 is active, the valuation gate runs FCF on the maintenance basis, clearly labelled, and **EV/OI typically becomes the binding band metric**; state the strict all-capex band alongside for reference. The quality gates stay on all-capex FCF (multiyear averaging already dilutes the build-out).
 
@@ -184,15 +178,14 @@ All tunable numbers live here; MODEL-mode changes are edits to this table (and �
 - **Tier-2 acceptance test [v3.9.0].** An aggregated multi-year series is accepted only on an **exact tie-out**, at the reporting unit, against the primary filings for the latest covered year and one earlier year, on four anchors: revenue, operating income, equity, and **one derived composite that reconciles only if several underlying fields are simultaneously correct** (e.g. net financial position rebuilt from cash + short-term investments − total debt + lease liabilities, which validates the debt/lease split that drives CE, EV and L/E). Exact means exact: a rounding break means the source has restated something, and the series is rejected and rebuilt from filings at no exploratory cost (P14). On a pass the series is accepted **for the covered years only** — years the source does not carry are a data gap, never an accepted series. Record the anchors and the years tested in Appendix A.
 - **Never invent a number.** Write "n/a — not disclosed" rather than guessing. Label every derived figure (e.g., "FCF derived = CFO − capex"). Flag every data gap prominently in Appendix A and in the memo body if it affects a verdict.
 - **Currency & listings:** keep the reporting currency throughout; note ADR ratios. Fewer than P1 years (IPO/spin-off): proceed with what exists, flag it, and apply the §2 thin-history cap.
-- **Budget:** respect P14 — the cap binds *exploratory search*, not the retrieval of documents this hierarchy already calls for. Never economise on primary sources: when the tier-2 aggregate source fails verification against the filing, rebuild the series from filings and report the document count in Appendix A rather than trimming the evidence. Prefer one dense source over many shallow ones. Never re-fetch data already in a prior memo — that is REVIEW mode's delta approach.
+- **Budget:** P14 binds exploratory search only, never the retrieval this hierarchy calls for. Never economise on primary sources; prefer one dense source over many shallow ones; never re-fetch data already in a prior memo (that is REVIEW's delta approach).
 
 -----
 
 ## §5. CALCULATION RULES
 
-- Beginning-of-period CE for the B2 YoY series (year N uses year N−1 closing CE); the rubric additionally tests the worst of the four normalized averages (§2·1A).
-- Fully diluted weighted-average shares for all per-share figures.
-- As-reported figures; no one-off add-backs — normalisation is by multiyear averaging only (Σ numerator ÷ Σ denominator; geometric means for growth). L/E: latest year only.
+*Denominators, normalisation, per-share basis and leverage are defined in §2·1A and are not repeated here.*
+
 - Rounding: return ratios and growth to 1 decimal %, multiples to 1 decimal.
 - Show the latest-year CE build, TBV build, and EV build (both cash variants) line-by-line in Appendix C; label estimates and judgment calls, including any NIBCL burden-of-proof calls, goodwill treatment, lease capitalisation, maintenance-capex basis (P20 conditions and anchor), IFRS interest reclassification, captive-finance consistency, and financial-institution substitution treatments.
 - HELD names: show the P_sell arithmetic (§2 Gate 2) and the implied buyback-multiple arithmetic (P19) in Appendix F/E respectively.
@@ -325,7 +318,7 @@ Front matter (verdict DNAF) + §1 Verdict + §2 Understanding explaining precise
 
 ### §6.5 After every memo
 
-End the chat reply with the §7.4a commit: print the register diff (old row → new row, or "new name") and the file list, obtain the one-word confirm ("commit"; a session-level "auto-commit" waives the gate, diff still printed), commit the memo + the §7.5 snapshot + the full regenerated register, and report the commit URLs — plus the portfolio-table row if the name is HELD. On FILE fallback or any API failure, instead print the register row(s) as plain text for copy-paste and remind the user to save the memo to project knowledge and append/replace the row(s) in `_REGISTER.md` manually. Project-knowledge memo uploads are optional under the active backend (search convenience only).
+Run the §7.4a session-end sequence: print the register diff and file list, take the confirm, commit memo + §7.5 snapshot + full regenerated register, report the URLs — plus the portfolio row if the name is HELD. On any API failure, fall back to §7.4a's paste-block path.
 
 -----
 
@@ -413,6 +406,8 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`
 
 ## §8. MODE PLAYBOOKS
 
+Modes are detected in the bootstrap (needed before this file is fetched): ANALYSE · REVIEW · SWEEP · MODEL · RECONCILE. **Before any web work in a register-touching mode:** the live register has been fetched per §7.4a and the repo `memos/` folder checked for an existing memo for the ticker (project knowledge as fallback).
+
 ### §8.1 ANALYSE
 
 1. Confirm company identity (one search if needed); check register and memo library for priors (§7.4a fetch; project knowledge fallback).
@@ -458,16 +453,15 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`
 
 -----
 
-## §9. STYLE & GUARDRAILS
+## §9. STYLE
+
+*The resident guardrails — no price targets, no invented numbers, plain Markdown only, token secrecy, commit gates — live in the bootstrap and win on any conflict. This section carries only what is model-layer.*
 
 - Analytical and direct; no padding, no hedging beyond genuine data uncertainty. Verdicts stated plainly and never softened. Avoid making excuses for unremarkable companies — or for companies already owned.
 - Quantitative material in tables; qualitative reasoning in tight prose. The memo body must be readable in under three minutes.
 - Flag every estimate, derivation, and data gap explicitly, at the point of use.
-- Complete the full report even when a gate fails (Gate 0 excepted) so the database holds a complete picture of every name examined.
-- No buy-price recommendations and no price targets. Trigger bands, sell-flag lines, and zone statements are the book's mechanical threshold arithmetic; present them as such. Position sizing is doctrine context only — never memo output or advice. Every memo carries the single footer line "Framework output, not investment advice."
 - **The memo explains the company, not the framework [v3.9.0].** Body prose carries data, verdicts and reasoning only — never a restatement of framework mechanics, thresholds, strike logic or rule text. The reader has the model. Tags (P19, §2·1C, "worst-of-four") are references, not explanations; rule text in the body is wasted words against the P13 cap.
 - Same data ⇒ same verdict. Where judgment is unavoidable, apply §3 and record the call in Appendix C.
-- The token is a secret: never echo or print it in chat prose, memos, or committed files, and never transmit it anywhere other than `api.github.com`. These guardrails restate the bootstrap's resident set; the bootstrap wins on any conflict.
 
 -----
 
@@ -501,37 +495,4 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`
 - **§6.3 App. F / §7.1.** Memo Appendix F states both bounds, each labelled, plus the range width. Register band cells carry both bounds and their `no-cash/all-cash` labels where EV/OI binds. No cap change.
 - **MINOR release** — band, Dist % and ordering impact; no gate, parameter, threshold or verdict-mapping change. §8.4 step-3 scan. Headline figure wrong (built on the superseded formula, restate at next touch): **BABA** $59.4 → ≈$40.3–59.4; **TSM** NT$598 → ≈NT$480–598; **AMZN** $55.96 → ≈$44.5–56.0 ($36.2–47.7 incl. op-leases); **LIFCO-B** SEK 59.30 → ≈SEK 55.2–59.3; **TROW** (HELD, band → ≈$66–69, EV/OI no-cash displaces MCap/FCF as binding — the only zone-affecting restatement). Headline correct, upper bound to be added: **IBKR**, CROX, FIE, GSK, ULVR, AXFO, CSU, INDT, KNIN, SKF-B, THULE, and PYPL (≈$33.7–46.8, committed earlier today). Variant not stated in-memo, re-derive: **BKNG**, **ROG**. **IFCN** leg restates ≈CHF 20–24.5, CHF 18 band unchanged. No verdict flips and no section changes; Dist % ordering shifts for restated names.
 
-## v3.6.0 CHANGE LOG (2026-07-26)
-
-- **§2·1C·1 / P17 — proportionality dual-read.** The 5%-of-lower(FCF, NI) test now runs on two reads, mirroring the P19 v3.4.0 architecture: fiscal-year read and trailing-3-fiscal-year-average read. Hard strike only on breach of both; breach of either alone is a scrutiny-level flag (counts toward pairs). Repairs the v3.4.0 loss-leg discontinuity — a marginally positive FCF year convicted where a negative one would have shifted the test to NI — and applies the same principle already adopted for P19: a single distorted denominator must neither convict nor acquit alone. Two-sided: the normalized read can also flag fat-year payers. Both-year-legs-negative strike, the absolute US$30m scrutiny trigger, and the outside-director stop are unchanged.
-- **MINOR release.** §8.4 scan: one verdict candidate — NOLA-B (v1 strike → flag; year read 14.76 > 13.65, 3y-normalized line 22.7 clean; re-verdict at REVIEW hinges on whether the GW Plastics ≈15–16× finding stands as a flag [pair → AVOID holds] or reclassifies INDETERMINATE under the v3.4.0 estimates-of-undisclosed-inputs rule [→ WATCH]). All other P17-struck names (BAYN, BRZE, GTLB, HHH, KLAR, SHA0, SHOP, TEAM, TKA, U, 1COV, UNH) carry independent Past/Future WEAK failures — no flips. Absolute-trigger strikes (MA, V, NFLX) untouched. Prospective hardening: normalized-read flags join every future P17 test (MICC €6.3m-line check, ONON 4%-headroom re-test, HLE, INIO first proxy).
-
-## v3.5.0 CHANGE LOG (2026-07-16)
-
-- **§2·1C·3 / P19 — worth check (second thought on flags).** The rescue lines (≤8×/≤7×) are bargain prices — worth minus the margin of safety — so a flag-zone tranche can still have been below conservative worth. Flags, never hard strikes, may be cleared by a documented below-worth judgment at execution (contemporaneous worth arithmetic, growth trajectory, insider/controller co-purchases), Appendix-E-logged; burden on the analyst, default the flag stands. Strictness on >20×-both-reads strikes unchanged.
-- **§2·1C·3 / P19 — strict redemption clause.** A hard strike downgrades to a standing flag only on all three limbs: published worth-referenced repurchase price discipline; a bargain-line execution year or a refusal year; allocator turnover or controlling-holder policy change. Prompted by NOVO-B v5: a price re-rating is not a policy — the clause demands demonstrated discipline, not a cheaper stock. As drafted, NOVO-B fails all three limbs today (no policy; 2026 execution at 10.1× is below-flag, not below-bargain; Foundation and chair continuous) — the clause creates an evidence path, not relief.
-- **MINOR release.** §8.4 scan: no verdict flips (no struck name currently satisfies the redemption limbs; NKE's CEO turnover is one limb of three). Worth-check bookkeeping candidates at next touch (flag-clears only, no verdict changes): CROX, BKNG, AD.
-
-## v3.4.0 CHANGE LOG (2026-07-16)
-
-- **§2·1C·1 / P17 — loss-leg handling.** The 5%-of-lower(FCF, NI) hard strike tests positive legs only: one leg negative → test the positive leg alone, log the degeneration (a non-cash-loss year is Gate 1A's business, not a comp verdict); both legs negative → any more-than-token pay strikes (chronic-loss extraction — TKA-class strikes preserved). Prompted by CROX v3 (comp struck against a one-off impairment NI of −$81m while FCF-proportionality read 1.7%).
-- **§2·1C·1 / P17 — director-fee norm made empirical and seat-based.** The book's $250k was Marshall's 2017 reading of the market norm, not doctrine ("scale to local context"); the stop stays 2× norm, the norm now sources current survey data (Spencer Stuart 2025: S&P 500 director avg ≈ $336k, chair premium ≈ $173k → chair-seat norm ≈ $509k), CPI-indexed book figure as floor default.
-- **§2·1C·3 / P19 — dual-read tranche testing + codified below-worth rescue.** Hard strike now requires a basis > 20× on both the tranche-year and trailing-3y-normalized reads — single distorted denominators (working-capital CFO troughs, impairment OI, turnaround OI) neither convict nor acquit, mirroring §5 normalization; year-read flags unchanged; rescue (either primary ≤ its Gate-2 threshold on either read) codified from the CROX v3 precedent and tested before flags/strikes.
-- **§2·1C — flag aggregation & indeterminate findings.** Flags count once per test unless flagged executions dominate the window (dominant pattern = hard strike); estimate-based findings on undisclosed inputs log INDETERMINATE — scrutiny and a named re-test, never a pair-completer (the book's Costco-consulting treatment).
-- **MINOR release** — verdict-affecting rule changes. §8.4 step-3 scan: CROX flips AVOID → WATCH on REVIEW v4 (committed with this release); SHA0/BAYN SF columns re-test at next touch (verdicts hold on quality gates); P19 dual-read re-test queue opened for single-tranche/single-basis SF-only AVOIDs: SCHN, GEBN, SAF, TER, MORN, GRMN, SU. Process-discipline items (register I/O, SHA pre-check, call batching, memo pre-write check) remain queued for a later release.
-
-## v3.3.1 CHANGE LOG (2026-07-12)
-
-- **Editorial release — zero operative change.** No gate, parameter, threshold, protocol step, verdict rule, zone, band, or ordering touched. §0–§1 and §3–§9 byte-identical to v3.3.0; only ROLE & PURPOSE, front matter, and this change-log region differ.
-- **Change-history archival** — the §7.5 capped-tail rule applied to this file: v3 – v3.2.1 sections removed; full history survives verbatim in `instructions/archive/` MODEL_v* snapshots (the v3.3.0 snapshot is created by this commit).
-- **§2 style pass** — 13 rationale/narration passages relocated to `instructions/BOOK_EXTRACT.md` (manifest: `instructions/archive/SEC2_RELOCATIONS_v3.3.1.md`, committed with this release); §2 now opens with the BOOK_EXTRACT pointer. Every number, comparator, formula, table, P-reference, defined term, and precedent citation retained — verified programmatically. §2: 19,171 → 18,432 chars.
-- **ROLE & PURPOSE deduplicated** — book doctrine relocated to `instructions/BOOK_EXTRACT.md` (committed 2026-07-12); resident-bootstrap overlap removed; repeatability mandate retained verbatim.
-- PATCH release.
-
-## v3.3.0 CHANGE LOG (2026-07-12)
-
-- **Register format contract (§7.1).** The register is a lookup table: 160-character cell cap; trigger-band cells carry binding band + metric + one basis tag; notes cells carry review token + one flag + price alert; open items one line each. Alternate legs, execution tables, flip narratives, and rationale live in the memo — the register points, the memo explains. Existing rows compress at the v44 migration; thereafter enforced at every row touch.
-- **Register hygiene & archival (new §7.5; §7.4a step 3 + generation rule; §6.5, §8.5 consequentials).** Every register commit snapshots the outgoing version verbatim to `registers/archive/REGISTER_v{N}_{date}.md` before the live PUT (fail-safe ordering: snapshot failure aborts; live-PUT failure retries live only). Live change log capped at the newest 5 one-line entries (≤ 200 chars) with a standing archive pointer; trimmed entries survive verbatim in snapshots. General rule: standing artifacts keep capped in-file tails and archive outgoing versions to sibling `archive/` folders in the same commit — `MODEL.md` already does under §0.
-- **MINOR release** — register-generation rules change; no gate, parameter, verdict, zone, band, or ordering impact. §8.4 step 3 scan: format-only, **zero names flip**. No bootstrap territory touched (config paths, guardrails, mode table unchanged; `registers/archive/` is defined here, not in bootstrap config).
-
-*Older change logs (v3 – v3.2.1): archived verbatim in `instructions/archive/` MODEL_v* snapshots.*
+*Older change logs (v3 – v3.6.0): archived verbatim in `instructions/archive/` MODEL_v* snapshots, per the §0 cap.*
