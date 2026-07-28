@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v160
+register_version: v161
 register_date: 2026-07-28
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 172
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v160 · 2026-07-28)
+# GSC Register — Master Watchlist (v161 · 2026-07-28)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -101,7 +101,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | COST | Costco Wholesale Corporation | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | STRONG | FAIL | $912.97 | CHEAP < ≈ $141 (MCap/FCF binding; EV/OI leg ≈ $175; P12 edge ≈ $175) — moot given AVOID. Cheapness EXPENSIVE (51.8× MCap/FCF, 38.6× EV/OI) | — | FY2026 (~Sep 2026) P19 re-test (FY21–25 all > 20× EV/OI); flip needs a below-worth year or a halt; alert < ≈ $210 |
 | CRM | Salesforce, Inc. | 2026-07-12 | v2 | AVOID (Past WEAK + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | $163.32 | CHEAP < ≈ $55 (EV/OI @1.25×). Cheapness EXPENSIVE | — | Q2 FY27 (~2 Sep 2026, optional Agentforce-ARR check); FY27 10-K (~Mar 2027) status check; BUY needs Past upgrade (~FY2030 earliest) + deleverage + price |
 | CSG | CSG N.V. (Czechoslovak Group) | 2026-07-10 | v1 | AVOID (Past WEAK: leverage + Future WEAK: breadth + SF FAIL: flag pair) | WEAK | WEAK | FAIL | €13.60 (10 Jul 2026) | n.m. — FY2025 FCF −€470m, no price satisfies both primaries (EV/OI-leg context ≈ €7.8–8.6; no P12). Cheapness EXPENSIVE | — | H1 7 Aug 2026 (FCF, leverage, Ammo+); FY2026 AR (~Mar 2027); NSPA/Belgian-probe news reviews immediately |
-| DLG | De' Longhi S.p.A. | 2026-07-28 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (1 P19 acq. flag) | €38.82 | CHEAP < ≈ €23.79 (MCap/FCF; EV/OI leg ≈ €24.81; no P12) — FAIR 13.1×/11.6× | — | FY2026 AR (~Mar 2027): La Marzocco standalone OI re-tests acq. flag (≈16–21×, 20× INDETERMINATE); earlier if price → ≈ €26 |
+| DLG | De' Longhi S.p.A. | 2026-07-28 | v2 | AVOID (SF FAIL: La Marzocco RPT pair) | ADEQUATE | ADEQUATE | FAIL | €38.82 | CHEAP < ≈ €23.79 (MCap/FCF; EV/OI leg ≈ €24.81; no P12) — FAIR 13.1×/11.6× | — | FY2026 AR (~Mar 2027): LM standalone OI re-tests 20×; hard dates Feb 2028 IPO right / Feb 2029 demerger right |
 | DOCU | Docusign, Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: buybacks + comp) | WEAK | WEAK | FAIL | $49.18 | CHEAP < ≈ $9.7 (EV/OI, consv EV) — EXPENSIVE | — | FY2027 10-K (~Mar 2027) re-anchors band |
 | DSY | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
@@ -252,10 +252,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v161 — 2026-07-28** — DLG REVIEW v2: **AVOID holds**, deciding gate moves 1B → 1C. Future WEAK→ADEQUATE (customer-power corrected on margin evidence); SF PASS→FAIL (La Marzocco flag pair). FAIR.
 - **v160 — 2026-07-28** — PYPL REVIEW v2: **AVOID** holds, 2 gates now (Future WEAK + SF FAIL — P19 strikes FY16–22; redemption a/b fail). Past STRONG→ADEQUATE (w-o-4 13.2%). Band $38→$33.7.
 - **v159 — 2026-07-28** — BC (Cucinelli) ANALYSE v1: **AVOID** (Past WEAK L/E 267%; Future WEAK 2 forces; SF FAIL P19 Stock-Grant sterilisation). EXPENSIVE 56.7×/29.3×. 171→172.
 - **v158 — 2026-07-28** — DLG (De' Longhi) ANALYSE v1: **AVOID** (Future WEAK — customer power + substitutes). Past ADEQUATE (w-o-4 13.3%); SF PASS, 1 flag (La Marzocco ≈16–21× OI). FAIR. 170→171.
 - **v157 — 2026-07-28** — 1913.HK (Prada) ANALYSE v1: **AVOID** (Past WEAK — w-o-4 ROCE 9.4% vs 10%; P18 leases FY16–18 decisive, alt 10.2%). Future ADEQUATE; SF PASS (RPT flag). FAIR 10.7×. 169→170.
-- **v156 — 2026-07-28** — RACE (Ferrari) ANALYSE v1: **AVOID** (SF FAIL — P19 hard strike: FY25 buybacks 35.0× EV/OI, 51.6× MCap/FCF, both reads). Past STRONG. EXPENSIVE 42.1×/28.7×. 168→169.
-
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
