@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v176
+register_version: v177
 register_date: 2026-07-29
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 176
-verdict_split: "WATCH 27 · AVOID 148 · BUY 0 · DNAF 1"
+names_total: 177
+verdict_split: "WATCH 27 · AVOID 149 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v176 · 2026-07-29)
+# GSC Register — Master Watchlist (v177 · 2026-07-29)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 148 names, alphabetical
+### AVOID — 149 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -177,6 +177,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PYPL | PayPal Holdings, Inc. | 2026-07-28 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $56.07 (27 Jul 2026) | CHEAP ≈ $33.7–46.8 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ $51.6; no P12) — FAIR 8.7×/8.3× | — | FY2026 (~Feb 2027) drops FY2016 tranche + FY26 buyback re-test; v3.5.0 redemption limbs (a),(b) fail |
 | QCOM | QUALCOMM Incorporated | 2026-07-08 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | $182.97 (8 Jul 2026) | CHEAP < ≈ $68 (EV/OI, conservative EV; all-cash-excess ≈ $77; MCap/FCF leg ≈ $97; P12 edge ≈ $88) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) re-anchors + FY26 buyback re-test (H1 running 13.4–14.4×, flag zone); 2027 Apple licensing expiry re-tests Future |
 | RACE | Ferrari N.V. | 2026-07-28 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | ADEQUATE | FAIL | €331.80 (27 Jul 2026) | CHEAP < ≈ €63 (MCap/FCF; EV/OI consv leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 42.1×/28.7× | — | FY2026 20-F (~Feb 2027): 1st year of €3.5bn 2026–30 programme, P19 re-test; v3.5.0 redemption limbs all fail |
+| RMS | Hermès International SCA | 2026-07-29 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | STRONG | FAIL | €1,695.50 (28 Jul 2026) | CHEAP < ≈ €321 (MCap/FCF binds; EV/OI legs €415/€537 no-cash/all-cash; P12 edge ≈ €401) — EXPENSIVE 42.3×/25.5× | — | FY2026 URD (~Mar 2027): P19 re-test + 3rd ROCE_wc decline fires P4; alert < ≈ €400 |
 | ROK | Rockwell Automation, Inc. | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | ADEQUATE | ADEQUATE | FAIL | ~$472 | CHEAP < ≈ $77 (EV/OI, strict; MCap/FCF ≈ $96; no P12 — Past ADEQUATE). Cheapness EXPENSIVE | — | FY2026 10-K (~Nov 2026) — flip needs sustained buyback discipline (FY21–25 strikes both bases); Q3 4 Aug 2026 opt. |
 | RUSTA | Rusta AB | 2026-07-27 | v1 | AVOID (Past WEAK: L/E 344–595%, thin hist. · SF FAIL: P19 sterilisation) | WEAK | ADEQUATE | FAIL | SEK 84.90 (24 Jul 2026) | CHEAP < ≈ SEK 8.1 (EV/OI, consv EV; FCF leg ≈ SEK 62 lease-flattered) — EXPENSIVE 19.3×/11.0× | — | AR 25/26 (~Aug 2026) + AGM (~Sep 2026) P19 authorisation watch; P19 v3.9.0 de-minimis re-test |
 | SAF | Safran SA | 2026-07-15 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | STRONG | FAIL | €330.8 (SAF.PA, 15 Jul 2026) | CHEAP < ≈ €75 (EV/OI & MCap/FCF converge; no P12 — Past ADEQUATE) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) P19 re-test on €5bn pgm (2025 tranche 22–25× EV/OI, >20×); H1'26 ~Sep 2026; alert < ≈ €90 |
@@ -259,15 +260,16 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, MORN, GRMN, SU re-test at scheduled reviews (**TER cleared 2026-07-29 — v2**); SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears CROX/BKNG/AD; ENR €2bn purpose at FY2026 AR.
 - **TER** — FY2026 10-K: P19 re-test on the full-year record (Q1-26 restraint is redemption limb (b) in progress only, limbs a/c fail); insider-sale volume since Apr 2026 untested vs P17 — TER memo App. E.
 - **OR.PA** — SF FAIL rests on 7 sourced repurchase tranche-yrs (22–40× EV/OI, both reads). Open INDETERMINATEs: FY2016/FY2018 gross counts + sterilisation quantum; Aesop pre-deal OI (Natura filings). FY2026: P4 3rd-decline re-test, Galderma 20% (€4.2bn) + Kering Beauté/Creed audit.
+- **RMS** — FY2017 & FY2020 repurchase tranches unmeasured (AR2017/URD2020 not retrieved; both clear de-minimis, both testable); ROCE_wc 2 straight declines — 3rd at FY2026 fires P4 → Past WEAK. Family % of capital/votes not retrieved — RMS memo App. A/B3/E.
 - **PIRC** — control flag standing: Camfin–MPI shareholders' agreement lapsed 28 Feb 2026; IFRS 10 control determination carried 9–6 with Sinochem directors against. Re-test at FY2026 AR.
 
 ---
 
 ## Change log
 
+- **v177 — 2026-07-29** — RMS ANALYSE v1: **AVOID** (SF FAIL — P19 on three independent routes: repetition, FY2021 32.4×/43.2× EV/OI, sterilisation escalation). Past & Future STRONG; band ≈ €321.
 - **v176 — 2026-07-29** — OR.PA ANALYSE v1: **AVOID** (SF FAIL — P19: 7 tranche-yrs strike >20× on both reads, incl. €8.9bn Nestlé block at €400). Past ADEQUATE (P4 3rd ROCE decline). France block opened.
 - **v175 — 2026-07-29** — ZM ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 9.9% vs the 10% floor; Future WEAK — 2 strong forces + eroding moat; SF FAIL — P19 repetition + FY23 89.3×).
 - **v174 — 2026-07-29** — TER REVIEW v2: **AVOID holds** (SF FAIL — P19 now two independent hard strikes: 7 flagged tranche-years + FY25 >20× on both reads). Q1-26 10-Q added; band $22.56 → $22.86.
 - **v173 — 2026-07-29** — PIRC ANALYSE v1: **AVOID** (Past WEAK — worst-of-four ROCE 6.2%, 7.4% ex-goodwill, vs the 10% floor). Future STRONG, SF PASS w/ control flag. Italy block complete.
-- **v172 — 2026-07-28** — HEXA-B SF re-test v2: **FAIL holds**, AVOID unchanged (sterilisation escalates — FY20–23 tranche-years 14.2–25.4× EV/OI at their annual lows; repetition strikes independently). **v3.9.0 queue closed.**
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
