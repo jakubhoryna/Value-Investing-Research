@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v3.6.0
-model_date: 2026-07-26
+model_version: v3.7.0
+model_date: 2026-07-28
 status: live
 bootstrap_required: BOOTSTRAP v1.0.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.6.0 · 2026-07-26)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v3.7.0 · 2026-07-28)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -113,7 +113,7 @@ At the current price (EV = market cap + total debt + preferred + minority intere
 
 Verdict **CHEAP / FAIR / EXPENSIVE**: CHEAP = primaries pass as above and qualifier investigations (if triggered) clear. FAIR = primaries within ~25–75% above thresholds. EXPENSIVE = clear misses.
 
-**Trigger band (always compute).** The limit price: the share price at which **MCap/FCF ≤ 8 and EV/OI ≤ 7 simultaneously hold** — i.e., the lower of `P = 8 × FCF ÷ diluted shares` and `P = (7 × OI + cash & STI − debt − pref − NCI) ÷ diluted shares` (state which binds; use the conservative EV variant). Where Past is STRONG, also state the P12 outer edge. Report the qualifier-implied prices (3 × BV/sh, 3 × TBV/sh) for context — they are not band inputs unless the substitution rule applies. Mechanical threshold arithmetic from the framework, not a price target.
+**Trigger band (always compute).** The limit price: the share price at which **MCap/FCF ≤ 8 and EV/OI ≤ 7 simultaneously hold** — the lower of the FCF leg, `P = 8 × FCF ÷ diluted shares`, and the EV/OI leg. **The EV/OI leg is computed on both EV variants and reported as a range**, never as one number standing for both: `P_no-cash = (7 × OI − debt − pref − NCI) ÷ diluted shares` and `P_all-cash = (7 × OI + cash & STI − debt − pref − NCI) ÷ diluted shares`. Excess cash is unknowable (§2·1A), so the bracket that governs CE carries through to price; where the two bounds converge within ~5% print the single figure and say they converge, and where they diverge the width is itself the finding — it says the verdict turns on a cash judgment, and it is the situation P12 exists for. **Print both bounds labelled `no-cash / all-cash`; never a bound without its label, never one bound without the other.** CHEAP continues to require **both** variants to pass, so the no-cash bound is the strict all-pass line; the all-cash bound is the looser reading and, per §7.1, the ordering key when the band prints as a range. State which metric binds. Where Past is STRONG, also state the P12 outer edge. Report the qualifier-implied prices (3 × BV/sh, 3 × TBV/sh) for context — they are not band inputs unless the substitution rule applies. Mechanical threshold arithmetic from the framework, not a price target.
 
 **Sell-flag line (HELD names only — always compute).** The share price at which the *conservative* reading of P9 trips: `P_sell = (25 × OI + cash & STI − debt − pref − NCI) ÷ diluted shares` — the inversion of EV/OI = 25 on the all-cash-excess (lower) EV variant, so the flag fires only when even the flattering multiple exceeds 25. For substitution-rule names EV/OI is n.m.: no mechanical sell line; log a price-past-value judgment against the name's cheapness anchor instead.
 
@@ -293,9 +293,10 @@ the invalid ones (rebalancing, memorialising success, agent compensation).]
    vs 15×/20× if triggered; payout record.]
 ## F. Valuation math
    [Current multiple arithmetic (both EV variants); the threshold-implied
-   prices; binding-primary logic; P12 edge if applicable; P20 dual-basis bands
-   if active; qualifier prices for context; sell-flag line arithmetic if HELD;
-   backvaluing worksheet if used.]
+   prices — the EV/OI leg always shown as both bounds, each labelled no-cash
+   or all-cash, with the range and its width stated; binding-primary logic;
+   P12 edge if applicable; P20 dual-basis bands if active; qualifier prices for
+   context; sell-flag line arithmetic if HELD; backvaluing worksheet if used.]
 ## G. Change log
    [v1 — date — initial analysis. REVIEW versions append here.]
 ```
@@ -320,7 +321,7 @@ End the chat reply with the §7.4a commit: print the register diff (old row → 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px @ memo | Trigger band | Dist % | Next review / notes |
 ```
 
-**Format contract [v3.3.0] — the register is a lookup table, not a document.** A cell is a token, never a sentence chain. Hard caps: no cell exceeds **160 characters**. `Trigger band` carries the binding band, its metric, and at most one basis tag (e.g. `CHEAP < ≈ $93 (EV/OI, ex-imp FY25 OI) — EXPENSIVE`); `Next review / notes` carries the review date or event token, at most one flag token, and any price alert (e.g. `FY2026 10-K (~Feb 2027) re-tests P19; alert < ≈ $120`). Alternate band legs, execution tables, flip narratives, force tallies, and rationale of any kind live in the memo (§6.2 body, §6.3 appendices) — **the register points, the memo explains.** Portfolio-table cells follow the same discipline: `Zone` is the zone word plus a reason code (e.g. `SELL-FLAG (SR2)`); band and sell-line cells are figure + basis tag. `## Open items` entries are one line each. Anything a cap forces out is, by construction, already in a memo; if it is not, it goes into the memo at the next touch — never back into the register.
+**Format contract [v3.3.0] — the register is a lookup table, not a document.** A cell is a token, never a sentence chain. Hard caps: no cell exceeds **160 characters**. `Trigger band` carries the binding band, its metric, and at most one basis tag (e.g. `CHEAP ≈ $84–93 (EV/OI no-cash/all-cash, ex-imp FY25 OI) — EXPENSIVE`); where the binding metric is EV/OI the cell carries **both bounds and their `no-cash/all-cash` labels** (§2), collapsing to one figure only where the variants converge; `Next review / notes` carries the review date or event token, at most one flag token, and any price alert (e.g. `FY2026 10-K (~Feb 2027) re-tests P19; alert < ≈ $120`). Alternate band legs, execution tables, flip narratives, force tallies, and rationale of any kind live in the memo (§6.2 body, §6.3 appendices) — **the register points, the memo explains.** Portfolio-table cells follow the same discipline: `Zone` is the zone word plus a reason code (e.g. `SELL-FLAG (SR2)`); band and sell-line cells are figure + basis tag. `## Open items` entries are one line each. Anything a cap forces out is, by construction, already in a memo; if it is not, it goes into the memo at the next touch — never back into the register.
 
 **Ordering rule [v3.2].** The PORTFOLIO table always precedes the master table. The master table is sectioned by verdict in fixed order — **BUY → WATCH → AVOID** (DNAF, if any, last). Within BUY and WATCH, rows sort **ascending by relative distance to the buy zone**, shown in the `Dist %` column: `Dist % = last recorded price ÷ operative trigger − 1`. The **operative trigger** is the first headline "CHEAP < ≈ X" figure in the trigger-band cell — the memo's binding band; where that binding figure is printed as a range (data-treatment uncertainty), use its upper bound; substitution-rule names use their stated cheapness anchor; allowances, alternates, and P12 edges printed after the binding figure are never the ordering key. The **last recorded price** is Px @ memo, superseded by a fresher SWEEP price where one has been logged. Names with no computable trigger sort to the section bottom marked `n.m.`; AVOID rows stay alphabetical and print `—` (their bands are moot). Ordering and Dist % recompute at every register regeneration; distances on memo prices are stale by construction between sweeps — a SWEEP refreshes them (§8.3). No separate in-register verdict-summary section — the split lives in the register front matter.
 
@@ -450,6 +451,12 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`
 - The token is a secret: never echo or print it in chat prose, memos, or committed files, and never transmit it anywhere other than `api.github.com`. These guardrails restate the bootstrap's resident set; the bootstrap wins on any conflict.
 
 -----
+
+## v3.7.0 CHANGE LOG (2026-07-28)
+
+- **§2 Gate 2 — trigger-band formula corrected and re-based on the excess-cash bracket.** The printed formula carried the cash add-back (all-cash-excess algebra) while the same sentence instructed "use the conservative EV variant" — two incompatible readings of one rule, and the defect propagated: TROW's memo printed the add-back under the label "conservative EV." Resolved not by collapsing to the strict bound but by carrying Marshall's bracket through to price as it already runs through CE: the EV/OI leg is computed on **both** variants and printed as a labelled range. Rationale: EV deducts cash by definition — the two variants bracket how much of it is *excess*, which the book holds to be unknowable, so a single number silently answers a question the framework refuses to answer. Where cash is immaterial the bounds converge and one figure prints (the book's own worked example). CHEAP still requires both variants to pass, so the no-cash bound remains the strict all-pass line; the all-cash bound is the ordering key per the §7.1 range rule.
+- **§6.3 App. F / §7.1.** Memo Appendix F states both bounds, each labelled, plus the range width. Register band cells carry both bounds and their `no-cash/all-cash` labels where EV/OI binds. No cap change.
+- **MINOR release** — band, Dist % and ordering impact; no gate, parameter, threshold or verdict-mapping change. §8.4 step-3 scan. Headline figure wrong (built on the superseded formula, restate at next touch): **BABA** $59.4 → ≈$40.3–59.4; **TSM** NT$598 → ≈NT$480–598; **AMZN** $55.96 → ≈$44.5–56.0 ($36.2–47.7 incl. op-leases); **LIFCO-B** SEK 59.30 → ≈SEK 55.2–59.3; **TROW** (HELD, band → ≈$66–69, EV/OI no-cash displaces MCap/FCF as binding — the only zone-affecting restatement). Headline correct, upper bound to be added: **IBKR**, CROX, FIE, GSK, ULVR, AXFO, CSU, INDT, KNIN, SKF-B, THULE, and PYPL (≈$33.7–46.8, committed earlier today). Variant not stated in-memo, re-derive: **BKNG**, **ROG**. **IFCN** leg restates ≈CHF 20–24.5, CHF 18 band unchanged. No verdict flips and no section changes; Dist % ordering shifts for restated names.
 
 ## v3.6.0 CHANGE LOG (2026-07-26)
 
