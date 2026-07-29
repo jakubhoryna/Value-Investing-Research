@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v179
+register_version: v180
 register_date: 2026-07-29
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 179
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v179 · 2026-07-29)
+# GSC Register — Master Watchlist (v180 · 2026-07-29)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -161,7 +161,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MSFT | Microsoft Corporation | 2026-07-06 | v2 | AVOID (SF FAIL: buybacks) | STRONG | ADEQUATE | FAIL | ~$390 | CHEAP < ≈ $105 (EV/OI, conservative EV, P20 maintenance basis; P12 edge ≈ $113; strict all-capex ≈ $77). Cheapness EXPENSIVE | — | FY2026 10-K, results 28 Jul 2026 — band moves; P19 re-test on FY26 buyback table (FY23–25 at 22.5–25.5× EV/OI) |
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
 | MYCR | Mycronic AB (publ) | 2026-07-25 | v2 | AVOID (SF FAIL: P19 dilution-sterilisation) | STRONG | ADEQUATE | FAIL | SEK 342.80 (24 Jul 2026) | CHEAP < ≈ SEK 50.9 (MCap/FCF; EV/OI leg ≈ SEK 67.4; P12 edge ≈ SEK 64) — moot given AVOID. EXPENSIVE 53.9×/34.7× | — | FY2026 AR (~Apr 2027) re-tests P19 + acq cohort; WATCH absent strike, OOR +574%; 10y window completed v2 |
-| NESN | Nestlé S.A. | 2026-07-14 | v1 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 83.88 (14 Jul 2026) | CHEAP < ≈ CHF 13 (EV/OI, consv EV, FY25 op. profit; MCap/FCF leg ≈ CHF 34 all-capex / ≈ CHF 28 run-rate; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) + 2026 gov/comp report re-test P19 (CHF 20bn 2022–24 pgm @ CHF 106.74 ≈ 23× EV/OI); flip needs below-worth buyback discipline |
+| NESN | Nestlé S.A. | 2026-07-29 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | CHF 82.40 (28 Jul 2026) | CHEAP < ≈ CHF 8.9–11.2 (EV/OI no-cash/all-cash, FY25 OI, H1-26 BS; MCap/FCF leg ≈ CHF 34; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) + 2026 comp report; v3.11.0 P19 re-test done: 8 strike-yrs 2017–24; flip needs below-worth buyback discipline (redemption a+b unmet) |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
 | NKE | NIKE, Inc. | 2026-07-09 | v2 | AVOID (SF FAIL: P19 buybacks) | ADEQUATE | ADEQUATE | FAIL | $42.89 (close 8 Jul 2026) | CHEAP < ≈ $10.5 (EV/OI, conservative EV, FY2026 prelim OI; all-cash-excess leg ≈ $16.6; MCap/FCF leg ≈ $17.7) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 10-K (~Jul 2026, imminent) re-anchors; Sep 2026 proxy — Hill + Denton comp; flip needs a below-flag pgm year (FY20–25 all > 20×) |
 | NOLA-B | Nolato AB | 2026-07-27 | v2 | AVOID (SF FAIL: flag pair — P17 year-read flag [v3.6.0] + P19 GW Plastics flag) | ADEQUATE | ADEQUATE | FAIL | SEK 48.20 (27 Jul 2026) | CHEAP < ≈ SEK 8 (MCap/FCF, all-capex FY25; EV/OI leg ≈ SEK 22.3) — EXPENSIVE 14.3×/47.6× | — | FY2026 AR (~Apr 2027) — P17 year-read re-test on FY26 FCF; either flag clearing → WATCH |
@@ -257,6 +257,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **WISE** — FY24/FY25 repurchase cash not XBRL-tagged (ranges straddle: 10.3–15.1× / 10.5–15.5× EV/OI) → escalation INDETERMINATE; own-cash split unseparable, all-cash EV a bound — WISE memo App. A/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
 - **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. **QUEUE CLOSED 2026-07-28 — no verdict or column moved.** Verdict candidates all held AVOID; **HEXA-B** SF column re-tested, FAIL holds on the range fallback (FY20–23 tranche-years 14.2–25.4× at their annual lows). No flip: **EPI-A** (v2 — FY21/22 sterilising years 17.7–24.9× EV/OI), **ESSITY-B** (v2 — repetition limb replaces both v1 routes), **WISE** (v2 — FY26 sterilising year 19.0–23.4×, robust), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
+- **MODEL v3.11.0 either-read queue** — the P19 flag now fires on either read (was year-only); joins every P19 name's next touch (App E logs both reads since v3.4.0). Done: **NESN v2 2026-07-29** — strike record deepens (8 tranche-yrs >20× on both reads).
 - **MODEL v3.11.0 re-test queue** — P19 flag now fires on **either read** (year or 3y-normalized) and de-minimis withdrawal trips on **either cumulative bar** (FCF or OI); no candidates enumerable from register cells — applies at every P19 name's next touch alongside the v3.4.0/v3.9.0 queues (App E logs both reads since v3.4.0).
 - **CROX / TROW (held)** — confirm the P21 ADD band reads on the no-cash bound after the v3.9.0 correction; both currently state the strict leg, so expected confirmatory.
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
@@ -270,9 +271,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v180 — 2026-07-29** — NESN REVIEW v2: **AVOID holds** (P19: 8 tranche-yrs 2017–24 >20× both reads, v3.11.0 either-read). 10y B-tables rebuilt — record-limited cleared; band → CHF 8.9–11.2.
 - **v179 — 2026-07-29** — BN ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 7.5%; Future WEAK — 2 strong forces; SF FAIL — P19 repetition + FY25 sterilisation + WhiteWave 37.5×).
 - **v178 — 2026-07-29** — CDI.PA ANALYSE v1: **AVOID** on two gates (Past WEAK — L/E 296% ex-NCI; SF FAIL — Tiffany 22.1× in-consolidation + 97.5% control clause). MODEL item: holdco/NCI rule.
 - **v177 — 2026-07-29** — RMS ANALYSE v1: **AVOID** (SF FAIL — P19 on three independent routes: repetition, FY2021 32.4×/43.2× EV/OI, sterilisation escalation). Past & Future STRONG; band ≈ €321.
 - **v176 — 2026-07-29** — OR.PA ANALYSE v1: **AVOID** (SF FAIL — P19: 7 tranche-yrs strike >20× on both reads, incl. €8.9bn Nestlé block at €400). Past ADEQUATE (P4 3rd ROCE decline). France block opened.
-- **v175 — 2026-07-29** — ZM ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 9.9% vs the 10% floor; Future WEAK — 2 strong forces + eroding moat; SF FAIL — P19 repetition + FY23 89.3×).
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
