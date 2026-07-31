@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v185
+register_version: v186
 register_date: 2026-07-31
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 182
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v185 · 2026-07-31)
+# GSC Register — Master Watchlist (v186 · 2026-07-31)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -238,6 +238,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Open items
+- **MODEL v4.0.0 judgment re-test queue [P19 → §2·1C·3 judgment protocol]** — every P19-driven SF FAIL re-tests at next touch; held **CROX / NOVO-B first** (SELL-FLAGs likely lift on SOUND). Candidates (quality gates pass): ABNB, ABB, ALFA, ASML, ATCO-B, COST, CROX, EPI-A, ESSITY-B, GEBN, GOOGL, GRMN, HUBN, KNEBV, LISN, MC.PA, META, MORN, MSFT, MYCR, NESN, NKE, NOVO-B, OR.PA, QCOM, RACE, RMS, ROK, SAF, SAND, SAP, SAVE, SCHN, SIE, SIKA, SONY, SOON, STMN, SU, TER, TRI, WMT, 7936.T. Mixed pairs re-check: AAPL, MA, DLG, NOLA-B, PSH, WISE. WATCH-name P19 flags (INVE-B, BKNG, FIE, ROG, ULVR, KNIN, AXFO, LIFCO-B) become judgment context.
 - **EL.PA** — FY2020 tranche purpose n/r (price-flag robust); FY2024 execution count/price n/r (full-range robust); GrandVision FY2017 OI leg n/r; Supreme (2024, ~€1.4bn) pre-deal OI undisclosed → audit INDETERMINATE — re-tests at URD 2026 (~Mar 2027).
 
 - **MODEL v3.7.0 band restatement — complete.** Every EV/OI band now prints a labelled no-cash/all-cash range (or one figure where the bounds converge). Eleven memo headlines had been built on the all-cash leg — BABA, TSM, AMZN, LIFCO-B, TROW, BKNG, ROG, FIE, ULVR, AXFO, NVS — five of them labelled "conservative EV" over add-back arithmetic; each memo's App. F restates at next REVIEW. **IBKR** upper bound not derivable (firm-vs-customer cash split is a logged judgment) — single figure, flagged. **Dist %/ordering recomputed at the 2026-07-28 sweep (v165)** — GSK moved up on the higher upper-bound trigger; KNIN and INDT up, AXFO and LIFCO-B down.
@@ -262,11 +263,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **WISE** — FY24/FY25 repurchase cash not XBRL-tagged (ranges straddle: 10.3–15.1× / 10.5–15.5× EV/OI) → escalation INDETERMINATE; own-cash split unseparable, all-cash EV a bound — WISE memo App. A/E.
 - **MYCR** — two P19 hard strikes (LTIP sterilisation; FY2025 tranche 30.0×/26.1×); FY2026 AR: acquisition cohort + supplier spend; P19 v3.9.0 de-minimis + sterilisation re-test — MYCR memo App. E.
 - **MODEL v3.9.0 re-test queue** — sterilisation is now a flag (strike only if the year breaches 14×/16×) and repetition needs ≥2 flagged tranche-years. **QUEUE CLOSED 2026-07-28 — no verdict or column moved.** Verdict candidates all held AVOID; **HEXA-B** SF column re-tested, FAIL holds on the range fallback (FY20–23 tranche-years 14.2–25.4× at their annual lows). No flip: **EPI-A** (v2 — FY21/22 sterilising years 17.7–24.9× EV/OI), **ESSITY-B** (v2 — repetition limb replaces both v1 routes), **WISE** (v2 — FY26 sterilising year 19.0–23.4×, robust), ATCO-B, MYCR (independent >20× strikes), BC, BOL, BRZE, RUSTA (quality gates), STMN (flag pair holds), MONC (9.8% of FCF, material on all four denominators). Every P19 name additionally needs the four-denominator de-minimis test at its next touch.
-- **MODEL v3.11.0 either-read queue** — the P19 flag now fires on either read (was year-only); joins every P19 name's next touch (App E logs both reads since v3.4.0). Done: **NESN v2 2026-07-29** — strike record deepens (8 tranche-yrs >20× on both reads); **CROX v5 2026-07-31** — FY2021 flags on norm reads → repetition strike, SF FAIL.
-- **MODEL v3.11.0 re-test queue** — P19 flag now fires on **either read** (year or 3y-normalized) and de-minimis withdrawal trips on **either cumulative bar** (FCF or OI); no candidates enumerable from register cells — applies at every P19 name's next touch alongside the v3.4.0/v3.9.0 queues (App E logs both reads since v3.4.0).
 - P21 ADD-band no-cash confirmation (v3.9.0) — **complete**: TROW v4 2026-07-31 ($55.5, MCap/FCF binds); CROX v5 2026-07-31 confirmed on the no-cash bound before going moot (AVOID).
 - **MONC** — 10y record truncated to FY2021–25: issuer CDN blocks bulk PDF retrieval, AR extraction stops before the statements. Rebuild FY2016–20 + verify P17/RPT at next REVIEW — MONC memo App. A.
-- **P19 dual-read queue [v3.4.0]:** SCHN, GEBN, SAF, MORN, GRMN, SU re-test at scheduled reviews (**TER cleared 2026-07-29 — v2**); SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; worth-check flag-clears BKNG/AD (**CROX examined & denied 2026-07-31 — v5**); ENR €2bn purpose at FY2026 AR.
+- P17/comp remnants of the retired v3.4.0 P19 queue: SHA0/BAYN P17 at next touch; MA comp at the Apr 2027 proxy; ENR €2bn purpose at FY2026 AR. (All P19 legs superseded 2026-07-31 by the v4.0.0 judgment queue.)
 - **TER** — FY2026 10-K: P19 re-test on the full-year record (Q1-26 restraint is redemption limb (b) in progress only, limbs a/c fail); insider-sale volume since Apr 2026 untested vs P17 — TER memo App. E.
 - **OR.PA** — SF FAIL rests on 7 sourced repurchase tranche-yrs (22–40× EV/OI, both reads). Open INDETERMINATEs: FY2016/FY2018 gross counts + sterilisation quantum; Aesop pre-deal OI (Natura filings). FY2026: P4 3rd-decline re-test, Galderma 20% (€4.2bn) + Kering Beauté/Creed audit.
 - **RMS** — FY2017 & FY2020 repurchase tranches unmeasured (AR2017/URD2020 not retrieved; both clear de-minimis, both testable); ROCE_wc 2 straight declines — 3rd at FY2026 fires P4 → Past WEAK. Family % of capital/votes not retrieved — RMS memo App. A/B3/E.
@@ -278,9 +277,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v186 — 2026-07-31** — MODEL **v4.0.0** committed (P19 → capital-allocation judgment protocol). v4.0.0 re-test queue added (43 P19-driven AVOIDs; held CROX/NOVO-B priority); v3.4.0/v3.11.0 P19 queues superseded.
 - **v185 — 2026-07-31** — CROX REVIEW v5: **AVOID** (SF FAIL — P19 repetition: FY2021 flags on norm reads, v3.11.0 either-read; worth checks denied). HELD → **SELL-FLAG (SR2)**. Q2'26 in memo.
 - **v184 — 2026-07-31** — TROW REVIEW v4: **WATCH/HOLD** (Q2'26 beat, AUM $1.89T; multi-asset flows +$0.4B, TDF n.d. — moat amber); band restated no-cash/all-cash; P21 bound $55.5 confirmed.
 - **v183 — 2026-07-31** — EL.PA ANALYSE v1: **AVOID** on two gates (Past WEAK — w-o-4 ROCE 4.5%, €40.8bn GW+intang; SF FAIL — P19 sterilisation strikes ×5 yrs 22–37× EV/OI + GrandVision audit 27.4×). France block continues.
 - **v182 — 2026-07-29** — DEC ANALYSE v1: **AVOID** on two gates (Past WEAK — w-o-4 ROCE 3.0%, L/E 258%; Future WEAK — 2 strong forces). SF PASS, one flag (APN 2018 ≈17–19× pre-deal OI). France block continues.
-- **v181 — 2026-07-29** — EDEN ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 7.7%, float-in-CE; Future WEAK — eroding moat, IT/BR fee caps; SF FAIL — P19 sterilisation strikes 2019/21/23).
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
