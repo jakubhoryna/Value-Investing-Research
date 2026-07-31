@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v186
+register_version: v187
 register_date: 2026-07-31
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 182
-verdict_split: "WATCH 26 · AVOID 155 · BUY 0 · DNAF 1"
+verdict_split: "WATCH 27 · AVOID 154 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v186 · 2026-07-31)
+# GSC Register — Master Watchlist (v187 · 2026-07-31)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -19,11 +19,11 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 ## Portfolio table (HELD names — §7.2)
 
-*Positions mirrored from the IBKR snapshot of 2026-07-06 (§7.3); entry dates not in the snapshot — user to supply. Zone distances at 2026-07-28 prices (sweep 2026-07-28); ROG unavailable on Yahoo — GS price derived RHHBY×8×USDCHF 0.8184 ≈ CHF 367. Bias tick-through run — none invalidates (detail in the HFG v2, NOVO-B v4, and CROX v5 memos).*
+*Positions mirrored from the IBKR snapshot of 2026-07-06 (§7.3); entry dates not in the snapshot — user to supply. Zone distances at 2026-07-28 prices (sweep 2026-07-28); ROG unavailable on Yahoo — GS price derived RHHBY×8×USDCHF 0.8184 ≈ CHF 367. Bias tick-through run — none invalidates (detail in the HFG v2, NOVO-B v4, and CROX v6 memos).*
 
 | Ticker | Entry date(s) | Avg cost | Verdict | Zone | ADD band (P21) | Sell-flag line (P9) | Last zone check | Next review |
 |--------|---------------|----------|---------|------|----------------|---------------------|-----------------|-------------|
-| CROX (size redacted) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (SR2 — v5 re-verdict: SF FAIL, P19 repetition strike) | n/a — AVOID | n.m. — flag is governance, not price (P9 ex-imp ≈ $431; reported ≈ $46 trips — impairment artifact) | 2026-07-31 @ $123.66 | User decision; else FY2026 10-K (~Feb 2027) tests H1'26 tranche |
+| CROX (size redacted) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ $94 (no-cash bound, ex-imp FY25 OI; P12 edge $110 not ADD-eligible — Future ADEQUATE) — −26.3% away | ≈ $431 (ex-imp OI); reported-OI line ≈ $46 trips — impairment artifact, mitigated per P9 | 2026-07-31 @ $128.01 | FY2026 10-K (~Feb 2027) — FY26 tranche judgment + basis reset; alert < ≈ $94 |
 | HFG (size redacted, XETRA) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (SR2 — v2 re-verdict: Past WEAK + Future WEAK + SF FAIL) | n/a — AVOID | n.m. — flag is quality, not price (P9 line ≈ €14.5 adj. OI) | 2026-07-28 @ €3.42 | User decision; else FY2026 (~Mar 2027) |
 | NOVO-B (NVO ADR, 1:1) | n/a — user to supply | [redacted] | AVOID | **SELL-FLAG** (SR2, v5) — **user 2026-07-16: HOLD against flag (§7.2)** | n/a — AVOID | n.m. — flag is governance, not price (P9 line ≈ DKK 696 ≈ $106 ADR) | 2026-07-28 @ $50.96 ADR (NVO) | User decision; else AR-2026 / proxy (~Feb–Mar 2027); H1 5 Aug 2026 band only |
 | TROW (size redacted) | n/a — user to supply | [redacted] | WATCH | **HOLD** | < ≈ $55.5 — no-cash bound confirmed (MCap/FCF binds; P12 $66–69 excluded — Future ADEQUATE) — −53.5% away | ≈ $266 (+123%) | 2026-07-31 @ $119.28 | FY2026 (~Feb 2027); Q3'26 flows (~Oct) TDF check; alert < ≈ $82 |
@@ -36,11 +36,12 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 26 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 27 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | BRK.B                   | Berkshire Hathaway Inc.         | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | $508.74 (28 Jul 2026) | No usable CF trigger. Operative gauge P/B ≤1.2× ≈ $400 (MCap/BV & SOTP; substitution rule). Cheapness FAIR                              | +27% | FY2026 results (Feb 2027, Abel's first full year), or price < ~1.3× book (~$430)                                                                    |
+| CROX | Crocs, Inc. | 2026-07-31 | v6 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION; HEYDUDE indeterminate) | $128.01 (31 Jul 2026) | CHEAP < ≈ $94–98 (EV/OI 7× ex-imp FY25 OI, no-cash/all-cash; P12 edge ≈$110) — FAIR ex-imp / EXPENSIVE rep | +31% | Price < ≈ $94; FY2026 10-K (~mid-Feb 2027): FY26 tranche judgment + basis reset; HEYDUDE / litigation / tariff watch |
 | INVE-B                  | Investor AB                     | 2026-07-09 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 soft P19 flag; dual-class caveat) | SEK 407.15 (28 Jul 2026) | CHEAP < ≈ SEK 294 (adj-NAV −20%; substitution rule; strict −25% ≈ SEK 275) — EXPENSIVE                                                  | +38% | Q2'26 interim (16 Jul 2026); FY2026 (~late Jan 2027) re-anchors NAV; or price < ≈ SEK 330                                                           |
 | BKE                     | The Buckle, Inc.                | 2026-06-16 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | $44.60 (28 Jul 2026) | CHEAP < ≈ $31 (MCap/TBV @allowance; strict all-four ≈ $25). Cheapness FAIR                                                              | +44% | FY2026 results (~Mar 2027) or price → band; watch Axis Denim single-vendor, CEO succession                                                          |
 | KSPI                    | JSC Kaspi.kz                    | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (Hepsiburada flag)                   | $86.80 ADS (28 Jul 2026) | CHEAP < ≈ $42–52 (MCap/TBV binding; EV-build dependent). Cheapness FAIR                                                                 | +67% | FY2026 results (~Mar 2027), price < $58, or Rabobank close / Türkiye update                                                                         |
@@ -67,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 155 names, alphabetical
+### AVOID — 154 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -101,7 +102,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | COPN | Cosmo N.V. | 2026-07-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | CHF 67.70 | n.m. — FY25 OI & FCF negative | — | FY2026 results (~Mar 2027); Clascoterone-5% AGA 12-mo readout only if it changes the revenue mix |
 | COST | Costco Wholesale Corporation | 2026-07-09 | v1 | AVOID (SF FAIL: P19 buybacks) | STRONG | STRONG | FAIL | $912.97 | CHEAP < ≈ $141 (MCap/FCF binding; EV/OI leg ≈ $175; P12 edge ≈ $175) — moot given AVOID. Cheapness EXPENSIVE (51.8× MCap/FCF, 38.6× EV/OI) | — | FY2026 (~Sep 2026) P19 re-test (FY21–25 all > 20× EV/OI); flip needs a below-worth year or a halt; alert < ≈ $210 |
 | CRM | Salesforce, Inc. | 2026-07-12 | v2 | AVOID (Past WEAK + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | $163.32 | CHEAP < ≈ $55 (EV/OI @1.25×). Cheapness EXPENSIVE | — | Q2 FY27 (~2 Sep 2026, optional Agentforce-ARR check); FY27 10-K (~Mar 2027) status check; BUY needs Past upgrade (~FY2030 earliest) + deleverage + price |
-| CROX | Crocs, Inc. | 2026-07-31 | v5 | AVOID (SF FAIL: P19 repetition) | STRONG | ADEQUATE | FAIL (FY2019/20/21 flagged either-read, none rescued; worth checks denied) | $123.66 (31 Jul 2026) | CHEAP < ≈ $94–98 (EV/OI 7× ex-imp FY25 OI, no-cash/all-cash) — moot given AVOID; FAIR ex-imp / EXPENSIVE rep | — | FY2026 10-K (~Feb 2027): H1'26 tranche 2.345M @ $106.87 + redemption limbs; user sell decision pending |
 | CSG | CSG N.V. (Czechoslovak Group) | 2026-07-10 | v1 | AVOID (Past WEAK: leverage + Future WEAK: breadth + SF FAIL: flag pair) | WEAK | WEAK | FAIL | €13.60 (10 Jul 2026) | n.m. — FY2025 FCF −€470m, no price satisfies both primaries (EV/OI-leg context ≈ €7.8–8.6; no P12). Cheapness EXPENSIVE | — | H1 7 Aug 2026 (FCF, leverage, Ammo+); FY2026 AR (~Mar 2027); NSPA/Belgian-probe news reviews immediately |
 | DEC | JCDecaux SE | 2026-07-29 | v1 | AVOID (Past WEAK: w-o-4 ROCE 3.0%, L/E 258% + Future WEAK: 2 strong forces) | WEAK | WEAK | PASS | €22.08 (28 Jul 2026) | CHEAP < ≈ €1.87 (EV/OI all-cash; no-cash ≤ €0 unreachable; FCF leg €32.89) — moot given AVOID. EXPENSIVE 16.4× | — | FY2026 AR (~Mar 2027) informational; APN audit flag standing, strike INDETERMINATE |
 | DLG | De' Longhi S.p.A. | 2026-07-28 | v2 | AVOID (SF FAIL: La Marzocco RPT pair) | ADEQUATE | ADEQUATE | FAIL | €38.82 | CHEAP < ≈ €23.79 (MCap/FCF; EV/OI leg ≈ €24.81; no P12) — FAIR 13.1×/11.6× | — | FY2026 AR (~Mar 2027): LM standalone OI re-tests 20×; hard dates Feb 2028 IPO right / Feb 2029 demerger right |
@@ -238,7 +238,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Open items
-- **MODEL v4.0.0 judgment re-test queue [P19 → §2·1C·3 judgment protocol]** — every P19-driven SF FAIL re-tests at next touch; held **CROX / NOVO-B first** (SELL-FLAGs likely lift on SOUND). Candidates (quality gates pass): ABNB, ABB, ALFA, ASML, ATCO-B, COST, CROX, EPI-A, ESSITY-B, GEBN, GOOGL, GRMN, HUBN, KNEBV, LISN, MC.PA, META, MORN, MSFT, MYCR, NESN, NKE, NOVO-B, OR.PA, QCOM, RACE, RMS, ROK, SAF, SAND, SAP, SAVE, SCHN, SIE, SIKA, SONY, SOON, STMN, SU, TER, TRI, WMT, 7936.T. Mixed pairs re-check: AAPL, MA, DLG, NOLA-B, PSH, WISE. WATCH-name P19 flags (INVE-B, BKNG, FIE, ROG, ULVR, KNIN, AXFO, LIFCO-B) become judgment context.
+- **MODEL v4.0.0 judgment re-test queue [P19 → §2·1C·3 judgment protocol]** — every P19-driven SF FAIL re-tests at next touch; held **NOVO-B first** (CROX done 2026-07-31 v6 — **CAUTION**, flag lifted → WATCH/HOLD). Candidates (quality gates pass): ABNB, ABB, ALFA, ASML, ATCO-B, COST, EPI-A, ESSITY-B, GEBN, GOOGL, GRMN, HUBN, KNEBV, LISN, MC.PA, META, MORN, MSFT, MYCR, NESN, NKE, NOVO-B, OR.PA, QCOM, RACE, RMS, ROK, SAF, SAND, SAP, SAVE, SCHN, SIE, SIKA, SONY, SOON, STMN, SU, TER, TRI, WMT, 7936.T. Mixed pairs re-check: AAPL, MA, DLG, NOLA-B, PSH, WISE. WATCH-name P19 flags (INVE-B, BKNG, FIE, ROG, ULVR, KNIN, AXFO, LIFCO-B) become judgment context.
 - **EL.PA** — FY2020 tranche purpose n/r (price-flag robust); FY2024 execution count/price n/r (full-range robust); GrandVision FY2017 OI leg n/r; Supreme (2024, ~€1.4bn) pre-deal OI undisclosed → audit INDETERMINATE — re-tests at URD 2026 (~Mar 2027).
 
 - **MODEL v3.7.0 band restatement — complete.** Every EV/OI band now prints a labelled no-cash/all-cash range (or one figure where the bounds converge). Eleven memo headlines had been built on the all-cash leg — BABA, TSM, AMZN, LIFCO-B, TROW, BKNG, ROG, FIE, ULVR, AXFO, NVS — five of them labelled "conservative EV" over add-back arithmetic; each memo's App. F restates at next REVIEW. **IBKR** upper bound not derivable (firm-vs-customer cash split is a logged judgment) — single figure, flagged. **Dist %/ordering recomputed at the 2026-07-28 sweep (v165)** — GSK moved up on the higher upper-bound trigger; KNIN and INDT up, AXFO and LIFCO-B down.
@@ -246,7 +246,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **SAVE** — SF rests on rejecting MCap/FCF for a deposit-funded lender (NI-proxy); pre-FY2024 repurchase record undisclosed — detail: SAVE memo App. E.
 - P17/P19 re-examination queue **closed** (Tiers 1–3 complete; last flip NKE v2 2026-07-09); v3-clean cohort + CROX flip history in the memo App. G trails.
 - HFG (held) **SELL-FLAG** (SR2) — user decision pending; log decision + realised outcome here.
-- CROX (held) **SELL-FLAG** (SR2, v5 — P19 repetition strike) — user decision pending; log decision + realised outcome here. FY2026 10-K tests the H1'26 tranche (2.345M @ $106.87) + redemption limbs.
 - NOVO-B (held) **SELL-FLAG** (SR2, v5) — **user 2026-07-16: HOLD against flag** (§7.2); track outcome; AR-2026 re-test incl. v3.5.0 redemption limbs (all three fail today).
 - Held-name entry dates missing (not in the IBKR snapshot) — user to supply.
 - INPST delists on offer settlement (offer closes 27 Jul 2026; settlement H2) — archive the row then.
@@ -277,9 +276,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v187 — 2026-07-31** — CROX REVIEW v6 (first v4.0.0 judgment): **WATCH** — SF PASS, cap-allocation **CAUTION** (HEYDUDE misstep + undisciplined $2.0B pgm; recent execution ≤ worth). **SELL-FLAG → HOLD**.
 - **v186 — 2026-07-31** — MODEL **v4.0.0** committed (P19 → capital-allocation judgment protocol). v4.0.0 re-test queue added (43 P19-driven AVOIDs; held CROX/NOVO-B priority); v3.4.0/v3.11.0 P19 queues superseded.
 - **v185 — 2026-07-31** — CROX REVIEW v5: **AVOID** (SF FAIL — P19 repetition: FY2021 flags on norm reads, v3.11.0 either-read; worth checks denied). HELD → **SELL-FLAG (SR2)**. Q2'26 in memo.
 - **v184 — 2026-07-31** — TROW REVIEW v4: **WATCH/HOLD** (Q2'26 beat, AUM $1.89T; multi-asset flows +$0.4B, TDF n.d. — moat amber); band restated no-cash/all-cash; P21 bound $55.5 confirmed.
 - **v183 — 2026-07-31** — EL.PA ANALYSE v1: **AVOID** on two gates (Past WEAK — w-o-4 ROCE 4.5%, €40.8bn GW+intang; SF FAIL — P19 sterilisation strikes ×5 yrs 22–37× EV/OI + GrandVision audit 27.4×). France block continues.
-- **v182 — 2026-07-29** — DEC ANALYSE v1: **AVOID** on two gates (Past WEAK — w-o-4 ROCE 3.0%, L/E 258%; Future WEAK — 2 strong forces). SF PASS, one flag (APN 2018 ≈17–19× pre-deal OI). France block continues.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
