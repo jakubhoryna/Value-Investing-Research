@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v182
-register_date: 2026-07-29
+register_version: v183
+register_date: 2026-07-31
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 181
-verdict_split: "WATCH 27 · AVOID 153 · BUY 0 · DNAF 1"
+names_total: 182
+verdict_split: "WATCH 27 · AVOID 154 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v182 · 2026-07-29)
+# GSC Register — Master Watchlist (v183 · 2026-07-31)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,7 +68,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LIFCO-B | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 320.80 (28 Jul 2026) | CHEAP ≈ SEK 55.2–59.3 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ SEK 81; no P12) — EXPENSIVE | +441% | FY2026 YE 29 Jan 2027; AR-2026 (~Mar 2027) P19 cohort re-test; w-o-4 ROCE 14.4% vs 15% STRONG line |
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 
-### AVOID — 153 names, alphabetical
+### AVOID — 154 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -111,6 +111,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
 | EDEN | Edenred SE | 2026-07-29 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | €28.18 (29 Jul 2026) | CHEAP ≈ €10.59–25.11 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €34.84) — FAIR 7.4×/10.8× | — | FY2026 URD (~Mar 2027): P19 re-test of 2026 tranche + Brazil PAT ruling; Past hinges on float-in-CE call (memo App. C) |
 | EKTA-B | Elekta AB (publ) | 2026-07-25 | v1 | AVOID (Past WEAK — w-o-4 ROCE 7.6% + L/E 280%) | WEAK | ADEQUATE | PASS (1 flag: dividend > FCF FY22–24, net debt rose) | SEK 47.00 (24 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt+NCI ≈ 17.9× FY26 OI); MCap/FCF leg ≈ SEK 29.15. EXPENSIVE 94.7×/12.9× | — | H1 2026/27 (~Nov 2026); AR-2026/27 (~Jul 2027) re-anchors; structural — no price flips Past |
+| EL.PA | EssilorLuxottica SA | 2026-07-31 | v1 | AVOID (Past WEAK: w-o-4 ROCE 4.5% + SF FAIL: P19 sterilisation strikes 2021–25 + GrandVision 27.4×) | WEAK | STRONG | FAIL | €166.85 (31 Jul 2026) | CHEAP ≈ €16.4–20.6 (EV/OI no-cash/all-cash, H1-26 BS; MCap/FCF leg ≈ €64.8; no P12) — EXPENSIVE 20.6×/27.1× | — | FY2026 URD (~Mar 2027): FY26 tranche (4.56m @ €211.51) P19 re-test + Supreme/Optegra audits; Q3 20 Oct 2026 info only |
 | ELUX-B | AB Electrolux (publ) | 2026-07-25 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | SEK 22.83 (24 Jul 2026) | n.m. — FY25 FCF negative; no positive price clears EV/OI ≤ 7 (net debt+leases ≈ 6.9× OI); EXPENSIVE 17.2×/11.9× | — | FY2026 AR (~Mar 2027): 1st post-rights-issue year + Midea NA terms; Q2 (29 Jul 2026) optional |
 | ENB | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | ENR | Siemens Energy AG | 2026-07-20 | v1 | AVOID (Past WEAK ROCE 0.1% + SF FAIL: P19) | WEAK | WEAK | FAIL | €152.00 (20 Jul 2026) | CHEAP < ≈ €12 strict (EV/OI, no-cash EV; ≈ €26 all-cash leg; MCap/FCF leg ≈ €37) — moot given AVOID. EXPENSIVE 64.4× EV/OI | — | FY2026 AR (~Dec 2026): 1st clean-cycle year + P19 re-test of the €2bn/€6bn buyback |
@@ -237,6 +238,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Open items
+- **EL.PA** — FY2020 tranche purpose n/r (price-flag robust); FY2024 execution count/price n/r (full-range robust); GrandVision FY2017 OI leg n/r; Supreme (2024, ~€1.4bn) pre-deal OI undisclosed → audit INDETERMINATE — re-tests at URD 2026 (~Mar 2027).
 
 - **MODEL v3.7.0 band restatement — complete.** Every EV/OI band now prints a labelled no-cash/all-cash range (or one figure where the bounds converge). Eleven memo headlines had been built on the all-cash leg — BABA, TSM, AMZN, LIFCO-B, TROW, BKNG, ROG, FIE, ULVR, AXFO, NVS — five of them labelled "conservative EV" over add-back arithmetic; each memo's App. F restates at next REVIEW. **IBKR** upper bound not derivable (firm-vs-customer cash split is a logged judgment) — single figure, flagged. **Dist %/ordering recomputed at the 2026-07-28 sweep (v165)** — GSK moved up on the higher upper-bound trigger; KNIN and INDT up, AXFO and LIFCO-B down.
 - **MODEL — holdco / large-NCI substitution rule.** CDI.PA v1: full consolidation of a 42%-owned listed subsidiary breaks two rules in opposite directions — L/E ex-NCI 296% (109% incl. NCI) forces Past WEAK, while consolidated MCap/FCF 5.5× (13.5× look-through) screens cheap; NCI at book understates the claim by ≈€95bn vs market. Needs a §2·1A-style substitution — CDI memo App. C.
@@ -275,9 +277,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v183 — 2026-07-31** — EL.PA ANALYSE v1: **AVOID** on two gates (Past WEAK — w-o-4 ROCE 4.5%, €40.8bn GW+intang; SF FAIL — P19 sterilisation strikes ×5 yrs 22–37× EV/OI + GrandVision audit 27.4×). France block continues.
 - **v182 — 2026-07-29** — DEC ANALYSE v1: **AVOID** on two gates (Past WEAK — w-o-4 ROCE 3.0%, L/E 258%; Future WEAK — 2 strong forces). SF PASS, one flag (APN 2018 ≈17–19× pre-deal OI). France block continues.
 - **v181 — 2026-07-29** — EDEN ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 7.7%, float-in-CE; Future WEAK — eroding moat, IT/BR fee caps; SF FAIL — P19 sterilisation strikes 2019/21/23).
 - **v180 — 2026-07-29** — NESN REVIEW v2: **AVOID holds** (P19: 8 tranche-yrs 2017–24 >20× both reads, v3.11.0 either-read). 10y B-tables rebuilt — record-limited cleared; band → CHF 8.9–11.2.
 - **v179 — 2026-07-29** — BN ANALYSE v1: **AVOID** on three gates (Past WEAK — w-o-4 ROCE 7.5%; Future WEAK — 2 strong forces; SF FAIL — P19 repetition + FY25 sterilisation + WhiteWave 37.5×).
-- **v178 — 2026-07-29** — CDI.PA ANALYSE v1: **AVOID** on two gates (Past WEAK — L/E 296% ex-NCI; SF FAIL — Tiffany 22.1× in-consolidation + 97.5% control clause). MODEL item: holdco/NCI rule.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
