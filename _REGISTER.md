@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v228
+register_version: v229
 register_date: 2026-08-05
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 187
-verdict_split: "WATCH 49 · AVOID 137 · BUY 0 · DNAF 1"
+names_total: 188
+verdict_split: "WATCH 49 · AVOID 138 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v228 · 2026-08-05)
+# GSC Register — Master Watchlist (v229 · 2026-08-05)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -90,7 +90,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SIE | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of continuous criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%, buybacks > SBC re-issuance) | €282.65 (31 Jul 2026) | **BAND CORRECTED** from v1's €25–36: mechanical ≈ **€6.4–25.0** (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; **no P12 — Past ADEQUATE**). v1 wrongly used MCap/TBV as a band input and applied a P12 allowance; also printed MCap/BV threshold <5 vs live ≤3, so 3.5× **breaches**. Informational **SFS-adjusted band ≈ €43.5–62.0** — EXPENSIVE 28.0×/29.5× (24.9× ex-SFS) | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) completed tranche + CAUTION re-test; **Feb 2027 AGM Healthineers spin vote → mandatory full quality re-base**. Flips on PRICE limb: **no year in ten reaches ≈25× on any basis** — peak 24.3× strict EV/OI (FY2021, a €137m artifact tranche; parent pgm closed at €100.42 blended = 19.3×), 20.3× peak MCap/FCF, 20.2× peak ex-SFS, last 5 yrs 10.3–15.2× MCap/FCF. ⚠ Live 2024–29 €6bn pgm at €220+ levels, no criterion. ⚠⚠ **Captive-finance treatment unresolved (MODEL queue)** — decides Past (strict WEAK / adj ADEQUATE) and moves the band €25 → €62. Conf ~75% |
 | SGO | Compagnie de Saint-Gobain SA | 2026-08-03 | v1 | AVOID (Past WEAK: w-o-4 ROCE 8.9-9.4% on Business income; RECORD-LIMITED 5y) | WEAK | ADEQUATE | PASS (1 flag — cap-allocation CAUTION; tranche multiples + acq audits INDETERMINATE) | €81.28 (31 Jul 2026) | CHEAP ≈ €26.49–42.00 (EV/OI no-cash/all-cash, FY25 Business income; MCap/FCF leg ≈ €55.60; no P12) — EXPENSIVE 13.0×/11.3× | — | FY2026 results (~Feb 2027) + URD 2026; earlier on document rebuild — verdict is rebuild-sensitive |
 
-### AVOID — 137 names, alphabetical
+### AVOID — 138 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -102,6 +102,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ADS | adidas AG | 2026-07-04 | v1 | AVOID (Past WEAK: leverage + SF FAIL: buybacks) | WEAK | ADEQUATE | FAIL | €185.30 | CHEAP < ≈ €47 (EV/OI leg, conservative EV; MCap/FCF n.m. on WC-depressed FY2025 FCF, ≈ €46 on 5y-avg FCF) — moot given AVOID | — | FY2026 results (~early Mar 2027) — FCF and leverage reset; earlier if price < ≈ €52 |
 | AKZA | Akzo Nobel N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | ADEQUATE | FAIL | €56.28 (23 Jul 2026) | CHEAP < ≈ €28 (MCap/FCF; EV/OI leg ≈ €29; no P12) — EXPENSIVE 16.0×/12.6× | — | Axalta merger close (late 2026/early 2027) → fresh ANALYSE of MergeCo; price embeds ~€2.5bn special div; P19 struck 2017/19/21 |
 | AMV0 | Aumovio SE | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €35.90 (23 Jul 2026) | No CHEAP band — EV/OI n.m. (FY25 OI −€70m); FCF-leg ref ≈ €9.0. Cheapness EXPENSIVE 32.1× MCap/FCF | — | FY2026 AR (~Mar 2027) — first clean standalone year; thin history 4y (carve-out 2022–24) |
+| ANGI | Angi Inc. | 2026-08-05 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | $4.82 (5 Aug 2026) | CHEAP ≈ $0.50–5.15 (EV/OI no-cash/all-cash, FY25 OI) | — | FY2026 10-K (~Feb 2027); Q3-26 if guidance reinstated; P19 CAUTION re-test |
 | ASML | ASML Holding N.V. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | €1,434.20 (31 Jul 2026) | CHEAP ≈ €192–226 (EV/OI no-cash/all-cash, FY25 basis; MCap/FCF leg €228; P12 edge €228 — immaterial) — EXPENSIVE 48.8×/49.5×. **Band corrected** from v2 ≈€140 (MCap/TBV is not a band input, §2 Gate 2) | — | FY2026 (Jan 2027) + 20-F (Feb 2027): completed 2026 tranche w/ disclosed share counts removes the range bound; Q3'26 (Oct) cadence. ADVERSE: €12.0bn 2026–28 pgm (28 Jan 2026), H1'26 draw €2,077.5m, ≈€9.9bn undrawn, bounded 33.5–57.2× EV/OI yr / 38.7–66.0× norm across the entire H1 close range; no published price criterion; +533% above band. 9 pgm yrs, none below 27.5× normalized |
 | ASSA-B | ASSA ABLOY AB | 2026-07-24 | v1 | AVOID (Past WEAK: 3y ROCE decline) | WEAK | STRONG | PASS | SEK 347.10 (24 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, cons. EV) — academic given AVOID | — | FY2026 AR (~Mar 2027): ROCE-trend re-test; HHI P19 re-test |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
@@ -286,9 +287,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v229 — 2026-08-05** — ANGI (Angi) ANALYSE v1: **AVOID, 3 gates** — w-o-4 ROCE −1.3% (Σ10y OI −$110m); breadth FAIL + 4 forces; P17 strike both reads (2.6×/8.4×); P19 CAUTION. AVOID 138, names 188.
 - **v228 — 2026-08-05** — ZIP.AX (Zip Co, ASX) ANALYSE v1: **AVOID, 3 gates** — subst. ROE −83.8%; breadth FAIL + 4 forces; P19 ADVERSE (live pgm, 34–47× NI). AVOID 137, names 187.
 - **v227 — 2026-08-05** — ZIP (ZipRecruiter) ANALYSE v1: **AVOID, 3 gates** — w-o-4 ROCE 7.6%; breadth FAIL + 4 strong forces; P17 strike both reads; P19 ADVERSE ($629m never ≤ yardsticks, pgm live). AVOID 136, names 186.
 - **v226 — 2026-08-05** — SGO.PA (Saint-Gobain) ANALYSE v1: **WATCH** — Past ADEQUATE knife-edge (w-o-4 ROCE 10.07% vs 10% floor; BI basis 7.7% = WEAK, OI convention decides). Future ADEQUATE. SF PASS (1 flag — GCP 2022 @ 17.3× trailing EBITDA / ≈30×-class pre-deal EBIT; buybacks SOUND). FAIR 10.8×/9.7×. Band €39.7–51.6 EV/OI. Merged onto v225 (parallel sessions v220–v225). WATCH 48→49, names 184→185. Dist % +58%.
 - **v225 — 2026-08-05** — BKNG REVIEW v3 (Q2-26, v4.0.0): WATCH holds; P19 → **CAUTION** (H1-26 @ 14.5–16.6×); band ≈$94 → **$55–78** (P12 edge demoted §7.1); Dist +150%; counts fixed 48/135.
-- **v224 — 2026-08-04** — NOVO-B REVIEW v7 (H1-26): WATCH/HOLD holds; band → 170/180 labelled (leases in); FAIR 11.5–11.8×; Dist +71%; CAUTION restated (pgm 50% @ ≤14.5×); WATCH re-sorted.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
