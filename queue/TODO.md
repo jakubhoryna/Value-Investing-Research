@@ -1,4 +1,4 @@
-# GSC Analysis Queue — TODO.md (v4 · 2026-07-29)
+# GSC Analysis Queue — TODO.md (v5 · 2026-08-06)
 
 **Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
 
@@ -6,9 +6,43 @@
 
 ---
 
+## P19 judgment re-test queue — MODEL v4.0.0 §2·1C·3
+
+**Why it exists.** MODEL v4.0.0 (2026-07-31) replaced the mechanical P19 buyback/dividend tests with a single capital-allocation judgment — **SOUND / CAUTION (= one flag) / ADVERSE (= SF FAIL)**. Every name whose SF FAIL rested on a mechanical P19 strike must be re-read under the judgment protocol at its next touch. The authoritative status list is the register's `## Open items` entry "MODEL v4.0.0 judgment re-test queue"; this block is the work queue.
+
+**Tier 1 — quality gates pass, so the P19 re-read alone decides the verdict: CLOSED 2026-08-06 (8/8).**
+
+| Name | Prior | Run | Judgment | Outcome |
+|---|---|---|---|---|
+| SONY → 6758.T | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
+| ASICS → 7936.T | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
+| SOON → SOON.SW | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
+| STMN → STMN.SW | AVOID (P19 + DTC pair) | 2026-08-06 v2 | CAUTION | **→ WATCH** (STRONG/STRONG) |
+| TRI | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
+| SU → SU.PA | AVOID (P19 + AVEVA) | 2026-08-06 v2 | ADVERSE | AVOID holds |
+| TER | AVOID (P19) | 2026-08-06 v3 | ADVERSE | AVOID holds |
+| WMT | AVOID (P19) | 2026-08-06 v2 | ADVERSE | AVOID holds |
+
+**Tier 2 — mixed pairs, where the P19 leg is only one of two flags. A P19 re-read alone cannot flip these; the second leg has to be tested too.**
+
+| Name | Second leg | Status |
+|---|---|---|
+| NOLA-B.ST | P17 fiscal-year read flag | **Run 2026-08-06 v3 — CAUTION, pair holds, AVOID.** Flip is now one dated event: FY2026 FCF > ≈ SEK 295m clears the P17 year read → WATCH. FY2026 AR ~Apr 2027 |
+| WISE.L | Class B entrenchment (9:1, 64.7% of votes on 20.4% of capital) | **Run 2026-08-06 v3 — CAUTION, pair holds, AVOID.** KNEBV governs, not MC.PA. Re-test H1 FY2027 ~Nov 2026 |
+| AAPL | P17 comp strike | **Open** — flip requires comp reform; FY2026 10-K ~Oct/Nov 2026, then Jan 2027 proxy |
+| MA | P17 comp strike ($35.4m > $30m stop) | **Open** — 2027 proxy (~Apr 2027) |
+| DLG.MI | La Marzocco RPT pair | **Open** — FY2026 AR (~Mar 2027); hard dates Feb 2028 IPO right / Feb 2029 demerger right |
+| PSH.L | Fee extraction | **Open** — FY2026 AR (~Feb 2027) or any fee change |
+
+**Tier 3 — WATCH-name P19 flags: judgment context only, no queue action.** INVE-B.ST, FIE.DE, ROG.SW, ULVR.L, KNIN.SW, AXFO.ST, LIFCO-B.ST — each already carries one unpaired capital-allocation flag; they matter as calibration for the names above, and as pair-risk if a second negative ever appears.
+
+**Near-dated re-tests created by the 2026-08-06 batch** — the earliest points at which any of the five flips could revert: **7936.T Q2 tanshin 14 Aug 2026** (art. 459 board authority means a new programme can appear with no notice), **TRI NCIB expiry 18 Aug 2026** (renewal price decides), **STMN.SW H1-2026 19 Aug 2026** (treasury-share movement), **SOON.SW H1 FY26/27 ~Nov 2026** (successor programme), **6758.T H1 FY3/27 10 Nov 2026** (first completed half of the ¥500bn facility).
+
+---
+
 ## Priority — next up
 
-**France block, in list order** (user-set 2026-07-29). Italy closed 6/6 → next up **L'Oréal (OR.PA)**, then Hermès (RMS.PA), Christian Dior (CDI.PA), EssilorLuxottica (EL.PA), Vinci (DG.PA), Danone (BN.PA), Saint-Gobain (SGO.PA), Legrand (LR.PA), Michelin (ML.PA), Sodexo (SW.PA), Edenred (EDEN.PA), JCDecaux (DEC.PA), Bureau Veritas (BVI.PA), Valeo (FR.PA), Lagardère (MMB.PA), Trigano (TRI.PA — key collision, see Flags). Largest coherent blocks after France: US backlog (78), Japan majors (12), Poland (6).
+**France block, in list order** (user-set 2026-07-29) — **10 of 16 done**: OR.PA, RMS.PA, CDI.PA, EL.PA, DG.PA, BN.PA, SGO.PA, EDEN.PA, DEC.PA and LR.PA all carry register rows. Next up **Michelin (ML.PA)**, then Sodexo (SW.PA), Bureau Veritas (BVI.PA), Valeo (FR.PA), Lagardère (MMB.PA), Trigano (TRI.PA — key resolved to `TRI.PA` at register v233 §7.1a; `TRI` stays Thomson Reuters). The P19 re-test queue above is REVIEW work and runs alongside this ANALYSE block, not instead of it. Largest coherent blocks after France: US backlog (78), Japan majors (12), Poland (6).
 
 *France note.* Six French names already carry register rows from earlier runs — SAF, SAN, MC.PA (LVMH), KER, DSY, SU — and are REVIEW territory, not part of this ANALYSE block. CDI.PA is a ~42% holding company over LVMH (MC.PA, analysed): expect the §2·1A securities-heavy-holdco substitution question at Gate 1A and a MCap/NAV anchor at Gate 2, not a re-underwrite of LVMH.
 
@@ -50,7 +84,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 
 ---
 
-## Backlog by market — 128 names remaining
+## Backlog by market — 118 names remaining
 
 Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed: Switzerland (13/13), Germany (30/30), Netherlands (3/3) at v2; Sweden (25/25) at v3; Italy (6/6) at v4.*
 
@@ -74,23 +108,13 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Bridgestone — 5108.T
 - Canon — 7751.T
 
-### France — 16 remaining ◄ ACTIVE BLOCK (Safran, Sanofi + LVMH, Kering, Dassault Systèmes, Schneider already in register)
-- L'Oréal — OR.PA
-- Hermès — RMS.PA
-- Christian Dior — CDI.PA
-- EssilorLuxottica — EL.PA
-- Vinci — DG.PA
-- Danone — BN.PA
-- Saint-Gobain — SGO.PA
-- Legrand — LR.PA
+### France — 6 remaining ◄ ACTIVE BLOCK (10 of 16 completed as at v5; Safran, Sanofi + LVMH, Kering, Dassault Systèmes, Schneider were already in the register)
 - Michelin — ML.PA
 - Sodexo — SW.PA
-- Edenred — EDEN.PA
-- JCDecaux — DEC.PA
 - Bureau Veritas — BVI.PA
 - Valeo — FR.PA
 - Lagardère — MMB.PA
-- Trigano — TRI.PA  ⚑ ticker collision: register key `TRI` = Thomson Reuters — use a distinct register key (e.g. `TRI.PA`) at analysis time
+- Trigano — TRI.PA  ⚑ key collision RESOLVED at register v233 (§7.1a): Trigano keys `TRI.PA`; `TRI` remains Thomson Reuters
 
 ### Brazil
 - Nu Holdings — NU (US)
@@ -206,12 +230,13 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 
 - **"Cartara"** — no known US listing under this spelling; confirm intended name/ticker.
 - **Bed Bath & Beyond** — original bankrupt; brand now under Beyond Inc (BYON). Confirm entity.
-- **Trigano** — TRI.PA; register key `TRI` is taken by Thomson Reuters — assign a distinct key at analysis time.
+- **Trigano** — RESOLVED at register v233 under MODEL §7.1a (suffix-always for non-US lines): Trigano keys `TRI.PA`, Thomson Reuters keeps the bare US key `TRI`. No action needed at analysis time.
 - **Thin-history names** (⚠ throughout) — recent IPOs/spin-offs may not clear the Past gate; expect `INCOMPLETE` or Past = WEAK on insufficient data.
 
 ---
 
 ## Change log
+- **v5 — 2026-08-06** — **P19 judgment re-test queue added** as a first-class work queue. Tier 1 closed 8/8 on 2026-08-06 — five flips to WATCH (6758.T, 7936.T, SOON.SW, STMN.SW, TRI), three ADVERSE holds (SU.PA, TER, WMT); Tier 2 reduced to AAPL, MA, DLG.MI, PSH.L after NOLA-B.ST and WISE.L ran the same day. France block pruned of 10 completed names (16 → 6). Trigano key collision recorded as resolved at register v233. 128 → 118 names. **The "Scheduled reviews — near-term calendar" section was NOT refreshed** — it still reads against register v173 and is stale; refresh at the next RECONCILE. v4 to be archived → `queue/archive/TODO_v4_2026-07-29.md`.
 - **v4 — 2026-07-29** — Italy block completed 6/6 (MONC, 1913.HK, PIRC, BC, DLG all carry register rows at v173) → block removed. Priority switched to **France, in list order** (user-set). Calendar refreshed against register v173. 133 → 128 names. v3 archived → `queue/archive/TODO_v3_2026-07-28.md`.
 - **v3 — 2026-07-28** — Prune after the Sweden run: PDX, NOLA-B, RUSTA, BILI-A completed → Sweden block removed (25/25 done). Ferrari (RACE) completed → Italy down to 5. Priority set to the Italy block in list order. 138 → 133 names. v2 archived → `queue/archive/TODO_v2_2026-07-25.md`.
 - **v2 — 2026-07-25** — RECONCILE prune: 75 completed names removed (all of CH 13, DE 30, NL 3; SE 21; FI Kone; JP Sony; FR SAF+SAN; UK Wise; US GEN/U/DOCU + priority GEN/TER; dup lines dropped). 4 flags resolved (Uniper→UN0, INNIO→INIO, Synlab→SYAB DNAF, Covestro→1COV — all analysed). Trigano/TRI collision flagged. Added near-term review calendar (derived from register v149). 138 names remain. v1 archived → `queue/archive/TODO_v1_2026-07-15.md`.
