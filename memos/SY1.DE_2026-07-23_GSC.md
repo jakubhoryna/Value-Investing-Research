@@ -1,0 +1,157 @@
+---
+ticker: SY1.DE
+company: Symrise AG
+exchange: XETRA (Frankfurt)
+currency: EUR
+memo_date: 2026-07-23
+memo_version: v1
+price_at_memo: 87.94
+mcap_at_memo: 12291
+verdict: AVOID
+quality_past: WEAK
+quality_future: STRONG
+sf: PASS
+cheapness: EXPENSIVE
+trigger_band: "AVOID (Past WEAK) — band moot; ref CHEAP < ≈€11.5 (EV/OI, reported OI) / ≈€26.5 (EV/OI, underlying OI); FCF leg ≈€28.8"
+next_review: "FY2026 annual report (~Mar 2027); alert on €400m buyback execution price (P19)"
+position: —
+---
+
+# SY1.DE — Symrise AG: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | **WEAK** | STRONG | PASS | EXPENSIVE | **AVOID** (Past WEAK) |
+
+Symrise is a genuinely A-grade franchise — one of the global top-four flavor-and-fragrance houses, a broad consumer-goods customer base with none over 10% of sales, a durable switching-cost/ingrainedness moat, and a growing market — which is exactly why the market prices it at ~30× reported EV/OI and ~24× FCF. The problem is returns on capital, not business quality: ~€2.5bn of acquisition goodwill/intangibles plus a heavy PP&E base sit against €465–765m of operating income, so the worst-of-four normalized ROCE is **~7.9%** (8.7% adding back FY2025's impairments) — below the 10% ADEQUATE floor. That fails Gate 1A on its own; the valuation, 4–7× above the trigger band, would fail Gate 2 regardless. A verdict flip needs a structural step-up in capital efficiency **and** a ~70% price fall — not on the horizon.
+
+## 2. Understanding
+
+Symrise is a globally diversified B2B supplier of differentiated flavor and fragrance compositions, cosmetic ingredients, and functional nutrition/pet-food ingredients (products), sold to perfume, food & beverage, cosmetics, pharma, dietary-supplement and pet-food manufacturers (customers who pay), in the oligopolistic F&F / specialty-ingredients industry, as a vertically-integrated, acquisition-built listed AG headquartered in Holzminden, Germany with customers and plants across EAME/NA/APAC/LatAm (geography), ranking top-4 globally and a DAX constituent mid-way through a "ONE SYM" portfolio-and-efficiency transformation (status). Two segments: Taste, Nutrition & Health; Scent & Care. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four normalized 10y-style ROCE (FY21–25 sourced window) = **7.9%** (range 7.9–9.0%; 8.7–9.5% on impairment-adjusted OI) — below the 10% ADEQUATE floor. Worst-of-four FCFROCE ≈ **5.1%** (below the 8% STRONG floor). Per-share growth is mixed and impairment-distorted: reported OI/sh −4.5%/yr (underlying +8.1%), FCF/sh +15%, BV/sh +3.9%, TBV/sh +15%. Leverage is fine — L/E 112%, net debt/adj.EBITDA 1.9×, investment-grade (BBB+/Baa1). The returns are structurally suppressed by serial-acquisition goodwill, not by weak operations. **WEAK** (returns below the ADEQUATE floor across all four CE bases; 5-year sourced window flagged → STRONG unavailable in any case).
+
+## 4. Quality — future
+
+Breadth **PASS**: no customer >10% of sales (disclosed); supplier base broad across naturals and aroma chemicals (no >10% dependence evident). Four forces, all **WEAK** (tally 0 strong → favourable): customer power weak (many customers, improbable backward-integration, high reformulation/regulatory switching costs, despite large-FMCG price pressure in 2022–24); supplier power weak (many sources, own naturals backward-integration; note Madagascar-vanilla-type volatility); substitutes weak (flavor/scent function has no real substitute); new entrants weak (scale, IP, regulatory and relationship barriers protect a ~top-4 oligopoly). Moat: **switching costs + ingrainedness** (formulations locked into customer products for their life), **stable**. Market: growing (~3–4%+). **STRONG.**
+
+## 5. Shareholder-friendliness
+
+P17 clears easily: highest-paid board member (CEO Parisot) FY2025 total **€2.0m** — ~0.8% of net income, versus the 5%-of-lower(FCF €503m, NI €250m) ≈ €12.5m hard-strike line, and far under the ~€40m absolute trigger; supervisory-board fees are modest German norms. No buyback strike from the record — Symrise had **never** repurchased shares (the €400m programme is a 2026 event). Dividends rational (16th consecutive increase to €1.25; ~35% of FCF). One logged capital-allocation flag: the FY2025 **€150m Swedencare associate impairment + €149m Terpene write-down/divestment** signal a mixed recent M&A record — one flag (same test), heightened scrutiny, not a FAIL. RPT minimal (≈95% free float, no controlling holder). **PASS** — with the buyback and Swedencare/Terpene flags carried forward.
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap / FCF | 24.4× (21.4× simple) | ≤ 8 | Primary | **Fail** |
+| EV / OI (reported) | 32.1× / 30.0× | ≤ 7 | Primary | **Fail** |
+| EV / OI (underlying) | 19.6× / 18.2× | ≤ 7 | Primary | Fail |
+| MCap / BV | 3.30× | ≤ 3 | Qualifier | Fail |
+| MCap / TBV | 9.94× | ≤ 3 | Qualifier | Fail (goodwill) |
+
+Both primaries fail by 3–4×. Trigger band (price where both primaries hold): binding EV/OI leg ≈ **€11.5** on reported OI, ≈ **€26.5** on underlying OI; FCF leg ≈ €28.8. At €87.94 the stock is ~3.3–7.6× above trigger. No P12 edge (Past WEAK). **EXPENSIVE.**
+
+## 7. Risks & thesis-breakers
+
+- The whole call rests on ROCE structurally <10% from acquisition goodwill; a large divestiture/impairment cycle that shrinks the capital base could lift returns and flip Past to ADEQUATE.
+- FY2025 reported OI is depressed ~€299m by Swedencare + Terpene impairments; underlying OI (~€764m) is the fairer run-rate but still leaves ROCE ~9%.
+- The €400m inaugural buyback executed at ~19× underlying (~30× reported) EV/OI would be a live P19 concern — capital returned above conservative worth.
+- ONE-SYM transformation and moderated growth guidance signal real competitive/pricing pressure despite the stable moat.
+- Premium multiple leaves no margin of safety; a de-rating toward peers is the main downside for a holder.
+
+## 8. Flip conditions & next review
+
+To WATCH: a sustained ROCE step-up clearing 10% on the worst CE basis (capital-base reduction via divestment, or margin recovery post-transformation) would lift Past to ADEQUATE — but with Future STRONG and SF PASS the name would still only WATCH until price approaches the trigger band. To BUY: additionally a ~70%+ price fall into the ~€12–27 band — not a realistic near-term scenario. Next review: **FY2026 annual report (~Mar 2027)** — first clean post-impairment, post-Terpene-divestment basis; earlier if the €400m buyback discloses execution prices (P19 re-test) or the price halves.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+- **Reported statements:** Symrise Consolidated Financial Statements 2025 (Corporate Report 2025, "Konzernabschluss" PDF) — FY2024/FY2025 income statement, balance sheet, cash-flow; segment, geographic and customer-concentration notes. Reported EBIT FY2024 €717.8m, FY2025 €465.0m; CFO €894.9m / €772.3m; PP&E capex €227.4m / €196.8m; intangibles capex €15.4m / €14.6m; interest paid (financing) €63.8m / €57.6m.
+- **stockanalysis.com (etr/SY1):** FY2021–2025 income/balance/cash-flow series (free tier 5y). Cross-checked to reported statements where overlapping (FY24/25 exact; FY21/22 sales & CFO match the report five-year overview).
+- **Symrise Financial Report 2022** — five-year overview (FY2018–2022): sales, CFO, investments, balance-sheet total, capital ratio, employees (EBITDA/NI there are *normalized* — used for FY18–20 directional context only, not in the ROCE average).
+- **Symrise FY2025 results release / Remuneration Report 2025 / AGM 2026 release** — impairment detail (Swedencare €150m, Terpene €148/149m), €400m buyback, dividend €1.25, CEO total comp €2,034,986, investment-grade ratings.
+- **Yahoo Finance** — price €87.94 (SY1.DE, 23 Jul 2026).
+- **Gaps / calls:** (i) sourced window is 5 fiscal years (FY21–25); FY18–20 available only as normalized key figures → STRONG unavailable regardless; FY18–20 reported ROCE estimable ~8–9.5%, consistent with the window. (ii) Income-tax-payable for FY21–23 not separately disclosed in the aggregator → NIBCL for those years uses trade payables + €120m assumed tax (2024 €138m / 2025 €111m actual). (iii) Interest paid FY21–23 estimated ~€60m (2024 €63.8m / 2025 €57.6m disclosed). (iv) Goodwill/intangibles taken as the combined €2,483m (FY25) line; not split. None affects the WEAK/AVOID verdict. Search budget: ~9 web ops (within P14).
+
+## B. Ten-year financial record (EUR m; FY2021–2025 sourced; FY2018–2020 context)
+
+### B1 Raw inputs
+| FY | Revenue | OI (rep. EBIT) | CFO | Capex (PPE+int) | FCF (derived) | Dil. shares (m) | Total assets | NIBCL | Cash+STI | Total liab | Equity (ex-NCI) | GW+intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2018 | 3,154 | n/d (norm.EBITDA 631) | 442 | 226 | ~216 | ~130 | 4,920 | ~380 | ~450 | ~2,977 | ~1,943 | ~2,100 |
+| 2019 | 3,408 | n/d (norm.EBITDA 701) | 547 | 182 | ~365 | ~135 | 5,953 | ~410 | ~500 | ~3,494 | ~2,459 | ~2,450 |
+| 2020 | 3,520 | n/d (norm.EBITDA 742) | 636 | 159 | ~477 | 137 | 5,940 | ~420 | ~500 | ~3,576 | ~2,364 | ~2,400 |
+| 2021 | 3,826 | 559.0 | 522 | 174 | 287 | 139.78 | 6,643 | 533 | 465 | 3,391 | 3,188 | 2,482 |
+| 2022 | 4,618 | 504.0 | 360 | 250 | 50 | 139.77 | 7,783 | 650 | 315 | 4,173 | 3,551 | 2,900 |
+| 2023 | 4,730 | 559.4 | 720 | 270 | 389 | 139.77 | 7,846 | 609 | 393 | 4,159 | 3,631 | 2,772 |
+| 2024 | 4,999 | 717.8 | 895 | 243 | 588 | 139.77 | 8,325 | 642 | 710 | 4,305 | 3,981 | 2,731 |
+| 2025 | 4,929 | 465.0 | 772 | 211 | 503 | 139.77 | 7,904 | 534 | 1,010 | 4,162 | 3,720 | 2,483 |
+
+*FY18–20 EBIT not extracted (five-year overview carries normalized EBITDA only); FCF for those years ≈ CFO − investments, directional. FY18–20 excluded from the ROCE average.*
+
+### B2 Returns (FY2021–2025; NIBCL = trade payables + income-tax payable; conservative — other liab/provisions/deferred tax left in CE)
+| FY | CE_wc | CE_xc | ROCE_wc | ROCE_xc | FCFROCE_wc | FCFROCE_xc |
+|---|---|---|---|---|---|---|
+| 2021 | 6,110 | 5,645 | 9.1% | 9.9% | 4.7% | 5.1% |
+| 2022 | 7,133 | 6,818 | 7.1% | 7.4% | 0.7% | 0.7% |
+| 2023 | 7,236 | 6,843 | 7.7% | 8.2% | 5.4% | 5.7% |
+| 2024 | 7,682 | 6,973 | 9.3% | 10.3% | 7.7% | 8.4% |
+| 2025 | 7,369 | 6,360 | 6.3% | 7.3% | 6.8% | 7.9% |
+
+**Worst-of-four normalized averages (Σ OI ÷ Σ CE):** ROCE = **7.9%** (end-wc) / 8.4% (beg-wc) / 8.6% (end-xc) / 9.0% (beg-xc) → **worst 7.9%**. FCFROCE = **5.1%** / 5.4% / 5.6% / 5.8% → worst 5.1%. With underlying FY2025 OI (€764m): ROCE 8.7% (end-wc) / 9.5% (end-xc) — still <10%. **All four bases below the P3 ADEQUATE floor → WEAK.**
+
+### B3 Growth & leverage (FY2021→2025)
+| Metric | 2021 | 2025 | Geo-mean |
+|---|---|---|---|
+| OI/sh | 4.00 | 3.33 (undl 5.47) | −4.5% (undl +8.1%) |
+| FCF/sh | 2.06 | 3.60 | +15.0% |
+| BV/sh | 22.81 | 26.61 | +3.9% |
+| TBV/sh | 5.05 | 8.85 | +15.0% |
+| L/E (2025 only) | — | 1.12 (112%) | below 200% flag |
+
+## C. Calculation notes
+
+- **CE build (FY2025):** CE_wc = TA 7,903.8 − NIBCL (trade payables 423.3 + income-tax payable 111.1) = 7,369.4. CE_xc = 7,369.4 − (cash+STI 1,009.8) = 6,359.6. Goodwill/intangibles (€2,483.2m) retained in CE (serial acquirer — no deduction). Ambiguous "other liabilities" (€332m), provisions, pension provision (€468m) and deferred-tax liabilities left in CE per burden-of-proof (conservative; deducting genuine accruals would raise ROCE ~0.3–0.8pp but not to 10% on the worst basis).
+- **TBV build (FY2025):** equity ex-NCI 3,719.6 − GW+intangibles 2,483.2 = 1,236.4.
+- **Leases (IFRS 16):** lease liabilities (€34.7m current + €133.7m non-current) treated as debt-equivalent in CE, EV and L/E.
+- **Interest reclass (IFRS):** interest paid is in financing; moved into CFO before FCF (FY24 €63.8m, FY25 €57.6m disclosed; FY21–23 ~€60m assumed). FCF = (CFO − interest paid) − (PP&E + intangibles capex).
+- **OI as reported:** FY2025 €465.0m includes €150.0m Swedencare equity-method impairment and €149.0m Terpene held-for-sale impairment (per audited income statement); not added back (framework: as-reported, averaging dilutes). Underlying ≈ €764m shown alongside for context only.
+- **Bias check: none live.** (Not miscontrasting the strong franchise into a quality-of-returns pass; not anchoring on the premium multiple as evidence of merit.)
+
+## D. Future-performance worksheet
+
+- **Breadth — customer:** PASS. "No single customer accounted for more than 10% of Group sales" (FY24 & FY25, disclosed). Customers = perfume/cosmetics/F&B/pharma/supplement/pet-food manufacturers.
+- **Breadth — supplier:** PASS (assessed). Broad naturals + aroma-chemical sourcing; partial backward integration; no >10% dependence evident (no adverse disclosure). Note naturals-origin volatility (e.g. vanilla) as a cost, not a concentration failure.
+- **Forces:** Customer WEAK (many customers, improbable backward-integration, high reformulation/regulatory switching costs). Supplier WEAK (many sources; own naturals). Substitutes WEAK (function essential). New entrants WEAK (scale/IP/regulatory/relationship barriers; top-4 oligopoly). **Tally 0 strong → favourable.**
+- **Moat:** switching costs + ingrainedness (formulation lock-in across a product's life); source single; direction **stable**. Scale/cost in global naturals a secondary support.
+- **Market:** growing (~3–4%+; emerging-market consumption, naturals/health, pet food). **Future = STRONG.**
+
+## E. Shareholder-friendliness evidence
+
+- **P17 comp:** highest-paid board member CEO Parisot FY2025 total €2,034,986 (salary €940k). vs 5% × lower(FCF €503m, NI €250m) = €12.5m hard-strike line — **clears with ~6× headroom**; vs €40m absolute — clears. Supervisory-board fees modest German norms (chair well under ~€666k floor stop). No significant insider ownership (≈95% free float, no controlling holder); no adverse insider selling. **No strike.**
+- **RPT:** minimal; CEO sits on associate Swedencare's board (strategic-stake governance link) — noted, not disqualifying.
+- **P19 buybacks:** none in the record (Symrise had never repurchased shares). Inaugural **€400m** programme announced with FY2025 results, executing 2026 — **prospective; carried as a forward flag** (at ~19× underlying / ~30× reported EV/OI it would be above conservative worth). No historical strike.
+- **Acquisition audit (BV≫TBV):** triggered by legacy goodwill (Diana 2014, ADF/IDF 2020); no *recent* sizable consolidation to audit (FY2025 business combinations €0). Capital-allocation flag: **Swedencare €150m impairment** (equity-method stake written down within ~2–3 years of build-up) + **Terpene €149m** write-down on planned divestment — mixed M&A record; one flag (same test), logged.
+- **Dividends:** €1.25/sh FY2025 (16th consecutive increase); ~35% of FCF; rational. **SF = PASS** (comp clean; two carried flags — buyback, Swedencare/Terpene — do not form a cross-test pair).
+
+## F. Valuation math
+
+- Price €87.94 × 139.772m sh = **MCap €12,291m**. Debt (incl leases) €2,630.2m; NCI €22.4m; cash+STI €1,009.8m.
+- **EV_conservative (no cash excess)** = 12,291 + 2,630 + 22 = **€14,944m**; **EV_all-cash-excess** = **€13,934m**.
+- EV/OI: reported (€465m) 32.1× / 30.0×; underlying (€764m) 19.6× / 18.2× — both fail ≤7 on both variants.
+- MCap/FCF: 24.4× (FCF €503m, int-reclass) / 21.4× (simple CFO−PPE capex) — fail ≤8.
+- MCap/BV 3.30× (fail ≤3); MCap/TBV 9.94× (fail ≤3 — goodwill-loaded; qualifier informational, not blocking, but both primaries already fail).
+- **Trigger band** (both primaries hold): P(FCF≤8) = 8×503/139.77 = €28.8; P(EV/OI≤7, reported) = (7×465 + 1,010 − 2,630 − 22)/139.77 = **€11.5**; P(EV/OI≤7, underlying) = **€26.5**. Binding = EV/OI leg. Stock 3.3–7.6× above. No P12 edge (Past WEAK). Band moot for register (AVOID).
+
+## G. Change log
+
+- v1 — 2026-07-23 — initial analysis. AVOID (Past WEAK): worst-of-four ROCE ~7.9% (acquisition-goodwill drag), FCFROCE ~5.1%; Future STRONG (top-4 F&F moat, breadth pass); SF PASS (comp €2.0m, no historical buybacks; Swedencare/Terpene + €400m buyback carried as flags); EXPENSIVE (30–32× reported EV/OI, 24× FCF). 5-year sourced window (FY21–25) → STRONG unavailable regardless.
