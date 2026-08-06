@@ -1,0 +1,261 @@
+---
+ticker: GETI-B.ST
+company: Getinge AB (publ)
+exchange: Nasdaq Stockholm (Large Cap)
+currency: SEK
+memo_date: 2026-07-25
+memo_version: v1
+price_at_memo: SEK 230.30 (close 24 Jul 2026)
+mcap_at_memo: SEK 62,727 M
+verdict: AVOID
+quality_past: WEAK
+quality_future: ADEQUATE
+sf: PASS
+cheapness: EXPENSIVE
+trigger_band: "CHEAP < ≈ SEK 48.5 (EV/OI 7×, conservative no-cash EV; MCap/FCF leg ≈ SEK 77; all-cash-excess EV/OI leg ≈ SEK 61; no P12 — Past WEAK)"
+next_review: FY2026 AR (~late Mar 2027); earlier only on a structural OI step-change or price < ≈ SEK 80
+position: —
+---
+
+# GETI-B.ST — Getinge AB (publ): GSC Memo
+
+## 1. Verdict
+
+| Gate | Result |
+|------|--------|
+| Understanding | **PASS** |
+| Past quality | **WEAK** — worst-of-four 10y normalized ROCE 6.8%, FCFROCE 6.6% |
+| Future quality | **ADEQUATE** — breadth PASS, 1 strong force, narrow stable switching-cost moat |
+| Shareholder-friendliness | **PASS** — no strikes; Paragonix acquisition multiple INDETERMINATE |
+| Cheapness | **EXPENSIVE** — 23.8× MCap/FCF, 20.1× EV/OI |
+| **FINAL** | **AVOID (Past WEAK)** |
+
+Getinge is a decent business trapped inside an indecent return profile. The consumables-and-service annuity behind ECMO, intra-aortic balloon pumps and sterile reprocessing is genuinely sticky, the customer base is atomised, the balance sheet is sound (L/E 92%) and the owner-operator control structure has produced none of the extraction the framework usually finds — no buybacks at any price, CEO pay at 2.6% of net income, no related-party dealing. What it has not produced is capital productivity. Across FY2016–FY2025 the group turned roughly SEK 433bn of cumulative capital employed into SEK 29.3bn of operating income: 6.8% on the worst of the four normalized bases, against a 10% floor for ADEQUATE and 15% for STRONG. This is not a demerger or COVID artifact — the clean post-demerger FY2018–FY2025 sub-window reads 7.3%. The gate fails on arithmetic, not on judgment, and no price fixes it. Nothing between here and a BUY is a price problem.
+
+## 2. Understanding
+
+**PASS.** Getinge is a Gothenburg-headquartered, Carl Bennet-controlled Swedish medical-technology manufacturer that sells differentiated capital equipment and its attached consumables and service — ventilators, ECMO and cardiopulmonary systems, intra-aortic balloon pumps, operating tables and surgical lights, sterilizers and washer-disinfectors, and single-use bioprocessing solutions — to hospitals, integrated delivery networks, public health-system procurement bodies and pharmaceutical/biotech manufacturers, through three business areas (Acute Care Therapies 53% of sales, Surgical Workflows 34%, Life Science 13%), with 98% of revenue earned outside Sweden and 40% in the United States.
+
+## 3. Quality — past record
+
+Worst-of-four 10y normalized ROCE **6.8%** (beginning-of-period, with-cash basis); best of the four 7.3%. Worst-of-four FCFROCE **6.6%**. No single year in the window reached 15%; the peak was 13.3% in COVID-inflated FY2021, and the series then declined four consecutive years (11.2 → 9.6 → 8.4 → 6.3% on ROCE_wc) before a 6.9% tick up in FY2025 — the P4 sustained-decline clause fires on its own. Per-share growth is weak and erratic: ΔOI/sh geo-mean +4.4%, ΔFCF/sh +1.3% (below the 3% nominal floor), ΔBV/sh +2.7%; ΔTBV/sh n.m. — tangible book has been negative in eight of ten years. Leverage is the one clean line: L/E 91.8%, well inside P5. **WEAK** — returns sit a third below the ADEQUATE floor on every basis tested.
+
+## 4. Quality — future
+
+Breadth **PASS** both sides: the FY2025 segment note states no single customer reaches 10% of group sales; no supplier approaches 10% of the ~SEK 30bn COGS-plus-opex base across three distinct product platforms (logged as a named re-test — Swedish filers do not disclose supplier spend). Forces: customer power **WEAK** (atomised buyers, backward integration implausible, installed-base and consumable switching costs), supplier power **WEAK** (broad component base, scale buyer), substitutes **STRONG** (Impella's displacement of intra-aortic balloon pumps, plus hospitals' standing option to defer capital equipment), new entrants **WEAK** (MDR/FDA approval, clinical evidence, installed base). Tally 1 strong — judgment zone. Moat: **switching costs**, narrow and **stable** — the Cardiosave CE-certificate withdrawal and reinstatement is the erosion evidence to watch. Market growth **YES**. **ADEQUATE**.
+
+## 5. Shareholder-friendliness
+
+**PASS.** P17: CEO Mattias Perjos SEK 58.8m total FY2025 = 2.6% of net income and 2.2% of levered FCF, against a 5% strike line of SEK 112.9m; ≈ US$6m absolute, far under the ~US$40m indexed scrutiny trigger. Chairman's fee SEK 1.879m — roughly one Swedish large-cap chair norm, nowhere near 2×. Carl Bennet holds 20.2% of capital and 50.2% of votes and chairs the board: significant outright ownership is a P17 positive; the A/B vote structure is a logged caveat, not a strike, absent value-destructive allocation. P19: **no shares have ever been repurchased in the window** — the 10% authorisation went unused in 2025 — so there is no tranche to test and no dilution to sterilise. Acquisition audit is triggered (TBV −SEK 4.1bn); Paragonix (2024, consideration ≥ SEK 7.5bn incl. milestones vs SEK 826m target sales) implies a multiple above both lines on any plausible margin, but pre-deal operating income is undisclosed — logged **INDETERMINATE** with a named re-test, never a pair-completer. RPT: none disclosed. Payout 57%.
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|--------|---------|-----------|------|-----------|
+| MCap / FCF | 23.8× | ≤ 8 | Primary | **FAIL** |
+| EV / OI (conservative, no cash excess) | 20.1× | ≤ 7 | Primary | **FAIL** |
+| EV / OI (all cash excess) | 19.2× | ≤ 7 | Primary | **FAIL** |
+| MCap / BV | 2.13× | ≤ 3 | Qualifier | PASS |
+| MCap / TBV | n.m. (TBV −SEK 4,083m) | ≤ 3 | Qualifier | n.m. |
+
+CHEAP below ≈ **SEK 48.5** — EV/OI on the conservative EV binds; the MCap/FCF leg clears at ≈ SEK 77 and the all-cash-excess EV/OI leg at ≈ SEK 61. No P12 edge (Past WEAK). The TBV qualifier is inapplicable — tangible book is negative from acquisition goodwill, not buybacks — which is what triggered the acquisition audit above; the BV qualifier passes and is not a band input. On TTM (Q2-2026) OI of SEK 4,314m the conservative EV/OI still reads 17.6×.
+
+## 7. Risks & thesis-breakers
+
+- Regulatory and quality overhang: a decade of FDA consent-decree and recall history, most recently the Cardiosave CE-certificate withdrawal, is the mechanism by which the switching-cost moat leaks.
+- Competitive displacement in cardiopulmonary — Impella against intra-aortic balloon pumps — attacks the highest-margin annuity in the group, and the Abiomed litigation outcome is adverse.
+- Capital employed grew SEK 11bn from FY2021 to FY2025 while operating income fell; further goodwill-funded M&A at Paragonix-type multiples compounds the return problem rather than fixing it.
+- US concentration (40% of sales) leaves earnings exposed to tariffs and FX — over SEK 1bn of combined headwind absorbed in FY2025 alone.
+- Surgical Workflows and Life Science earn single-digit-to-low-teens adjusted EBITA margins on 47% of sales, structurally diluting group returns.
+
+## 8. Flip conditions & next review
+
+The verdict flips only on the quality gate, and only slowly. Worst-of-four ROCE of 10% on a capital base near SEK 48.6bn requires roughly **SEK 4.9bn of sustained operating income** (FY2025: 3,789; TTM: 4,314) held for enough years to carry the rolling ten-year window — arithmetically out of reach before roughly FY2029–30 even on continuous improvement, and only if capital employed stops growing. A downgrade is easier: a second strong force (customer power turning on GPO/tender consolidation, or entrant pressure from Chinese OEMs) or renewed moat erosion takes Future to WEAK; an SF strike would need a first-ever buyback executed above the flag lines or a disclosed acquisition multiple above 20×. Price is not a flip condition here — at SEK 48.5 the name would still be Past WEAK. **Next review: FY2026 annual report (~late Mar 2027)**, which re-tests the Paragonix multiple and rolls FY2016 out of the window.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+**Primary filings (getinge.com/investors, English editions):** Annual Report 2025 (statements FY2025/24, Notes 22 employee costs, 27 acquisitions, 28 related parties, corporate governance, multi-year overview FY2021–25, acquisition history); Annual Report 2023 (FY2023/22 balance sheet, cash flow); Annual Report 2021 (FY2021/20 balance sheet, cash flow); Annual Report 2020 (FY2020/19 statements, multi-year overview FY2016–20 incl. continuing/discontinued split); Annual Report 2018 (FY2018/17 statements, operating-lease note); Annual Report 2016 (FY2016/15 statements).
+**Aggregated fundamentals:** stockanalysis.com (STO:GETI.B) — FY2021–25 cross-check and Q2-2026 quarterly balance sheet (gross debt SEK 11,100m ex-pension, cash SEK 2,052m at 30 Jun 2026) and TTM income statement (OI SEK 4,314m to 30 Jun 2026).
+**Price:** Yahoo Finance chart API, GETI-B.ST, SEK 230.30 at close 24 Jul 2026 (52-wk 175.9–236.0).
+
+**Gaps and judgment-sensitive items:**
+1. **Pre-deal operating income of acquired targets is not disclosed** for Paragonix Technologies (2024), Healthmark Industries / High Purity New England / Ultra Clean Systems (2023). The acquisition audit therefore cannot be closed — logged INDETERMINATE per §2·1C, named re-test at the FY2026 AR.
+2. **Supplier concentration is not disclosed** (no Swedish/IFRS requirement). The breadth PASS rests on the structural argument (three unrelated product platforms, ~SEK 30bn combined COGS+opex, 10% line ≈ SEK 3.0bn) rather than a disclosure sentence — named re-test.
+3. **FY2016 revenue is shown on the continuing-operations basis** in the B1 table for comparability of the sales line, while FY2016–17 OI/CFO/capex are on the total-group basis to match the Arjo-inclusive balance sheets (see C).
+4. **FY2016 capex** is the sum of capitalised development (594), rental equipment (160) and fixed-asset investments net of divestments (831) = 1,585; the fixed-asset line is net, biasing FY2016 FCF marginally high.
+5. **Q2-2026 pension provision is not in the quarterly source**, so the EV build uses the audited FY2025 balance sheet; on the Q2-2026 figures net debt excluding pensions was ≈ SEK 9.0bn vs SEK 7.5bn at FY2025, i.e. the current EV is marginally understated (band conservative by ≈ SEK 5/share).
+6. **Search budget:** ~14 retrieval operations against P14's ~12 — six annual-report PDFs were required because Getinge is not an SEC filer and the free aggregator tier caps at five years. Overrun logged.
+
+## B. Ten-year financial record
+
+### B1 Raw inputs (SEK M; shares in millions, fully diluted weighted average)
+
+| FY | Revenue | OI (EBIT) | CFO | Capex | FCF (derived) | Dil. shares | Total assets | NIBCL | Cash+STI | Total liab. | Equity (excl. NCI) | Goodwill+intang. |
+|----|--------:|----------:|----:|------:|--------------:|------------:|-------------:|------:|---------:|------------:|-------------------:|-----------------:|
+| 2015 | 29,801 | n/a | 3,458 | 2,054 | 1,404 | 238.3 | 53,235 | 5,411 | 1,468 | 33,642 | 19,203 | 30,543 |
+| 2016 | 22,170¹ | 2,287² | 3,671 | 1,585 | 2,086 | 241.8 | 55,211 | 5,823 | 1,680 | 34,295 | 20,508 | 32,004 |
+| 2017 | 22,495¹ | 1,787² | 2,763 | 1,663 | 1,100 | 250.7 | 42,102 | 4,927 | 1,526 | 22,296 | 19,384 | 23,045 |
+| 2018 | 24,172 | −284 | 2,503 | 1,380 | 1,123 | 272.4 | 43,352 | 5,191 | 1,273 | 23,697 | 19,201 | 24,098 |
+| 2019 | 26,559 | 2,372 | 3,832 | 1,220 | 2,612 | 272.4 | 44,713 | 5,839 | 1,254 | 23,740 | 20,496 | 24,283 |
+| 2020 | 29,819 | 4,784 | 7,199 | 1,045 | 6,154 | 272.4 | 45,014 | 6,045 | 6,056 | 23,528 | 21,024 | 22,085 |
+| 2021 | 27,049 | 4,371 | 6,560 | 930 | 5,630 | 272.4 | 44,555 | 6,881 | 4,076 | 19,379 | 24,750 | 24,148 |
+| 2022 | 28,292 | 3,626 | 3,367 | 1,136 | 2,231 | 272.4 | 52,032 | 7,541 | 5,676 | 21,579 | 30,038 | 27,010 |
+| 2023 | 31,827 | 3,736 | 2,957 | 1,353 | 1,604 | 272.4 | 53,586 | 8,114 | 2,728 | 23,183 | 30,166 | 30,670 |
+| 2024 | 34,759 | 2,854 | 4,577 | 1,309 | 3,268 | 272.4 | 63,918 | 8,828 | 2,961 | 30,708 | 33,005 | 39,242 |
+| 2025 | 34,969 | 3,789 | 3,949 | 1,314 | 2,635 | 272.4 | 56,505 | 7,932 | 3,401 | 27,011 | 29,430 | 33,513 |
+
+¹ Continuing operations (post-Arjo presentation). ² Continuing **plus** discontinued EBIT, matched to the Arjo-inclusive balance sheet (see C).
+FCF derived = CFO − capex throughout. Interest paid sits inside Getinge's CFO as reported — no IFRS reclassification required.
+
+### B2 Returns (SEK M; ratios on beginning-of-period CE)
+
+| FY | CE_wc | CE_xc | ROCE_wc | ROCE_xc | FCFROCE_wc | FCFROCE_xc |
+|----|------:|------:|--------:|--------:|-----------:|-----------:|
+| 2015 | 47,824 | 46,356 | — | — | — | — |
+| 2016 | 49,388 | 47,708 | 4.8% | 4.9% | 4.4% | 4.5% |
+| 2017 | 37,175 | 35,649 | 3.6% | 3.7% | 2.2% | 2.3% |
+| 2018 | 38,161 | 36,888 | −0.8% | −0.8% | 3.0% | 3.2% |
+| 2019 | 38,874 | 37,620 | 6.2% | 6.4% | 6.8% | 7.1% |
+| 2020 | 38,969 | 32,913 | 12.3% | 12.7% | 15.8% | 16.4% |
+| 2021 | 37,674 | 33,598 | 11.2% | 13.3% | 14.4% | 17.1% |
+| 2022 | 44,491 | 38,815 | 9.6% | 10.8% | 5.9% | 6.6% |
+| 2023 | 45,472 | 42,744 | 8.4% | 9.6% | 3.6% | 4.1% |
+| 2024 | 55,090 | 52,129 | 6.3% | 6.7% | 7.2% | 7.6% |
+| 2025 | 48,573 | 45,172 | 6.9% | 7.3% | 4.8% | 5.1% |
+
+**Normalized averages FY2016–FY2025 — Σ OI ÷ Σ CE, four ways** (Σ OI = 29,322; Σ FCF = 28,443):
+
+| Basis | Σ CE | ROCE | FCFROCE |
+|-------|-----:|-----:|--------:|
+| Beginning × with cash | 433,118 | **6.8%** ← worst | **6.6%** ← worst |
+| Beginning × ex cash | 404,420 | 7.3% | 7.0% |
+| End × with cash | 433,867 | 6.8% | 6.6% |
+| End × ex cash | 403,236 | 7.3% | 7.1% |
+
+**Tested against P2/P3:** worst ROCE 6.8% vs 15% (STRONG) and 10% (ADEQUATE) → both fail. Worst FCFROCE 6.6% vs 8% → fails. **Past WEAK (P4)**, reinforced by the sustained FY2021–FY2024 decline.
+
+**Clean post-demerger cross-check, FY2018–FY2025 (8y):** worst-of-four ROCE **7.3%**, worst FCFROCE **7.3%**. The demerger years are not what causes the failure.
+
+### B3 Growth & leverage
+
+| FY | ΔOI/sh % | ΔFCF/sh % | ΔBV/sh % | ΔTBV/sh % | L/E |
+|----|---------:|----------:|---------:|----------:|----:|
+| 2016 | — | — | — | n.m. | — |
+| 2017 | −24.6% | −49.1% | −8.8% | n.m. | — |
+| 2018 | −114.6% | −6.0% | −8.8% | n.m. | — |
+| 2019 | n.m. (from loss) | +132.6% | +6.7% | n.m. | — |
+| 2020 | +101.7% | +135.6% | +2.6% | n.m. | — |
+| 2021 | −8.6% | −8.5% | +17.7% | n.m. | — |
+| 2022 | −17.0% | −60.4% | +21.4% | n.m. | — |
+| 2023 | +3.0% | −28.1% | +0.4% | n.m. | — |
+| 2024 | −23.6% | +103.7% | +9.4% | n.m. | — |
+| 2025 | +32.8% | −19.4% | −10.8% | n.m. | **91.8%** |
+
+Geometric means FY2016→FY2025: OI/sh **+4.4%**, FCF/sh **+1.3%**, BV/sh **+2.7%**. TBV/sh is negative in eight of ten years (2021–22 excepted) — Δ n.m. throughout. L/E computed on the most recent year only: total liabilities 27,011 ÷ BV 29,430 = **91.8%**, inside P5's 200% flag; capitalised lease liabilities (SEK 1,480m) are already inside the reported total under IFRS 16.
+
+## C. Calculation notes
+
+**Latest-year CE build (FY2025, SEK M).** Total assets 56,505 − NIBCL 7,932 = **CE_wc 48,573**. NIBCL = accounts payable 2,118 + accrued expenses and deferred income 3,005 + current tax liabilities 705 + contract liabilities 2,104. **Burden-of-proof calls (all left *in* CE):** other liabilities 1,580 (composition undisclosed), restructuring reserves current 216, other provisions current 1,348, current financial instruments 4 (derivatives). Short-term debt and current lease liabilities remain in CE by rule. CE_xc = 48,573 − cash 3,401 = **45,172**; Getinge reports no short-term investments line, and current financial instruments are derivatives, so cash and equivalents is the whole cash leg.
+
+**Pre-IFRS 16 years.** IFRS 16 adopted FY2019 (right-of-use assets first appear that year at SEK 941m, 2.1% of total assets). For FY2015–FY2018, disclosed operating-lease cost was SEK 446m (2018) / 321m (2017); undiscounted commitments are far below the P18 trigger of 10% of total assets (≈ SEK 4.3bn in 2018). **P18 not triggered — no lease capitalisation applied.** The FY2019 adoption-year step-up in CE is flagged and left unadjusted.
+
+**Arjo demerger treatment (the material judgment call).** Getinge distributed Arjo to shareholders in December 2017. Prior-period balance sheets were not restated, so FY2015 and FY2016 closing balance sheets include Arjo while FY2017 onward do not. To keep numerator and denominator consistent per §2·1A, **FY2016 and FY2017 operating income is taken on the continuing-plus-discontinued basis** (2016: 2,287; 2017: 1,493 continuing + 294 discontinued = 1,787), matching the Arjo-inclusive capital employed those years stand against. Reported CFO and capex for both years are already total-group. The residual inconsistency is FY2017's *closing* CE (post-demerger) against a full year of OI including ~11.5 months of Arjo, which flatters the end-of-period variants; the beginning-of-period variants are the conservative read and are the worst of the four in any case. The FY2018–FY2025 sub-window in B2 is free of the issue and confirms the verdict.
+
+**Rights issue.** SEK 4,281m raised in 2017; share count rose from 241.8m (2016, bonus-adjusted) to 272.4m and has been unchanged since. Per-share series use the AR's bonus-adjusted average share counts.
+
+**Goodwill.** Retained in capital employed — Getinge is a serial acquirer (nine disclosed transactions since 2021). No deduction taken.
+
+**Captive finance / substitution rule:** not applicable. **P20 maintenance-capex basis:** not active — no disclosed maintenance-capex breakout, no documented capex super-cycle (capex/sales has run 3.4–4.3% throughout the window). All-capex FCF used everywhere.
+
+**EV build (FY2025 audited balance sheet, SEK M).** Market cap 272.370m sh × SEK 230.30 = 62,727. Debt = interest-bearing long-term 7,893 + interest-bearing current 1,510 + lease liabilities long-term 1,029 + lease liabilities current 452 + interest-bearing pension provisions 2,358 = **13,242**. Preferred 0. NCI 64. Cash and STI 3,401.
+- **EV, no cash excess (conservative): 62,727 + 13,242 + 64 = 76,033**
+- EV, all cash excess: 76,033 − 3,401 = **72,632**
+
+**TBV build (FY2025).** Equity excluding NCI 29,430 − intangible assets 33,513 (goodwill and other intangibles, reported as one line) = **−4,083**. Negative tangible book arises from acquisition goodwill, not buybacks; the MCap/TBV qualifier is marked inapplicable and the Gate-1C acquisition audit was run instead (see E).
+
+**Bias check.** Live and handled: *peculiarity* — the owner-operator control structure and the conspicuous absence of buybacks are unusual and attractive, and pulled toward excusing the return record; the ROCE arithmetic is basis-independent and was not softened. *Hope* — the FY2025 uptick and the TTM OI of SEK 4,314m invite an "inflection" narrative; the ten-year window is the test, and it does not move on one year. *Miscontrast* — 6.8% ROCE looks better beside European industrial peers than against the framework's 10%/15% lines; the framework's lines were used. No judgment in this memo was born of a bias.
+
+## D. Future-performance worksheet
+
+**Breadth — customers.** *Question: does any single customer exceed 10% of revenue?* **No.** FY2025 segment note, verbatim in substance: the group has no single customer accounting for 10% or more of group sales. Largest geographic exposure is the USA at 40.5% of sales, but that is a market, not a customer; the buyer set is thousands of hospitals, IDNs, national procurement bodies and pharmaceutical manufacturers. **PASS.**
+
+**Breadth — suppliers.** *Question: does any single supplier exceed 10% of COGS plus operating expenses?* COGS 18,315 + selling 6,050 + administrative 4,587 + R&D 1,452 = SEK 30,404m; the 10% line is ≈ SEK 3.0bn. No vendor of that scale is plausible across three unrelated platforms (electromechanical capital equipment, disposable cardiopulmonary sets, single-use bioprocessing consumables), and none is disclosed. The AR names "dependence on external suppliers" as a risk for *critical components* — a single-source technical dependency, not a spend concentration. **PASS**, on structural evidence rather than a disclosure sentence; named re-test at FY2026. No captive-customer waiver invoked.
+
+**Four forces (binary).**
+
+| Force | Call | One-line reason |
+|-------|------|-----------------|
+| Customer bargaining power | **WEAK** | Atomised buyer base with no 10% customer; backward integration into ventilators or sterilizers implausible; installed-base and consumable/service switching costs are real. |
+| Supplier bargaining power | **WEAK** | Broad multi-platform component base, Getinge is the scale buyer; forward integration by component vendors implausible. |
+| Threat of substitutes | **STRONG** | Direct: Impella percutaneous support has been displacing intra-aortic balloon pumps, and the Abiomed litigation went against Getinge. Doing-without: hospitals defer capital equipment freely — the visible cause of Getinge's order-intake cyclicality. |
+| Threat of new entrants | **WEAK** | MDR/FDA approval, clinical-evidence requirements, installed base and service networks are hard-won; Chinese OEM entry is a low-end and China-VBP phenomenon, not yet a Western barrier breach. |
+
+**Tally: 1 strong** → judgment zone (P16), contained.
+
+**Moat.** Single identified source: **switching costs**. Mechanism — sterilizers, washer-disinfectors and operating-room infrastructure are installed for 10–15 years and pull a validated consumables, spare-parts and service annuity behind them; ECMO and balloon-pump therapy locks clinicians into device-specific disposable circuits and catheters that carry their own regulatory clearances and training. Direction: **stable**, and narrow. Erosion evidence on file: the Cardiosave CE-certificate withdrawal (reinstated 2025), a decade of recall and FDA consent-decree history, and share loss in cardiopulmonary. Stabilisation evidence: adjusted EBITA margin 14.0% in FY2025 against 12.5% pre-COVID in FY2019, organic growth in all three business areas in FY2025, regulatory milestones regained. Called stable, not eroding — but this is the single call that, if it flips, takes Future to WEAK.
+
+**Market growth: YES.** Ageing populations, rising procedure volumes, healthcare-labour scarcity favouring workflow automation, and biologics-driven demand for single-use bioprocessing.
+
+**Verdict: ADEQUATE** — breadth PASS, one contained strong force, plausible and stable moat; STRONG is unavailable with a strong force live.
+
+## E. Shareholder-friendliness evidence
+
+**1. Compensation & ownership (P17).** Highest-paid employee = President & CEO Mattias Perjos, FY2025 total **SEK 58,829k** (fixed 28,436 + other benefits 456 + short-term variable 18,761 + long-term variable 0 + pension 11,176; the 2023–2025 LTI expired unearned).
+- *Proportional test:* lower of levered FCF (SEK 2,635m) and net income attributable to parent (SEK 2,258m) = **2,258**; 5% strike line = **SEK 112.9m**. Actual **SEK 58.8m = 2.6%** of net income, 2.2% of FCF. **No strike.** Both legs positive — no loss-leg degeneration.
+- *Absolute scrutiny trigger:* ≈ US$40m (US$30m in 2017 dollars, CPI-indexed to 2026). SEK 58.8m ≈ **US$6m**. **No flag.**
+- *Outside directors:* Chairman SEK 1,879k including committee work; all other board members SEK 6,719k in aggregate. Highest outside-director seat ≈ SEK 1.9m against a Swedish large-cap chair norm of roughly SEK 2m, i.e. **under 1× norm** — nowhere near the 2× stop. Seat calibration: Swedish market, sourced from Getinge's own disclosure and the peer range in the Nordic large-cap segment; the CPI-indexed book floor (≈ US$666k ≈ SEK 6.4m) is also cleared by a wide margin.
+- *Ownership positives:* Carl Bennet AB holds 20.20% of shares and 50.19% of votes; Carl Bennet chairs the board. Substantial outright ownership by the chairman is a P17 positive. Dual-class A/B structure is a **documented caveat** — a strike only when paired with value-destructive allocation, which the acquisition record has not yet established at the evidentiary standard the framework requires.
+
+**2. Related-party transactions.** Note 28: intra-group transactions only, eliminated on consolidation; no board member or senior executive has any direct or indirect participation in non-transparent transactions; no other significant related-party transactions. Share-of-expense test not applicable — no insider entity appears in any expense line. **Clean.**
+
+**3. Buybacks (P19).** **No repurchase tranches exist in the window.** The 2025 AGM authorised repurchase of up to 10% of Class B shares until the 2026 AGM; the AR states plainly that no shares were repurchased in 2025, and no repurchase appears in any statement of changes in equity across FY2016–FY2025. Share count has been unchanged at 272.370m since the 2017 rights issue — no dilution, therefore no dilution-sterilisation strike either. **No flag, no strike.** There is nothing to run the dual-read against.
+
+**Acquisition audit (triggered — BV SEK 29,430m ≫ TBV −SEK 4,083m).**
+
+| Deal | Year | Consideration (SEK M) | Target sales (SEK M) | Pre-deal normalized OI | Multiple |
+|------|------|----------------------:|---------------------:|------------------------|----------|
+| Paragonix Technologies, Inc. | 2024 | 5,905 upfront + 1,555 milestone paid 2025 + 179 further recognised = **≥ 7,439** | 826 | **not disclosed** | **INDETERMINATE** |
+| Healthmark Industries + High Purity New England + Ultra Clean Systems | 2023 | 5,209 (combined cash out) | 1,800 combined | **not disclosed** | **INDETERMINATE** |
+
+Paragonix consideration is ≈ 9× target sales; clearing the 15× flag line would require a pre-deal operating margin above 60%, and clearing the 20× strike line above 45% — implausible for a scaling organ-transport business, but the input is undisclosed and the finding therefore rests on an estimate. Per §2·1C, **logged INDETERMINATE**: heightened scrutiny and a named re-test at the FY2026 AR, never a pair-completer, never a strike. The 2023 cohort at ≈ 2.9× combined sales is materially less alarming and is logged alongside. Acquired-intangible amortisation and milestone accruals are already inside reported OI — no add-backs taken.
+
+**4. Dividends & capital allocation.** Dividends per share 3.00 (2020) → 4.00 → 4.25 → 4.40 → 4.60 → **4.75 proposed for 2025**; payout 57% of net profit. Rising distribution from a business earning below its own stated cost of capital is defensible on the book's own logic — retain when ROCE is high, distribute when it is not. The countervailing fact is that SEK 12.7bn of acquisition cash went out over FY2020–FY2025 while capital employed rose and operating income did not, which is the substance of the Past WEAK verdict rather than a separate SF negative.
+
+**Strike tally: zero hard strikes, zero flags, one INDETERMINATE, one logged dual-class caveat → SF PASS.**
+
+## F. Valuation math
+
+**Inputs.** Price SEK 230.30 (close 24 Jul 2026); diluted shares 272.370m; MCap **SEK 62,727m**. FY2025: OI 3,789; FCF 2,635 (CFO 3,949 − capex 1,314); BV/sh 108.04; TBV/sh −14.99.
+
+**Current multiples.**
+- MCap/FCF = 62,727 ÷ 2,635 = **23.8×** (threshold ≤ 8) — FAIL
+- EV/OI, conservative no-cash EV = 76,033 ÷ 3,789 = **20.1×** (threshold ≤ 7) — FAIL
+- EV/OI, all-cash-excess EV = 72,632 ÷ 3,789 = **19.2×** — FAIL
+- MCap/BV = 62,727 ÷ 29,430 = **2.13×** (≤ 3) — qualifier PASS
+- MCap/TBV = **n.m.** (TBV negative) — qualifier inapplicable, acquisition audit run in its place (E)
+- Cross-check on TTM OI to 30 Jun 2026 (SEK 4,314m): conservative EV/OI **17.6×**
+
+**Threshold-implied prices.**
+- MCap/FCF ≤ 8 → P = 8 × 2,635 ÷ 272.370 = **SEK 77.39**
+- EV/OI ≤ 7, conservative EV → P = (7 × 3,789 − 13,242 − 64) ÷ 272.370 = 13,217 ÷ 272.370 = **SEK 48.53** ← **binds**
+- EV/OI ≤ 7, all-cash-excess EV → P = (7 × 3,789 + 3,401 − 13,242 − 64) ÷ 272.370 = **SEK 61.01**
+
+Both primaries must hold simultaneously, so the trigger band is the lower: **CHEAP below ≈ SEK 48.5**, binding metric EV/OI on the conservative EV. Distance from SEK 230.30: **+375%**.
+
+**P12:** not available — Past is WEAK, so no 1.25× allowance and no outer edge.
+**Qualifier-implied prices (context only, not band inputs):** 3 × BV/sh = **SEK 324**; 3 × TBV/sh = n.m.
+**P20 dual-basis band:** not applicable — P20 inactive.
+**Sell-flag line:** not computed — GETI-B is not a held position.
+**Backvaluing:** not used. Getinge's cycle is procedure-volume and hospital-capex driven rather than a classic commodity cycle, and the prior "cycle peak" (FY2020–21) was a pandemic distortion rather than a repeatable state — the tourniquet would mislead here. Noted and declined.
+
+## G. Change log
+
+- **v1 — 2026-07-25 — initial analysis.** ANALYSE mode, no prior memo. Verdict **AVOID (Past WEAK)**: worst-of-four 10y normalized ROCE 6.8% / FCFROCE 6.6% against P3's 10% floor, confirmed at 7.3% on the clean FY2018–FY2025 post-demerger sub-window. Future ADEQUATE (breadth PASS, 1 strong force — substitutes, stable narrow switching-cost moat). SF PASS with zero strikes and zero flags — no buybacks have ever been executed, CEO pay at 2.6% of net income, no RPT — plus one INDETERMINATE (Paragonix pre-deal OI undisclosed) and a logged dual-class caveat. Cheapness EXPENSIVE at 23.8× MCap/FCF and 20.1× EV/OI; band ≈ SEK 48.5 on the conservative EV/OI leg. Arjo-demerger treatment and the P18 non-trigger documented in Appendix C.
+
+*Framework output, not investment advice.*
