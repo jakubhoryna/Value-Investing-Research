@@ -1,0 +1,143 @@
+---
+ticker: NOVO-B.CO
+company: Novo Nordisk A/S
+exchange: Copenhagen (CSE); NVO NYSE ADR 1:1
+currency: DKK
+memo_date: 2026-08-04
+memo_version: v7 (REVIEW — H1-2026 results, full financial report read)
+model_version: v4.0.0
+price_at_memo: DKK 307.60 (NOVO-B.CO close 4 Aug 2026; NVO ADR $44.28 intraday — US session ~6% below the CPH close)
+mcap_at_memo: ~DKK 1,366bn (4,442m diluted shares)
+verdict: WATCH
+quality_past: STRONG
+quality_future: ADEQUATE
+sf: PASS (1 flag — capital-allocation CAUTION; Foundation-control and Catalent-sites RPT caveats logged)
+cheapness: FAIR (EV/OI 11.5× all-cash / 11.8× no-cash; maintenance-basis MCap/FCF 13.3×)
+window: FY2016–FY2025 (10y)
+trigger_band: "CHEAP < ≈ DKK 170 no-cash / ≈ DKK 180 all-cash (EV/OI binding, FY25 OI on the 30-Jun-26 balance sheet, leases in; maintenance MCap/FCF leg ≈ 174–188 concurs, P20; P12 edge ≈ DKK 220 no-cash)"
+next_review: "9M results 4 Nov 2026 (possible ziltivekimab impairment; programme continuation); CagriSema US decision expected Q3 2026; CMD 21 Sep 2026; AR-2026 3 Feb 2027 + 2027 proxy — the CAUTION's named re-test on the completed 2026 programme year."
+position: HELD
+entry_date: n/a — user to supply
+avg_cost: [redacted] (NVO ADR, 1:1)
+zone: HOLD
+add_band: "< ≈ DKK 170 ≈ $26 ADR (no-cash bound; P12 edge ≈ DKK 220 not ADD-eligible — Future ADEQUATE)"
+sell_flag_line: "≈ DKK 697 ≈ $107 ADR (P9, all-cash-excess EV inversion)"
+---
+
+# NOVO-B.CO — Novo Nordisk A/S: GSC Memo (v7 — H1-2026 REVIEW)
+
+## 1. Verdict
+
+Understanding PASS · Past STRONG · Future ADEQUATE · Shareholder-friendliness **PASS** (1 flag — capital-allocation CAUTION) · Cheapness FAIR → **WATCH**; HELD → **Zone: HOLD**. No gate moves; the band refreshes to **≈ DKK 170/180 (no-cash/all-cash)** on the 30-June balance sheet.
+
+The H1 print is better than guided and worse than it headlines. Adjusted Q2 sales +7% and operating profit +11% at CER lifted the full-year guide to 0%…−6% (from −4%…−12%) — but the underlying half is +2% adjusted growth, the Q2 adjusted gross margin fell 4.5pp on realised prices, and the pre-committed 1-Jan-2027 US list-price cut (Wegovy −50%, Ozempic −35%, to $675) is the forward step-down the raise does not cancel. The offset is volume: Wegovy pill is the strongest-ever US GLP-1 volume launch (>5m TRx since January), Medicare Bridge went live 1 July, and the pill and 7.2 mg both cleared the EMA in July. The market read it the second way — the ADR sold ~6% below the Copenhagen close. What stands between here and BUY is unchanged: ~45% of downside to the band with gates intact. The CAUTION's re-test remains AR-2026, by design, not today.
+
+## 2. Understanding
+
+PASS, unchanged. One molecule — semaglutide across Ozempic/Wegovy formats plus a small Rare Disease unit — Foundation-controlled, ~170 markets.
+
+## 3. Quality — past record
+
+STRONG, restated — no new fiscal row (FY2026 lands 3 Feb 2027). H1 facts consistent with the standing deceleration flag: adjusted OI +2% CER; FY26 guided ~flat adjusted (reported mid-point +12% CER is 340B-inflated). Reported TTM OI 142.1bn carries +20.4bn net H1 one-offs — not a quality signal. L/E posture eased at the margin: equity 221.3bn, 37.2% of assets (35.7% FY25).
+
+## 4. Quality — future
+
+ADEQUATE, restated. Breadth PASS; forces unchanged — substitutes remain the sole STRONG force, and REIMAGINE 4 sharpened it: head-to-head, CagriSema was non-inferior to tirzepatide 15 mg on weight but **missed non-inferiority on HbA1c**. ZEUS failure confirmed in the report (possible Q3 impairment on the remaining ziltivekimab intangible); monlunabant terminated (DKK 4.0bn write-off). Against that: the pill launch cadence, MASH approvals (Japan/UK; US oral decision Q1 2027), Bridge access, and the zenagamtide phase-3 programme (HF outcomes + obesity) as the new beyond-sema shoot. Semaglutide LoE is now live in Canada — the moat's eroding edge, as called. Moat stable-to-eroding; market growth YES but price-deflating. ADEQUATE.
+
+## 5. Shareholder-friendliness
+
+**PASS — 1 flag, restated.** No new comp or RPT data (interim). Capital allocation [P19 CAUTION]: the DKK 15bn programme is **50% drawn** — 27.06m shares, DKK 7.53bn at avg 278.35 → 10.4–10.8× year EV/OI, 12.0× maintenance MCap/FCF; the late-July week executed at 306–336 (≤12.4×/14.5×), drifting with price, still nowhere near the ≈25× class. H1 returns of 41.2bn (35.3 dividends + 5.9 buybacks) covered by ~52bn framework FCF; interim dividend held flat at DKK 3.75. Nothing escalates, nothing yet demonstrates the completed disciplined year SOUND requires (CFO Knudsen signed today's statement; no published price criterion). CAUTION holds; re-test AR-2026/proxy. Judgment-log delta App. E.
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| EV/OI (all-cash / no-cash EV) | 11.5× / 11.8× | ≤ 7 | Primary | FAIL (+64/69%) — FAIR |
+| MCap/FCF (maintenance basis, P20) | 13.3× | ≤ 8 | Primary | FAIL (+66%) — FAIR |
+| MCap/BV · MCap/TBV | 6.2× · distorted | ≤ 3 | Qualifiers | Inapplicable (carried) |
+
+**Band: CHEAP < ≈ DKK 170 no-cash / ≈ DKK 180 all-cash** — EV/OI binds (FY25 OI, 30-Jun-26 balance sheet, lease liabilities in per §2·1A); the maintenance MCap/FCF leg concurs at ≈ 174–188; P12 edge ≈ DKK 220 (reference; not ADD-eligible). At 307.60 the price is +71% above the all-cash bound. HELD: **HOLD** — the ADD band is [redacted] away, the P9 line ≈ DKK 697 ([redacted]) is remote; position $44.28 vs [redacted] cost ([redacted]).
+
+## 7. Risks & thesis-breakers
+
+- The 2027 WAC step-down plus MFN gross-to-net: the volume-for-price trade could compress adjusted OI faster than pill/HD volume replaces it — cash-flow impact company-flagged for 2027.
+- Lilly efficacy and oral competition, now with a head-to-head HbA1c miss on the successor asset; CagriSema US decision (Q3) is binary near-term news.
+- CAUTION escalates to ADVERSE (SF FAIL, SELL-FLAG returns) on any return to expensive repurchase execution or an empire-scale deal — first checkpoint the completed 2026 programme year.
+- A second independent flag (RPT deterioration, comp surprise at the 2027 remuneration report) completes a pair → SF FAIL.
+- Semaglutide LoE spreads (Canada live; 2031–32 US/EU cliff); Cipla ANDA and the Sandoz UPC revocation action mark the perimeter; US data-breach class actions are a cost, not a gate item.
+
+## 8. Flip conditions & next review
+
+To BUY: price < ≈ DKK 170 with gates re-confirmed by a current REVIEW. To AVOID: the CAUTION escalates on forward behaviour, a flag pair completes, or Future degrades further. HELD — valid sell reasons: price past value (P9 ≈ 697 — far off); company no longer good (not flagged; consistency bias named and fought); buyout (none); clearly better opportunity (user judgment, extreme suspicion, never framework output). Invalid: rebalancing, memorialising success, agent compensation. Next review: **CagriSema US decision (Q3)** or **9M results 4 Nov 2026** (ziltivekimab impairment watch), whichever first; CMD 21 Sep; then AR-2026 (3 Feb 2027) + 2027 proxy — the CAUTION's named re-test.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+This REVIEW: **one exploratory search** (locating the release — inside the P14 REVIEW budget of ~2); primary documents (uncounted): the **H1-2026 financial report read in full** (Company announcement 48/2026, 37 pp, filed as 6-K `caq22026.htm`, 4 Aug 2026 — landed a day ahead of the calendar's 5 Aug), the guidance-raise press-release 6-K, the weekly buyback 6-K (through 3 Aug), EDGAR submissions index; two price quotes (NOVO-B.CO DKK 307.60 close; NVO $44.28 US intraday — Yahoo chart API). OI series, normalized OI, maintenance-FCF derivation and P17/RPT evidence carried from v3/v6 (AR-2025 primary). **Gaps:** maintenance-vs-growth capex split still undisclosed (P20 inference stands — management re-affirmed capex ~55bn 2026 and "declining in the coming years"); H2-2025 one-offs not re-adjusted in the TTM context figure; 2026 remuneration report n/a until ~Mar 2027; 2021–22 repurchase prices remain unsourced (yardstick-moot).
+
+## B. Financial record (FY2016–FY2025 window unchanged; H1-2026 interim facts logged for the FY2026 row build)
+
+Window rows: see NOVO-B_2026-07-04_GSC.md B1–B3. Logged for the Feb-2027 build (all sourced, today's report):
+- **CFO presentation change effective 1 Jan 2026:** interest received (H1: 342) moved to investing; interest paid (H1: 2,759) moved to financing. §2·1A reconstruction mandatory: framework CFO H1 = 79,283 + 342 − 2,759 = **76,866** (old-presentation basis, continuity with FY2016–25).
+- H1-2026: derived all-capex FCF = 76,866 − 23,986 (PP&E) − 854 (intangibles) = **52,026**; Novo's own redefined FCF (CFO − PP&E only, comparatives restated) = 55,297. Capex PP&E −15% y/y.
+- P&L H1: reported sales 175,311 / OI 86,679 / NP 69,546 / dil. EPS 15.66; adjusted sales 148,551 (+2% CER) / OI 66,247 (+2% CER). Q2 adjusted gross margin 78.2% (Q2-25: 82.7%), incl. ~3bn one-time capacity-agreement right-sizing.
+- Balance sheet 30 Jun 2026: assets 594,941; equity 221,277; borrowings 140,127 (of which leases 8,622); cash 44,482 + securities 500; Novo net-debt APM (ex-lease) 86,523.
+- Sales deductions & product returns liability 140,201 (FY25: 133,349) despite the 26.8bn 340B reversal — NIBCL-class item for the FY2026 CE build.
+- Diluted weighted-average shares H1: 4,442.2m; treasury 44.25m (1.0%).
+
+## C. Calculation notes
+
+- **Share basis pinned (convention drift closed):** v3 used 4,448m diluted, v6 used 4,465m incl. treasury; v7 uses **4,442m** — the sourced H1-2026 diluted weighted average. Effect ≤0.5% on any figure.
+- **EV builds (framework, §2·1A — lease liabilities in):** MCap 307.60 × 4,442 = 1,366,359. All-cash-excess EV = 1,366,359 + 140,127 − 44,982 = **1,461,504** → EV/OI 11.45×. No-cash EV = **1,506,486** → 11.80×. Prior memos netted Novo's ex-lease net-debt APM; band effect of the correction ≈ DKK 2/sh — logged, immaterial, now framework-clean. ADR-implied price (~DKK 288 at 6.51 spot) gives 10.8× on the lower EV — same FAIR verdict.
+- Maintenance MCap/FCF = 1,366,359 / 103,000 = 13.27× (P20 anchor and range carried from v3: maint PP&E 13.9–22bn → FCF 96.4–104.5bn). Company-def FY25 read 23.4×; mechanical (incl. Akero intangible) 48.3× — distorted, reference only.
+- **Bias tick-through (pre-verdict + pre-zone, held name).** Lossophobia: position [redacted] and the ADR −6% today post-call — no price fact enters any gate; a price drop is not a worth drop. Anchoring: the raised-guidance headline is not allowed to soften the 2027 WAC step-down or the margin print — the band stays on FY25 OI and the step-down is named in Risks. Hotness/hope: the "strongest-ever launch" line stays out of the gates; Future holds at ADEQUATE. Consistency: the holding gets the stranger read — today adds no evidence for or against the CAUTION, whose re-test date was set in advance and is honoured. None invalidates.
+
+## D. Future-performance worksheet (delta)
+
+Carried: breadth PASS; Customer WEAK · Supplier WEAK · Substitutes **STRONG** · Entrants WEAK → 1 strong, contained; moat (scale/brand/franchise) stable-to-eroding; market YES/price-deflating. v7 delta — negative: REIMAGINE 4 HbA1c non-inferiority miss vs tirzepatide (substitute force head-to-head-confirmed); ZEUS failure in-report with possible Q3 impairment; monlunabant terminated. Positive: Wegovy pill >5m US TRx since launch, ~265k weekly, EMA approvals (pill 16.6% wt loss; 7.2 mg 20.7%); MASH approvals Japan/UK, US oral filing accepted (decision Q1 2027); Bridge live 1 Jul; zenagamtide phase 3s (HF-POLARIS to H2-2029, AMAZE 8) and CagriSema high-dose phase 3 initiated. LoE live in Canada (prices down, volumes held). No force call moves. ADEQUATE.
+
+## E. Shareholder-friendliness evidence (delta)
+
+P17/RPT — carried from v6 (top-exec ~DKK 193m ≈ 0.19% of the 5% base; Catalent-sites RPT caveat; Foundation ≈28%/77%). Capital-allocation worksheet [P19] — 2026 programme update (sourced, buyback 6-K + report):
+
+| Execution | Avg px DKK | Year EV/OI | Norm EV/OI (23–25) | Maint MCap/FCF | Yardstick read |
+|---|---|---|---|---|---|
+| 2023–24 executions (carried) | 699–873 | 30.8–30.9× | 38.9–40.2× | >30× | Clearly overpriced (≈25×+ all reads) — on the record as yardstick |
+| 2026 pgm, 4 Feb → 3 Aug cum. | **278.35** | 10.4–10.8× | 11.1–11.5× | 12.0× | Near conservative worth; 27.06m sh, DKK 7.53bn = **50% of 15bn** drawn |
+| Week 27 Jul–3 Aug | 305.61–335.98 | ≤12.4–12.8× | ≤13.3–13.7× | ≤14.5× | Drifting with price; far below the ≈25× class |
+
+Purpose line now states capital reduction **and** share-based-programme obligations; H1 SBC 443m vs 5.9bn repurchased → retirement remains genuine. Funding: 41.2bn returned (35.3 div + 5.9 bb) vs ~52.0bn H1 framework FCF — covered; net borrowings +7.4bn ≈ refinancing (EUR 1.3bn repaid, CHF 1.09bn issued); Novo net debt (APM) 95.4 → 86.5bn. Interim dividend flat at 3.75.
+
+**Judgment log — delta (verdict unchanged):**
+1. Verdict: **CAUTION — one flag.** H1 adds execution evidence, not verdict evidence.
+2. ADVERSE limbs still fail: execution 10.4–14.5× across all reads (vs ≈25× class); stock FAIR, not expensive; the only standing limb remains the absent published price discipline.
+3. SOUND still unavailable: no completed programme-year until Feb 2027; no worth-referenced criterion; strike-era CFO signed today's statement.
+4. Late-July drift (buying to 336 into ZEUS week) is the discipline-absence limb illustrated — logged, not escalated; price paid still ~half the overpriced class.
+5. Consistency hazard checked: the held position and today's [redacted] tape get no vote; the re-test stays where v6 fixed it — AR-2026/proxy on the completed programme year.
+6. Forward evidence restated: price 307.6 vs band 170/180; DKK 7.47bn of authorisation remains to 1 Feb 2027 with weekly public execution.
+
+## F. Valuation math
+
+FY25 OI 127,658; debt 140,127 (leases in); cash+STI 44,982; shares 4,442m.
+- EV/OI legs: **P_no-cash = (7×127,658 − 140,127)/4,442 = 169.6**; **P_all-cash = +44,982 → 179.8**; width 6.0% — the bracket is the cash judgment (bounds labelled; upper bound is the §7.1 ordering key).
+- Maintenance FCF leg: 8 × 103,000/4,442 = 185.5 (range 173.6–188.2) → EV/OI binds; at 169.6 the maint MCap/FCF = 7.3× (passes).
+- P12 edge: 8.75× EV/OI no-cash → **219.9** (Past STRONG; not ADD-eligible under P21 — Future ADEQUATE).
+- **P9 sell line = (25×127,658 + 44,982 − 140,127)/4,442 = 697.1** ≈ $107 ADR.
+- ADR conversions at 6.51 (report spot 30 Jul): band ≈ $26.1/$27.6; distances @ 307.60: +81% (no-cash) / **+71% (all-cash, ordering key)**; ADD band −44.9% away; P9 +127% above.
+- Qualifiers: 3×BV = 149 (BV/sh 49.8); TBV distorted (carried) — context only, not band inputs.
+- v6→v7 band movement decomposed: ≈172 (ex-lease FY25 build) → 169.6/179.8 = leases in (−1.9/sh) + H1 gross-debt growth (−2.1/sh) on the no-cash bound; the all-cash bound improves on the 18bn cash build.
+
+## G. Change log
+
+- **v7 — 2026-08-04 — REVIEW: H1-2026 results (full 37-page report read).** No gate moves: WATCH / STRONG / ADEQUATE / PASS (1 flag) / FAIR; **HOLD**. Guidance raised to 0…−6% CER adjusted (both lines); Q2 adj. OI +11% CER; gross margin −4.5pp on price; FY26 FCF guide raised to 45–55bn; DKK 6.3bn impairments (monlunabant terminated); ZEUS confirmed failed (possible Q3 impairment); REIMAGINE 4 HbA1c non-inferiority miss logged under Future. **Band restated to the labelled bracket ≈ DKK 170/180 (no-cash/all-cash)** on the 30-Jun-26 balance sheet with lease liabilities in per §2·1A (v3–v6 had netted Novo's ex-lease net-debt APM; ≈ DKK 2/sh effect) — Dist +78% → **+71%** on the upper bound; P9 ≈ 696 → 697; P12 edge ≈ 222 → 220; share basis pinned to 4,442m H1 diluted. P19 CAUTION restated with the programme 50% drawn at 10.4–14.5× across reads; re-test unchanged (AR-2026/proxy). CFO presentation change (interest out of operating) logged as a mandatory §2·1A reconstruction for the FY2026 row. Price DKK 306.50 → 307.60 (ADR $44.28, US session ~−6% post-call); position [redacted] vs cost.
+- v6 — 2026-07-31 — REVIEW: first v4.0.0 capital-allocation judgment — CAUTION (1 flag); SF FAIL → PASS; AVOID → WATCH; SELL-FLAG lifted → HOLD; ZEUS logged. Band unchanged ≈172.
+- v5 — 2026-07-16 — SF re-test under v3.4.0: both strikes confirmed; AVOID / SELL-FLAG stand.
+- v4 — 2026-07-07 — Tier-2 re-exam: two P19 hard strikes; WATCH → AVOID; SELL-FLAG.
+- v3 — 2026-07-04 — P20 maintenance basis; band → ≈172; WATCH. · v2 — 2026-07-04 — price delta. · v1 — 2026-06-10 — ANALYSE; WATCH.
+
+*Framework output, not investment advice.*
