@@ -1,0 +1,144 @@
+---
+ticker: NOVO-B.CO
+company: Novo Nordisk A/S
+exchange: Copenhagen (CSE); NVO NYSE ADR 1:1
+currency: DKK
+memo_date: 2026-07-04
+memo_version: v3
+price_at_memo: DKK 326.9 (NOVO-B, 3 Jul 2026 close; prev close 332.0)
+mcap_at_memo: ~DKK 1,454bn
+verdict: WATCH
+quality_past: STRONG
+quality_future: ADEQUATE
+sf: PASS
+cheapness: FAIR
+trigger_band: "CHEAP below ≈ DKK 172 (binding: EV/OI, conservative EV; maintenance-capex-basis MCap/FCF concurs ≈ DKK 173–188). P12 edge ≈ DKK 222."
+next_review: "H1-2026 results (5 Aug 2026); or price < DKK 220 (P12 edge); or material change in semaglutide LoE / CagriSema FDA decision (late 2026) / Lilly orforglipron uptake / US 2027 pricing / 2026 capex trajectory"
+---
+
+# NOVO-B.CO — Novo Nordisk A/S: GSC Memo (REVIEW v3)
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | STRONG | ADEQUATE | PASS (3 flags) | FAIR | **WATCH** |
+
+**Verdict unchanged; the valuation lens is sharpened.** v3 rebuilds free cash flow on a **maintenance-capex basis** from primary Annual-Report-2025 figures, per the book's explicit allowance and the instruction to treat the manufacturing build-out as growth capex. The data vindicates the treatment: PP&E capex ran DKK 6.3bn → 12.1 → 25.8 → 47.2 → **60.1bn** across 2021–25 (4.5% → 19.5% of sales), and management itself guides capex down to ~DKK 55bn in 2026 and "declining in the coming years," while redefining its own FCF as CFO-less-PP&E. This is transient growth spend, not upkeep. Correcting for it, the two primary gauges converge — maintenance-basis MCap/FCF **14.1×** and EV/OI **12.4×**, both **~77% above** their cheap thresholds — a coherent read that the prior memo's capex-distorted split (MCap/FCF 20–50× vs EV/OI 10×) obscured. The binding trigger metric flips from MCap/FCF to **EV/OI**, lifting the band from ≈ DKK 106 to **≈ DKK 172** (P12 edge ≈ DKK 222). Nothing touches the quality gates: a Foundation-stewarded, single-franchise pharma with exceptional-but-decelerating returns, a real-but-contested moat, disciplined pay. It is **materially closer to range** than v1/v2 implied — a ~32–47% fall now clears the band versus ~59–68% before — but at DKK 326.9 it is still **not GSC-cheap**. WATCH.
+
+## 2. Understanding — PASS *(restated)*
+Novo Nordisk sells one molecule — semaglutide (Ozempic in diabetes, Wegovy in obesity), plus a small Rare Disease unit — to payers and patients across ~168 markets, controlled operationally and by vote by the Novo Nordisk Foundation. Unchanged.
+
+## 3. Quality — past record — STRONG *(restated; FCF basis noted)*
+No new fiscal year (H1-2026 due 5 Aug). Worst-of-four normalised ROCE clears the 15% STRONG bar comfortably on the historic window (ex-cash beginning-capital ROCE 82%→104%→106% in 2022–24), with 2025's drop to 54% and Novo's own ROIC (88.5%→63.9%→39.3%) the deceleration flag — driven by the capex/M&A build, not an operating collapse. Decade EPS roughly tripled. On a maintenance-capex basis FCFROCE rises materially and reinforces STRONG; I keep the quality gate on the conservative all-capex basis per the book (averaging already dilutes the build-out) and apply the growth-capex correction where it is decisive — the valuation gate. L/E 180%, inside the 200% flag. **Verdict: STRONG — historic returns exceptional, trend rolling over.**
+
+## 4. Quality — future — ADEQUATE *(restated)*
+Breadth PASSES both sides. Forces tally unchanged: customer power WEAK (essential therapy; but 2027 US price cuts and MFN evidence rising payer leverage), supplier power WEAK, substitutes **STRONG** (Lilly tirzepatide/Zepbound ahead on efficacy 25.5% vs CagriSema 23%; orforglipron oral launched), new entrants WEAK (biologics/scale barriers). One strong force → ADEQUATE zone; moat (manufacturing scale + brand + entrenched diabetes franchise) **stable-to-eroding** (global value share −3.6pp to 30.1%). Medicare obesity-drug coverage (from end-June 2026) is a volume/access tailwind that does not alter the competitive structure or the patent clock. **Verdict: ADEQUATE — unchanged.**
+
+## 5. Shareholder-friendliness — PASS (3 flags) *(restated)*
+No governance/pay developments. Comp modest and performance-linked (top-exec total ~DKK 193m ≈ 0.15% of OI; CEO Doustdar ~DKK 35m) — inside the $30m / 5%-of-lower(FCF,NI) ceilings. **Flag 1:** Foundation ~28% capital / ~77% votes via 10×-vote A-shares (control; no value-destructive allocation paired → caveat, not strike). **Flag 2:** 2024 buybacks at peak (~DKK 871) were value-destructive; programme cut 93% in 2025 (DKK 1.4bn), but the new 2026 programme (up to DKK 15bn) at ~DKK 325 still repurchases well above the bargain zone (EV/OI 12.4×, ~+90% over the cheap band) — pattern persists, not a strike (not dilution-sterilisation, not >20× EV/OI). **Flag 3:** 2024 Catalent transfer via Novo Holdings (disclosed RPT). ~50% payout rational. **Verdict: PASS.**
+
+## 6. Price — FAIR (binding gate) — **rebuilt on maintenance-capex FCF**
+
+FCF ladder, FY2025 (DKK m; CFO = 118,408 derived from the AR FCF identity):
+
+| FCF definition | FCF | MCap/FCF | vs 8× |
+|---|---|---|---|
+| 1. Mechanical — CFO − all capex incl. M&A (= reported FCF 28.3bn) | 28,295 | 51.4× | +542% |
+| 2. Company 2026 def — CFO − PP&E only (adds back Akero intangible) | 58,268 | 25.0× | +212% |
+| 3. **Maintenance-capex basis — CFO − ~DKK 15bn maint. PP&E** | ~103,000 | **14.1×** | **+77%** |
+
+Maintenance PP&E ≈ 5% of sales ≈ DKK 15bn is an **inference** (Novo discloses no maintenance/growth split), anchored on the **sourced** 2021 pre-build-out ratio of 4.5%; range DKK 14–22bn (D&A upper bound) gives MCap/FCF 13.9–15.1×.
+
+| Metric | Current @ DKK 326.9 | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap/FCF (maintenance-capex basis) | 14.1× | ≤ 8× | Primary | FAIL (+77%) |
+| EV/OI (conservative, no cash) | 12.4× | ≤ 7× | Primary | FAIL (+77%) |
+| EV/OI (all cash excess) | 12.2× | ≤ 7× | Primary | FAIL |
+| MCap/BV | 7.5× | ≤ 3× | Qualifier | FAIL |
+| MCap/TBV | 22.7× | ≤ 3× | Qualifier | FAIL (buyback/intangible-distorted) |
+
+The two primaries now **agree at ~+77% above cheap** — the coherence the capex correction restores. EV/OI (12.4×) is capex-independent and unaffected by the FCF debate; it is the clean discipline check. **Trigger band: CHEAP < ≈ DKK 172** — binding metric is now **EV/OI** (conservative EV), with the maintenance-basis MCap/FCF leg concurring at ≈ DKK 173–188. P12 edge (Past STRONG, one primary to 1.25×) ≈ **DKK 222**. At DKK 326.9 the stock is +90% above the band (needs −47%) / +47% above the P12 edge (needs −32%). Qualifiers fail but are distorted (TBV depleted by intangibles + prior buybacks) — informational, no blocking investigation.
+
+*R&D sensitivity (illustrative — NOT applied to the verdict; the book takes OI as-reported and has no R&D add-back):* capitalising/adding back all DKK 52bn R&D to OI still leaves EV/OI at **8.8×** (fails ≤7, and >8.75 even on the P12 allowance; implied band ≈ DKK 253, stock still +29% above). Stacking both add-backs (growth-capex FCF *and* full R&D) reaches MCap/FCF 9.4× but EV/OI stays 8.8× — the disciplined and the maximally-aggressive reads reach the **same verdict**. For a franchise whose central risk is a 2031–32 patent cliff, R&D is replenishment (maintenance-like), not discretionary growth — the asymmetry with build-out capex is the reason to treat them differently.
+
+## 7. Risks & thesis-breakers
+- Jan-2027 US list-price cuts (~50% Wegovy / ~35% Ozempic to $675 WAC) plus MFN compress the highest-margin pool; 2025 US sales flattered by non-recurring gross-to-net.
+- International loss-of-exclusivity is *live* (generic semaglutide launched in India/China/Canada/Brazil/Turkey, Mar 2026); US/EU compound patent to ~2031–32.
+- Lilly's efficacy and oral-GLP-1 lead (orforglipron launched; retatrutide ~28.7% ahead) can take share faster than Novo's pipeline (CagriSema FDA decision late-2026; REDEFINE 11 not until H1-2027) can defend.
+- Single-molecule concentration: any semaglutide safety/label or supply shock is existential.
+- The maintenance-basis FCF assumes the growth capex is genuinely optional and reversible; if a material share proves to be capacity *replacement* (not expansion), the true FCF sits below the ~DKK 103bn line and the band falls back toward the company-definition ~DKK 106.
+
+## 8. Flip conditions & next review
+- **To BUY:** price into the band (≈ DKK 172 strict; ≈ DKK 222 on the P12 edge) with gates intact — a further ~32–47% drawdown — or capex normalising toward maintenance ahead of schedule (which lifts realised FCF and confirms the band).
+- **To AVOID:** Future → WEAK if a second force turns strong (orforglipron/retatrutide demonstrably displacing semaglutide volume, or payer power hardening past the 2027 cuts); or a confirmed multi-year ROCE decline at FY2026 downgrades Past.
+- **Next review:** H1-2026 results (5 Aug 2026); or price < DKK 220 (P12 edge — worth a full REVIEW); or a material move in semaglutide LoE, the CagriSema FDA decision (late 2026), Lilly orforglipron uptake, US 2027 pricing, or the 2026 capex trajectory (Capital Markets Day 21 Sep 2026).
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+- **Primary (this REVIEW):** Novo Nordisk **Annual Report 2025** — "Five-year overview" (PP&E capex, intangible capex, acquisitions, FCF, D&A, equity, net debt, shares, buybacks, 2021–25) and "Financial performance" (OI, R&D, COGS, capex commentary, 2026 guidance, FCF redefinition). NOVO-B quote DKK 326.9 (3 Jul 2026 close; Investing.com/TradingView). Medicare obesity-drug coverage from end-June 2026 (CNBC/TipRanks/GuruFocus). CagriSema/orforglipron unchanged since Feb 2026.
+- **Carried from v1 (10 Jun 2026), not re-fetched:** balance-sheet cash/debt/TBV split; SEC 20-F (CIK 0000353278); 2025 Remuneration Report; ownership 28%/77%; India generic launches; Wegovy HD / 2027 pricing.
+- **Restatement to primary source:** v1/v2 used stockanalysis-derived FCF (mechanical 28,989; normalised 58,962); v3 replaces with AR-2025 primary — reported FCF **28,295**, company-def (CFO−PP&E) **58,268**, CFO **118,408** (derived). Differences immaterial to any verdict.
+- **Data gap / judgment:** Novo discloses **no maintenance-vs-growth capex split**; maintenance PP&E (~DKK 15bn, 5% of sales) is an inference anchored on the 2021 ratio, shown as a range. No new fiscal data until H1-2026.
+
+## B. Ten-year financial record *(FCF-related rows refreshed to AR-2025 primary; returns record unchanged from v1)*
+
+### B1 Capital-allocation series (DKK m, AR-2025 five-year overview)
+| | 2021 | 2022 | 2023 | 2024 | 2025 |
+|---|---|---|---|---|---|
+| Net sales | 140,800 | 176,954 | 232,261 | 290,403 | 309,064 |
+| Operating profit | 58,644 | 74,809 | 102,574 | 128,339 | 127,658 |
+| Net profit | 47,757 | 55,525 | 83,683 | 100,988 | 102,434 |
+| D&A + impairment | 6,025 | 7,362 | 9,413 | 19,107 | 21,982 |
+| **Purchase of PP&E** | 6,335 | 12,146 | 25,806 | 47,164 | **60,140** |
+| PP&E capex % of sales | 4.5% | 6.9% | 11.1% | 16.2% | 19.5% |
+| Purchase of intangibles | 1,050 | 2,607 | 13,090 | 4,145 | 29,973 |
+| Acquisition of businesses | 18,283 | 7,075 | — | 82,163 | — |
+| FCF (company def) | 29,319 | 57,362 | 68,326 | (14,707) | 28,295 |
+| CFO (derived) | 54,987 | 79,190 | 107,222 | 118,765 | 118,408 |
+| Equity | 70,746 | 83,486 | 106,561 | 143,486 | 194,047 |
+| Net debt (Novo def) | (5,031) | 2,319 | 8,950 | (69,713)* | (95,424)* |
+| Shares o/s, EoY (m) | 4,620 | 4,560 | 4,510 | 4,465 | 4,465 |
+| Buybacks | 19,447 | 24,086 | 29,924 | 20,181 | 1,388 |
+
+*Novo shows net-debt sign per its own convention; 2024–25 are net-debt positions of ~DKK 70bn / ~95bn after Catalent + EUR 16.3bn Eurobonds. The PP&E ramp (4.5%→19.5% of sales) and the 2026 guide (~55bn, then declining) are the empirical basis for the growth-capex treatment.
+
+### B2 Returns (ex-cash, beginning CE) — unchanged from v1
+2022 82.0% · 2023 104.4% · 2024 106.0% · 2025 54.4%. Worst-of-four normalised averages clear the 15% STRONG bar; 2025 single-year drop + Novo ROIC 39.3% are the deceleration flag. Maintenance-basis FCFROCE would rise well above the 8% bar but the quality gate is kept on the conservative all-capex basis.
+
+### B3 Growth & leverage — unchanged from v1
+ΔOI/sh −0.2% · ΔFCF/sh distorted by build-out/M&A · L/E 180% (latest; inside 200% flag) · payout ~50.7%.
+
+## C. Calculation notes (this REVIEW)
+**Maintenance-capex FCF (the v3 change).** Book rule: use a maintenance-capex figure when disclosable, never D&A as proxy, else subtract all capex (overly-dark). Novo discloses none, so maintenance PP&E is inferred at **5% of 2025 sales ≈ DKK 15.5bn** (anchored on 2021's 4.5% pre-build-out ratio; range 4.5%→D&A = DKK 13.9–22.0bn). FCF (maintenance) = CFO − maintenance PP&E = 118,408 − 15,000 ≈ **DKK 103bn**. The DKK 30bn intangible (Akero) and any business acquisitions are excluded as non-recurring M&A. Scope: applied to the **valuation gate only**; the FCFROCE quality metric is kept on the conservative all-capex basis (multi-year averaging already dilutes the single-year build-out spike, and Past is STRONG on ROCE regardless).
+**R&D — declined for the verdict.** OI taken as-reported (R&D expensed, DKK 52,039). No add-back to OI (EV/OI) or FCF. Rationale in §6: the book has an explicit capex-split allowance but none for R&D and resists OI add-backs; and for a patent-cliff franchise R&D is replenishment (maintenance-like), asymmetric with build-out capex. Sensitivity shown, not adopted.
+**EV build (both variants):** all-cash-excess EV = MCap 1,454,051 + debt 130,958 − cash 26,962 = 1,558,047; no-cash EV = 1,585,009 (conservative, used for the band). Novo's disclosed net debt (95,424) is lower still (nets extra marketable securities); band effect < DKK 3/sh — immaterial.
+**MCap @ 326.9** = 326.9 × 4,448 diluted = 1,454,051. **TBV** = 14.39 × 4,448 = 64,007 → MCap/TBV 22.7× (qualifier, distorted — inapplicable as a binding gate).
+**Bias check:** one live candidate — *hotness/consensus* (fresh "48% undervalued" / "leans cheap" narratives around the Medicare re-rating). Handled by anchoring cheapness to EV/OI and maintenance-basis MCap/FCF, both of which still fail at ~+77%. None other live.
+
+## D. Future-performance worksheet *(unchanged from v1/v2; Medicare noted)*
+Breadth: Customer PASS (no single customer >10%; ~168 markets); Supplier PASS (diversified; Novo seeking supplier discounts Jul 2026 to defend margin). Forces: Customer WEAK · Supplier WEAK · Substitutes **STRONG** (Lilly efficacy + oral lead) · New entrants WEAK → **1 strong = ADEQUATE**. Moat: scale + brand + diabetes franchise, **stable-to-eroding** (value share 30.1%, −3.6pp). Market: growing (obesity TAM + Medicare access) but increasingly price-competitive → MIXED.
+
+## E. Shareholder-friendliness evidence *(unchanged from v1; buyback line updated)*
+Top-exec total ~DKK 193m (≈0.15% of OI) — far below $30m / 5%-of-lower(FCF,NI). Foundation ~28% capital / ~77% votes. RPT: 2024 Catalent transfer via Novo Holdings (disclosed, fairness opinions). Buybacks: 2024 avg ~DKK 871 (value-destructive), 2025 cut 93% to DKK 1.4bn, **2026 programme up to DKK 15bn** at ~DKK 325 — above the bargain zone (EV/OI 12.4×) but not dilution-sterilisation and not >20× EV/OI → Flag, not strike. Payout 50.7% — rational. No strike.
+
+## F. Valuation math (this REVIEW)
+Threshold-implied prices (DKK, FY2025, conservative EV):
+- 8× FCF (maintenance basis, DKK ~103bn): **185** (mid); range **173–188** (D&A→4.5% maint).
+- 7× EV/OI (conservative EV): **172** — **binding**; all-cash EV **178**; Novo net debt **179**.
+- P12 edge (Past STRONG, 1.25×): EV/OI@8.75× **222**; FCF@10× (maint) **232** → **≈ DKK 222**.
+- Qualifiers (context): 3× BV = 131; 3× TBV = 43 (distorted).
+- Company-definition FCF (CFO−PP&E, all PP&E as maintenance) would put the 8× leg at **DKK 106** — the prior-memo band, now shown to be an under-statement from treating growth capex as upkeep.
+Distance @ 326.9: +90% vs DKK 172; +47% vs DKK 222. R&D-add-back band (EV/(OI+R&D), not adopted): **DKK 253**.
+
+## G. Change log
+- **v3 — 2026-07-04 — REVIEW (valuation-methodology).** (1) Rebuilt FCF on a **maintenance-capex basis** from primary AR-2025 data per the book's allowance and the growth-capex instruction: PP&E capex 4.5%→19.5% of sales over 2021–25, management guiding capex down and redefining its own FCF → build-out confirmed as growth. Maintenance-basis MCap/FCF **14.1×** now agrees with EV/OI **12.4×** at ~+77% above cheap. (2) **Binding trigger metric flips MCap/FCF → EV/OI**; band rises **DKK 106 → ≈ DKK 172** (P12 edge ≈ DKK 222); distance-to-cheap narrows from ~59–68% to ~32–47%. (3) **R&D add-back declined** for the verdict (not book-aligned; sensitivity shows verdict robust either way). (4) FCF figures restated to primary source (reported 28,295; company-def 58,268; CFO 118,408). **Verdict move:** none — **WATCH → WATCH**; quality gates restated STRONG/ADEQUATE/PASS.
+- **v2 — 2026-07-04 — REVIEW.** Price +21.3% (DKK 269.5→326.9) on Medicare obesity coverage; band DKK 106 (normalised MCap/FCF) with EV/OI-suspension anchor ≈ 172–178 flagged. WATCH.
+- **v1 — 2026-06-10 — ANALYSE.** WATCH; STRONG/ADEQUATE/PASS; price DKK 269.5; band ≈ DKK 105–135.
+
+*Framework output, not investment advice.*
