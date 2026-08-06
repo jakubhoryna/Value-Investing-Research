@@ -1,0 +1,170 @@
+---
+ticker: HLAG.DE
+company: Hapag-Lloyd AG
+exchange: XETRA / Frankfurt
+currency: EUR
+memo_date: 2026-07-21
+memo_version: v1
+price_at_memo: 123.20
+mcap_at_memo: 21,653.6 M
+verdict: AVOID
+quality_past: ADEQUATE
+quality_future: WEAK
+sf: PASS
+cheapness: EXPENSIVE
+trigger_band: "CHEAP below ≈ €20.3 (binding: EV/OI, consv EV; MCap/FCF leg ≈ €32; no P12)"
+next_review: "FY2026 AR (~Mar 2027); earlier on ZIM completion → Gate-1C acquisition audit"
+position: —
+---
+
+# HLAG.DE — Hapag-Lloyd AG: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | SF | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | ADEQUATE | **WEAK** | PASS | EXPENSIVE | **AVOID (Future gate)** |
+
+Hapag-Lloyd is a well-run, conservatively financed container line with a genuinely shareholder-friendly owner group — and a business whose price it does not set. The decade's worst-of-four ROCE of 17.8% is an artifact: FY2021–22 freight-rate windfalls supply 75% of ten years' operating income, and outside them the same machine earned ~6% on capital. Two structural forces — commodity-buying customers and entry-by-capacity in every upcycle — fail the Future gate outright, and no moat rescues it. At €123.20 the shares trade at ~30× both primaries; the verdict would be AVOID even if they didn't. A flip requires evidence the industry's post-consolidation structure durably holds mid-cycle returns above capital costs — Gemini-era discipline is asserted, not yet demonstrated. The signed USD 4.2bn ZIM acquisition (Feb 2026, pending approvals) is the standing event risk and the next hard review trigger.
+
+## 2. Understanding
+
+Hapag-Lloyd sells commodity containerized ocean freight (plus a small terminal arm) to c. 27,400 paying shippers and freight forwarders worldwide; it is a Hamburg-based, ~180-year-old listed Aktiengesellschaft operating 301 ships (2.5m TEU) across 133 global services in the Gemini network with Maersk, the world's fifth-largest liner, ~96% controlled by five anchor holders (Kühne, CSAV, Hamburg, QIA, PIF) with ~4% free float. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four 10y normalized averages: ROCE 17.8%, FCFROCE 18.0% (both wc/end-CE) — above the STRONG bars, but FY2021–22 contribute €26.8bn of €35.7bn ΣOI; ex-boom ROCE ≈ 6.2% and yearly ROCE ran 1–9% in 2016–2020 before collapsing back to 3.2% by FY2025. STRONG is denied on the post-2022 returns collapse (§2·1A decline clause); the fall is cyclical reversion, not monotonic erosion, so WEAK's sustained-decline trigger does not fire. Growth clears the floor (ΔOI/sh +22.1% geo; ΔFCF/sh +16.1% off a 2017 base — 2016 FCF negative). L/E 60.9%, pristine. **ADEQUATE** — the average passes; the distribution warns.
+
+## 4. Quality — future
+
+Breadth PASS both sides (top-50 customers well under 50% of volume; fragmented charter owners, yards, bunker and port suppliers). Forces: customer power **STRONG** (undifferentiated service, transparent spot market, zero switching cost); supplier power WEAK; substitutes WEAK (no economic alternative to ocean freight); new entrants **STRONG** — capital is the only barrier and every upcycle summons ~30%-of-fleet orderbooks; incumbent capacity addition is entry by another name. Tally 2 strong = the book's stop signal. No moat: scale trails MSC/Maersk and confers no pricing power; Gemini's 90% schedule reliability is service quality, not a toll gate. Market growth MIXED (GDP-ish demand, supply cycles dominate). **WEAK.**
+
+## 5. Shareholder-friendliness
+
+Comp: CEO total ≈ €4.5m (EB total €8.9m granted) vs P17 strike line €35.1m (5% × FY25 FCF €702.6m) — 0.6%; chair fee €336k vs ≈2× German large-cap norm ~€700–800k stop. RPT: €1,056.7m services to related parties (5.7% of revenue, chiefly Kühne/CSAV-linked forwarding; arm's-length, fully disclosed), €420.7m received (3.1% of transport spend), HGV <2% — transparent, no flag. Buybacks: none in the window. Dividends: €17.3bn distributed from the FY2021–22 windfall — textbook distribute-when-ROCE-is-low. ZIM is signed, not closed: audit deferred. **PASS** — no strike, no flag pair.
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap/FCF | 30.8× | ≤ 8 | Primary | FAIL |
+| EV/OI (consv / all-cash) | 30.1× / 26.4× | ≤ 7 | Primary | FAIL |
+| MCap/BV | 1.21× | ≤ 3 | Qualifier | Pass |
+| MCap/TBV | 1.48× | ≤ 3 | Qualifier | Pass |
+
+CHEAP below ≈ **€20.3** (EV/OI binds; MCap/FCF leg ≈ €32; no P12 — Past not STRONG); price sits ~6× the band. Backvaluing (definitively cyclical, prominently labelled): on FY2022 peak economics 1.6× EV/OI and 1.2× MCap/FCF; on 10y-average OI/FCF ≈ 7.9× and 6.0× — the market is pricing roughly a repeat of the average decade, windfall included.
+
+## 7. Risks & thesis-breakers
+
+- Freight rates are set by the marginal ship; the ~25–30% orderbook lands into normalizing demand through 2027.
+- ZIM (USD 4.2bn, up to USD 2.5bn new debt) would consume the balance-sheet cushion at an unknowable multiple of mid-cycle earnings.
+- Red Sea normalization releases effective capacity and removes the 2024–25 rate prop.
+- US tariff policy whipsaws Transpacific volumes.
+- 96% anchor ownership: minority shareholders ride the controllers' strategy, including M&A appetite.
+
+## 8. Flip conditions & next review
+
+AVOID → WATCH requires the Future gate to clear: demonstrated mid-cycle (non-crisis) ROCE above capital costs across the industry's new structure, or a genuine cost/network moat emerging from Gemini + terminals — evidence, not narrative. Cheapness is moot until then; note the band sits far below even the qualifier prices (3×BV ≈ €306). Next review: FY2026 AR (~Mar 2027); **earlier and mandatorily on ZIM completion** — run the Gate-1C acquisition audit on pre-deal normalized OI (deal EV vs 15×/20× lines) with ZIM's net cash netted.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+Sources (all fetched 2026-07-20/21): Yahoo Finance quote HLAG.DE (€123.20, 20 Jul 2026 close); Hapag-Lloyd AR 2025 (HLAG_FY_2025_EN.pdf — FY2025+FY2024 adjusted statements, notes, RPT note 39, ZIM subsequent event, customer-base disclosure); AR 2023 (FY2023+FY2022); Annual Report FY2021 (FY2021+FY2020); AR 2019 (FY2019+FY2018 restated, IFRS 16 transition note); AR 2017 (FY2017+FY2016 restated); AR 2016 (31.12.2015 balance sheet); Remuneration Report 2025; company press release 26 Mar 2026 (FY2025 headline, €3.00 dividend); stockanalysis.com (scaffold only — computed lines for FY2024/25 carry a sign-convention artifact, discarded). Web operations: 11 of ~12 (P14 respected). Gaps: FY2025 special-fund securities split within current other financial assets (≈ €1.9–2.0bn) not extracted — treated as non-cash (see C); ZIM pre-deal normalized OI not gathered (deal unclosed — deferred); exact CEO single-figure total taken as ≈ €4.5m from component tables (fixed ~€1.45m + bonus €1.2m + LTIP €1.44m + fringes/pension), label: derived — margin to the strike line is ~8×, composition immaterial.
+
+## B. Ten-year financial record
+
+B1 Raw inputs (million EUR; FCF derived = CFO − interest-and-fees paid (reclassified from financing, IFRS filer) − capex; shares = EPS-implied weighted diluted, millions):
+
+| FY | Revenue | OI | CFO | Capex | Int. paid | FCF | Dil. sh | Total assets | NIBCL | Cash | Total liab | Equity (attrib) | GW+intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2016 | 7,734.2 | 104.0 | 417.2 | 353.7 | 189.9 | −126.4 | 117.8 | 11,330.9 | 1,479.1 | 570.2 | 6,272.5 | 5,054.6 | 3,002.0 |
+| 2017 | 9,973.4 | 353.9 | 893.9 | 411.3 | 307.5 | 175.1 | 144.2 | 14,827.8 | 1,805.5 | 604.9 | 8,769.5 | 6,045.8 | 3,272.3 |
+| 2018 | 11,617.5 | 400.1 | 1,072.9 | 328.9 | 317.7 | 426.3 | 175.2 | 15,301.3 | 2,253.7 | 657.1 | 9,042.0 | 6,248.7 | 3,342.0 |
+| 2019 | 12,607.9 | 775.2 | 2,028.2 | 426.1 | 397.3 | 1,204.8 | 175.7 | 16,200.4 | 2,334.2 | 511.6 | 9,579.8 | 6,606.6 | 3,317.6 |
+| 2020 | 12,772.4 | 1,284.4 | 2,897.9 | 534.1 | 315.6 | 2,048.2 | 175.9 | 15,184.3 | 2,452.5 | 681.3 | 8,461.6 | 6,707.2 | 2,925.9 |
+| 2021 | 22,273.5 | 9,362.2 | 10,410.0 | 1,252.7 | 224.8 | 8,932.5 | 175.8 | 26,714.5 | 3,993.7 | 7,723.4 | 10,552.5 | 16,149.1 | 3,107.3 |
+| 2022 | 34,542.7 | 17,434.6 | 19,503.3 | 1,440.6 | 209.3 | 17,853.4 | 175.8 | 38,687.3 | 3,815.9 | 15,236.1 | 10,776.2 | 27,893.4 | 3,252.5 |
+| 2023 | 17,929.5 | 2,515.5 | 4,966.0 | 1,704.6 | 231.5 | 3,029.9 | 175.8 | 29,012.4 | 3,345.0 | 5,809.8 | 10,245.5 | 18,690.6 | 3,681.8 |
+| 2024 | 19,111.8 | 2,578.5 | 4,364.9 | 2,166.4 | 311.8 | 1,886.7 | 175.8 | 33,617.1 | 4,095.2 | 5,480.6 | 12,753.0 | 20,794.7 | 3,783.0 |
+| 2025 | 18,632.8 | 933.1 | 2,532.7 | 1,450.3 | 379.8 | 702.6 | 175.76 | 28,907.1 | 3,066.8 | 3,475.1 | 10,919.8 | 17,930.3 | 3,280.8 |
+
+31.12.2015 (11th balance year): total assets 11,079.1; NIBCL 1,479.9; cash 573.7; equity attrib 5,038.4. FY2016/2018 P&L per latest-filed restatements (FY2017/FY2019 ARs); FY2024 per FY2025 AR adjusted comparatives.
+
+B2 Returns (CE_wc = TA − NIBCL; CE_xc = CE_wc − cash & equivalents; ROCE on beginning-of-period CE):
+
+| FY | CE_wc | CE_xc | ROCE_wc | ROCE_xc | FCFROCE_wc | FCFROCE_xc |
+|---|---|---|---|---|---|---|
+| 2016 | 9,851.8 | 9,281.6 | 1.1% | 1.2% | −1.3% | −1.4% |
+| 2017 | 13,022.3 | 12,417.4 | 3.6% | 3.8% | 1.8% | 1.9% |
+| 2018 | 13,047.6 | 12,390.5 | 3.1% | 3.2% | 3.3% | 3.4% |
+| 2019 | 13,866.2 | 13,354.6 | 5.9% | 6.3% | 9.2% | 9.7% |
+| 2020 | 12,731.8 | 12,050.5 | 9.3% | 9.6% | 14.8% | 15.3% |
+| 2021 | 22,720.8 | 14,997.4 | 73.5% | 77.7% | 70.2% | 74.1% |
+| 2022 | 34,871.4 | 19,635.3 | 76.7% | 116.2% | 78.6% | 119.0% |
+| 2023 | 25,667.4 | 19,857.6 | 7.2% | 12.8% | 8.7% | 15.4% |
+| 2024 | 29,521.9 | 24,041.3 | 10.0% | 13.0% | 7.4% | 9.5% |
+| 2025 | 25,840.3 | 22,365.2 | 3.2% | 3.9% | 2.4% | 2.9% |
+
+Normalized 10y averages (Σ numerator ÷ Σ CE), four ways: ROCE — wc/beg 19.3%, **wc/end 17.8% (worst)**, xc/beg 24.3%, xc/end 22.3%. FCFROCE — wc/beg 19.5%, **wc/end 18.0% (worst)**, xc/beg 24.6%, xc/end 22.5%. Worst-of-four tested vs P2/P3: quantitative bars met; STRONG denied per §2·1A decline clause (Appendix C). Concentration: FY2021–22 = 75.0% of ΣOI, 74.1% of ΣFCF; ex-2021/22 ROCE_wc/end ≈ 6.2%.
+
+B3 Growth & leverage (per-share on EPS-implied diluted; L/E latest-year all liabilities):
+
+| FY | ΔOI/sh % | ΔFCF/sh % | ΔBV/sh % | ΔTBV/sh % | L/E |
+|---|---|---|---|---|---|
+| 2017 | +178.0 | n.m. (neg. base) | −2.3 | +10.4 | 145.1% |
+| 2018 | +0.6 | +100.5 | −5.2 | −4.1 | 144.7% |
+| 2019 | +93.4 | +182.2 | +5.4 | +12.7 | 145.0% |
+| 2020 | +65.5 | +69.9 | +1.6 | +14.9 | 126.2% |
+| 2021 | +629.3 | +336.3 | +140.8 | +245.1 | 65.3% |
+| 2022 | +86.2 | +99.9 | +72.7 | +88.9 | 38.6% |
+| 2023 | −85.6 | −83.0 | −33.0 | −39.1 | 54.6% |
+| 2024 | +2.5 | −37.7 | +11.3 | +13.4 | 61.3% |
+| 2025 | −63.8 | −62.8 | −13.8 | −13.9 | 60.9% |
+
+Geometric means 2016→2025: ΔOI/sh +22.1%; ΔFCF/sh +16.1% (2017 base — 2016 FCF negative, logged); ΔBV/sh +10.1%; ΔTBV/sh +19.0% — read against €20.9bn dividends paid over the window (BV growth is after massive distribution). All above the 3% floor.
+
+## C. Calculation notes
+
+- **FY2025 CE build:** TA 28,907.1 − NIBCL 3,066.8 = CE_wc 25,840.3; − cash 3,475.1 = CE_xc 22,365.2. NIBCL = trade AP 2,203.8 + contract liabilities 772.3 + income tax liabilities 35.6 + other non-financial liabilities 54.5 + 0.6. Burden-of-proof calls: current other provisions (756.6) and pension provisions left in CE (uncertain-timing, accrual-like but ambiguous); other *financial* liabilities (192.7 + 3.4) left in CE. 2015–2021 statements carry a combined "other liabilities" line — included in NIBCL those years (deferred-income-bearing); ≤1.5% of CE either way, immaterial to any verdict.
+- **TBV 2025:** 17,930.3 − goodwill 1,827.5 − other intangibles 1,453.3 = 14,649.5.
+- **EV 2025 (both variants):** MCap 21,653.6 (175.76m × €123.20) + financial debt 2,750.0 + lease & service-concession liabilities 3,637.4 + NCI 57.0 = EV_none 28,098.0; − cash 3,475.1 = EV_all-cash 24,622.9. Special-fund securities (≈ €1.9–2.0bn inside current other financial assets) *not* netted in the all-cash variant — a stricter read; netting them would put EV_all-cash ≈ €22.6bn (24.2× OI), changing nothing.
+- **IFRS interest reclassification:** interest-and-fees paid sits in financing in every year; moved into CFO before deriving FCF, all ten years. Interest *received* (investing, €254.4m in FY2025) left where reported per the rule as written — moving it too would raise FY2025 FCF to ≈ €957m (MCap/FCF 22.6×); logged, no verdict impact.
+- **Leases:** IFRS 16 adopted 1.1.2019 (opening liability €1,046.6m = 6.8% of FY2018 assets); P18 (10% of assets, undiscounted) not triggered for FY2016–18 — pre-adoption years left uncapitalised. Adoption-year artifact flagged: pre-2019 FCF bears full charter rent in CFO, post-2019 only imputed interest — 2019+ FCF is structurally flattered vs 2016–18.
+- **Goodwill** (€1.8bn, CSAV/UASC legacy) stays in CE — serial combiner.
+- **Shares:** EPS-implied weighted diluted (derived); UASC merger (May 2017, +45.9m shares) and Oct 2017 rights issue took the count 118.1m → 175.76m; constant since. No options/SBC dilution of note; basic = diluted throughout.
+- **FY2016 figures** per FY2017 AR restatement (revenue presentation change); latest-filed wins.
+- **Bias check:** anchoring (2021–22 earnings), availability (Red Sea/tariff headlines), miscontrast (Maersk AVOID precedent) all named; none carries the verdict — Future fails on the §2·1B mechanics independent of any of them. None live.
+
+## D. Future-performance worksheet
+
+Breadth — Customers: PASS. "50 largest customers account for significantly less than 50% of cargo volume"; 27,400 customers served FY2025 (AR 2025) — top-1 far below 10%. Suppliers: PASS. Transport expenses spread across hundreds of ports/terminal operators, fragmented tramp charter owners, commodity bunker; newbuild yards concentrated (KR/CN) but capex-side with several vendors ready. Effective-supplier check: no single securitisation-style chokepoint.
+
+| Force | Call | Reason |
+|---|---|---|
+| Customer bargaining power | **STRONG** | Commodity service, transparent spot market, forwarders bundle volume, ~zero switching cost |
+| Supplier bargaining power | WEAK | Fragmented owners/yards/fuel; low switching costs; forward integration improbable |
+| Threat of substitutes | WEAK | Air 10–15× cost, rail intra-continental only; doing-without not viable |
+| Threat of new entrants | **STRONG** | Capital the only barrier; every upcycle funds ~25–30%-of-fleet orderbooks; no permits, no customer lock-in — capacity addition = entry |
+
+Tally: 2 strong → Future WEAK (book stop signal; memo completed per protocol). Moat: none identified — scale below MSC/Maersk with no unit-cost hegemony; no switching costs, network effects don't gate rates; Gemini reliability is operational excellence, not a moat source. Market growth: MIXED — volumes track GDP-ish (+2–4%), supply cycle dominates price.
+
+## E. Shareholder-friendliness evidence
+
+- **P17 comp:** CEO Habben Jansen ≈ €4.5m total 2025 (fixed ≈ €1.45m incl. pension; STI paid 2025 €1.2m — capped from €1.93m calculated; LTIP tranche €1.44m); EB active total €8.9m; strike line 5% × lower(FCF €702.6m, NI €909.8m) = €35.1m — CEO at 0.6% of FCF, entire board at 1.3%. Absolute trigger ($40m 2026-indexed): not approached. Outside directors: chair Behrendt total €336.0k (2024 comparative table; fixed €270k + committees) vs ≈2× German large-cap chair norm (~€350–400k norm → stop ~€700–800k; DAX-median calibration, logged) — clean. Insider ownership: five anchors hold ~96%; alignment via control, not options. No option plans on the share count.
+- **RPT:** services rendered to related parties €1,056.7m (5.7% of revenue — Kühne-sphere forwarding and CSAV-linked shipping, arm's-length terms stated, fully tabulated in note 39); received €420.7m (3.1% of transport+terminal expenses); HGV (Hamburg) <2% of transport/terminal spend. Structural note (documented caveat, not a flag): the ~30% shareholder Kühne also controls Kühne+Nagel, a major customer — disclosed, priced at market.
+- **P19 buybacks:** none FY2016–2025 (share count flat since Oct 2017; no treasury shares, no repurchase authorisations exercised). Worksheet n.a.
+- **Acquisitions:** BV/TBV 17,930/14,650 — no BV ≫ TBV trigger; goodwill flat ~€3.3bn since 2017 (UASC was a share merger at a discount; no badwill audit due). FY2023 terminal build-out (SAAM Terminals, JM Baxi 40%, Spinelli 49%; ≈ €1.6bn cash) — pre-deal target OI undisclosed at line level; estimate-based multiples would be INDETERMINATE — logged, named re-test folded into T&I segment scrutiny at FY2026. **ZIM (signed 16 Feb 2026, USD 35/sh ≈ USD 4.2bn, funded from cash + ≤ USD 2.5bn debt; Israeli state special rights, ZIM shareholder and regulatory approvals pending):** unclosed — the Gate-1C audit (deal EV net of ZIM's cash vs 15×/20× pre-deal normalized OI) is mandatory at completion and is this memo's standing next-review trigger.
+- **Payout record:** dividends paid €20.9bn FY2016–2025, of which €17.3bn in 2022–23 from the windfall (€35 + €63/sh); €8.20 for FY2024, €3.00 proposed for FY2025 — distribution scaled to earnings, retention modest while reinvestment economics are poor. Rational for the industry; the ZIM commitment is the countervailing allocation fact to audit.
+
+## F. Valuation math
+
+At €123.20 (20 Jul 2026 close): MCap 21,653.6. EV_none 28,098.0 → EV/OI 30.1×; EV_all-cash 24,622.9 → 26.4×; both ≫ 7. MCap/FCF 21,653.6/702.6 = 30.8× ≫ 8. Qualifiers: MCap/BV 1.21×, MCap/TBV 1.48× — pass; no investigation triggered (asset-heavy balance sheet carries the multiple, earnings don't). Threshold-implied prices: EV/OI leg P = (7 × 933.1 + 3,475.1 − 6,387.4 − 57.0) ÷ 175.76 = **€20.27** (binding); MCap/FCF leg P = 8 × 702.6 ÷ 175.76 = €31.98. No P12 (Past ≠ STRONG). Qualifier context prices: 3×BV/sh ≈ €306; 3×TBV/sh ≈ €250. Backvaluing (definitively cyclical industry — labelled, a tourniquet not a default; assumes the cycle repeats and isn't secular): vs FY2022 peak, EV/OI 1.6×, MCap/FCF 1.2×; vs 10-year averages (OI 3,574m, FCF 3,613m), EV/OI 7.9×, MCap/FCF 6.0× — the market prices ~a repeat of the windfall decade.
+
+## G. Change log
+
+v1 — 2026-07-21 — Initial analysis. AVOID (Future WEAK: customer power + entrants STRONG, no moat). Past ADEQUATE (worst-of-four ROCE 17.8%/FCFROCE 18.0%, boom-skewed; STRONG denied on decline clause). SF PASS. EXPENSIVE; band ≈ €20.3 (EV/OI). Next: FY2026 AR ~Mar 2027; ZIM close → mandatory 1C audit.
