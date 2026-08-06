@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v231
+register_version: v232
 register_date: 2026-08-06
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 187
-verdict_split: "WATCH 49 · AVOID 137 · BUY 0 · DNAF 1"
+names_total: 188
+verdict_split: "WATCH 49 · AVOID 138 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v231 · 2026-08-06)
+# GSC Register — Master Watchlist (v232 · 2026-08-06)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -90,7 +90,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN (SIX) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of continuous criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%, buybacks > SBC re-issuance) | €282.65 (31 Jul 2026) | **BAND CORRECTED** from v1's €25–36: mechanical ≈ **€6.4–25.0** (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; **no P12 — Past ADEQUATE**). v1 wrongly used MCap/TBV as a band input and applied a P12 allowance; also printed MCap/BV threshold <5 vs live ≤3, so 3.5× **breaches**. Informational **SFS-adjusted band ≈ €43.5–62.0** — EXPENSIVE 28.0×/29.5× (24.9× ex-SFS) | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) completed tranche + CAUTION re-test; **Feb 2027 AGM Healthineers spin vote → mandatory full quality re-base**. Flips on PRICE limb: **no year in ten reaches ≈25× on any basis** — peak 24.3× strict EV/OI (FY2021, a €137m artifact tranche; parent pgm closed at €100.42 blended = 19.3×), 20.3× peak MCap/FCF, 20.2× peak ex-SFS, last 5 yrs 10.3–15.2× MCap/FCF. ⚠ Live 2024–29 €6bn pgm at €220+ levels, no criterion. ⚠⚠ **Captive-finance treatment unresolved (MODEL queue)** — decides Past (strict WEAK / adj ADEQUATE) and moves the band €25 → €62. Conf ~75% |
 
-### AVOID — 137 names, alphabetical
+### AVOID — 138 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -119,6 +119,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | BTI | British American Tobacco p.l.c. | 2026-07-16 | v2 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $58.73 ADR (≈£43.97) | CHEAP < ≈ $23/£17 (EV/OI, consv EV; MCap/FCF leg ≈ $29/£21.5; no P12) — moot given AVOID | — | FY2026 (~Feb 2027) or returns re-rate; H1 ~30 Jul 2026 opt.; Fit2Win charges hit FY26 OI |
 | BYD (1211.HK / 002594.SZ) | BYD Company Limited | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | HK$83.00 / RMB 86.26 (9/7 Jul 2026) | CHEAP < ≈ RMB 10–26/sh (MCap/FCF on norm. FCF ≈ RMB 10; EV/OI ≈ RMB 26; reported FCF negative → n.m.); no P12 — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Mar 2027); structural — 3 strong forces + sub-10% ROCE + FY25 FCF −RMB 97.7bn; H1 (~Aug 2026) opt. |
 | CDI.PA | Christian Dior SE | 2026-07-29 | v1 | AVOID (Past WEAK + SF FAIL: P19 acquisition + control clause) | WEAK | STRONG | FAIL | €434.00 (28 Jul 2026) | n.m. — EV/OI leg negative on market-NCI (book-NCI read ≈ €194–270, artifact). Cheapness EXPENSIVE 15.1×/14.3× | — | FY2026 (~late Jan 2027) + 2027 AR re-tests P19 alongside MC.PA; MODEL item: holdco/NCI rule |
+| CELH | Celsius Holdings, Inc. | 2026-08-06 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 strike + P19 ADVERSE) | WEAK | WEAK | FAIL | $29.15 (5 Aug 2026) | n.m. — no positive price clears EV/OI 7× (net debt + pref $1,905m > 7× FY25 OI $987m); FCF leg $9.96. EXPENSIVE 23.4× / 71.1×–67.2× | — | Q2-26 10-Q (~Aug 2026); FY2026 10-K (~Feb 2027) 1st clean post-Rockstar yr; 3 INDETERMINATE acq audits; P4 3rd-decline re-test |
 | CON | Continental AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €72.28 (18 Jul 2026) | CHEAP < ≈ €36 (EV/OI, FY25 adj-EBIT, consv EV; MCap/FCF leg ≈ €38; reported-OI leg n.m. — spin/OESL effects) — EXPENSIVE | — | FY2026 AR (~Mar 2027) pure-play basis re-analysis; ContiTech close H2'26 (€4.0bn) shifts EV/band; P19 first-test on any buyback pgm |
 | COPN | Cosmo N.V. | 2026-07-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | CHF 67.70 | n.m. — FY25 OI & FCF negative | — | FY2026 results (~Mar 2027); Clascoterone-5% AGA 12-mo readout only if it changes the revenue mix |
 | COST | Costco Wholesale Corporation | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | STRONG | FAIL | $951.89 (31 Jul 2026) | CHEAP ≈ $141.0–175.4 (FCF leg $140.95 and EV/OI no-cash $141.07 coincide; EV/OI all-cash $175.43; P12 edge $175.4 adds nothing) — EXPENSIVE 39.5×/41.4× | — | FY2026 10-K (~early Oct 2026): completed pgm yr + Jan-2027 authorisation expiry = natural judgment re-test. ADVERSE: $4.0bn pgm to Jan 2027 with **$1,359m undrawn** at 10 May 2026; FY26 36wk $603m @ $945.46 (39.3× EV/OI yr, 44.1× norm), Q3 @ $997.47 = record high; no valuation criterion ("as conditions warrant"); +443% above band. Multiple paid rose 5 of last 6 yrs; **diluted count UP** 443.9m→444.5m — no capital returned, SBC not absorbed. Specials ~$11.2bn = the counterweight. Alert < ≈ $210 |
@@ -288,9 +289,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v232 — 2026-08-06** — CELH (Celsius) ANALYSE v1: **AVOID, 3 gates** — w-o-4 ROCE 5.03%; breadth FAIL (Pepsi 43.2%) + 3 forces; P17 strike + P19 ADVERSE (live pgm 25×). AVOID 138.
 - **v231 — 2026-08-06** — **Register repair, no new analysis.** Saint-Gobain de-duplicated: the superseded `SGO` row (AVOID, Past WEAK, record-limited 5y, Business-income basis, committed 03 Aug) deleted; `SGO.PA` (WATCH, full decade, Operating-income basis, committed 05 Aug) survives as the later and better-evidenced build. Counts corrected **names 188→187, WATCH 50→49** (AVOID 137 unchanged — the deleted row was an AVOID verdict physically sitting at the foot of the WATCH table). Defect item rewritten as a cause-and-resolution record; the stale SGO RECORD-LIMITED rebuild flag retired and replaced with the live SGO.PA items (OI-line convention, CEO comp gap, buyback counts, three INDETERMINATE audits); ticker-key convention item escalated with the prior-check-on-company-name fix. No verdict, band or Dist % moved.
 - **v230 — 2026-08-06** — SIKA (Sika AG) REVIEW v2 under MODEL v4.0.0: **AVOID → WATCH**. P19 hard strike (FY2018 SWH block, 33–58×) re-reads **CAUTION** under §2·1C·3 → SF **FAIL → PASS**; ADVERSE closed on liveness (H1-26 treasury purchases CHF 0.0m, no AGM-2026 repurchase item, both 2018 allocators gone). Band restated to the labelled bracket and re-anchored on the 30-Jun-26 BS: ≈CHF 30.5 → **CHF 27.0–30.9** (debt +CHF 549m). Past ADEQUATE / Future STRONG / EXPENSIVE 25.1×/24.7× unchanged; **P4 named — 2 consecutive beginning-CE ROCE declines**. Px CHF 155.40 → 195.50 (+25.8%), Dist +410% → **+623%**. WATCH 49→50, AVOID 138→137. ⚠ Saint-Gobain double-row defect flagged in Open items — not fixed here.
 - **v229 — 2026-08-05** — ANGI (Angi) ANALYSE v1: **AVOID, 3 gates** — w-o-4 ROCE −1.3% (Σ10y OI −$110m); breadth FAIL + 4 forces; P17 strike both reads (2.6×/8.4×); P19 CAUTION. AVOID 138, names 188.
 - **v228 — 2026-08-05** — ZIP.AX (Zip Co, ASX) ANALYSE v1: **AVOID, 3 gates** — subst. ROE −83.8%; breadth FAIL + 4 forces; P19 ADVERSE (live pgm, 34–47× NI). AVOID 137, names 187.
-- **v227 — 2026-08-05** — ZIP (ZipRecruiter) ANALYSE v1: **AVOID, 3 gates** — w-o-4 ROCE 7.6%; breadth FAIL + 4 strong forces; P17 strike both reads; P19 ADVERSE ($629m never ≤ yardsticks, pgm live). AVOID 136, names 186.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
