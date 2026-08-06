@@ -1,0 +1,181 @@
+---
+ticker: RMS.PA
+company: Hermès International SCA
+exchange: Euronext Paris
+currency: EUR
+memo_date: 2026-07-31
+memo_version: v2
+model_version: v4.0.0
+price_at_memo: EUR 1,531.50 (31 Jul 2026 close)
+mcap_at_memo: EUR 160,864m (diluted basis)
+verdict: WATCH
+quality_past: STRONG
+quality_future: STRONG
+sf: PASS
+cheapness: EXPENSIVE
+window: FY2016–FY2025 (10y)
+trigger_band: "CHEAP ≈ EUR 321 (MCap/FCF binds; EV/OI legs EUR 415 no-cash / EUR 537 all-cash both looser; P12 edge ≈ EUR 401)"
+next_review: "FY2026 URD (~Mar 2027) — P4 third-ROCE_wc-decline test, the full-year FY2026 repurchase figure against H1's EUR 160m, and the named CAUTION re-test; price alert < ≈ EUR 400"
+position: —
+---
+
+# RMS.PA — Hermès International SCA: GSC Memo (v2 — v4.0.0 judgment re-test + H1 2026 delta)
+
+## 1. Verdict
+
+Understanding PASS · Past STRONG · Future STRONG · Shareholder-friendliness **PASS** (capital allocation **CAUTION**, 1 flag) · Cheapness EXPENSIVE → **WATCH** (was AVOID).
+
+**This flip is stated at ~60% confidence and it is the second-least comfortable judgment in the campaign, alongside Nestlé.** v1's FAIL rested on three P19 routes — repetition, an egregious single year, and dilution sterilisation escalating at any price — and v4.0.0 abolished all three as rules. What replaces them asks whether this is *capital allocation* at all, and the honest answer is that it is not: **every euro Hermès has spent on its own shares in the window was bought for a single disclosed purpose — delivering stock into employee free-share plans.** The FY2016 table shows 319,621 shares purchased against 416,480 transferred out to employees; FY2021 shows 142,131 against 178,956. This is payroll settlement, and the line this campaign has held throughout is that an employee-plan-bounded mechanism at de-minimis scale is weighed evidence, not a capital-allocation channel — the treatment applied to ATCO-B and MYCR.
+
+Scale supports that reading. **H1 2026 spent €160m on 94,846 shares** — 3.8% of FY2025 free cash flow, **0.099% of market capitalisation**, against **€1,924m of dividends in the same half, twelve times larger**, and €12.9bn of net cash. Across the whole decade, cumulative repurchases of €987.5m sit below 5% of cumulative free cash flow, and v1's own cumulative-withdrawal test confirmed de-minimis relief was not withdrawn.
+
+**The counter-case is strong and belongs in the verdict.** The price paid is 25×-class on every read: the H1 2026 tranche at **€1,686.95** implies **25.4× EV/OI on the year, 27.2× normalized, 42.1× MCap/FCF year and 45.2× normalized — 5.3× conservative worth**. Spending has just returned to the decade norm after two quiet years (€37m in FY2024, €8m in FY2025), so it is live. **Unlike Atlas Copco, none of this cash comes back** — the shares are transferred to employees at carrying value, not sold. And there is no published price criterion, no allocator turnover, and €12.8bn of idle cash that v1 correctly observed sits in neither the retain-nor-distribute camp. **A session treating a plan-bounded mechanism as capital allocation regardless of purpose lands ADVERSE and holds AVOID.**
+
+At €1,531.50 — down 9.7% since v1 on the H1 results — the shares sit **+377%** above a €321 band.
+
+## 2. Understanding
+
+Unchanged. A French *société en commandite par actions*, family-controlled through its Active Partner Émile Hermès SAS, designing, manufacturing in some sixty mostly-French workshops it owns, and selling almost entirely through roughly three hundred of its own stores, differentiated leather goods and saddlery, silk, ready-to-wear, watches, perfume and tableware, under a 189-year-old brand whose deliberate supply scarcity is the commercial mechanism. **PASS.**
+
+## 3. Quality — past record
+
+Unchanged; no new fiscal year (FY2025 latest; FY2026 URD ~March 2027). Worst-of-four normalized ROCE **29.8%** and FCFROCE **20.4%** (ex-cash reads 70.3% and 48.3%). Per-share growth compounds at 16.1% for operating income, 14.9% for free cash flow, 17.6% for book value. Leverage 29.1%, with the only interest-bearing obligations €2,312m of IFRS 16 leases against €12,773m of cash and short-term investments. **H1 2026 is confirmatory and slightly softer:** revenue **€8.16bn** (+6.1% at constant rates, +1.6% reported, with more than €360m of currency drag), **recurring operating income €3.35bn at a 41.0% margin** against 41.4%, net profit (group share) **€2.24bn**, broadly flat; net cash €12.9bn from €12.8bn; full-year capex guided to approximately €1bn. **The P4 warning stands unresolved** — ROCE ex-cash has fallen three consecutive years, the with-cash series twice, and a third with-cash decline at FY2026 fires P4. **STRONG.**
+
+## 4. Quality — future
+
+Unchanged. Breadth passes both sides. All four forces WEAK — atomised allocation-constrained consumers, a customer that owns its upstream, substitutes that have not touched a 41% margin, and entry barriers that compound with barriers to success. Tally zero strong. Moat: **brand**, single-sourced, **strengthening** — managed scarcity sustains annual price rises without volume loss, and the secondary market clears above retail. Market growth MIXED. H1 2026 supports it: growth in every region except the Middle East, with the Americas, Japan and Europe ex-France notably strong. **STRONG.**
+
+## 5. Shareholder-friendliness
+
+**Compensation (P17) — clean, unchanged.** Axel Dumas FY2025 total €7,832,677 against 5% lines of €210.7m (fiscal year) and €195.9m (trailing three-year normalized) — cleared by a factor of eighteen even taking both Executive Chairmen together at €11.13m; ≈US$8.5m against the ≈US$40m indexed absolute trigger. Supervisory Board chair €181,500 against a floor-default stop of ≈US$666k. No flag.
+
+**Related-party transactions — documented caveat, not a flag.** The statutory 0.67% profit share to Émile Hermès SAS (order of €28m) is constitutional rather than negotiated; RDAI's exclusive, untendered mandate over the internal design of every Hermès store at **€20m** is the one genuine untidiness — 1.7% of €1,161m of operating investments; Studio des Fleurs at €4m and the family-connected Paris leases (€124m of right-of-use assets) are immaterial. v1 called the RDAI mandate "one scrutiny-level negative"; under §2·1C's RPT test the question is whether an insider-extraction pattern exists, and €20m of design fees at a company generating €4.2bn of free cash flow does not establish one. **Recorded as a caveat.** A session treating it as a flag would pair it with the allocation flag and reach SF FAIL — named below as the second disagreement line.
+
+**Control — documented caveat, unpaired.** Émile Hermès SAS is sole Active Partner, jointly and severally liable for the company's debts without limit, holding powers no shareholder vote can displace. The framework makes a control structure operative when *paired with value-destructive allocation*; with allocation at CAUTION rather than ADVERSE, the pairing is not made out — consistent with the treatment given GOOGL, META, ESSITY-B, LISN and MC.PA in this campaign, and distinguished from RACE one name earlier, where the ADVERSE finding did activate it.
+
+**Capital allocation — CAUTION (one flag).** *Dividends:* €360m (FY2016) → €2,796m (FY2025), roughly two-thirds of free cash flow, **€1,924m paid in H1 2026** — the dominant and appropriate distribution channel. *Reinvestment:* leather workshops and store build-out, guided to ~€1bn of capex in FY2026, against 30%-plus ex-cash returns — sound. *Acquisitions:* none material; goodwill €180m against €18,840m of book value; no audit triggered. *Repurchases — the flag.* Purchases exist solely to deliver shares into employee free-share plans, and the two measurable tranche-years were bought deep in the overpriced band: **FY2016 at €342.94 (20.1× EV/OI, 26.3× MCap/FCF) and FY2021 at €1,139.33 (32.4×/43.2× EV/OI, 41.6×/63.2× MCap/FCF)**. H1 2026 adds a third: **€160m for 94,846 shares at €1,686.95 — 25.4×/27.2× EV/OI and 42.1×/45.2× MCap/FCF, 5.3× conservative worth**. No worth-referenced criterion has ever been published; the authorisations are framed by volume and capital-percentage limits with the stated purpose of employee shareholding. That forecloses SOUND. What it does not reach is ADVERSE, for reasons of purpose and scale set out in Appendix E — and that boundary is the closest call in this campaign. **SF = PASS.**
+
+## 6. Price
+
+At €1,531.50 (31 July 2026; 105,036,704 diluted; FY2025 basis):
+
+| Metric | Current | Threshold | Rank | Pass |
+|---|---|---|---|---|
+| MCap / FCF | 38.2× | ≤ 8 | Primary | Fail |
+| EV / OI (no-cash) | 24.8× | ≤ 7 | Primary | Fail |
+| EV / OI (all-cash) | 22.9× | ≤ 7 | Primary | Fail |
+| MCap / BV | 8.5× | ≤ 3 | Qualifier | Breach → investigated |
+| MCap / TBV | 8.7× | ≤ 3 | Qualifier | Breach → investigated |
+
+**EXPENSIVE.** Band unchanged: **CHEAP ≈ €320.88**, MCap/FCF binding on both cash readings (the EV/OI legs at €415.39 no-cash and €536.99 all-cash are both looser, so the band prints as a single figure); **P12 edge ≈ €401.10** (Past STRONG). **Dist % +377%** (+282% to the P12 edge). Qualifier breaches are near-identical at 8.5× and 8.7× — Hermès carries almost no goodwill — and clear as the asset-light-franchise pattern with 29.8% worst-of-four returns; logged, no block. Qualifier-implied prices, context only: 3 × BV/sh ≈ €538; 3 × TBV/sh ≈ €526.
+
+## 7. Risks & thesis-breakers
+
+- **The flag is live and has just re-accelerated.** €160m in H1 2026 against €8m for the whole of FY2025 — a return to the decade's €110–190m norm after two quiet years, at 5.3× conservative worth and with no price criterion.
+- **P4 fires at FY2026 on a third consecutive ROCE_wc decline** — a quality risk independent of SF, and the more consequential of the two.
+- **€12.8bn of net cash** compounds at a financial return while operating capital compounds above 30%; the framework's rational-allocation test asks for retention where returns are high and distribution where they are not, and this balance sits in neither camp.
+- Personal-luxury demand has softened; constant-currency growth has decelerated from 42% to 6%, and currency cost more than €360m in H1 alone.
+- The control structure means no shareholder vote can displace the Active Partner's powers — a caveat that becomes operative the moment allocation turns ADVERSE.
+- RDAI's exclusive untendered mandate is a standing governance untidiness, small in size.
+
+## 8. Flip conditions & next review
+
+To BUY: price into ≈€321, an 79% decline; the P12 edge at ≈€401 is the first arguable level. Back to AVOID: the FY2026 full-year repurchase figure showing a genuine step-up beyond plan-delivery needs, a general (non-plan) programme, or a second independent flag. To SOUND: a published worth-referenced criterion, or plans settled by fresh issuance or in cash. **Next review:** FY2026 URD (~March 2027) — the P4 third-decline test, the full-year FY2026 repurchase figure against H1's €160m, and the named CAUTION re-test. Price alert below ≈€400.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+All v1 sources carry forward (URDs and annual reports FY2016–FY2025; treasury-share tables; financing-section repurchase cash; remuneration report; related-party notes). Added for v2:
+
+1. **Hermès International 2026 Half-Year Results (29 July 2026)** — sourced: consolidated revenue **€8.2bn**, +6% at constant exchange rates and +2% at current rates (press coverage gives €8.16bn, +6.1%/+1.6%); **recurring operating income €3.35bn at 41.0% of sales** against 41.4% in H1 2025; **net profit (group share) €2.24bn**, broadly stable, including an exceptional French levy on large companies' profits — €2.5bn and 30.7% of revenue excluding it; Q2 revenue €4.09bn, +6.7% constant; currency drag **more than €360m**; growth in all regions except the Middle East; **dividends distributed €1,924m**; **"During the first six months of the year, Hermès International redeemed 94,846 shares for €160 million, excluding transactions completed within the framework of the liquidity contract"**, described in the release as **"share buybacks dedicated to employee share ownership plans"**; restated net cash **€12.9bn** at 30 June 2026 against €12.8bn at 31 December 2025; total assets €24.8bn, shareholders' equity €19.0bn, cash €12.3bn; full-year capex guided to approximately €1bn; workforce 27,107.
+2. **Yahoo Finance** — RMS.PA €1,531.50 (31 Jul 2026 close); prior closes €1,550.50 (30 Jul), €1,508.50 (29 Jul), €1,695.50 (28 Jul) — a **9.7% fall** on the results.
+
+**Gaps and INDETERMINATEs.** (a) The H1 2026 average of **€1,686.95** is derived from the disclosed €160m and 94,846 shares; the release states the figure **excludes liquidity-contract transactions**, so it is the clean programme number. Rounding of the €160m to the nearest million moves the average by less than €0.01 per share — immaterial. (b) **H1 2026 free cash flow and the interim balance-sheet detail beyond net cash were not retrieved**; the tranche is read against FY2025 denominators and the FY2023–25 normalized averages per §8.2, which is the correct basis in any case. (c) FY2026 full-year repurchase spending is unknown; H1's €160m is not annualised anywhere in this memo, and the FY2026 URD is the named re-test. (d) v1's gaps carry: RDAI, Studio des Fleurs and the family leases are disclosed without full euro detail on rents; the statutory 0.67% profit share is not disclosed in euros. **P14 budget:** 2 web operations (price ×1, H1 search ×1).
+
+## B. Financial record
+
+B1–B3 unchanged from v1 (FY2016–FY2025). Operative FY2025 figures: **OI €6,569m**, **FCF €4,213m**, diluted 105,036,704, BV €18,840m, TBV €18,429m, borrowings €34m, lease liabilities €2,312m, NCI €6m, cash and STI €12,773m. Trailing-three-year normalized: **FCF €3,918m, OI €6,124m**. **H1 2026 context:** revenue €8.16bn, recurring operating income €3.35bn, net profit €2.24bn, dividends €1,924m, repurchases €160m, net cash €12.9bn.
+
+## C. Calculation notes
+
+Carried from v1. Added:
+
+1. **H1 2026 tranche construction.** €160,000,000 ÷ 94,846 = **€1,686.95**; implied MCap = 1,686.95 × 105.0367m = **€177,191m**; implied EV (all-cash-excess, the flattering variant) = 177,191 + 34 + 2,312 + 6 − 12,773 = **€166,770m**. Against FY2025: **25.4× EV/OI, 42.1× MCap/FCF**. Against the FY2023–25 normalized averages: **27.2× and 45.2×**. Against the binding band leg of €320.88: **5.3× conservative worth**.
+2. **Band and current multiples unchanged in inputs;** only the price moves. MCap/FCF ≤ 8 → **€320.88** (binds on both cash readings); EV/OI ≤ 7 → €415.39 no-cash and €536.99 all-cash; **P12 edge €401.10**.
+3. **Scale arithmetic added**, because under a judgment protocol magnitude decides where a price-independent strike did not: H1 2026 repurchases of €160m are **3.8% of FY2025 free cash flow** and **0.099% of market capitalisation**, against **€1,924m of dividends in the same half — 12.0×** the buyback. Cumulative window repurchases of €987.5m are below 5% of cumulative FCF (€1,280.2m bar), which is why v1's cumulative-withdrawal test did not withdraw de-minimis relief.
+4. **Repurchase cash by year, for the liveness read:** 108.8 (2016), 187.9 (2017), 59.7 (2018), 53.1 (2019), 122.0 (2020), 158.0 (2021), 123.0 (2022), 130.0 (2023), **37.0 (2024), 8.0 (2025), 160.0 (H1 2026)**. H1 2026 is a return to the decade norm after two quiet years, not a step-up beyond it — stated because the distinction matters to the forward call and could be read either way.
+
+## D. Future-performance worksheet
+
+Unchanged from v1 (breadth PASS both sides; four forces WEAK, tally zero strong; brand moat, single-sourced and strengthening; market growth MIXED). H1 2026 regional detail logged as supportive.
+
+## E. Shareholder-friendliness evidence
+
+**P17.** Dumas €7,832,677 = 3.7% of the tighter (normalized) €195.9m line; both Executive Chairmen together €11.13m; ≈US$8.5m against the ≈US$40m trigger. Supervisory Board chair €181,500. **No flag.** **RPT.** Documented caveat (see §5). **Control.** Documented caveat, unpaired.
+
+### Capital-allocation judgment — verdict **CAUTION** (one flag)
+
+**Purpose.** Every disclosed acquisition purpose in every retrieved year's treasury table is **"employee shareholding"**, and the H1 2026 release repeats it verbatim: *"share buybacks dedicated to employee share ownership plans."* The mechanism is visible in the tables: FY2016, 319,621 shares purchased at €342.94 against **416,480 transferred out at €223.09**; FY2021, 142,131 purchased at €1,139.33 against **178,956 transferred out at €391.97** — carrying-value transfers into free-share plans, not cash sales, which is why purchase cash flows through financing while deliveries do not.
+
+**Tranche worksheet** (implied MCap = average price × diluted shares; implied EV on the all-cash-excess variant; normalized = trailing-three-year averages):
+
+| Tranche | Shares | Avg price | EV/OI yr | EV/OI n3 | MCap/FCF yr | MCap/FCF n3 | × worth |
+|---|---|---|---|---|---|---|---|
+| FY2016 | 319,621 | €342.94 | 20.1× | 20.1×† | 26.3× | 26.3×† | 1.1× |
+| FY2021 | 142,131 | €1,139.33 | **32.4×** | **43.2×** | **41.6×** | **63.2×** | 3.6× |
+| **H1 2026 (live)** | **94,846** | **€1,686.95** | **25.4×** | **27.2×** | **42.1×** | **45.2×** | **5.3×** |
+
+† window-edge degenerate: only one in-window year available, so the normalized legs equal the year legs.
+
+**Recency-weighted reading (≤ 10 lines).**
+1. The live position is **€160m spent in H1 2026 on 94,846 shares at €1,686.95** — 25.4× EV/OI and 42.1× MCap/FCF, **5.3× conservative worth** and the worst execution price in the record.
+2. That follows two quiet years — €37m in FY2024 and **€8m in FY2025** — and returns spending to the decade norm of €110–190m rather than exceeding it.
+3. The disclosed purpose has never varied: employee share ownership plans.
+4. **None of the cash comes back.** Shares are transferred to employees at carrying value; unlike Atlas Copco's option hedge there are no offsetting exercise proceeds.
+5. Scale is nonetheless de minimis: **0.099% of market capitalisation, 3.8% of FY2025 free cash flow**, against €12.9bn of net cash.
+6. Dividends of **€1,924m in H1 alone are twelve times** the repurchase and are unambiguously the capital-return channel.
+7. Cumulative decade repurchases of €987.5m sit **below 5% of cumulative free cash flow** — the de-minimis relief was tested and not withdrawn.
+8. No worth-referenced criterion has ever been published; authorisations are framed by volume and capital-percentage limits.
+9. No allocator turnover: Axel Dumas has been Executive Chairman throughout and Émile Hermès SAS sole Active Partner throughout.
+10. €12.8bn of idle cash earns a financial return while operating capital compounds above 30% — a standing allocation criticism independent of the buyback.
+
+**Yardsticks — met and breached.** *Breached:* the disciplined line (≤7× EV/OI, ≤8× MCap/FCF) is missed by 2.9–5.9× in every measurable tranche; the "clearly overpriced ≈25×-class" calibration is met on **all four reads in FY2021 and in the live H1 2026 tranche**; no price criterion exists; the cash is not recovered; and there has been no allocator turnover. *Met (not breached):* the purpose is **plan-bounded**, not a discretionary capital-return programme; scale is de minimis on every denominator — 0.099% of market capitalisation, 3.8% of free cash flow, below 5% of cumulative FCF across the decade; funding is internal from €12.9bn of net cash with essentially no borrowings; the dividend is twelve times larger and rational; there is no acquisition record to impugn; reinvestment is organic and high-returning; and FY2024–25 spending of €37m and €8m shows the mechanism scales down when plan needs are light.
+
+**Named forward evidence.**
+- **Live authorisation and execution:** yes — €160m in H1 2026, the AGM authorisation renewed annually and framed by volume and capital-percentage limits.
+- **Current price vs band:** €1,531.50 against CHEAP ≈ €320.88 → **+377%**. Expensive; this limb *is* satisfied.
+- **Management's stated criteria:** employee shareholding, not price. No valuation condition has ever been published. This is the flag's entire content and the reason SOUND is unavailable.
+- **Funding source:** internal, from €12.9bn of net cash. Nothing is debt-funded and nothing impairs the returns engine.
+- **Recovery:** none. This is the fact that most distinguishes Hermès from Atlas Copco and is recorded as such rather than glossed.
+
+**The single judgment line on which two sessions could disagree — and this is the closest boundary in the campaign.** Whether a repurchase programme **bounded by employee-plan obligations** should be judged as capital allocation at all when its execution price is 25×-class and 5.3× conservative worth. The line this campaign has held is that plan-bounded settlement at de-minimis scale is weighed evidence rather than a capital-allocation channel — the reasoning that flipped **ATCO-B** (FY2025 tranche at 27.2× EV/OI year, 25.4× normalized, 34.4× MCap/FCF; SEK 938m = 0.10% of market capitalisation) and **MYCR** (30.0× MCap/FCF; SEK 19m = 0.031%). Hermès sits inside that set on scale (0.099%) and purpose (identical), and outside it on one fact: **Atlas Copco recovered more cash than it spent through option-exercise proceeds, and Hermès recovers nothing.** **A session weighting non-recovery as decisive — treating an unrecovered €160m at 5.3× worth as discretionary capital deployment regardless of the label on it — lands ADVERSE and holds AVOID.** That reading has real force, and it is why confidence here is **~60%**, the joint-lowest in this campaign with NESN. The distinguishing principle applied is the one used at COST, which held AVOID: a **general, discretionary** programme is judged as capital allocation; a **plan-bounded** mechanism at de-minimis scale is not. Costco's $903m was discretionary; Hermès's €160m is not.
+
+**The second, separate disagreement line.** v1 assessed the RDAI exclusive untendered mandate as "one scrutiny-level negative." If that is a **flag** rather than a caveat, it pairs with the allocation flag and SF FAILs. This memo treats it as a caveat because §2·1C's RPT test looks for an insider-extraction pattern and €20m of design fees at a company generating €4.2bn of free cash flow does not establish one — the same treatment given NESN's governance turmoil. The two disagreement lines are stated separately so they are not conflated.
+
+**Consistency-hazard check — performed.** Three hazards tested. *Queue consistency in both directions:* thirteen of twenty-four names had flipped before this one, and RACE held AVOID one name earlier on a superficially similar profile — but Ferrari's programme is a **general €3.5bn authorisation** executing weekly with treasury warehoused at 8.76% of shares, not a plan-bounded mechanism, and its multiples are higher still. The distinguishing fact is purpose, and it is sourced on both sides. *Severity hazard:* the pull toward failing a name whose execution price is the highest in absolute terms (€1,686.95, 5.3× worth) was tested by asking whether the same purchase at the same multiple would fail if it were €5m rather than €160m — it would not, which establishes that scale is doing the work, and €160m against a €161bn company is on the same side of that line. *Affinity:* Hermès has the best operating record the framework has measured, and that was not permitted to purchase allocation latitude — the flag stands, SOUND is refused, and the non-recovery fact is recorded as the strongest point against this verdict rather than omitted.
+
+## F. Valuation math
+
+At €1,531.50 (31 Jul 2026) × 105,036,704 diluted = **MCap €160,864m**. EV no-cash = 160,864 + 34 + 2,312 + 6 = **€163,216m**; all-cash-excess = − 12,773 = **€150,443m**.
+
+| Metric | Arithmetic | Value | Threshold |
+|---|---|---|---|
+| MCap / FCF | 160,864 ÷ 4,213 | **38.2×** | ≤ 8 |
+| EV / OI, no-cash | 163,216 ÷ 6,569 | **24.8×** | ≤ 7 |
+| EV / OI, all-cash | 150,443 ÷ 6,569 | **22.9×** | ≤ 7 |
+| MCap / BV | 160,864 ÷ 18,840 | 8.5× | ≤ 3 |
+| MCap / TBV | 160,864 ÷ 18,429 | 8.7× | ≤ 3 |
+
+**Trigger band.** FCF leg 8 × 4,213 ÷ 105.0367m = **€320.88 (binds on both cash readings)**; EV/OI no-cash **€415.39**; EV/OI all-cash **€536.99**; **P12 edge €401.10** (Past STRONG). **Band ≈ €321**; **Dist % +377%**, +282% to the P12 edge. Qualifier prices, context only and not band inputs: 3 × BV/sh ≈ €538; 3 × TBV/sh ≈ €526. Not HELD — no sell-flag line required.
+
+**Bias check.** Queue consistency (both directions, with the RACE contrast stated), the severity hazard and affinity for an exceptional record all named and handled in E. Two locatable disagreement lines — purpose-versus-price on the buyback, and whether RDAI is a flag — are stated separately with a confidence figure attached.
+
+## G. Change log
+
+v1 — 2026-07-29 — initial ANALYSE under v3.11.0. **AVOID** (STRONG / STRONG / SF FAIL — P19 on three independent routes: repetition across FY2016 and FY2021, an egregious single year in FY2021, and sterilisation escalating in flagged years / EXPENSIVE). Band ≈ €321.
+v2 — 2026-07-31 — REVIEW (MODEL **v4.0.0** judgment re-test + H1 2026 delta; no new fiscal year). **All three P19 routes behind v1's FAIL no longer exist as rules** — sterilisation is now weighed evidence and the strike ladder is retired. Re-derived as **CAUTION, one flag** — the FY2016, FY2021 and live H1 2026 tranches bought deep in the overpriced band with no worth-referenced criterion — with the ADVERSE route closed on **purpose and scale**: every euro is spent delivering shares into employee free-share plans, and H1 2026's **€160m is 0.099% of market capitalisation and 3.8% of FY2025 free cash flow** against **€1,924m of dividends in the same half**. **SF FAIL → PASS; verdict AVOID → WATCH.** New work: the **H1 2026 tranche computed — 94,846 shares for €160m at €1,686.95, reading 25.4× EV/OI year, 27.2× normalized, 42.1× and 45.2× MCap/FCF, 5.3× conservative worth**, the worst execution price in the record; scale arithmetic computed (irrelevant under a price-independent strike, decisive under a judgment); the repurchase-cash series read for liveness (**€37m FY2024, €8m FY2025, €160m H1 2026** — a return to the decade norm, not a step-up beyond it); the **non-recovery** fact recorded explicitly as the strongest point against this verdict, and as what distinguishes Hermès from ATCO-B. RDAI re-classified from "scrutiny-level negative" to **documented caveat**, with the alternative reading named as a second disagreement line. Control caveat held **unpaired**, distinguished from RACE one name earlier. H1 2026 incorporated: revenue €8.16bn (+6.1% constant), recurring operating income €3.35bn at 41.0%, net profit €2.24bn, net cash €12.9bn, capex guided to ~€1bn. **P4 warning stands unresolved** — a third consecutive ROCE_wc decline at FY2026 fires it. Band unchanged (**€320.88**; P12 edge €401.10); **Dist % +377%**. **Confidence ~60% — joint-lowest in the campaign with NESN.** Price €1,695.50 → **€1,531.50 (−9.7%)** on the H1 results.
