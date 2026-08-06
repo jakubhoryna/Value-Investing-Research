@@ -1,0 +1,96 @@
+---
+ticker: NOVO-B.CO
+company: Novo Nordisk A/S
+exchange: Copenhagen (CSE); NVO NYSE ADR 1:1
+currency: DKK
+memo_date: 2026-07-07
+memo_version: v4
+price_at_memo: DKK 324.0 (NOVO-B, 6 Jul 2026 close, Investing.com; ~DKK 330–332 indicated intraday 7 Jul)
+mcap_at_memo: ~DKK 1,441bn
+verdict: AVOID
+quality_past: STRONG
+quality_future: ADEQUATE
+sf: FAIL (P19 hard strike — 2023–24 buyback executions ~31× EV/OI)
+cheapness: FAIR (informational — AVOID rests on the SF gate)
+trigger_band: "CHEAP below ≈ DKK 172 (binding: EV/OI, conservative EV; maintenance-capex-basis MCap/FCF concurs ≈ DKK 173–188) — unchanged from v3, informational given AVOID."
+held: "NVO ADR (1:1) @ [redacted] — zone SELL-FLAG (sell-reason 2: SF re-verdict FAIL)"
+next_review: "AR-2026 + 2027 remuneration/buyback disclosures (~Feb–Mar 2027) re-test the execution table; H1-2026 results (5 Aug 2026) refresh the band only. Flip needs sustained below-flag repurchase execution (2026 programme currently qualifies) with no window-year above 20×."
+---
+
+# NOVO-B.CO — Novo Nordisk A/S: GSC Memo (REVIEW v4)
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | STRONG | ADEQUATE | **FAIL (P19 hard strike)** | FAIR (informational) | **AVOID** |
+
+**Verdict flips WATCH → AVOID on the shareholder-friendliness gate.** This REVIEW executes the queued Tier-2 P17/P19 re-examination — the EV/OI-at-execution confirmation that v1–v3 never ran. The sourced execution data fails it decisively: under the DKK 20bn 2024 programme, Novo repurchased 13.89m B shares for DKK 12.13bn at an average of **DKK 873.01** (SEC 6-Ks, 6 Aug + 5 Nov 2024) — an implied **EV/OI of 30.9× on FY2024 OI** (30.4× even on the flattering MCap-only variant), against a 20× hard-strike line. The late-2023 tranche (Nov 2023–Jan 2024) executed 5.22m shares at avg **DKK 699.2** — **30.8× on FY2023 OI** (24.9× even mapped forward to FY2024 OI). A single hard strike is an SF FAIL (§2·1C); here there are two, at the same ~31× magnitude that put LLY in AVOID. The v3 memo's "not >20× EV/OI" applied only to the 2026 programme — the 2023–24 executions were never put through the worksheet; that was the miss, now corrected. Honestly logged on the other side: the **current 2026 programme is clean** — DKK 5.9bn executed at avg DKK 268.02 through 26 Jun 2026 → 10.1× EV/OI, 11.6× maintenance-basis MCap/FCF, below even the 14×/16× flag lines. Discipline has improved; the record window (2021–25) still governs, and the model does not average away DKK 33bn+ repurchased at ~31× worth of operating profit. Nothing else moves: quality gates restated STRONG / ADEQUATE, band unchanged at ≈ DKK 172. **Because NOVO-B is HELD, the re-verdict triggers sell-reason 2 → the position moves HOLD → SELL-FLAG.** The framework flags; the user decides.
+
+## 2. Understanding — PASS *(restated)*
+One molecule — semaglutide (Ozempic/Wegovy) plus a small Rare Disease unit — sold across ~168 markets, Foundation-controlled. Unchanged.
+
+## 3. Quality — past record — STRONG *(restated)*
+No new fiscal data (H1-2026 due 5 Aug). Worst-of-four normalised ROCE well clear of the 15% bar (ex-cash beginning-capital 82%→104%→106% 2022–24; 2025 54.4% the deceleration flag). L/E 180%. Unchanged.
+
+## 4. Quality — future — ADEQUATE *(restated)*
+Breadth passes; forces tally unchanged (substitutes STRONG — Lilly efficacy + oral lead; other three WEAK); moat stable-to-eroding. Unchanged.
+
+## 5. Shareholder-friendliness — **FAIL (P19 hard strike)** *(re-tested — the v4 change)*
+**P17 clean, both limbs:** top-exec total ~DKK 193m ≈ 0.19% of NI (5% cap ≈ DKK 5.1bn); CEO ~DKK 35m ≈ US$5m, far under the ≈$40m indexed scrutiny trigger. No director-limb issue. **P19 worksheet (full arithmetic Appendix C):**
+
+| Execution tested | Sourced avg px | Spend | Implied EV/OI (all-cash-excess ~net debt) | Flattering (MCap only) | Line |
+|---|---|---|---|---|---|
+| 2024 programme to 4 Nov 2024 | DKK 873.01 | DKK 12.13bn | **30.9× (FY24 OI)** | 30.4× | **HARD STRIKE** |
+| Nov 2023–Jan 2024 tranche | DKK 699.2 | DKK 3.65bn | **30.8× (FY23 OI)** | 30.7× | **HARD STRIKE** (24.9× even on forward FY24 OI) |
+| 2026 programme to 26 Jun 2026 | DKK 268.02 | DKK 5.90bn | 10.1× (FY25 OI) | 9.4× | Clean (< 14× flag) |
+
+2021–22 executions (DKK 19.4bn / 24.1bn calendar): average prices not separately sourced — moot, the 2023–24 strikes decide alone. Not dilution-sterilisation (repurchases ≫ SBC; shares retired) and not below-worth — at ~31× EV/OI these were overpriced acquisitions of Novo's own stock, bought at ~4.4× the framework's cheap line. Prior flags (Foundation 10×-vote control; 2024 Catalent RPT) remain logged caveats; the strike makes them academic. **Verdict: FAIL.**
+
+## 6. Price — FAIR *(restated; informational — the SF gate decides)*
+No new fiscal data; band unchanged. At DKK 324.0: EV/OI ≈ 12.3×, maintenance-basis MCap/FCF ≈ 14.0×. **Band: CHEAP < ≈ DKK 172** (EV/OI binding, conservative EV; maintenance MCap/FCF leg ≈ 173–188). Price +88% above the band. Under AVOID the band is moot for action and retained for the record.
+
+## 7. HELD — sell-reason audit and zone
+**Bias tick-through (before the zone statement):** (i) *consistency bias* — three prior memos passed SF, and flipping a held name means overriding my own verdicts; named and executed anyway, exactly as HFG required. (ii) *Endowment/lossophobia* — the position is modestly up (avg cost [redacted] ADR vs ~$50); reluctance to flag a winner is live and does not invalidate sourced arithmetic. (iii) *Precedent anchoring* — LLY's ~31× strike was not imported; NOVO's multiples were computed independently from its own 6-Ks and AR data, and happen to land at the same level. **Sell-reason audit:** sell-reason 2 applies — the SF re-verdict turns FAIL; the analysis was under-tested at v1–v3, not the context changed. P9 is not the driver (sell line ≈ DKK 696, price far below). **Zone: SELL-FLAG.** Adding is excluded (AVOID). The framework flags; the exit decision — including tax and timing — is the user's.
+
+## 8. Flip conditions & next review
+- **To WATCH:** the buyback record clears — sustained execution below the flag lines (the 2026 programme at 10.1× currently qualifies) with no window-year above 20× as 2023–24 age out (FY2028–29 on a five-year window), or an explicit, evidenced capital-allocation policy change (price-disciplined repurchase criteria); quality gates intact.
+- **To anything better than AVOID sooner:** nothing price-driven — the gate is governance, not cheapness.
+- **Next review:** AR-2026 / 2027 remuneration season (~Feb–Mar 2027) re-tests the execution table; H1-2026 results (5 Aug 2026) refresh the band and quality inputs only. Earlier on a semaglutide LoE / CagriSema / pricing shock (thesis risks unchanged from v3).
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+- **Primary (this REVIEW):** Novo Nordisk share-repurchase 6-Ks via SEC EDGAR — 6 Aug 2024 filing (programme since 6 Feb 2024: 11,067,126 B shares, DKK 9,727,706,050, avg DKK 878.97); 5 Nov 2024 filing (cumulative 13,891,849 shares; Aug–Nov tranche 2,824,723 shares / DKK 2,399,999,603; total A+B shares 4,465,000,000 incl. treasury); 30 Jan 2024 filing (Nov 2023–Jan 2024 tranche accumulated at 22 Jan: 5,223,100 shares / DKK 3,651,686,620). 2026 programme conclusion/progress announcements (GlobeNewswire/Nasdaq/MarketScreener, Feb–Jun 2026): 4 Feb–4 May tranche 14,759,179 shares avg DKK 257.47; as of 26 Jun 2026 cumulative 22,009,179 shares avg DKK 268.02 / DKK 5,898,848,910 under the up-to-DKK 15bn programme. Price: NOVO-B DKK 324.0, 6 Jul 2026 close (Investing.com; ~DKK 330–332 indicated 7 Jul, source-conflicting — close used).
+- **Carried from v3 (not re-fetched):** AR-2025 five-year overview (OI, net debt, buyback cash, shares — Appendix B); all quality-gate and band inputs.
+- **Data gaps:** 2021–22 average repurchase prices not sourced (moot — decisive strike established on sourced 2023–24 data). Calendar-2024 total buyback cash DKK 20,181m (AR-2025) exceeds the DKK 12.13bn tested to 4 Nov; the untested Nov 2024–Feb 2025 tail cannot cure the strike (any tail price maps to >20× on FY24 OI at plausible levels; not separately sourced and not needed).
+
+## B. Ten-year financial record *(unchanged from v3 — see NOVO-B_2026-07-04_GSC.md B1–B3; no new fiscal year)*
+Key rows reused here (AR-2025 five-year overview, DKK m): OI 2023 102,574 · 2024 128,339 · 2025 127,658; net debt (Novo def) 2023 +8,950 · 2024 +69,713 · 2025 +95,424; buyback cash 2021–25: 19,447 / 24,086 / 29,924 / 20,181 / 1,388; shares EoY 2023 4,510m, 2024–25 4,465m (total incl. treasury).
+
+## C. Calculation notes — P19 worksheet (this REVIEW)
+- **2024 programme (to 4 Nov 2024):** value = 9,727,706,050 + 2,399,999,603 = DKK 12,127,705,653; shares = 13,891,849 → **avg DKK 873.01** (all sourced). Implied MCap = 873.01 × 4,465m = DKK 3,898bn. EV (all-cash-excess ≈ + Novo-def net debt 69.7bn — the flattering side of the cash netting, hence conservative for the test) = DKK 3,968bn. **EV/OI = 3,968 / 128.3 = 30.9×**; MCap-only 30.4×. Both ≫ 20×.
+- **Nov 2023–Jan 2024 tranche:** avg = 3,651,686,620 / 5,223,100 = **DKK 699.15**. MCap = 699.15 × 4,510m = 3,153bn; +8.95bn net debt = 3,162bn. **/ FY23 OI 102,574 = 30.8×**; forward on FY24 OI (4,465m shares, +69.7bn): 24.9×. Both ≫ 20×.
+- **2026 programme (to 26 Jun 2026):** avg DKK 268.02 (sourced). MCap = 268.02 × 4,465m = 1,197bn; +95.4bn = 1,292bn; / FY25 OI 127,658 = **10.1×**. MCap/FCF on the P20 maintenance basis (~DKK 103bn, v3): 11.6×. Below the 14×/16× flag lines — clean.
+- **Basis notes:** P19 tests the record window's executions (precedents: MSFT FY23–25, ABNB 2022–25, ROK FY21–25, LLY ~31×, BKNG retained at ≤18.5×). FCF legs on the P20 maintenance basis where used, per P17/P19 basis-consistency. Sterilisation limb: does not strike — programmes retire shares well in excess of SBC delivery.
+- All arithmetic machine-verified.
+
+## D. Future-performance worksheet *(unchanged from v3)*
+
+## E. Shareholder-friendliness evidence *(rebuilt this REVIEW)*
+P17: top-exec ~DKK 193m ≈ 0.19% of NI (cap 5% of lower(maintenance-FCF ≈103bn, NI 102.4bn) ≈ DKK 5.1bn); CEO ~DKK 35m ≈ US$5m vs ≈$40m indexed trigger — clean. Directors: no >2×-norm issue on record. **P19: HARD STRIKE** — 2023–24 executions at ~31× EV/OI (worksheet above); 2026 execution clean at 10.1×. Caveats retained: Foundation ~28% capital / ~77% votes (10×-vote A-shares); 2024 Catalent transfer via Novo Holdings (disclosed RPT, fairness opinions). Payout ~50.7% rational. **SF: FAIL — single hard strike decides (§2·1C).**
+
+## F. Valuation math *(unchanged from v3; informational under AVOID)*
+Band: 7× EV/OI (conservative EV) ≈ **DKK 172** binding; maintenance-basis 8× FCF ≈ 173–188; P12 edge ≈ DKK 222 (academic — AVOID and Future ADEQUATE both exclude it); qualifiers 3× BV ≈ 131, 3× TBV ≈ 43 (distorted). P9 sell line ≈ DKK 696. Distances @ 324.0: +88% vs 172; +46% vs 222.
+
+## G. Change log
+- **v4 — 2026-07-07 — REVIEW (Tier-2 P17/P19 re-examination, EV/OI-at-execution confirmation).** (1) **P19 worksheet run on sourced execution data for the first time**: 2024 programme DKK 12.13bn @ avg 873.01 → 30.4–30.9× EV/OI; Nov-23–Jan-24 tranche DKK 3.65bn @ avg 699.15 → 30.8× — two hard strikes (>20×). 2026 programme clean (avg 268.02 → 10.1× EV/OI, 11.6× maint-MCap/FCF). (2) **SF PASS (3 flags) → FAIL**; the v3 "not >20×" parenthetical covered only the 2026 programme — v1–v3 never tested the 2023–24 executions; miss owned and corrected. (3) **Verdict WATCH → AVOID** (SF gate). (4) **HELD zone HOLD → SELL-FLAG** (sell-reason 2; bias tick-through run — consistency and endowment named, neither invalidates). (5) P17 re-confirmed clean under v3 mechanics. Band, quality gates, and thesis risks unchanged. Price DKK 326.9 → 324.0.
+- **v3 — 2026-07-04 — REVIEW (valuation-methodology).** Maintenance-capex FCF basis (P20); binding metric → EV/OI; band DKK 106 → ≈172; WATCH.
+- **v2 — 2026-07-04 — REVIEW.** Price +21.3% on Medicare obesity coverage; band DKK 106. WATCH.
+- **v1 — 2026-06-10 — ANALYSE.** WATCH; STRONG/ADEQUATE/PASS; DKK 269.5; band ≈ DKK 105–135.
+
+*Framework output, not investment advice.*
