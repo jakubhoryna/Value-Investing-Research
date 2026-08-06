@@ -1,0 +1,157 @@
+---
+ticker: INVE-B.ST
+company: Investor AB
+exchange: Nasdaq Stockholm (XSTO)
+currency: SEK
+memo_date: 2026-07-09
+memo_version: v1
+price_at_memo: 392 (8 Jul 2026 live; 7 Jul close 398.20; wk range 392–406)
+mcap_at_memo: ≈ SEK 1,201 bn (392 × 3,063.3m shares ex-treasury)
+verdict: WATCH
+quality_past: ADEQUATE      # borderline STRONG — 7yr full-cycle ROE 15.1%; 10yr (2016–18) not re-sourced
+quality_future: ADEQUATE    # moat-floored (Wallenberg network/ingrainedness + cost); holdco substitution
+sf: PASS                    # 1 soft P19 flag (de-minimis LTI-hedge buybacks); dual-class = caveat not strike
+cheapness: EXPENSIVE        # ~+7% premium to adjusted NAV (+10% at wk high); GSC-cheap needs a discount
+trigger_band: "CHEAP below ≈ SEK 294 (binding: price/adjusted NAV at ~20% discount, substitution rule — no CF/EV metric applies; strict 25% ≈ SEK 275; reported-NAV line ≈ SEK 321). No P12 edge."
+next_review: FY2026 year-end (~late Jan 2027) re-anchors NAV; Q2 2026 (16 Jul 2026, imminent) NAV refresh; or price < ≈ SEK 330 (10% premium collapse toward par)
+position: —
+---
+
+# INVE-B.ST — Investor AB: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | SF | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | ADEQUATE | ADEQUATE | PASS | EXPENSIVE | **WATCH** |
+
+Investor is a high-quality permanent-capital compounder — foundation-controlled, ultra-low-cost (~0.07% of NAV), owning Nordic/global champions; adjusted NAV/share has grown ~15%/yr for five years (20-yr average TSR ~15%). The issue is price, not quality: the B-share trades at a **~+7% premium to adjusted NAV** (≈+10% at this week's high), versus 7–13% *discounts* every year-end 2021–25. A holdco at a premium to a marked-to-market NAV has no margin of safety — you overpay for the parts. A shelf name, actionable only on a dislocation that widens the discount back to ~20% (≈ SEK 294, near the 52-week low).
+
+## 2. Understanding
+
+Stockholm-HQ, Wallenberg-foundation-controlled (≈29% capital / ~50% votes; dual-class A/B) permanent-capital investment holding company — Sweden's largest listed company, founded 1916 — earning dividends and mark-to-market value changes as the engaged long-term owner of listed champions (ABB, Atlas Copco, AstraZeneca, SEB, Saab, Ericsson; ~72% of assets), majority-owned unlisted subsidiaries under Patricia Industries (Mölnlycke et al.; ~19%), and listed-PE firm EQT plus funds (~9%), run at ~0.07% cost. **PASS** — applies via the holdco / financial-institution substitution rule.
+
+## 3. Quality — past record
+
+Under the **substitution rule** (securities-heavy holdco): ROE replaces ROCE; FCFROCE n.m. Over the fullest hard-data window (FY2019–25, a complete cycle) the worst-variant normalized ROE is **15.1%**, right at the STRONG line; adjusted NAV/share compounded **14.8%/yr** — STRONG-tier, far above the 3% floor. The mark-to-market structure produces real volatility (2022 ROE −12%) but recovered immediately — not a sustained decline. Leverage is a hallmark strength (~2% net-debt/assets, 86% equity/assets). **ADEQUATE**, a whisker below STRONG: ROE sits *at* rather than above 15% and is largely portfolio beta, and 2016–18 were not re-sourced this session — the strict 10-year figure likely prints ~14–15%. Sourcing them at REVIEW could tip it to STRONG. (App B.)
+
+## 4. Quality — future
+
+Operating breadth/supplier tests are structurally inapplicable to a pure holdco; substituting **portfolio concentration**: diversified across ~11 listed names, ~9 Patricia subsidiaries and EQT over 6+ sectors, but with real single-name concentration (ABB 16%, Atlas Copco 13% — the industrial anchors ≈29% of assets). Forces on the holdco: customer / supplier / new-entrant power all WEAK (the Wallenberg network and permanent capital are near-unreplicable); substitutes WEAK-but-nearest-to-strong (the *listed* book is easily index-replicated — hence the holdco discount — but Patricia's unlisted assets, EQT co-investment, the cost edge and active ownership are not). **Moat: Network/Ingrainedness + cost advantage + permanent capital — stable**; end-markets growing. **ADEQUATE** — moat-floored, held below STRONG by replication pressure, concentration and holdco-tracks-holdings (BRK.B precedent). (App D.)
+
+## 5. Shareholder-friendliness
+
+Comp (P17): NI SEK 157bn makes the 5%-of-lower(FCF,NI) hard strike (≈ SEK 7,875m) unreachable; the highest-paid executive is a modest Swedish-norm figure well below every P17 line; board fees (Chair SEK 3.5m) sit below every calibration. RPT: the sole item is the Nov-2025 FAM AB property sale (SEK 1.4bn = 0.13% of NAV, independently appraised, directors recused) — immaterial. Buybacks (P19): de-minimis SEK 154m purely to deliver the employee share-matching plan, treasury shares net *falling* — a soft sterilisation flag resolved charitably per the AXFO/NVS precedent. A rising dividend (SEK 4.00→5.60), rational allocation and a mission-driven permanent owner are positives. **PASS** (1 soft P19 flag; dual-class control a caveat, not a strike — no value-destructive allocation). (App E.)
+
+## 6. Price
+
+| Metric | Current (SEK 392) | "Cheap" line | Verdict |
+|---|---|---|---|
+| Price / adjusted NAV (SEK 367) | 1.07 (+7%) | ≤ ~0.80 (20% disc.) | **Fail (primary)** |
+| Price / reported NAV (SEK 321) | 1.22 (+22%) | ≤ ~1.0 | Fail (context) |
+| MCap/FCF, EV/OI | n.m. — holdco | — | n/a |
+
+Substitution anchor is **price-to-adjusted-NAV** (classical CF/EV metrics n.m. for a mark-to-market holdco). "Undeniably cheap" = a ~20% discount to adjusted NAV → trigger **≈ SEK 294** (strict 25% ≈ SEK 275; reported-NAV floor ≈ SEK 321). Current ~+7–10% *premium* → **EXPENSIVE**, +33% above trigger. No P12 edge. (App F.)
+
+## 7. Risks & thesis-breakers
+
+- **Premium re-rating** — a +7–10% premium against a 7–13% discount history; reversion to par/discount is a price drag independent of NAV, and the base rate.
+- **Concentration** — ABB + Atlas Copco ≈29% of assets; the automation cluster (+Epiroc, Wärtsilä) ~36% of listed — single-theme cyclical risk.
+- **Patricia mark-to-model** — ~19% of NAV is peer-multiple estimated, not market-priced; multiple/FX contraction cuts adjusted NAV (2025 Patricia return −9%).
+- **Holdco-tracks-holdings** — Investor doesn't control its own economics; NAV is others' fortunes plus a market-set discount.
+- **Beta, not alpha** — much of the ~15% ROE is a rising-market tailwind; a flat equity decade compresses it toward the ~8–9% requirement.
+
+## 8. Flip conditions & next review
+
+Flips to **BUY** only at ≈ SEK 294 or below (~20%+ discount to adjusted NAV — a genuine dislocation, roughly the 52-week low); **NEAR** around SEK 330 (premium collapses to par). Past could firm to **STRONG** if 2016–18 are sourced and the strict 10-year ROE clears 15%. Next review: **Q2 2026 interim (16 Jul 2026)** and **FY2026 year-end (~late Jan 2027)** re-anchor NAV; earlier if price < ≈ SEK 330. Not held.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+- **Primary:** Investor AB Annual Report 2025 (eng-annual-report-2025-print.pdf; five-year summary, consolidated & parent statements, notes 12/34, P18; NAV/APM section; ownership tables); Investor Q1 2026 interim report (published 21 Apr 2026; NAV per share, Mar-31-2026 balances); Investor Year-End Report 2020 (mb.cision.com/Main/1084/3271738/1361922.pdf; FY2019–20 income statement, balance sheet, 10-/20-yr average performance).
+- **Secondary/price:** Yahoo Finance v8 chart (INVE-B.ST; live price SEK 391.95, 7 Jul close 398.20, 52-wk 278.7–407.65); stockopedia/investing.com cross-checks; company IR reports-presentations pages.
+- **Gaps flagged:** (1) **FY2016–18** net income / equity not independently re-sourced this session — 10-year ROE computed on the FY2019–25 hard window (7 yrs, full cycle); available in Investor's key-figures history for the next REVIEW. (2) Parent-company CEO (Cederholm) exact total remuneration not extracted from the mangled AR remuneration table — bounded well below the P17 strike lines by NI scale and Swedish norms; board fees sourced precisely. (3) FY2021–23 equity-to-parent derived as reported-NAV/share × shares ex-treasury (validated: computed per-year ROE matches Investor-disclosed ROE to ≤0.2pp).
+
+## B. Ten-year financial record (substitution-rule basis; hard window FY2019–25)
+
+**B1 — Raw inputs (SEK m unless noted), Group, attributable to Parent**
+
+| FY | Profit to parent | Reported NAV / equity (end) | Adj. NAV (end) | Adj NAV/sh (post-split) | Rep NAV/sh | Dil. shares (m) | Net-debt/assets |
+|---|---|---|---|---|---|---|---|
+| 2019 | 101,226 | 420,681 | 485,019 | 158.5 | 137.5 | ~3,063 | 2.8% |
+| 2020 | 52,790 | 461,837 | 546,385 | 178.25 | 150.75 | ~3,063 | 4.1% |
+| 2021 | 228,065 | 683,116* | 760,962 | 248 | 223 | 3,063.3 | 2% |
+| 2022 | −74,681 | 606,533* | 673,250 | 220 | 198 | 3,063.3 | 2% |
+| 2023 | 127,045 | 716,812* | 818,386 | 267 | 234 | 3,063.3 | 2% |
+| 2024 | 113,338 | 819,364 | 969,756 | 317 | 268 | 3,063.3 | 1.2% |
+| 2025 | 157,494 | 953,705 | 1,087,082 | 355 | 311 | 3,063.3 | 2.1% |
+| Q1-26 | — | ~983,000 | 1,125,100 | 367 | 321 | 3,063.3 | ~2% |
+
+*2021–23 equity-to-parent = reported-NAV/share × shares ex-treasury (validation below). Pre-2021 figures pre-split ÷4 for per-share comparability.
+
+**B2 — Returns (ROE substitution; FCFROCE n.m.)**
+
+| FY | ROE (avg-equity, computed) | ROE (Investor-disclosed) |
+|---|---|---|
+| 2020 | 12.0% | — |
+| 2021 | 39.8% | 40% |
+| 2022 | −11.6% | −12% |
+| 2023 | 19.2% | 19% |
+| 2024 | 14.8% | 15% |
+| 2025 | 17.8% | 18% |
+
+Normalized averages (Σ NI ÷ Σ equity): **end-of-period 7yr (2019–25) = 15.1%**; beginning-of-period 6yr (2020–25) = 16.3%. **Worst tested = 15.1%** vs P2 STRONG ≥15% / P3 ADEQUATE ≥10% → clears 15% on the 7-yr window but sits *at* the line; strict 10-yr (incl. flat 2018) likely ~14–15%. Simple avg disclosed 2021–25 = 16.0%. Corroboration: Investor-disclosed 20-yr avg TSR 15%/yr; 10-yr TSR (to 2020) 19.0%/yr.
+
+**B3 — Growth & leverage**
+
+| Metric | Value | vs floor |
+|---|---|---|
+| Adjusted NAV/share CAGR 2020→2025 | 14.8%/yr | ≫ 3% ✓ |
+| Reported NAV/share CAGR 2020→2025 | 15.6%/yr | ≫ 3% ✓ |
+| DPS 2021→2025 | 4.00 → 5.60 (steadily rising) | ✓ |
+| L/E (substitution leverage flag: non-deposit IB debt ÷ equity) | Investor 5.3% / group 12.1% | ≪ P5 200% ✓ |
+| Equity/assets | 86% | — |
+
+## C. Calculation notes
+
+- **Financial-institution/holdco substitution applied** (securities-heavy holding company; classical OI/FCF/CE machinery structurally inapplicable — dividends + mark-to-market value changes dominate the income statement). ROE substitutes for ROCE (STRONG ≥15% / ADEQUATE ≥10%); FCFROCE n.m.; leverage flag on non-deposit interest-bearing debt/equity; cheapness anchored on price-to-NAV per Gate 2 substitution paragraph. Literal all-metric reading logged as inapplicable.
+- **Equity basis** = reported NAV = equity attributable to owners of the Parent (= "reported net asset value"). Consolidated equity incl. NCI is ≈SEK 953,898m (2025); NCI is de-minimis (~SEK 0.2m attributable difference — Patricia subs are ~94–99.7% owned).
+- **Past ADEQUATE (borderline STRONG)** judgment call: 7-yr worst-variant ROE 15.1% clears 15% and NAV/sh growth is STRONG-tier, but (i) the window is 7 hard years not the full P1 10 (2016–18 not re-sourced), (ii) the ROE is largely portfolio beta and sits *at* rather than above the threshold, (iii) the strict 10-yr figure likely prints ~14–15% once weak/flat 2016–18 enter. Conservative call = ADEQUATE; STRONG-confirmation path = source 2016–18 at REVIEW. No downstream impact (verdict WATCH; NAV-anchored band; no P12 for a substitution name).
+- **Future ADEQUATE** judgment call: operating breadth/supplier tests inapplicable → substituted with portfolio-concentration analysis; forces assessed on the holdco (0 strong, substitutes nearest-to-strong); dominant stable moat floors at ADEQUATE (moat-decides-floor); held below STRONG by the replication-substitute pressure, single-name concentration, and holdco-tracks-holdings — consistent with the BRK.B precedent.
+- **Bias-check log:** Tick-through of the 18 biases + 2 akrasias. Watched: *hotness/consensus* (Investor is a beloved quality compounder, +43% in 12 months, "Strong Buy" technicals) — resisted; the verdict is driven by the mechanical price-to-NAV premium, not sentiment. *Affinity* (Wallenberg prestige, DACH/Nordic industrial overlap with the reader's mandate) — noted, not determinative. Verdict born of the arithmetic (premium to NAV), not a bias. **Bias check: none live.**
+
+## D. Future-performance worksheet
+
+- **Breadth (substituted — no operating customers/suppliers).** Portfolio spread: Listed ~72% across 11 names, Patricia ~19% across 9 subsidiaries, EQT ~9%; 6+ sectors (automation/industrials ABB·Atlas Copco·Epiroc·Wärtsilä; healthcare AstraZeneca·Sobi·Mölnlycke·Nova Biomedical·Laborie; defense Saab; financials SEB·Nasdaq; telecom Ericsson; consumer Husqvarna·Electrolux). Single-name concentration: ABB 16%, Atlas Copco 13% (both >10% — genuine concentration, but equity stakes, not dependency-creating customers). Result: reasonably diversified; concentration is a logged risk, not a Marshall breadth FAIL.
+- **Four forces (holdco):** Customer bargaining power — WEAK (income is dividends received as owner; no counterparty squeezes it). Supplier bargaining power — WEAK (n/a). Threat of substitutes — WEAK, nearest-to-strong (index/direct replication of the listed book is easy — hence holdco discounts — but Patricia unlisted assets, EQT co-investment, ~0.07% cost edge and active ownership are not replicable). Threat of new entrants — WEAK (century-old Wallenberg network, foundation permanent capital, board seats across corporate Sweden = near-unreplicable). **Tally: 0 strong → favourable.**
+- **Moat:** Network / Ingrainedness (the Wallenberg ecosystem), reinforced by a structural **cost** advantage (~0.07% of NAV — near-zero compounding leakage) and permanent capital (foundation control, no fund redemptions). **Direction: stable.**
+- **Market:** YES — underlying end-markets (electrification, automation, healthcare, defense) growing; equity values compound over time.
+
+## E. Shareholder-friendliness evidence
+
+- **Comp (P17).** Highest-paid parent executive ≈ Swedish large-cap norm (tens of SEK m) — vs 5% of lower(FCF, NI); NI 2025 = SEK 157,494m → 5% = SEK 7,875m (unreachable by orders of magnitude) — and vs the CPI-indexed absolute flag ≈ US$40m (2026) ≈ SEK ~440m (far below). Guideline structure: STI ≤75% of fixed, pension ≤50% of fixed, ELT required to hold ≥1× salary in Investor shares. Board (2025 AGM): Chair SEK 3.5m (total SEK 4.03m incl. committees), Vice-Chair 2.04m, Member 1.025m, pool SEK 17.68m — all below 2× local norm and the US $500k outside-director line. **No strike, no flag.**
+- **Ownership / control.** Knut and Alice Wallenberg Foundation 20.1% capital / 43.0% votes; all Wallenberg-sphere foundations ≈29% capital / ~50% votes (SEB Foundation 2.0%/3.5% etc.). Dual-class (A = 1 vote, B = 0.1 vote). Foundations are mission-driven permanent owners (>SEK 50bn granted to research) — long-horizon alignment. **Documented control caveat, not a strike** (rational allocation; no value destruction).
+- **RPT.** FAM AB property sale (HQ Arsenalsgatan 8 + Villa Täcka Udden, via Näckström) Nov 2025, SEK 1.4bn incl. inventory — 0.13% of NAV; independent appraisers on both sides; no conflicted director in the decision. Associates: financial expenses SEK 434m, financial income 158m, dividends received 9,944m (ordinary). Dividend paid to KAW 3,202m (ordinary). Subsidiary transactions excluded per framework. **Immaterial, well-governed.**
+- **Buybacks (P19).** 2025 repurchases SEK 154m (2024: 229m) solely to deliver the employee share-matching plan; treasury shares net *fell* (repurchased 0.6m vs delivered 0.8m; opening 5.67m → 5.39m). ~0.015% of MCap. Strict sterilisation read = one soft flag; resolved charitably (trivial scale, symmetric, alignment-building) per AXFO/NVS precedent. Below-worth test n/a (not a value-capture buyback). Capital return is via the rising dividend, not repurchases.
+- **Dividends/allocation.** DPS 4.00→4.40→4.80→5.20→5.60 (steadily rising policy); payout 106–123% of listed dividends received; ~0.07% management cost; disciplined reinvestment via Patricia/EQT; no empire-building. **Strong positive.**
+- **Verdict: PASS** (1 soft P19 flag; control = caveat). Two independent firing flags not reached.
+
+## F. Valuation math
+
+- **Shares (ex-treasury):** 3,063,309,055 (Dec-2025). MCap @ SEK 392 = **≈ SEK 1,201 bn**.
+- **NAV (latest, Q1 2026 / 31 Mar 2026):** adjusted NAV SEK 1,125.1bn = **SEK 367/share**; reported NAV **SEK 321/share**. (Dec-2025: 355 / 311.)
+- **Premium/discount (at SEK 392 / 398.20 / 402.85):** vs adjusted NAV **+6.8% / +8.5% / +9.8%**; vs reported NAV +22.1% / +24.0% / +25.5%. Historical (year-end discount to adjusted NAV): 2021 −7%, 2022 −13%, 2023 −13%, 2024 −8%, 2025 −7% — i.e. the current premium is a re-rating to the expensive end.
+- **Trigger band (substitution — price-to-adjusted-NAV):** "undeniably cheap" set at a ~20% discount to adjusted NAV (project calibration for holdcos — no book figure exists; anchored on Marshall's margin-of-safety doctrine and Investor's discount history, mirroring the BRK.B ≈1.2×-book precedent). Operative trigger = 367 × 0.80 = **SEK 294**. Strict 25% discount = SEK 275. Reported-NAV floor (Patricia uplift gone) = SEK 321. No P12 edge (no classical primary). Classical MCap/FCF and EV/OI = **n.m.** (mark-to-market holdco).
+- **Dist %** = 392 ÷ 294 − 1 = **+33.5%** (at 7-Jul close 398.20: +35.6%). Register operative trigger = SEK 294.
+- **Sell-flag line (P9):** n/a — substitution-rule name, EV/OI n.m.; not held.
+
+## G. Change log
+
+- **v1 — 2026-07-09 — initial analysis (ANALYSE).** Verdict WATCH. Substitution-rule holdco (BRK.B lineage): Past ADEQUATE (7-yr worst-variant ROE 15.1%, borderline STRONG; 2016–18 not re-sourced), Future ADEQUATE (moat-floored — Wallenberg network/ingrainedness + ~0.07% cost; substitutes nearest-to-strong; ABB+Atlas Copco ≈29% concentration), SF PASS (1 soft P19 LTI-hedge flag; dual-class control a caveat; FAM SEK 1.4bn RPT immaterial & independently appraised), Cheapness EXPENSIVE (~+7–10% premium to adjusted NAV vs a ~20%-discount cheap line at ≈ SEK 294). Data through FY2025 AR + Q1 2026 interim; price SEK 392 (8 Jul 2026). Open items for REVIEW: source FY2016–18 for the strict 10-yr ROE (STRONG-confirmation); Q2 2026 NAV (16 Jul 2026); confirm CEO total comp.
+
+*Framework output, not investment advice.*
