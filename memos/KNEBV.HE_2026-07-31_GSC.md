@@ -1,0 +1,186 @@
+---
+ticker: KNEBV.HE
+company: KONE Oyj
+exchange: Nasdaq Helsinki
+currency: EUR
+memo_date: 2026-07-31
+memo_version: v2
+model_version: v4.0.0
+price_at_memo: "€50.10 (KONE B, 31 Jul 2026 close)"
+mcap_at_memo: "≈ €26.0bn (≈519.1m A+B shares × €50.10; A valued at B price per KONE convention)"
+verdict: AVOID
+quality_past: ADEQUATE
+quality_future: STRONG
+sf: FAIL
+cheapness: EXPENSIVE
+trigger_band: "Standalone CHEAP ≈ €16.3–17.1 (EV/OI no-cash/all-cash; MCap/FCF leg €17.9 above both; no P12 — Past ADEQUATE). Pro-forma band required post-close."
+next_review: "TKE block-or-close (EU review to ~mid-2027; EC notification pending); FY2026 results ~Jan 2027; H1 2026 report; or price → standalone band ≈ €17"
+position: —
+---
+
+# KNEBV.HE — KONE Oyj: GSC Memo (v2 — v4.0.0 judgment re-test)
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | ADEQUATE | STRONG | **FAIL** (2 flags) | EXPENSIVE | **AVOID** |
+
+**This is the first name in the re-test queue whose strike was never about buybacks**, and the distinction matters: KONE's repurchase activity is immaterial (~11m treasury B shares, 2.4% of the B class, no meaningful annual change) and no part of v1's FAIL rested on it. The strike was the **pending €29.4bn acquisition of TK Elevator**, signed 29 April 2026, at **21.6× TKE's ~€1.36bn pre-deal EBIT** — above the retired P19 20× line.
+
+Re-derived as a judgment, the verdict holds, but on a narrower and more honest footing than v1's. **The M&A route to ADVERSE is not made out:** that limb requires *serial* value-destructive acquisition, and this is a single deal — KONE's first material one in years, in an oligopoly it already knows, with €700m of run-rate synergies that take the multiple to roughly 14.3× on a post-synergy basis. At 21.6× it is above the disciplined line but short of the 25×-class calibration. On its own that is **CAUTION — one flag**.
+
+**What carries the FAIL is the second, independent flag: the entrenchment structure.** Consideration is €5bn cash plus ~€9.2bn of refinanced TKE debt plus **270m new low-vote B shares — 52% economic dilution of existing holders, 33.8% of post-deal shares but only 18.3% of votes** — engineered so the Herlin family's >50% voting control survives intact. This register's standing treatment of dual-class control is a documented caveat, *unpaired*; here it is paired with an above-the-line acquisition, and the pairing is not incidental — the share class was chosen to make the dilution voting-neutral for the controlling family. Two flags reach FAIL under the §2·1C pair rule. **SF = FAIL.**
+
+One fact cuts against KONE more sharply under a judgment standard than it did under a rule: **KONE walked away from TKE in 2020, at ~€17bn, partly on price and regulatory grounds.** It has now agreed to pay €29.4bn for the same asset. Demonstrated discipline abandoned is worse evidence than discipline never shown.
+
+The flip is clean and unchanged: **if the deal is blocked or abandoned, both flags fall away simultaneously** — the acquisition flag becomes moot and the dual-class caveat returns to unpaired — and KONE becomes a STRONG-future WATCH, still ~192% above its standalone band.
+
+## 2. Understanding
+
+Unchanged. Finnish, Herlin-controlled (≈62% of votes via dual-class shares) global manufacturer and servicer of elevators, escalators and automatic building doors; new equipment to developers and owners (~30% of sales in China) and — the profit engine — recurring maintenance and modernisation on a >1.4m-unit installed base across ~70 countries. **PASS.**
+
+## 3. Quality — past record
+
+Unchanged; no new fiscal year (FY2025 latest; FY2026 results ~January 2027). Returns are STRONG-caliber — worst-of-four normalized ROCE ≈ **29.5%**, FCFROCE ≈ **24.8%** — but per-share operating income is essentially flat over the decade (OI €1,293m in 2016 → €1,336m in 2025; ΔOI/sh geo-mean ≈ 0.3%), failing P2's 3% nominal floor and capping Past at ADEQUATE. L/E 223% is benign under P6: near-zero net interest-bearing debt, equity thinned by full-payout distributions, negative working capital funded by ~€2bn of customer advances. **ADEQUATE** — elite returns, no growth.
+
+## 4. Quality — future
+
+Unchanged. Breadth PASS both sides (~550k customers, none above 10%; ~2,000 dual-sourced component suppliers). Four forces all WEAK, tally 0 strong. Moat: switching costs and installed-base ingrainedness with >90% maintenance retention — stable, with mild China service-competition erosion. Market growth MIXED. **STRONG.** Note that a successful TKE close would require this gate to be re-derived from scratch on the combined entity — a €20bn-revenue, 100,000-employee group with ~€9.2bn of refinanced debt is not the business assessed here.
+
+## 5. Shareholder-friendliness
+
+**Compensation (P17) — clean, unchanged.** CEO Delorme 2025 base €844,137; Executive Board aggregate €5.0m base and benefits, €2.0m STI, €9.6m LTI — far under 5% of the lower of NI €980m and FCF €1,162m (a €49m line) and under the ≈€40m indexed absolute trigger. Board fees €110k per member, well inside the stop. No flag.
+
+**Related-party transactions — no material self-dealing surfaced**, though note 6.3 was not pulled in detail (carried gap). The Herlin dynasty is logged as a governance caveat.
+
+**Capital allocation — CAUTION (flag 1).** *Repurchases:* immaterial and not a factor — ~11m treasury B shares with no meaningful annual movement; the primary return channel is dividends. *Dividends:* historically generous at ~77–124% of earnings across FY2016–20, drawing down the old ~€2.6bn cash pile; the post-deal policy drops to "≥50% of net income through the cycle," a real change to the income thesis but a rational one against a levered balance sheet. *Reinvestment:* capex is light (€96–168m a year) against a ~30% ROCE — sound. *M&A — the flag.* The TKE deal at **€29.4bn ÷ ~€1.36bn pre-deal EBIT = 21.6×** (≈21–22× on adjusted EBIT) is above the framework's 7× worth line by roughly 3×, and it is live and pending rather than historical. Against it: it is **one** deal, not a pattern; the industrial logic is real — TKE brings maintenance and modernisation density plus a North American footprint where KONE is weak, and ~€700m of run-rate synergies imply roughly **14.3× post-synergy**; and it does not reach the 25×-class calibration. That combination is a material misstep without repetition — **CAUTION, one flag**, not ADVERSE.
+
+**Entrenchment structure — flag 2, independent.** The 270m new shares are **B shares** — 33.8% of post-deal share capital carrying **18.3% of votes**. The arithmetic is deliberate: existing holders absorb ~52% economic dilution while the Herlin family's >50% voting control is preserved. Under this register's consistent treatment (ATCO-B, EPI-A, ESSITY-B, GOOGL, ROG, SKF-B) dual-class control is a **documented caveat and not a flag when unpaired**. It is paired here, and the pairing is structural rather than coincidental — the class was selected so that a transformative dilution would not cost the controlling family control. That is an independent negative on the shareholder-friendliness gate, and it is what takes this file from one flag to two.
+
+**Two flags → SF FAIL.** Full reasoning, the boundary and the consistency-hazard check in Appendix E.
+
+## 6. Price
+
+Standalone at €50.10 (31 July 2026; ≈519.1m A+B shares; FY2025 flows):
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap / FCF | 22.4× | ≤ 8 | Primary | FAIL |
+| EV / OI | 19.8× / 20.1× (all-cash / no-cash) | ≤ 7 | Primary | FAIL |
+| MCap / BV | 9.3× | ≤ 3 | Qualifier | Breach → distorted |
+| MCap / TBV | 28.6× | ≤ 3 | Qualifier | Breach → distorted |
+
+**EXPENSIVE** — roughly 2.8× over both primaries. Qualifiers are distorted by a deliberately thin full-payout equity base plus goodwill; the asset-light STRONG-returns pattern is logged and does not block. **Band restated as the labelled bracket: standalone CHEAP ≈ €16.3–17.1** — EV/OI no-cash €16.29 (strict all-pass line) and all-cash €17.14, with the **MCap/FCF leg at €17.91 sitting above both**, so EV/OI binds on either reading. v1 printed only the all-cash leg. **No P12** (Past ADEQUATE). **Dist % +192%** on the all-cash ordering key (+208% strict). **A pro-forma band will be required post-close** — 270m new shares and ~€9.2bn of refinanced debt change every input.
+
+## 7. Risks & thesis-breakers
+
+- **Antitrust is the binding uncertainty and it cuts both ways.** The EU review runs to ~mid-2027, the Commission had not been notified as of late April, Schindler has said it will challenge, and the combination takes Europe from four players to three. A block removes both SF flags; heavy divestiture remedies would change the economics of the deal itself.
+- **Integration and leverage:** near-net-cash today, heavily levered post-close, on a €20bn-revenue, 100,000-employee combination.
+- **KONE is betting on a regulatory regime change** — a planned EU merger-rules revamp that may not arrive in time for this deal. That is a policy wager attached to the largest capital commitment in the company's history.
+- **China:** ~30% of sales, with structural new-equipment decline pressuring the cyclical half for years.
+- **Payout cut** to ≥50% of net income through the cycle from ~95–124%.
+- **Entrenchment:** family voting control survives a 52% economic dilution, limiting outside-holder influence over allocation at precisely the moment allocation matters most.
+
+## 8. Flip conditions & next review
+
+To **WATCH**: the TKE deal blocked or abandoned. Both flags fall together — the acquisition flag becomes moot and the dual-class caveat reverts to unpaired — leaving a STRONG-future name still ~192% above band. To **AVOID on quality grounds**: the deal closes and integration or leverage impairs the combined moat, which would require the Future gate to be re-derived on the combined entity. To BUY: standalone band ≈€16–17, a ~66% fall, and only if the deal is dead. **Next review:** TKE regulatory milestones and block-or-close (earliest Q2 2027); FY2026 results (~January 2027); the H1 2026 report; or price approaching ≈€17.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+Carried from v1 (stockanalysis.com KNEBV FY2021–25; KONE 2020 Annual Review for FY2016–20 key figures; KONE 2025 Remuneration Report; KONE inside-information release 29 Apr 2026; industriAll-Europe, Financier Worldwide, Elevatori). Added for v2:
+
+1. **Deal-status search current to 31 July 2026** — **no material change since v1.** Sourced detail confirmed and extended: total enterprise value **€29.4bn**; consideration **€5bn cash on closing**, **270m new KONE shares worth ~€15.2bn = 33.8% of all issued shares and 18.3% of total votes**, plus assumption and refinancing of **~€9.2bn** of TKE interest-bearing net debt; estimated synergies **€700m annually on a run-rate basis**; company guidance of **12–18 months to close**; **the European Commission had not been notified** as of the announcement period; **Schindler has stated it will challenge**; the combination would create a group with ~€20bn of annual sales and >100,000 employees, reducing Europe from four major players to three; the antitrust process is expected to run **at least to mid-2027**. KONE has stated it would pay a break-up fee should TKE's owners reject the deal.
+2. **2020 precedent, sourced** — KONE's earlier joint non-binding approach with CVC, at roughly **€17bn**, was abandoned in part on antitrust grounds; TKE was subsequently acquired by Advent and Cinven. Reporting indicates KONE is now "banking on a change in Europe's approach to forging regional champions," with a planned EU merger-rules revamp that may not take effect in time.
+3. **Yahoo Finance** — KNEBV.HE €50.10 (31 Jul 2026 close); prior closes €49.41 (30 Jul), €50.54 (29 Jul).
+
+**Gaps carried forward, none verdict-pivotal.** (1) FY2016–20 four-way CE ROCE not reconstructed — KONE's published ROCE/ROE used as corroboration. (2) FY2025 cash+STI taken as €440.5m; the current-deposits split not separately confirmed — immaterial. (3) RPT note 6.3 not pulled in detail; the Herlin dynasty is logged as a caveat and no material self-dealing has surfaced, but this is not exhaustively verified. (4) TKE pre-deal OI is reported EBIT €1.36bn for the period ending 30 September 2025; the PPA-normalized basis was not independently rebuilt — the multiple is ~21–22× on either reported or adjusted EBIT. (5) **New:** KONE's H1 2026 interim report was not retrieved in this pass; the verdict turns on the deal rather than on quarterly trading, and no gate depends on it, but it is named for the next touch. **P14 budget:** 2 web operations (price ×1, deal-status search ×1) — well within budget.
+
+## B. Ten-year financial record
+
+B1–B3 unchanged from v1. Operative FY2025 figures: OI **€1,336.2m**, FCF **€1,162.1m**, NI €980.1m, shares ≈**519.1m**, cash+STI €440.5m, debt €869.7m, NCI €29.4m, BV €2,797.4m, TBV €907.8m.
+
+## C. Calculation notes
+
+Carried from v1. Added:
+
+1. **Band restated as the full labelled bracket.** v1 printed the all-cash EV/OI leg alone. Both variants required: no-cash (7 × 1,336.2 − 869.7 − 29.4) ÷ 519.1 = **€16.29**; all-cash (7 × 1,336.2 + 440.5 − 869.7 − 29.4) ÷ 519.1 = **€17.14**; MCap/FCF leg 8 × 1,162.1 ÷ 519.1 = **€17.91**, above both, so EV/OI binds either way. Presentation correction; the all-cash level is unchanged.
+2. **Dist % convention.** §7.1 all-cash ordering key → **+192%**; strict line +208%.
+3. **Post-synergy multiple stated explicitly.** €29.4bn ÷ (€1.36bn + €0.70bn) = **14.3×**. This is a company-guided synergy figure applied to a reported EBIT base and is **not** the framework's audit multiple — the audit runs on pre-deal earnings, which gives 21.6×. It is recorded because under a judgment standard the availability of credible synergies is part of what distinguishes a full price from a destructive one, and it is a material reason this file lands CAUTION on the M&A limb rather than ADVERSE.
+4. **The dilution arithmetic.** 270m new shares against ≈519.1m existing is **~52% economic dilution** of current holders; the new shares represent 33.8% of post-deal capital and 18.3% of votes. The gap between those two percentages is the entrenchment evidence and is stated as arithmetic rather than characterisation.
+
+## D. Future-performance worksheet
+
+Unchanged from v1 (breadth PASS both sides; four forces WEAK, tally 0 strong; switching-cost/installed-base moat, stable; market growth MIXED). Flagged: a completed TKE close requires full re-derivation on the combined entity.
+
+## E. Shareholder-friendliness evidence
+
+**P17.** CEO base €844,137; Exec Board aggregate €16.6m across base, STI and LTI, against a €49m proportional line and a ≈€40m absolute trigger — clean on both. Board fees €110k. **No flag.** **RPT.** No material self-dealing surfaced; note 6.3 not exhaustively verified (gap). **Repurchases.** Immaterial — ~11m treasury B shares, 2.4% of the B class, no meaningful annual change. **No flag, and no part of this verdict rests on buybacks.**
+
+### Capital-allocation judgment — verdict **CAUTION** (flag 1)
+
+**Acquisition audit — TKE.**
+
+| Item | Figure |
+|---|---|
+| Deal enterprise value | **€29.4bn** |
+| TKE pre-deal EBIT (period to 30 Sep 2025) | **~€1.36bn** |
+| **Audit multiple (pre-deal earnings)** | **21.6×** (≈21–22× on adjusted EBIT) |
+| Guided run-rate synergies | €700m p.a. |
+| Post-synergy multiple (context only) | 14.3× |
+| Cash consideration | €5.0bn on closing |
+| Debt assumed and refinanced | ~€9.2bn |
+| New shares issued | 270m B shares, ~€15.2bn |
+| Economic dilution of existing holders | **~52%** |
+| New shares as % of post-deal capital / votes | **33.8% / 18.3%** |
+
+**Recency-weighted reading (≤ 10 lines).**
+1. The live position is a single pending acquisition, signed 29 April 2026, not yet notified to the Commission at the announcement period.
+2. At 21.6× pre-deal EBIT it is roughly 3× the framework's worth line — a full price on any reading.
+3. It is **one** deal. The ADVERSE M&A limb requires serial value destruction, and there is no pattern here.
+4. It does not reach the 25×-class calibration; 21.6× sits between the disciplined line and the overpriced marker.
+5. Synergies of €700m are credible in an oligopoly consolidation of overlapping service networks and take the effective multiple to ~14.3×.
+6. The strategic logic is real: TKE supplies maintenance and modernisation density and a North American footprint KONE lacks.
+7. Against all that: **KONE walked from the same asset at ~€17bn in 2020** and is now paying €29.4bn — demonstrated discipline reversed.
+8. The deal is being pursued partly on a wager that EU merger policy will soften, which may not arrive in time.
+9. Repurchases are immaterial and dividends have been generous; neither lever contributes a negative.
+10. Reinvestment is light and consistent with a ~30% ROCE.
+
+**Yardsticks — met and breached.** *Breached:* the acquisition audit at 21.6× exceeds the 7× worth line threefold and exceeds the 20× marker; no worth-referenced acquisition criterion has been published; the 2020 precedent shows KONE **can** apply a price test and chose not to. *Met (not breached):* no serial pattern — this is a single transaction; the 25×-class calibration is not reached; substantial credible synergies exist; there is no repurchase problem of any kind; dividends have been rational and are being cut sensibly against post-deal leverage; reinvestment is light and high-returning; no leveraged distribution.
+
+### Entrenchment structure — **flag 2**
+
+The Herlin family holds ≈22% of shares and ≈62% of votes (Holding Manutas, Security Trading, plus KONE Foundation, Polttina, Wipunen and related vehicles), with three Herlins historically on the board. The TKE consideration issues **B shares specifically** — the low-vote class — so that a transaction diluting existing economics by ~52% moves the family's voting position not at all in controlling terms: it remains above 50%. This register treats dual-class control as a **documented caveat that is not a flag when unpaired** — the treatment applied to ATCO-B, EPI-A, ESSITY-B, GOOGL, ROG and SKF-B today and previously. **The distinguishing fact here is that it is paired, and paired by design**: the class selection is what makes the dilution voting-neutral for the controlling holder. That is an independent negative, not a restatement of the acquisition flag, because it would exist even if the deal were priced at 10× — the objection is to who bears the dilution and who does not.
+
+**Two flags → SF FAIL** under the §2·1C pair rule.
+
+**The single judgment line on which two sessions could disagree:** whether the entrenchment structure is genuinely *independent* of the acquisition flag, or whether counting both double-counts one transaction. **A session treating it as a single fact pattern lands one flag, SF PASS, and KONE flips to WATCH at a standalone band of ≈€16–17.** This file holds them independent because they answer different questions — the first asks what was paid, the second asks who was diluted — and because the framework's own dual-class rule is written as a conditional caveat that activates on pairing, which is exactly the condition satisfied here. It is nonetheless the closest call in the queue on the *structure* of the reasoning rather than on the evidence. **Confidence ~65%.** Note that on either reading the practical position is similar: at [redacted] above band, WATCH would mean watchlist membership only, and the deal's block-or-close is the event that matters.
+
+**Consistency-hazard check — performed.** Two hazards tested. *Queue consistency:* six of twelve names have flipped, all on evidence that a repurchase programme had stopped or was never overpriced. KONE has no repurchase problem at all, so none of that reasoning transfers — the temptation to carry the flipping pattern across to a structurally different file was named and resisted. Conversely, the temptation to hold AVOID simply because v1 did was tested by asking whether the acquisition alone would fail the gate under v4.0.0, and **it would not** — that is stated plainly in the verdict, and the FAIL rests on the second flag, not the first. *Dual-class consistency:* the treatment applied to five other names today was checked explicitly, and the distinguishing fact (pairing by design) is stated rather than assumed. The mitigants are recorded at full strength — the synergy case, the strategic logic, the clean compensation, the immaterial buybacks and the light reinvestment.
+
+## F. Valuation math
+
+At €50.10 (31 Jul 2026; ≈519.1m A+B shares, A priced at B per KONE convention): **MCap €26,007m**. EV_all-cash = 26,007 + 869.7 + 29.4 − 440.5 = **€26,466m**; EV_no-cash = **€26,906m**. **MCap/FCF = 26,007 ÷ 1,162.1 = 22.4×. EV/OI = 19.8× / 20.1×. MCap/BV = 9.3×. MCap/TBV = 28.6×** (distorted; logged).
+
+Threshold-implied prices (standalone, FY2025 basis):
+
+| Leg | Price | Distance |
+|---|---|---|
+| **EV/OI ≤ 7, no cash excess — strict all-pass line** | **€16.29** | +208% |
+| **EV/OI ≤ 7, all cash excess — §7.1 ordering key** | **€17.14** | **+192%** |
+| MCap/FCF ≤ 8 | €17.91 | +180% |
+
+**Standalone band ≈ €16.3–17.1**; the MCap/FCF leg sits above both EV/OI legs. **No P12** (Past ADEQUATE). **A pro-forma band is required post-close** — 270m new shares and ~€9.2bn of refinanced debt change every input. Not HELD — no sell-flag line required.
+
+**Bias check.** Queue consistency, anchoring on v1, and cross-name dual-class consistency all named and handled in E. The FAIL rests on the pairing of an above-the-line acquisition with a deliberately voting-neutral dilution structure, both sourced.
+
+## G. Change log
+
+v1 — 2026-07-15 — initial ANALYSE. **AVOID** (ADEQUATE / STRONG / SF FAIL — P19 acquisition hard strike on TKE at ~21.6× pre-deal EBIT, reinforced by an entrenchment flag / EXPENSIVE; standalone band ≈ €17.1).
+v2 — 2026-07-31 — REVIEW (MODEL **v4.0.0** judgment re-test; no new fiscal year, no material deal development). The P19 20× acquisition strike behind v1's FAIL no longer exists. Re-derived, and the reasoning **narrows**: the TKE deal alone reaches **CAUTION, one flag** — a single material misstep at 21.6× pre-deal EBIT (≈14.3× post-synergy on €700m of guided synergies), not the *serial* value destruction the ADVERSE M&A limb requires, and short of the 25×-class calibration. **The FAIL is carried by a second, independent flag: the entrenchment structure** — 270m low-vote B shares delivering ~52% economic dilution while preserving Herlin voting control above 50%, which converts this register's standing unpaired dual-class caveat into an operative negative by design. **Two flags → SF FAIL; verdict AVOID — unchanged.** New work: deal terms re-sourced and extended (EC not notified as of the announcement period, Schindler challenging, review to ~mid-2027, 12–18 month guidance, break-up fee); the **2020 precedent recorded as adverse evidence** — KONE walked from the same asset at ~€17bn on price and regulatory grounds and is now paying €29.4bn; post-synergy multiple computed and labelled as context, not audit basis; dilution arithmetic stated explicitly. **Band restated as the labelled bracket ≈ €16.3–17.1** (v1 printed the all-cash leg alone); **Dist % +192%**. Confidence ~65% — the lowest structural-reasoning confidence in the queue, since a session treating the two flags as one fact pattern would reach SF PASS and WATCH. Repurchases confirmed immaterial and explicitly not part of any finding. Price €48.48 → €50.10.
