@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v4.0.0
-model_date: 2026-07-31
+model_version: v4.1.0
+model_date: 2026-08-06
 status: live
 bootstrap_required: BOOTSTRAP v1.0.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.0.0 · 2026-07-31)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.1.0 · 2026-08-06)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -205,9 +205,10 @@ Every tunable number in the framework, with its value and the section that defin
 
 ```
 ---
-ticker:
+ticker:             # §7.1a key — bare for US-listed lines, exchange suffix for every non-US line
 company:
 exchange:
+isin:               # identity of record (§7.1a); "n/a — not found" only if genuinely unavailable
 currency:
 memo_date:
 memo_version: v1
@@ -348,6 +349,18 @@ When memory and the register disagree, **trust the register**; when the register
 
 Every memo sets a `next_review` trigger — the earliest of: next annual results, a named event, or price moving into/near the trigger band. Strategic intent: AVOID rows save future time; WATCH rows with trigger bands are the downturn shopping list — the Dist % ordering makes the top of the WATCH section the front of that list; HELD rows carry the standing sell discipline below.
 
+**§7.1a Company identity & the ticker key [v4.1.0].**
+
+**Identity of record is the company, not the key.** Every memo carries `isin:` in its front matter (§6.1); the register's `Company` column carries the legal name. **The prior-check that opens any register-touching mode runs on company name and ISIN — never on the ticker key alone** (§8). A key is a label, and a session that guesses the label differently must still find the prior. Backfill `isin:` at each REVIEW touch; its absence in a legacy memo is a gap, not a blocker.
+
+**Key convention — suffix-always for non-US lines.** The key is the ticker of the listing the memo prices, written exactly as the price endpoint takes it: **bare for a US-listed line** (`AAPL`; ADRs are US lines, so a memo pricing `NVS`, `ABB` or `BTI` keys them bare), **suffixed for every non-US line** — `.PA` Paris · `.SW` SIX · `.ST` Stockholm · `.CO` Copenhagen · `.OL` Oslo · `.HE` Helsinki · `.DE` Xetra · `.AS` Amsterdam · `.MI` Milan · `.MC` Madrid · `.BR` Brussels · `.VI` Vienna · `.L` London · `.TO` Toronto · `.AX` ASX · `.T` Tokyo · `.HK` Hong Kong · `.TW` Taiwan · `.KS` Seoul · `.SS`/`.SZ` Shanghai/Shenzhen · `.SA` São Paulo · `.MX` Mexico · `.TA` Tel Aviv · `.JO` Johannesburg · `.NZ` Auckland · `.SI` Singapore · `.WA` Warsaw · `.PR` Prague. **The suffix attaches to the local line's own ticker, not to the US ticker** — `NOVN.SW` not `NVS.SW`, `2330.TW` not `TSM.TW`, `9988.HK` not `BABA.HK`, `BATS.L` not `BTI.L`; cross-listed names therefore re-key by lookup, never by string-append. Tying the key to the endpoint is the point: the key is also the SWEEP price lookup, so a correct key cannot produce a wrong quote.
+
+**Frozen at first ANALYSE.** The key is fixed by the first memo and does not move when a later version prices a different line — a changed priced line is recorded in the price cell and the parenthetical, never in the key, because a moving key is itself a duplication mechanism. Deliberate re-keying is a RECONCILE act, logged in the register change log.
+
+**Alternates live in the parenthetical, never in the key** — `NOVO-B.CO (NVO ADR 1:1)`, `ROG.SW (RHHBY ADR)`, `MC.PA (LVMH)`. A legacy key retired in a re-key stays in the parenthetical as an alias for one full review cycle.
+
+**Memo filenames track the key.** A re-key renames the memo files with it — every version, not just the current one — and rewrites each file's `ticker:` front matter and body H1 to match, so filename, front matter and register row never disagree. The rename is executed inside the RECONCILE that performs the re-key and is logged in the register change log with the file count; §7.4a's deterministic `TICKER_YYYY-MM-DD_GSC.md` fetch is the reason the three must agree, and the prefix-match fallback exists for failures, not as a substitute for consistency.
+
 ### §7.2 Portfolio layer — HELD names
 
 The register carries a **PORTFOLIO table above the master table** (empty until the first purchase):
@@ -414,11 +427,11 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/`
 
 ## §8. MODE PLAYBOOKS
 
-Modes are detected in the bootstrap (needed before this file is fetched): ANALYSE · REVIEW · SWEEP · MODEL · RECONCILE. **Before any web work in a register-touching mode:** the live register has been fetched per §7.4a and the repo `memos/` folder checked for an existing memo for the ticker (project knowledge as fallback).
+Modes are detected in the bootstrap (needed before this file is fetched): ANALYSE · REVIEW · SWEEP · MODEL · RECONCILE. **Before any web work in a register-touching mode:** the live register has been fetched per §7.4a and the repo `memos/` folder checked for an existing memo — **searched on company name and ISIN, not on the ticker key** (§7.1a). The key is precisely what a second session most easily gets wrong, and a key-only check is what produced the Saint-Gobain double row (register v226–v231). Project knowledge as fallback.
 
 ### §8.1 ANALYSE
 
-1. Confirm company identity (one search if needed); check register and memo library for priors (§7.4a fetch; project knowledge fallback).
+1. Confirm company identity (one search if needed) and record its ISIN; check register and memo library for priors, **matching on company name and ISIN per §7.1a** (§7.4a fetch; project knowledge fallback). A prior found under a different key makes this a REVIEW, not an ANALYSE.
 2. Gather data per §4 within budget P14.
 3. Gate 0. On FAIL → abbreviated memo (§6.4), register row, stop.
 4. Build the P1-window tables (B1–B3) incl. the four-way normalized-average summary; apply P2–P6 (or the substitution rule) → past verdict.
@@ -470,6 +483,15 @@ Modes are detected in the bootstrap (needed before this file is fetched): ANALYS
 - Flag every estimate, derivation, and data gap explicitly, at the point of use.
 - **The memo explains the company, not the framework [v3.9.0].** Body prose carries data, verdicts and reasoning only — never a restatement of framework mechanics, thresholds, strike logic or rule text. The reader has the model. Tags (P19, §2·1C, "worst-of-four") are references, not explanations; rule text in the body is wasted words against the P13 cap.
 - Same data ⇒ same verdict. Where judgment is unavoidable, apply §3 and record the call in Appendix C.
+
+-----
+
+## v4.1.0 CHANGE LOG (2026-08-06)
+
+- **§7.1a added — company identity and the ticker key [user doctrine call].** Two linked rules. (a) **Suffix-always for non-US lines:** the key is the ticker of the priced listing as the price endpoint takes it — bare for US lines including ADRs, exchange-suffixed for everything else — frozen at first ANALYSE, with alternates and retired legacy keys in the parenthetical. (b) **Identity of record is company name + ISIN, not the key:** `isin:` joins the §6.1 front matter and the §8 pre-work prior-check now searches name and ISIN rather than the ticker string. The second rule is the one that prevents recurrence; the first makes keys canonical and doubles them as the SWEEP lookup.
+- **Cause this closes.** Saint-Gobain was carried twice with opposite verdicts (`SGO` AVOID 03 Aug, `SGO.PA` WATCH 05 Aug) because the second session's prior-check searched the key it intended to use, found nothing, and ran a fresh ANALYSE; §7.1's replace-the-row step is regex-anchored on the ticker string and cannot fire on a row it is not looking for. A suffix convention alone would not have caught it — under the new key rule the *first* session would have been the mis-keyed one. Hence the name/ISIN check.
+- **Migration: register rows and memo files re-key together [user doctrine call — supersedes the append-only draft].** The RECONCILE that re-keys the register also renames every affected memo file and rewrites its `ticker:` front matter and body H1; legacy keys survive as parenthetical aliases in the register row for one review cycle, and `isin:` backfills at each REVIEW touch. Divergent pairs repaired in the same pass: MC.PA↔`LVMH_*`, CDI.PA↔`CDI_*`, 005930.KS↔`005930_*`, 2502.T↔`2502_*`, 7936.T↔`7936_*`.
+- **No gate, threshold, band or verdict mechanics change at v4.1.0.** No register verdict moves as a consequence of this amendment.
 
 -----
 
