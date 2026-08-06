@@ -1,0 +1,201 @@
+---
+ticker: AD.AS
+company: Koninklijke Ahold Delhaize N.V.
+exchange: Euronext Amsterdam (ADR: ADRNY, 1:1)
+currency: EUR
+memo_date: 2026-07-07
+memo_version: v1
+price_at_memo: €36.33 (7 Jul 2026 intraday)
+mcap_at_memo: ≈ €32.7bn (898.7m diluted TTM shares)
+verdict: AVOID
+quality_past: WEAK
+quality_future: ADEQUATE
+sf: PASS (1 P19 flag)
+cheapness: EXPENSIVE
+trigger_band: "CHEAP below ≈ €7 (binding: EV/OI, conservative EV, lease-heavy; all-cash-excess leg ≈ €11; MCap/FCF leg ≈ €33). No P12 — Past WEAK"
+next_review: FY2026 results (~mid-Feb 2027); low priority — AVOID is structural, not price-driven
+position: —
+---
+
+# AD.AS — Koninklijke Ahold Delhaize N.V.: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | **WEAK** | ADEQUATE | PASS (1 P19 flag) | EXPENSIVE | **AVOID (Past gate)** |
+
+Ahold Delhaize is a competently run, genuinely shareholder-friendly grocer — nine consecutive ~€1bn buybacks at single-digit MCap/FCF multiples, a clean pay structure, immaterial related-party dealings — sitting on a business that structurally cannot clear the model's return floor. Worst-of-four normalized ROCE over FY2017–2025 is 8.4% (best variant 9.6%), below the 10% ADEQUATE threshold in every variant, and liabilities run 246% of equity against the 200% flag with none of the P6 excuses available. Per-share compounding (~9%/yr OI and FCF) is real but is bought with leverage and share count, not returns on capital. The verdict flips only on a structural margin re-rating (sustained group OI margin ≈4.5%+ on flat capital) plus deleveraging — a different company, not a different price. Cheapness is moot but computed: the lease-heavy EV makes EV/OI the binding band at an unreachable ≈€7.
+
+## 2. Understanding
+
+Ahold Delhaize sells groceries and everyday household goods — a commodity assortment differentiated by store location, price position, own brands, and omnichannel convenience — to tens of millions of consumers who pay at the till and online, operating as a Dutch-listed holding of ~9,500 supermarkets, discounters, and e-commerce operations (Food Lion, Hannaford, Stop & Shop, Giant, Albert Heijn, bol, Delhaize, Mega Image, Profi) across the U.S. East Coast (~60% of sales) and Benelux/Central-Southeastern Europe; a 150-year-lineage, €92bn-revenue food retailer formed by the 2016 Ahold–Delhaize merger, holding #1/#2 positions in most of its local trading areas. **PASS.**
+
+## 3. Quality — past record
+
+Nine clean post-merger years (FY2017–2025; FY2016 is a structural hybrid — Delhaize consolidated only from 24 Jul 2016 — so STRONG is unavailable and the record is judged on what exists). Worst-of-four normalized ROCE **8.4%**; even the most flattering variant (beginning-period, cash-excluded) reaches only 9.6% — below the 10% floor everywhere. Worst-of-four FCFROCE 8.8% clears the 8% leg, cold comfort. Returns are flat, not declining (7–11% band; 2020's dip is the FELRA pension settlement). ΔOI/sh and ΔFCF/sh geo-means ≈9%/yr — buyback-manufactured. L/E **246%** breaches P5; the P6 conditions fail (returns are not great). **WEAK** — sub-threshold returns plus a leverage breach.
+
+## 4. Quality — future
+
+Breadth: PASS both sides — atomised consumers; no supplier near 10% of COGS+opex. Forces: customer power WEAK (millions of small tickets); supplier power WEAK (scale, private label ~40–50% in core banners); substitutes WEAK (doing-without impossible; restaurant spend is a marginal shift, not a function replacement); new entrants WEAK-with-caveat (store/DC density and local scale are real barriers to success — but Aldi, Lidl, and Amazon keep paying the toll). Tally: 0 strong. Moat: Cost/ingrainedness via local density — Albert Heijn ~37% NL share, dense U.S. East Coast networks — stable in Europe, eroding at the edges in the U.S. (discounter share gains). Market growth: nominal YES, real ~nil — MIXED. Moat is regional and non-dominant; the 8% ROCE record is the proof. **ADEQUATE.**
+
+## 5. Shareholder-friendliness
+
+P17: CEO Muller FY2025 total €7.9m (fattest basis) vs the €113m proportional cap (5% of NI, the lower leg) — 7% of the strike level; Supervisory Board fees far under the $500k stop. P19 buybacks: nine programmes, €10.0bn, every year 11.1–16.5× implied EV/OI (lower variant) and 7.8–10.2× MCap/FCF; 2020/2023/2024 sit above the 14× flag line, no year approaches 20× — **one flag, logged**. Not sterilisation: count −30% since 2017. Profi (€1,239m, Jan 2025): pre-profit target, judgmental — ~2.5% of EV, 0.43× sales for Romania's #1 network; logged, no strike. RPT immaterial. Dividends ~45% payout, sensible. **PASS (1 flag).**
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap/FCF | 8.8× | ≤ 8 | Primary | FAIL (near) |
+| EV/OI (conservative / all-cash-excess) | 14.4× / 13.4× | ≤ 7 | Primary | FAIL |
+| MCap/BV | 2.3× | ≤ 3 | Qualifier | Pass |
+| MCap/TBV | 61.8× | ≤ 3 | Qualifier | Breach → investigated |
+
+Trigger band: **CHEAP < ≈ €7** (EV/OI binding on the conservative EV — €18.4bn gross debt, €13bn of it lease liabilities; all-cash-excess leg ≈ €11; MCap/FCF leg ≈ €33). No P12 — Past WEAK. TBV breach traces to 2016 merger goodwill plus buyback depletion — both qualifiers distorted identically on the TBV side; investigation closes informational. **EXPENSIVE.**
+
+## 7. Risks & thesis-breakers
+
+- Structural: conventional U.S. grocery is being squeezed between Walmart/Costco scale and Aldi/Lidl price — margin ceiling ~4%.
+- The €13bn lease stack is real debt; sale-leaseback economics flatter FCF while hard-coding fixed charges.
+- U.S. multi-employer pension exposure resurfaces episodically (FELRA 2020 cost ~€600m of OI).
+- Profi integration: a zero-OI asset bought for €1.24bn must produce Romanian margin, or it is dilutive capital.
+- Bol e-commerce profitability (reached 2025) is young and competitive.
+
+## 8. Flip conditions & next review
+
+AVOID → WATCH requires the past-quality gate itself to move: sustained group OI margin ≈4.5%+ on undemanding capital growth lifting worst-of-four ROCE through 10%, alongside L/E back under 200% — a multi-year structural change, not a price event. Price alone can never flip this verdict. Watch the P19 execution multiple if the 2026 programme runs at materially higher prices on flat OI (flag → pair risk with any future governance negative). Next review: FY2026 results (~mid-Feb 2027), low priority.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+- AD Annual Report 2025 (media.aholddelhaize.com, Feb 2026): FY2025/FY2024 statements, ten-year overview, remuneration report, Note 4 (Profi), Note 31 (RPT), Note 33 (leases), equity note (buybacks).
+- AD Annual Reports 2022, 2020, 2019, 2018 (annreports.com mirrors / results site): FY2017–FY2022 balance sheets, cash flows, IFRS 16 restatement of FY2018 (AR2019 Note 36), FY2017 operating-lease commitments (AR2018 Note 33).
+- Q4 2025 and Q4 2023 summary reports (aholddelhaize.com): FY2025 verification; FY2023 balance sheet, cash flow, interest paid, buyback count.
+- FY2016 20-F (SEC EDGAR, CIK 869425, filed Mar 2017): FY2016 balance sheet and operating-lease commitments.
+- stockanalysis.com AMS:AD: FY2021–2025 series cross-check (all lines tied to filings).
+- Yahoo Finance AD.AS: price €36.33, 7 Jul 2026.
+- **Gaps:** FY2016 lease-commitment disclosure excludes reasonably-certain renewal options (later basis includes them) — FY2017 beginning-CE is understated, flattering that ROCE variant; direction noted, verdict unaffected. FY2017 weighted diluted shares derived from NI ÷ diluted EPS (1,271m). 2019/2020 diluted counts exact per AR2020 (1,112m / 1,072m). FY2022 balance-sheet lines use the IFRS 17-restated presentation (Q4-2023 comparatives).
+
+## B. Ten-year financial record
+
+B1 Raw inputs (€m; FY2018 IFRS 16-restated; FY2017 as reported pre-adjustment; FY2016 merger-hybrid, flows excluded from averages):
+
+| FY | Revenue | OI | CFO | Capex | Int. paid (loans) | Lease int. | FCF (derived) | Dil. sh (m) | Total assets | NIBCL | Cash+STI | Total liab | Equity | GW+intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2016 | 49,695 | 1,584 | n.m. | 1,302 | n.m. | — | n.m. | ~1,025 | 36,275 | 7,827 | 4,317 | 19,999¹ | 16,276 | 12,547 |
+| 2017 | 62,890 | 2,480¹ | 3,695 | 1,698 | 320 | 255¹ | 2,556¹ | 1,271 | 33,871 | 7,740 | 4,747 | 18,701¹ | 15,170 | 11,634 |
+| 2018 | 62,791 | 2,623 | 5,358 | 1,780 | 227 | 355 | 2,996 | 1,203 | 39,830 | 8,404 | 3,507 | 25,625 | 14,205 | 11,813 |
+| 2019 | 66,260 | 2,662 | 5,449 | 2,218 | 189 | 366 | 2,676 | 1,112 | 41,490 | 8,984 | 3,863 | 27,407 | 14,083 | 12,060 |
+| 2020 | 74,736 | 2,191 | 6,343 | 2,659 | 149 | 357 | 3,178 | 1,072 | 40,692 | 10,048 | 3,119 | 28,260 | 12,432 | 11,565 |
+| 2021 | 75,601 | 3,320 | 5,468 | 2,371 | 138 | 337 | 2,622 | 1,034 | 45,712 | 11,142 | 3,143 | 31,991 | 13,721 | 12,770 |
+| 2022 | 86,984 | 3,768 | 6,110 | 2,490 | 174 | 356 | 3,090 | 1,001 | 48,555 | 11,987 | 3,223 | 33,150 | 15,405 | 13,174 |
+| 2023 | 88,734 | 2,846 | 6,466 | 2,434 | 226 | 382 | 3,424 | 966 | 47,821 | 11,843 | 3,500 | 33,066 | 14,755 | 12,998 |
+| 2024 | 89,356 | 2,784 | 6,224 | 2,299 | 230 | 422 | 3,273 | 931.9 | 51,842 | 12,211 | 6,185 | 36,388 | 15,454 | 13,420 |
+| 2025 | 92,352 | 3,542 | 6,989 | 2,564 | 261 | 465 | 3,699 | 903.6 | 49,089 | 12,706 | 3,705 | 34,894 | 14,195 | 13,667 |
+
+¹ FY2016/FY2017 include the P18 lease capitalisation (see C): 2017 OI +€255m imputed interest; 2017 FCF per the pre-adoption formula; total liabilities include the lease PV (2016 +€5,843m; 2017 +€7,514m).
+
+B2 Returns (CE in €m; FY2016–2017 lease-capitalised):
+
+| FY | CE_wc | CE_xc | ROCE_wc (beg) | ROCE_xc (beg) | FCFROCE_wc (beg) | FCFROCE_xc (beg) |
+|---|---|---|---|---|---|---|
+| 2016 | 34,291 | 29,974 | n.m. | n.m. | n.m. | n.m. |
+| 2017 | 33,645 | 28,898 | 7.2% | 8.3% | 7.5% | 8.5% |
+| 2018 | 31,426 | 27,919 | 7.8% | 9.1% | 8.9% | 10.4% |
+| 2019 | 32,506 | 28,643 | 8.5% | 9.5% | 8.5% | 9.6% |
+| 2020 | 30,644 | 27,525 | 6.7% | 7.6% | 9.8% | 11.1% |
+| 2021 | 34,570 | 31,427 | 10.8% | 12.1% | 8.6% | 9.5% |
+| 2022 | 36,568 | 33,345 | 10.9% | 12.0% | 8.9% | 9.8% |
+| 2023 | 35,978 | 32,478 | 7.8% | 8.5% | 9.4% | 10.3% |
+| 2024 | 39,631 | 33,446 | 7.7% | 8.6% | 9.1% | 10.5% |
+| 2025 | 36,383 | 32,678 | 8.9% | 10.6% | 9.3% | 11.1% |
+
+**Normalized averages, four ways (ΣOI or ΣFCF ÷ ΣCE, FY2017–2025; ΣOI = 26,216, ΣFCF = 27,514):**
+
+| Basis | ROCE | FCFROCE |
+|---|---|---|
+| End-of-period, with cash | **8.4% ← worst** | **8.8% ← worst** |
+| Beginning-of-period, with cash | 8.5% | 8.9% |
+| End-of-period, cash-excluded | 9.5% | 10.0% |
+| Beginning-of-period, cash-excluded | 9.6% | 10.1% |
+
+Worst-of-four ROCE 8.4% < 10% (P3) → below ADEQUATE. Worst-of-four FCFROCE 8.8% ≥ 8% (P2 leg passes; irrelevant given ROCE).
+
+B3 Growth & leverage (per fully diluted share; 2017 YoY n.m. — merger-hybrid base):
+
+| FY | ΔOI/sh | ΔFCF/sh | ΔBV/sh | ΔTBV/sh | L/E |
+|---|---|---|---|---|---|
+| 2017 | n.m. | n.m. | n.m. | n.m. | 123% |
+| 2018 | +11.7% | +23.9% | −1.1% | −28.6% | 180% |
+| 2019 | +9.8% | −3.4% | +6.3% | −8.6% | 195% |
+| 2020 | −14.6% | +23.9% | −8.4% | −52.6% | 227% |
+| 2021 | +57.1% | −14.4% | +14.4% | +9.8% | 233% |
+| 2022 | +17.2% | +21.7% | +15.9% | +134.6% | 215% |
+| 2023 | −21.7% | +14.8% | −0.7% | −18.4% | 224% |
+| 2024 | +1.4% | −0.9% | +8.6% | +20.1% | 235% |
+| 2025 | +31.2% | +12.7% | −5.3% | −73.2% | **246%** |
+
+Geo-means 2017→2025: ΔOI/sh +9.1%, ΔFCF/sh +9.3% (clear the 3% floor), ΔBV/sh +3.5%. ΔTBV/sh n.m. by design — TBV/sh €2.78 → €0.58 while ~€19bn was distributed (€10bn buybacks + €9bn dividends); read in that context, unhelpful, which is itself the finding. L/E 246% (latest year) breaches P5 200%; P6 inapplicable (other metrics not great; borrowing funds a full-price business, not underpriced stock).
+
+## C. Calculation notes
+
+- **NIBCL** = accounts payable + income taxes payable + "Other current liabilities" (AD's accrued expenses/compensation/VAT/deferred-income bucket, Note 27). "Other current financial liabilities" (current loans + current lease liabilities + derivatives) is debt-like → stays in CE. Current provisions ambiguous → stay in CE (burden of proof). FY2025 build: 9,009 + 103 + 3,594 = 12,706.
+- **CE FY2025:** 49,089 − 12,706 = 36,383 (wc); − 3,705 cash+STI = 32,678 (xc). Cash+STI uses the company's "cash, cash equivalents, short-term deposits and similar + current debt instruments" definition (ten-year overview).
+- **Leases.** FY2018–2025 balance sheets capitalise (IFRS 16; FY2018 restated per AR2019 Note 36). Lease liabilities treated as debt-equivalent in CE, EV, L/E throughout. Pre-adoption FY2016–2017: undiscounted commitments (7,489 / 9,631 = 21% / 28% of total assets) ≫ P18's 10% → capitalised. PV ratio 0.780 anchored on the IFRS 16 transition itself (end-2018: 10,108 undiscounted → 7,886 recognised); implied rate ≈3.4% used for imputed interest (assumption, logged). FY2017: OI +255 (imputed interest); FCF = (CFO 3,695 − interest paid 320) − capex 1,698 + net lease payments 1,134 − imputed interest 255 = 2,556. FY2016 commitments exclude reasonably-certain renewals (basis gap flagged in A).
+- **IFRS interest reclassification.** AD presents interest paid on loans in financing → moved into CFO for FCF derivation (per §1A). Lease interest sits inside the financing line "Repayment of lease liabilities" → deducted separately from FCF (accretion figures per income statement, 337–465/yr), matching the pre-adoption formula's economics: levered FCF bears lease interest, not lease principal. Interest received left in investing (logged; immaterial to the verdict).
+- **OI as reported**, no add-backs: FY2020 carries ~€0.6bn FELRA multi-employer pension settlement; FY2023 carries the €250m FreshDirect divestment loss; FY2024 impairments. Averaging dilutes.
+- FY2020 was a 53-week year; FY2022 comparatives IFRS 17-restated (immaterial deltas, restated figures used).
+- **Bias check: none live.** The "boring low-margin grocer" prior (availability/consensus) was named and set aside — the worst-of-four arithmetic decided, and it is not close on the leverage-adjusted variants; the flattering variants also miss.
+
+## D. Future-performance worksheet
+
+- **Customer breadth:** PASS — tens of millions of retail consumers; no customer-concentration disclosure exists because none is needed.
+- **Supplier breadth:** PASS — thousands of FMCG and fresh suppliers; largest global vendors are low-single-digit shares of COGS+opex; European purchasing alliances (RPT note) increase, not reduce, effective supplier breadth.
+- **Forces:** customer power WEAK (atomised, no bargaining); supplier power WEAK (retailer scale, own brands ~40–50% in core banners, forward integration by CPG into retail implausible at scale); substitutes WEAK (food-at-home is non-substitutable as a function; food-service is a share shift among channels, not a substitute function); new entrants WEAK, the closest call (density economics and DC networks are barriers to success — yet Aldi/Lidl expansion and Amazon grocery are funded, persistent entry; contained so far in AD's trading areas). Tally: 0 strong → favourable.
+- **Moat:** Cost (local scale density) with ingrainedness traits — #1/#2 positions in most trading areas, Albert Heijn ~37% NL. Stable in Benelux; eroding at the U.S. edges (discounter share gains, Walmart price gap). Single source named: Cost. Not dominant — the return record confirms it prices through to customers, not to shareholders.
+- **Market growth:** nominal YES (food inflation pass-through), real ≈ flat → MIXED.
+- Verdict ADEQUATE: breadth PASS + 0 strong forces + a plausible but regional, non-dominant moat (STRONG denied on moat quality, evidenced by sub-10% ROCE).
+
+## E. Shareholder-friendliness evidence
+
+- **P17:** CEO Frans Muller FY2025 total remuneration €7.543m IFRS-cost basis / €7.854m entitlement basis — fattest €7.9m. Proportional cap: 5% × lower(FCF €3,699m, NI €2,264m) = €113m → 7% of the strike. Absolute: ≈$8.9m ≪ ≈$40m (2026 CPI-indexed $30m-2017; index basis US CPI-U). Supervisory Board: €2.23m across all members incl. former; chair well under the $500k (2× US norm) stop; Dutch norms lower still — calibration logged. Insider holdings modest (GRO plan shares); no controlling shareholder. Neutral-positive.
+- **P19 buyback worksheet** (implied MCap = avg repurchase price × weighted diluted shares; implied EV = MCap + gross debt incl. lease liabilities − cash+STI — the lower variant):
+
+| FY | Cash €m | Shares m | Avg € | Impl. MCap | Impl. EV | EV/OI | MCap/FCF | Call |
+|---|---|---|---|---|---|---|---|---|
+| 2017 | 998 | 54.8 | 18.20 | 23,131 | 33,148 | 13.4× | 9.0× | clean |
+| 2018 | 1,997 | 100.7 | 19.83 | 23,851 | 34,829 | 13.3× | 8.0× | clean |
+| 2019 | 1,002 | 45.6 | 21.96 | 24,423 | 36,005 | 13.5× | 9.1× | clean |
+| 2020 | 1,001 | 43.4 | 23.06 | 24,715 | 36,150 | 16.5× | 7.8× | **flag** |
+| 2021 | 995 | 38.7 | 25.74 | 26,619 | 40,565 | 12.2× | 10.2× | clean |
+| 2022 | 998 | 36.6 | 27.27 | 27,298 | 41,715 | 11.1× | 8.8× | clean |
+| 2023 | 999 | 34.1 | 29.26 | 28,269 | 42,535 | 14.9× | 8.3× | **flag** |
+| 2024 | 1,000 | 34.7 | 28.85 | 26,887 | 41,017 | 14.7× | 8.2× | **flag** |
+| 2025 | 1,000 | 28.8 | 34.67 | 31,328 | 46,027 | 13.0× | 8.7× | clean |
+
+No year over 20× on either basis → no hard strike. Three years in the 14–17× EV/OI band → the buyback test outputs **one P19 flag** (worst year 2020, 16.5× — an OI depressed by the FELRA settlement; noted, not adjusted). Not sterilisation: 418m shares retired (−30%) vs ~2m/yr SBC delivery. 2025 cash shown ex-€16m withholding tax accrual.
+- **Acquisition audit:** BV ≫ TBV traces to the 2016 merger (€10.8bn paid in shares; goodwill+intangibles €13.7bn) — historical, outside the "recent deal" trigger; noted. Recent: Profi Rom Food, €1,239m consideration, Jan 2025 — contributed €2,867m net sales in 2025 with "a modest negative impact on net income" → pre-profit target, judgmental per P19: ~2.5% of AD EV, 0.43× sales for Romania's #1 store network with disclosed synergies (€118m of goodwill allocated to Mega Image). No strike; FY2026 Romanian margin is the watch item.
+- **RPT (Note 31):** JV purchasing alliances and Loyalty Management NL; purchases from JVs €194m — ~0.3% of COGS+opex, arm's length, no insider entities. Clean.
+- **Dividends:** progressive, 40–47% payout, €1.24 proposed for 2025 — appropriate for a mature, fully priced business per the book's logic.
+- Strike logic: one P19 flag, no second independent negative → **PASS**.
+
+## F. Valuation math
+
+At €36.33, 898.7m diluted (TTM), FY2025 balance sheet:
+- MCap = €32,650m. Gross debt €18,404m (incl. ~€13bn lease liabilities); no preferred; NCI nil; cash+STI €3,705m.
+- EV conservative (no cash deduction) = 51,054 → **EV/OI = 14.4×**. EV all-cash-excess = 47,349 → 13.4×. Both ≫ 7 → primary fails on both variants.
+- **MCap/FCF = 32,650 / 3,699 = 8.8×** vs ≤ 8 — misses by 10%.
+- Qualifiers: MCap/BV 2.3× (pass); MCap/TBV 61.8× (breach) → named investigations: BV≫TBV = 2016 merger goodwill (audit note in E); TBV additionally buyback-depleted → both dead-company metrics distorted identically on the TBV side → informational, no block beyond the AVOID already given.
+- **Trigger band:** MCap/FCF leg: 8 × 3,699 ÷ 898.7 = **€32.93**. EV/OI leg, conservative EV: (7 × 3,542 − 18,404) ÷ 898.7 = **€7.11** ← binding. All-cash-excess leg: €11.23. Band: **CHEAP < ≈ €7** (lease-heavy EV makes the binding leg near-unreachable; stated mechanically). No P12 (Past WEAK). Qualifier context prices: 3×BV ≈ €47.39; 3×TBV ≈ €1.76 (n.m.).
+- Cheapness verdict: EXPENSIVE — the binding primary misses by ~2×; the FCF leg alone would read FAIR.
+- Not HELD → no sell-flag line.
+
+## G. Change log
+
+- v1 — 2026-07-07 — Initial analysis (ANALYSE, MODEL v3.2.1). AVOID on the past-quality gate: worst-of-four normalized ROCE 8.4% (FY2017–2025) below the 10% floor on all four variants; L/E 246% breaches P5 without P6 cover. Future ADEQUATE, SF PASS with one P19 flag (2020/2023/2024 executions at 14.7–16.5× EV/OI, no year over 20×), cheapness EXPENSIVE. Band ≈ €7 (EV/OI, conservative EV) — moot given AVOID.
