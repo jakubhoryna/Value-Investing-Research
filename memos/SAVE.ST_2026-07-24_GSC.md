@@ -1,0 +1,255 @@
+---
+ticker: SAVE.ST
+company: Nordnet AB (publ)
+exchange: Nasdaq Stockholm (Large Cap)
+currency: SEK
+memo_date: 2026-07-24
+memo_version: v1
+price_at_memo: SEK 362.40 (24 Jul 2026, 14:04 UTC)
+mcap_at_memo: SEK ~89.6bn
+verdict: AVOID
+quality_past: ADEQUATE
+quality_future: ADEQUATE
+sf: FAIL
+cheapness: EXPENSIVE
+trigger_band: "CHEAP < ≈ SEK 98 (MCap/NI 8×, substitution anchor; TTM leg ≈ SEK 106; 3×BV/sh ≈ SEK 98) — moot given AVOID"
+next_review: "FY2026 AR (~Mar 2027) — P19 re-test on the 2026 programme; window rolls to 10y (STRONG becomes available)"
+position: —
+---
+
+# SAVE.ST — Nordnet AB (publ): GSC Memo
+
+## 1. Verdict
+
+| Gate | Result |
+|---|---|
+| Understanding | **PASS** |
+| Quality — past | **ADEQUATE** (capped: 9-year record) |
+| Quality — future | **ADEQUATE** |
+| Shareholder-friendliness | **FAIL** — P19 hard strike ×2 |
+| Cheapness | **EXPENSIVE** (29.7× MCap/NI vs ≤8) |
+| **FINAL** | **AVOID (SF FAIL: P19 buybacks)** |
+
+An excellent operating business failing one mechanical test. Nordnet earns a worst-of-four normalized **29.2% ROE** with no own leverage, has compounded EPS for eight years, and pays its CEO 0.45% of net income. The failure is repurchase pricing: across FY2024–FY2025 it bought 3.6m shares at implied **20.2×–24.2× earnings** on every read, against a bargain line of 8×. Two hard strikes, zero clean tranches — SF FAIL regardless of business quality. Only a disciplined programme year flips it; price cannot.
+
+## 2. Understanding
+
+Nordnet is a Nordic digital savings-and-investment bank earning brokerage commissions, fund and platform fees, and net interest on customer deposits and margin/mortgage lending, sold directly to ~2.35 million self-directed retail savers in Sweden, Norway, Denmark and Finland (Germany from 2026) over one in-house platform, structured as a Stockholm-listed, SFSA-supervised banking group that also owns the life insurer (Nordnet Pensionsförsäkring) issuing the tax-wrapped accounts holding most customer assets, and controlled ~22% by the Öhman family vehicle. **PASS.**
+
+## 3. Quality — past record
+
+**Substitution rule applied** (§2·1A — deposit-funded lender plus insurer). Worst-of-four normalized **ROE 29.2%** (beginning-of-period read 35.1%), rising 8%→36% with no down-leg. FCFROCE **n.m.**: CFO swung +13.6bn / −12.6bn / +12.5bn on deposit flows. EPS geo-mean **+43.2%** (2017–25; +21.0% post-relisting), BV/sh +6.8% after a ~70% payout. Substitution leverage (non-deposit interest-bearing debt ÷ equity) ≈ **0%**; literal L/E 3,593% is a customer-money artifact, logged. **ADEQUATE** — capped by the 9-year window (P1 = 10; pre-2017 take-private years unretrievable), not by the record.
+
+## 4. Quality — future
+
+Breadth **PASS** both sides: 2.35m atomised customers; suppliers many, platform in-house. Forces — customer power **WEAK** (no saver negotiates the fee schedule); supplier power **WEAK** (exchange data priced through); substitutes **STRONG** (Avanza, Saxo, bank platforms, passported Trade Republic/Revolut all offer comparable or cheaper access; wrapper transfers frictional, not prohibitive); new entrants **WEAK** (scale, brand and dual banking/insurance permits dull it, though passporting is live counter-evidence). Tally **1 strong, contained**. Moat source **Cost**: SEK 1,183bn savings capital on 853 FTEs; opex/savings capital 0.38%→0.15% since 2017. **Stable.** Market growth **YES**. **ADEQUATE.**
+
+## 5. Shareholder-friendliness
+
+Comp is exemplary: CEO Norling **SEK 13.7m** = **0.45%** of net income (strike at 5%), ~US$1.4m vs the ~$40m flag; chair SEK 1.2m and directors SEK 0.5–0.6m sit far below 2× any Swedish norm. RPT (Öhman, Lannebo) 0.8% of each line, disclosed, market terms. **P19 is the failure.** FY2025: SEK 604m for 2,307,493 shares (WAP 261.76) → **21.7× year / 23.4× 3y** implied MCap/NI. FY2024: SEK 298m for 1,318,025 shares (WAP 226.10) → **20.2× / 24.2×**. Both breach 20× on both reads, neither rescued at 8×. Two hard strikes, no clean tranche. **FAIL.**
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap / NI (substitution anchor, FY2025) | 29.7× | ≤ 8 | **Primary (binding)** | FAIL |
+| MCap / NI (TTM, Jun-26) | 27.2× | ≤ 8 | Primary (cross-check) | FAIL |
+| EV / OI | n.m. | ≤ 7 | Primary (inapplicable) | — |
+| MCap / BV | 11.1× | ≤ 3 | Qualifier | FAIL |
+| MCap / TBV | 12.9× | ≤ 3 | Qualifier | FAIL |
+
+MCap/FCF is inadmissible, not merely n.m.: FY2025's literal 5.2× counts SEK 12.5bn of deposit inflows as owner earnings, and reads 33.2× on the 3y average (Appendix C). **Trigger band: CHEAP below ≈ SEK 98** (MCap/NI = 8, FY2025; TTM leg ≈ SEK 106; the 3×BV qualifier price ≈ SEK 98 corroborates). No P12 edge — Past is ADEQUATE. SEK 362.40 sits **+272%** above. **EXPENSIVE.** Not held → no sell-flag line.
+
+## 7. Risks & thesis-breakers
+
+- Net interest income (43% of FY2025 revenue) fell 12% as Nordic rates eased; further cuts compress it faster than commissions offset.
+- Passported entrants (Trade Republic, Revolut) attack the low-cost proposition; income/savings capital has drifted 0.59%→0.50% since 2023.
+- Germany adds cost toward ~SEK 100m a year from 2028 in Europe's most contested retail-broker market, with no scale for years.
+- Savings capital is levered to Nordic equity prices — a bear market hits commissions, fund fees and margin lending together.
+- Öhman (22%) and Premiefinans (10%) control AGM outcomes, including the repurchase authorisations that produced the strike.
+
+## 8. Flip conditions & next review
+
+Flips to **WATCH** only on shareholder-friendliness, and the v3.5.0 redemption clause is strict: a published worth-referenced repurchase criterion **and** a programme year at or below the bargain lines (or a refusal year) **and** turnover of the strike-era allocators — all three, or the strike stands until it leaves the window. Cheapness is a distant second problem: SEK 98 is a 73% drawdown. Flips further toward permanent AVOID on a sustained ROE down-leg or a Germany build that fails to earn its cost. **Next review:** FY2026 annual report (~Mar 2027) — P19 read on the 2026 programme; the window rolls to ten years, making STRONG available on the past record.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+**Sources.**
+1. Nordnet AB (publ), *Annual and Sustainability Report 2025* (published Mar 2026) — five-year summary p.28, share-buyback disclosure p.29, capital/leverage-ratio discussion p.21, Note 6 related-party transactions, Note 13 general administration costs (remuneration tables, LTIP/warrants), Note 36 earnings per share. Primary source for FY2021–FY2025 and for all Gate 1C evidence.
+2. Nordnet AB (publ), *Annual and Sustainability Report 2021* — five-year summary p.17 (income statement and balance sheet FY2017–FY2021). Primary source for FY2017–FY2020.
+3. stockanalysis.com/quote/sto/SAVE — TTM (period ending 30 Jun 2026) income statement, balance sheet and ratios; current market capitalisation SEK 89,613m (24 Jul 2026). Aggregator, used only for the TTM cross-check and market cap.
+4. Yahoo Finance chart API — SEK 362.40 close-equivalent, 24 Jul 2026 14:04 UTC; 52-week range SEK 250.80–384.00.
+
+**Data gaps and judgment calls.**
+- **Nine-year window (P1 = 10).** Nordnet was taken private by Öhman/Nordic Capital in Feb 2017 and relisted Nov 2020; FY2016 and earlier are not in any retrievable report. Past is therefore capped at ADEQUATE under §2·1A. On the record that exists the ratios read STRONG.
+- **Current share count is derived**, not disclosed: SEK 89,613m market cap ÷ SEK 362.40 = 247.28m shares. Cross-check: 250,206,518 registered ordinary less 1,484,915 treasury at 31 Dec 2025 = 248.72m, less continued repurchases under the programme running to 13 Mar 2026. The 0.6% difference moves the trigger band by ~SEK 0.6 — immaterial.
+- **NI-to-common for FY2024** is derived (EPS 10.85 × 251.249m diluted = SEK 2,726m); the FY2025 AR's Note 36 comparative prints SEK 2,272m, which is arithmetically impossible against the stated EPS and share count and is treated as a transposition in the published table. FY2025's SEK 2,955m ties exactly and is used as printed. The P19 reads are run on **profit for the year** (the more generous denominator); the NI-to-common alternate worsens them (22.1× / 24.0× for FY2025).
+- **Pre-FY2024 repurchase record not disclosed** in the FY2025 report; the aggregator's buyback-yield series suggests only immaterial net share movement in FY2021–FY2023. Two tranches were therefore testable. This does not affect the strikes, which stand independently.
+- **Supplier concentration is not disclosed** (no >10% supplier statement in the annual report). Breadth PASS on the supplier side rests on structure — in-house platform, many venues and fund partners — not on a disclosure sentence. Logged as an INDETERMINATE-adjacent evidentiary gap; it cannot complete a pair and does not affect the verdict.
+- **Not fetched within P14 budget:** Q2 2026 interim report (2026 buyback execution, current diluted count), 2026 remuneration report, AGM notice for the 2026 repurchase authorisation. All are named re-tests for the FY2026 touch.
+- Web operations used: 12 (2 searches, 10 fetches). Within P14.
+
+## B. Nine-year financial record (substitution basis; SEK million unless stated)
+
+**B1 — Raw inputs**
+
+| FY | Operating income | Operating profit | Profit for the year | EPS (diluted, SEK) | Total assets | Total liabilities | Total equity | of which AT1 | Intangibles |
+|---|---|---|---|---|---|---|---|---|---|
+| 2017 | 1,244 | 200 | 167 | 0.67 | 80,341 | 78,316 | 2,025 | n/a | n/a |
+| 2018 | 1,310 | 141 | 118 | 0.47 | 92,119 | 90,131 | 1,988 | n/a | n/a |
+| 2019 | 1,573 | 377 | 339 | 1.25 | 115,603 | 112,546 | 3,058 | n/a | n/a |
+| 2020 | 2,679 | 1,447 | 1,173 | 4.55 | 167,993 | 163,781 | 4,212 | n/a | n/a |
+| 2021 | 3,639 | 2,451 | 1,985 | 7.75 | 232,544 | 226,554 | 5,990 | 1,100 | 921 |
+| 2022 | 3,382 | 2,034 | 1,652 | 6.33 | 206,908 | 200,858 | 6,050 | 1,100 | 968 |
+| 2023 | 4,550 | 3,160 | 2,579 | 9.83 | 222,250 | 214,547 | 7,702 | 1,400 | 1,012 |
+| 2024 | 5,152 | 3,482 | 2,814 | 10.85 | 273,223 | 265,287 | 7,936 | 900 | 994 |
+| 2025 | 5,384 | 3,726 | 3,015 | 11.82 | 309,411 | 301,031 | 8,379 | 900 | 1,067 |
+| TTM Jun-26 | 6,068¹ | 4,079 | 3,290 | 12.98 | 349,112 | 341,054 | 8,058 | 900 | 1,137 |
+
+¹ TTM column from the aggregator; revenue basis 6,576 gross of fee expense. Used for cross-check only, not in the averages.
+
+**B2 — Returns (substitution: ROE replaces ROCE; FCFROCE n.m.)**
+
+| FY | Equity (beg) | Equity (end) | ROE (beg) | ROE (end) |
+|---|---|---|---|---|
+| 2017 | n/a | 2,025 | n/a | 8.2% |
+| 2018 | 2,025 | 1,988 | 5.8% | 5.9% |
+| 2019 | 1,988 | 3,058 | 17.1% | 11.1% |
+| 2020 | 3,058 | 4,212 | 38.4% | 27.8% |
+| 2021 | 4,212 | 5,990 | 47.1% | 33.1% |
+| 2022 | 5,990 | 6,050 | 27.6% | 27.3% |
+| 2023 | 6,050 | 7,702 | 42.6% | 33.5% |
+| 2024 | 7,702 | 7,936 | 36.5% | 35.5% |
+| 2025 | 7,936 | 8,379 | 38.0% | 36.0% |
+
+**Normalized averages (Σ NI ÷ Σ equity), four-way read:**
+
+| Read | Window | Σ NI | Σ equity | Average |
+|---|---|---|---|---|
+| End-of-period | 2017–2025 | 13,842 | 47,340 | **29.2%** ← worst |
+| End-of-period (matched) | 2018–2025 | 13,675 | 45,315 | 30.2% |
+| Beginning-of-period | 2018–2025 | 13,675 | 38,961 | 35.1% |
+| Beginning-of-period (matched) | 2018–2025 | — | — | 35.1% |
+
+Only three distinct reads exist: FY2016 equity is unretrievable, so the beginning-of-period series cannot start at 2017. **Worst = 29.2%**, tested against P2 (≥15%) and P3 (≥10%): clears STRONG on level. STRONG withheld solely on the 9-year window. FCFROCE **n.m.** per the substitution rule.
+
+**B3 — Growth & leverage**
+
+| Measure | Window | Geometric mean | vs 3% floor |
+|---|---|---|---|
+| Δ EPS (diluted) | 2017→2025 | +43.2% | pass |
+| Δ EPS (diluted) | 2020→2025 (post-relisting) | +21.0% | pass |
+| Δ Operating income | 2017→2025 | +20.1% | pass |
+| Δ Equity (BV proxy) | 2017→2025 | +19.4% | pass |
+| Δ BV/sh (ex-AT1) | 2024→2025 | +6.8% | pass |
+
+BV/sh growth is suppressed by design — ~70% of profit is distributed and shares are being repurchased; read alongside the dividend record, not against it.
+
+**Leverage.** Substitution read (non-deposit interest-bearing debt ÷ equity): **≈0%** — Nordnet carries no senior debt; the SEK 900m AT1 is equity-classified perpetual (12.0% of equity ex-AT1 if treated as debt-like). Regulatory: total capital ratio 23.7% vs 14.9% requirement; leverage ratio 5.1% vs 3.5% including Pillar 2 guidance. Literal all-liabilities L/E **3,593%** — SEK 220bn of unit-linked liabilities where the customer bears the investment risk plus SEK 74bn of deposits; economically meaningless, logged per §2·1A, not the operative flag.
+
+## C. Calculation notes
+
+**Substitution-rule treatment (§2·1A).** Nordnet is simultaneously a deposit-funded lender (SEK 74.5bn deposits, SEK 29.8bn loans to the public), a life insurer (Nordnet Pensionsförsäkring — SEK 219.9bn of assets where customers bear the investment risk), and a broker. Total assets of SEK 309bn against SEK 3.7bn of operating profit produce a spurious 1.2% "return"; capital employed net of NIBCL is not a meaningful denominator when 71% of the balance sheet is pass-through customer money and a further 24% is a regulated liquidity portfolio funded by demand deposits. ROE substitutes for ROCE; FCFROCE is n.m.; the leverage flag reads non-deposit interest-bearing debt ÷ equity; per-share growth runs on EPS and BV/sh. The literal all-metric alternate is logged in B2/B3 above.
+
+**Why MCap/FCF is rejected rather than merely noted — the load-bearing judgment in this memo.** Gate 2's substitution paragraph directs deposit-funded lenders to anchor on MCap/FCF "where CFO is economically meaningful, else an NI-proxy". Nordnet's derived FCF (CFO − capex) reads +13,566 (2021), +6,469 (2022), **−12,635 (2023)**, +6,047 (2024), +12,504 (2025). The swings are changes in deposits from the general public and in the liquidity portfolio — financing and investing flows in economic substance, repayable on demand, not owner earnings. A basis on which the company generated four times its net income in 2025 and *negative five times* its net income in 2023 cannot discipline either the cheapness gate or the P19 test. The NI-proxy is used throughout, inheriting the ≤8× bargain line and therefore the 16×/20× P19 lines.
+
+**This call decides the verdict, and it should be stated plainly:** on the literal MCap/FCF basis the FY2025 tranche reads 5.2× on the year and would be rescued outright, and the FY2024 tranche reads 9.4× and would not even flag — SF would PASS and the name would be WATCH. The whole verdict therefore rests on rejecting deposit inflows as owner earnings. I hold that with high confidence (the 2023 negative read makes the basis self-refuting, and buying stock at 8× reported book and ~22× earnings is not a discount to any conservative worth), but it is a single judgment and is flagged here so it can be overturned deliberately rather than silently.
+
+**EV.** Not built. EV/OI is n.m. under the substitution rule: adding SEK 301bn of customer liabilities and subtracting a regulatory liquidity portfolio produces a number with no economic content.
+
+**Current market cap build.** SEK 362.40 × 247.28m derived shares = SEK 89,613m (the aggregator's figure, from which the share count was back-solved). No preferred or NCI; AT1 SEK 900m sits in equity and is neither added to nor deducted from market cap under the NI-proxy anchor.
+
+**TBV build.** Equity (TTM, incl. AT1) SEK 8,058m − other intangible assets SEK 1,137m = SEK 6,921m. No goodwill is separately carried in the TTM aggregator balance sheet; the FY2025 report's intangibles are predominantly capitalised platform development (SEK 223m of personnel expense capitalised in 2025). Capitalised development inside TBV is a mild flatterer of the qualifier, noted; both qualifiers fail by 4× regardless.
+
+**Bias check.** Live: **cleverness** — the substitution machinery and the MCap/FCF rejection are the interesting part of this analysis, and an elegant argument is not a correct one; handled by stating the fork explicitly above and computing both sides. **Peculiarity** — a bank whose reported cash flow is 4× earnings invites the feeling that ordinary rules do not apply; handled by returning to the book's question (is a repurchase at this price a discount to conservative worth?) rather than to the metric. Also noted and rejected: **affinity** for a well-run, cheaply-run, honestly-paid business, which is exactly the pull the one-strike rule exists to resist. No judgment here is born of a bias.
+
+## D. Future-performance worksheet
+
+**Breadth.**
+- *Customers:* 2,351,100 retail savers across four markets, average savings capital SEK 477,400. No customer approaches 1% of revenue, let alone 10%; no disclosure sentence needed. **PASS.**
+- *Suppliers:* trading venues and market-data vendors, fund managers (including Lannebo under outsourcing for certain Nordnet-branded funds), cloud and infrastructure providers, and the in-house platform itself. No single supplier plausibly exceeds 10% of COGS + opex on a SEK 1,648m cost base of which SEK 1,106m is personnel. **PASS**, on structure rather than disclosure — logged as an evidentiary gap in A.
+
+**Forces (binary).**
+
+| Force | Call | One-line reason |
+|---|---|---|
+| Customer bargaining power | **WEAK** | 2.35m atomised retail savers; none negotiates the fee schedule and none can backward-integrate into a licensed bank. Low individual switching costs are real but express themselves through the substitutes force, not through negotiation. |
+| Supplier bargaining power | **WEAK** | Many venues, custodians and fund partners; the platform is built in-house. Exchange market-data monopolies have genuine pricing power but the cost is passed through to the trading customer. |
+| Threat of substitutes | **STRONG** | Direct: Avanza, Saxo, incumbent bank platforms, and passported entrants (Trade Republic, Revolut, eToro, Lightyear) offering comparable or cheaper access. Doing-without: leaving savings on deposit. Wholly-different: property, occupational pensions, index robo-advisers. Substitute value is high and wrapper transfers are frictional rather than prohibitive. |
+| Threat of new entrants | **WEAK** | Scale (SEK 1,183bn savings capital), brand, and dual banking-plus-insurance permits across four jurisdictions each independently dull the threat under the book's rule. Counter-evidence logged: EU passporting let Trade Republic enter the Nordics on a German licence without local authorisation. |
+
+**Tally: 1 strong (substitutes), contained** → judgment zone, Future capped at ADEQUATE.
+
+**Moat.** Single identified source: **Cost.** SEK 1,183bn of savings capital and 2.35m customers are served by 853 full-time equivalents on one platform shared across four countries; adjusted operating expenses fell from 0.38% of savings capital in 2017 to 0.15% in 2025 and adjusted cost/income sits at 30%. That cost position is what funds price leadership and the resulting customer growth — a genuine scale mechanism, not a marketing claim. Direction: **stable** (the ratio is still improving, but the Germany build will consume scale economics for several years and the entrants import a larger European cost base). Not strong enough to carry Future to STRONG against a STRONG substitutes call.
+
+**Market growth.** **YES** — Nordic household savings continue to migrate from bank deposits and advised products to self-directed platforms; savings capital +15% and customers +12% in 2025, net savings SEK 78.1bn.
+
+## E. Shareholder-friendliness evidence
+
+**1. Compensation & ownership (P17).**
+
+| Item | Figure (FY2025) | Test | Result |
+|---|---|---|---|
+| Highest-paid employee — CEO Lars-Åke Norling (fixed SEK 10.1m + benefits 0.1 + pension 3.5) | **SEK 13.7m** | ≤5% of lower(FCF, NI); FCF leg n.m. under substitution → tested on NI alone = SEK 150.8m | **PASS** (0.45%) |
+| Same, absolute | ≈ **US$1.4m** | scrutiny flag at ≈US$40m (2026 CPI-indexed from $30m/2017) | **PASS** |
+| Deputy CEO Rasmus Järborg | SEK 5.6m | — | — |
+| Other senior executives (10 avg) | SEK 41.9m total | — | — |
+| Highest-paid outside director — chair Tom Dinkelspiel | **SEK 1.2m** (base SEK 1,030,000 + committee fees) | ≤2× local norm for the seat; Swedish large-cap chair norm is comfortably above SEK 1.0m, so the stop is ≥SEK 2m on any calibration | **PASS** |
+| Ordinary directors | SEK 0.5–0.6m each (base SEK 515,000 + committee fees) | as above | **PASS** |
+
+Loss-leg handling is not engaged (NI positive throughout); the FCF leg is absent by substitution rather than by loss, and the degeneration to a single-leg test is logged here per §2·1C. Ownership: Öhman Intressenter 22.0% and Premiefinans 10.2% of capital and votes; the chair represents the Öhman interest and takes no fee beyond the board seat. Director holdings are individually modest (1,000–56,159 shares plus warrants). One share class for economics and votes apart from the LTIP Class C instrument — no dual-class caveat. Comp is, on the framework's numbers, among the cleanest in the register.
+
+**2. Related-party transactions.** Counterparties: E. Öhman J:or AB and subsidiaries (the controlling holder) and Lannebo Kapitalförvaltning, which sub-manages certain Nordnet-branded funds and distributes through Nordnet. FY2025: income SEK 44m (0.82% of operating income), expenses SEK 13m (0.79% of operating expenses), receivables SEK 27m, liabilities SEK 3m. Staff and related-party credits stated on market terms with no doubtful-debt provisions. Small, disclosed, symmetric, and audited — the share-of-expense-line test clears comfortably. Note for future touches: the fund sub-management relationship with the controlling holder's orbit is the item to watch if it scales. **No flag.**
+
+**3. Buybacks (P19) — the failure.**
+
+Basis: implied MCap ÷ net income (substitution NI-proxy; EV/OI n.m., MCap/FCF rejected per Appendix C). Bargain rescue line ≤8×; flag >16× on the year read; hard strike >20× on **both** the year read and the trailing-three-year normalized read.
+
+| Tranche | Cash | Shares | WAP | Implied MCap | Year read | 3y normalized read | Rescue ≤8×? | Outcome |
+|---|---|---|---|---|---|---|---|---|
+| FY2025 — three programmes (Sep-24 programme completed 11 Mar 2025 at WAP 251.3; Jul-25 SEK 250m programme completed 7 Nov 2025 at WAP 274.5; Nov-25 programme, SEK 151m drawn in Q4 at WAP 267.8) | SEK 604m | 2,307,493 | SEK 261.76 | SEK 65,448m | **21.7×** (NI 3,015) | **23.4×** (avg 2023–25 = 2,802.7) | No | **HARD STRIKE** |
+| FY2024 — Q4 leg of the programme launched 24 Sep 2024 | SEK 298m | 1,318,025 | SEK 226.10 | SEK 56,806m | **20.2×** (NI 2,814) | **24.2×** (avg 2022–24 = 2,348.3) | No | **HARD STRIKE** |
+
+On the stricter NI-to-common denominator the FY2025 reads worsen to 22.1× / 24.0×. Tranches tested: 2. Flagged or struck: 2. Clean: 0 — so the §2·1C dominant-pattern clause would independently produce a hard strike even if either individual read were argued down.
+
+*Dilution-sterilisation check — clears.* LTIP 2025 shifted from warrants to 633,188 Class C shares with maximum dilution of 221,619 ordinary shares (<0.1% of capital), explicitly to reduce dilution. The FY2025 repurchase of 2,307,493 shares is an order of magnitude larger and is stated in the report as capital-structure management under the leverage-ratio constraint. Not option-hedging. **No sterilisation strike.**
+
+*Redemption clause (v3.5.0) — all three limbs fail.* (a) No published, board-level, worth-referenced price-discipline criterion for repurchases; the stated rationale is capital-structure adjustment and the AT1 stack. (b) No programme year at or below the bargain lines and no demonstrated refusal year — authorisations have been substantially used at prices between SEK 226 and SEK 275. (c) No turnover of the strike-era allocators: Norling remains CEO and Dinkelspiel remains chair. Partial satisfaction changes nothing.
+
+**4. Dividends & capital allocation.** SEK 8.60 per share proposed for FY2025 (SEK 8.10 paid for FY2024; SEK 2,024m distributed in 2025), against a stated policy of 70% of reported profit. For a bank whose binding constraint is the leverage ratio (5.1% against a 3.5% requirement) and which can absorb SEK 50.3bn of additional deposits before breaching it, distributing rather than accumulating equity is the rational allocation — retained capital would not earn the ROE the business earns on its existing base. No empire-building M&A; no acquisitions in the window, so the acquisition audit is not triggered. The allocation *policy* is sound; the allocation *execution* on the repurchase leg is what strikes.
+
+## F. Valuation math
+
+**Current multiples.** MCap SEK 89,613m at SEK 362.40 (24 Jul 2026).
+
+| Metric | Arithmetic | Result | Threshold |
+|---|---|---|---|
+| MCap/NI (FY2025) | 89,613 ÷ 3,015 | **29.7×** | ≤8 |
+| MCap/NI (TTM Jun-26) | 89,613 ÷ 3,290 | **27.2×** | ≤8 |
+| MCap/NI-to-common (FY2025) | 89,613 ÷ 2,955 | 30.3× | ≤8 |
+| MCap/BV | 89,613 ÷ 8,058 | **11.1×** | ≤3 |
+| MCap/TBV | 89,613 ÷ 6,921 | **12.9×** | ≤3 |
+| EV/OI | — | **n.m.** | ≤7 |
+
+**Threshold-implied prices** (247.28m derived shares):
+
+| Line | Arithmetic | Price |
+|---|---|---|
+| MCap/NI = 8, FY2025 NI | 8 × 3,015 ÷ 247.28 | **SEK 97.54** ← binding |
+| MCap/NI = 8, TTM NI | 8 × 3,290 ÷ 247.28 | SEK 106.44 |
+| MCap/BV = 3 (qualifier) | 3 × 8,058 ÷ 247.28 | SEK 97.76 |
+| MCap/TBV = 3 (qualifier) | 3 × 6,921 ÷ 247.28 | SEK 83.97 |
+
+**Trigger band: CHEAP below ≈ SEK 98**, the FY2025 NI-proxy line, corroborated within 0.2% by the 3×BV qualifier price — an unusually tight agreement between an earnings anchor and a book anchor, which is what a 36%-ROE bank at 8× earnings and 3× book implies. No P12 outer edge: the 1.25× allowance is gated to Past = STRONG and Past here is ADEQUATE. Distance from SEK 362.40 to the band: **+271.5%**. Backvaluing not applied — Nordnet is cyclically exposed to Nordic equity markets but is not a definitively cyclical industry in the book's sense, and its prior cycle sits inside the take-private era. Not held → no P9 sell-flag line computed.
+
+## G. Change log
+
+- **v1 — 2026-07-24 — initial analysis.** AVOID (SF FAIL: P19 hard strikes on the FY2024 and FY2025 repurchase tranches, 20.2×–24.2× implied MCap/NI on both reads, no clean tranche). Past ADEQUATE (worst-of-four normalized ROE 29.2%, capped by a 9-year window). Future ADEQUATE (breadth PASS; 1 strong force — substitutes; Cost moat, stable). Cheapness EXPENSIVE at 29.7×. Substitution rule applied per §2·1A; MCap/FCF rejected as inadmissible for a deposit-funded lender and the fork documented in Appendix C.
+
+*Framework output, not investment advice.*
