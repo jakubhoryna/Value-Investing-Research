@@ -1,0 +1,163 @@
+---
+ticker: SAN.PA
+company: Sanofi S.A.
+exchange: Euronext Paris (ADR: SNY, Nasdaq — 1 ADS = 0.5 ordinary)
+currency: EUR
+memo_date: 2026-07-15
+memo_version: v1
+price_at_memo: "€76.26 (15 Jul 2026, SAN.PA)"
+mcap_at_memo: "≈ €93.1bn (1,220.4m sh)"
+verdict: AVOID
+quality_past: WEAK
+quality_future: ADEQUATE
+sf: FAIL
+cheapness: EXPENSIVE
+trigger_band: "CHEAP below ≈ €27.6 (binding: EV/OI, conservative EV, as-reported OI; MCap/FCF leg ≈ €47; no P12)"
+next_review: "FY2026 results (~Feb 2027) — clean post-Opella basis + P19 re-test (2026 €1bn programme); or price < ≈ €35"
+position: —
+---
+
+# SAN.PA — Sanofi S.A.: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | WEAK | ADEQUATE | FAIL | EXPENSIVE | **AVOID** (Past WEAK + SF FAIL: P19) |
+
+Sanofi is a genuine innovation engine — Dupixent, a top-tier vaccines franchise, a rebuilt immunology/neurology pipeline — on a durable patent-and-R&D moat. Two mechanical gates fail anyway. Past is WEAK: the model keeps ~€67bn of acquired goodwill and intangibles in capital employed (Sanofi is a serial acquirer, so goodwill stays) yet measures returns on as-reported IFRS operating income, which is struck *after* ~€4–5bn/yr of amortisation of those same intangibles. That collision puts worst-of-four 10-year ROCE at 7.4% — below the 10% ADEQUATE floor — with flat per-share operating income and eroding tangible book. Shareholder-friendliness fails independently on P19: the 2025 €5bn cancellation buyback, dominated by a €3bn off-market block from L'Oréal at €101.50, prices at ≈21× EV/OI on as-reported OI — past the 20× hard-strike line. Neither is a price problem to wait out; a downturn does not repair a sub-10% return base or a governance strike. The verdict flips only on a durable returns re-rate (post-Opella, as amortisation rolls off) *and* buyback discipline.
+
+## 2. Understanding
+
+Sanofi researches, manufactures and sells patent-protected prescription biopharmaceuticals (led by the immunology biologic Dupixent) and human vaccines to healthcare payers, hospitals, governments and — via three dominant US wholesalers and large ex-US distributors — pharmacies worldwide; a Paris-HQ'd, R&D-driven global pharma, now a pure biopharma after deconsolidating its Opella consumer-health arm (48.2% retained) in April 2025. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four normalized-average 10-year ROCE is **7.4%** (all four variants 7.4–8.4%), below the 10% ADEQUATE floor; FCFROCE ~6.4%. The cause is structural: ~€67bn of goodwill+intangibles (Genzyme, Bioverativ, Ablynx and more) stays in CE for an acquisitive group, while as-reported OI (€6.3bn FY25) is net of heavy intangible amortisation. Per-share OI growth is flat (+0.3%/yr, 2016→25); FCF/sh +2.8%, BV/sh +3.1% — but TBV/sh −5.0%/yr, acquisitions consuming tangible equity. Leverage is benign (L/E 77%). Verdict **WEAK** — returns below floor, no growth offset. (Ex-goodwill sensitivity lifts ROCE to ~10%, but goodwill stays for a serial acquirer.)
+
+## 4. Quality — future
+
+Breadth **PASS** (borderline): the largest customer runs ~10% of net sales (three biggest ~21%; ~73% of *US* sales via three wholesalers) — at, not clearly over, the threshold; supplier base broad. Forces: customer/payer power WEAK (differentiated on-patent products, high switching costs), supplier power WEAK, new-entrant threat WEAK (R&D/regulatory/IP barriers), **substitutes STRONG** — generic/biosimilar erosion at each loss-of-exclusivity is the defining, recurring threat (Dupixent LOE ~2031 is the central thesis risk). One strong force → ADEQUATE zone. Moat: government/patents plus R&D scale and vaccine/brand — durable at the franchise level, but molecule-specific and continuously re-set. Market growing. Verdict **ADEQUATE**.
+
+## 5. Shareholder-friendliness
+
+**FAIL (P19 hard strike).** The 2025 €5bn buyback-for-cancellation is anchored by a €3bn off-market block from long-standing holder L'Oréal at €101.50 (a regulated related-party agreement) — implied EV/OI ≈21.3× on as-reported OI, above the 20× hard-strike line; the blended €5bn programme prices at ~20.1×. Materiality caveat: on Sanofi's non-GAAP *business* OI (~€13.5bn) the same buyback is ~10× — the strike is the framework's as-reported-OI mandate meeting heavy acquired-intangible amortisation (the same root cause as Past WEAK); logged, but the strike stands, and the L'Oréal block is an independent RPT flag. P17 clean: CEO Hudson's 2024 total ≈€10.5m, far below both the ~€40m scrutiny line and 5% of FCF/NI (~€250m). Dividends rational (31 consecutive years of increases).
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap/FCF | 12.9× | ≤ 8 | Primary | FAIL |
+| EV/OI (cons.) | 16.3× | ≤ 7 | Primary | FAIL |
+| MCap/BV | 1.30× | ≤ 3 | Qualifier | Pass |
+| MCap/TBV | 24.4× | ≤ 3 | Qualifier | breach* |
+
+Trigger band **CHEAP < ≈ €27.6** (EV/OI binds, conservative EV; MCap/FCF leg ≈ €47; no P12, Past not STRONG) — 176% below the current €76.26. *MCap/TBV is distorted by €67bn acquired intangibles (TBV €3.8bn); marked inapplicable, not a block. Cheapness **EXPENSIVE**. The low band reflects as-reported OI against €18.7bn gross debt; on business OI it would sit far higher, but the framework uses as-reported.
+
+## 7. Risks & thesis-breakers
+
+- Dupixent concentration (~30% of sales) with LOE ~2031 — the pipeline must replace it; setbacks compress an already-thin as-reported return base.
+- US drug-price policy (IRA Medicare negotiation) and ex-US reference pricing pressure the payer relationship over time.
+- Continued high-multiple buybacks and bolt-on M&A entrench the P19 strike and keep tangible book eroding.
+- Upside to the Past gate: Opella exit plus amortisation roll-off could lift reported ROCE toward the ADEQUATE floor.
+
+## 8. Flip conditions & next review
+
+Past → ADEQUATE if post-Opella, lower-amortisation reported OI carries worst-of-four ROCE ≥10% durably. SF → PASS if buybacks run below the flag lines (or halt) with no related-party blocks. Both are needed before WATCH; cheapness is a distant third (−64% to the band). **Next review:** FY2026 results (~Feb 2027) — first clean post-Opella basis and a P19 re-test of the smaller 2026 €1bn programme; earlier if price < ≈ €35. Not held — no sell-flag line.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+- **Primary financials:** SEC EDGAR XBRL companyfacts, CIK 0001121404 (`ifrs-full` taxonomy), FY2015–FY2025 — Assets, Equity/owners, OI (`ProfitLossFromOperatingActivities`), CFO (total & continuing), goodwill, intangibles, borrowings (LT + current), cash, other current financial assets, current liabilities, treasury purchases, dividends, weighted-average (basic & diluted) shares, net income (total & continuing). Reporting currency EUR throughout.
+- **Buyback / Opella / dividend:** Sanofi FY2025 Form 6-K press releases (Q1–Q4 2025) and H1-2025 management report (SEC); L'Oréal block-trade exhibit (SEC 8-K/6-K exhibit, 2 Feb 2025).
+- **CEO comp:** Sanofi executive-compensation disclosure (details-of-compensation-arrangements, 14 Feb 2025) + secondary (FiercePharma, MM&M) cross-check.
+- **Breadth / customer concentration:** Sanofi Form 20-F FY2020 (three-customer ~10/6/5% of net sales) and FY2013/2022 20-F context.
+- **Price:** Yahoo Finance chart API, SAN.PA €76.26 and SNY $43.65 (15 Jul 2026); ADR ratio 1 ADS = 0.5 ordinary (confirmed via cross-rate).
+- **Gaps / estimates:** (1) FY2015–2018 capex uses the combined "PP&E + intangibles + other non-current" cash-flow line, unavailable in XBRL pre-2019 — **estimated €1.9bn/yr, labelled**; affects FCFROCE (confirmatory, ~6.4%), not ROCE (decisive, fully sourced). (2) Diluted-share band uses FY2025 diluted WA 1,225.6m; current MCap uses ~1,220.4m outstanding. (3) Blended 2025 buyback price ~€95.6 is an **estimate** (€3bn tranche @ €101.50 sourced; €2bn open-market Feb–Dec 2025 estimated) — the sourced L'Oréal tranche alone (60% of programme) drives the P19 strike. Search budget: ~3 web ops + SEC/Yahoo data fetches.
+
+## B. Ten-year financial record (EUR m; FY = calendar year)
+
+### B1 Raw inputs
+| FY | Net sales | OI | CFO | Capex | FCF | Dil. sh (m) | Assets | NIBCL | Cash+STI | Tot. liab | Equity(own) | GW+Intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2016 | 33,809 | 6,531 | 7,838 | 1,900e | 5,938 | 1,296.0 | 104,679 | 15,874 | 10,304 | 46,957 | 57,552 | 51,166 |
+| 2017 | 35,072 | 5,804 | 7,379 | 1,900e | 5,479 | 1,266.8 | 99,813 | 14,188 | 10,392 | 41,574 | 58,070 | 53,344 |
+| 2018 | 34,463 | 4,676 | 5,547 | 1,900e | 3,647 | 1,255.2 | 111,408 | 14,743 | 7,124 | 52,373 | 58,876 | 66,124 |
+| 2019 | 36,126 | 3,051 | 7,715 | 1,787 | 5,928 | 1,257.1 | 112,630 | 15,572 | 9,853 | 53,400 | 59,056 | 61,028 |
+| 2020 | 36,041 | 14,113 | 7,418 | 2,083 | 5,335 | 1,260.1 | 114,413 | 16,281 | 14,815 | 51,161 | 63,106 | 62,705 |
+| 2021 | 37,761 | 8,126 | 10,522 | 2,043 | 8,479 | 1,256.9 | 120,242 | 17,843 | 11,152 | 51,211 | 68,681 | 69,463 |
+| 2022 | 37,651 | 10,162 | 10,526 | 2,103 | 8,423 | 1,256.9 | 126,722 | 19,523 | 13,253 | 51,570 | 74,784 | 71,532 |
+| 2023 | 37,817 | 6,960 | 10,258 | 2,906 | 7,352 | 1,256.4 | 126,464 | 21,887 | 8,868 | 52,111 | 74,040 | 73,723 |
+| 2024 | 41,081 | 7,252 | 9,081 | 3,195 | 5,886 | 1,256.1 | 132,798 | 24,692 | 7,812 | 54,941 | 77,507 | 66,013 |
+| 2025 | 43,626 | 6,344 | 10,750 | 3,538 | 7,212 | 1,225.6 | 126,805 | 23,731 | 8,450 | 55,095 | 71,376 | 67,561 |
+
+*11th BS year (FY2015): Assets 102,321; Equity(own) 58,049; NIBCL 14,374; Cash+STI 9,161 → CE_wc 87,947 / CE_xc 78,786 (beginning CE for FY2016). NIBCL = current liabilities − current borrowings − current lease (all non-debt/non-lease current liabilities treated as NIBCL). Capex = "acq. of PP&E + intangibles + other non-current"; product/intangible purchases included → conservatively dark FCF (PP&E-only ~€1.5–1.8bn would lift FCF ~€1.5–2bn).*
+
+### B2 Returns — worst-of-four normalized averages (FY2016–2025)
+| Basis | ROCE | FCFROCE |
+|---|---|---|
+| wc, beginning-of-period | 7.5% | 6.5% |
+| wc, end-of-period | **7.4%** ← worst | **6.4%** ← worst |
+| xc, beginning-of-period | 8.4% | 7.3% |
+| xc, end-of-period | 8.2% | 7.2% |
+
+ΣOI = €73,019m; ΣFCF ≈ €68.5bn. **Worst-of-four ROCE 7.4% < P3 floor 10% → below ADEQUATE.** FCFROCE 6.4% < P2 STRONG floor 8%. Goodwill retained (acquisitive group); ex-goodwill CE_wc-2025 → ROCE ~10.3% (sensitivity only, not applied).
+
+### B3 Growth & leverage (per diluted share, geo-mean 2016→2025)
+| Metric | 2016 | 2025 | CAGR |
+|---|---|---|---|
+| OI/sh | €5.04 | €5.18 | **+0.3%** |
+| FCF/sh | €4.58 | €5.88 | +2.8% |
+| BV/sh | €44.41 | €58.24 | +3.1% |
+| TBV/sh | €4.93 | €3.11 | **−5.0%** |
+| L/E (2025) | — | 77% | (P5 flag 200%) |
+
+OI/sh flat (below 3% floor); TBV/sh eroding — acquisitions outrunning retained tangible equity. Growth does not rescue Past.
+
+## C. Calculation notes
+
+- **CE build (FY2025):** Assets 126,805 − NIBCL 23,731 = **CE_wc 103,074**; − (cash 7,657 + other current fin. assets 793 = 8,450) = **CE_xc 94,624**. NIBCL = current liab 28,345 − current borrowings 4,342 − current lease 272 = 23,731 (all remaining non-debt/non-lease current liabilities — trade payables €7.4bn, current tax €0.75bn, accruals/rebates/other — treated as NIBCL; short-term debt and lease liabilities kept in CE; leases are IFRS-16 capitalised and treated as debt-equivalent in CE/EV/L-E).
+- **Goodwill:** retained in CE — Sanofi is intensely acquisitive (Genzyme, Bioverativ, Ablynx, Principia, Translate Bio, Provention, Inhibrx…); the "non-acquisitive" deduction does not apply. Logged ex-goodwill sensitivity only.
+- **OI:** as-reported IFRS `ProfitLossFromOperatingActivities`, no add-backs. FY2020 €14.1bn carries a large Regeneron-stake disposal gain (distortion noted; diluted by averaging). FY2025 €6.3bn is net of ~€4–5bn intangible amortisation.
+- **TBV (FY2025):** owners' equity 71,376 − goodwill 41,300 − other intangibles 26,261 = **€3,815m**.
+- **Bias check:** none live. (Guarded against authority/quality glow — Sanofi's science and brand are real but do not move the ROCE floor or the P19 arithmetic.)
+
+## D. Future-performance worksheet
+
+- **Breadth — customer:** three largest ~10% / 6% / 5% of net sales (FY2020 20-F; ~8/5/3% FY2019), combined ~21%; ~73% of US pharma sales via three wholesalers. Largest ~10% — at, not clearly over, the 10% line → **PASS (borderline; monitor)**. **Supplier:** many CMOs/API vendors → PASS (single-source API risk noted, not disqualifying).
+- **Forces (binary):** customer/payer power **WEAK** (differentiated on-patent products, high switching costs; payer price-power a growing risk but not yet decisive) · supplier power **WEAK** · substitutes **STRONG** (generic/biosimilar cliff — structural, recurring; Dupixent ~30% of sales, LOE ~2031) · new entrants **WEAK** (R&D, regulatory, IP, scale). **Tally: 1 strong → ADEQUATE zone.** (Consistent with the Roche/ROG precedent — substitutes as the single strong force.)
+- **Moat:** source = Government (patents/regulatory exclusivity), reinforced by R&D scale and vaccine/brand. Direction: stable at franchise level, eroding per molecule.
+- **Market:** growing (demographics, biologics) → YES/MIXED. **Future ADEQUATE.**
+
+## E. Shareholder-friendliness evidence
+
+- **P17 comp:** Hudson FY2024 total ≈ €10.45m (fixed €1.40m + variable €2.57m + performance shares valued €5.97m + pension €0.50m + benefits €0.01m). vs 5% of lower(FCF €7.2bn, NI-continuing €4.98bn) = **€249m** → 0.2× of line, no strike; vs ~€40m (2026 CPI-indexed) scrutiny line → no flag. Chair (Oudéa) fee within European working-chair norms. **Clean.**
+- **P19 buyback (FY2025 €5bn, for cancellation):**
+  - Sourced tranche — L'Oréal off-market block, 29,556,650 sh @ **€101.50** = €3.0bn (60% of programme; approved as an Art. L.225-38 related-party agreement).
+  - Implied MCap = €101.50 × 1,225.6m = €124,398m; implied EV (conservative, all-cash-excess) = +debt 18,702 + NCI 334 − cash+STI 8,450 = €134,984m.
+  - **EV/OI = 134,984 / 6,344 = 21.3×** → **> 20× hard strike.** MCap/FCF = 124,398 / 7,212 = 17.2× (flag).
+  - Blended €5bn (est. €95.6): EV/OI ≈ 20.1×, MCap/FCF ≈ 16.2× — still clears the 20× line on the flattering (lower-EV) variant.
+  - **Materiality caveat (logged):** on business OI ~€13.5bn the block is ~10× EV/OI — no strike; the strike is as-reported-OI × heavy amortisation. Strike stands per framework; caveat recorded.
+- **RPT:** the €3bn block concentrates the buyback with one insider shareholder (L'Oréal) — independent scrutiny flag, corroborating (not needed for) the FAIL.
+- **Dividends:** €3.92 (2024) → €4.12 proposed (2025), 31 consecutive years of increases; rational for a mature-return mix. **SF verdict: FAIL (P19 hard strike).**
+
+## F. Valuation math (@ €76.26, 1,220.4m sh; FY2025 balances)
+
+- MCap = €93,068m. Gross debt 18,702; NCI 334; cash+STI 8,450 → net debt €10,252m.
+- **EV (conservative/all-cash-excess) = €103,654m**; EV (no cash deducted) = €112,104m.
+- **EV/OI** = 103,654 / 6,344 = **16.3×** (no-cash 17.7×) — both ≫ 7 (and ≫ 1.25×7).
+- **MCap/FCF** = 93,068 / 7,212 = **12.9×** (continuing-CFO basis 13.3×) — ≫ 8.
+- **MCap/BV** = 1.30× (pass); **MCap/TBV** = 24.4× (breach — €67bn acquired intangibles, TBV €3.8bn; marked inapplicable, not a block).
+- **Trigger band:** MCap/FCF ≤ 8 → €47.08; EV/OI ≤ 7 (conservative) → (7×6,344 + 8,450 − 18,702 − 334) / 1,225.6 = **€27.60 (binds)**. No P12 (Past not STRONG). Dist% at €76.26 = **+176%**.
+- Qualifier-implied context: 3× BV/sh ≈ €175; 3× TBV/sh ≈ €9 (distorted). **Cheapness EXPENSIVE.**
+
+## G. Change log
+
+- v1 — 2026-07-15 — initial analysis. ANALYSE. Verdict **AVOID** (Past WEAK: worst-of-4 ROCE 7.4% < 10% floor; + SF FAIL: P19 2025 €5bn buyback / L'Oréal €3bn block @ €101.50 ≈ 21.3× EV/OI hard strike). Future ADEQUATE, cheapness EXPENSIVE (16.3× EV/OI); band ≈ €27.6, +176%.
+
+*Framework output, not investment advice.*
