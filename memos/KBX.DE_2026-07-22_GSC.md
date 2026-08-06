@@ -1,0 +1,238 @@
+---
+ticker: KBX.DE
+company: Knorr-Bremse AG
+exchange: XETRA (ETR)
+currency: EUR
+memo_date: 2026-07-22
+memo_version: v1
+price_at_memo: €101.70 (22 Jul 2026)
+mcap_at_memo: €16,394m
+verdict: AVOID
+quality_past: WEAK
+quality_future: ADEQUATE
+sf: PASS
+cheapness: EXPENSIVE
+trigger_band: "CHEAP below ≈ €19.6 (binding: EV/OI, conservative EV; all-cash-excess leg ≈ €30.4; MCap/FCF leg ≈ €32.7)"
+next_review: FY2026 annual report (~Mar 2027) — ROCE plateau, duagon capital addition, acquisition-audit re-test
+position: —
+---
+
+# KBX.DE — Knorr-Bremse AG: GSC Memo
+
+## 1. Verdict
+
+| Gate | Result |
+|------|--------|
+| Understanding | PASS |
+| Past quality | **WEAK** |
+| Future quality | ADEQUATE |
+| Shareholder-friendliness | PASS |
+| Cheapness | EXPENSIVE |
+| **FINAL** | **AVOID (Past WEAK)** |
+
+The world's leading braking-systems supplier has a genuine switching-cost moat, a clean balance sheet and no buyback record to indict — and still fails the first quality gate. Capital employed grew 64% between FY2017 and FY2025 while operating income went from €904m to €903m. Worst-of-four normalized ROCE is 14.5%, under the 15% STRONG line, and the trend beneath that average is the problem: 17.8% across FY2017–20, 11.8% across FY2022–25. §2·1A forces a downgrade for a sustained multi-year decline regardless of level. Flipping it takes two or three years of operating income growing faster than capital employed. Price is not the obstacle — it is the quality gate, which would fail at any price.
+
+## 2. Understanding
+
+Knorr-Bremse AG is a Munich-headquartered, family-controlled (58.99% of votes) German listed manufacturer selling safety-critical braking systems and adjacent subsystems — entrance systems, HVAC, driver assistance, powertrain and control components, plus a large installed-base aftermarket — to rail OEMs and operators (Rail Vehicle Systems, 55% of revenue) and to truck, bus and trailer OEMs and fleets (Commercial Vehicle Systems, 45%), from ~100 sites in 30 countries. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four normalized ROCE 14.5% (end-of-period, with-working-capital); worst-of-four FCFROCE 8.1%. Both clear ADEQUATE; ROCE misses STRONG. Direction decides: ROCE_wc ran 19.9/19.8/19.1% in FY2017–19 and 11.0/13.0/11.2/12.1% in FY2022–25, and ex-cash the halving is starker (≈28% to ≈15%). Goodwill and intangibles tripled to €1,720m without lifting operating income. Growth: ΔOI/sh geometric mean −0.01%, ΔFCF/sh +5.5%, ΔBV/sh +6.7%, ΔTBV/sh +0.7% — the earning-power leg is flat. L/E 183.7%, inside the 200% flag. **WEAK** — sustained decline on otherwise-ADEQUATE arithmetic.
+
+## 4. Quality — future
+
+Breadth PASS both sides: no IFRS 8 major-customer disclosure appears (that disclosure is mandatory at 10%, and none is made), and dual sourcing is stated policy with no supplier near the line. Forces: customer power **STRONG** — truck-OEM purchasing power, visible in CVS's 10.4% operating margin against RVS's 16.5%; supplier power WEAK; substitutes WEAK (braking is regulated, and KBX supplies the electronics that would replace friction wear); new entrants WEAK (scale, homologation switching costs and safety permits each dull it). Tally 1 strong, contained. Moat: **switching costs** — homologation plus 30-year vehicle lives that capture the aftermarket — stable, not widening. Market growth MIXED. **ADEQUATE.**
+
+## 5. Shareholder-friendliness
+
+Compensation: highest-paid employee €5.20m (CEO, FY2023 — latest accessible disclosure) against a 5%-of-lower(FCF, NI) strike line of €24.0m that year, €26.7m on FY2025 figures — 1.1% of the base, far below the ≈US$40m absolute trigger. Highest-paid outside director €486k (Supervisory Board chair) ≈ US$554k at EUR/USD 1.1406 (22 Jul 2026), under the US$666k floor-default stop. Related parties: a Munich sale-and-leaseback with a related company (€142m lease liability) and €134m of sales to associates, all covered by an unqualified §312 AktG dependency-report opinion. Buybacks: none — no treasury shares, share count fixed at 161,200,000 since 2018, so P19's buyback limb never engages. The acquisition audit triggers on BV ≫ TBV and is logged **INDETERMINATE**: the FY2024 Alstom signalling deal cost €636m cash, but the target's pre-deal operating income is undisclosed, so the 15×/20× lines cannot be computed. **PASS**, with the 59% control block and that audit as standing caveats.
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|--------|---------|-----------|------|-----------|
+| MCap / FCF | 24.9× (20.9× pre-interest-reclass) | ≤ 8 | Primary | **Fail** |
+| EV / OI (all-cash-excess) | 19.7× | ≤ 7 | Primary | **Fail** |
+| EV / OI (no-cash-excess) | 21.7× | ≤ 7 | Primary | **Fail** |
+| MCap / BV | 5.28× | ≤ 3 | Qualifier | Fail |
+| MCap / TBV | 11.85× | ≤ 3 | Qualifier | Fail |
+
+Trigger band: CHEAP below ≈ **€19.6**, binding on EV/OI at the conservative EV; the flattering EV leg gives €30.4, the MCap/FCF leg €32.7. No P12 allowance — Past is not STRONG. Both qualifiers breach; the BV ≫ TBV investigation ran the acquisition audit above, which returned INDETERMINATE rather than an adverse finding. **EXPENSIVE.**
+
+## 7. Risks & thesis-breakers
+
+- duagon (closed 2026) adds capital employed before it adds operating income, mechanically worsening the ROCE trend the verdict rests on.
+- CVS faces a North American truck cycle still contracting in FY2025 — revenue −8.8%, headcount −11.6%.
+- Chinese rail insourcing (CRRC) attacks the homologation barrier in the largest growth market.
+- A 58.99% holder means minorities never set the allocation agenda, which is the area of weakness.
+- Against the verdict: BOOST lifted the operating EBIT margin to 13.0%; converting that into reported EBIT growth on a flat capital base would reverse the trend.
+
+## 8. Flip conditions & next review
+
+AVOID flips to WATCH when worst-of-four ROCE re-crosses 15% with the decline arrested — two or three years in which operating income grows and capital employed does not — and the growth legs clear 3%. Only then does price matter, and price is 419% above the band. It hardens if the acquisition audit, once computable, lands above 20× and pairs with a second negative. Next review: FY2026 annual report (~March 2027) — resets the returns series, prices in duagon, should permit the audit; sooner if the FY2015–17 IFRS statements surface and extend the window to ten years.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+**Sources.** Knorr-Bremse Annual Report 2018 (FY2018 + FY2017 comparatives), AR 2020 (FY2020 + FY2019), AR 2021 (FY2021), AR 2023 (FY2022 + FY2023, plus governance, related-party, breadth and compensation disclosures) — PDFs via annualreports.com archive. AR 2025 key-performance-indicator table, CEO and Supervisory Board reports via the syndicated full-text copy of the FY2025 annual report (MarketScreener/Publicnow, published 19 Mar 2026). stockanalysis.com (ETR:KBX) for the FY2021–FY2025 income statement, balance sheet and cash-flow series. Yahoo Finance chart API for KBX.DE price and EURUSD=X.
+
+**Gaps and their treatment.**
+1. **Window is nine fiscal years, not ten (P1 shortfall).** Knorr-Bremse reported under HGB through FY2016; the AR2016 balance-sheet total (€4,604m) is not comparable with the IFRS series (FY2017 €5,727m). The IFRS restatement "Consolidated Financial Statements 2015–2017 IFRS" exists but could not be retrieved — the IR site is a SvelteKit SPA serving documents from an EQS CDN whose file paths were not resolvable, and the annualreports.com archive holds only the HGB-era reports for those years. Under §2·1A, STRONG is unavailable on thin history; the cap is not the operative constraint here, since the ROCE and growth arithmetic fails STRONG on its merits.
+2. **Beginning-of-period CE is available only from FY2018** (FY2017 is the earliest IFRS closing balance sheet). The four normalized averages therefore run on an 8-year beginning basis and a 9-year end basis; both are reported in B2 and the worst of the four is the tested value. The asymmetry does not change which basis is worst (end-wc on both metrics).
+3. **Interest paid is not separable for FY2024 and FY2025.** Knorr-Bremse classifies interest paid in financing, so §2·1A requires reclassification into CFO. Disclosed figures: FY2017 €20.2m, FY2018 €18.6m, FY2019 €33.2m, FY2020 €32.7m, FY2021 €36.6m, FY2022 €31.9m, FY2023 €59.2m. For FY2024 and FY2025 the aggregator lumps it into a composite financing line; interest **expense** (€107m, €126m) is substituted as a labelled conservative proxy — historically interest paid has run below interest expense (FY2023: €59.2m paid vs €101m expense), so the proxy understates FCF. Effect is confined to the non-binding MCap/FCF leg; the binding EV/OI band is unaffected.
+4. **FY2025 compensation report not retrieved** (AR2025 p.264; the syndicated full text truncates before it). P17 is run on the FY2023 disclosure, labelled as such, with a named re-test at the FY2026 report. The conclusion is insensitive: compensation would have to be roughly five times the FY2023 level to reach the strike line.
+5. **Revenue definition differs between sources** (FY2025: €7,817m in the AR key-figures table vs €7,869m at the aggregator; FY2023 similar). Revenue is not a gate input. Operating income, net income, total assets, equity, EPS and share count tie exactly between the two for FY2024–25.
+6. **Search budget overrun (P14).** Approximately 22 web operations against a ~12 allowance for ANALYSE. Cause: the issuer's IR site is not machine-readable and the pre-2017 accounting-basis break required three separate annual-report PDFs to reconstruct the series.
+
+## B. Nine-year financial record (€m unless stated)
+
+### B1 Raw inputs
+
+| FY | Revenue | OI (EBIT) | CFO | Capex | FCF (derived) | Dil. shares (m) | Total assets | NIBCL | Cash+STI | Total liab. | Equity (excl. NCI) | Goodwill+intang. |
+|----|--------:|----------:|----:|------:|--------------:|----------------:|-------------:|------:|---------:|------------:|-------------------:|-----------------:|
+| 2017 | 6,153.5 | 904.0 | 679.9 | 229.9 | 429.8 | 161.2 | 5,727.4 | 1,178.0 | 1,600.0 | 3,731.7 | 1,847.8 | 540.5 |
+| 2018 | 6,615.8 | 972.5 | 725.5 | 323.7 | 383.2 | 161.2 | 6,262.2 | 1,348.9 | 1,756.0 | 4,655.1 | 1,501.9 | 643.2 |
+| 2019 | 6,936.5 | 1,062.9 | 985.8 | 318.2 | 634.4 | 161.2 | 6,846.8 | 1,279.4 | 1,880.7 | 4,945.2 | 1,784.4 | 842.2 |
+| 2020 | 6,156.7 | 814.0 | 1,036.0 | 361.6 | 641.7 | 161.2 | 7,390.0 | 1,370.4 | 2,277.0 | 5,468.3 | 1,830.7 | 887.8 |
+| 2021 | 6,827.8 | 916.1 | 975.5 | 395.5 | 543.4 | 161.2 | 7,199.2 | 1,494.4 | 1,380.2 | 4,773.6 | 2,302.3 | 1,005.8 |
+| 2022 | 7,284.7 | 721.3 | 541.6 | 352.1 | 157.6 | 161.2 | 8,141.3 | 1,583.3 | 1,342.6 | 5,513.6 | 2,563.1 | 1,465.5 |
+| 2023 | 8,029.0 | 870.0 | 915.0 | 375.0 | 480.8 | 161.2 | 8,248.6 | 1,531.7 | 1,291.0 | 5,345.0 | 2,836.0 | 1,467.0 |
+| 2024 | 8,040.0 | 911.0 | 1,042.0 | 346.0 | 589.0 | 161.2 | 9,614.0 | 1,471.0 | 2,263.0 | 6,487.0 | 3,045.0 | 1,816.0 |
+| 2025 | 7,869.0 | 903.0 | 1,116.0 | 331.0 | 659.0 | 161.2 | 8,883.0 | 1,406.0 | 1,738.0 | 5,703.0 | 3,104.0 | 1,720.0 |
+
+Capex = property, plant and equipment plus purchased/capitalised intangibles. FCF = CFO − capex − interest paid (interest paid reclassified from financing; FY2024–25 use interest expense as a labelled proxy — see A.3). FCF before the interest reclassification: 450.0 / 401.8 / 667.6 / 674.4 / 580.0 / 189.5 / 540.0 / 696.0 / 785.0.
+
+### B2 Returns
+
+| FY | CE_wc | CE_xc | ROCE_wc | ROCE_xc | FCFROCE_wc | FCFROCE_xc |
+|----|------:|------:|--------:|--------:|-----------:|-----------:|
+| 2017 | 4,549.4 | 2,949.4 | 19.9% | 30.7% | 9.4% | 14.6% |
+| 2018 | 4,913.3 | 3,157.3 | 19.8% | 30.8% | 7.8% | 12.1% |
+| 2019 | 5,567.4 | 3,686.7 | 19.1% | 28.8% | 11.4% | 17.2% |
+| 2020 | 6,019.6 | 3,742.6 | 13.5% | 21.7% | 10.7% | 17.1% |
+| 2021 | 5,704.8 | 4,324.6 | 16.1% | 21.2% | 9.5% | 12.6% |
+| 2022 | 6,558.0 | 5,215.4 | 11.0% | 13.8% | 2.4% | 3.0% |
+| 2023 | 6,716.9 | 5,425.9 | 13.0% | 16.0% | 7.2% | 8.9% |
+| 2024 | 8,143.0 | 5,880.0 | 11.2% | 15.5% | 7.2% | 10.0% |
+| 2025 | 7,477.0 | 5,739.0 | 12.1% | 15.7% | 8.8% | 11.5% |
+
+**Normalized averages (Σ numerator ÷ Σ CE), four ways:**
+
+| Basis | ROCE | FCFROCE |
+|-------|-----:|--------:|
+| Beginning-of-period, with cash (8y) | 14.9% | 8.5% |
+| Beginning-of-period, ex cash (8y) | 20.9% | 11.9% |
+| End-of-period, with cash (9y) | **14.5%** | **8.1%** |
+| End-of-period, ex cash (9y) | 20.1% | 11.3% |
+
+Tested values: **ROCE 14.5%** (P2 needs ≥15% — fails; P3 needs ≥10% — clears). **FCFROCE 8.1%** (P2 needs ≥8% — clears).
+
+**Decline test (§2·1A).** Sub-period normalized readings, same end-wc basis: FY2017–20 **17.8%**, FY2022–25 **11.8%** (ex-cash: 27.7% → 15.3%). Four consecutive years at the lower plateau with no recovery toward the earlier level; capital employed +64.3% against operating income −0.1% over the window. Judged a sustained multi-year decline, forcing the downgrade to WEAK.
+
+### B3 Growth & leverage
+
+| FY | ΔOI/sh | ΔFCF/sh | ΔBV/sh | ΔTBV/sh | L/E |
+|----|-------:|--------:|-------:|--------:|----:|
+| 2018 | +7.6% | −10.8% | −18.7% | −35.2% | — |
+| 2019 | +9.3% | +65.6% | +18.8% | +9.8% | — |
+| 2020 | −23.4% | +1.2% | +2.6% | +5.6% | — |
+| 2021 | +12.5% | −15.3% | +25.8% | +39.6% | — |
+| 2022 | −21.3% | −71.0% | +11.3% | −17.0% | — |
+| 2023 | +20.6% | +205.1% | +10.7% | +24.7% | — |
+| 2024 | +4.7% | +22.5% | +7.4% | −10.2% | — |
+| 2025 | −0.9% | +11.9% | +1.9% | +12.6% | 183.7% |
+
+Geometric means FY2017→FY2025 (8 periods): **ΔOI/sh −0.01%**, **ΔFCF/sh +5.49%**, ΔBV/sh +6.70%, ΔTBV/sh +0.72%. Nominal inflation floor is 3%: the operating-income leg fails it, the FCF leg clears it. L/E reported for the latest year only per §5: total liabilities €5,703m ÷ BV €3,104m = 183.7%, inside the P5 200% flag; IFRS 16 lease liabilities are already inside the reported financial-liabilities line and therefore inside the numerator.
+
+## C. Calculation notes
+
+**FY2025 CE build.** Total assets 8,883.0 − NIBCL 1,406.0 = **CE_wc 7,477.0**; less cash & short-term investments 1,738.0 = **CE_xc 5,739.0**.
+
+**NIBCL composition and burden-of-proof calls.** NIBCL = trade accounts payable + contract liabilities (deferred revenue) + current income tax liabilities, where the last is separately disclosed. FY2025: 1,092.0 + 314.0 + n/a = 1,406.0. Current *other provisions* (warranty, restructuring), *provisions for other employee benefits* and *other liabilities* are left **in** capital employed — their composition is not disclosed with enough granularity to establish that they are non-interest-bearing operating accruals, and §2·1A places the burden on the item. This is the conservative direction (larger CE, lower ROCE). For FY2021, FY2024 and FY2025 the current income-tax liability is not separable from the aggregator's composite line and is likewise left in CE; the amounts disclosed in adjacent years (€35–138m against CE of €4.5–8.1bn) make the inconsistency worth roughly 0.1pp of ROCE. Short-term debt and the current portion of long-term debt stay in CE throughout.
+
+**Goodwill treatment.** Goodwill stays in capital employed — Knorr-Bremse is acquisitive (goodwill €418m at FY2021 to €852m at FY2025; €636m of cash acquisitions in FY2024 alone), so the non-acquisitive deduction is not available.
+
+**Leases.** IFRS 16 adopted 1 January 2019; from FY2019 lease liabilities sit inside reported financial liabilities and are treated as debt-equivalent in CE, EV and L/E. **P18 tested and not triggered** for the pre-adoption years: undiscounted operating-lease commitments were €182.4m at FY2017 and €242.3m at FY2018, against 10%-of-assets thresholds of €572.7m and €626.2m. No capitalisation adjustment made. Note the resulting comparability artifact: from FY2019 lease principal repayments (€53–67m a year) sit in financing and therefore flatter CFO relative to FY2017–18.
+
+**IFRS interest reclassification.** Interest paid is disclosed within cash flow from financing and has been moved into CFO before deriving FCF, per §2·1A. Interest *received* has been left in investing (the rule names interest paid only). FY2024–25 use interest expense as a labelled proxy — see Appendix A.3.
+
+**Maintenance-capex basis (P20).** Not active. Capex ran 4.1–5.4% of revenue across the window with no documented super-cycle, no expansion-labelled ramp and no guided step-down; FY2025 capex of €331m was below the window average. All-capex basis throughout.
+
+**Captive finance / substitution rule.** Neither applies. Knorr-Bremse has no captive finance arm and is not a lender, insurer or securities-heavy holding company; the standard OI/FCF/CE machinery is appropriate.
+
+**Bias check.** Live: **peculiarity** — a 120-year-old family-controlled world market leader with a clean balance sheet is the kind of business that invites a benefit of the doubt on a returns trend. Handled by testing the trend arithmetically on sub-periods and on both cash bases rather than by narrative, and by declining to treat FY2020 and FY2022 as excusable outliers when FY2023–25 did not recover. Also noted and rejected: **anchoring** on the company's own reported ROCE of 23.4%, which uses a much narrower capital base than §2·1A's subtractive definition. No other bias live.
+
+## D. Future-performance worksheet
+
+**Breadth — customers.** Question: does any single customer exceed a tenth of revenue? Evidence: the consolidated financial statements carry no IFRS 8.34 major-customer disclosure, which is mandatory when revenue from a single external customer reaches 10%. Its absence is affirmative evidence of no such customer — the inverse of the US-filing convention the rule was written against, and logged here as a judgment call. Corroborating: "the 30 largest customers per division together account for the majority of total sales", implying a top customer well below the line in a group with two divisions. **PASS.**
+
+**Breadth — suppliers.** Question: does any single supplier exceed a tenth of COGS plus operating expenses? Evidence: "In both divisions a 'dual sourcing' strategy is pursued that offers a high degree of independence from single suppliers"; procurement is localised for natural hedging; no supplier concentration disclosure. Looking through to effective suppliers, inputs are castings, machined parts, electronics and friction materials with multiple qualified sources. **PASS.** No waiver used.
+
+**Forces (binary).**
+
+| Force | Call | One-line reason |
+|-------|------|-----------------|
+| Customer bargaining power | **STRONG** | RVS is protected by homologation lock-in, but CVS sells to four or five global truck OEMs that dual-source and negotiate annual price-downs — visible in a 10.4% CVS operating margin against 16.5% at RVS. |
+| Supplier bargaining power | WEAK | Deliberate dual sourcing, localised procurement, no supplier near the 10% line, ready alternatives for every input class. |
+| Threat of substitutes | WEAK | No direct substitute for a regulated braking system; doing without is illegal; regenerative braking shifts wear rather than displacing the system, and Knorr-Bremse supplies the replacing electronics. |
+| Threat of new entrants | WEAK | Scale, safety-certification permits and customer switching costs each independently dull it; entry requires decades of reference operating hours. |
+
+Tally: **1 strong, contained** — the judgment zone, consistent with ADEQUATE.
+
+**Moat.** Source: **switching costs**. Mechanism: braking systems are homologated per vehicle platform, the approval cycle runs years, and a rail vehicle's 30-year life makes the original supplier the default aftermarket provider for the whole of it — which is why aftermarket carries the group's better margins. Direction: **stable**. It is not strengthening: the returns record shows the moat defending revenue but not defending the return on incremental capital.
+
+**Market growth.** **MIXED.** Rail benefits structurally from urbanisation and decarbonisation, with order intake €8.4bn and a €7.4bn order book at FY2025; the truck market was contracting in North America through FY2025, with CVS revenue down 8.8%.
+
+## E. Shareholder-friendliness evidence
+
+**Compensation (P17).** Highest-paid employee: CEO Marc Llistosella, total compensation pursuant to §162 AktG of **€5,202k** (FY2023 — latest accessible disclosure; see A.4). Other Executive Board members FY2023: CFO Weber €3,384k, Spies €3,173k, Mayfeld €3,096k, Lange €774k (partial year).
+
+- Proportional test: lower of FY2023 levered FCF €480.8m and net income attributable €553.0m = €480.8m; 5% strike line **€24.0m**; actual €5.2m = **1.08%**. No strike.
+- Same test on FY2025 economics: lower of FCF €659m and NI €534m = €534m; strike line **€26.7m**. Compensation would need to be ~5× the FY2023 level to breach.
+- Absolute scrutiny trigger: US$30m in 2017 dollars, CPI-indexed to ≈**US$40m** for 2026. €5.2m ≈ US$5.9m at EUR/USD 1.1406 (22 Jul 2026). No flag.
+- Highest-paid outside director: Supervisory Board chair Dr. Reinhard Ploss, **€486k** total (base €300k, committee €170k, attendance €16k), FY2023. Seat calibration: German MDAX chair seat; no current German director-fee survey was fetched within budget, so the CPI-indexed floor default applies — norm ≈US$333k, stop ≈**US$666k**. €486k ≈ US$554k. Below the stop. No strike. Named re-test: source a German (DSW/hkp) chair-fee survey at the next touch.
+- Positives: Executive Board members are bound by Share Ownership Guidelines requiring outright purchase of KBX shares, and by a lock-up for the duration of appointment. The controlling holder's stake is outright family ownership, not an investment fund.
+- Control structure: single class of bearer shares with full voting rights, no dual-class mechanism; KB Holding GmbH / the Thiele estate holds **58.99%** of voting rights. Logged as a documented caveat. A strike would require pairing with demonstrated value-destructive allocation; the allocation record is weak but the audit that would establish it is INDETERMINATE (below), and the returns deterioration has already been counted once, at Gate 1A.
+
+**Related-party transactions.** Sale of goods and services to related parties €135.9m FY2023 (of which €134.1m to associated companies — 1.7% of group revenue); to the ultimate parent entity and persons connected with the estate, €9k. Balance-sheet exposure: IFRS 16 right-of-use assets from related companies €112.5m and liabilities to related companies €141.9m, principally the Munich-site buildings under a 2019 sale-and-leaseback with a related company. Share-of-expense test: the related-party lease liability is roughly 27% of the €528m group lease book but the rent is not separately disclosed; the arrangement is structural, long-dated and unchanged year on year. Independent check: KPMG's audit of the §312 AktG dependency report returned the unqualified finding that the disclosed transactions "did not involve inappropriately high consideration". **No flag**; standing caveat.
+
+**Buybacks (P19).** No repurchase programme executed in the window. Knorr-Bremse held no treasury shares at any reporting date examined and states that it does not repurchase; diluted weighted-average shares are constant at 161,200,000 from FY2018 through FY2025; no repurchase line appears in financing cash flow FY2017–FY2025. The AGM authorisation to acquire treasury shares (running to 4 May 2028) is unused. Dilution-sterilisation limb: not applicable — no repurchases and no equity issuance. **No strike, no flag.**
+
+**Acquisition audit (triggered — BV €3,104m vs TBV €1,384m; goodwill and intangibles 55% of book).** Deal in scope: the conventional signalling business acquired from Alstom, completed FY2024. Sourced input: **€636m** of cash disbursed for the acquisition of consolidated companies in FY2024 (consolidated cash flow statement). Missing input: the target's pre-acquisition normalized operating income, which neither the acquirer's purchase-price allocation nor the vendor's disposal disclosures put in the public record in a form retrieved here. The 15× flag and 20× strike lines therefore cannot be computed. Logged **INDETERMINATE** per §2·1C: heightened scrutiny, a named re-test (FY2026 annual report and any Alstom disposal disclosure), and it cannot complete a flag pair. The duagon acquisition closed in FY2026 and sits outside this window; it enters at the next review.
+
+**Dividends & capital allocation.** FY2025 dividend €1.90 per share, ≈**€306m**, a 57% payout on attributable net income; raised in each of FY2023, FY2024 and FY2025 (€1.64 → €1.75 → €1.90). This is the appropriate posture for a mature-industry business with a long strong-FCF record, and the payout is not so high as to signal exhausted reinvestment. Against that: retained capital has earned a falling return, which is the substance of the Gate 1A verdict rather than a second, independent shareholder-friendliness negative.
+
+**Strike logic summary.** Hard strikes: none. Scrutiny-level negatives: none confirmed (one INDETERMINATE, which by rule cannot complete a pair; two logged caveats). **SF = PASS.**
+
+## F. Valuation math
+
+**Inputs (FY2025 unless stated).** Price €101.70 (XETRA, 22 Jul 2026). Diluted shares 161.2m. Market capitalisation **€16,394m**. Total debt €3,084m (current €605m + non-current €2,479m, inclusive of IFRS 16 lease liabilities). Cash and short-term investments €1,738m. Non-controlling interests €76m. Preferred nil. Operating income €903m. FCF €659m (interest-reclassified) / €785m (unadjusted). BV €3,104m; TBV €1,384m.
+
+**EV, both variants.**
+- All-cash-excess (lower): 16,394 + 3,084 + 0 + 76 − 1,738 = **€17,816m**
+- No-cash-excess (conservative): 16,394 + 3,084 + 0 + 76 = **€19,554m**
+
+**Current multiples.** EV/OI 19.7× and 21.7× against a ≤7 threshold — both variants fail, so CHEAP is unreachable on either reading. MCap/FCF 24.9× (20.9× on unadjusted FCF) against ≤8. MCap/BV 5.28× and MCap/TBV 11.85× against ≤3.
+
+**Threshold-implied prices.**
+- MCap/FCF ≤ 8: 8 × 659 ÷ 161.2 = **€32.70** (on unadjusted FCF, €38.96)
+- EV/OI ≤ 7, conservative EV: (7 × 903 − 3,084 − 0 − 76) ÷ 161.2 = 3,161 ÷ 161.2 = **€19.61**
+- EV/OI ≤ 7, all-cash-excess EV: (7 × 903 + 1,738 − 3,084 − 0 − 76) ÷ 161.2 = 4,899 ÷ 161.2 = **€30.39**
+
+**Binding primary: EV/OI on the conservative EV variant, €19.61**, because CHEAP requires both EV variants inside the bin. Distance from the current price: **+419%**. No P12 outer edge — the allowance is gated to Past = STRONG.
+
+**Qualifier-implied prices (context only, not band inputs).** 3 × BV/sh = €57.77; 3 × TBV/sh = €25.76.
+
+**Backvaluing.** Not used. CVS is cyclical but RVS, the larger division, is order-book driven and structurally growing; the group does not meet the "definitively cyclical industry" condition, and the prior-cycle operating income (FY2019 peak €1,063m) would move the band by only about €7 a share — nowhere near closing a 419% gap.
+
+**Sell-flag line.** Not applicable — not a held name.
+
+## G. Change log
+
+- **v1 — 2026-07-22 — initial analysis.** ANALYSE. AVOID on Past WEAK: worst-of-four normalized ROCE 14.5% with a sustained multi-year decline (FY2017–20 17.8% → FY2022–25 11.8% on the tested basis), ΔOI/sh geometric mean −0.01%. Future ADEQUATE (breadth PASS both sides; 1 strong force — CVS customer power; stable switching-cost moat). SF PASS with one INDETERMINATE acquisition audit and two caveats (58.99% control block; Munich related-party lease). Cheapness EXPENSIVE; band €19.6 binding on EV/OI at the conservative EV. Window is nine IFRS years (FY2017–25), not ten — HGB reporting through FY2016; thin-history cap noted but not operative.
