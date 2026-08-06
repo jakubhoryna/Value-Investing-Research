@@ -1,0 +1,276 @@
+---
+ticker: SRT3.DE
+company: Sartorius AG
+exchange: XETRA (preference shares SRT3; ordinary shares SRT)
+currency: EUR
+memo_date: 2026-07-22
+memo_version: v1
+price_at_memo: EUR 215.85 (preference) | EUR 174.00 (ordinary)
+mcap_at_memo: EUR 13,472.0 m (both classes, ex-treasury)
+verdict: AVOID
+quality_past: WEAK
+quality_future: STRONG
+sf: FAIL
+cheapness: EXPENSIVE
+trigger_band: "n.m. — EV/OI ≤7 unreachable at any positive price (net debt+NCI = 9.0x FY25 OI); MCap/FCF ≤8 leg alone ≈ EUR 24.80"
+next_review: FY2026 annual report (~Feb 2027)
+position: —
+---
+
+# SRT3.DE — Sartorius AG: GSC Memo
+
+## 1. Verdict
+
+| Gate | Result |
+|------|--------|
+| Understanding | PASS |
+| Past quality | **WEAK** |
+| Future quality | STRONG |
+| Shareholder-friendliness | **FAIL** |
+| Cheapness | **EXPENSIVE** |
+| **FINAL** | **AVOID** |
+
+Sartorius owns something rare: consumables written into filed drug-manufacturing processes, where re-filing costs keep the customer. The moat is real and the market grows. What sits on top of it fails. Nine years produce a worst-of-four normalized ROCE of 9.5%, below the 10% adequacy line, and a worst-of-four FCFROCE of 4.8%. Liabilities are 216% of book equity with no P6 case. Shareholder-friendliness fails on one hard strike: Polyplus, bought in 2023 for about EUR 2.4bn against a target the company itself guided to at most EUR 99m of 2023 sales — at least 24x revenue, therefore at least 24x any operating income, against a 20x line. Price argues nothing back: EV/OI is 34.9x. No price flips it, because net debt plus minorities alone equal 9.0x FY2025 operating income — the EV/OI primary is unreachable while the equity is worth anything.
+
+## 2. Understanding
+
+Sartorius AG is a Goettingen-headquartered, family-controlled listed holding company that, mainly through its 74%-owned Paris-listed subsidiary Sartorius Stedim Biotech, manufactures and sells single-use bioprocessing consumables and equipment to biopharmaceutical manufacturers, and in a smaller second division laboratory instruments and consumables to pharmaceutical and academic laboratories, across EMEA, the Americas and Asia/Pacific. **PASS.**
+
+## 3. Quality — past record
+
+Nine fiscal years (2017–2025; FY2016 not sourced — Appendix A). Worst-of-four normalized ROCE **9.5%** (end-period, with cash), under P3's 10%; the flattering beginning-period ex-cash read reaches 11.7%. Worst-of-four FCFROCE **4.8%** on reported CFO, 3.2% on the interest-adjusted basis for the six disclosed years, against P2's 8%. The shape is decline, not plateau: ROCE ran 18.0% and 16.9% in 2021–22 against 4.2% and 6.1% in 2024–25. OI/share compounds 11.9% but peaked in 2022 at twice the 2025 figure. L/E is 216%, above the P5 flag, with no P6 case — the borrowing funded an acquisition, not a repurchase of underpriced stock. Tangible book has been negative every year, now −EUR 37.53/share. **WEAK** on three independent counts.
+
+## 4. Quality — future
+
+Breadth **PASS** on both legs: no single customer above 5% of sales, disclosed for 2025 and 2024; no dominant supplier within purchasing equal to roughly 40% of sales. Forces, binary: customer **WEAK** (switching is a regulatory event), supplier **WEAK** (disclosed, with a logged caveat on specialty single-use film), substitutes **WEAK** (process intensification trims consumable intensity without displacing it), new entrants **WEAK** (validation, installed base, scale — the competition is incumbents). Tally **0 strong — favourable**. Moat: **switching costs**, single-sourced and **stable**; margin recovered through the destocking trough rather than eroding. Market growth **YES**. Bioprocess, 81% of sales, carries the call; Lab Products & Services would read ADEQUATE alone. **STRONG.**
+
+## 5. Shareholder-friendliness
+
+Compensation is clean: the highest-paid individual took EUR 3.85m in 2025, 2.5% of the lower of levered FCF and attributable net income against a 5% line, far under the indexed absolute trigger; the Supervisory Board chair took EUR 290k, inside the default stop. Related-party dealing is small and disclosed. There were no repurchases in the window. The failure is allocation. **Hard strike (P19 acquisition audit):** Polyplus, 2023, about EUR 2.4bn against company-guided 2023 revenue in the "upper double-digit million-euro range" — at most 24x sales, hence at least 24x operating income by construction, against a 20x strike line. A second strike stands under P17's control-structure clause: a non-voting listed line paired with value-destructive allocation. **FAIL.**
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Result |
+|--------|---------|-----------|------|--------|
+| EV / OI (conservative) | 34.9x | ≤ 7 (P8) | Primary | FAIL |
+| EV / OI (all-cash-excess) | 33.9x | ≤ 7 (P8) | Primary | FAIL |
+| MCap / FCF (interest-adj) | 62.9x | ≤ 8 (P7) | Primary | FAIL |
+| MCap / FCF (reported CFO) | 34.1x | ≤ 8 (P7) | Primary | FAIL |
+| MCap / BV | 5.0x | ≤ 3 (P10) | Qualifier | FAIL |
+| MCap / TBV | n.m. (TBV negative) | ≤ 3 (P11) | Qualifier | n.m. |
+
+**Trigger band: n.m.** The MCap/FCF leg alone implies about EUR 24.80, but the EV/OI leg is unreachable — at a share price of zero, net debt plus minority interest still equals 9.0x FY2025 operating income, and operating income would have to exceed EUR 700m before any positive price satisfied EV/OI ≤ 7. Both primaries must hold, so there is no band. P12 is unavailable. The BV ≫ TBV qualifier breach triggered the acquisition audit — adverse, and it blocks. **EXPENSIVE.**
+
+## 7. Risks & thesis-breakers
+
+- Goodwill of EUR 3,469.8m and intangibles of EUR 1,828.2m carry no impairment through FY2025 despite the 2023–24 correction.
+- Deleveraging depends on operating income recovering toward the 2022 level; net debt to underlying EBITDA of 3.55x leaves little room if demand stalls again.
+- The listed line is non-voting, so preference holders have no mechanism to discipline allocation.
+- Minority interest of EUR 1,160.5m sits between group cash flow and the parent's shareholders and is a permanent EV item.
+- The bull case — consumables compounding and returns reverting to 2021–22 — is credible on the moat and still leaves the price far outside the band.
+
+## 8. Flip conditions & next review
+
+To WATCH requires all three of: worst-of-four ROCE back above 10%, L/E back under 200%, and the P19 strike out of the window. The first two are plausible by decade-end if operating income returns to the 2022 level while the balance sheet amortises; the third is not — the Polyplus strike sits in the record until FY2032, and v3.5.0's redemption clause is written around repurchase discipline and offers no path for an acquisition strike. Cheapness cannot flip on price alone while net debt plus minorities exceed 7x operating income. **Next review: FY2026 annual report (~Feb 2027)** — refresh ROCE, leverage, and any first impairment of the Polyplus assets.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+**Sources.** Sartorius AG Annual Report 2025 (statements of profit or loss, financial position, cash flows; notes 8, 9, 15–35; Remuneration Report; Key Figures) — primary. Sartorius AG Annual Report 2020 (FY2019–FY2020 statements) and Annual Report 2018 (FY2017–FY2018 statements, operating-lease commitments note) — primary. stockanalysis.com structured data for FY2021–FY2023 line items not otherwise sourced. Yahoo Finance chart API for SRT3.DE (EUR 215.85) and SRT.DE (EUR 174.00), both 22 Jul 2026. Sartorius corporate news release of 31 Mar 2023 and contemporaneous Reuters/adviser releases for the Polyplus deal size and target revenue guidance.
+
+**Gaps, each flagged at point of use.**
+1. **FY2016 not sourced.** The window is nine fiscal years (2017–2025), not P1's ten. STRONG would therefore have been unavailable on Past in any case; the verdict is WEAK on the record that exists. Directional note: FY2016 was a smaller, lower-return year — including it would lower the averages, so the WEAK call is robust to the omission.
+2. **Interest paid not separable for FY2021–FY2023.** Sartorius reports interest paid within financing activities; the FY2021–23 figures are bundled inside an aggregated financing line in the secondary source. The FCFROCE series is therefore computed on reported CFO across all nine years for internal consistency, which **overstates** levered FCF. The six years where interest paid is disclosed (2017–20, 2024–25) give an adjusted FCFROCE of 3.2% against the 4.8% reported-basis figure; correcting the gap would lower the averages, so the WEAK call is robust here too. FY2025 valuation uses the adjusted figure, where interest paid is disclosed.
+3. **Contract liabilities and current tax liabilities not separately presented for FY2021–FY2022**, and contract liabilities not separately presented pre-FY2023. Under the burden-of-proof rule these amounts stay in capital employed, overstating CE and understating ROCE for those years — conservative, and concentrated in the two peak-return years.
+4. **No local director-fee survey fetched** (budget). P17's CPI-indexed floor default was applied to the Supervisory Board test; the chair's fee clears it by a wide margin under any plausible EUR/USD rate.
+5. **Polyplus pre-deal operating income never disclosed.** The strike does not rest on an estimate — see Appendix E.
+
+**Search budget.** ~13 web operations against P14's ~12: two quote fetches, three structured-data fetches, two searches, three annual-report downloads, one failed fetch (URL not in prior results), one Polyplus search. GitHub API calls excluded per §7.4a.
+
+## B. Financial record (nine years, EUR millions)
+
+### B1 Raw inputs
+
+| FY | Revenue | OI (EBIT) | CFO (rep.) | Interest paid | Capex | FCF (rep.) | FCF (adj.) | Dil. shares (m) | Total assets | NIBCL | Cash | Total liab. | Equity ex-NCI | GW + intang. |
+|----|---------|-----------|------------|---------------|-------|------------|------------|-----------------|--------------|-------|------|-------------|---------------|--------------|
+| 2017 | 1,404.6 | 219.4 | 206.5 | 17.1 | 197.1 | 9.4 | −7.7 | 68.388 | 2,297.7 | 228.5 | 59.4 | 1,491.2 | 617.8 | 1,081.3 |
+| 2018 | 1,566.0 | 298.6 | 244.5 | 23.2 | 233.2 | 11.3 | −11.9 | 68.388 | 2,526.9 | 274.5 | 45.2 | 1,553.5 | 740.6 | 1,063.3 |
+| 2019 | 1,827.0 | 335.5 | 377.2 | 27.5 | 225.6 | 151.6 | 124.1 | 68.388 | 2,868.5 | 350.8 | 54.4 | 1,775.4 | 810.4 | 1,127.3 |
+| 2020 | 2,335.7 | 456.1 | 511.5 | 25.0 | 240.3 | 271.2 | 246.2 | 68.416 | 4,697.3 | 514.7 | 203.4 | 3,295.1 | 1,047.6 | 2,434.9 |
+| 2021 | 3,449.2 | 903.2 | 873.2 | n/a | 407.2 | 466.0 | n/a | 68.416 | 5,697.9 | 668.9 | 342.8 | 3,977.8 | 1,260.3 | 2,457.6 |
+| 2022 | 4,174.7 | 1,064.8 | 734.2 | n/a | 522.6 | 211.6 | n/a | 68.416 | 6,977.7 | 666.2 | 165.9 | 4,318.9 | 1,989.8 | 3,002.0 |
+| 2023 | 3,395.7 | 504.6 | 853.6 | n/a | 559.7 | 293.9 | n/a | 68.416 | 9,745.5 | 677.0 | 379.2 | 6,987.5 | 2,067.8 | 5,505.4 |
+| 2024 | 3,380.7 | 392.6 | 976.2 | 210.3 | 409.9 | 566.3 | 356.0 | 68.975 | 10,103.0 | 864.2 | 813.4 | 6,205.2 | 2,764.8 | 5,469.3 |
+| 2025 | 3,538.1 | 542.6 | 837.0 | 181.0 | 441.9 | 395.1 | 214.1 | 69.045 | 9,717.2 | 780.9 | 541.4 | 5,850.0 | 2,706.8 | 5,298.0 |
+
+FCF (rep.) = reported CFO − capex. FCF (adj.) = reported CFO − interest paid − capex, the mandated IFRS treatment, computable only where interest paid is disclosed.
+
+### B2 Returns
+
+| FY | CE_wc | CE_xc | ROCE_wc | ROCE_xc | FCFROCE_wc | FCFROCE_xc | OI margin |
+|----|-------|-------|---------|---------|------------|------------|-----------|
+| 2017 | 2,069.2 | 2,009.8 | 10.6% | 10.9% | 0.5% | 0.5% | 15.6% |
+| 2018 | 2,252.4 | 2,207.2 | 13.3% | 13.5% | 0.5% | 0.5% | 19.1% |
+| 2019 | 2,517.7 | 2,463.3 | 13.3% | 13.6% | 6.0% | 6.2% | 18.4% |
+| 2020 | 4,182.6 | 3,979.2 | 10.9% | 11.5% | 6.5% | 6.8% | 19.5% |
+| 2021 | 5,029.0 | 4,686.2 | 18.0% | 19.3% | 9.3% | 9.9% | 26.2% |
+| 2022 | 6,311.5 | 6,145.6 | 16.9% | 17.3% | 3.4% | 3.4% | 25.5% |
+| 2023 | 9,068.5 | 8,689.3 | 5.6% | 5.8% | 3.2% | 3.4% | 14.9% |
+| 2024 | 9,238.8 | 8,425.4 | 4.2% | 4.7% | 6.1% | 6.7% | 11.6% |
+| 2025 | 8,936.3 | 8,394.9 | 6.1% | 6.5% | 4.4% | 4.7% | 15.3% |
+
+**Normalized averages (Σ numerator ÷ Σ denominator), four ways:**
+
+| Basis | ROCE | FCFROCE (reported CFO) |
+|-------|------|------------------------|
+| End-of-period, with cash | **9.5%** ← worst | **4.8%** ← worst |
+| End-of-period, ex cash | 10.0% | 5.1% |
+| Beginning-of-period, with cash (n=8) | 11.1% | 5.8% |
+| Beginning-of-period, ex cash (n=8) | 11.7% | 6.1% |
+
+Worst-of-four ROCE **9.5%** vs P2 15% (STRONG) and P3 10% (ADEQUATE) → below adequate. Worst-of-four FCFROCE **4.8%** vs P2 8%. Interest-adjusted FCFROCE across the six disclosed years: 3.2% (end-wc) / 3.4% (end-xc).
+
+### B3 Growth & leverage
+
+| FY | OI/sh | ΔOI/sh | FCF/sh | ΔFCF/sh | BV/sh | ΔBV/sh | TBV/sh | L/E |
+|----|-------|--------|--------|---------|-------|--------|--------|-----|
+| 2017 | 3.21 | — | 0.14 | — | 9.03 | — | −6.78 | 241.4% |
+| 2018 | 4.37 | +36.1% | 0.17 | +20.2% | 10.83 | +19.9% | −4.72 | 209.8% |
+| 2019 | 4.91 | +12.4% | 2.22 | +1,241.6% | 11.85 | +9.4% | −4.63 | 219.1% |
+| 2020 | 6.67 | +35.9% | 3.96 | +78.8% | 15.31 | +29.2% | −20.28 | 314.5% |
+| 2021 | 13.20 | +98.0% | 6.81 | +71.8% | 18.42 | +20.3% | −17.50 | 315.6% |
+| 2022 | 15.56 | +17.9% | 3.09 | −54.6% | 29.08 | +57.9% | −14.79 | 217.1% |
+| 2023 | 7.38 | −52.6% | 4.30 | +38.9% | 30.22 | +3.9% | −50.25 | 337.9% |
+| 2024 | 5.69 | −22.8% | 8.21 | +91.1% | 40.08 | +32.6% | −39.21 | 224.4% |
+| 2025 | 7.86 | +38.1% | 5.72 | −30.3% | 39.20 | −2.2% | −37.53 | **216.1%** |
+
+Geometric means 2017→2025 (8 compounding periods): OI/share **+11.9%**, BV/share **+20.1%**, FCF/share +59.4% — the last is a base-year artifact (FY2017 FCF/share was EUR 0.14) and carries no information; it is reported unadjusted per §5's no-tweaking rule and disregarded in the verdict. ΔTBV/share is n.m. throughout: tangible book is negative in every year. Both per-share growth reads clear P2's 3% nominal floor; the record fails on returns and leverage, not on growth.
+
+**Leverage (latest year only):** total liabilities 5,850.0 ÷ equity ex-NCI 2,706.8 = **216.1%**, above the P5 flag of 200%. P6's exemption is unavailable: the leverage funded an acquisition, not the repurchase of underpriced stock, and the other metrics are not great. Lease liabilities (EUR 171.8m non-current + EUR 35.4m current) are inside the numerator as debt-equivalents.
+
+## C. Calculation notes
+
+**Latest-year CE build (31 Dec 2025):** total assets 9,717.2 − NIBCL 780.9 = **CE_wc 8,936.3**; less cash and equivalents 541.4 = **CE_xc 8,394.9**. NIBCL = trade payables 343.1 + employee benefits 142.1 + contract liabilities 201.9 + current tax liabilities 93.8. Left in CE under the burden-of-proof rule: provisions 32.0, other financial liabilities 166.7, other liabilities 61.6 — composition not disclosed. Loans and borrowings (current 891.0 and non-current 3,184.3) and lease liabilities stay in CE by rule.
+
+**NIBCL consistency.** Contract liabilities are separately presented on the face of the balance sheet only from FY2023, and current tax liabilities are not separable in the FY2021–22 secondary source. Those years therefore carry a larger CE and a lower ROCE than a fully consistent basis would produce. The distortion falls on the two peak-return years and is conservative; correcting it would raise the FY2021–22 ROCE by roughly one percentage point each and leave the worst-of-four average below 10%.
+
+**TBV build (31 Dec 2025):** equity attributable to Sartorius AG shareholders 2,706.8 − goodwill 3,469.8 − other intangible assets 1,828.2 = **−2,591.2**, i.e. −EUR 37.53/share. Non-controlling interests of 1,160.5 are excluded from BV by rule.
+
+**EV build (31 Dec 2025 balance sheet, 22 Jul 2026 prices).** Market cap = 34.238669m ordinary × EUR 174.00 + 34.813621m preference × EUR 215.85 = **EUR 13,472.0m**. Method cross-checked against the company's own reported market capitalisation of EUR 15,145.5m at 31 Dec 2025 using that date's closing prices — reproduced exactly. Plus total debt 4,282.5 (loans and borrowings 4,075.3 + lease liabilities 207.2) + non-controlling interests 1,160.5 + preferred 0 = **EV conservative 18,915.0**; less cash and equivalents 541.4 = **EV all-cash-excess 18,373.6**.
+
+**Goodwill treatment.** Retained in capital employed. Sartorius is a serial acquirer — goodwill rose from 653.9 (2017) to 3,469.8 (2025) — so the non-acquisitive deduction is unavailable.
+
+**IFRS interest reclassification.** Interest paid sits in financing activities in every year. It is moved into CFO before deriving FCF where disclosed (FY2017–20, FY2024–25). Interest received has been inside CFO since FY2022 per the company's restatement note and is left there. FY2021–23 are gap years — see Appendix A.
+
+**Leases.** IFRS 16 from FY2019; lease liabilities are treated as debt-equivalents in CE, EV and L/E throughout. **P18 tested and not triggered:** undiscounted operating-lease commitments were EUR 65.3m at end-2018 (2.6% of total assets) and EUR 47.6m at end-2017 (2.1%), far below the 10% capitalisation threshold. Pre-2019 finance-lease liabilities were already on balance sheet and are included.
+
+**P20 tested and NOT active.** Condition (i) fails on its face: capex/sales ran 14.0% (2017) and 14.9% (2018) *before* any claimed cycle, against 11.8% (2021), 16.5% (2023) and 12.5% (2025). There is no multi-year ramp far above a pre-cycle ratio — capital intensity is structural and permanent at Sartorius, not a super-cycle. MCap/FCF therefore stays live as a primary and all FCF figures are all-capex.
+
+**Share count.** Fully diluted equals basic; no dilutive instruments are disclosed. Period-end outstanding shares (issued capital at EUR 1.00 par, net of treasury) are used as the weighted-average proxy; the largest year-on-year move inside the window is 0.8% (the 2024 preference placement), immaterial to the growth series.
+
+**Two share classes.** Ordinary shares carry the vote and are thinly traded (average 4,362 shares/day in 2025 against 119,880 preference); preference shares are non-voting with a EUR 0.01 dividend surplus. Both classes enter market cap at their own prices. `price_at_memo` and the register row carry the preference price, the liquid line.
+
+**Bias check.** Two candidates named and handled, neither of which bore the judgment. *Miscontrast* — the shares are roughly 65% below their 2021 high of EUR 827, which reads as cheap only against their own history; the band arithmetic is absolute and independent of the prior price. *Hotness* — bioprocessing is a fashionable structural-growth industry and the moat is genuinely attractive; the verdict was driven by the worst-of-four returns, the leverage ratio and the acquisition multiple, all mechanical. No other bias live.
+
+## D. Future-performance worksheet
+
+**Breadth — customer.** PASS. AR2025: no single customer accounted for more than 5% of Group sales revenue in fiscal 2025 or the prior year; the Group additionally reports that its 50 largest customers are the core of a base in which no single name exceeds 5%. The disclosure sentence the test asks for is present. No waiver needed.
+
+**Breadth — supplier.** PASS, with a logged caveat. AR2025: purchasing volume equals roughly 40% of Group sales revenue, around 700 suppliers account for roughly 80% of it, no supplier holds a dominant position, and the risk report states no material dependencies on individual suppliers. The caveat, per the look-through rule: single-use bioprocessing depends on specialty multilayer polymer film, an effective-supplier layer that is far more concentrated than the nominal supplier count and that produced industry-wide shortages in 2020–22. No disclosed supplier exceeds the 10%-of-COGS-plus-opex line, so the test passes on the evidence; the concentration is recorded as a monitored risk, not a flag.
+
+**Forces — four binary calls.**
+
+| Force | Call | One-line reason |
+|-------|------|-----------------|
+| Customer bargaining power | WEAK | Consumables are named in filed drug-manufacturing processes; changing them is a regulatory event, and the base is atomised below 5% per customer. |
+| Supplier bargaining power | WEAK | No disclosed supplier above the threshold across a purchasing base equal to ~40% of sales; specialty-film concentration logged as a monitored exception. |
+| Threat of substitutes | WEAK | Process intensification and continuous manufacturing lower consumable intensity per gram, but no substitute displaces validated single-use hardware; stainless steel is the receding, not advancing, alternative. |
+| Threat of new entrants | WEAK | Barriers to entry and to success both hold: validation history, installed base, scale, and regulatory audit trail. Competition comes from entrenched incumbents (Danaher/Cytiva, Thermo Fisher, Merck KGaA, Repligen), not entrants. |
+
+**Tally: 0 strong — favourable.**
+
+**Moat.** Single identified source: **switching costs**. Once a biologic's manufacturing process is filed with a regulator naming specific filters, bags and media, substituting a competitor's consumable requires comparability work and, often, a regulatory submission — a cost borne by the customer, not the supplier, and rising with the value of the approved product. Direction: **stable**. The 2023–24 revenue decline was destocking and a capex pause among customers, not share loss; underlying EBITDA margin recovered from 28.0% (2024) to 29.7% (2025) on 4.7% revenue growth, which is what a held moat looks like through a demand trough.
+
+**Market growth.** YES. Biopharmaceutical manufacturing volumes compound structurally above general pharmaceutical growth; the Group's own forecast basis cites mid-to-high single-digit pharmaceutical market growth with biologics outpacing it.
+
+**Segment note.** Multi-unit business, dominant unit carries the call. Bioprocess Solutions is 81% of FY2025 sales (EUR 2,865.0m) at a 31.7% underlying EBITDA margin and holds the moat described above. Lab Products & Services is 19% (EUR 673.0m) at 21.5%, declining year-on-year, in more contested categories (balances, pipettes, lab consumables) against Mettler-Toledo and Eppendorf; on its own it would read ADEQUATE. **Future verdict: STRONG** on the dominant unit, breadth PASS, zero strong forces and a stable switching-cost moat.
+
+## E. Shareholder-friendliness evidence
+
+**1. Compensation & ownership.**
+
+*Highest-paid employee.* Dr. Michael Grosse, Chairman of the Executive Board from 1 July 2025, total remuneration granted and owed **EUR 3.852m** for a half-year of service, of which EUR 2.700m was a share grant on appointment (transferred at EUR 212.50 per share for a three-year contract period). The next-largest figure is the departing chairman, Dr. Joachim Kreuzburg, at EUR 2.341m including settlement and non-competition components. Total Executive Board remuneration for active service was EUR 9.192m across four seats.
+
+*Proportional test (hard-strike line).* Levered FCF on the mandated basis for FY2025 = 837.0 − 181.0 − 441.9 = **EUR 214.1m**. Net income attributable to Sartorius AG shareholders = **EUR 154.9m** (total net profit 230.4 less non-controlling interests 75.5). Both legs positive, so no loss-leg degeneration. Lower leg = 154.9; **5% = EUR 7.745m**. Highest-paid individual EUR 3.852m = **2.5%** of the base. On total net profit the line would be EUR 11.520m. **No strike, no flag.** P20 is inactive, so the FCF leg is all-capex.
+
+*Absolute scrutiny trigger.* USD 30m in 2017 dollars, CPI-indexed to approximately **USD 40m in 2026**. EUR 3.852m is below that threshold at any EUR/USD rate in the 0.9–1.3 band, so no rate assumption is needed. **No flag.**
+
+*Outside directors.* Supervisory Board total EUR 1.463m across the board. Chairman Dr. Lothar Kappich **EUR 290k** (fixed 175 + committee 70 + attendance 45). Vice-chairman EUR 170k; ordinary members EUR 79k–105k. No local 2026 German board-fee survey was fetched within budget, so P17's default floor applies: the CPI-indexed book figure of about USD 333k for 2026 gives a stop of roughly USD 666k. The chairman's fee clears it by more than half at any plausible rate. **No strike.**
+
+*Ownership positives.* The Sartorius family holds approximately 50.1% of issued ordinary shares and a further holder reports more than 30% of issued ordinary shares — substantial outright long-term holdings rather than fund positions. Executive Board long-term remuneration is delivered in actual ordinary and preference shares with multi-year assessment periods, not options.
+
+*Control structure — strike.* The listed, liquid line (SRT3, 34.81m shares, 119,880 average daily volume) is **non-voting preference stock**; the votes sit in the thinly traded ordinary line (4,362 shares/day). P17 treats dual-class control as a documented caveat that becomes a strike **only when paired with value-destructive allocation**. The pairing condition is met by the Polyplus audit below. **Strike recorded**, though the P19 acquisition strike is the deciding one and the two share a root cause.
+
+**2. Related-party transactions.** A long-term service contract with an unnamed joint venture: EUR 15.1m of expense in 2025 (2024: EUR 13.9m), EUR 3.3m of trade liabilities at the reporting date, and remaining obligations of roughly EUR 121m to end-2033. Share-of-expense test: EUR 15.1m against a FY2025 cost base of roughly EUR 2,972m (cost of sales 1,901.3 + selling 665.6 + R&D 174.0 + administrative 231.0) = **0.5%** — immaterial. Transactions with non-consolidated subsidiaries are trivial (sales EUR 0.0m, loan receivables EUR 6.2m). Subsidiary transactions do not count. The counterparty is not named, which is mild opacity; recorded as an observation, **not a flag**.
+
+**3. Buybacks — P19 worksheet.** **No repurchases in the window.** The only treasury stock was acquired between 27 October 2000 and 2001 under a 2000 authorisation: 831,944 ordinary shares at an average of EUR 11.27 and 840,983 preference shares at an average of EUR 7.98, both pre-dating the 2016 stock split and the window by more than fifteen years. Treasury holdings stood at 7.8% of share capital at both 31 December 2024 and 31 December 2025 and are held as a financing reserve; movements were issuances, not purchases — 4,919 ordinary and 3,918 preference shares to Executive Board remuneration, and a placement of 613,497 preference shares in 2024. No tranche to dual-read; **no flag, no strike, no dilution-sterilisation**. The 2024 placement is the opposite behaviour: equity issued into a depressed market (the preference shares ranged EUR 204.00–381.70 that year) to repair a balance sheet stressed by the 2023 acquisition, which dilutes existing holders but is not a test under P19.
+
+**4. Dividends & capital allocation — acquisition audit, HARD STRIKE.**
+
+*Payout record.* Dividend per preference share EUR 1.26 (2021) → 1.44 (2022) → 0.74 (2023, 2024, 2025); total distribution EUR 98.2m (2022) → 50.8m (2025); payout ratio 15.4% for 2025 against 18.1% the prior year. Retention is not being redeployed at a high ROCE — it services the debt taken on in 2023. The cut was the correct decision and is recorded as such.
+
+*Acquisition audit — triggered.* BV EUR 2,706.8m against TBV EUR −2,591.2m, a gap of EUR 5,298.0m, following a large recent deal. The target is analysed as it stood pre-acquisition.
+
+*Polyplus, announced 31 March 2023, closed Q3 2023, executed through the Paris-listed subsidiary Sartorius Stedim Biotech.* Consideration approximately **EUR 2.4bn** (company release; group cash outflow for acquisitions in FY2023 was EUR 2,240.9m net of cash acquired). The target: a Strasbourg-based producer of transfection reagents and plasmid DNA, around 270 employees, guided by the acquirer at announcement to **"sales revenue in the upper double-digit million-euro range" in 2023** with "a very substantial EBITDA margin". Pre-deal FY2022 revenue was lower still — the release describes significant growth rates into 2023.
+
+*The multiple, as a bound rather than an estimate.* Taking the most generous possible reading of the guided range, EUR 99m of 2023 revenue: EUR 2,400m ÷ EUR 99m = **24.2x revenue**. Operating income cannot exceed revenue, so **EV ÷ pre-deal normalized OI ≥ 24.2x** by construction, whatever the undisclosed margin. Using the pre-deal FY2022 revenue base, which the audit properly calls for, the multiple is higher again. The P19 lines are 15x (flag) and **20x (hard strike)**; the flattering bound clears the strike line by more than four turns. This finding therefore does **not** fall under the INDETERMINATE rule — it rests on a company-disclosed revenue range and an accounting identity, not on an estimate of an undisclosed input.
+
+*Consequences observed.* Net debt rose from EUR 2,375.3m (2022) to EUR 4,932.1m (2023); net debt to underlying EBITDA went from 1.67x to 5.05x; the equity ratio fell from 38.1% to 28.3%; the dividend was halved; and in 2024 the group raised equity at both levels (a EUR 198.3m capital increase at Sartorius AG and EUR 789.5m from non-controlling interests). Goodwill of EUR 3,469.8m and other intangibles of EUR 1,828.2m — including roughly EUR 659.5m of Polyplus technology intangibles — carry **no impairment loss** at 31 December 2025 (impairment losses recorded in both 2024 and 2025: EUR 0.0m).
+
+*Redemption.* v3.5.0's strike-to-flag redemption clause is written around repurchase price discipline — a published worth-referenced repurchase criterion, a bargain-line or refusal programme year, and allocator turnover. Limbs (a) and (b) have no analogue for an acquisition strike, so no redemption path exists here. Limb (c) is partially satisfied — the CEO who executed the deal left on 30 June 2025 — but partial satisfaction changes nothing. **The strike stands until it exits the rolling ten-year window after FY2032.**
+
+**Strike logic applied (§2·1C).** Hard strikes: one — P19 acquisition, above 20x. A second is recorded under P17's control-structure clause (non-voting listed line paired with value-destructive allocation), though it shares the Polyplus root cause. Flags: none. Either strike alone is decisive. **SF = FAIL.**
+
+## F. Valuation math
+
+**Inputs.** Prices 22 July 2026: ordinary EUR 174.00, preference EUR 215.85. Shares outstanding 31 December 2025: 34,238,669 ordinary and 34,813,621 preference, 69,052,290 in total. FY2025 OI EUR 542.6m. FY2025 levered FCF EUR 214.1m on the mandated interest-adjusted basis, EUR 395.1m on reported CFO.
+
+**Market cap.** (34.238669 × 174.00) + (34.813621 × 215.85) = 5,957.5 + 7,514.5 = **EUR 13,472.0m**.
+
+**EV, both variants.** Conservative (no cash excess) = 13,472.0 + 4,282.5 debt + 1,160.5 NCI + 0 preferred = **EUR 18,915.0m**. All-cash-excess = 18,915.0 − 541.4 = **EUR 18,373.6m**.
+
+**Multiples.**
+
+| Metric | Value | Threshold | Result |
+|--------|-------|-----------|--------|
+| EV/OI, conservative | 18,915.0 ÷ 542.6 = **34.9x** | ≤ 7 | FAIL by 5.0x the limit |
+| EV/OI, all-cash-excess | 18,373.6 ÷ 542.6 = **33.9x** | ≤ 7 | FAIL |
+| MCap/FCF, interest-adjusted | 13,472.0 ÷ 214.1 = **62.9x** | ≤ 8 | FAIL |
+| MCap/FCF, reported CFO | 13,472.0 ÷ 395.1 = **34.1x** | ≤ 8 | FAIL on the flattering basis too |
+| MCap/BV | 13,472.0 ÷ 2,706.8 = **5.0x** | ≤ 3 | Qualifier breach |
+| MCap/TBV | TBV negative | ≤ 3 | n.m. |
+
+**Trigger band — not computable.**
+- MCap/FCF ≤ 8 leg: P = 8 × 214.1 ÷ 69.052 = **EUR 24.80** (interest-adjusted); EUR 45.77 on reported CFO.
+- EV/OI ≤ 7 leg: P = (7 × 542.6 + 541.4 − 4,282.5 − 0 − 1,160.5) ÷ 69.052 = (3,798.2 − 4,901.6) ÷ 69.052 = **−EUR 15.98**.
+
+The EV/OI leg solves to a negative price. At a share price of zero the enterprise still carries net debt plus minorities of EUR 4,901.6m, which is **9.03x** FY2025 operating income. Operating income would have to reach **EUR 700.2m** before any positive share price could satisfy EV/OI ≤ 7 on the current balance sheet — 29% above the FY2025 figure and still one third below the 2022 peak. Both primaries must hold simultaneously, so **there is no trigger band**; the register prints "—".
+
+**P12.** Unavailable — the 1.25x allowance on one primary is gated to Past = STRONG, and Past is WEAK.
+
+**Qualifier investigations.** MCap/BV of 5.0x breaches P10 and BV ≫ TBV, which mandates the Gate-1C acquisition audit. That audit was run (Appendix E) and its finding is adverse — a hard strike — so the qualifier breach blocks rather than merely informs. MCap/TBV is marked inapplicable: tangible book has been negative in every year of the window, so the metric carries no information.
+
+**Backvaluing.** Not used. Bioprocessing demand is cyclical in the destocking sense but the industry is not "definitively cyclical" in the book's meaning, and applying the 2021–22 peak OI of roughly EUR 1,065m against today's EV would give 17.8x — still 2.5x the threshold — so the tourniquet changes nothing even if applied.
+
+**Sell-flag line.** Not applicable; the name is not held.
+
+## G. Change log
+
+- **v1 — 2026-07-22 — initial analysis.** ANALYSE mode; no prior memo. Verdict AVOID on three counts: Past WEAK (worst-of-four ROCE 9.5%, worst-of-four FCFROCE 4.8%, L/E 216% without P6 conditions, sustained return decline from the 2021–22 peak); SF FAIL (P19 acquisition hard strike — Polyplus at ≥24x revenue and therefore ≥24x pre-deal OI against a 20x line; second strike under P17's control-structure clause); EXPENSIVE (EV/OI 34.9x, MCap/FCF 62.9x). Future STRONG — breadth PASS both legs, zero strong forces, stable switching-cost moat, growing market. Trigger band n.m.: the EV/OI primary is unreachable at any positive share price. P18 tested, not triggered. P20 tested, not active — capital intensity is structural, not a super-cycle. Window is nine years (FY2017–FY2025); FY2016 not sourced and FY2021–23 interest paid not separable, both gaps flagged in Appendix A with the direction of the bias, and neither capable of changing the verdict.
+
+*Framework output, not investment advice.*
