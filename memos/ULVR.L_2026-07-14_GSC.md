@@ -1,0 +1,172 @@
+---
+ticker: ULVR.L
+company: Unilever PLC
+exchange: LSE (primary) · Euronext Amsterdam (UNA) · NYSE ADR (UL, 1:1)
+currency: EUR (reporting)
+memo_date: 2026-07-14
+memo_version: v1
+price_at_memo: "€53.53 (UNA 14 Jul 2026); ULVR £45.64; UL $61.16"
+mcap_at_memo: "≈ €116.9bn"
+verdict: WATCH
+quality_past: STRONG
+quality_future: ADEQUATE
+sf: PASS
+cheapness: EXPENSIVE
+trigger_band: "CHEAP < ≈ €17.3 (binding EV/OI 7×, conservative EV; MCap/FCF leg ≈ €21.6; P12 edge ≈ €24.5)"
+next_review: "FY2026 results (~Feb 2027) reset continuing-ops basis; or price < ≈ €25"
+position: —
+---
+
+# ULVR.L — Unilever PLC: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | STRONG | ADEQUATE | PASS (1 P19 flag) | EXPENSIVE | **WATCH** |
+
+Unilever is a good, durable business selling at roughly three times a GSC entry price. A globally diversified branded-staples portfolio earns a worst-of-four 10-year ROCE of 18.2% and FCFROCE of 11.8% on prodigious, high-conversion cash flow (100% cash conversion, ~€5.9bn FCF), with per-share operating income and FCF compounding ~4.5% nominal through a decade of heavy buybacks. What owning it is worth: a brand moat, breadth on both customer and supplier sides, and a cash machine that funds a ~60%-payout dividend plus buybacks. What stands between here and a BUY is only price — the shares change hands at ~16× EV/OI and ~20× MCap/FCF versus the ≤7×/≤8× gates. The verdict flips to BUY only on a ~60%+ de-rating (≈ €17); it flips the *other* way, to AVOID, if the developed-market private-label squeeze is judged a second strong competitive force (see §4). The December-2025 Ice Cream (Magnum/TMICC) demerger makes FY2025 continuing-ops figures the go-forward base; the 10-year record below is the total group as it stood.
+
+## 2. Understanding
+
+A multinational consumer-goods manufacturer that makes and markets differentiated branded products in Beauty & Wellbeing, Personal Care, Home Care and Foods (Dove, Rexona, Cif, Hellmann's, Knorr), sold through retailers, e-commerce and millions of small-trade outlets to ~3.4bn daily consumers across 190+ countries, split roughly evenly between developed and emerging markets, incorporated as a single UK-domiciled listed parent (Unilever PLC) after the 2020 unification and reshaped in 2025 by the Ice Cream demerger. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four normalized 10-year (FY2016–25) averages: **ROCE 18.2%** (four-way 18.2/18.6/19.8/20.3), **FCFROCE 11.8%** (11.8/12.1/12.8/13.2) — both clear the STRONG floors (≥15% / ≥8%). Returns are range-bound (ROCE ~14–21%, ex the disposal-inflated 2018), no secular decline. Per-share geo-mean growth: OI/sh +4.7%, FCF/sh +4.5% — both above the 3% floor; BV/sh only +2.4%, expected given ~€30bn+ of buybacks and the 2025 demerger drawdown of equity. The one blemish is leverage: L/E 341% (latest), persistently 285–430%, well above the 200% flag — mitigated under P6 (single-A creditworthy, equity shrunk by rational distributions), so logged rather than fatal. **STRONG** (leverage flag noted; a strict no-P6 read caps at ADEQUATE — immaterial to the verdict).
+
+## 4. Quality — future
+
+Breadth **PASS**: no single customer >10% of turnover and no single supplier >10% of COGS+opex (fragmented global retail/trade base; commodity, many-vendor input base). Four forces: customer bargaining power **WEAK** (vast fragmented customer base, must-stock brands, no backward integration into Unilever's brands); supplier power **WEAK** (many vendors, low switching, no forward-integration threat); **substitutes STRONG** — private-label / unbranded alternatives are a direct, growing, low-switching-cost threat, with documented developed-market trading-down; new entrants **WEAK** (scale, brand and distribution barriers to *success* remain high, though DTC/digital lowers entry in beauty). Tally **1 strong → judgment zone**. Moat = **Brand**, **stable** (pressured in the West, reinforced by EM premiumization and 78% Power-Brand mix). Market growth **MIXED** (low-single-digit staple category growth). **ADEQUATE.** *Swing risk: judge customer power STRONG and the tally hits 2 → Future WEAK → AVOID.*
+
+## 5. Shareholder-friendliness
+
+Compensation: CEO single-figure remuneration in the high-single/low-double-digit €m range (2025 report; precise figure not separately pulled) — <0.25% of lower(FCF €5.9bn, NI €6.2bn) and far under the ~€40m (2026-indexed) absolute trigger; no strike. Outside-director/Chair fees within FTSE-100 norms; no strike. RPT minimal (no controlling holder; watch TMICC transition/supply agreements post-demerger). Buybacks: 2025 €1.5bn (+€1.5bn for 2026) executed at ~€48, implying **MCap/FCF ≈ 18×, EV/OI ≈ 14.5× — above the 16×/14× flag lines, below the 20× strike → one P19 flag** (repurchasing a not-cheap stock). Dividends ~60% of underlying EPS, appropriate for a mature strong-FCF staple; no empire-building (bolt-ons + disposals + demerger). One flag → heightened scrutiny, no second independent negative. **PASS.**
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap / FCF | 19.8× | ≤ 8 | Primary | **FAIL** |
+| EV / OI (both variants) | 15.8× / 16.2× | ≤ 7 | Primary | **FAIL** |
+| MCap / BV | 7.5× | ≤ 3 | Qualifier | Fail |
+| MCap / TBV | n.m. (TBV ≈ −€19bn) | ≤ 3 | Qualifier | n.m. |
+
+Trigger band: **CHEAP below ≈ €17.3** (EV/OI binds; MCap/FCF leg ≈ €21.6; conservative all-cash-excess EV). Past = STRONG, so P12 outer edge ≈ €24.5. Current €53.53 sits **+209%** above the binding trigger and +118% above the P12 edge. Qualifier breaches (MCap/BV high; TBV negative from acquired-brand goodwill) are structural for a brand roll-up and inform, not block — cheapness is decided EXPENSIVE by the primaries regardless.
+
+## 7. Risks & thesis-breakers
+
+- Private-label / trading-down in developed markets intensifies into a second strong force — the single most likely path to a Future-WEAK downgrade and an AVOID re-verdict.
+- Persistent 300%+ L/E leaves little balance-sheet slack; a rating slip or rate shock would raise the cost of the debt-funded capital returns.
+- Post-demerger Unilever is smaller (€50.5bn turnover) and more beauty/personal-care weighted — execution risk on the premiumization/US-and-India growth pivot under a new CEO (Fernandez, 2025).
+- Recurring willingness to pay full multiples for bolt-ons (Horlicks, Dollar Shave Club write-down history) plus buybacks above 14× EV/OI — capital allocation is adequate, not exemplary.
+- Emerging-market FX and demand volatility (Indonesia, China resets) swing reported growth.
+
+## 8. Flip conditions & next review
+
+To **BUY**: price into the ≈ €17–25 band (a ~55–70% de-rating) with quality intact. To **AVOID**: any REVIEW that turns customer bargaining power STRONG (Future WEAK), or a leverage/rating deterioration breaching P6, or a 2026 buyback executed at >20× MCap/FCF (P19 hard strike) paired with a second negative. Next review: **FY2026 results (~Feb 2027)**, the first clean full-year continuing-ops base, or price < ≈ €25. This name is not HELD; the standing sell-discipline block does not apply.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+Primary: Unilever PLC XBRL companyfacts via SEC EDGAR (CIK 0000217410, ifrs-full taxonomy), FY2015–2025 — Revenue, OI, CFO, capex (PP&E + intangibles), interest paid, equity, assets, goodwill/intangibles, payables, shares. FY2025 Q4/FY announcement and 2025 Annual Report / Form 20-F (turnover €50.5bn, OP €9.0bn, net profit €6.2bn continuing, FCF €5.9bn, net debt €23.1bn, demerger). Prices: Yahoo Finance (UNA.AS €53.53, ULVR.L 4564p, UL $61.16, 14 Jul 2026). Shares outstanding 2,184m (end-2025). Search budget: ~2 web searches + primary XBRL pulls (GitHub/data-plumbing excluded).
+Gaps / judgment calls: (i) 2025 balance sheet is post-Ice-Cream-demerger; OI FY2024–25 re-presented to continuing ops — numerator/denominator shed Ice Cream together, so per-year ROCE stays internally consistent; the 10-year record is total-group as-reported. (ii) FY2015 opening balances taken from the Unilever NV filer (CIK 0000110390, identical consolidated group) — used only where needed; beginning-of-period average variant runs FY2017–25. (iii) Short-term investments not separately pulled; cash-only used for the all-cash-excess EV/CE variant (conservative). (iv) CEO comp precise figure not pulled — headroom to the strike (~€295m) makes it immaterial. (v) 2018 OI includes the ~€4.3bn spreads-disposal gain (as-reported, retained; averaging dilutes).
+
+## B. Ten-year financial record (€m unless noted)
+
+### B1 Raw inputs
+| FY | Revenue | OI | CFO | Capex | FCF(der.) | Dil. sh (m) | Total assets | Cash | Total liab | Equity(excl NCI) | GW+intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2016 | 52,713 | 7,801 | 7,047 | 2,036 | 5,011* | 2,854 | 56,429 | 3,382 | 39,656 | 16,354 | 27,433 |
+| 2017 | 53,715 | 8,957 | 7,879 | 1,667 | 5,638 | 2,814 | 60,285 | 3,317 | 46,087 | 13,629 | 28,401 |
+| 2018 | 50,982 | 12,639 | 7,318 | 1,532 | 5,215 | 2,695 | 61,111 | 3,230 | 48,994 | 11,397 | 29,493 |
+| 2019 | 51,980 | 8,708 | 8,109 | 1,526 | 5,889 | 2,627 | 64,806 | 4,185 | 50,920 | 13,192 | 31,029 |
+| 2020 | 50,724 | 8,303 | 9,058 | 1,021 | 7,413 | 2,630 | 67,659 | 5,548 | 50,004 | 15,266 | 34,941 |
+| 2021 | 52,444 | 8,702 | 7,972 | 1,340 | 6,144 | 2,610 | 75,095 | 3,415 | 55,349 | 17,107 | 38,591 |
+| 2022 | 60,073 | 10,755 | 7,282 | 1,709 | 4,829 | 2,560 | 77,821 | 4,326 | 56,120 | 19,021 | 40,489 |
+| 2023 | 51,680 | 8,998 | 9,426 | 1,435 | 7,240 | 2,251 | 75,266 | 4,159 | 54,502 | 18,102 | 39,466 |
+| 2024 | 52,479 | 8,829 | 9,519 | 1,614 | 6,976 | 2,228 | 79,750 | 6,136 | 57,195 | 19,990 | 40,901 |
+| 2025† | 50,503 | 9,037 | 8,350 | 1,591 | 5,741 | 2,195 | 70,471 | 3,941 | 52,884 | 15,530 | 34,764 |
+
+\*2016 FCF excludes interest-in-financing (not tagged that year) — slightly overstated. †2025 continuing-ops OI; balance sheet post-demerger. FCF(der.) = CFO − capex − interest-paid(financing), the IFRS reclassification (§1A); reconciles to Unilever's reported ~€5.9bn.
+
+### B2 Returns
+| FY | CE_wc | CE_xc | ROCE_wc(end) | FCFROCE_xc(end) |
+|---|---|---|---|---|
+| 2016 | 38,513 | 35,131 | 20.3% | 14.3% |
+| 2017 | 42,668 | 39,351 | 21.0% | 14.3% |
+| 2018 | 42,306 | 39,076 | 29.9% | 13.3% |
+| 2019 | 45,265 | 41,080 | 19.2% | 14.3% |
+| 2020 | 48,714 | 43,166 | 17.0% | 17.2% |
+| 2021 | 59,754 | 56,339 | 14.6% | 10.9% |
+| 2022 | 59,050 | 54,724 | 18.2% | 8.8% |
+| 2023 | 57,872 | 53,713 | 15.5% | 13.5% |
+| 2024 | 62,229 | 56,093 | 14.2% | 12.4% |
+| 2025 | 52,943 | 49,002 | 17.1% | 11.7% |
+
+**10y normalized averages (four ways, end/beg × wc/xc):** ROCE 18.2 / 18.6 / 19.8 / 20.3 → **worst 18.2% ≥ 15% (STRONG)**. FCFROCE 11.8 / 12.1 / 12.8 / 13.2 → **worst 11.8% ≥ 8% (STRONG)**. Beginning-of-period variants run FY2017–25 (FY2015 opening not in the PLC filer).
+
+### B3 Growth & leverage
+| FY | OI/sh (€) | FCF/sh (€) | BV/sh (€) | L/E |
+|---|---|---|---|---|
+| 2016 | 2.73 | 1.76 | 5.73 | 242% |
+| 2017 | 3.18 | 2.00 | 4.84 | 338% |
+| 2018 | 4.69 | 1.94 | 4.23 | 430% |
+| 2019 | 3.32 | 2.24 | 5.02 | 386% |
+| 2020 | 3.16 | 2.82 | 5.81 | 328% |
+| 2021 | 3.34 | 2.35 | 6.56 | 324% |
+| 2022 | 4.20 | 1.89 | 7.43 | 295% |
+| 2023 | 4.00 | 3.22 | 8.04 | 301% |
+| 2024 | 3.96 | 3.13 | 8.97 | 286% |
+| 2025 | 4.12 | 2.62 | 7.07 | 341% |
+
+Geo-mean growth FY2016–25: OI/sh **+4.7%**, FCF/sh **+4.5%**, BV/sh **+2.4%**. TBV/sh negative throughout (GW+intang > equity) — n.m.
+
+## C. Calculation notes
+
+- **CE_wc = Total assets − NIBCL**; NIBCL = trade & other current payables + accruals/deferred income (separately tagged FY2016–20; absorbed into payables FY2021+) + current provisions. Income taxes payable left in CE (burden-of-proof; not separably tagged). Goodwill retained in CE (Unilever is acquisitive). **CE_xc = CE_wc − cash** (STI omitted → CE_xc slightly high → conservative ROCE_xc).
+- **FCF = CFO − capex(PP&E + intangibles) − interest paid (financing)** — IFRS interest reclassification into CFO per §1A; reconciles to reported €5.9bn.
+- **Leverage flag (P5/P6):** L/E 341% > 200% flag. P6 mitigation applied — single-A creditworthy; equity reduced by rational distributions (buybacks 2.85bn→2.19bn diluted shares; 2025 demerger). Logged; does not force WEAK. STRONG retained (strict no-P6 read → ADEQUATE; verdict unchanged).
+- **2018 OI** includes ~€4.3bn spreads-disposal gain (as-reported, retained; ROCE 29.9% inflated that year — averaging dilutes; ex-2018 ROCE worst-of-four ≈ 17.3%, still STRONG).
+- **2025 structural break:** Ice Cream (TMICC) demerged 6 Dec 2025; 19.9% stake retained (associate). Assets −€9.3bn YoY; OI FY2024–25 re-presented to continuing. Per-year ratios internally consistent (num/denom both ex-Ice-Cream from 2025).
+- **TBV** = BV − goodwill − other intangibles = 15,530 − 34,764 = **−€19,234m** → MCap/TBV inapplicable.
+- **EV build (FY2025, €m):** MCap €116,900 (2,184m × €53.53) + borrowings 26,038 + lease liabilities 1,326 + NCI 2,057 + pref ~0 = €146,321 (no-cash); − cash 3,941 = €142,380 (all-cash-excess). Both variants tested.
+- **Bias check: none live.** (Availability of a familiar consumer brand and the "quality-compounder glow" checked — verdict rests on the mechanical price gate, not affinity.)
+
+## D. Future-performance worksheet
+
+**Breadth.** Customer: PASS — no customer >10% of turnover; base is fragmented across global modern trade, e-commerce and millions of emerging-market outlets; consolidation to >10% improbable. Supplier: PASS — agricultural commodities, packaging and chemicals from thousands of vendors, <10% each, low switching, no forward-integration threat.
+**Four forces (binary):** Customer power WEAK — many customers, must-stock brands, no backward integration into branded portfolios (private-label pressure counted under Substitutes to avoid double-count). Supplier power WEAK — many vendors, low switching. Substitutes **STRONG** — private-label/unbranded direct substitution, low switching cost, documented developed-market trading-down. New entrants WEAK — scale/brand/distribution barriers to success high; DTC/digital lowers entry in beauty only. **Tally: 1 strong → ADEQUATE zone.**
+**Moat:** Brand — pricing power and shelf pull from 400+ brands, 78% Power-Brand turnover; **stable** (Western erosion vs EM premiumization roughly offsetting).
+**Market:** MIXED — low-single-digit category growth; EM tailwind, DM maturity.
+**Waiver:** none used.
+
+## E. Shareholder-friendliness evidence
+
+- **Comp:** CEO (Fernando Fernandez) single-figure remuneration high-single/low-double-digit €m (2025 remuneration report, not separately pulled) vs 5%-of-lower(FCF €5,900m, NI €6,213m) = **€295m** strike line, and vs ~€40m (2026-indexed) absolute flag → no strike, no flag. Outside-director/Chair fees within FTSE-100 norms → no strike.
+- **Insider ownership:** low (widely held; no controlling shareholder) — neutral, typical of a mega-cap; no open-market cluster buying observed.
+- **RPT:** minimal; monitor TMICC transitional/supply agreements post-demerger (associate, 19.9%).
+- **Buybacks (P19):** 2025 spend €1,500m at ~€48 avg (est.) → shares repurchased ~31m; implied MCap = €48 × 2,195m ≈ €105,360m → **MCap/FCF ≈ 17.9×** (>16× flag, <20× strike); implied EV ≈ €130,840m → **EV/OI ≈ 14.5×** (>14× flag, <20× strike). **One P19 flag**, not a strike. Not dilution-sterilisation (share count genuinely falls). 2026 €1.5bn programme at higher prices could tip MCap/FCF toward the 20× strike — REVIEW watch-item.
+- **Acquisitions:** bolt-on cadence (Dr. Squatch, Minimalist 2025); no current single deal drives BV≫TBV to trigger a group acquisition-audit strike (goodwill is legacy, accreted over decades). Historical rich deals (Horlicks 2020; Dollar Shave Club write-down) logged as a capital-allocation caution, not a formal second flag.
+- **Payout:** ~60% of underlying EPS; €4.5bn dividend + €1.5bn buyback in 2025; appropriate for a mature strong-FCF staple.
+
+## F. Valuation math
+
+- Shares 2,184m; UNA €53.53 → **MCap €116.9bn**. OI(cont.) €9,037m; FCF(cont.) €5,900m.
+- **MCap/FCF** = 116,900 / 5,900 = **19.8×** (≤8 fail). **EV/OI** = 146,321 / 9,037 = **16.2×** (no-cash); 142,380 / 9,037 = **15.8×** (all-cash) (≤7 fail, both). MCap/BV = 116,900 / 15,530 = **7.5×**. MCap/TBV n.m.
+- **Trigger band (both primaries hold):** MCap/FCF ≤ 8 → P = 8 × 5,900 / 2,184 = **€21.61**. EV/OI ≤ 7 (conservative EV) → P = (7×9,037 + 3,941 − 27,364 − 0 − 2,057)/2,184 = 37,779/2,184 = **€17.30** — **binds**. Band **CHEAP < ≈ €17.3**.
+- **P12 outer edge (Past STRONG, one primary ≤1.25×):** EV/OI ≤ 8.75 → €24.54 (binds); MCap/FCF ≤ 10 → €27.01. Edge ≈ **€24.5**.
+- Qualifier-implied context prices: 3×BV/sh = 3 × (15,530/2,184) = €21.3; 3×TBV/sh n.m.
+- **Dist %** (register ordering) = 53.53 / 17.30 − 1 = **+209%**.
+- No sell-flag line (not HELD). No backvaluing (not a definitively cyclical industry).
+
+## G. Change log
+
+- v1 — 2026-07-14 — Initial ANALYSE. Total-group 10-year record; FY2025 continuing-ops post-Ice-Cream-demerger base. Past STRONG (ROCE 18.2%, FCFROCE 11.8%, leverage flag P6-mitigated), Future ADEQUATE (1 strong force: substitutes/private-label), SF PASS (1 P19 buyback flag, near strike), Cheapness EXPENSIVE (~16× EV/OI, ~20× MCap/FCF). Verdict **WATCH**; trigger ≈ €17.3, +209%. Swing to AVOID if customer power judged STRONG (Future WEAK).
+
+*Framework output, not investment advice.*
