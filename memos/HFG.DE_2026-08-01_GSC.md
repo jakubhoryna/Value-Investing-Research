@@ -1,0 +1,203 @@
+---
+ticker: HFG.DE
+company: HelloFresh SE
+exchange: XETRA
+currency: EUR
+memo_date: 2026-08-01
+memo_version: v3
+model_version: v4.0.0
+price_at_memo: €3.412 (close 31-Jul-2026)
+mcap_at_memo: ≈ €492m (derived: 144.1m shares outstanding)
+verdict: AVOID
+quality_past: WEAK
+quality_future: WEAK
+sf: FAIL
+cheapness: FAIR
+window: FY2016–FY2025 (10y; beginning-CE legs FY2017–25, record-limited — FY2015 BS unretrieved)
+trigger_band: "CHEAP unattainable on reported FY2025 OI (negative); on labelled ex-impairment OI: strict all-pass ≈ €1.4 (all-cash EV leg; no-cash leg unattainable at any positive price); MCap/FCF leg alone €7.62. No P12 (Past ≠ STRONG)"
+next_review: FY2026 results (~mid-Mar 2027); earlier on 2+ consecutive quarters of group order growth or an announced pay-system reform
+position: HELD
+entry_date: n/a — user to supply
+avg_cost: [redacted]
+zone: SELL-FLAG
+add_band: n/a — AVOID; strict no-cash bound unattainable on current earnings
+sell_flag_line: n.m. on reported OI (negative); ≈ €13.85 on labelled ex-impairment OI — moot, flag is SR2 (quality)
+---
+
+# HFG.DE — HelloFresh SE: GSC Memo
+
+## 1. Verdict
+
+Understanding PASS, Past WEAK, Future WEAK, Shareholder-friendliness FAIL, Cheapness FAIR — **AVOID** on three gates; the held position stays **SELL-FLAG** (sell-reason 2).
+
+The fresh ten-year primary build confirms the verdict on stronger evidence. Across FY2016–FY2025 the worst-of-four normalized ROCE is 6.1% (sourced) — below even the ADEQUATE line — because the COVID windfall sits between loss-making years on both sides. Leverage now breaches the flag level, the niche is shrinking, and owners have rejected the pay report four sourced years running. At €3.41 the stock trades at 3.4× model FCF and 0.79× book, yet no positive price makes CHEAP available on reported earnings — quality, not price, is what fails. Flipping requires durable order growth, a repaired pay system, and through-cycle returns above 10% — none in evidence. The framework flags; the user decides.
+
+## 2. Understanding
+
+HelloFresh manufactures and retails subscription meal kits and ready-to-eat meals (Factor) direct-to-consumer across North America (62% of FY2025 revenue, sourced) and Europe/ANZ, earning a gross-margin spread over grocery via demand-forecast-driven procurement and owned fulfilment, spending it on marketing to replace churning subscribers. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four normalized averages (FY2016–25, P18 lease-capitalised): ROCE 6.1%, FCFROCE 6.2% (sourced/derived) — below the 10% ADEQUATE line, and the best leg (12.8% beginning-CE ex-cash, record-limited) still misses STRONG. The shape is a single spike: ROCE_wc 38.5% (FY2020) → 24.8% → 11.9% → 5.8% → −8.8% → −0.1% — a sustained multi-year decline that forces a downgrade regardless of level. Per-share growth is n.m. on OI and FCF (negative endpoints); BV/sh growth is IPO-inflated and read accordingly. L/E 209.8% (FY2025), 254.8% at Q1-2026 (sourced) — above the 200% flag with no rescue conditions: metrics aren't great and repurchases weren't clearly under-priced. **WEAK** — on the averages, the trend, and the leverage breach independently.
+
+## 4. Quality — future
+
+Breadth passes: millions of B2C subscribers, no customer near 10%; supplier base broad (disclosed concentration in selected international markets rated insignificant — sourced). Forces: customer power WEAK, supplier power WEAK, threat of substitutes STRONG (groceries, delivery apps, private-label ready meals; zero switching costs; doing-without trivial), threat of new entrants STRONG (no customer captivity; retail giants entering RTE; scale advantages contestable) — two strong forces, the stop signal. The moat is cost/scale in a niche that is itself contracting: group orders −12.3% FY2025, −11.6% Q1-2026 (sourced), Italy/Spain exits underway — an eroding moat in a shrinking market, nowhere near the dominant-stable floor. **WEAK.**
+
+## 5. Shareholder-friendliness
+
+P17 INDETERMINATE: individual §162 totals sit in a separate compensation report not retrievable this session; the AR's IFRS-basis board aggregate (€6.5m, four members, sourced) is below the FY-read threshold (€7.14m — FCF leg alone, NI negative), and nothing plausible nears US$40m. RPT clean. Capital allocation: **CAUTION** — the record contains a clearly overpriced €125m tranche at €56.82 (FY2022, ~47× that year's EV/OI) and sterilising 2023 purchases at ~26×, but the programme concluded March 2026 at single-digit FCF multiples and the ADVERSE liveness limbs fail. Owners rejected the pay report a fourth consecutive time (54.7% against, 2-Jun-2026 — sourced): a documented governance negative. **FAIL — flag pair: governance rejections + capital-allocation CAUTION.**
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap/FCF | 3.4× | ≤ 8 | Primary | PASS |
+| EV/OI (all-cash / no-cash) | n.m. (OI −€2.0m); adj-OI 9.8× / 12.1× | ≤ 7 both | Primary | FAIL |
+| MCap/BV | 0.79× | ≤ 3 | Qualifier | PASS |
+| MCap/TBV | 2.12× | ≤ 3 | Qualifier | PASS |
+
+Primaries split → **FAIR**; EV/OI binds — no positive price clears it on reported FY2025 OI, and on the labelled ex-impairment basis the strict all-pass line is ≈ €1.4 (all-cash leg; no-cash leg unattainable), against an FCF-leg alone of €7.62; MCap/FCF is IFRS-16-flattered (post-lease FCF €18.9m → 26× labelled). Held at [redacted], [redacted]: the zone is SELL-FLAG on quality (SR2), not price — the P9 line (≈ €13.9, adj-basis) is moot and the ADD band does not exist.
+
+## 7. Risks & thesis-breakers
+
+- Orders fell double-digit two years running and FY2026 guidance embeds a further −3% to −6% cc (sourced) — the volume base may not stabilise.
+- L/E rose to 254.8% at Q1-2026 with €592m lease liabilities against €618m equity; further impairments compress the denominator faster than debt amortises.
+- Governance overhang: a fourth say-on-pay rejection, a short-seller report alleging CEO share-pledging pressure (Nov-2025, unverified claim), and no published capital-allocation discipline.
+- Upside risk to the AVOID: the €300m efficiency reset (~80% implemented, sourced) briefly produced 9.0% ROCE_wc on ex-impairment FY2025 OI — two clean growth quarters could reopen the Future gate faster than modelled.
+
+## 8. Flip conditions & next review
+
+To WATCH: Past needs through-cycle worst-of-four ROCE ≥ 10% (arithmetically years away), Future needs order stabilisation, SF needs an AGM-approved pay report — earliest realistic clearance is the 2027 AGM. Cheapness turns CHEAP only below ≈ €1.4 on the labelled basis while reported OI stays negative. Valid sell reasons for the held position: price past value (P9 — not tripped); company no longer good (tripped — this memo; fight the consistency bias both ways); buyout (none); a clearly better opportunity (user judgment only, extreme suspicion). Rebalancing, memorialising success, and agent compensation are never reasons. **Next review: FY2026 results (~mid-Mar 2027), or earlier on two consecutive quarters of group order growth or an announced pay-system reform.**
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+**Primary documents (9):** HelloFresh SE Annual Reports FY2025 (221pp, incl. Q4/FY KPIs, takeover-law section, note 26 RPT/board comp, note 29 subsequent events), FY2023, FY2021, FY2019 (incl. IFRS-16 transition note), FY2018, FY2017 (all Quartr mirrors of official filings); FY2025 parent-company statements (retrieved, unused); Q1-2026 quarterly statement; 7-Mar-2024 ad-hoc disclosure (FY2024 outlook cut). **Secondary:** Yahoo Finance (price €3.412 close 31-Jul-2026; XETRA HFG.DE); prior GSC memo v2 (2026-07-04) for AGM-2026 voting results (primary voting document was sourced there); web results for CFO-transition and Grizzly-report context (EQS/MarketScreener/Seeking Alpha snippets, 2025–26).
+**Exploratory budget:** 4 of ~5 used (IR discovery; filings-index probe; two compensation-report searches). Primary retrievals, price, and GitHub uncounted. Document count 9 — a 10th (Compensation Report 2025) exists but resisted retrieval; that an audited §162 document is this hard to locate is itself a minor disclosure-quality observation.
+**Gaps:** (1) FY2015-end balance sheet (pre-IPO; prospectus not retrieved) — beginning-CE legs run FY2017–25, record-limited; rebuild flag. (2) Compensation Report 2025 (individual §162 totals) — P17 INDETERMINATE; named re-test. (3) FY2024 say-on-pay vote (2025 AGM) unsourced; the four-rejection count covers FY2021–23 + FY2025 reports. (4) Q1-2026 treasury utilisations unknown — shares outstanding 144.1m derived (±~1m; quote sources showed 143.3m in Jul-2026). (5) FY2022/FY2023 lease-vs-other split within "other financial liabilities" not decomposed — tranche EVs use the full line, labelled; conclusions insensitive (FY2022 EV/OI ≥ 44× even at zero leases).
+
+## B. Financial record — FY2016–FY2025 (10y); beginning-CE legs FY2017–25 (record-limited)
+
+All figures MEUR, sourced from the annual reports named in A. FY2016–18 lease-capitalised per P18 (see C). CFO on the uniform old-presentation basis (see C).
+
+### B1 Raw inputs
+
+| FY | Revenue | OI (P18-adj) | CFO | Capex | FCF (derived) | Dil. sh (m) | Total assets (P18-adj) | NIBCL | Cash | Total liab (P18-adj) | Equity | GW+intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2016 | 597.0 | −85.6 (−90.5 rep.) | −76.1 | 37.4 | −109.2 | 125.5 | 250.4 | 57.1 | 57.5 | 229.8 | 20.6 | 6.2 |
+| 2017 | 904.9 | −83.9 (−88.8 rep.) | −45.5 | 13.6 | −44.3 | 136.6 | 551.2 | 97.0 | 339.9 | 247.9 | 303.3 | 9.2 |
+| 2018 | 1,279.2 | −77.9 (−82.8 rep.) | −50.2 | 23.5 | −53.1 | 161.1 | 493.9 | 125.6 | 193.9 | 257.2 | 236.7 | 59.2 |
+| 2019 | 1,809.0 | −25.8 | 42.2 | 38.8 | 3.4 | 164.1 | 570.2 | 161.0 | 193.6 | 324.9 | 245.3 | 64.8 |
+| 2020 | 3,749.9 | 425.9 | 601.5 | 84.5 | 517.0 | 177.6 | 1,525.6 | 420.1 | 729.0 | 869.6 | 656.0 | 264.9 |
+| 2021 | 5,993.4 | 391.8 | 458.6 | 251.9 | 206.7 | 184.0 | 2,208.6 | 627.2 | 827.1 | 1,312.0 | 896.6 | 356.7 |
+| 2022 | 7,607.2 | 217.4 | 313.4 | 417.5 | −104.1 | 175.8 | 2,535.2 | 710.1 | 504.0 | 1,575.6 | 959.6 | 384.9 |
+| 2023 | 7,596.6 | 112.5 | 383.8 | 305.8 | 78.0 | 176.1 | 2,581.3 | 657.7 | 433.1 | 1,562.3 | 1,019.0 | 390.5 |
+| 2024 | 7,661.3 | −177.1 | 239.3 | 166.1 | 73.2 | 171.3 | 2,632.7 | 613.3 | 486.7 | 1,744.3 | 888.4 | 411.2 |
+| 2025 | 6,760.8 | −2.0 | 272.9 | 130.1 | 142.8 | 161.1 | 2,081.6 | 519.2 | 211.1 | 1,411.4 | 670.2 | 388.9 |
+
+### B2 Returns (%, on P18-adjusted OI and CE)
+
+| FY | CE_wc | CE_xc | ROCE_wc(end) | ROCE_xc(end) | ROCE_wc(beg) | ROCE_xc(beg) | FCFROCE_wc(end) | FCFROCE_xc(end) |
+|---|---|---|---|---|---|---|---|---|
+| 2016 | 193.3 | 135.8 | −44.3 | −63.0 | n/a — record-limited | n/a | −56.5 | −80.4 |
+| 2017 | 454.2 | 114.3 | −18.5 | −73.4 | −43.4 | −61.8 | −9.8 | −38.8 |
+| 2018 | 368.3 | 174.4 | −21.2 | −44.7 | −17.2 | −68.2 | −14.4 | −30.4 |
+| 2019 | 409.2 | 215.6 | −6.3 | −12.0 | −7.0 | −14.8 | 0.8 | 1.6 |
+| 2020 | 1,105.5 | 376.5 | 38.5 | 113.1 | 104.1 | 197.5 | 46.8 | 137.3 |
+| 2021 | 1,581.4 | 754.3 | 24.8 | 51.9 | 35.4 | 104.1 | 13.1 | 27.4 |
+| 2022 | 1,825.1 | 1,321.1 | 11.9 | 16.5 | 13.7 | 28.8 | −5.7 | −7.9 |
+| 2023 | 1,923.6 | 1,490.5 | 5.8 | 7.5 | 6.2 | 8.5 | 4.1 | 5.2 |
+| 2024 | 2,019.4 | 1,532.7 | −8.8 | −11.6 | −9.2 | −11.9 | 3.6 | 4.8 |
+| 2025 | 1,562.4 | 1,351.3 | −0.1 | −0.1 | −0.1 | −0.1 | 9.1 | 10.6 |
+
+**Normalized averages (Σ OI ÷ Σ CE), four ways:** ROCE — end_wc **6.1% (worst)**, end_xc 9.3%, beg_wc 7.9% (FY17–25, record-limited), beg_xc 12.8% (dito). FCFROCE — end_wc **6.2% (worst)**, end_xc 9.5%, beg_wc 8.3%, beg_xc 13.4%. Worst-of-four 6.1% / 6.2% vs P2 (15%/8%) and P3 (10%): **below ADEQUATE**.
+
+### B3 Growth & leverage
+
+| FY | ΔOI/sh % | ΔFCF/sh % | ΔBV/sh % | ΔTBV/sh % | L/E % |
+|---|---|---|---|---|---|
+| 2016 | n.m. | n.m. | base | base | 1,115.5 (window-edge artifact, see C) |
+| 2017 | n.m. (loss) | n.m. (loss) | +1,253 (IPO) | +1,857 (IPO) | 81.7 |
+| 2018 | n.m. | n.m. | −33.8 | −48.8 | 108.4 |
+| 2019 | n.m. | +n.m.→pos | +2.0 | 0.0 | 132.0 |
+| 2020 | n.m.→+2.40/sh | +14,450 | +146.7 | +100.0 | 132.5 |
+| 2021 | −11.2 | −61.4 | +31.6 | +33.2 | 146.5 |
+| 2022 | −41.9 | n.m. (neg.) | +12.3 | +11.9 | 163.8 |
+| 2023 | −48.4 | n.m.→pos | +6.0 | +9.1 | 152.9 |
+| 2024 | n.m. (neg.) | −3.4 | −10.2 | −21.5 | 195.6 |
+| 2025 | n.m. (neg.) | +108.6 | −19.8 | −37.4 | 209.8 |
+
+Geometric means FY2016→25: OI/sh and FCF/sh **n.m.** (negative endpoints — fails the 3% floor by inspection of the shape: peak FY2020 OI/sh €2.40 → FY2025 −€0.01); BV/sh +43%/yr and TBV/sh +36%/yr are IPO-inflated (FY2016 base €0.16/sh) and read in the buyback context — not evidence of operating quality. L/E FY2025 209.8% (Q1-2026: 254.8%) breaches P5; P6 unavailable.
+
+## C. Calculation notes
+
+- **FY2025 CE build:** CE_wc = TA 2,081.6 − NIBCL 519.2 = 1,562.4; CE_xc = 1,562.4 − cash 211.1 = 1,351.3. NIBCL = trade & other payables 429.8 + contract liabilities 72.8 + income tax liabilities 16.6.
+- **NIBCL call (all years, logged):** trade payables + deferred revenue/contract liabilities + income tax liabilities only. All "other non-financial liabilities" (payroll accruals — €52.3m FY25 —, VAT, cash-settled SBC) and all provisions left in CE as ambiguous — conservative and repeatable. Including payroll accruals would raise normalized ROCE by ≈0.2–0.3pp; verdict-insensitive. FY2023/22 "trade payables (incl. capex payables)" taken as labelled. Deferred-revenue figures for FY2016–19 sourced from the other-non-financial-liabilities notes (14.0 / 19.3 / 20.3 / 21.3).
+- **CFO uniform basis:** from FY2025 HelloFresh moved interest paid (incl. IFRS-16) to financing and interest received to investing (FY2024 restated). Model restores the old presentation for comparability: CFO_FY25 = 297.4 − 34.2 + 9.7 = 272.9; CFO_FY24 = 259.7 − 33.2 + 12.8 = 239.3. Validation: model FCF 142.8 / 73.2 equals the company's disclosed "FCF excl. lease repayments" line exactly. FY2016–23 CFO as reported (interest already inside).
+- **P18 lease capitalisation (FY2016–18):** commitments 121.7 / 119.4 / 114.9 = 80% / 26% / 29% of TA — all >10%. PV at the disclosed 5% incremental borrowing rate: FY2018 = €97.8m (company's own 1-Jan-2019 transition figure, incl. reasonably-certain extensions); FY2017 ≈ €98.3m, FY2016 ≈ €98.7m (derived: year-1 bucket + years-2–5 spread evenly + beyond-5 lump allocated ~3 years along the visible downtrend). OI_adj = OI + 5%×PV; FCF_adj = FCF + lease expense (9.2 / 19.7 / 25.5) − 5%×PV. AR2018 restates FY2017 lease expense as 22.4 vs AR2017's 19.7 — own-year primary used; €2.7m discrepancy logged, immaterial.
+- **FY2016 L/E artifact:** €20.6m pre-IPO equity against P18-inflated liabilities produces 1,115% — window-edge context, not a going-concern reading; the operative breach is FY2025's 209.8% (most-recent-year rule).
+- **Diluted-share basis mix (logged):** FY2024–25 company fully-diluted (171.3 / 161.1, incl. full SBC overhang); FY2020–23 EPS-note diluted; FY2016–19 basic=diluted per IAS 33 (loss years, overhang unquantified). Current-price arithmetic uses Q1-2026 company diluted 150.0m (band, per-share) and derived outstanding 144.1m (MCap).
+- **Cash & STI:** cash only; restricted cash inside other financial assets left in CE (conservative: larger CE_xc).
+- **OI as reported** — FY2024/25 PP&E impairments (180.9 / net 106.0) stay in; ex-impairment reads appear only as labelled variants in Gate 2/P19. (v2's "€287m FY2025 impairments" conflated both years — corrected.)
+- **Bias check:** two live hazards, both named and handled. *Consistency* — third consecutive AVOID on this name; handled by rebuilding every gate from ten years of primary filings this session rather than inheriting v2's five-year tables, and by correcting v2's band (P12 was misapplied there: the 1.25× allowance requires Past = STRONG; removed). *Lossophobia* — held at [redacted]; the SELL-FLAG rests on sell-reason 2 (quality re-verdict), derived from fiscal-year fundamentals into which the price does not enter; the price drop itself is treated as no evidence of worth drop. Hope (holding for recovery) noted as the user-side mirror hazard. Remaining sixteen biases and both akrasia forms ticked: none live.
+
+## D. Future-performance worksheet
+
+**Breadth.** Customers: B2C subscription base of millions; no concentration disclosure required or present — **yes**. Suppliers: broad ingredient/packaging base; risk report rates supplier concentration in selected international markets "possible in likelihood and insignificant in impact"; multiple ready alternatives — **yes**. Breadth PASS.
+
+| Force | Call | One-line reason |
+|---|---|---|
+| Customer bargaining power | WEAK | Millions of small customers, no backward integration, no negotiating leverage |
+| Supplier bargaining power | WEAK | Fragmented food/packaging suppliers; forward integration improbable |
+| Threat of substitutes | **STRONG** | Groceries, restaurants, delivery apps, retail ready-meals; zero switching costs; doing-without trivial |
+| Threat of new entrants | **STRONG** | No customer captivity; barriers to success at national-fulfilment scale exist but retail incumbents are entering RTE and brands are contestable |
+
+**Tally: 2 strong → stop signal; Future WEAK.** **Moat:** cost/scale in meal-kit logistics — real versus subscale copycats but narrow, and eroding as the niche contracts (orders −12.3% FY2025, −11.6% Q1-2026; AOV +4.2% cc is price/mix, not volume); nowhere near the dominant-stable configuration that floors Future at ADEQUATE. **Market:** meal-kit category structurally shrinking post-COVID; RTE growing but contested and operationally troubled in FY2025 (bottlenecks, storm impact); Italy/Spain exits initiated Jan-2026.
+
+## E. Shareholder-friendliness evidence
+
+**P17 — compensation (INDETERMINATE on proportionality; no absolute flag).** Individual §162 granted-and-owed totals live in the separate Compensation Report 2025, not retrievable this session (named re-test). Primary-sourced bound: FY2025 Management Board aggregate on the IFRS basis = short-term €2.0m + equity-settled SBC vesting expense €4.5m = €6.5m across four members — below the fiscal-year threshold of €7.14m (5% × FCF €142.8m; NI leg −€92.9m negative → year read runs on the FCF leg alone, degeneration logged). Trailing-3y threshold: 5% × avg FCF FY2023–25 (€98.0m) = €4.90m — a single-member §162 total above this is plausible (FY2023 SBC expense ran €82m group-wide), hence INDETERMINATE rather than PASS. §162 grant-date values can exceed IFRS vesting expense; the direction of the gap is unknowable without the report. Absolute trigger: no plausible reading approaches US$40m. Supervisory Board total €0.8m across the whole board (sourced) — far under any 2× seat-norm stop; clean. **Positives:** founder-CEO Richter holds ~4–5% (v2-sourced); single share class; no dual-class caveat.
+**Governance negative (one flag).** Say-on-pay rejected four consecutive sourced times — FY2021, FY2022, FY2023 reports and the FY2025 report at the 2-Jun-2026 AGM (45.3% for / 54.7% against; primary voting document, sourced at v2). Repeated observations of the same behaviour = one flag under the aggregation rule. Context, weighed not counted: ISS governance QualityScore 10 (worst decile) with Compensation pillar 10; a Nov-2025 short-seller report alleging CEO share-pledging and margin-call pressure (unverified allegation — filed, not evidence); CFO transition Gärtner→Simon (Sep–Nov 2025).
+**RPT.** Note 26 clean: board compensation only, arm's-length language, no insider leasing/consulting/hiring. No flag.
+
+**P19 capital-allocation worksheet — programmes:** 2022 programme (€125.0m executed); 25-Oct-2023 programme (cap €150m/15m sh, to 31-Dec-2024; €30.2m in FY2023 + €83.1m in FY2024); 23-Dec-2024 programme (€75m, raised 13-Aug-2025 to €175m, extended to ≤31-Dec-2026; €132.6m FY2025 + €19.3m Q1-2026; **concluded March 2026**, €151.9m of the cap used). Cumulative 2022–2026: €390.2m cash, ~33.4m shares. Cancellations: 2.0m (2022) + 14.19m (2025). Treasury utilised for SBC: 1.97m (FY2025) + ~0.13m (FY2024).
+
+| Tranche | Shares (m) | Cash (€m) | Avg price | Implied MCap | Implied EV | EV/OI (yr) | MCap/FCF (yr) | EV/OI (3y) | MCap/FCF (3y) |
+|---|---|---|---|---|---|---|---|---|---|
+| FY2022 | 2.20 | 125.0 | €56.82 | 9,989 | 10,191 | **46.9** | n.m. (FCF −104) | **29.5** | **48.4** |
+| FY2023 | ~2.05 | 30.2 | ≈€14.73 | 2,594 | 2,879 | **25.6** | 33.3 | 12.0 | 43.1 |
+| FY2024 | ~8.84 (derived) | 83.1 | ≈€9.40 | 1,610 | 2,035 | n.m. (OI neg.) | 22.0 | 40.0 | 102.6 |
+| FY2025 | 16.70 | 132.6 | €7.94 | 1,279 | 1,774 | n.m. | **9.0** | n.m. | 13.1 |
+| Q1-2026 | 3.57 | 19.3 | €5.38 | 807 | 1,330 | n.m. | **5.7** | — | — |
+
+Yardsticks: FY2022 breaches the ≈25× line on every computable read — clearly overpriced, said out loud (€125m at €56.82 against a stock now at €3.41). FY2023 breaches on three of four (3y EV/OI 12.0× the exception) and, with only ~2m bought against ~4m/yr SBC dilution and zero cancellation that year, carries the sterilisation character at expensive prices. FY2024 mixed (post-crash prices, but the €188.2m term loan was drawn the same year — buyback cash €83.1m exceeded FY2024 FCF €73.2m; partial debt/cash funding, logged). FY2025–Q1-2026 execution sits at 9.0×→5.7× MCap/FCF — at or inside the disciplined yardstick — funded within FY2025 FCF (€132.6m vs €142.8m) while €137m of convertible was repaid from the cash pile, and predominantly count-reducing (14.19m cancelled vs 1.97m recycled into SBC). Acquisition record: Factor75 (2020, €128.3m + earnouts) and Youfoodz (2021, €73.6m + earnouts) — earnout cash €60.1m FY2022–23; pre-deal multiples undisclosed (pre-profit targets, judgmental); no acquisitions since 2021 — no serial-M&A limb. Dividends: none ever — rational while ROCE was high, now moot with negative earnings. Reinvestment: capex €130.1m vs D&A+impairment €348.1m — shrinking the base, consistent with the reset, not with sustaining historical returns.
+
+**Judgment log.** Verdict: **CAUTION (one flag).** Recency-weighted reading: the live end of the record (FY2025–Q1-2026) shows execution at bargain-line multiples, FCF-funded, count-reducing, and then a full stop — the concluded programme leaves only the routine AGM shelf authorisation (renewed 95.9%, Jun-2026), with no live programme and no published price discipline. The early record contains one clearly overpriced tranche (FY2022, all reads ≥ ~25×) and one sterilising-at-expensive-prices year (FY2023); the same allocators remain, and no price-discipline criteria have ever been published — which is what keeps this off SOUND. ADVERSE fails its own conjunctive limbs: the behaviour is not live (programme concluded 10-Mar-2026), the stock is not still expensive (3.4× MCap/FCF, 0.79× BV), and a standing 10% treasury authority is not a freshly authorised programme. Forward evidence named: subsequent-events note (3.57m shares to 10-Mar-2026, then conclusion), Q1-2026 statement ("concluded"), 13-Aug-2025 increase announcement, AGM-2026 authorisation vote, absence of any FY2026 programme announcement through 31-Jul-2026. Consistency-hazard check: confirmed — the held position received no friendlier reading than a stranger would (the FY2022 tranche is named as clearly overpriced; the CAUTION stands as a flag that completes the failing pair), and no harsher one (the concluded programme was not stretched into ADVERSE to fit the prior FAIL).
+
+**SF assembly:** hard strikes none; ADVERSE none; flags = governance negative (say-on-pay ×4) + capital-allocation CAUTION = **pair → FAIL**. P17 INDETERMINATE forces the named re-test but completes no pair.
+
+## F. Valuation math
+
+At €3.412 (31-Jul-2026 close, sourced), Q1-2026 balance sheet (31-Mar-2026, sourced):
+- Shares outstanding ≈ 144.1m (derived: 159.0m issued − 14.905m treasury); diluted 150.0m (Q1-2026 company weighted, sourced). MCap = 3.412 × 144.1 = **€491.7m**.
+- EV_all-cash = 491.7 + debt 178.7 + leases 592.3 + NCI (−2.9) − cash 245.5 = **€1,014.3m**; EV_no-cash = **€1,259.8m**.
+- MCap/FCF = 491.7 / 142.8 = **3.44×** (PASS ≤8). Labelled post-lease-repayment read: 491.7 / 18.9 = 26.0×.
+- EV/OI on reported FY2025 OI (−€2.0m): **n.m. — FAIL** (both variants). On labelled ex-impairment OI (€104.0m = −2.0 + 106.0 net impairments): 9.8× / 12.1× — still FAIL both.
+- MCap/BV = 491.7 / 620.5 = **0.79×** (PASS ≤3); MCap/TBV = 491.7 / 231.6 = **2.12×** (PASS ≤3; TBV uses FY2025 GW+intangibles 388.9 against Q1-2026 equity — mixed-date, labelled). Qualifier investigations: none triggered (BV ≫ TBV is acquisition-era goodwill already impair-tested FY2025 — clean test, sourced).
+- **Threshold-implied prices (diluted 150.0m):** MCap/FCF leg: 8 × 142.8 / 150.0 = **€7.62**. EV/OI legs on reported OI: n.m. (negative OI — unattainable at any positive price). On labelled adj-OI: all-cash leg (7×104.0 + 245.5 − 178.7 − 592.3 + 2.9)/150.0 = **€1.37**; no-cash leg negative → **unattainable**. Strict all-pass band therefore does not exist on reported earnings; ≈ €1.4 on the labelled basis (all-cash leg only). No P12 bending (Past ≠ STRONG).
+- **P9 sell line (HELD):** (25 × OI + cash − debt − leases − NCI)/150.0 → n.m. on reported OI; **€13.85** on labelled adj-OI. Moot — the flag is SR2.
+- Net financial position FY2025: 211.1 − 178.6 − 529.9 = −€497.4m (sourced).
+
+## G. Change log
+
+- v1 — 2026-06-10 / v1.1 — 2026-06-12 — original ANALYSE under MODEL v3.x: AVOID (Past WEAK + Future WEAK + SF FAIL via P19 strike ladder + say-on-pay strike); FY2021–25 window only.
+- v2 — 2026-07-04 — REVIEW: 2026 AGM voting results sourced; SF FAIL reaffirmed; band ≈€2.7 published on EV/OI @1.25× adj-OI.
+- **v3 — 2026-08-01 — fresh full ANALYSE (user-requested), supersedes v2; produced under MODEL v4.0.0.** What changed: (1) window rebuilt to the full FY2016–FY2025 ten years from seven primary annual reports, incl. P18 lease capitalisation for FY2016–18 — worst-of-four ROCE 6.1% / FCFROCE 6.2% now sourced (v2's WEAK rested on a 5-year record-limited window); (2) SF re-derived under the v4.0.0 judgment protocol — FAIL now rests on a flag pair (governance rejections + P19 CAUTION), not the retired strike ladder; the FY2022 tranche re-reads at 46.9× year EV/OI (v2's "~25×" was the 3y/prior-year read); ADVERSE explicitly rejected on the liveness limbs (programme concluded Mar-2026); (3) P17 downgraded to INDETERMINATE (comp-report totals unretrieved — v1/v2 never held them either); (4) band corrected: v2's €2.7 misapplied P12 (requires Past STRONG) — strict line is ≈€1.4 labelled / unattainable on reported OI; FCF leg €7.62; (5) buyback programme history fully sourced (three programmes, €390.2m cumulative; v2's single-programme framing corrected); (6) v2's "€287m FY2025 impairments" corrected to FY2024 €180.9m + FY2025 net €106.0m; (7) CFO restated to the uniform old presentation (FY2025 reclassification reversed; FCF validates against the company's own disclosure). What didn't change: all five gate verdicts, the AVOID, and the SELL-FLAG (SR2) zone.
+
+*Framework output, not investment advice.*
