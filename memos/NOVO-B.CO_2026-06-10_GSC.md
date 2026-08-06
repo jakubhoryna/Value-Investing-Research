@@ -5,6 +5,7 @@
 **52-wk range:** DKK 224.2–533.4 · **All-time high:** DKK ~1,033 (Jun 2024) → **down ~74%**
 
 ---
+ticker: NOVO-B.CO (NVO NYSE ADR 1:1)
 
 ## VERDICT: **WATCH**
 
