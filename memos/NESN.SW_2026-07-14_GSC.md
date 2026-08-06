@@ -1,0 +1,145 @@
+---
+ticker: NESN.SW
+company: Nestlé S.A.
+exchange: SIX Swiss Exchange (ADR: NSRGY, ratio 1:1)
+currency: CHF
+memo_date: 2026-07-14
+memo_version: v1
+price_at_memo: 83.88
+mcap_at_memo: 216000            # CHF m; 83.88 × ~2,575m shares outstanding
+verdict: AVOID                  # SF FAIL — P19 buyback hard strike
+quality_past: ADEQUATE
+quality_future: ADEQUATE
+sf: FAIL
+cheapness: EXPENSIVE
+trigger_band: "CHEAP < ≈ CHF 13 (EV/OI, conservative EV, FY25 operating profit; MCap/FCF leg ≈ CHF 34 all-capex / ≈ CHF 28 ex-JV-one-off; no P12 — Past ADEQUATE)"
+next_review: "FY2026 results (~Feb 2027) + 2026 governance/comp report re-test P19 & new-chair capital-allocation policy; earlier if a new large buyback is authorised at a discount to worth"
+position: —
+---
+
+# NESN.SW — Nestlé S.A.: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | Shareholder-friendliness | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | ADEQUATE | ADEQUATE | **FAIL** | EXPENSIVE | **AVOID** (SF FAIL: P19 buybacks) |
+
+Nestlé is a genuinely good business — the world's largest food-and-beverage group, a broad brand moat (Nescafé, Nespresso, Purina, KitKat, Maggi, Gerber), no customer above 10% of revenue, a fragmented agricultural-supplier base, and mid-teens returns on a goodwill-laden capital base. It is un-ownable at the framework level for one reason: capital allocation. The completed **CHF 20 billion 2022–2024 buyback (187.4m shares at an average CHF 106.74)** was executed at an implied ~23× EV/OI and ~26× MCap/FCF — far above the 20× P19 hard-strike line — and the prior CHF 20bn 2017–2022 programme (avg CHF 88.82) shows the same pattern is structural, not a one-off. That is a hard strike; shareholder-friendliness fails regardless of the other gates, and the final verdict is AVOID. Even setting SF aside, the price is nowhere near the zone: at CHF 83.88 the shares trade ~20–24× the two primary metrics against thresholds of 7–8×, so cheapness is EXPENSIVE by a wide margin. What would flip it: a demonstrated shift to buying back only below conservative worth (the new chair/CEO have paused repurchases to cut debt — a start, but the *past* strike stands), and a price collapse to ≈ CHF 13 (EV/OI-binding) before the cash-flow gate clears.
+
+## 2. Understanding
+
+Nestlé manufactures and sells branded packaged food and beverages — coffee (Nescafé, Nespresso, Starbucks-at-home), petcare (Purina), nutrition/health science, water, dairy, confectionery and culinary — to consumers worldwide, paid for chiefly by grocery retailers, discounters, e-commerce and out-of-home channels (no single customer ≥10% of revenue); a Swiss-domiciled, IFRS-reporting, vertically integrated global consumer-staples major (271,000 employees, factories in 75 countries, sales in 185), reporting in CHF and in transition under a new CEO and incoming chair. **PASS.**
+
+## 3. Quality — past record
+
+Returns are respectable but not exceptional and are drifting down. FY2025 operating profit CHF 12,277m on capital employed (goodwill-in) gives ROCE ≈ 12.4% ex-cash-in / 13.2% ex-cash-out; FY2024 ≈ 13.4% / 14.5%. FCFROCE ≈ 9–11% (>8% floor). Nestlé's own ROIC fell 14.1% → 12.7% in 2025 on lower profit and higher impairments — part of a gradual multi-year erosion as acquisitions (Atrium, Aimmune, The Bountiful Company) piled ~CHF 44bn of goodwill+intangibles (35% of assets) onto the base. Per-share OI/FCF growth is flat-to-negative nominal in CHF (a strong franc masks pricing-led sales), short of the 3% STRONG floor. L/E 287% breaches the 200% flag but is heavily inflated by a −CHF 29.9bn FX translation reserve (ex-translation, ~150%); investment-grade, 2.6% cost of debt. **ADEQUATE** — clears the 10% ROCE / 8% FCFROCE floors comfortably; STRONG unavailable (sub-15% returns, sub-3% growth, leverage flag).
+
+## 4. Quality — future
+
+Breadth **PASS** both sides: no customer >10% of revenue (Note 3.6); the agricultural-input supply base (coffee, cocoa, milk from a vast farmer/trader pool) has no single supplier >10% of COGS+opex. Four forces: customer power **WEAK** (atomised consumers, no concentrated buyer, brand pull), supplier power **WEAK** (fragmented inputs; commodity-price exposure is a margin risk, not bargaining leverage), new entrants **WEAK** (global scale, route-to-market and brand barriers), substitutes **STRONG** (private label, secular health/GLP-1 shift and near-zero real internal growth — RIG only 0.8% — signal genuine trade-down/trade-out pressure). Tally = 1 strong force → judgment zone. Moat: **Brand** (single dominant source), stable after a period of share erosion (H2-25 share trends improving). Market growth **MIXED** (categories 3–4%, mostly price/EM; soft developed-market volumes). **ADEQUATE.**
+
+## 5. Shareholder-friendliness
+
+**FAIL — P19 buyback hard strike.** The CHF 20bn programme completed Dec 2024 repurchased 187.4m shares at an average CHF 106.74; on FY2024 figures that implies EV/OI ≈ 23× and MCap/FCF ≈ 26× (worse against the lower-OI 2022–23 years) — both above the 20× hard-strike line, and the stock closed at CHF 74 the day the programme ended, crystallising the overpayment. The prior 2017–2022 CHF 20bn programme (avg CHF 88.82) repeats the pattern — repurchasing at a premium to conservative worth is structural policy. Comp is clean (CEO total ≈ CHF 11m ≪ 5% of lower(FCF, NI) ≈ CHF 452m, and ≪ the ~CHF 36m absolute scrutiny line; P17 no strike). Dividends are shareholder-friendly (66 years maintained/raised, CHF 3.10 proposed) but cannot offset a hard strike (SF is defined by the worst). A second, independent negative reinforces the fail: 2025 governance turmoil (CEO Freixe dismissed for an undisclosed subordinate relationship; chair Bulcke stepping down).
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap / FCF | ≈ 19.6× (all-capex FCF); ≈ 24× ex-JV one-off | ≤ 8 | Primary | **FAIL** |
+| EV / Operating income | ≈ 21.8× (all-cash-excess) / 22.3× (no-cash) | ≤ 7 | Primary | **FAIL** |
+| MCap / Book value | ≈ 6.6× | ≤ 3 | Qualifier | breach |
+| MCap / Tangible book value | n.m. (TBV negative −CHF 11.5bn) | ≤ 3 | Qualifier | n.m. |
+
+Both primaries miss by ~3×. **Trigger band ≈ CHF 13** (EV/OI-binding, conservative EV — the CHF 58bn net-debt load makes EV/OI the demanding leg; the MCap/FCF leg clears only ≈ CHF 34 all-capex / ≈ CHF 28 on run-rate FCF). No P12 (Past ADEQUATE). Qualifiers moot: BV≫TBV from acquisition goodwill (negative TBV) — the Gate-1C acquisition audit is not triggered (no significant 2024–25 deals; goodwill is legacy), and the primaries decide regardless. Cheapness **EXPENSIVE**; Dist% ≈ **+534%**.
+
+## 7. Risks & thesis-breakers
+
+- Commodity inflation (coffee, cocoa) compressed FY25 gross margin 110bps; further input spikes pressure OI and the returns trend toward the 10% floor.
+- Secular volume stagnation: RIG ~0.8% two years running; GLP-1 and health/private-label substitution could turn the substitutes force decisively unfavourable → Future WEAK.
+- Governance instability (CEO/chair change, activist attention) raises execution risk on the "Fuel for Growth" cost programme and portfolio disposals (Waters, ice cream).
+- Leverage: net debt/EBITDA 2.85×; if buybacks resume before deleveraging, the L/E flag and P19 both worsen.
+- Upside risk to the AVOID: a credible, sustained policy of repurchasing only below conservative worth would remove the strike (SF → PASS), leaving a WATCH gated purely on price.
+
+## 8. Flip conditions & next review
+
+Verdict flips **WATCH** if a future REVIEW records SF PASS — i.e. no new above-worth buyback and a demonstrated below-worth discipline — with all other gates intact; it flips **BUY** only on SF PASS *and* price into the ≈ CHF 13 band. It flips deeper toward a structural AVOID if the substitutes force hardens (Future WEAK) or the returns erosion breaches the 10% ROCE floor (Past WEAK). Next review: **FY2026 results (~Feb 2027)** plus the 2026 governance/compensation report — re-test P19 against any new programme and the incoming chair's stated capital-allocation policy; earlier if a large buyback is authorised or price approaches the band. Not held — no sell-flag line computed.
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+- **Primary:** Nestlé *Consolidated Financial Statements 2025* (nestle.com, 2026-02) — income statement, balance sheet, cash-flow, equity statement, Notes 3 (segments/customers), 4 (other trading/operating items), 9 (goodwill/intangibles), 10 (comp), 12 (financial instruments). FY2025 full-year press release / strategic update (nestle.com / globenewswire, 2026-02-19) — margins, ROIC, net debt, dividend, guidance. Half-Year Report 2025 (share count, market-cap cross-check).
+- **Buyback (P19):** Nestlé press release "completes CHF 20 billion share buyback programme" (2024-12-23) — 187,372,141 shares, CHF 20bn, avg **CHF 106.74**; prior 2017–2022 programme 225,186,059 shares avg **CHF 88.82** (2019-12 release).
+- **Price:** Yahoo Finance NESN.SW CHF 83.88 (14 Jul 2026); ADR NSRGY $103.33.
+- **Gaps / judgment flags:** (1) A clean 10-year worst-of-four ROCE/FCFROCE series was **not** built — stockanalysis.com (SIX/ADR path) and macrotrends were Cloudflare-blocked this session, and Nestlé's 5-year review sits beyond the fetched extract. FY2024–FY2025 computed precisely from the audited statements; the 10-year *trend* is anchored on Nestlé's disclosed ROIC series and the documented acquisition-driven goodwill build. The ADEQUATE verdict is robust to this gap (returns sit mid-band and the final verdict is SF-driven), but a REVIEW should populate B1–B3 fully. (2) Exact FY2025 CEO/board comp not pulled (Governance Report 2025 available); the P17 no-strike conclusion holds on an order-of-magnitude basis (≈CHF 11m vs a ≈CHF 452m 5%-line). Search budget: ~5 web operations + GitHub plumbing.
+
+## B. Financial record (CHF m unless stated)
+
+*Two audited years fully sourced (FY2025 statements carry FY2024 comparatives). Earlier years not sourced this session — see Appendix A gap (1). B1–B3 to be completed at next REVIEW.*
+
+### B1 Raw inputs
+| FY | Revenue | Operating profit (OI, as-rep.) | CFO | Capex (PP&E+intang.) | FCF (derived) | Dil. shares (m) | Total assets | NIBCL | Cash+STI | Total liab. | Equity (excl NCI) | GW+intang. |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2025 | 89,490 | 12,277 | 15,904 | 4,911 | 10,993 | 2,573 | 127,151 | 27,936 | 6,230 | 94,093 | 32,810 | 44,309 |
+| 2024 | 91,354 | 14,724 | 16,675 | 5,963 | 10,712 | 2,597 | 139,264 | 29,708 | 7,871 | 102,571 | 35,917 | 49,840 |
+
+OI = **Operating profit** (after net other trading + other operating items, incl. impairments) — the strict as-reported line, *not* Trading operating profit (CHF 12,675m) or UTOP (CHF 14,389m), which add back one-offs. NIBCL = trade & other payables + accruals + current income tax (provisions and current financial debt left in CE). FCF = CFO − all capex; FY2025 CFO includes a ~CHF 2.0bn extraordinary Froneri JV distribution (run-rate FCF ≈ CHF 9.0bn).
+
+### B2 Returns (worst-of-four incomplete — 2 yrs)
+| FY | CE_wc | CE_xc | ROCE_wc(end) | ROCE_xc(end) | FCFROCE_wc(end) |
+|---|---|---|---|---|---|
+| 2025 | 99,215 | 92,985 | 12.4% | 13.2% | 11.1% (9.1% ex-JV) |
+| 2024 | 109,556 | 101,685 | 13.4% | 14.5% | 9.8% |
+FY2025 beginning-of-period basis (on FY2024 CE): ROCE_wc 11.2%, ROCE_xc 12.1%. Range ~11–14.5% → clears P3 (≥10%), below P2 STRONG (≥15%). Nestlé-disclosed ROIC (different, GW-excluded IC): 12.7% (2025), 14.1% (2024).
+
+### B3 Growth & leverage
+ΔOI (2024→2025) −16.6% reported (impairment-driven); ΔRevenue −2.0% (−5.7% FX, +3.5% organic). Per-share growth flat-to-negative nominal in CHF over recent years; buybacks support EPS. **L/E = 94,093 / 32,810 = 287%** (P5 flag; ex −CHF 29.9bn translation reserve ≈ 150%). Full multi-year ΔOI/sh, ΔFCF/sh, ΔBV/sh, ΔTBV/sh pending B-table rebuild.
+
+## C. Calculation notes
+
+- **CE (FY2025):** Total assets 127,151 − NIBCL 27,936 = **CE_wc 99,215**; − (cash 4,579 + STI 1,651) = **CE_xc 92,985**. Goodwill kept in CE (Nestlé is highly acquisitive — deduction rule is for non-acquisitive firms).
+- **TBV (FY2025):** BV 32,810 − goodwill 27,636 − intangibles 16,673 = **−11,499 (negative)** → MCap/TBV inapplicable; qualifier marked n.m.
+- **EV (FY2025):** MCap 216,000 + total financial debt 57,852 (incl. IFRS-16 leases) + NCI 248 − cash&STI 6,230 = **267,870 (all-cash-excess)**; no-cash variant **274,100**. Preferred nil.
+- **Shares:** issued 2,580m (share capital CHF 258m ÷ CHF 0.10 par) − ~5m treasury ≈ **2,575m** outstanding for MCap; diluted weighted-avg FY25 **2,573m** for per-share.
+- **Leases:** IFRS-16 already on balance sheet (ROU assets in PP&E CHF 2,367m; lease liabilities within financial debt) — treated as debt in CE/EV/L-E; no P18 pre-adoption capitalisation needed.
+- **IFRS interest:** interest paid classified within Nestlé's operating cash flow already — no reclassification.
+- **Judgment calls:** (i) OI = Operating profit, not TOP/UTOP; (ii) provisions and current financial debt retained in CE; (iii) L/E treated as a flag not a fail given FX-translation inflation and investment-grade credit — logged for REVIEW; (iv) FY2025 CFO carries a ~CHF 2bn one-off JV distribution, FCF shown both ways.
+- **Bias check:** none live. (Guarded against *affinity*/*consensus* — Nestlé's blue-chip reputation and defensive-staple status invite a soft pass; the mechanics say EXPENSIVE and SF FAIL, and the verdict follows the mechanics.)
+
+## D. Future-performance worksheet
+
+- **Breadth — customer:** PASS. "There is no single customer accounting for 10% or more of Group revenues" (Note 3.6); top-5 customers = 14% of receivables, none >5%.
+- **Breadth — supplier:** PASS. Agricultural commodities (coffee, cocoa, dairy, cereals) sourced from a vast, fragmented farmer/trader base; supplier-finance arrangements span >50 geographies and many institutions; no single supplier >10% of COGS+opex.
+- **Forces:** customer power WEAK (no concentrated buyer; consumer brand pull) · supplier power WEAK (fragmented inputs; commodity *price* risk ≠ bargaining leverage) · new entrants WEAK (global scale/brand/route-to-market barriers) · substitutes **STRONG** (private label + health/GLP-1 secular shift + RIG ~0.8% = trade-down/out). Tally **1 strong → judgment zone (ADEQUATE ceiling)**.
+- **Moat:** Brand (dominant, single source) — billionaire-brand portfolio; direction **stable** after prior share erosion (H2-25 share trends improving; value-gap to market halved).
+- **Market:** MIXED — categories 3–4% (price/EM-led); developed-market volumes soft.
+
+## E. Shareholder-friendliness evidence
+
+- **P19 buybacks (decisive):** 2022–2024 programme — 187,372,141 shares, CHF 20bn, **avg CHF 106.74**. Implied MCap ≈ 106.74 × ~2,660m ≈ CHF 284bn. Implied EV (all-cash-excess, FY2024 debt 63,560 / cash 7,871 / NCI 776) ≈ CHF 340bn. **Implied EV/OI ≈ 23.1×** (FY2024 OI 14,724; higher against lower-OI 2022–23). **Implied MCap/FCF ≈ 26.5×** (FY2024 FCF 10,712). Both > 20× → **hard strike**. Completion-day close CHF 74.08 vs CHF 106.74 average = crystallised overpayment. Prior 2017–2022 programme avg CHF 88.82 (225.2m shares) — same above-worth pattern. FY2025 near-halt (treasury purchases only CHF 213m; deleverage priority) is a forward mitigant, not a cure.
+- **P17 comp:** CEO total ≈ CHF 11m (order-of-magnitude, prior disclosure) ≪ 5% of lower(FCF ≈ 9,000, NI 9,033) = CHF ~452m; ≪ ~CHF 36m (US$40m-indexed) absolute scrutiny line. Outside-director/chair fees within Swiss large-cap norms (no 2×-norm strike identified). **No strike, no flag.**
+- **Second negative (flag):** 2025 governance turmoil — CEO Laurent Freixe dismissed (Sept 2025) over an undisclosed relationship with a subordinate; chair Paul Bulcke stepping down; incoming chair (Pablo Isla proposed). Reinforces the FAIL independently of P19.
+- **RPT:** mainly associates/JVs (Froneri; Cereal Partners Worldwide) — no egregious insider extraction identified.
+- **Dividends:** CHF 3.10/share proposed (66-year record) — shareholder-friendly, but cannot offset a hard strike.
+
+## F. Valuation math
+
+- **Current:** MCap 216,000; EV 267,870 (low) / 274,100 (high). OI 12,277 → EV/OI 21.8× / 22.3×. FCF 10,993 (all-capex) → MCap/FCF 19.6× (24× on run-rate FCF ≈ 9,000). BV 32,810 → MCap/BV 6.6×. TBV negative → MCap/TBV n.m.
+- **Trigger band (both primaries simultaneously):**
+  - EV/OI ≤ 7 (conservative EV): P = (7×12,277 + 6,230 − 57,852 − 248) / 2,575 = 34,069 / 2,575 = **CHF 13.2** ← binding.
+  - MCap/FCF ≤ 8: P = 8×10,993 / 2,575 = **CHF 34.2** (all-capex); ≈ CHF 28.0 on run-rate FCF.
+  - Band = lower = **CHEAP < ≈ CHF 13 (EV/OI-binding)**. No P12 (Past ADEQUATE). Dist% = 83.88/13.2 − 1 ≈ **+534%**.
+- Qualifier-implied prices (context only): 3×BV/sh ≈ CHF 38.2; 3×TBV/sh n.m.
+- No backvaluing (not a definitively cyclical business). Not held — no P_sell line.
+
+## G. Change log
+
+- v1 — 2026-07-14 — initial ANALYSE. AVOID (SF FAIL: P19 buybacks — CHF 20bn 2022–24 programme at avg CHF 106.74 ≈ 23× EV/OI / 26× MCap/FCF). Past ADEQUATE (ROCE ~12–14%, L/E 287% FX-inflated flag), Future ADEQUATE (1 strong force: substitutes; brand moat), Cheapness EXPENSIVE (~22× EV/OI, ~20–24× FCF; band ≈ CHF 13). 10-year B-tables deferred (aggregator access blocked) — flagged for REVIEW.
+
+*Framework output, not investment advice.*
