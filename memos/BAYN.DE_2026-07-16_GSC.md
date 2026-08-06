@@ -1,0 +1,154 @@
+---
+ticker: BAYN.DE
+company: Bayer AG
+exchange: XETRA
+currency: EUR
+memo_date: 2026-07-16
+memo_version: v1
+price_at_memo: €47.17
+mcap_at_memo: €46,341m
+verdict: AVOID
+quality_past: WEAK
+quality_future: WEAK
+sf: FAIL
+cheapness: EXPENSIVE
+trigger_band: "n.m. while OI < 0 — EV/OI leg unreachable at any positive price (MCap/FCF leg ≈ €17.0 on FY25 co-def FCF €2.08bn)"
+next_review: "FY2026 results (~Mar 2027): first positive-OI print restores a band; Roundup class-settlement approval + post-Durnell provisioning check (H2 2026)"
+position: —
+---
+
+# BAYN.DE — Bayer AG: GSC Memo
+
+## 1. Verdict
+
+| Understanding | Past | Future | SF | Cheapness | FINAL |
+|---|---|---|---|---|---|
+| PASS | WEAK | WEAK | FAIL (P17) | EXPENSIVE | **AVOID** |
+
+Bayer fails three gates independently. The five-year record (perimeter-break-truncated window, flagged) shows worst-of-four ROCE of 1.5% against the 10% ADEQUATE floor, leverage at 302% of equity, and operating income declining into losses. The future gate fails on two strong forces — generic/biosimilar substitution across both major divisions and consolidated, price-setting customers. Shareholder-friendliness fails on the P17 hard strike: board compensation paid against a −€3.6bn net-income year (SHA0 precedent). The June 2026 Supreme Court Durnell win (FIFRA preemption, 7–2) and the pending $7.25bn Roundup class settlement genuinely shrink the litigation tail — the stock is up ~73% in a year on exactly that — but litigation containment does not manufacture returns on a €94bn capital base earning ~1–2%. A flip requires a multi-year returns re-rate after the ~€5bn 2026 settlement payouts clear, not a legal headline.
+
+## 2. Understanding
+
+Bayer is a 163-year-old Leverkusen-headquartered life-science conglomerate (German AG, three divisions) selling differentiated, patent- and registration-protected products — prescription pharmaceuticals (cardiology, oncology, women's health; €17.8bn FY25 sales), crop seeds, traits and crop-protection chemistry (€21.6bn), and OTC consumer-health brands (€5.8bn) — to pharmaceutical wholesalers, pharmacies, hospitals, ag retailers and farmers worldwide, with heavy Americas exposure, currently mid-restructuring under the litigation and debt overhang inherited with the 2018 Monsanto acquisition. **PASS.**
+
+## 3. Quality — past record
+
+Worst-of-four normalized ROCE (FY2021–25; beginning-CE variants FY2022–25 — window truncated at the Monsanto/Covestro perimeter break, Appendix C) is **1.5%**; best variant 2.1%. Worst-of-four FCFROCE **3.3%** — on a flattering derived basis that excludes ~€1.3–1.7bn/yr net interest (IFRS financing classification). OI/share collapsed from €3.4bn (2021) and €7.0bn (2022) into losses (FY24 −€71m, FY25 −€1,077m) under impairments and litigation provisions taken as-reported per model rules; BV/share shrank −5.8%/yr; TBV negative throughout (−€22.7bn). L/E **302%** breaches P5 with no P6 conditions available. **WEAK** — fails every leg simultaneously.
+
+## 4. Quality — future
+
+Breadth: customer PASS (inference — three-division mix, no >10% customer identified; disclosure sentence not verified, Appendix A); supplier PASS. Forces: customer bargaining power **STRONG** (consolidated ag retail and pharma wholesalers/payers; commodity-squeezed farmers); supplier power WEAK; substitutes **STRONG** (generic glyphosate sets crop-chem pricing; Xarelto LoE and Eylea biosimilars eating pharma; trait patents expiring); new entrants WEAK (regulatory/scale barriers). Tally **2 strong → stop signal.** Moat: regulatory registrations plus seeds/traits germplasm — real but **eroding** in the profit pool that matters. Market growth MIXED. **WEAK.**
+
+## 5. Shareholder-friendliness
+
+P17 **hard strike**: FY2025 net income −€3,620m makes 5% of lower(FCF, NI) negative — any positive top-employee compensation breaches (CEO Anderson ≈ $7.0m/≈€6.4m; board aggregate €37.2m + €14.1m pension service cost paid against the loss). FCF-leg alone would pass (5% × €2,084m = €104m); the strike carries on the letter, per SHA0/Schaeffler precedent. Absolute scrutiny trigger (~$40m indexed): clear. Buybacks: none material — clean. Dividend cut to the €0.11 legal minimum for deleveraging is rational allocation, not a negative. Monsanto acquisition audit: historical context only (2018, pre-window management). **FAIL (P17).**
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap/FCF (co-def €2,084m) | 22.2 | ≤ 8 | Primary | FAIL |
+| EV/OI (both variants) | n.m. (OI −€1,077m) | ≤ 7 | Primary | FAIL |
+| MCap/BV | 1.8 | ≤ 3 | Qualifier | Pass |
+| MCap/TBV | n.m. (TBV −€22.7bn) | ≤ 3 | Qualifier | n.m. |
+
+No positive price satisfies EV/OI ≤ 7 while OI is negative — trigger band **n.m.**; the MCap/FCF leg alone implies ≈ **€17.0**. Qualifier split (BV pass, TBV negative) is the Monsanto goodwill signature; acquisition audit noted. **EXPENSIVE.**
+
+## 7. Risks & thesis-breakers
+
+- Missouri court approval of the $7.25bn class settlement (decision expected from July 2026) plus Durnell preemption could close the glyphosate chapter and re-rate sentiment far above any framework band.
+- PCB/other litigations sit outside the Roundup settlement and keep provisioning risk alive.
+- FY2026 FCF guided to −€1.5 to −2.5bn on ~€5bn settlement payouts — leverage improvement stalls this year.
+- Pharma patent cliff (Xarelto, Eylea) outruns Nubeqa/Kerendia ramp if launches disappoint.
+- A Crop Science spin-off (Ruveon structure) could change the perimeter again and moot this memo's tables.
+
+## 8. Flip conditions & next review
+
+AVOID → WATCH requires all three failed gates to move: sustained ROCE recovery toward 10% on the post-settlement capital base, substitution pressure contained (multi-year evidence, not guidance), and a positive-NI year clearing P17. None is plausible before FY2027 results. Next review: **FY2026 results (~Mar 2027)** — first positive-OI print restores a computable band; interim event check on settlement approval/post-Durnell provision releases (H2 2026).
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+Web operations this session: ~9 (P14 budget ~12; GitHub API excluded). Sources: (1) stockanalysis.com ETR:BAYN standardized financials (S&P/Fiscal.ai), EUR, FY2021–25 — I/S, B/S, CF fetched 2026-07-16; (2) Bayer FY2025 media release 2026-03-04 (EBIT, net income −€3,620m, company FCF €2,084m, net financial debt €29,843m, FY26 guidance); (3) Bayer FY2024 release 2025-03-05 (EBIT −€71m, FCF €3,107m); (4) Bayer/press: SCOTUS Durnell 7–2 ruling 2026-06-25, $7.25bn class settlement (Feb 2026, Missouri approval pending); (5) Bayer Compensation Report 2025 + press coverage (Anderson ≈ $7.0m 2025; BoM aggregate €37.24m; SB total €5.21m); (6) Yahoo Finance BAYN.DE €47.17 (2026-07-16).
+**Gaps:** (a) FY2016–2020 not tabulated — see C window note; (b) income-tax-payable and accrued-liability NIBCL components not separately disclosed in the standardized source — left in CE (conservative); (c) customer-concentration disclosure sentence not verified in the AR — customer breadth is an inference; (d) FY2021–23 company-definition FCF not fetched — derived series used in B2/B3, labelled; (e) Winkeljohann individual SB fee not extracted (SB total €5.21m across ~20 members — no 2×-norm breach indicated).
+
+## B. Five-year financial record (EUR m; window flagged — see C)
+
+B1 Raw inputs
+| FY | Revenue | OI | CFO | Capex | FCF (derived) | Dil. shares (m) | Total assets | NIBCL | Cash+STI | Total liab | Equity ex-NCI | Goodwill+intang |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2021 | 44,081 | 3,353 | 5,089 | 2,611 | 2,478 | 982 | 120,241 | 10,844 | 7,906 | 87,073 | 33,020 | 66,364 |
+| 2022 | 50,739 | 7,012 | 7,093 | 2,949 | 4,144 | 982 | 124,877 | 11,708 | 10,379 | 85,951 | 38,773 | 63,831 |
+| 2023 | 47,637 | 612 | 5,117 | 2,751 | 2,366 | 982 | 116,259 | 11,312 | 10,743 | 83,181 | 32,927 | 55,662 |
+| 2024 | 46,606 | −71 | 7,368 | 2,778 | 4,590 | 982 | 110,850 | 11,170 | 8,457 | 78,805 | 31,908 | 52,128 |
+| 2025 | 45,575 | −1,077 | 5,930 | 2,487 | 3,443 | 982 | 104,541 | 10,814 | 8,062 | 78,478 | 25,947 | 48,683 |
+
+B2 Returns (CE and YoY on end-of-period; beginning variants from FY2022)
+| FY | CE_wc | CE_xc | ROCE_wc | ROCE_xc | FCFROCE_wc | FCFROCE_xc |
+|---|---|---|---|---|---|---|
+| 2021 | 109,397 | 101,491 | 3.1% | 3.3% | 2.3% | 2.4% |
+| 2022 | 113,169 | 102,790 | 6.2% | 6.8% | 3.7% | 4.0% |
+| 2023 | 104,947 | 94,204 | 0.6% | 0.6% | 2.3% | 2.5% |
+| 2024 | 99,680 | 91,223 | −0.1% | −0.1% | 4.6% | 5.0% |
+| 2025 | 93,727 | 85,665 | −1.1% | −1.3% | 3.7% | 4.0% |
+**Normalized averages (Σnum ÷ Σden), four ways** — ROCE: end_wc 1.9% · end_xc 2.1% · beg_wc 1.5% · beg_xc 1.7% → **worst 1.5%** vs P3 ≥ 10%: FAIL. FCFROCE: 3.3% · 3.6% · 3.4% · 3.7% → **worst 3.3%** vs P2 ≥ 8%: FAIL (derived basis is flattering — see C).
+
+B3 Growth & leverage
+| FY | ΔOI/sh % | ΔFCF/sh % | ΔBV/sh % | ΔTBV/sh % | L/E |
+|---|---|---|---|---|---|
+| 2022 | +109.1 | +67.2 | +17.4 | n.m. | 221.7% |
+| 2023 | −91.3 | −42.9 | −15.1 | n.m. | 252.6% |
+| 2024 | n.m. (sign) | +94.0 | −3.1 | n.m. | 247.0% |
+| 2025 | n.m. | −25.0 | −18.7 | n.m. | 302.5% |
+Geo-means: ΔOI/sh n.m. (positive → negative); ΔFCF/sh +8.6% (derived, volatile); ΔBV/sh −5.8%; ΔTBV n.m. (negative throughout). L/E latest 302.5% > P5 200%; P6 unavailable (returns poor, no repurchases).
+
+## C. Calculation notes
+
+- **Window judgment call:** B-tables run FY2021–25 (6th balance-sheet year FY2020 not retrieved), not the P1 ten years. Reasons: (i) perimeter breaks make FY2016–20 non-comparable — Covestro deconsolidation (2016–17), Monsanto consolidation from Jun 2018, Animal Health divested 2020, plus the −€16bn 2020 settlement-provision EBIT year; (ii) EUR-consistent pre-2021 series not retrievable within P14 from the dense source (free-tier 5y cap). Verdict robustness: no plausible FY2016–20 figures lift a Σ-based average from 1.5% to 10% on a ~€100bn CE base, and the sustained-decline clause plus the L/E breach each force WEAK independently. Thin-history cap applies (STRONG unavailable — moot).
+- **NIBCL** = accounts payable + unearned/contract liabilities only. Income-tax payables and accrued/other provisions (incl. litigation) not separately split in the standardized source → left in CE per burden-of-proof default (conservative; understates NIBCL, overstates CE, further depressing already-failing ROCE — direction noted).
+- **Latest-year CE build (FY2025):** TA 104,541 − AP 7,081 − contract/unearned 3,733 = CE_wc **93,727**; − cash+STI 8,062 = CE_xc **85,665**.
+- **TBV build (FY2025):** equity ex-NCI 25,947 − goodwill 28,061 − other intangibles 20,622 = **−22,736** (matches source cross-check).
+- **EV build (FY2025 B/S, price €47.17 × 982.42m = MCap 46,341):** all-cash-excess: 46,341 + total debt 37,579 (incl. IFRS-16 leases) + pref 0 + NCI 116 − cash+STI 8,062 = **75,974**; no-cash variant **84,036**. Cross-check: Bayer net financial debt €29,843m (release) ≈ total debt − cash+STI + settlement-timing items.
+- **IFRS interest reclassification:** Bayer books interest paid under financing. Valuation-gate FCF uses Bayer's company definition (CFO − capex + interest/dividends received − interest paid) = framework levered FCF: FY2025 **€2,084m**, FY2024 €3,107m (both sourced). B2/B3 use derived CFO − capex (only fully-sourced 5y series) — flattering by ~€1.3–1.7bn/yr of unreclassified net interest; both FCFROCE bases fail P2, so no verdict sensitivity.
+- Leases: all window years post-IFRS-16; lease liabilities inside total debt/CE/L/E. P18 n/a. P20 n/a (no capex super-cycle — capex/sales ~5–6% flat). Goodwill stays in CE (heavily acquisitive). Captive finance: none material. Substitution rule: n/a.
+- **Bias check:** hotness/availability live risk — the name is salient after the +18% Durnell pop and a ~73% 12-month run; handled by anchoring on the B2 record, which is unaffected by the legal news. Confirmation (expected AVOID) mitigated by full-gate completion on sourced data. No bias-born judgment identified.
+
+## D. Future-performance worksheet
+
+Breadth — customers: PASS by inference (three heterogeneous divisions, millions of end payers; wholesaler concentration real in US pharma but improbable >10% of group revenue; AR disclosure sentence not verified — logged as gap). Suppliers: PASS (diversified chemical/API/seed-production base; ready alternatives; China API dependence noted, multiple vendors exist).
+| Force | Call | Reason |
+|---|---|---|
+| Customer bargaining power | **STRONG** | Consolidated ag retail + pharma wholesalers/payers extract price; farmers commodity-squeezed |
+| Supplier bargaining power | WEAK | Fragmented input base, low switching costs |
+| Threat of substitutes | **STRONG** | Generic glyphosate sets crop-chem price; Xarelto LoE, Eylea biosimilars; trait-patent expiries |
+| Threat of new entrants | WEAK | EPA/EMA/FDA registration walls, seeds-R&D scale |
+Tally: **2 strong → Future WEAK** (book stop signal; memo completed per model). Moat: government (registrations) + germplasm/trait ingrainedness — identifiable but **eroding** where profits pool. Market growth: MIXED (pharma up, ag flat/cyclical, CH GDP-like).
+
+## E. Shareholder-friendliness evidence
+
+- P17: top employee CEO W. Anderson FY2025 ≈ **$7.0m ≈ €6.4m** (press-converted from the 2025 Compensation Report; down from €8.84m 2024, €11.24m 2023). Hard-strike test: 5% × lower(FCF €2,084m, NI **−€3,620m**) → negative bound → **strike fires on the letter** (precedent: SHA0 v1, CEO €5.7m vs −€424m NI). FCF-leg-only bound €104m: would pass. Absolute trigger ≈$40m (2026-indexed): pass. BoM aggregate €37.24m + €14.08m pension service cost; SB total €5.21m.
+- Outside directors: German two-tier calibration — SB total €5.21m across ~20 members; chair (Winkeljohann) within DAX norm range; no 2×-norm breach indicated (individual figure not extracted — gap).
+- Insider ownership: negligible executive stakes typical of DAX; SB voluntary share-purchase pledge (25% of fixed fee) noted as mild positive.
+- RPT: none material identified for a free-float DAX AG; no controlling family.
+- P19 worksheet: buybacks de minimis (€14–25m/yr employee-plan flows; share count flat at 982m) — no repurchase program, no sterilization pattern, **no strike**. Acquisition audit: BV ≫ TBV stems from Monsanto (2018, ~$63bn incl. debt) — pre-window, prior management (Baumann exited 2023); computed as historical context only, no current-period strike.
+- Dividends: €0.11 (statutory minimum) 2023–2025 for deleveraging — rational allocation under distress; payout normalization promised only post-litigation.
+
+## F. Valuation math
+
+Price €47.17 (XETRA, 2026-07-16); diluted shares 982.42m; MCap €46,341m.
+- MCap/FCF = 46,341 ÷ 2,084 = **22.2** (≤8 FAIL); on derived FCF 3,443: 13.5 — fails either way.
+- EV/OI = 75,974 or 84,036 ÷ (−1,077) = **n.m.** — FAIL (no positive price passes while OI < 0).
+- MCap/BV = 46,341 ÷ 25,947 = **1.8** (qualifier pass; BV ≫ TBV → acquisition-audit named check, see E). MCap/TBV n.m. (TBV −22,736; not buyback-caused — Monsanto goodwill).
+- **Trigger band: n.m. while OI < 0.** MCap/FCF leg alone: 8 × 2,084 ÷ 982.42 = **€16.97 ≈ €17.0** (context figure, not an operative band). No P12 (Past WEAK). Qualifier prices for context: 3×BV/sh ≈ €79; 3×TBV n.m. Backvaluing declined: litigation-era OI/FCF are not a "prior cycle" — no clean cycle to backvalue to.
+- Distance context: €47.17 ÷ €16.97 − 1 ≈ +178% above the sole computable leg.
+
+## G. Change log
+
+v1 — 2026-07-16 — initial analysis. AVOID (Past WEAK + Future WEAK + SF FAIL P17). Band n.m. while OI < 0; MCap/FCF leg ≈ €17.0. Next review FY2026 results (~Mar 2027); settlement-approval event check H2 2026.
+
+*Framework output, not investment advice.*
