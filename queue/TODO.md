@@ -1,4 +1,4 @@
-# GSC Analysis Queue — TODO.md (v5 · 2026-08-06)
+# GSC Analysis Queue — TODO.md (v6 · 2026-08-07)
 
 **Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
 
@@ -42,7 +42,7 @@
 
 ## Priority — next up
 
-**France block, in list order** (user-set 2026-07-29) — **10 of 16 done**: OR.PA, RMS.PA, CDI.PA, EL.PA, DG.PA, BN.PA, SGO.PA, EDEN.PA, DEC.PA and LR.PA all carry register rows. Next up **Michelin (ML.PA)**, then Sodexo (SW.PA), Bureau Veritas (BVI.PA), Valeo (FR.PA), Lagardère (MMB.PA), Trigano (TRI.PA — key resolved to `TRI.PA` at register v233 §7.1a; `TRI` stays Thomson Reuters). The P19 re-test queue above is REVIEW work and runs alongside this ANALYSE block, not instead of it. Largest coherent blocks after France: US backlog (78), Japan majors (12), Poland (6).
+**France block, in list order** (user-set 2026-07-29) — **16 of 16 done — France block CLOSED**: OR.PA, RMS.PA, CDI.PA, EL.PA, DG.PA, BN.PA, SGO.PA, EDEN.PA, DEC.PA, LR.PA, ML.PA, SW.PA, BVI.PA, FR.PA, MMB.PA and TRI.PA all carry register rows. **Japan majors is the ACTIVE BLOCK** (assumption stated to the user, not user-set — redirectable at any point). In TODO list order: Hitachi ✅, Mitsubishi Heavy ✅, Panasonic ✅, then Nintendo (7974.T), Marubeni (8002.T), Daikin (6367.T), Fanuc (6954.T), Fujitsu (6702.T), Komatsu (6301.T), Seven & i (3382.T), Bridgestone (5108.T), Canon (7751.T). Other coherent blocks: US backlog (78), Poland (6), Finland (4), Denmark (3). The P19 re-test queue above is REVIEW work and runs alongside this ANALYSE block, not instead of it. Largest coherent blocks after France: US backlog (78), Japan majors (12), Poland (6).
 
 *France note.* Six French names already carry register rows from earlier runs — SAF, SAN, MC.PA (LVMH), KER, DSY, SU — and are REVIEW territory, not part of this ANALYSE block. CDI.PA is a ~42% holding company over LVMH (MC.PA, analysed): expect the §2·1A securities-heavy-holdco substitution question at Gate 1A and a MCap/NAV anchor at Gate 2, not a re-underwrite of LVMH.
 
@@ -84,7 +84,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 
 ---
 
-## Backlog by market — 118 names remaining
+## Backlog by market — 109 names remaining
 
 Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed: Switzerland (13/13), Germany (30/30), Netherlands (3/3) at v2; Sweden (25/25) at v3; Italy (6/6) at v4.*
 
@@ -94,10 +94,7 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Fortum — FORTUM.HE
 - Amer Sports — AS (US)  ⚠ (2024 IPO)
 
-### Japan — 12 remaining (Sony completed)
-- Hitachi — 6501.T
-- Mitsubishi Heavy Industries — 7011.T
-- Panasonic — 6752.T
+### Japan — 9 remaining ◄ ACTIVE BLOCK (Sony, Hitachi, Mitsubishi Heavy and Panasonic completed; ASICS, Asahi, TOTO and Mitsubishi Electric also carry register rows)
 - Nintendo — 7974.T
 - Marubeni — 8002.T
 - Daikin — 6367.T
@@ -108,13 +105,7 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 - Bridgestone — 5108.T
 - Canon — 7751.T
 
-### France — 6 remaining ◄ ACTIVE BLOCK (10 of 16 completed as at v5; Safran, Sanofi + LVMH, Kering, Dassault Systèmes, Schneider were already in the register)
-- Michelin — ML.PA
-- Sodexo — SW.PA
-- Bureau Veritas — BVI.PA
-- Valeo — FR.PA
-- Lagardère — MMB.PA
-- Trigano — TRI.PA  ⚑ key collision RESOLVED at register v233 (§7.1a): Trigano keys `TRI.PA`; `TRI` remains Thomson Reuters
+### France — COMPLETE 16/16 as at v6 (Safran, Sanofi + LVMH, Kering, Dassault Systèmes, Schneider were already in the register). Block removed.
 
 ### Brazil
 - Nu Holdings — NU (US)
@@ -236,6 +227,7 @@ Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate n
 ---
 
 ## Change log
+- **v6 — 2026-08-07** — France block continues: **ML.PA (Michelin) completed — AVOID, Past WEAK** (w-o-4 ROCE 8.39%, P4 fires on three straight declines; 5y record-limited because FY2017–20 statements are unretrievable). and **SW.PA (Sodexo) — AVOID on two gates** (w-o-4 ROCE 9.34% *and* three strong forces; 3y history-limited after the Pluxee spin; ⚠ FY2026 guidance removes the trigger band entirely). and **BVI.PA (Bureau Veritas) — WATCH**, the block's first (w-o-4 ROCE 15.15% but capped ADEQUATE by a 5y record-limited window; Future STRONG on a Government moat; capital allocation SOUND). and **FR.PA (Valeo) — AVOID on two gates** (w-o-4 ROCE 4.13%, the lowest of the register's seven automotive names; breadth FAILs on an arithmetic floor and the captive-customer waiver was tested and denied; no positive price clears EV/OI ≤7). and **MMB.PA (Lagardère) — AVOID on two gates** (w-o-4 ROCE 5.11% *and* L/E 980% past the P6 hard cap; three strong forces on segment-level calls; the first register name with **both** EV/OI bounds negative). and **TRI.PA (Trigano) — AVOID on Future alone** (Past ADEQUATE on w-o-4 ROCE 18.24%, cheapness **FAIR**, and **only +7.7% from its band** — the closest name in the whole register, WATCH or AVOID — but a 2-strong-force tally kills Future). **France is CLOSED 16/16 and the block is removed.** 118 → 112 names. **Japan majors opened**: 6501.T (Hitachi) — AVOID, Past WEAK at w-o-4 ROCE 8.42% on a *full* ten-year window (the divestment programme turned out not to restate the record), Gate 0 a near-fail carried only by the per-unit route. 7011.T (Mitsubishi Heavy) — AVOID on two gates, w-o-4 ROCE 5.11% and a P15 breadth FAIL on ≈22.9% MoD revenue, with the captive-customer waiver tested limb-by-limb and denied on the moat limb alone. 6752.T (Panasonic) — AVOID on two gates, w-o-4 ROCE 4.56% and three strong forces, with SF surviving **only because P20 is active** — the first name where the maintenance-capex basis decides shareholder-friendliness rather than the band. 118 → 109 names. ⚠ ML.PA raises a **MODEL item that blocks clean French analysis**: the as-reported-OI-line convention decided this verdict in the *opposite* direction from SGO.PA, so a label-based and a definition-based rule now give opposite economics on two French filers — see the register Open items. The near-term calendar section is still stale (register v173) and still needs a RECONCILE refresh. v5 to be archived → `queue/archive/TODO_v5_2026-08-06.md`.
 - **v5 — 2026-08-06** — **P19 judgment re-test queue added** as a first-class work queue. Tier 1 closed 8/8 on 2026-08-06 — five flips to WATCH (6758.T, 7936.T, SOON.SW, STMN.SW, TRI), three ADVERSE holds (SU.PA, TER, WMT); Tier 2 reduced to AAPL, MA, DLG.MI, PSH.L after NOLA-B.ST and WISE.L ran the same day. France block pruned of 10 completed names (16 → 6). Trigano key collision recorded as resolved at register v233. 128 → 118 names. **The "Scheduled reviews — near-term calendar" section was NOT refreshed** — it still reads against register v173 and is stale; refresh at the next RECONCILE. v4 to be archived → `queue/archive/TODO_v4_2026-07-29.md`.
 - **v4 — 2026-07-29** — Italy block completed 6/6 (MONC, 1913.HK, PIRC, BC, DLG all carry register rows at v173) → block removed. Priority switched to **France, in list order** (user-set). Calendar refreshed against register v173. 133 → 128 names. v3 archived → `queue/archive/TODO_v3_2026-07-28.md`.
 - **v3 — 2026-07-28** — Prune after the Sweden run: PDX, NOLA-B, RUSTA, BILI-A completed → Sweden block removed (25/25 done). Ferrari (RACE) completed → Italy down to 5. Priority set to the Italy block in list order. 138 → 133 names. v2 archived → `queue/archive/TODO_v2_2026-07-25.md`.
