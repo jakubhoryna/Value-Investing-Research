@@ -1,8 +1,16 @@
-# GSC Analysis Queue — TODO.md (v7 · 2026-08-07)
+# GSC Analysis Queue — TODO.md (v8 · 2026-08-09)
 
 **Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
 
 **Ticker discipline.** Tickers below are *suggested* primary listings for convenience only. They are **resolved and verified at analysis time** against the data-source hierarchy (SEC EDGAR / primary annual report / Yahoo), never trusted from this file. A wrong suggestion here costs nothing; a wrong verdict from bad data costs everything — so resolution + a data-completeness check happen per name at run time.
+
+---
+
+## ⛳ QUEUE STATUS — CLOSED (2026-08-09)
+
+**Zero runnable ANALYSE names. Zero open flags requiring analysis.** All 94 names carried in the v7 backlog now hold register rows and committed memos; every market block is closed (see "Backlog — closure record"). The only work this file schedules is **REVIEW work**: the dated re-tests below and the P19 judgment queue.
+
+**One residual token:** ⚑ the "Cartara" line was resolved **by assumption** to Certara (CERT) and analysed. If a different company was intended, the CERT memo stands as a valid extra row and the flag reopens — user confirmation owed.
 
 ---
 
@@ -40,26 +48,36 @@
 
 ---
 
+---
+
 ## Priority — next up
 
-**France block CLOSED 16/16** (user-set 2026-07-29): OR.PA, RMS.PA, CDI.PA, EL.PA, DG.PA, BN.PA, SGO.PA, EDEN.PA, DEC.PA, LR.PA, ML.PA, SW.PA, BVI.PA, FR.PA, MMB.PA, TRI.PA all carry register rows. **Japan majors CLOSED 9/9** at v7 (2026-08-07): 7974.T Nintendo (WATCH), 8002.T Marubeni (WATCH — substitution rule, first sōgō shōsha), 6367.T Daikin, 6954.T Fanuc, 6702.T Fujitsu, 6301.T Komatsu, 3382.T Seven & i, 5108.T Bridgestone, 7751.T Canon (all AVOID). With Sony, Hitachi, MHI, Panasonic, ASICS, Asahi, TOTO and Mitsubishi Electric already carrying rows, the Japan block is complete and removed.
+**REVIEW work only, in date order.** These are the near-dated re-tests where a live event can move a verdict, three of them within nine days of this commit:
 
-**The US backlog is the ACTIVE BLOCK — opened by ASSUMPTION on 2026-08-07, not user-set, and redirectable at any point** (exactly as Japan was). Rationale: it is the largest coherent block (78 at open, 72 now) and the overnight-runner design below names US SEC filers as the deterministic unattended path. Worked in list order; six done (LYFT, LMND, KVYO, OPEN, DLB, TENB — all AVOID), next up **WAY ⚠ → BBWI → BOX → ANF → WRBY ⚠**. Other coherent blocks if redirected: Poland (6), Finland (4), Denmark (3), UK (2), Brazil (2). The P19 re-test queue above is REVIEW work and runs alongside this ANALYSE block, not instead of it.
+1. **7936.T (ASICS) — Q2 FY2026 tanshin, 14 Aug 2026.** Article 459 board authority means a new buyback programme can appear with no advance notice; the P19 judgment that flipped this name to WATCH is the thing being re-tested.
+2. **TRI (Thomson Reuters) — NCIB expiry, 18 Aug 2026.** The renewal price is the re-test; a renewal at current multiples is the CAUTION→ADVERSE risk.
+3. **STMN.SW (Straumann) — H1-2026, 19 Aug 2026.** Treasury-share movement against a name with no live programme.
+4. **INTU (Intuit) — FY2026 results, ~21 Aug 2026.** New WATCH row; the FY2026 tranche prices decide whether P19 CAUTION holds at 35–46× or turns.
+5. **SOON.SW ~Nov 2026 · 6758.T H1 10 Nov 2026** — the remaining two Tier-1 flip-reversion watches.
 
-*France note.* Six French names already carry register rows from earlier runs — SAF, SAN, MC.PA (LVMH), KER, DSY, SU — and are REVIEW territory, not part of this ANALYSE block. CDI.PA is a ~42% holding company over LVMH (MC.PA, analysed): expect the §2·1A securities-heavy-holdco substitution question at Gate 1A and a MCap/NAV anchor at Gate 2, not a re-underwrite of LVMH.
+**Re-seeding the ANALYSE queue is a user decision.** Three candidate directions, in the order they would add most:
+
+- **(a) Run the named re-test backlog as REVIEW work.** The register's Open items now carry a large named queue — P19 dual-reads, acquisition-audit INDETERMINATEs, P4 third-decline tests, window-roll Past re-tests (DLB ~Nov 2026, WDAY and DBX ~FY2028), and the SF re-test tiers. This is the highest-value work per hour because every name already has a memo, so each run is a delta, not a build.
+- **(b) A corporate-actions sweep of the full register** — owed at the next RECONCILE regardless: delistings, renames, re-keys (BBBY→NXH is already pending), spin-offs and closed deals across 304 names. Cheap, mechanical, and it prevents the register from quietly rotting.
+- **(c) A new ANALYSE market block.** Coherent untouched universes: Canada, Australia, Korea/Taiwan beyond the two names held, India, the US mid-cap industrial tail (the automation-thesis adjacency), or the European small-cap compounders. **Note the standing screen-at-queue-stage rule from this batch: regulated utilities should not be seeded** — NEE, IBE.MC, SRE, FORTUM.HE and ORSTED.CO all fail Past structurally, by design of their capital base, and cost full ANALYSE budget to reach a foregone conclusion.
 
 ---
 
 ## Scheduled reviews — near-term calendar
 
-*Refreshed 2026-07-29 against register v173 row cells and Open items — non-authoritative, the register wins; refresh at RECONCILE/SWEEP touches. Dated triggers only; price-alert triggers live in the rows.*
+*Refreshed 2026-08-09 against register **v248** row cells — this clears the staleness carried since v5 (which read against v173). Non-authoritative: the register wins. Dated triggers only; price-alert triggers live in the rows.*
 
-**Jul 2026 (imminent):** HEXA-B Q2 interim 29 Jul — first clean post-Octave basis, re-base Past + Cheapness · AMZN Q2 30 Jul (AWS growth/capex) · NKE FY2026 10-K re-anchor · INPST offer closed 27 Jul (settlement H2 → delist, archive row).
-**Aug 2026:** ROK Q3 4 Aug opt. · NOVO-B H1 5 Aug (band only; held) · CROX Q2 6 Aug opt. (held) · CSG H1 7 Aug (FCF/leverage/Ammo+) · TEAM FY2026 10-K (OI inflection + P19) · BABA FY27 Q1 · ADYEN H1 · PAH3 H1 · BNR H1 opt. · BYD H1 opt. · GAP Q2 ~26 Aug.
-**Sep 2026:** CRM Q2 FY27 ~2 Sep opt. · LULU Q2 (O'Neill's first quarter) · COST FY2026 P19 re-test (FY21–25 all >20×) · NKE proxy (Hill + Denton comp) · SAF H1 · ORCL Q1 FY27 · EA deal outside date 28 Sep (close → delist; lapse → REVIEW).
-**Oct–Nov 2026:** MU 10-K ~Oct · AAPL 10-K ~Oct/Nov (SF comp flip check) · QCOM 10-K ~Nov (FY26 buyback re-test) · ROK 10-K ~Nov (buyback discipline) · V 10-K ~Nov (P15 11%-client + comp) · SONY H1 ~Nov (¥500bn facility, P19) · EKTA-B H1 ~Nov · SCHN repurchase-cessation watch (programme to Nov 2026).
-**Dec 2026 / Q4 events:** ENR FY2026 AR (first clean-cycle year + P19 €2bn/€6bn) · SIE FY2026 (buyback re-test; Feb 2027 AGM spin vote → full re-base) · SKF-B Automotive Lex Asea separation ~Q4 (resets basis, both entities re-underwritten) · TKA / TUI1 FY2026 ARs informational.
-**Q1–Q2 2027 — FY2026 annual season:** bulk of the WATCH list re-anchors (all four held names incl. HFG/NOVO-B decisions if still open) plus the named re-test queue — P19 dual-read (SCHN, GEBN, SAF, TER, MORN, GRMN, SU), acquisition-audit INDETERMINATEs (FIE Shopko, ASSA-B HHI, ESSITY-B BSN, GETI-B Paragonix, EPI-A Stanley, MYCR cohort, KRN Netstal), P4 third-decline tests (INDT, SKF-B), ONON arithmetic flip check, CON tyre re-basis, SHA0/BAYN P17 columns, MA comp (Apr 2027 proxy), worth-check flag-clears (CROX, BKNG, AD), PIRC control determination (Camfin–MPI agreement lapsed 28 Feb 2026), MONC FY2016–20 record rebuild (CDN-blocked, cap liftable) — **detail: register `## Open items`.**
+**Aug 2026 (imminent):** **7936.T Q2 tanshin 14 Aug** (P19 re-test, no advance notice) · **TRI NCIB expiry 18 Aug** (renewal price) · **STMN.SW H1 19 Aug** (treasury movement) · **ZIP.AX FY26 Appendix 4E 20 Aug** (P19 re-test on the live Feb-26 programme + P17 re-read) · **INTU FY2026 ~21 Aug** · GAP Q2 ~26 Aug · ABNB Q2 10-Q 12 Aug (cadence) · BABA FY2027 Q1 · ADYEN.AS H1 · PAH3.DE H1 mid-Aug · WMT Q2 FY27 10-Q · TEAM FY2026 10-K (OI inflection + P19 on the $1.5bn 2024 programme) · CELH Q2 10-Q · RUSTA.ST AR 25/26 · BNR.DE H1 (optional) · 1211.HK H1 (optional) · NET Q2 2026 (6 Aug, out — fold in at next touch) · ZBRA Q2 2026 (4 Aug record print, not folded in).
+**Sep 2026:** **FDS FY2026 results ~Sep** (first Viswanathan-era print; the make-whole SCT is the named P17 strike risk) · **PANW FY2026 10-K ~Sep** (first CyberArk-consolidated statements) · **UFI FY2026 10-K ~Sep** · CRM Q2 FY27 ~2 Sep (optional) · LULU Q2 ~Sep (O'Neill's first quarter) · NKE Q1 FY2027 10-Q ~Sep/Oct + Sept proxy (dated second-flag risk) · RUSTA.ST AGM ~Sep (P19 authorisation watch) · **EA deal outside date 28 Sep** — close → row terminal/archive; lapse → full REVIEW at the de-pinned price.
+**Oct 2026:** **COST FY2026 10-K ~early Oct** (completed programme year; Jan-2027 authorisation expiry is the natural re-test) · MU FY2026 10-K ~Oct (band re-anchor only — structural) · TER Q3 10-Q ~Oct · MSFT FY2026 proxy ~Oct (P17 absolute-trigger flag) · EL.PA Q3 20 Oct (informational) · **SW.PA FY2026 results 23 Oct** (guided 3.2–3.4% margin removes the band entirely; P4 + P19 re-test) · AAPL FY2026 10-K ~Oct/Nov (SF flip needs comp reform).
+**Nov 2026:** **6758.T H1 FY3/27 10 Nov** (first completed half of the ¥500bn facility — the §2·1C·3 re-test) · SOON.SW H1 FY26/27 ~Nov (successor-programme watch) · **DLB FY2026 10-K ~Nov** (window-roll re-test of a bound-proof Past WEAK at 9.1–9.9% against the 10% floor — the most interesting near-dated flip in the file) · QCOM FY2026 10-K ~Nov (FY26 tranche; band re-anchors on a falling base) · ROK FY2026 10-K ~Nov (completed programme year) · V FY2026 10-K ~Nov (the 11%-client disclosure) · ATKR FY2026 10-K ~Nov · AZTA FY2026 ~Nov · SONO FY2026 10-K ~Nov · COLO-B.CO FY2025/26 ~Nov (L/E exactly at the P5 line) · 7974.T Q2 FY3/27 ~Nov · 8002.T H1 FY3/27 ~Nov · EKTA-B.ST H1 ~Nov · WISE.L H1 FY2027 ~Nov (the £405m tranche price) · **TRI.PA FY2026 results ~25 Nov** (first buyback year; the register's closest AVOID at +7.7% from band) · SCHN.SW repurchase-cessation watch (programme runs to Nov 2026) · PANW 2026 proxy ~Nov.
+**Dec 2026 / Q4 events:** ENR.DE FY2026 AR ~Dec (first clean-cycle year + P19 re-test of the €2bn/€6bn programme) · SIE.DE FY2026 ~Dec (tranche + CAUTION re-test; the Feb-2027 AGM Healthineers spin vote forces a full quality re-base) · SKF-B.ST Automotive Lex Asea separation ~Q4 (resets the basis; both entities re-underwritten) · TKA.DE and TUI1.DE FY2026 ARs (informational) · INPST.AS settlement H2 2026 → delist, archive the row · BAYN.DE Roundup class-settlement approval + post-Durnell provisioning (H2 2026).
+**Q1–Q2 2027 — FY2026 annual season:** the bulk of the 68-name WATCH list re-anchors, including all four held names (and the HFG / NOVO-B decisions if still open), plus the named re-test queue — P19 dual-reads (SCHN.SW, GEBN.SW, SAF.PA, TER, MORN, GRMN, SU.PA), acquisition-audit INDETERMINATEs (FIE.DE Shopko, ASSA-B.ST HHI, ESSITY-B.ST BSN, GETI-B.ST Paragonix, EPI-A.ST Stanley, MYCR.ST cohort, KRN.DE Netstal), P4 third-decline tests (INDT.ST, SKF-B.ST, CELH), **EQNR FY2026 ~Feb 2027 — the P4-break that would flip a name whose shadow P12 edge already sits at the print**, ABEV FY2026 + the band-moving FCF tie-out, NU FY2026, CATL FY2026 AR (the customer-concentration table is Future-deciding), ADBE FY2026 10-K ~Jan, and the FY2027 10-K cluster from this batch (CRWD, SNOW, OKTA, PATH, S, WDAY ~Mar 2027) — **detail: register `## Open items`.**
 
 ---
 
@@ -86,138 +104,35 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 
 ---
 
-## Backlog by market — 94 names remaining
+---
 
-Recent IPOs / spin-offs (thin public history) are marked ⚠ — the Past gate needs several years of data; these may auto-flag `INCOMPLETE` or Past = WEAK on insufficient history. *Completed markets removed: Switzerland (13/13), Germany (30/30), Netherlands (3/3) at v2; Sweden (25/25) at v3; Italy (6/6) at v4.*
+## Backlog — closure record
 
-### Finland — 4 remaining (Kone completed)
-- Nokia — NOKIA.HE
-- Neste — NESTE.HE
-- Fortum — FORTUM.HE
-- Amer Sports — AS (US)  ⚠ (2024 IPO)
+*Kept as a record of what was worked, not as a queue. Every name below carries a register row and a committed memo.*
 
-### Japan — COMPLETE 9/9 as at v7 (Sony, Hitachi, Mitsubishi Heavy, Panasonic, ASICS, Asahi, TOTO and Mitsubishi Electric were already in the register). Block removed.
-
-### France — COMPLETE 16/16 as at v6 (Safran, Sanofi + LVMH, Kering, Dassault Systèmes, Schneider were already in the register). Block removed.
-
-### Brazil
-- Nu Holdings — NU (US)
-- Ambev — ABEV (US ADR) / ABEV3.SA
-
-### Poland
-- Orlen — PKN.WA
-- Allegro — ALE.WA
-- Żabka — ZAB.WA  ⚠ (2024 IPO)
-- Dino Polska — DNP.WA
-- CD Projekt — CDR.WA
-- Asseco Poland — ACP.WA
-
-### United Kingdom — 2 remaining (Wise completed)
-- BAE Systems — BA.L
-- Haleon — HLN.L  (2022 GSK spin-off)
-
-### United States — 72 remaining ◄ ACTIVE BLOCK (Gen Digital, Unity, DocuSign completed earlier; Lyft, Lemonade, Klaviyo, Opendoor, Dolby and Tenable completed 2026-08-07 — all AVOID; dup lines removed)
-- Waystar — WAY  ⚠ (2024 IPO)
-- Bath & Body Works — BBWI
-- Box — BOX
-- Abercrombie & Fitch — ANF
-- Warby Parker — WRBY  ⚠ (2021 direct listing)
-- Fastly — FSLY
-- Upstart — UPST
-- Magnite — MGNI
-- Sunrun — RUN
-- Steve Madden — SHOO
-- SoundHound AI — SOUN  ⚠ (thin history)
-- Freshworks — FRSH
-- Visteon — VC
-- Grindr — GRND  ⚠ (2022 SPAC)
-- Under Armour — UAA
-- Chemours — CC
-- Harley-Davidson — HOG
-- Cohu — COHU
-- Ducommun — DCO
-- Peloton — PTON
-- Calix — CALX
-- Ingevity — NGVT
-- Whirlpool — WHR
-- Payoneer — PAYO
-- Atkore — ATKR
-- Coty — COTY
-- Sonos — SONO
-- Fortrea — FTRE  ⚠ (2023 Labcorp spin-off)
-- Arteris — AIP  ⚠ (2021 IPO)
-- Teladoc Health — TDOC
-- Revolve Group — RVLV
-- Coursera — COUR
-- Tripadvisor — TRIP
-- TriMas — TRS
-- Enovis — ENOV
-- Wendy's — WEN
-- Carter's — CRI
-- Olaplex — OLPX  ⚠ (2021 IPO)
-- Winmark — WINA
-- Ameresco — AMRC
-- XPEL — XPEL
-- Biglari Holdings — BH
-- Arhaus — ARHS  ⚠ (2021 IPO)
-- Azenta — AZTA
-- "Cartara" — ⚑ unresolved (no known US listing under this spelling; confirm name/ticker)
-- Cricut — CRCT
-- Transcat — TRNS
-- Hyliion — HYLN
-- Ceribell — CBLL  ⚠ (2024 IPO)
-- Udemy — UDMY
-- Bed Bath & Beyond — ⚑ original bankrupt; brand now under Beyond Inc (BYON). Confirm which entity
-- Unifi — UFI
-- Arq — ARQ
-- Palo Alto Networks — PANW
-- CrowdStrike — CRWD
-- Cloudflare — NET
-- Snowflake — SNOW
-- Datadog — DDOG
-- Adobe — ADBE
-- Intuit — INTU
-- Workday — WDAY
-- Twilio — TWLO
-- Zoom — ZM
-- Okta — OKTA
-- Zebra Technologies — ZBRA
-- Figma — FIG  ⚠ (2025 IPO)
-- FactSet — FDS
-- Compass — COMP
-- Mobileye — MBLY  ⚠ (2022 IPO)
-- Dropbox — DBX
-- SentinelOne — S
-- UiPath — PATH
-
-### Energy
-- CATL — 300750.SZ (Shenzhen); 2025 HK dual-listing
-- NextEra Energy — NEE
-- Iberdrola — IBE.MC
-- Equinor — EQNR
-- Sempra — SRE
-
-### Denmark
-- Ørsted — ORSTED.CO
-- Coloplast — COLO-B.CO
-- Rockwool — ROCK-B.CO
+- **Switzerland 13/13** (v2) · **Germany 30/30** (v2) · **Netherlands 3/3** (v2) · **Sweden 25/25** (v3) · **Italy 6/6** (v4) · **France 16/16** (v6) · **Japan majors 9/9** (v7).
+- **Finland 4/4** (v8): NOKIA.HE, NESTE.HE, FORTUM.HE, AS.
+- **Poland 6/6** (v8): PKN.WA, ALE.WA, ZAB.WA, DNP.WA, CDR.WA, ACP.WA.
+- **United Kingdom 2/2** (v8): BA.L, HLN.L.
+- **Denmark 3/3** (v8): ORSTED.CO, COLO-B.CO, ROCK-B.CO.
+- **Brazil 2/2** (v8): NU, ABEV — the backlog's only all-WATCH block.
+- **Energy 5/5** (v8): 300750.SZ, NEE, IBE.MC, EQNR, SRE — 0 WATCH; EQNR the near-miss, failed by P4 alone.
+- **United States 72/72** (v8), closed across seven runs on 07–09 Aug 2026. Struck rather than analysed: **UDMY** and **OLPX** (dead listings), **ZM** (duplicate — row and memo already existed at v247).
 
 ---
 
-## Flags — confirm before analysis
+## Flags — all resolved
 
-- **"Cartara"** — no known US listing under this spelling; confirm intended name/ticker.
-- **Bed Bath & Beyond** — original bankrupt; brand now under Beyond Inc (BYON). Confirm entity.
-- **Trigano** — RESOLVED at register v233 under MODEL §7.1a (suffix-always for non-US lines): Trigano keys `TRI.PA`, Thomson Reuters keeps the bare US key `TRI`. No action needed at analysis time.
-- **Thin-history names** (⚠ throughout) — recent IPOs/spin-offs may not clear the Past gate; expect `INCOMPLETE` or Past = WEAK on insufficient data.
+- **"Cartara"** — ⚑ **RESOLVED BY ASSUMPTION → Certara (CERT)**, analysed 2026-08-09 (AVOID, two gates). No listing exists under the queue's spelling anywhere; the only near-match in the world is Cartiere Carrara, a private Italian tissue maker. **User confirmation owed** — if a different company was meant, the flag reopens and the CERT memo simply stands as an extra row.
+- **Bed Bath & Beyond** — **RESOLVED BY EVIDENCE**, analysed 2026-08-09 as **BBBY** (AVOID, three gates). The 2023 Ch. 11 estate is dead; the brand IP went to Overstock.com, which renamed to Beyond, Inc. and then in Aug 2025 to Bed Bath & Beyond, Inc., reclaiming NYSE: BBBY. ⚠ A further rename to **Neighborhood Intelligence (Nasdaq: NXH)** is announced — key frozen at BBBY per §7.1a until effective; the re-key is a RECONCILE act, logged in the register change log.
+- **Trigano** — RESOLVED at register v233 under §7.1a: Trigano keys `TRI.PA`, Thomson Reuters keeps the bare US key `TRI`.
+- **Thin-history names** — the ⚠ convention retires with the queue; recent IPOs and spin-offs produced Past WEAK or record-limited windows exactly as expected (FIG 4y, PATH 6y, S 7y, MBLY 4y in this batch).
 
 ---
 
 ## Change log
+- **v8 — 2026-08-09** — **THE ANALYSIS QUEUE IS CLOSED.** The 94-name v7 backlog is fully worked: 62 names committed at register v247 (Poland 6, US 07-Aug evening 6 + night 6, Finland 4, US 08-Aug 10 + evening 10 + night 10, Denmark 3, UK 2, US 09-Aug morning 9), and the final 29 in this commit (US afternoon 20, Brazil 2 + Energy 5, flag-resolution 2). Every market block is closed: Finland 4/4, Poland 6/6, UK 2/2, Denmark 3/3, Brazil 2/2, Energy 5/5, United States 72/72. Three flags actioned: **ZM** was a duplicate (row and memo already existed) and is struck; **Bed Bath & Beyond** resolved by evidence — the 2023 Ch. 11 estate is dead, the brand IP sits with the former Overstock.com, renamed Beyond, Inc. and then in Aug 2025 renamed Bed Bath & Beyond, Inc. reclaiming NYSE: BBBY — one analysable entity, analysed, AVOID on three gates, with a further rename to Neighborhood Intelligence (Nasdaq: NXH) pending as a RECONCILE re-key; **"Cartara"** resolved by assumption to **Certara (CERT)** — no listing exists under the queue's spelling, CERT is edit-distance 2 and sector-adjacent to its queue neighbours, analysed, AVOID on two gates — **the one residual token in this file is the user's confirmation that CERT was the intended name.** UDMY and OLPX were struck earlier as dead listings. The near-term calendar is **refreshed against register v248** — the staleness carried since v5 (register v173) is cleared. Only REVIEW work is now runnable; three dated re-tests fall within nine days of this commit (7936.T 14 Aug, TRI 18 Aug, STMN.SW 19 Aug, then INTU 21 Aug). **Re-seeding the ANALYSE queue is a user decision** — see "Priority" for the three candidate directions. v7 archived → `queue/archive/TODO_v7_2026-08-07.md`.
 - **v7 — 2026-08-07** — **Japan majors CLOSED 9/9** (2026-08-07 cloud session): 7974.T Nintendo and 8002.T Marubeni **WATCH** (Marubeni the register's first sōgō shōsha, run on the §2·1A substitution rule); 6367.T Daikin, 6954.T Fanuc, 6702.T Fujitsu, 6301.T Komatsu, 3382.T Seven & i, 5108.T Bridgestone and 7751.T Canon **AVOID** — every one of the seven on Past WEAK, and 3382.T additionally on an SF FAIL flag pair (¥2tn criterion-free programme + the 2024–25 control-contest governance negative). Canon was the closest of the run at +133%. Block removed. 109 → 100 names. **US backlog opened as the ACTIVE BLOCK by assumption** (not user-set — redirectable, exactly as Japan was; rationale is the block's size and the overnight-runner note naming US SEC filers as the deterministic unattended path), and the first six ran the same day, all **AVOID**: LYFT and OPEN and LMND on three or two gates each, KVYO and TENB on Past WEAK with SF FAIL flag pairs, and **DLB the near-miss** — a bound-proof w-o-4 ROCE of 9.1–9.9% against the 10% floor, on a real ingrainedness moat at 13× FCF, which makes its **FY2026 10-K (~Nov 2026) window-roll the most interesting near-dated re-test in the file**. Four SF FAILs in six names: LMND and OPEN on P17 hard strikes (OPEN's is a $741m CEO package), KVYO and TENB on P17-plus-buyback pairs. 100 → **94 names**; US 78 → 72. All fifteen memos and register v246 committed in one batch on 2026-08-07. The near-term calendar section is **still stale** (reads against register v173) — RECONCILE refresh still owed, carried from v5/v6. v6 archived → `queue/archive/TODO_v6_2026-08-07.md`.
 - **v6 — 2026-08-07** — France block continues: **ML.PA (Michelin) completed — AVOID, Past WEAK** (w-o-4 ROCE 8.39%, P4 fires on three straight declines; 5y record-limited because FY2017–20 statements are unretrievable). and **SW.PA (Sodexo) — AVOID on two gates** (w-o-4 ROCE 9.34% *and* three strong forces; 3y history-limited after the Pluxee spin; ⚠ FY2026 guidance removes the trigger band entirely). and **BVI.PA (Bureau Veritas) — WATCH**, the block's first (w-o-4 ROCE 15.15% but capped ADEQUATE by a 5y record-limited window; Future STRONG on a Government moat; capital allocation SOUND). and **FR.PA (Valeo) — AVOID on two gates** (w-o-4 ROCE 4.13%, the lowest of the register's seven automotive names; breadth FAILs on an arithmetic floor and the captive-customer waiver was tested and denied; no positive price clears EV/OI ≤7). and **MMB.PA (Lagardère) — AVOID on two gates** (w-o-4 ROCE 5.11% *and* L/E 980% past the P6 hard cap; three strong forces on segment-level calls; the first register name with **both** EV/OI bounds negative). and **TRI.PA (Trigano) — AVOID on Future alone** (Past ADEQUATE on w-o-4 ROCE 18.24%, cheapness **FAIR**, and **only +7.7% from its band** — the closest name in the whole register, WATCH or AVOID — but a 2-strong-force tally kills Future). **France is CLOSED 16/16 and the block is removed.** 118 → 112 names. **Japan majors opened**: 6501.T (Hitachi) — AVOID, Past WEAK at w-o-4 ROCE 8.42% on a *full* ten-year window (the divestment programme turned out not to restate the record), Gate 0 a near-fail carried only by the per-unit route. 7011.T (Mitsubishi Heavy) — AVOID on two gates, w-o-4 ROCE 5.11% and a P15 breadth FAIL on ≈22.9% MoD revenue, with the captive-customer waiver tested limb-by-limb and denied on the moat limb alone. 6752.T (Panasonic) — AVOID on two gates, w-o-4 ROCE 4.56% and three strong forces, with SF surviving **only because P20 is active** — the first name where the maintenance-capex basis decides shareholder-friendliness rather than the band. 118 → 109 names. ⚠ ML.PA raises a **MODEL item that blocks clean French analysis**: the as-reported-OI-line convention decided this verdict in the *opposite* direction from SGO.PA, so a label-based and a definition-based rule now give opposite economics on two French filers — see the register Open items. The near-term calendar section is still stale (register v173) and still needs a RECONCILE refresh. v5 to be archived → `queue/archive/TODO_v5_2026-08-06.md`.
 - **v5 — 2026-08-06** — **P19 judgment re-test queue added** as a first-class work queue. Tier 1 closed 8/8 on 2026-08-06 — five flips to WATCH (6758.T, 7936.T, SOON.SW, STMN.SW, TRI), three ADVERSE holds (SU.PA, TER, WMT); Tier 2 reduced to AAPL, MA, DLG.MI, PSH.L after NOLA-B.ST and WISE.L ran the same day. France block pruned of 10 completed names (16 → 6). Trigano key collision recorded as resolved at register v233. 128 → 118 names. **The "Scheduled reviews — near-term calendar" section was NOT refreshed** — it still reads against register v173 and is stale; refresh at the next RECONCILE. v4 to be archived → `queue/archive/TODO_v4_2026-07-29.md`.
 - **v4 — 2026-07-29** — Italy block completed 6/6 (MONC, 1913.HK, PIRC, BC, DLG all carry register rows at v173) → block removed. Priority switched to **France, in list order** (user-set). Calendar refreshed against register v173. 133 → 128 names. v3 archived → `queue/archive/TODO_v3_2026-07-28.md`.
-- **v3 — 2026-07-28** — Prune after the Sweden run: PDX, NOLA-B, RUSTA, BILI-A completed → Sweden block removed (25/25 done). Ferrari (RACE) completed → Italy down to 5. Priority set to the Italy block in list order. 138 → 133 names. v2 archived → `queue/archive/TODO_v2_2026-07-25.md`.
-- **v2 — 2026-07-25** — RECONCILE prune: 75 completed names removed (all of CH 13, DE 30, NL 3; SE 21; FI Kone; JP Sony; FR SAF+SAN; UK Wise; US GEN/U/DOCU + priority GEN/TER; dup lines dropped). 4 flags resolved (Uniper→UN0, INNIO→INIO, Synlab→SYAB DNAF, Covestro→1COV — all analysed). Trigano/TRI collision flagged. Added near-term review calendar (derived from register v149). 138 names remain. v1 archived → `queue/archive/TODO_v1_2026-07-15.md`.
-- **v1 — 2026-07-15** — File created. Seeded with priority names (Gen Digital, Teradyne) + long backlog by market. Overnight-runner design sketch recorded for later build.
