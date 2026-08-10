@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v250
-register_date: 2026-08-10
+register_version: v251
+register_date: 2026-08-11
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 304
-verdict_split: "WATCH 68 · AVOID 235 · BUY 0 · DNAF 1"
+names_total: 305
+verdict_split: "WATCH 68 · AVOID 236 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v250 · 2026-08-10)
+# GSC Register — Master Watchlist (v251 · 2026-08-11)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -109,7 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 235 names, alphabetical
+### AVOID — 236 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -246,6 +246,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KNEBV.HE (was KNEBV) | KONE Oyj | 2026-07-31 | v2 | AVOID (SF FAIL: 2 flags — cap-allocation CAUTION on TKE + entrenchment structure) | ADEQUATE | STRONG | FAIL | €50.10 KONE B (31 Jul 2026) | Standalone CHEAP ≈ €16.3–17.1 (EV/OI no-cash/all-cash; MCap/FCF leg €17.9 above both; no P12) — EXPENSIVE 19.8×/20.1×. **Pro-forma band required post-close** | — | TKE block-or-close (EU review to ~mid-2027) → flips WATCH if blocked, both flags fall together; FY2026 (~Jan 2027); H1-2026 rpt |
 | KRN.DE (was KRN) | Krones AG | 2026-07-24 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €110.60 (23 Jul 2026) | CHEAP < ≈ €66.1 (MCap/FCF; EV/OI leg ≈ €86.4, cons EV; no P12) — FAIR 13.4×/8.8× | — | FY2026 AR (~Mar 2027) — window roll flips Past ≥10%; alert < ≈ €75 |
 | KVYO | Klaviyo, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL (flag pair: P17 normalized-read breach ≈$8.5m vs $7.75m line + cap-alloc CAUTION, buybacks 38–61× FCF) | $16.73 (6 Aug 2026) | n.m. — no positive price clears EV/OI ≤ 7 (OI < 0); MCap/FCF leg ref ≈ $5.2 | — | FY2026 10-K (~Feb 2027): OI-inflection (TTM −$26m); exact-SCT P17 re-test; Shopify RPT retrieval; ISIN verify |
+| KWY | Kingsway Corporation | 2026-08-11 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL (P17 hard strike — more-than-token pay vs both owner-earnings legs negative FY2025) | $10.04 (10 Aug 2026) | n.m. — no positive price clears the primaries (FY25 OI & FCF < 0); MCap/BV 19–22× context — EXPENSIVE | — | FY2026 10-K (~Mar 2027): OI/FCF-inflection test — band computes if OI > 0; tier-2 tie-out + 10y rebuild flag |
 | LIGHT.AS (was LIGHT) | Signify N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €15.98 (23 Jul 2026) | CHEAP < ≈ €8.1 (EV/OI, cons EV; no P12) — FAIR 9.6×/5.0× | — | FY2026 AR (~Feb 2027) re-tests quality gates; P19 2022 flag logged |
 | LIN | Linde plc | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P19 buybacks) | WEAK | STRONG | FAIL | $522.97 | CHEAP < ≈ $81 (EV/OI, consv EV, GW-laden CE; MCap/FCF leg ≈ $86; no P12) — EXPENSIVE ~30× | — | FY2026 10-K (~Feb 2027) + 2027 proxy re-test P19; Past-WEAK structural (worst-of-4 ROCE ~8%) |
 | LISN.SW (SIX; PS LISP; ~10:1; was LISN) | Chocoladefabriken Lindt & Sprüngli AG | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | CHF 95,100 reg / CHF 9,320 PC (31 Jul 2026) | CHEAP ≈ CHF 16,700 reg (≈1,670 PC; MCap/FCF on normalized 10y FCF binds; EV/OI leg ≈ 21,600; P12 immaterial) — EXPENSIVE 23.7×/24.4× | — | FY2026 (~Mar 2027): first full yr of the CHF 1bn 2026–29 pgm + judgment re-test; predecessor completed early 9 Apr 2026 and was replaced at twice the size |
@@ -470,9 +471,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v251 — 2026-08-11** — KWY ANALYSE v1: AVOID (Past WEAK + Future WEAK + SF FAIL: P17 both-legs-negative strike); worst-of-4 ROCE −0.3%, L/E ≈1,300%; band n.m. Names 305, AVOID 236.
 - **v250 — 2026-08-10** — EQNR v2 (clean ANALYSE): AVOID (Past WEAK, P4) reaffirmed; FY25 FCF tie-out closed $5.98–6.87bn → band cut to ≈$20–23 (was $24.7–31.5), FAIR→EXPENSIVE; P19 SOUND on CMD-2026.
 - **v249 — 2026-08-09** — NET v2 + ZBRA v2 REVIEW: both AVOID unchanged (3 gates / Future). ZBRA band ≈$41–44 → ≈$68–72 on TTM OI $858m; NET $1,293m converts now current.
 - **v248 — 2026-08-09** — 29-name backlog committed (US afternoon 20 · Brazil+Energy 7 · flag-resolution 2). **WATCH** ABEV, ADBE, FDS, INTU, NU; 24 AVOID (13 SF FAIL). Names 304, WATCH 68, AVOID 235.
 - **v248 — 2026-08-09** — Queue CLOSED — backlog empty (ZM dup struck; BB&B→BBBY analysed; ⚑ "Cartara"→CERT by assumption, confirm owed). NU Dist recomputed +188%→+191%; AVOID table rule repaired.
-- **v247 — 2026-08-09** — RECONCILE: 62-name backlog committed (8 runs, PL/US/FI/DK/UK). **WATCH** CRCT, COLO-B.CO, BA.L, DNP.WA, ROCK-B.CO; 57 AVOID (33 SF FAIL). Names 275, WATCH 63, AVOID 211.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
