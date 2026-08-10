@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v248
+register_version: v249
 register_date: 2026-08-09
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 304
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v248 · 2026-08-09)
+# GSC Register — Master Watchlist (v249 · 2026-08-09)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -266,7 +266,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
 | NEE | NextEra Energy, Inc. | 2026-08-09 | v1 | AVOID | WEAK | STRONG | PASS (structural CAUTION unpaired) | $84.65 (7 Aug 2026) | n.m. — both EV/OI bounds negative (−$25.00 no-cash / −$23.62 all-cash); price needs OI ≈ $41.0bn | — | Structural utility (ROCE 3–5%; Σ7y FCF ≈ −$70bn); largest MMB.PA-class instance; no flip path |
 | NESTE.HE | Neste Oyj | 2026-08-07 | v1 | AVOID | WEAK | **WEAK** | PASS (1 flag — cap-alloc CAUTION: supercycle FIDs + Martinez impairment; state ~36% unpaired) | €28.41 (7 Aug 2026) | n.m.-negative on FY25 basis (EV/OI no-cash bound −€2.16 — debt > 7×OI; MCap/FCF leg €8.59; backvalued 2022-cycle leg ≈ €14.21, labelled) | — | FY2026 (~Feb 2027): RD margin vs the capacity glut; **2 gates** — flip needs a full margin cycle cleared + per-share record restored (ΔOI/sh −8.8%/yr) |
-| NET | Cloudflare, Inc. | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | FAIL (P17 strike $61m + $60m twin; P19 CAUTION) | $300.27 (7 Aug 2026) | n.m. — no positive OI in any year; even at FCF-level OI the no-cash bound is negative; price needs OI ≈ $15.8bn | — | 3 gates; L/E 314%; FY2026 10-K; Q2 2026 (6 Aug) out — fold in at next touch |
+| NET | Cloudflare, Inc. | 2026-08-09 | v2 | AVOID | WEAK | ADEQUATE | FAIL (P17 strike $61m + $60m twin; P19 CAUTION) | $300.27 (7 Aug 2026) | n.m. — no positive OI in any year; positive nc bound needs OI > ≈$467m; price needs OI ≈ $15.1bn ac / $15.7bn nc | — | 3 gates; L/E 300%; H1'26 OI −$268m incl. $151m restr., ex-restr. −$117m vs −$121m; $1,293m converts now CURRENT; Q3'26 ~Nov + FY26 10-K |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
 | NGVT | Ingevity Corporation | 2026-08-08 | v1 | AVOID | WEAK | WEAK | PASS (1 flag — P19 CAUTION: caprolactone written off, course changed; **P17 INDETERMINATE — SCT owed, ceilings $13.68m/$7.00m = live pair risk**) | $73.11 (31 Jul 2026) | n.m. — FY25 OI −$44m; TTM EV/OI bounds both negative (−$22.51/−$19.67 — debt > 7×OI); FY25 MCap/FCF 9.2× on transition-year FCF, labelled | — | 3-gate AVOID; w-o-4 ROCE 4.90%, L/E 5,458% (impairment-crushed equity); FY2026 10-K = first New-Ingevity perimeter year + P17 retrieval |
 | NOKIA.HE | Nokia Oyj | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: criterion-free buybacks alongside dilutive strategic issuance) | €8.156 (7 Aug 2026) | CHEAP ≈ €0.48–0.76 (EV/OI no-cash / MCap-FCF all-cash; FY25 basis — the AI re-rating vs a €0.9bn reported-OP year) | — | FY2026 (~Jan 2027): €2.0–2.5bn comparable-OP guide vs the reported line; 5y record-limited window a-fortiori bounded; alert n/a (band academic) |
@@ -344,7 +344,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | WRBY | Warby Parker Inc. | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | **FAIL** (P17 hard strike: CFO $3.23m vs $1.74m FY ceiling; 3y read no positive leg) | $26.40 (7 Aug 2026) | n.m. — FY25 OI negative, no EV/OI leg; MCap/FCF leg $2.84 ref | — | FY2026 10-K (~Feb 2027) first candidate positive-OI FY restores band; 2027 proxy P17 re-test |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK | **WEAK** | **FAIL** (P17 hard strike 1.044×/1.196× — **primary SCT, no sourcing contingency**) | $50.00 (7 Aug 2026) | CHEAP < ≈ $15.08–16.92 (EV/OI nc/ac bind; FCF leg $18.26) | — | 4 gates on the run's best business: **P4 over a STRONG-class level** (w-o-4 25.1%, FCFROCE 17.0%) on 3 declines 31.7 → 19.1%; breadth FAIL; alert < ≈ $17 |
 | ZAB.WA | Żabka Group S.A. | 2026-08-07 | v1 | AVOID | WEAK | STRONG | PASS (SOUND; CVC control caveat unpaired) | PLN 31.30 (7 Aug 2026) | CHEAP ≈ PLN 8.78–9.86 (EV/OI no-cash/all-cash; MCap/FCF leg 19.94 lease-bright) | — | FY2026 (~Mar 2027): **L/E ≈ 682% is the gate** (P5 breached 3.4×, no P6) — equity build to ~200–250% by ~FY2028 = earliest quality flip; Future already STRONG |
-| ZBRA | Zebra Technologies Corporation | 2026-08-09 | v1 | AVOID | ADEQUATE | WEAK | PASS (P19 CAUTION — Elo $1.3bn + 12× buyback step-up) | $376.49 (7 Aug 2026) | CHEAP < ≈ $41.01–44.32 (EV/OI no-cash/all-cash — post-Elo debt compresses the equity leg; FCF leg $140.52) | — | 1 gate (Future): breadth FAIL — 3 distributors 59%; FY2026 10-K (~Feb 2027) |
+| ZBRA | Zebra Technologies Corporation | 2026-08-09 | v2 | AVOID | ADEQUATE | WEAK | PASS (P19 CAUTION — buyback repetition; H1'26 $568m > FCF $361m, debt +$265m) | $376.49 (7 Aug 2026) | CHEAP < ≈ $68.27–71.59 (EV/OI nc/ac on TTM OI $858m; ex-tariff-recovery ref $57.47–60.79; FCF leg $140.52) | — | 1 gate (Future): breadth FAIL — 3 distributors 59%; Dist +426% (was +749%); FY26 10-K — P19 re-test, live ADVERSE path |
 | ZIP | ZipRecruiter, Inc. | 2026-08-05 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 strike + P19 ADVERSE) | WEAK | WEAK | FAIL | $4.49 | n.m. — FY25 OI −$19.4m; FCF leg alone ≈ $0.34 | — | FY2026 10-K + 2027 proxy (~Feb–Apr 2027); dormant — needs owner-earnings recovery before any gate can move |
 | ZIP.AX | Zip Co Limited | 2026-08-05 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 ADVERSE) | WEAK | WEAK | FAIL | A$2.90 | CHEAP ≈ A$0.49–0.67 (MCap/NI subst. anchor, FY25/TTM bases; EV/OI n.m.) — EXPENSIVE | — | FY26 Appx 4E 20 Aug 2026 — P19 re-test on live Feb-26 pgm; P17 re-read |
 | ZM | Zoom Communications, Inc. | 2026-07-29 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | $91.48 (28 Jul 2026) | CHEAP ≈ $26.00–51.27 (EV/OI no-cash / MCap/FCF all-cash; no P12) — EXPENSIVE, moot given AVOID | — | FY2027 10-K + 2027 proxy (~Mar–Apr 2027) P19 re-test + ROCE re-read (9.9% vs 10.0% floor) |
@@ -358,6 +358,15 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Open items
+- **2026-08-09 (night) — two same-day v2 REVIEWs folded in the Q2 prints the morning's v1 memos owed** (NET 6 Aug, ZBRA 4 Aug). Neither verdict moved; ZBRA's band moved up by roughly two-thirds. No front-matter movement.
+- **Same-day memo versioning resolved without a MODEL change.** §7.4a already defines the same-day overwrite ("overwriting an existing path requires that file's current `sha`"), so both v2 files replaced their v1 paths in place; §6.3 G preserves the superseded reading and git history preserves the bytes. **Residual asymmetry to decide at leisure:** cross-day versions keep both files, same-day versions do not. If symmetry is wanted, archive the outgoing memo to `memos/archive/` per the §7.5 hygiene rule — **not** a versioned filename suffix, which would break §7.4a's deterministic REVIEW load.
+- **ZBRA P19 has a live ADVERSE path.** FY2026 full-year repurchases above full-year FCF on rising leverage flips CAUTION → ADVERSE = SF FAIL, making it a two-gate AVOID and **removing** the fulfilment-distributor MODEL-recalibration flip path. H1 average repurchase price undisclosed → INDETERMINATE; named re-test at the FY2026 10-K.
+- **NET $1,293.3m of converts reclassified current** at 30 Jun 2026 — settlement or refinance inside twelve months against a business with no GAAP-positive year. Q3 2026 touch (~Nov) added ahead of the FY2026 10-K.
+- **Aggregator-vs-primary debt drift, fourth instance.** Both v1 bands used aggregator debt; primary interim balance sheets moved NET $3,530m → $3,270.3m and ZBRA $2,960m → $2,776m, carrying NET's restoring-OI figure with them. **Standing rule: prefer primary interim debt at every REVIEW touch.**
+- **P13 overrun recurred despite an in-run compliance claim.** The drafting session recorded both bodies as measured against the cap; ZBRA v2 in fact measured **931 words** and was trimmed to 799 pre-commit (NET compliant at 764). The standing finding holds and strengthens: **an unattended run's own cap assertion is not evidence of compliance — re-measure at commit.**
+- **Register-wide superlatives struck for the second commit running.** ZBRA v2 claimed the "largest single-touch band movement from an interim print" in two places, unverifiable from a two-name run; both struck pre-commit. Same failure mode as the three superlatives caught at the v247 reconcile.
+- **Change-log §7.5 200-char cap repaired on three inherited v247/v248 entries** (207/207/220 → within cap) — the live register was non-compliant on arrival and a regenerated file must be. Wording condensed only; no figure or verdict touched, and the originals survive verbatim in the v247 and v248 archive snapshots.
+- **Repo private-flag verification CLEARED** — metadata `"private": true` confirmed this session; closes the item left open by the evening-2 run.
 - **2026-08-09 — 29-name backlog committed in one pass** (US afternoon 20 · Brazil+Energy 7 · flag-resolution 2); all 29 memos dated 2026-08-09, MODEL v4.1.0. The TODO analysis queue is now closed.
 - **⚑ "Cartara" resolved by assumption → Certara (CERT); user confirmation owed.** No listing exists under that spelling; if a different company was meant, the CERT memo stands as a valid extra row and the flag reopens.
 - **⚠ BBBY re-key pending.** Bed Bath & Beyond, Inc. announced a further rename to Neighborhood Intelligence (Nasdaq: NXH); key frozen BBBY per §7.1a until the change is effective — a RECONCILE re-key act.
@@ -461,9 +470,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v249 — 2026-08-09** — NET v2 + ZBRA v2 REVIEW: both AVOID unchanged (3 gates / Future). ZBRA band ≈$41–44 → ≈$68–72 on TTM OI $858m; NET $1,293m converts now current.
 - **v248 — 2026-08-09** — 29-name backlog committed (US afternoon 20 · Brazil+Energy 7 · flag-resolution 2). **WATCH** ABEV, ADBE, FDS, INTU, NU; 24 AVOID (13 SF FAIL). Names 304, WATCH 68, AVOID 235.
-- **v248 — 2026-08-09** — Queue CLOSED — analysable backlog empty (ZM dup struck; BB&B→BBBY analysed; ⚑ "Cartara"→CERT by assumption, confirm owed). NU Dist recomputed +188%→+191%; AVOID table rule repaired.
-- **v247 — 2026-08-09** — RECONCILE: 62-name backlog committed (8 runs, PL/US/FI/DK/UK). **WATCH** CRCT, COLO-B.CO, BA.L, DNP.WA, ROCK-B.CO; 57 AVOID (33 SF FAIL, mostly P17). Names 275, WATCH 63, AVOID 211.
-- **v247 — 2026-08-09** — Reconcile repairs: ROCK-B.CO **AVOID → WATCH** (non-existent price gate applied); 3 false register-wide superlatives corrected (CRCT/PKN.WA/BBWI); P13 fixed on 19 memos; 17 cells trimmed to cap.
-- **v246 — 2026-08-07** — Japan majors batch, 9 ANALYSE v1: **WATCH** 7974.T, 8002.T; **AVOID** 6367.T, 6954.T, 6702.T, 6301.T, 3382.T (also SF FAIL), 5108.T, 7751.T. Block CLOSED 9/9.
+- **v248 — 2026-08-09** — Queue CLOSED — backlog empty (ZM dup struck; BB&B→BBBY analysed; ⚑ "Cartara"→CERT by assumption, confirm owed). NU Dist recomputed +188%→+191%; AVOID table rule repaired.
+- **v247 — 2026-08-09** — RECONCILE: 62-name backlog committed (8 runs, PL/US/FI/DK/UK). **WATCH** CRCT, COLO-B.CO, BA.L, DNP.WA, ROCK-B.CO; 57 AVOID (33 SF FAIL). Names 275, WATCH 63, AVOID 211.
+- **v247 — 2026-08-09** — Reconcile repairs: ROCK-B.CO **AVOID → WATCH** (price gate not in framework); 3 false superlatives corrected (CRCT/PKN.WA/BBWI); P13 fixed on 19 memos; 17 cells trimmed.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
