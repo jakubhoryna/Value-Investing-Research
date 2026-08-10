@@ -1,7 +1,7 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v249
-register_date: 2026-08-09
+register_version: v250
+register_date: 2026-08-10
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 304
 verdict_split: "WATCH 68 · AVOID 235 · BUY 0 · DNAF 1"
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v249 · 2026-08-09)
+# GSC Register — Master Watchlist (v250 · 2026-08-10)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -204,7 +204,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ENB.TO (was ENB) | Enbridge Inc. | 2026-07-14 | v1 | AVOID (Past WEAK — ROCE 4.2% + L/E 245%) | WEAK | ADEQUATE | PASS | CAD $78.60 (14 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt ≈ 10.5× OI); EXPENSIVE (26× EV/OI, 52× FCF) | — | FY2026 10-K (~Feb 2027) re-anchors OI/CE; structural — no price flips it |
 | ENOV | Enovis Corporation | 2026-08-08 | v1 | AVOID | WEAK | ADEQUATE | **FAIL** (P17 hard strike: Trerotola $9.42m vs a $0.996m FY ceiling = 9.5×; both legs negative on the 3y read) | $27.02 (6 Aug 2026, −10.5% on the Q2 print) | n.m. — **no positive OI in any window year**; no-cash bound needs OI > ≈ $183.5m; FCF leg $2.77 (FY25) / $4.99 (TTM) ref | — | 2 gates + EXPENSIVE; Σ 4y OI −$2,037m incl. $1,049.8m FY25 impairment; TBV ≈ −$439m; net debt 63× FCF; 4y history-limited; FY2026 10-K (~Feb 2027); alert < ≈ $5 |
 | ENR.DE (was ENR) | Siemens Energy AG | 2026-07-20 | v1 | AVOID (Past WEAK ROCE 0.1% + SF FAIL: P19) | WEAK | WEAK | FAIL | €152.00 (20 Jul 2026) | CHEAP < ≈ €12 strict (EV/OI, no-cash EV; ≈ €26 all-cash leg; MCap/FCF leg ≈ €37) — moot given AVOID. EXPENSIVE 64.4× EV/OI | — | FY2026 AR (~Dec 2026): 1st clean-cycle year + P19 re-test of the €2bn/€6bn buyback |
-| EQNR | Equinor ASA (NYSE ADR 1:1; Oslo EQNR.OL) | 2026-08-09 | v1 | AVOID | WEAK (P4 alone) | ADEQUATE | PASS (Norwegian-state caveat clean; P19 SOUND — buybacks at 4–5× EV/OI) | $39.48 (6–7 Aug 2026) | CHEAP < ≈ $24.7–31.5 (MCap/FCF leg binds, FY25 tie-out owed; EV/OI legs $59.69 nc / $69.46 ac PASS at price) | — | 1-gate AVOID; `P4-driven` 5th member; one FY2026 up-year likely flips; alert < ≈ $31.5 |
+| EQNR | Equinor ASA (NYSE ADR 1:1; Oslo EQNR.OL) | 2026-08-10 | v2 | AVOID | WEAK (P4 alone) | ADEQUATE | PASS (state caveat unpaired; P19 SOUND — published $2–4bn/yr price-conditioned framework) | $38.92 (7 Aug 2026) | CHEAP < ≈ $20.0–23.0 (MCap/FCF binds, strict/organic FY25 FCF $5.98–6.87bn; EV/OI legs $60.7 nc / $70.6 ac PASS) — EXPENSIVE 15.6× | — | 1-gate AVOID; `P4-driven`; FY2026 print (~4 Feb 2027) breaks the decline on H1 evidence → likely WATCH; alert < ≈ $32 |
 | ERIC-B.ST (was ERIC-B) | Telefonaktiebolaget LM Ericsson (publ) | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | SEK 91.06 (24 Jul 2026) | CHEAP < ≈ SEK 68.6 (EV/OI, consv EV; ex-iconectiv-gain leg ≈ 52.7) — FAIR 8.9× | — | FY2026 (~late Jan 2027): 1st clean post-iconectiv OI; SEK 15bn buyback = 1st P19 test |
 | EVK.DE (was EVK) | Evonik Industries AG | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 INDET: 2017 APD audit) | €16.68 (22 Jul 2026) | CHEAP < ≈ €0.24 (EV/OI, consv EV; all-cash leg ≈ €1.30; MCap/FCF leg ≈ €10.20) — moot given AVOID. EXPENSIVE 20.3× | — | FY2026 AR (~Mar 2027): 1st full year of 3-segment structure; structural — no price flips it |
 | EVO.ST (was EVO) | Evolution AB (publ) | 2026-07-24 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | SEK 694.40 (24 Jul 2026) | CHEAP < ≈ SEK 475 (EV/OI, consv EV; MCap/FCF leg ≈ 518; P12 edge ≈ 595) — FAIR 10.2× | — | FY2026 YE (4 Feb 2027): flip needs cust <10% + worth-ref buyback policy; P19 3 strikes ('21–'23) + NetEnt 48× acq; BTG INDET |
@@ -373,9 +373,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 - **P19 ADVERSE went 4 → 7 in one run** (PANW #5 · SNOW #6 · WDAY #7); TWLO carries a named ADVERSE risk on its 2026 tranches; INTU is the liveness-calibration case; DBX the debt-funded acquittal at ~9–11× FCF.
 - **The SBC-wedge cluster is the run's central finding (9 names).** Stock comp consumes the GAAP operating line while FCF compounds — every member fails Past bound-proof; ADBE/INTU/FDS are the control cases with real net retirement.
 - **Channel-structure breadth is now the dominant Future-gate mechanism** — fulfilment-distributor (ZBRA 3 distributors 59%, the register's most extreme; PANW) and OEM-concentration (MBLY, CATL provisional; waiver denied 3×). MODEL calibration is blocking-relevant.
-- **P4-on-cyclicals escalated to a MODEL item, with a near-BUY consequence.** EQNR is level-STRONG on every read with both EV/OI variants passing and a shadow P12 edge ≈ the print, failed by three post-2022 declines alone (5th `P4-driven` name, with ML.PA).
+- **P4-on-cyclicals escalated to a MODEL item.** EQNR (v2) stays the sharpest case: level bound-proof (w-o-4 ROCE 21.9–23.6%), both EV/OI variants at 4–5×, failed by the 2023–25 declines alone; v1's near-BUY shadow was a FCF tie-out artefact — corrected band ≈$20–23 (5th `P4-driven` name, with ML.PA).
 - **Structural-utility class formalised by repetition** (NEE, IBE.MC, SRE join FORTUM.HE, ORSTED.CO): regulated returns cannot clear P3, build-out FCF is negative by model, debt stacks kill the band. Screen utility candidates at queue stage, not ANALYSE.
-- **Tie-outs owed from this batch:** ABEV FCF (band-moving), EQNR FY2025 FCF, CATL full AR (coherence-accepted tier-2), CERT primary; ISIN backfills are tier-2 recalls across all 29 memos.
+- **Tie-outs owed from this batch:** ABEV FCF (band-moving), CATL full AR (coherence-accepted tier-2), CERT primary; ISIN backfills are tier-2 recalls across all 29 memos. EQNR FY2025 FCF closed at v250.
 - **2026-08-09 RECONCILE — 62-name backlog committed in one pass** (Poland 6 · US 07 Aug evening 6 · US 07 Aug night 6 · Finland 4 · US 08 Aug 10 · Denmark 3 · UK 2 · US 08 Aug evening 11 · US 08/09 Aug night 5 · US 09 Aug user-directed 9). All memos built under MODEL v4.1.0; **coherence-accepted series throughout — REVIEW-time primary tie-outs owed on every name**; ISIN backfills owed on the 08/09 Aug US cohort. §7.1a prior-check run on company name and ISIN for all 62: no duplicates.
 - **⚠ ROCK-B.CO verdict corrected AVOID → WATCH pre-commit — the drafting session applied a "price gate" the framework does not contain.** §2's mapping returns AVOID only on Past WEAK, Future WEAK or SF FAIL; all-gates-pass + EXPENSIVE returns WATCH (SIKA.SW +623%, STMN.SW +644%, SIE.DE +1030% are the standing precedents). No gate, figure or band moved. **Standing check for future runs: a memo whose §1 names a gate that is not one of the four is a framework error, not a judgment call.**
 - **Three false register-wide superlatives caught and corrected at reconcile.** CRCT was written as "nearest-to-band WATCH" at +33% (BRK.B +27% and CROX +31% are nearer — corrected to 3rd-nearest); PKN.WA as "nearest-to-band AVOID" at +62% (BBWI enters the same commit at +1.8%); BBWI as "nearest-to-band name in the register" (**ANGI −6.4% and TUI1.DE −10.9% already sit below their triggers** on their own recorded prices). **Method note: a run-local session cannot verify a register-wide claim — such claims must be computed at reconcile or not made.** P19 ADVERSE ordinals on CALX and BH stripped for the same reason.
@@ -470,9 +470,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v250 — 2026-08-10** — EQNR v2 (clean ANALYSE): AVOID (Past WEAK, P4) reaffirmed; FY25 FCF tie-out closed $5.98–6.87bn → band cut to ≈$20–23 (was $24.7–31.5), FAIR→EXPENSIVE; P19 SOUND on CMD-2026.
 - **v249 — 2026-08-09** — NET v2 + ZBRA v2 REVIEW: both AVOID unchanged (3 gates / Future). ZBRA band ≈$41–44 → ≈$68–72 on TTM OI $858m; NET $1,293m converts now current.
 - **v248 — 2026-08-09** — 29-name backlog committed (US afternoon 20 · Brazil+Energy 7 · flag-resolution 2). **WATCH** ABEV, ADBE, FDS, INTU, NU; 24 AVOID (13 SF FAIL). Names 304, WATCH 68, AVOID 235.
 - **v248 — 2026-08-09** — Queue CLOSED — backlog empty (ZM dup struck; BB&B→BBBY analysed; ⚑ "Cartara"→CERT by assumption, confirm owed). NU Dist recomputed +188%→+191%; AVOID table rule repaired.
 - **v247 — 2026-08-09** — RECONCILE: 62-name backlog committed (8 runs, PL/US/FI/DK/UK). **WATCH** CRCT, COLO-B.CO, BA.L, DNP.WA, ROCK-B.CO; 57 AVOID (33 SF FAIL). Names 275, WATCH 63, AVOID 211.
-- **v247 — 2026-08-09** — Reconcile repairs: ROCK-B.CO **AVOID → WATCH** (price gate not in framework); 3 false superlatives corrected (CRCT/PKN.WA/BBWI); P13 fixed on 19 memos; 17 cells trimmed.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
