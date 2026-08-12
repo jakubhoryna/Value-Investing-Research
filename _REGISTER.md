@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v252
-register_date: 2026-08-11
+register_version: v253
+register_date: 2026-08-12
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 306
-verdict_split: "WATCH 68 · AVOID 237 · BUY 0 · DNAF 1"
+names_total: 307
+verdict_split: "WATCH 69 · AVOID 237 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v252 · 2026-08-11)
+# GSC Register — Master Watchlist (v253 · 2026-08-12)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 68 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 69 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,6 +58,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | FIE.DE (was FIE) | Fielmann Group AG | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 P19 acq flag; Shopko >20× INDETERMINATE) | €41.30 (28 Jul 2026) | CHEAP ≈ €16.7–19.4 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €33.25; no P12 — Past ADEQUATE) — FAIR | +113% | FY2026 AR (~Apr 2027): Shopko audit re-test + window rolls to 9y (only 8y retrievable); alert < ≈ €26 |
 | 6758.T (ADR 1:1; was SONY) | Sony Group Corporation | 2026-08-06 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION) | ¥3,626 (6 Aug 2026, TSE) | CHEAP ≈ ¥1,328–1,694 (EV/OI no-cash/all-cash, 30-Jun-26 BS; MCap/FCF leg ≈ ¥2,040; no P12) — EXPENSIVE 14.2×/14.9× | +114% | H1 FY3/27 (10 Nov 2026): 1st completed half of the ¥500bn pgm re-tests §2·1C·3; live @ ¥3,464 = 18.3× worst read; ex-FS ROCE on the 10% floor |
 | ESSITY-B.ST (ESSITY-A; was ESSITY-B) | Essity Aktiebolag (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 3 consecutive criterion-free pgm yrs above the disciplined line; BSN INDETERMINATE; dual-class caveat) | SEK 277.20 (31 Jul 2026) | CHEAP ≈ SEK 124 (MCap/FCF maint binds; EV/OI legs 127.75/137.88 no-cash/all-cash; strict all-capex 98.51; no P12) — EXPENSIVE 12.47×/12.10× | +123% | FY2026 (~21 Jan 2027) + AR: 3rd pgm as a completed tranche-yr, CAUTION re-test, BSN multiple; earlier on a Consumer Tissue separation decision |
+| 0700.HK | Tencent Holdings Ltd | 2026-08-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION, FY25 tranche 18–24× reads; P17 absolute trigger INDETERMINATE) | HKD 461.60 (12 Aug 2026) | CHEAP ≈ HKD 142–192 (EV/OI no-cash/all-cash, FY25 OI, P20 maint; strict-FCF leg ≈ HKD 168) — EXPENSIVE 18.2×/16.4× | +140% | FY2026 AR (~Mar 2027): P17 top-pay note + P19 tranche re-test; rebuild FY2016–20 record; alert < ≈ HKD 210 |
 | SCHN.SW (SCHP PC; was SCHN) | Schindler Holding AG | 2026-08-01 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: FY24/FY25 tranches at 2.5×/2.7× worth, no worth-referenced criterion; control caveat unpaired) | CHF 247.5 N / 254.6 PC (31 Jul 2026; blended 251.31) | CHEAP ≈ CHF 103 (MCap/FCF binds; EV/OI leg ≈ CHF 123; no P12 — Past ADEQUATE) — EXPENSIVE 19.5× FCF / 17.0×–20.0× EV/OI | +144% | FY2026 (~Feb 2027): completed tranche vs the enlarged CHF 700m pgm + CAUTION re-test; H1-2026 rpt (~mid-Aug) interim tranche; alert < ≈ CHF 130 |
 | BKNG                    | Booking Holdings Inc.           | 2026-08-05 | v3  | WATCH   | STRONG   | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: $14.5bn of $20bn pgm live, no criterion, H1 payout > FCF; exec 14.5–16.6× = record's cheapest) | $194.27 (4 Aug 2026) | CHEAP ≈ $55–78 (EV/OI no-cash/all-cash, FY2025; P12 edge $75–97; TTM x-check $59–82) — EXPENSIVE | +150% | FY2026 10-K (~Feb 2027): band + P19 + P15 supplier look-through decides Future; alert < ≈ $100 |
 | NKE | NIKE, Inc. | 2026-07-31 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: FY20–25 at 25.0–47.5× EV/OI, 4.4–8.3× worth, no published criterion; dual-class caveat UNPAIRED) | $41.71 (31 Jul 2026) | CHEAP ≈ $10.5–16.6 (EV/OI no-cash/all-cash, FY2026 audited OI; MCap/FCF leg $11.80 inside; no P12) — EXPENSIVE 16.8×/19.2× | +151% | Q1 FY2027 10-Q (~Sep/Oct 2026): does the repurchase pause survive the Jun-2026 reapproval; Sept 2026 proxy = dated 2nd-flag risk on the allocation flag |
@@ -360,6 +361,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Open items
+- **2026-08-12 — 0700.HK record-limited (FY2018–25; FCF legs FY2021–25).** Rebuild at next REVIEW: FY2016–17 statements + FY2018–20 CFO; 2025 AR emoluments note resolves the P17 INDETERMINATE — a >US$40m top-pay print pairs with the P19 CAUTION → SF FAIL.
 - **2026-08-09 (night) — two same-day v2 REVIEWs folded in the Q2 prints the morning's v1 memos owed** (NET 6 Aug, ZBRA 4 Aug). Neither verdict moved; ZBRA's band moved up by roughly two-thirds. No front-matter movement.
 - **Same-day memo versioning resolved without a MODEL change.** §7.4a already defines the same-day overwrite ("overwriting an existing path requires that file's current `sha`"), so both v2 files replaced their v1 paths in place; §6.3 G preserves the superseded reading and git history preserves the bytes. **Residual asymmetry to decide at leisure:** cross-day versions keep both files, same-day versions do not. If symmetry is wanted, archive the outgoing memo to `memos/archive/` per the §7.5 hygiene rule — **not** a versioned filename suffix, which would break §7.4a's deterministic REVIEW load.
 - **ZBRA P19 has a live ADVERSE path.** FY2026 full-year repurchases above full-year FCF on rising leverage flips CAUTION → ADVERSE = SF FAIL, making it a two-gate AVOID and **removing** the fulfilment-distributor MODEL-recalibration flip path. H1 average repurchase price undisclosed → INDETERMINATE; named re-test at the FY2026 10-K.
@@ -472,9 +474,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v253 — 2026-08-12** — 0700.HK (Tencent) v1 ANALYSE: WATCH (Past ADEQUATE rl-capped · Future ADEQUATE · SF PASS, 1 flag). Band ≈ HKD 142–192 (P20); px 461.60 = +140%. Names 307, WATCH 69.
 - **v252 — 2026-08-11** — 688825.SS (CXMT/ChangXin Memory) v1 ANALYSE: AVOID (Past WEAK + Future WEAK). Band n.m. — NCI ≈¥97bn > 7×OI FY25; 4y record; ¥3.47tn mcap ≈56× FY25 revenue.
 - **v251 — 2026-08-11** — KWY ANALYSE v1: AVOID (Past WEAK + Future WEAK + SF FAIL: P17 both-legs-negative strike); worst-of-4 ROCE −0.3%, L/E ≈1,300%; band n.m. Names 305, AVOID 237.
 - **v250 — 2026-08-10** — EQNR v2 (clean ANALYSE): AVOID (Past WEAK, P4) reaffirmed; FY25 FCF tie-out closed $5.98–6.87bn → band cut to ≈$20–23 (was $24.7–31.5), FAIR→EXPENSIVE; P19 SOUND on CMD-2026.
 - **v249 — 2026-08-09** — NET v2 + ZBRA v2 REVIEW: both AVOID unchanged (3 gates / Future). ZBRA band ≈$41–44 → ≈$68–72 on TTM OI $858m; NET $1,293m converts now current.
-- **v248 — 2026-08-09** — 29-name backlog committed (US afternoon 20 · Brazil+Energy 7 · flag-resolution 2). **WATCH** ABEV, ADBE, FDS, INTU, NU; 24 AVOID (13 SF FAIL). Names 304, WATCH 68, AVOID 235.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
