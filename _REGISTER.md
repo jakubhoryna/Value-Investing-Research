@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v255
+register_version: v256
 register_date: 2026-08-17
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 308
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v255 · 2026-08-17)
+# GSC Register — Master Watchlist (v256 · 2026-08-17)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -67,11 +67,11 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | BVI.PA | Bureau Veritas S.A. | 2026-08-06 | v1 | WATCH | ADEQUATE | STRONG | PASS (cap-alloc SOUND; Wendel caveat UNPAIRED 1.64× wedge; RPT + all acq audits INDETERMINATE) | €28.44 (6 Aug 2026) | CHEAP ≈ €8.7–10.8 (EV/OI no-cash/all-cash, FY25 statutory OI, 30-Jun-26 BS; MCap/FCF leg ≈ €14.8; no P12) — EXPENSIVE 15.9×/14.9× | +163% | FY2026 (~Feb 2027) + URD-26: 10y rebuild, €200m pgm execution, acq audits; ⚠ TTM OI −8% y/y, H1 statutory OP −16%; alert < ≈ €20 |
 | ROG.SW (SIX; RO bearer; RHHBY 8:1; was ROG) | Roche Holding AG | 2026-07-15 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; dual-class caveat) | CHF 366.71 (RHHBY $56.10 ×8 ×0.8171, 28 Jul 2026) | CHEAP ≈ CHF 135–138 (EV/OI no-cash / MCap/FCF; P12 edge ≈CHF 154 all-cash) — EXPENSIVE | +166% | FY2026 (~Feb 2027) resets OI/FCF; obesity Ph3 (CT-388) & US IRA/MFN pricing; alert < ≈ CHF 200 |
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-31 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: 2023 buyback @ €823.1 = 37.7× MCap/FCF; Tiffany 22.1× pre-deal OI; no criterion. Control caveat UNPAIRED) | €475.15 (31 Jul 2026) | CHEAP ≈ €179 (EV/OI binds, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE) — EXPENSIVE 16.4×/15.6× | +166% | FY2026 (~late Jan 2027) + URD-27 (~Mar 2027): H1-26 tranche price + CAUTION re-test; P4 3rd ROCE-decline test — 2 down-yrs, H1-26 stabilised not reversed |
+| META | Meta Platforms, Inc. | 2026-08-17 | v4 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 2021/22/24/25 at 22.1–24.3× MCap/FCF, no price criterion, suspension capex-driven. Dual-class UNPAIRED, per GOOGL) | $589.85 (14 Aug 2026) | CHEAP ≈ $183–218 (EV/OI no-cash/all-cash, Q2-26 BS, P20 active; maint MCap/FCF leg $230 = P12 edge; strict all-capex $143) — EXPENSIVE 19.4×/18.3× | +171% | Q3'26 10-Q 28 Oct — suspension 3rd-qtr test + $130–145bn capex plan; FY26 10-K + Apr-27 proxy (mega-grant SCT = 2nd-flag risk); DC Cir. 26-5028 in briefing |
 | SDZ.SW (SDZNY ADR 1:1; was SDZ) | Sandoz Group AG                 | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$79.43 (CHF 64.90, 28 Jul 2026) | CHEAP < ≈ $28 (mgmt-FCF) to ≈ $20 (strict). Cheapness EXPENSIVE. Thin spin-off history caveat                                           | +184% | FY2026 results (~Feb 2027), or USD into high-$20s/low-$30s; watch generic-semaglutide decision & penicillin-API normalisation                       |
 | NU | Nu Holdings Ltd. | 2026-08-09 | v1 | WATCH | ADEQUATE | STRONG | PASS (dual-class caveat; P19 SOUND) | $13.84 (7 Aug 2026) | NI-proxy anchor: CHEAP < ≈ $4.75 (8× FY2025 NI; §2·1A substitution; 3×BV/sh ≈ $7.77 context) | +191% | FY2026 results (~Feb 2027); EM credit-cycle tape (90+ NPL 6.6%) quarterly |
 | NVS (NOVN SIX; ADR 1:1) | Novartis AG                     | 2026-07-05 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 flag)                             | $159.83 ADR (28 Jul 2026) | CHEAP ≈ $48.3–54.5 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ $73; no P12 — Past ADEQUATE) — EXPENSIVE | +193% | FY2026 (~Feb 2027) Entresto-trough resets band; alert < ~$75; IRA/MFN or pelacarsen readout. Soft WATCH                                             |
 | AZA.ST (was AZA) | Avanza Bank Holding AB | 2026-07-24 | v1 | WATCH | STRONG | STRONG | PASS | SEK 387.60 (28 Jul 2026) | CHEAP < ≈ SEK 132 (MCap/NI 8×, substitution rule — EV/OI n.m.; P12 edge ≈ SEK 165). Cheapness EXPENSIVE | +194% | FY2026 prelim (~21 Jan 2027) re-anchors band (TTM drift → ≈ SEK 145); alert < ≈ SEK 165 |
-| META | Meta Platforms, Inc. | 2026-07-31 | v3 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 2021/22/24/25 at 22.1–24.3× MCap/FCF, no price criterion, suspension capex-driven. Dual-class UNPAIRED, per GOOGL) | $556.71 (31 Jul 2026) | CHEAP ≈ $183–218 (EV/OI cons/all-cash, Q2-26 BS, P20 active; maint MCap/FCF leg $230 = P12 edge; strict all-capex $143) — EXPENSIVE 18.4×/17.3× | +204% | Q3'26 10-Q (~late Oct): does the buyback suspension hold a 3rd qtr; FY2026 10-K + Apr-2027 proxy — mega-grants in the FY26 SCT = likeliest 2nd flag |
 | ADYEN.AS (was ADYEN) | Adyen N.V.                      | 2026-06-11 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | €883.90 (28 Jul 2026) | CHEAP < ≈ €286 (MCap/FCF @1.25×; strict all-four ≈ €229)                                                                                | +209% | H1 2026 results (Aug 2026), Talon.One integration, or price < €350                                                                                  |
 | MORN | Morningstar, Inc. | 2026-07-31 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: FY2025 tranche 22.9× MCap/FCF / 20.6× EV/OI, no criterion, debt-funded; acq audits INDETERMINATE) | $192.57 (31 Jul 2026) | CHEAP ≈ $61 (EV/OI binds, conservative EV, Q2-26 BS; MCap/FCF leg ≈ $94; TTM cross-check ≈ $76; no P12) — EXPENSIVE 16.3×/17.3× | +213% | FY2026 10-K (~Feb 2027): completed pgm yr, L/E 285% vs the 200% P5 flag, CAUTION re-test; Q3-26 cadence on the $300M left; alert < ≈ $75 |
 | SAP.DE (ADR 1:1; was SAP) | SAP SE | 2026-08-01 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: execution at 3.3× worth, no published price criterion, authorisation doubled €5bn→€10bn; comp-target-exclusion caveat) | €157.68 Xetra (31 Jul 2026) | CHEAP ≈ €48.6 (EV/OI no-excess-cash binds; cash-ded €55.6; MCap/FCF €56.3; no P12; FY26 guide lifts the FCF leg to ≈€68) — EXPENSIVE 19.5×/20.3× | +225% | FY2026 (~late Jan 2027): completed 2026 tranche, share-count movement vs SBC (named gap — Q2 count unsourced), CAUTION re-test; alert < ≈ €60 |
@@ -476,9 +476,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v256 — 2026-08-17** — META v4 REVIEW: WATCH unchanged (all gates hold); px $589.85; Dist re-keyed per §7.1 (all-cash bound) +204% → +171%; band $183–218 holds. Next: Q3'26 10-Q 28 Oct.
 - **v255 — 2026-08-17** — GOOGL REVIEW v4: WATCH holds, all gates unchanged (CAUTION 1 flag); re-priced $345.90, Dist +327→+314%; div $0.22/q; ad-tech ruling pending; isin backfilled (§7.1a).
 - **v254 — 2026-08-17** — 7213.T (LECIP Holdings) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 9.4% + Future WEAK, 2 strong forces). Band ¥492–778, moot. Names 308, AVOID 238.
 - **v253 — 2026-08-12** — 0700.HK (Tencent) v1 ANALYSE: WATCH (Past ADEQUATE rl-capped · Future ADEQUATE · SF PASS, 1 flag). Band ≈ HKD 142–192 (P20); px 461.60 = +140%. Names 307, WATCH 69.
 - **v252 — 2026-08-11** — 688825.SS (CXMT/ChangXin Memory) v1 ANALYSE: AVOID (Past WEAK + Future WEAK). Band n.m. — NCI ≈¥97bn > 7×OI FY25; 4y record; ¥3.47tn mcap ≈56× FY25 revenue.
-- **v251 — 2026-08-11** — KWY ANALYSE v1: AVOID (Past WEAK + Future WEAK + SF FAIL: P17 both-legs-negative strike); worst-of-4 ROCE −0.3%, L/E ≈1,300%; band n.m. Names 305, AVOID 237.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
