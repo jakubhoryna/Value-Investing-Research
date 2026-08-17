@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v254
+register_version: v255
 register_date: 2026-08-17
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 308
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v254 · 2026-08-17)
+# GSC Register — Master Watchlist (v255 · 2026-08-17)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -86,10 +86,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | THULE.ST (was THULE) | Thule Group AB (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 223.60 (28 Jul 2026) | CHEAP < ≈ SEK 58 (MCap/FCF, FY25 WC-trough FCF; EV/OI leg ≈ SEK 67–69 no-cash/all-cash; no P12) — EXPENSIVE | +286% | FY2026 year-end (~Feb 2027) re-anchors band; alert < ≈ SEK 90 |
 | SAND.ST (was SAND) | Sandvik AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: CNC Software 2021 at 28.7–38.1× pre-deal OI ≈4–5× worth, no acq-price discipline; DSI + Diemme INDETERMINATE) | SEK 356.00 (31 Jul 2026) | CHEAP ≈ SEK 87.51 (EV/OI binds; MCap/FCF leg ≈ SEK 98.02; no P12 — Past ADEQUATE) — EXPENSIVE 23.4×/23.2× | +307% | FY2026 AR (~Mar 2027): CAUTION re-test, Diemme Filtration multiple (INDETERMINATE), whether the 380bp tungsten benefit reverses; alert < ≈ SEK 110 |
 | AMZN                    | Amazon.com, Inc.                | 2026-07-05 | v2  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | $230.65 (28 Jul 2026) | CHEAP ≈ $44.5–56.0 (EV/OI no-cash/all-cash; maint.-basis MCap/FCF ≈$50–72, P20) — EXPENSIVE                    | +312% | FY2026 10-K (~Feb 2027); Q2 2026 results (30 Jul 2026) for AWS growth/capex; earlier if < $90 or AI-capex guidance cut materially                   |
+| GOOGL (GOOG Class C equiv.) | Alphabet Inc. | 2026-08-17 | v4 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 2023/24 executions 21.6×/23.7× maint, no price criterion, suspension capex-driven not price-driven; dual-class caveat) | $345.90 (14 Aug 2026) | CHEAP ≈ $63.8–83.5 (EV/OI no-cash/all-cash, Q2-26 BS incl. $18.0B pref; maint MCap/FCF leg $77.6 inside; strict all-capex $47.6) — EXPENSIVE 33.7×/31.8× | +314% | Q3'26 10-Q (~late Oct): suspension 3rd qtr?; FY26 10-K + Apr-27 proxy — Pichai grant likeliest 2nd flag; ad-tech ruling pending; alert < $120 |
 | 7974.T | Nintendo Co., Ltd. | 2026-08-07 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: criterion-free episodic tranches; FY26 ≈22× lower-EV OI) | ¥7,641 (6 Aug 2026) | CHEAP ≈ ¥1,822 (MCap/FCF binds, FY26 WC-trough FCF; EV/OI legs ¥2,186/¥3,893 no-cash/all-cash; P12 edge ≈ ¥2,186) — EXPENSIVE | +319% | Q2 FY3/27 (~Nov 2026) WC-unwind FCF re-base; FY3/27 tanshin (May 2027) band re-anchor; alert < ≈ ¥2,200 |
 | CSU.TO (TSX; was CSU) | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE | STRONG | PASS | CAD 3,037.65 (28 Jul 2026) | CHEAP ≈ CAD 513–718 (EV/OI no-cash/all-cash, USD FY25; MCap/FCF leg ≈ CAD 1,415; no P12) — EXPENSIVE | +323% | FY2026 (~Mar 2027) resets USD FY25 basis + extends toward 10y; watch Leonard→Miller succession (Sep 2025); alert < ≈ CAD 900 |
 | ATCO-B.ST (ATCO-A; ADRs ATLKY/ATLCY 1:1; was ATCO-B) | Atlas Copco AB (publ) | 2026-07-31 | v2 | WATCH | STRONG | STRONG | PASS (1 flag — cap-allocation CAUTION: FY24/FY25 option-hedge tranches 23.2–27.2× EV/OI; acq audit INDETERMINATE; dual-class caveat) | SEK 175.85 B / 201.10 A (31 Jul 2026) | CHEAP ≈ SEK 38.4–41.4 B / 43.5–46.9 A (EV/OI no-cash/all-cash; MCap/FCF leg SEK 39.8 B sits inside; P12 edge SEK 48.0 B) — EXPENSIVE 28.6×/28.1× | +324% | FY2026 AR (~Mar 2027): CAUTION re-test on the FY26 own-share record, aggregated acq disclosure, Isra Vision (2020) multiple; alert < ≈ SEK 48 B |
-| GOOGL (GOOG Class C equiv.) | Alphabet Inc. | 2026-07-31 | v3 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 2023/24 executions 21.6×/23.7× maint, no price criterion, suspension is capex-driven not price-driven; dual-class caveat) | $356.13 (31 Jul 2026) | CHEAP ≈ $63.8–83.5 (EV/OI cons/flatt, Q2-26 BS incl. $18.0B pref; maint MCap/FCF leg $77.6 inside; strict all-capex $47.6) — EXPENSIVE 34.7×/32.8× | +327% | Q3'26 10-Q (~late Oct): does the suspension hold a 3rd qtr; FY2026 10-K + Apr-2027 proxy — Pichai triennial grant = likeliest 2nd flag; alert < $120 |
 | BA.L | BAE Systems plc | 2026-08-08 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — P19 CAUTION: Ball Aerospace ~19.5×+ EV/OI lower bound) | 2,220p (8 Aug 2026) | CHEAP < ≈ 377–496p (EV/OI nc/ac bind; MCap/FCF leg 662p) | +348% | FY2026 (~Feb 2027): **first captive-customer waiver GRANT in the register** (Future capped ADEQUATE); Dec-2020–22 BS rebuild owed; alert < ≈ 500p |
 | IBKR                    | Interactive Brokers Group, Inc. | 2026-07-05 | v2  | WATCH   | STRONG   | STRONG   | PASS                                      | $90.25 (28 Jul 2026) | CHEAP < ≈ $20 (EV/OI no-cash, customer-float adj.; all-cash bound n.d. — firm/customer split; P12 edge ≈$25) — EXPENSIVE | +351% | FY2026 results (Feb 2027), price < $30, or a Fed easing cycle compressing net interest income                                                       |
 | ALFA.ST (was ALFA) | Alfa Laval AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: Fives 21.2–22.2× pre-deal EBITA) | SEK 563.60 (31 Jul 2026) | CHEAP ≈ SEK 119 (MCap/FCF binds; EV/OI legs SEK 147.3 no-cash / SEK 166.3 all-cash; no P12) — EXPENSIVE 21.6×/21.0× | +374% | FY2026 (Q4 rpt 3 Feb 2027; AR ~Mar 2027): final Fives PPA, ROCE roll, China bolt-on multiple (INDETERMINATE), CAUTION re-test; alert < ≈ SEK 200 |
@@ -476,9 +476,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v255 — 2026-08-17** — GOOGL REVIEW v4: WATCH holds, all gates unchanged (CAUTION 1 flag); re-priced $345.90, Dist +327→+314%; div $0.22/q; ad-tech ruling pending; isin backfilled (§7.1a).
 - **v254 — 2026-08-17** — 7213.T (LECIP Holdings) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 9.4% + Future WEAK, 2 strong forces). Band ¥492–778, moot. Names 308, AVOID 238.
 - **v253 — 2026-08-12** — 0700.HK (Tencent) v1 ANALYSE: WATCH (Past ADEQUATE rl-capped · Future ADEQUATE · SF PASS, 1 flag). Band ≈ HKD 142–192 (P20); px 461.60 = +140%. Names 307, WATCH 69.
 - **v252 — 2026-08-11** — 688825.SS (CXMT/ChangXin Memory) v1 ANALYSE: AVOID (Past WEAK + Future WEAK). Band n.m. — NCI ≈¥97bn > 7×OI FY25; 4y record; ¥3.47tn mcap ≈56× FY25 revenue.
 - **v251 — 2026-08-11** — KWY ANALYSE v1: AVOID (Past WEAK + Future WEAK + SF FAIL: P17 both-legs-negative strike); worst-of-4 ROCE −0.3%, L/E ≈1,300%; band n.m. Names 305, AVOID 237.
-- **v250 — 2026-08-10** — EQNR v2 (clean ANALYSE): AVOID (Past WEAK, P4) reaffirmed; FY25 FCF tie-out closed $5.98–6.87bn → band cut to ≈$20–23 (was $24.7–31.5), FAIR→EXPENSIVE; P19 SOUND on CMD-2026.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
