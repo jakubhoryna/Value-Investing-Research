@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v253
-register_date: 2026-08-12
+register_version: v254
+register_date: 2026-08-17
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 307
-verdict_split: "WATCH 69 · AVOID 237 · BUY 0 · DNAF 1"
+names_total: 308
+verdict_split: "WATCH 69 · AVOID 238 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v253 · 2026-08-12)
+# GSC Register — Master Watchlist (v254 · 2026-08-17)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -110,7 +110,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 237 names, alphabetical
+### AVOID — 238 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -132,6 +132,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | 688825.SS | CXMT Corporation (ChangXin Memory Technologies) | 2026-08-11 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — P19 CAUTION: strategy-driven reinvestment, serial dilution; P17/RPT INDETERMINATE) | ¥51.88 (10 Aug 2026) | n.m. — no positive price clears EV/OI ≤7 on FY25 (book NCI ≈¥97bn > 7×OI; FCF leg n.m., build-out) — EXPENSIVE | — | H1-26 report ~2 Sep 2026 (info); FY2026 AR (~Apr 2027) full re-test + P17/RPT retrieval; 4y record; lock-up expiry 27 Jan 2027 |
 | 6954.T | FANUC Corporation | 2026-08-07 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: criterion-free buybacks at ~19–22× reads; idle ¥750bn+ unaddressed) | ¥6,460 (5–6 Aug 2026) | CHEAP ≈ ¥1,359–1,970 (EV/OI no-cash / MCap-FCF all-cash bounds — cash judgment is the gap) — EXPENSIVE 26.2×/32.9× | — | FY3/27 (~Apr 2027): upcycle vs 10% floor (w-o-4 9.6%; xc 15–16% = cash drag); alert < ≈ ¥2,000 |
 | 7011.T | Mitsubishi Heavy Industries, Ltd. | 2026-08-07 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.11% + Future WEAK: P15 breadth FAIL) | WEAK | WEAK | PASS (no repurchase pgm ever; total board remuneration bounded well under P17) | ¥4,018 (7 Aug 2026, TSE) | CHEAP ≈ ¥626–1,147 (EV/OI no-cash/all-cash, FY3/26 事業利益, 30-Jun-26 BS; MCap/FCF leg ≈ ¥1,813; no P12) — EXPENSIVE 33.4×/29.3× | — | FY3/2027 (~mid-May 2027): window hits 10y, STRONG available; H1 6 Nov 26 = 1st post-Logisnext half; yūhō re-test: MoD 10% disclosure + RPT |
+| 7213.T | LECIP HOLDINGS CORPORATION | 2026-08-17 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION: ~¥3bn overseas build-out, FY26 ¥1,274m onerous-contract provision; P17 INDETERMINATE, severity-changing) | ¥670 (14 Aug 2026) | CHEAP ≈ ¥492–778 (EV/OI no-cash/all-cash, FY3/26 OI; FCF leg ≈¥1,584; no P12) — FAIR 9.2×/5.7× — moot given AVOID | — | FY3/2027 (~mid-May 2027); w-o-4 ROCE 9.4% vs 10% floor, 9y roll already 9.8% → Past may flip; Future WEAK structural (cashless substitution) |
 | 7751.T | Canon Inc. | 2026-08-07 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: FY25 distributions 2.1× FCF, debt-bridged; escalating criterion-free ladder) | ¥4,535 (7 Aug 2026) | CHEAP < ≈ ¥1,946 (MCap/FCF binds; EV/OI legs ¥2,378/¥3,082 sit FAIR-corridor) — EXPENSIVE on FCF primary | — | FY2026 (~Jan 2027): buyback funding-mix re-test; w-o-4 6.1%/4.9%, no year ≥8% in ten; alert < ≈ ¥2,000 |
 | 8TRA.ST (was 8TRA) | TRATON SE | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Navistar audit) | WEAK | ADEQUATE | FAIL | €36.04 (22 Jul 2026; 52-wk high €37.34) | n.m. — no positive price clears EV/OI ≤7 (captive debt €27.4bn) or MCap/FCF (FCF −€1.9bn); captive-adj. alt ≈ €16.7 — EXPENSIVE, moot | — | FY2026 AR (~mid-Mar 2027); structural — w-o-4 ROCE 4.4% + P19 strike (ages out ≥FY2031); no price flips it |
 | AAPL | Apple Inc. | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | ~$308 | CHEAP < ≈ $53 (MCap/FCF; P12 edge ≈ $55 via EV/OI) | — | FY2026 10-K (~Oct/Nov 2026) or Jan 2027 proxy — SF flip requires comp reform; earlier if price < ~$60 |
@@ -361,6 +362,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Open items
+- **2026-08-17 — 7213.T P17 INDETERMINATE is severity-changing.** Japan compels individual director-pay disclosure only above ¥100m; thresholds are ¥58.9m (FY read) / ¥76.5m (3y read) against a ¥49.8m six-director average. A disclosed top total above either read pairs with the P19 CAUTION → SF FAIL and a three-gate AVOID. Also owed: ISIN, FY3/27 Q1 balance sheet, buyback count after 18 Jun 2026.
 - **2026-08-12 — 0700.HK record-limited (FY2018–25; FCF legs FY2021–25).** Rebuild at next REVIEW: FY2016–17 statements + FY2018–20 CFO; 2025 AR emoluments note resolves the P17 INDETERMINATE — a >US$40m top-pay print pairs with the P19 CAUTION → SF FAIL.
 - **2026-08-09 (night) — two same-day v2 REVIEWs folded in the Q2 prints the morning's v1 memos owed** (NET 6 Aug, ZBRA 4 Aug). Neither verdict moved; ZBRA's band moved up by roughly two-thirds. No front-matter movement.
 - **Same-day memo versioning resolved without a MODEL change.** §7.4a already defines the same-day overwrite ("overwriting an existing path requires that file's current `sha`"), so both v2 files replaced their v1 paths in place; §6.3 G preserves the superseded reading and git history preserves the bytes. **Residual asymmetry to decide at leisure:** cross-day versions keep both files, same-day versions do not. If symmetry is wanted, archive the outgoing memo to `memos/archive/` per the §7.5 hygiene rule — **not** a versioned filename suffix, which would break §7.4a's deterministic REVIEW load.
@@ -474,9 +476,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v254 — 2026-08-17** — 7213.T (LECIP Holdings) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 9.4% + Future WEAK, 2 strong forces). Band ¥492–778, moot. Names 308, AVOID 238.
 - **v253 — 2026-08-12** — 0700.HK (Tencent) v1 ANALYSE: WATCH (Past ADEQUATE rl-capped · Future ADEQUATE · SF PASS, 1 flag). Band ≈ HKD 142–192 (P20); px 461.60 = +140%. Names 307, WATCH 69.
 - **v252 — 2026-08-11** — 688825.SS (CXMT/ChangXin Memory) v1 ANALYSE: AVOID (Past WEAK + Future WEAK). Band n.m. — NCI ≈¥97bn > 7×OI FY25; 4y record; ¥3.47tn mcap ≈56× FY25 revenue.
 - **v251 — 2026-08-11** — KWY ANALYSE v1: AVOID (Past WEAK + Future WEAK + SF FAIL: P17 both-legs-negative strike); worst-of-4 ROCE −0.3%, L/E ≈1,300%; band n.m. Names 305, AVOID 237.
 - **v250 — 2026-08-10** — EQNR v2 (clean ANALYSE): AVOID (Past WEAK, P4) reaffirmed; FY25 FCF tie-out closed $5.98–6.87bn → band cut to ≈$20–23 (was $24.7–31.5), FAIR→EXPENSIVE; P19 SOUND on CMD-2026.
-- **v249 — 2026-08-09** — NET v2 + ZBRA v2 REVIEW: both AVOID unchanged (3 gates / Future). ZBRA band ≈$41–44 → ≈$68–72 on TTM OI $858m; NET $1,293m converts now current.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
