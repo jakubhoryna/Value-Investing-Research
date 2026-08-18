@@ -1,84 +1,133 @@
-# GSC Analysis Queue — TODO.md (v9 · 2026-08-09)
+# GSC Work Queue — TODO.md (v10 · 2026-08-18)
 
-**Purpose.** Backlog of names to run through the GSC pipeline — ANALYSE for names with no memo, REVIEW for existing ones. This file is *not* authoritative state: `_REGISTER.md` remains the single source of truth. Nothing here is a verdict or a recommendation; it is a work queue.
+**Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
-**Ticker discipline.** Tickers below are *suggested* primary listings for convenience only. They are **resolved and verified at analysis time** against the data-source hierarchy (SEC EDGAR / primary annual report / Yahoo), never trusted from this file. A wrong suggestion here costs nothing; a wrong verdict from bad data costs everything — so resolution + a data-completeness check happen per name at run time.
+**Ticker discipline.** Tickers are suggested keys for convenience; resolved and verified at run time per §7.1a (prior-check on company name + ISIN, never the key alone).
 
 ---
 
-## ⛳ QUEUE STATUS — CLOSED (2026-08-09)
+## ⚠ Imminent & overdue — dated re-tests (as of 2026-08-18)
 
-**Zero runnable ANALYSE names. Zero open flags requiring analysis.** All 94 names carried in the v7 backlog now hold register rows and committed memos; every market block is closed (see "Backlog — closure record"). The only work this file schedules is **REVIEW work**: the dated re-tests below and the P19 judgment queue.
+*(Also queued: a MODEL session on IDEAS A1 — the OI-line convention — user-scheduled 2026-08-18; A2–A7 stay parked.)*
 
-**One residual token:** ⚑ the "Cartara" line was resolved **by assumption** to Certara (CERT) and analysed. If a different company was intended, the CERT memo stands as a valid extra row and the flag reopens — user confirmation owed.
+1. **7936.T (ASICS) — Q2 FY2026 tanshin published 14 Aug 2026 — OVERDUE, run first.** The historic slot for a new art. 459 authorisation (no advance notice); also confirms the 24-Dec-2025 programme count and Apr–Jul inactivity via the H1 cash-flow statement. The P19 judgment that flipped the name to WATCH is the thing being re-tested.
+2. **TRI (Thomson Reuters) — NCIB expires 18 Aug 2026 — TODAY.** Renewal terms decide: a renewed bid executing above ≈$116 (FY25 OI) / ≈$127 (TTM) ≈ 25× EV/OI restores the ADVERSE liveness conjunct → WATCH reverts AVOID.
+3. **STMN.SW (Straumann) — H1-2026, 19 Aug 2026.** Treasury-share movement + any SIX repurchase notice; a general authorisation or second line near today's multiples returns SF to FAIL.
+4. **ZIP.AX — FY2026 Appendix 4E, 20 Aug 2026.** P19 re-test on the live Feb-2026 programme + P17 re-read.
+5. **INTU — FY2026 results, ~21 Aug 2026.** FY2026 tranche prices decide whether the P19 CAUTION holds at 35–46× or turns.
+6. **HEXA-B.ST — Q2 2026 (29 Jul) re-base — OVERDUE.** First clean post-Octave basis: re-base Past and Cheapness on it.
+7. GAP Q2 ~26 Aug · **EA outside date 28 Sep** (close → row terminal/archive; lapse → full REVIEW at the de-pinned price).
 
 ---
 
 ## P19 judgment re-test queue — MODEL v4.0.0 §2·1C·3
 
-**Why it exists.** MODEL v4.0.0 (2026-07-31) replaced the mechanical P19 buyback/dividend tests with a single capital-allocation judgment — **SOUND / CAUTION (= one flag) / ADVERSE (= SF FAIL)**. Every name whose SF FAIL rested on a mechanical P19 strike must be re-read under the judgment protocol at its next touch. The authoritative status list is the register's `## Open items` entry "MODEL v4.0.0 judgment re-test queue"; this block is the work queue.
-
-**Tier 1 — quality gates pass, so the P19 re-read alone decides the verdict: CLOSED 2026-08-06 (8/8).**
-
-| Name | Prior | Run | Judgment | Outcome |
-|---|---|---|---|---|
-| SONY → 6758.T | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
-| ASICS → 7936.T | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
-| SOON → SOON.SW | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
-| STMN → STMN.SW | AVOID (P19 + DTC pair) | 2026-08-06 v2 | CAUTION | **→ WATCH** (STRONG/STRONG) |
-| TRI | AVOID (P19) | 2026-08-06 v2 | CAUTION | **→ WATCH** |
-| SU → SU.PA | AVOID (P19 + AVEVA) | 2026-08-06 v2 | ADVERSE | AVOID holds |
-| TER | AVOID (P19) | 2026-08-06 v3 | ADVERSE | AVOID holds |
-| WMT | AVOID (P19) | 2026-08-06 v2 | ADVERSE | AVOID holds |
-
-**Tier 2 — mixed pairs, where the P19 leg is only one of two flags. A P19 re-read alone cannot flip these; the second leg has to be tested too.**
+Tier 1 CLOSED 8/8 (2026-08-06; five flips to WATCH, three ADVERSE holds). **Remaining = Tier 2 mixed pairs** — a P19 re-read alone cannot flip these; the second leg must be tested too:
 
 | Name | Second leg | Status |
 |---|---|---|
-| NOLA-B.ST | P17 fiscal-year read flag | **Run 2026-08-06 v3 — CAUTION, pair holds, AVOID.** Flip is now one dated event: FY2026 FCF > ≈ SEK 295m clears the P17 year read → WATCH. FY2026 AR ~Apr 2027 |
-| WISE.L | Class B entrenchment (9:1, 64.7% of votes on 20.4% of capital) | **Run 2026-08-06 v3 — CAUTION, pair holds, AVOID.** KNEBV governs, not MC.PA. Re-test H1 FY2027 ~Nov 2026 |
-| AAPL | P17 comp strike | **Open** — flip requires comp reform; FY2026 10-K ~Oct/Nov 2026, then Jan 2027 proxy |
-| MA | P17 comp strike ($35.4m > $30m stop) | **Open** — 2027 proxy (~Apr 2027) |
-| DLG.MI | La Marzocco RPT pair | **Open** — FY2026 AR (~Mar 2027); hard dates Feb 2028 IPO right / Feb 2029 demerger right |
-| PSH.L | Fee extraction | **Open** — FY2026 AR (~Feb 2027) or any fee change |
+| AAPL | P17 comp strike | Open — flip requires comp reform; FY2026 10-K ~Oct/Nov 2026, then Jan 2027 proxy |
+| MA | P17 comp strike ($35.4m > stop) | Open — 2027 proxy (~Apr 2027) |
+| DLG.MI | La Marzocco RPT pair | Open — FY2026 AR (~Mar 2027); hard dates Feb 2028 IPO right / Feb 2029 demerger right |
+| PSH.L | Fee extraction | Open — FY2026 AR (~Feb 2027) or any fee change |
 
-**Tier 3 — WATCH-name P19 flags: judgment context only, no queue action.** INVE-B.ST, FIE.DE, ROG.SW, ULVR.L, KNIN.SW, AXFO.ST, LIFCO-B.ST — each already carries one unpaired capital-allocation flag; they matter as calibration for the names above, and as pair-risk if a second negative ever appears.
-
-**Near-dated re-tests created by the 2026-08-06 batch** — the earliest points at which any of the five flips could revert: **7936.T Q2 tanshin 14 Aug 2026** (art. 459 board authority means a new programme can appear with no notice), **TRI NCIB expiry 18 Aug 2026** (renewal price decides), **STMN.SW H1-2026 19 Aug 2026** (treasury-share movement), **SOON.SW H1 FY26/27 ~Nov 2026** (successor programme), **6758.T H1 FY3/27 10 Nov 2026** (first completed half of the ¥500bn facility). **New at v7: DLB FY2026 10-K ~Nov 2026** — window-roll re-test of a bound-proof Past WEAK (w-o-4 ROCE 9.1–9.9% against the 10% floor), plus the customer-concentration disclosure. ⚠ The first three (14/18/19 Aug 2026) fall within days of this commit.
+Tier 3 (context only, no queue action): WATCH-name P19 flags — INVE-B.ST, FIE.DE, ROG.SW, ULVR.L, KNIN.SW, AXFO.ST, LIFCO-B.ST; pair-risk if a second negative appears.
 
 ---
 
+## Named re-tests & backfills — migrated from register `## Open items` 2026-08-18
+
+*One line per name; detail lives in the memo appendices and row cells (they are authoritative). Dated items also appear in the calendar below.*
+
+| Name | Owed | When / trigger |
+|---|---|---|
+| 7213.T | P17 severity-changing INDETERMINATE (thresholds ¥58.9m/¥76.5m vs ¥49.8m six-director avg — a disclosed top total above either read pairs → SF FAIL, 3-gate AVOID); ISIN; FY3/27 Q1 BS; buyback count post 18-Jun-2026 | next touch / yūhō |
+| 0700.HK | FY2016–17 statements + FY2018–20 CFO rebuild; 2025 AR emoluments note resolves P17 INDETERMINATE (>US$40m top pay pairs → SF FAIL) | FY2026 AR ~Mar 2027 |
+| ZBRA | P19 live ADVERSE path: FY26 repurchases > FY26 FCF on rising leverage → SF FAIL (2-gate AVOID, removes fulfilment-distributor flip path); H1 avg price INDETERMINATE | FY2026 10-K ~Feb 2027 |
+| NET | $1,293.3m converts current at 30-Jun-26 — settlement/refinance path; ex-restructuring loss-margin trend | Q3 2026 ~Nov |
+| BKNG | P15 supplier look-through (Google share of $8,186m marketing) decides Future; App. D re-run on the P16 binary schema (v1 used a non-P16 LOW/MED/HIGH five-force) | FY2026 10-K ~Feb 2027 |
+| SW.PA | Band disappears on guided FY26 margin (7×OI < debt+leases+NCI — DEC.PA case); P4 + P19 re-test; Bellon coordination-agreement renewal; P17 bounded→measure at URD-2026 | results 23 Oct 2026 |
+| SIE.DE | Past re-test under the captive-finance basis once IDEAS A2 is decided; Healthineers spin vote forces full quality re-base | FY2026 ~Dec / AGM Feb 2027 |
+| 6758.T | Restated-comparative P20 re-run; FYE3/25 continuing FCF from the 20-F equity note; FYE3/19–23 repurchase counts INDETERMINATE; H1 ¥500bn-facility re-test | H1 FY3/27, 10 Nov 2026 |
+| SOON.SW | Successor-programme watch (72% undrawn, expired Apr-25); Sennheiser close + pre-deal OI; chair comp; P4 one decline from firing | H1 FY26/27 ~Nov 2026 |
+| SU.PA | CMD deck primary retrieval (€2.5–3.5bn envelope is tier-3); Cognite/AiDASH audits; FY23/24 counts; H1 lease liability | next touch |
+| TER | Q3 10-Q execution read (~Oct); FY2026 10-K full-year P19; insider-sale volume vs P17 "most of their shares"; MultiLane audit | Oct 2026 / 10-K |
+| WMT | 10-K "no expiration" sentence verbatim; TTM FCF (Q1 capex); Q2 FY27 date verify; P17 rests on one-time inducement grant — lapse at 2027 proxy + CAUTION re-read → possible SF PASS | Q2 FY27 / 2027 proxy |
+| NOLA-B.ST | Flip is one dated event: FY2026 FCF > ≈SEK 295m clears the P17 year read → WATCH; CEO-transition severance is the numerator risk; ISIN n/a after 8 sources | FY2026 AR ~Apr 2027 |
+| WISE.L | £405m tranche price/volume + trust/treasury split vs stated 40/60; Class B sunset re-test (Articles/2025 circular/20-F); highest-paid employee; RPT note; LSE line refresh | H1 FY2027 ~Nov 2026 |
+| LR.PA | All acquisition audits INDETERMINATE (Avtron the only priced deal); FY16–22/FY24 repurchase prices; chair-seat norm survey | URD 2026 ~Apr 2027 |
+| SIKA.SW | Parex/MBCC/Finja/Akkim audits (MBCC statutory accounts via Bundesanzeiger not yet attempted); **P4 live — 3rd consecutive decline at FY2026 → Past WEAK independently of price** | FY2026 AR |
+| SGO.PA | CEO FY2025 comp (URD French-only); FY2020–23 purchased-share counts; CSR/Fosroc/Ovniver audits; **re-verdict risk under IDEAS A1** | FY2026 ~Feb 2027 |
+| DG.PA (VINCI) | Cobra IS / Gatwick / 2024 airports / FM Conway audits | URD 2026 ~Feb 2027 |
+| EL.PA | FY2020 tranche purpose; FY2024 execution count/price; GrandVision FY2017 OI; Supreme audit | URD 2026 ~Mar 2027 |
+| DEC.PA | APN Outdoor >20× strike INDETERMINATE (FY2015–17 statutory EBIT unretrievable — delisted) | if source surfaces |
+| CRCT | FY2025 SCT retrieval — equity grants above ≈$2.5m breach both reads → **WATCH turns AVOID** | FY2026 10-K ~Mar 2027 |
+| CRI | FY2016–24 repurchase tranche pricing (a third of the company retired while OI fell 71%) — bad execution → CAUTION, pairs with standing P17 flag → SF FAIL | next touch |
+| NGVT | P17 INDETERMINATE, ceilings straddle a typical package — live pair risk with P19 CAUTION | FY2026 10-K |
+| WINA | Primary SCT tie-out (strike rests on secondary figure at 1.2% margin) | next touch |
+| VC · UPST | FY2025 SCT retrieval converts flag → strike | next touch |
+| KVYO | Exact FY2025 SCT (flag margin ≈6–10% — could clear → P19 flag stands alone → **SF flips PASS**); Shopify RPT terms | next touch |
+| TENB | FY2026 SCT re-read (3y P17 line rises with FCF); ISIN verify | FY2026 10-K |
+| OPEN | SCT allocation of the $741m CEO package; ISIN verify; primary tie-out completion | next touch |
+| DLB | FY2026 10-K window-roll re-test of bound-proof Past WEAK (w-o-4 9.1–9.9% vs 10% floor) + customer-concentration disclosure; ISIN re-verify; FY16–20 NIBCL liftable | ~Nov 2026 |
+| SHA0.DE · BAYN.DE | P17 at next touch (v3.4.0-queue remnants) | next touch |
+| ENR.DE | €2bn programme purpose | FY2026 AR ~Dec |
+| OR.PA | P4 3rd-decline re-test; Galderma 20% (€4.2bn) + Kering Beauté/Creed audits; FY2016/18 gross counts + sterilisation quantum; Aesop pre-deal OI (Natura filings) | FY2026 |
+| RMS.PA | FY2017/FY2020 tranches (AR2017/URD2020); **P4 — 3rd decline at FY2026 fires**; family % of capital/votes | FY2026 |
+| PIRC.MI | IFRS 10 control determination re-test (Camfin–MPI agreement lapsed 28-Feb-26; carried 9–6) | FY2026 AR |
+| MONC.MI | FY2016–20 record rebuild (issuer CDN blocks bulk retrieval); P17/RPT verify | next REVIEW |
+| EPI-A.ST | FY2018–20 ARs (5y→8y); mandate purpose + 4th refusal year; Stanley audit | FY2026 AR |
+| FIE.DE | Shopko audit re-test (>20× INDETERMINATE); window rolls to 9y | FY2026 AR ~Apr 2027 |
+| FTK.DE | Supplier-breadth evidence; FY2020–21 SARs-era comp quantum | FY2026 |
+| KRN.DE | Current-provisions NIBCL call (9.26% vs 10.03%); FY2026 window roll clears 10% on both | FY2026 AR |
+| ASSA-B.ST | HHI (2023) multiple re-test (>20× INDETERMINATE, 3y 19.3–21.8×) | FY2026 AR |
+| ESSITY-B.ST | BSN multiple INDETERMINATE; May-2026 SEK 3bn programme as 3rd tranche-year | FY2026 ~21 Jan 2027 |
+| GETI-B.ST | Paragonix multiple; supplier breadth; SF PASS rests on zero buybacks ever | FY2026 AR |
+| SKF-B.ST | **P4 — 3rd decline fires → Past WEAK**; John Sample multiple; Lex Asea separation ~Q4 2026 resets basis (re-underwrite both entities) | Q4 2026 / FY2026 AR |
+| INDT.ST | **P4 — 3rd straight decline at FY2026 → Past WEAK/AVOID**; re-read FY2026 acquisition cohort | FY2026 AR |
+| MYCR.ST | FY2026 acquisition cohort + supplier spend; P19 de-minimis + sterilisation re-test | FY2026 AR |
+| HFG.DE | FY2015-end BS if the Nov-2017 IPO prospectus surfaces (beginning-CE legs record-limited); §162 Compensation Report 2025 (P17 INDETERMINATE) | next REVIEW |
+| 6702.T | FY2017–FY2023 OI/NIBCL/capex rebuild (IR archive purged; 3y window carried); FY24 OI vintage question | next REVIEW |
+| 6367.T | FY17 capital-employed inputs + Mar-16 NIBCL from FY17/FY18 tanshin (9y carried) | next REVIEW |
+| Japan comp bounds | Exact top-exec comp for 7974.T, 6367.T, 6954.T, 6301.T, 5108.T, 7751.T (all clear P17 on bounds); 7974.T outside-director fees + FY18–21 intangibles alignment | first REVIEW each |
+| ABEV | **FCF tie-out — band-moving** | FY2026 ~Feb 2027 |
+| 300750.SZ (CATL) | Full AR tie-out (coherence-accepted tier-2); customer-concentration table is Future-deciding | FY2026 AR |
+| CERT | Primary tie-out | next touch |
+| LYFT · TENB · LMND · OPEN | Record rebuilds liftable (LYFT FY16–18 S-1/early 10-Ks; TENB FY18–20); LMND/OPEN primary line-item tie-outs incomplete | next touch |
+| v3.7.0 App-F restatements | BABA, 2330.TW, AMZN, LIFCO-B.ST, TROW, BKNG, ROG.SW, FIE.DE, ULVR.L, AXFO.ST, NVS — memo App. F restates the labelled no-cash/all-cash band at next REVIEW; IBKR upper bound not derivable (logged judgment, single figure) | next REVIEW each |
+
+**Standing session rules (pending codification at MODEL v4.2.0):** ISIN backfill at every REVIEW touch (§7.1a); primary tie-outs owed on every coherence-accepted memo from the 2026-08-07/09 cohorts (91 names) at their first REVIEW; prefer primary interim debt for EV inputs; regulated utilities are screened out at queue stage, never seeded for ANALYSE.
+
 ---
 
-## Priority — next up
+## Corporate actions / RECONCILE queue
 
-**REVIEW work only, in date order.** These are the near-dated re-tests where a live event can move a verdict, three of them within nine days of this commit:
+- **Corporate-actions sweep of the full register — OVERDUE** (delistings, renames, re-keys, spin-offs, closed deals across 308 names; two of the last fifteen backlog names had already ceased to exist as listings).
+- **BBBY → NXH re-key** when the Neighborhood Intelligence rename is effective (key frozen BBBY per §7.1a; re-key is a RECONCILE act, logged).
+- **INPST.AS** — delists on offer settlement (H2 2026): archive the row.
+- **SKF-B.ST Automotive Lex Asea separation** ~Q4 2026 — basis reset, both entities re-underwritten.
+- **EA** — 28 Sep 2026 outside date: close → terminal row/archive; lapse → full REVIEW.
 
-1. **7936.T (ASICS) — Q2 FY2026 tanshin, 14 Aug 2026.** Article 459 board authority means a new buyback programme can appear with no advance notice; the P19 judgment that flipped this name to WATCH is the thing being re-tested.
-2. **TRI (Thomson Reuters) — NCIB expiry, 18 Aug 2026.** The renewal price is the re-test; a renewal at current multiples is the CAUTION→ADVERSE risk.
-3. **STMN.SW (Straumann) — H1-2026, 19 Aug 2026.** Treasury-share movement against a name with no live programme.
-4. **ZIP.AX — FY2026 Appendix 4E, 20 Aug 2026.** P19 re-test on the live Feb-2026 programme plus a P17 re-read. *(Carried in the calendar but omitted from this list at v8 — restored here.)*
-5. **INTU (Intuit) — FY2026 results, ~21 Aug 2026.** New WATCH row; the FY2026 tranche prices decide whether P19 CAUTION holds at 35–46× or turns.
-6. **NET Q3 2026 ~Nov · SOON.SW ~Nov 2026 · 6758.T H1 10 Nov 2026** — NET's convert-settlement touch plus the remaining two Tier-1 flip-reversion watches.
+---
 
-**Re-seeding the ANALYSE queue is a user decision.** Three candidate directions, in the order they would add most:
+## Re-seeding the ANALYSE queue — user decision (unchanged from v9)
 
-- **(a) Run the named re-test backlog as REVIEW work.** The register's Open items now carry a large named queue — P19 dual-reads, acquisition-audit INDETERMINATEs, P4 third-decline tests, window-roll Past re-tests (DLB ~Nov 2026, WDAY and DBX ~FY2028), and the SF re-test tiers. This is the highest-value work per hour because every name already has a memo, so each run is a delta, not a build.
-- **(b) A corporate-actions sweep of the full register** — owed at the next RECONCILE regardless: delistings, renames, re-keys (BBBY→NXH is already pending), spin-offs and closed deals across 304 names. Cheap, mechanical, and it prevents the register from quietly rotting.
-- **(c) A new ANALYSE market block.** Coherent untouched universes: Canada, Australia, Korea/Taiwan beyond the two names held, India, the US mid-cap industrial tail (the automation-thesis adjacency), or the European small-cap compounders. **Note the standing screen-at-queue-stage rule from this batch: regulated utilities should not be seeded** — NEE, IBE.MC, SRE, FORTUM.HE and ORSTED.CO all fail Past structurally, by design of their capital base, and cost full ANALYSE budget to reach a foregone conclusion.
+- **(a) Run the named re-test backlog above as REVIEW work** — highest value per hour; every name is a delta, not a build.
+- **(b) The corporate-actions sweep** — cheap, mechanical, prevents quiet rot.
+- **(c) A new ANALYSE market block** — Canada, Australia, Korea/Taiwan beyond the two names held, India, the US mid-cap industrial tail (automation-thesis adjacency), or European small-cap compounders. Utilities are not seeded (standing screen).
 
 ---
 
 ## Scheduled reviews — near-term calendar
 
-*Refreshed 2026-08-09 against register **v248** row cells — this clears the staleness carried since v5 (which read against v173). Non-authoritative: the register wins. Dated triggers only; price-alert triggers live in the rows.*
+*Refreshed 2026-08-09 against register v248 rows; v10 adds the overdue markers above and re-points the Q1–Q2 2027 detail pointer (the register's Open items no longer carry it). Non-authoritative: the register wins. Dated triggers only; price alerts live in the rows.*
 
-**Aug 2026 (imminent):** **7936.T Q2 tanshin 14 Aug** (P19 re-test, no advance notice) · **TRI NCIB expiry 18 Aug** (renewal price) · **STMN.SW H1 19 Aug** (treasury movement) · **ZIP.AX FY26 Appendix 4E 20 Aug** (P19 re-test on the live Feb-26 programme + P17 re-read) · **INTU FY2026 ~21 Aug** · GAP Q2 ~26 Aug · ABNB Q2 10-Q 12 Aug (cadence) · BABA FY2027 Q1 · ADYEN.AS H1 · PAH3.DE H1 mid-Aug · WMT Q2 FY27 10-Q · TEAM FY2026 10-K (OI inflection + P19 on the $1.5bn 2024 programme) · CELH Q2 10-Q · RUSTA.ST AR 25/26 · BNR.DE H1 (optional) · 1211.HK H1 (optional) · ~~NET Q2 2026 (6 Aug)~~ and ~~ZBRA Q2 2026 (4 Aug)~~ — **both FOLDED IN at register v249** (v2 memos, verdicts unchanged; ZBRA's band up ≈two-thirds).
-**Sep 2026:** **FDS FY2026 results ~Sep** (first Viswanathan-era print; the make-whole SCT is the named P17 strike risk) · **PANW FY2026 10-K ~Sep** (first CyberArk-consolidated statements) · **UFI FY2026 10-K ~Sep** · CRM Q2 FY27 ~2 Sep (optional) · LULU Q2 ~Sep (O'Neill's first quarter) · NKE Q1 FY2027 10-Q ~Sep/Oct + Sept proxy (dated second-flag risk) · RUSTA.ST AGM ~Sep (P19 authorisation watch) · **EA deal outside date 28 Sep** — close → row terminal/archive; lapse → full REVIEW at the de-pinned price.
-**Oct 2026:** **COST FY2026 10-K ~early Oct** (completed programme year; Jan-2027 authorisation expiry is the natural re-test) · MU FY2026 10-K ~Oct (band re-anchor only — structural) · TER Q3 10-Q ~Oct · MSFT FY2026 proxy ~Oct (P17 absolute-trigger flag) · EL.PA Q3 20 Oct (informational) · **SW.PA FY2026 results 23 Oct** (guided 3.2–3.4% margin removes the band entirely; P4 + P19 re-test) · AAPL FY2026 10-K ~Oct/Nov (SF flip needs comp reform).
-**Nov 2026:** **NET Q3 2026 ~Nov** (new — the settlement or refinance path for the $1,293.3m of converts reclassified **current** at 30 Jun 2026, and whether the ex-restructuring loss-margin trend held) · **6758.T H1 FY3/27 10 Nov** (first completed half of the ¥500bn facility — the §2·1C·3 re-test) · SOON.SW H1 FY26/27 ~Nov (successor-programme watch) · **DLB FY2026 10-K ~Nov** (window-roll re-test of a bound-proof Past WEAK at 9.1–9.9% against the 10% floor — the most interesting near-dated flip in the file) · QCOM FY2026 10-K ~Nov (FY26 tranche; band re-anchors on a falling base) · ROK FY2026 10-K ~Nov (completed programme year) · V FY2026 10-K ~Nov (the 11%-client disclosure) · ATKR FY2026 10-K ~Nov · AZTA FY2026 ~Nov · SONO FY2026 10-K ~Nov · COLO-B.CO FY2025/26 ~Nov (L/E exactly at the P5 line) · 7974.T Q2 FY3/27 ~Nov · 8002.T H1 FY3/27 ~Nov · EKTA-B.ST H1 ~Nov · WISE.L H1 FY2027 ~Nov (the £405m tranche price) · **TRI.PA FY2026 results ~25 Nov** (first buyback year; the register's closest AVOID at +7.7% from band) · SCHN.SW repurchase-cessation watch (programme runs to Nov 2026) · PANW 2026 proxy ~Nov.
-**Dec 2026 / Q4 events:** ENR.DE FY2026 AR ~Dec (first clean-cycle year + P19 re-test of the €2bn/€6bn programme) · SIE.DE FY2026 ~Dec (tranche + CAUTION re-test; the Feb-2027 AGM Healthineers spin vote forces a full quality re-base) · SKF-B.ST Automotive Lex Asea separation ~Q4 (resets the basis; both entities re-underwritten) · TKA.DE and TUI1.DE FY2026 ARs (informational) · INPST.AS settlement H2 2026 → delist, archive the row · BAYN.DE Roundup class-settlement approval + post-Durnell provisioning (H2 2026).
-**Q1–Q2 2027 — FY2026 annual season:** the bulk of the 68-name WATCH list re-anchors, including all four held names (and the HFG / NOVO-B decisions if still open), plus the named re-test queue — P19 dual-reads (SCHN.SW, GEBN.SW, SAF.PA, TER, MORN, GRMN, SU.PA), acquisition-audit INDETERMINATEs (FIE.DE Shopko, ASSA-B.ST HHI, ESSITY-B.ST BSN, GETI-B.ST Paragonix, EPI-A.ST Stanley, MYCR.ST cohort, KRN.DE Netstal), P4 third-decline tests (INDT.ST, SKF-B.ST, CELH), **EQNR FY2026 ~Feb 2027 — the P4-break that would flip a name whose shadow P12 edge already sits at the print**, ABEV FY2026 + the band-moving FCF tie-out, NU FY2026, CATL FY2026 AR (the customer-concentration table is Future-deciding), ADBE FY2026 10-K ~Jan, **ZBRA FY2026 10-K ~Feb 2027 — a P19 re-test with a named ADVERSE path** (full-year repurchases above full-year FCF on rising leverage flips CAUTION → SF FAIL, making it a two-gate AVOID and removing the fulfilment-distributor MODEL flip path; the H1 average repurchase price is undisclosed → INDETERMINATE), and the FY2027 10-K cluster from this batch (CRWD, SNOW, OKTA, PATH, S, WDAY ~Mar 2027) — **detail: register `## Open items`.**
+**Aug 2026 (imminent):** ~~7936.T Q2 tanshin 14 Aug~~ **OVERDUE** · **TRI NCIB expiry 18 Aug** · **STMN.SW H1 19 Aug** · **ZIP.AX FY26 Appendix 4E 20 Aug** · **INTU FY2026 ~21 Aug** · GAP Q2 ~26 Aug · BABA FY2027 Q1 · ADYEN.AS H1 · PAH3.DE H1 mid-Aug · WMT Q2 FY27 10-Q · TEAM FY2026 10-K (OI inflection + P19 on the $1.5bn 2024 programme) · CELH Q2 10-Q · RUSTA.ST AR 25/26 · BNR.DE H1 (optional) · 1211.HK H1 (optional).
+**Sep 2026:** FDS FY2026 results ~Sep (first Viswanathan-era print; make-whole SCT = named P17 strike risk) · PANW FY2026 10-K ~Sep (first CyberArk-consolidated statements) · UFI FY2026 10-K ~Sep · CRM Q2 FY27 ~2 Sep (optional) · LULU Q2 ~Sep (O'Neill's first quarter) · NKE Q1 FY2027 10-Q ~Sep/Oct + Sept proxy (dated second-flag risk) · RUSTA.ST AGM ~Sep (P19 authorisation watch) · **EA deal outside date 28 Sep**.
+**Oct 2026:** COST FY2026 10-K ~early Oct (completed programme year; Jan-2027 expiry the natural re-test) · MU FY2026 10-K ~Oct (band re-anchor only) · TER Q3 10-Q ~Oct · MSFT FY2026 proxy ~Oct (P17 absolute-trigger flag) · EL.PA Q3 20 Oct (informational) · **SW.PA FY2026 results 23 Oct** (band removal + P4 + P19) · AAPL FY2026 10-K ~Oct/Nov.
+**Nov 2026:** NET Q3 ~Nov (converts path) · **6758.T H1 FY3/27 10 Nov** (¥500bn facility re-test) · SOON.SW H1 ~Nov (successor programme) · **DLB FY2026 10-K ~Nov** (window-roll re-test — the most interesting near-dated flip) · QCOM FY2026 10-K ~Nov (falling-base re-anchor + CAUTION re-test) · ROK FY2026 10-K ~Nov · V FY2026 10-K ~Nov (11%-client disclosure) · ATKR · AZTA · SONO · COLO-B.CO FY2025/26 (L/E at the P5 line) · 7974.T Q2 · 8002.T H1 (¥100bn pgm execution multiple) · EKTA-B.ST H1 · WISE.L H1 FY2027 (the £405m tranche price) · **TRI.PA FY2026 results ~25 Nov** (first buyback year; closest AVOID at +7.7%) · SCHN.SW repurchase-cessation watch (programme to Nov 2026) · PANW 2026 proxy.
+**Dec 2026 / Q4:** ENR.DE FY2026 AR ~Dec (first clean-cycle year + €2bn/€6bn P19 re-test) · SIE.DE FY2026 ~Dec (tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → full quality re-base) · SKF-B.ST Lex Asea ~Q4 · TKA.DE, TUI1.DE FY2026 ARs (informational) · INPST.AS settlement → delist/archive · BAYN.DE Roundup settlement approval + post-Durnell provisioning.
+**Q1–Q2 2027 — FY2026 annual season:** the bulk of the 69-name WATCH list re-anchors, including all four held names (and the HFG / NOVO-B decisions if still open), plus the named re-test backlog above — P19 dual-reads (SCHN.SW, GEBN.SW, SAF.PA, TER, MORN, GRMN, SU.PA), acquisition-audit INDETERMINATEs (FIE.DE, ASSA-B.ST, ESSITY-B.ST, GETI-B.ST, EPI-A.ST, MYCR.ST, KRN.DE), P4 third-decline tests (INDT.ST, SKF-B.ST, CELH, RMS.PA, OR.PA, SIKA.SW), **EQNR FY2026 ~Feb 2027** (the P4-break case; IDEAS A6), ABEV FY2026 + band-moving FCF tie-out, NU FY2026, **0700.HK AR ~Mar 2027** (record rebuild + P17 resolution), CATL FY2026 AR, ADBE FY2026 10-K ~Jan, **ZBRA FY2026 10-K ~Feb 2027** (named ADVERSE path), CRCT FY2026 10-K (SCT — verdict-moving), and the FY2027 10-K cluster (CRWD, SNOW, OKTA, PATH, S, WDAY ~Mar 2027) — **detail: "Named re-tests & backfills" above + memo appendices.**
 
 ---
 
@@ -96,14 +145,14 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 5. Clear processed names from the queue; emit a JSON run summary (`--output-format json`, per-name verdict + `total_cost_usd`).
 
 **Non-negotiable guardrails for unattended operation.**
-- **Data-completeness gate.** If the inputs for the four CE variants / cheapness legs are not cleanly sourced, emit an `INCOMPLETE` stub memo flagged for human review and skip the verdict. Never fill a gap with an assumption to finish a row. This is what keeps the runner from laundering bad data into confident verdicts overnight.
-- **Sequential register I/O.** No fan-out. Parallel jobs PUT-ing `_REGISTER.md` manufacture exactly the collisions §7.4a exists to catch. One runner, in order.
+- **Data-completeness gate.** If the inputs for the four CE variants / cheapness legs are not cleanly sourced, emit an `INCOMPLETE` stub memo flagged for human review and skip the verdict. Never fill a gap with an assumption to finish a row.
+- **Sequential register I/O.** No fan-out. Parallel jobs PUT-ing `_REGISTER.md` manufacture exactly the collisions §7.4a exists to catch.
 - **MODEL-mode lockout.** Runner handles ANALYSE / REVIEW / SWEEP only. Framework changes stay a human-only, exact-phrase "commit model" gate; runner has no write access to `instructions/`.
+- **Commit-time compliance re-measure** (v4.2.0): P13 word count, §7.1 cell caps, four-gates-only check, no register-wide superlatives — unattended runs drift ~10–65% over P13 and their own in-run compliance claims are not evidence.
 - Secrets (`ANTHROPIC_API_KEY`, PAT) as repo secrets, never in workflow files; `--allowedTools` scoped to EDGAR / Yahoo / GitHub.
+- **Retrieval doctrine from the Aug-2026 runs:** primary results releases are the backbone (a Q4 release carries two full years of statements in one document and survives the URL-must-be-surfaced-by-search constraint); tier-2 columns must tie to a primary figure before their headers are trusted; per-filer productive channels are logged in each memo's App. A (e.g. Hitachi results library; Panasonic press-release PDFs; MHI tanshin archive; Lagardère interim reports; Trigano results releases).
 
 **The real bottleneck is data, not scheduling.** The SEC-filer path is deterministic and safe to automate. The European and Japanese non-SEC names depend on primary-report PDF extraction — the fragile, judgment-heavy path where an unattended run is most likely to silently produce a wrong verdict. Harden those fetchers (or route them to `INCOMPLETE`) before trusting overnight output on this universe.
-
----
 
 ---
 
@@ -112,29 +161,23 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 *Kept as a record of what was worked, not as a queue. Every name below carries a register row and a committed memo.*
 
 - **Switzerland 13/13** (v2) · **Germany 30/30** (v2) · **Netherlands 3/3** (v2) · **Sweden 25/25** (v3) · **Italy 6/6** (v4) · **France 16/16** (v6) · **Japan majors 9/9** (v7).
-- **Finland 4/4** (v8): NOKIA.HE, NESTE.HE, FORTUM.HE, AS.
-- **Poland 6/6** (v8): PKN.WA, ALE.WA, ZAB.WA, DNP.WA, CDR.WA, ACP.WA.
-- **United Kingdom 2/2** (v8): BA.L, HLN.L.
-- **Denmark 3/3** (v8): ORSTED.CO, COLO-B.CO, ROCK-B.CO.
-- **Brazil 2/2** (v8): NU, ABEV — the backlog's only all-WATCH block.
-- **Energy 5/5** (v8): 300750.SZ, NEE, IBE.MC, EQNR, SRE — 0 WATCH; EQNR the near-miss, failed by P4 alone.
-- **United States 72/72** (v8), closed across seven runs on 07–09 Aug 2026. Struck rather than analysed: **UDMY** and **OLPX** (dead listings), **ZM** (duplicate — row and memo already existed at v247).
+- **Finland 4/4** · **Poland 6/6** · **United Kingdom 2/2** · **Denmark 3/3** · **Brazil 2/2** (all-WATCH) · **Energy 5/5** (0 WATCH; EQNR the near-miss) — all v8.
+- **United States 72/72** (v8), closed 07–09 Aug 2026. Struck rather than analysed: UDMY, OLPX (dead listings), ZM (duplicate).
 
 ---
 
-## Flags — all resolved
+## Flags
 
-- **"Cartara"** — ⚑ **RESOLVED BY ASSUMPTION → Certara (CERT)**, analysed 2026-08-09 (AVOID, two gates). No listing exists under the queue's spelling anywhere; the only near-match in the world is Cartiere Carrara, a private Italian tissue maker. **User confirmation owed** — if a different company was meant, the flag reopens and the CERT memo simply stands as an extra row.
-- **Bed Bath & Beyond** — **RESOLVED BY EVIDENCE**, analysed 2026-08-09 as **BBBY** (AVOID, three gates). The 2023 Ch. 11 estate is dead; the brand IP went to Overstock.com, which renamed to Beyond, Inc. and then in Aug 2025 to Bed Bath & Beyond, Inc., reclaiming NYSE: BBBY. ⚠ A further rename to **Neighborhood Intelligence (Nasdaq: NXH)** is announced — key frozen at BBBY per §7.1a until effective; the re-key is a RECONCILE act, logged in the register change log.
-- **Trigano** — RESOLVED at register v233 under §7.1a: Trigano keys `TRI.PA`, Thomson Reuters keeps the bare US key `TRI`.
-- **Thin-history names** — the ⚠ convention retires with the queue; recent IPOs and spin-offs produced Past WEAK or record-limited windows exactly as expected (FIG 4y, PATH 6y, S 7y, MBLY 4y in this batch).
+- **✓ "Cartara" → Certara (CERT) — CONFIRMED by user 2026-08-18.** Flag closed; the CERT row stands (AVOID, two gates, analysed 2026-08-09).
+- **Bed Bath & Beyond** — resolved by evidence, analysed as **BBBY** (AVOID, three gates); **NXH re-key pending** the rename's effectiveness (see Corporate actions).
 
 ---
 
 ## Change log
-- **v9 — 2026-08-09** — **Two REVIEWs committed at register v249: NET v2 and ZBRA v2, both AVOID unchanged.** The two fold-in obligations the v8 calendar carried are **closed**: NET's Q2 2026 (6 Aug) and ZBRA's Q2 2026 (4 Aug) are in. NET is unmoved on three gates but gains a near-dated item — **$1,293.3m of converts reclassified current** at 30 Jun 2026 — so a **Q3 2026 touch (~Nov)** is added to the calendar and to Priority. ZBRA's verdict is unmoved on the Future gate while its band rises from ≈$41–44 to **≈$68–72** on TTM OI of $858m, cutting Dist from +749.5% to +425.9%; its **FY2026 10-K is now a P19 re-test with a named ADVERSE path**, sharpened in the Q1–Q2 2027 entry. **Priority repair:** ZIP.AX's 20 Aug Appendix 4E sat in the calendar but was omitted from the v8 Priority list — restored, so the imminent run of dated re-tests reads 7936.T 14 Aug · TRI 18 Aug · STMN.SW 19 Aug · **ZIP.AX 20 Aug** · INTU ~21 Aug. **Queue status unchanged: CLOSED** — re-seeding remains a user decision and the "Cartara"→CERT confirmation remains the one residual token. Three process findings from this commit, all logged in the register's Open items: same-day memo versioning is already resolved by §7.4a's overwrite clause and needs **no MODEL change**; the P13 overrun recurred in an unattended draft that reported itself compliant (ZBRA 931 → 799 at commit); and unverified register-wide superlatives were struck for the second commit running. **The proposed bootstrap edit is not made and should be narrowed:** `api.github.com` was reachable throughout this interactive session (every call 200), so the "blocked at the sandbox proxy" finding is specific to **scheduled/unattended runs** and the `git clone` fallback belongs in the bootstrap scoped that way — a bootstrap change cannot self-apply in any case. v8 archived → `queue/archive/TODO_v8_2026-08-09.md`.
-- **v8 — 2026-08-09** — **THE ANALYSIS QUEUE IS CLOSED.** The 94-name v7 backlog is fully worked: 62 names committed at register v247 (Poland 6, US 07-Aug evening 6 + night 6, Finland 4, US 08-Aug 10 + evening 10 + night 10, Denmark 3, UK 2, US 09-Aug morning 9), and the final 29 in this commit (US afternoon 20, Brazil 2 + Energy 5, flag-resolution 2). Every market block is closed: Finland 4/4, Poland 6/6, UK 2/2, Denmark 3/3, Brazil 2/2, Energy 5/5, United States 72/72. Three flags actioned: **ZM** was a duplicate (row and memo already existed) and is struck; **Bed Bath & Beyond** resolved by evidence — the 2023 Ch. 11 estate is dead, the brand IP sits with the former Overstock.com, renamed Beyond, Inc. and then in Aug 2025 renamed Bed Bath & Beyond, Inc. reclaiming NYSE: BBBY — one analysable entity, analysed, AVOID on three gates, with a further rename to Neighborhood Intelligence (Nasdaq: NXH) pending as a RECONCILE re-key; **"Cartara"** resolved by assumption to **Certara (CERT)** — no listing exists under the queue's spelling, CERT is edit-distance 2 and sector-adjacent to its queue neighbours, analysed, AVOID on two gates — **the one residual token in this file is the user's confirmation that CERT was the intended name.** UDMY and OLPX were struck earlier as dead listings. The near-term calendar is **refreshed against register v248** — the staleness carried since v5 (register v173) is cleared. Only REVIEW work is now runnable; three dated re-tests fall within nine days of this commit (7936.T 14 Aug, TRI 18 Aug, STMN.SW 19 Aug, then INTU 21 Aug). **Re-seeding the ANALYSE queue is a user decision** — see "Priority" for the three candidate directions. v7 archived → `queue/archive/TODO_v7_2026-08-07.md`.
-- **v7 — 2026-08-07** — **Japan majors CLOSED 9/9** (2026-08-07 cloud session): 7974.T Nintendo and 8002.T Marubeni **WATCH** (Marubeni the register's first sōgō shōsha, run on the §2·1A substitution rule); 6367.T Daikin, 6954.T Fanuc, 6702.T Fujitsu, 6301.T Komatsu, 3382.T Seven & i, 5108.T Bridgestone and 7751.T Canon **AVOID** — every one of the seven on Past WEAK, and 3382.T additionally on an SF FAIL flag pair (¥2tn criterion-free programme + the 2024–25 control-contest governance negative). Canon was the closest of the run at +133%. Block removed. 109 → 100 names. **US backlog opened as the ACTIVE BLOCK by assumption** (not user-set — redirectable, exactly as Japan was; rationale is the block's size and the overnight-runner note naming US SEC filers as the deterministic unattended path), and the first six ran the same day, all **AVOID**: LYFT and OPEN and LMND on three or two gates each, KVYO and TENB on Past WEAK with SF FAIL flag pairs, and **DLB the near-miss** — a bound-proof w-o-4 ROCE of 9.1–9.9% against the 10% floor, on a real ingrainedness moat at 13× FCF, which makes its **FY2026 10-K (~Nov 2026) window-roll the most interesting near-dated re-test in the file**. Four SF FAILs in six names: LMND and OPEN on P17 hard strikes (OPEN's is a $741m CEO package), KVYO and TENB on P17-plus-buyback pairs. 100 → **94 names**; US 78 → 72. All fifteen memos and register v246 committed in one batch on 2026-08-07. The near-term calendar section is **still stale** (reads against register v173) — RECONCILE refresh still owed, carried from v5/v6. v6 archived → `queue/archive/TODO_v6_2026-08-07.md`.
-- **v6 — 2026-08-07** — France block continues: **ML.PA (Michelin) completed — AVOID, Past WEAK** (w-o-4 ROCE 8.39%, P4 fires on three straight declines; 5y record-limited because FY2017–20 statements are unretrievable). and **SW.PA (Sodexo) — AVOID on two gates** (w-o-4 ROCE 9.34% *and* three strong forces; 3y history-limited after the Pluxee spin; ⚠ FY2026 guidance removes the trigger band entirely). and **BVI.PA (Bureau Veritas) — WATCH**, the block's first (w-o-4 ROCE 15.15% but capped ADEQUATE by a 5y record-limited window; Future STRONG on a Government moat; capital allocation SOUND). and **FR.PA (Valeo) — AVOID on two gates** (w-o-4 ROCE 4.13%, the lowest of the register's seven automotive names; breadth FAILs on an arithmetic floor and the captive-customer waiver was tested and denied; no positive price clears EV/OI ≤7). and **MMB.PA (Lagardère) — AVOID on two gates** (w-o-4 ROCE 5.11% *and* L/E 980% past the P6 hard cap; three strong forces on segment-level calls; the first register name with **both** EV/OI bounds negative). and **TRI.PA (Trigano) — AVOID on Future alone** (Past ADEQUATE on w-o-4 ROCE 18.24%, cheapness **FAIR**, and **only +7.7% from its band** — the closest name in the whole register, WATCH or AVOID — but a 2-strong-force tally kills Future). **France is CLOSED 16/16 and the block is removed.** 118 → 112 names. **Japan majors opened**: 6501.T (Hitachi) — AVOID, Past WEAK at w-o-4 ROCE 8.42% on a *full* ten-year window (the divestment programme turned out not to restate the record), Gate 0 a near-fail carried only by the per-unit route. 7011.T (Mitsubishi Heavy) — AVOID on two gates, w-o-4 ROCE 5.11% and a P15 breadth FAIL on ≈22.9% MoD revenue, with the captive-customer waiver tested limb-by-limb and denied on the moat limb alone. 6752.T (Panasonic) — AVOID on two gates, w-o-4 ROCE 4.56% and three strong forces, with SF surviving **only because P20 is active** — the first name where the maintenance-capex basis decides shareholder-friendliness rather than the band. 118 → 109 names. ⚠ ML.PA raises a **MODEL item that blocks clean French analysis**: the as-reported-OI-line convention decided this verdict in the *opposite* direction from SGO.PA, so a label-based and a definition-based rule now give opposite economics on two French filers — see the register Open items. The near-term calendar section is still stale (register v173) and still needs a RECONCILE refresh. v5 to be archived → `queue/archive/TODO_v5_2026-08-06.md`.
-- **v5 — 2026-08-06** — **P19 judgment re-test queue added** as a first-class work queue. Tier 1 closed 8/8 on 2026-08-06 — five flips to WATCH (6758.T, 7936.T, SOON.SW, STMN.SW, TRI), three ADVERSE holds (SU.PA, TER, WMT); Tier 2 reduced to AAPL, MA, DLG.MI, PSH.L after NOLA-B.ST and WISE.L ran the same day. France block pruned of 10 completed names (16 → 6). Trigano key collision recorded as resolved at register v233. 128 → 118 names. **The "Scheduled reviews — near-term calendar" section was NOT refreshed** — it still reads against register v173 and is stale; refresh at the next RECONCILE. v4 to be archived → `queue/archive/TODO_v4_2026-07-29.md`.
-- **v4 — 2026-07-29** — Italy block completed 6/6 (MONC, 1913.HK, PIRC, BC, DLG all carry register rows at v173) → block removed. Priority switched to **France, in list order** (user-set). Calendar refreshed against register v173. 133 → 128 names. v3 archived → `queue/archive/TODO_v3_2026-07-28.md`.
+- **v10 — 2026-08-18** — **Open-items migration (register v257 RECONCILE).** The register's 108-item `## Open items` section was cleared to 3 user-decision one-liners; every work item landed here: the "Named re-tests & backfills" table (≈50 names, one line each), the Corporate actions / RECONCILE queue (sweep OVERDUE, BBBY→NXH, INPST.AS, Lex Asea, EA), overdue markers on 7936.T (14 Aug, unworked) and HEXA-B.ST (29 Jul re-base), and standing session rules pending MODEL v4.2.0. Calendar carried from v9 with the Q1–Q2 2027 detail pointer re-aimed at this file (the register no longer carries the detail). Framework questions went to **`queue/IDEAS.md` v1 (new)** — 7 verdict-affecting entries with book-grounded recommendations, 6 codifications in the v4.2.0 draft, calibration observations. Runner-design guardrails gain the commit-time compliance re-measure and the retrieval doctrine from the Aug-2026 runs. Purpose statement rewritten: this file is the single work sink; nothing routes to the register's Open items again. v9 archived → `queue/archive/TODO_v9_2026-08-09.md`. User decisions folded same-day (2026-08-18): Cartara→CERT confirmed (flag closed); HFG SELL-FLAG deferred to FY2026 results; entry dates waived (portfolio cells "n/a — not tracked"); MODEL session on IDEAS A1 scheduled.
+- **v9 — 2026-08-09** — Two REVIEWs committed at register v249 (NET v2, ZBRA v2, both AVOID unchanged); fold-in obligations closed; NET converts item added (~Nov); ZBRA band ≈$68–72, FY2026 10-K now a P19 re-test with a named ADVERSE path; ZIP.AX 20 Aug restored to Priority; queue status CLOSED; three process findings logged. v8 archived.
+- **v8 — 2026-08-09** — **THE ANALYSIS QUEUE IS CLOSED.** 94-name backlog fully worked (62 at register v247 + 29 in this commit + flag resolutions); every market block closed; ZM struck as duplicate; BBBY resolved by evidence; "Cartara"→CERT by assumption (confirmation owed); calendar refreshed against v248; re-seeding is a user decision. v7 archived.
+- **v7 — 2026-08-07** — Japan majors CLOSED 9/9 (7974.T, 8002.T WATCH; 7 AVOID). US backlog opened by assumption; first six ran (all AVOID; DLB the near-miss). 100 → 94 names. v6 archived.
+- **v6 — 2026-08-07** — France CLOSED 16/16 (BVI.PA the block's first WATCH; TRI.PA the closest AVOID at +7.7%); Japan majors opened (6501.T, 7011.T, 6752.T all AVOID); ML.PA raised the OI-line MODEL item. v5 archived.
+
+*Older logs: `queue/archive/` TODO_v* snapshots.*
