@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v258
+register_version: v259
 register_date: 2026-08-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 309
-verdict_split: "WATCH 69 · AVOID 239 · BUY 0 · DNAF 1"
+names_total: 310
+verdict_split: "WATCH 69 · AVOID 240 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v258 · 2026-08-18)
+# GSC Register — Master Watchlist (v259 · 2026-08-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -148,6 +148,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AMV0.DE (was AMV0) | Aumovio SE | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €35.90 (23 Jul 2026) | No CHEAP band — EV/OI n.m. (FY25 OI −€70m); FCF-leg ref ≈ €9.0. Cheapness EXPENSIVE 32.1× MCap/FCF | — | FY2026 AR (~Mar 2027) — first clean standalone year; thin history 4y (carve-out 2022–24) |
 | ANF | Abercrombie & Fitch Co. | 2026-08-07 | v1 | AVOID | ADEQUATE | WEAK | PASS | $111.98 (7 Aug 2026) | CHEAP < ≈ $68.13 (MCap/FCF binds; EV/OI legs $81.06/$95.00 no-cash/all-cash) | — | FY2026 10-K (~Mar 2027); Past knife-edge (10.77% on 9.4–11.8% bracket) — 10-K archive rebuild owed; alert < ≈ $68 |
 | ANGI | Angi Inc. | 2026-08-05 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | $4.82 (5 Aug 2026) | CHEAP ≈ $0.50–5.15 (EV/OI no-cash/all-cash, FY25 OI) | — | FY2026 10-K (~Feb 2027); Q3-26 if guidance reinstated; P19 CAUTION re-test |
+| APTV | Aptiv PLC | 2026-08-18 | v1 | AVOID | WEAK | WEAK | **FAIL** (flag pair: P17 FY-read breach 2.33× + P19 CAUTION) | $49.19 (18 Aug 2026) | CHEAP ≈ $15.93–19.54 (EV/OI no-cash/all-cash, annualised H1'26 cont-ops OI; FCF leg n.m.) — EXPENSIVE | — | 3 gates; **Versigent (EDS, 44% of rev) spun 1 Apr 2026 — perimeter break (HOG treatment)**; w-o-4 ROCE 8.1%; FY2026 10-K (~Feb 2027); alert < ≈ $20 |
 | ARHS | Arhaus, Inc. | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | **FAIL** (P17 hard strike 1.58×/1.60×, primary proxy; founder-affiliated property leases + son as SVP Real Estate; 48.7% votes on 31.75% of shares) | $9.61 (7 Aug 2026) | CHEAP < ≈ $0.67–2.46 (EV/OI nc/ac bind on $527m of showroom leases; FCF leg $3.33) | — | 3 gates; **12.7% ROCE undone by OI/sh −46% in 2y and L/E 233.5% with no funded debt**; 2 declines standing — FY2026 fires P4; RPT rents unsized; alert < ≈ $2.50 |
 | ARQ | Arq, Inc. (f/k/a Advanced Emissions Solutions) | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | PASS (P17 INDETERMINATE — pair-risk live; P19 CAUTION unpaired) | $2.08 (7 Aug 2026) | n.m. — FY2025 OI −$53.0m; band restores at OI ≈ $18.2m no-cash / $17.6m all-cash | — | 1 gate; 0.53× book; FY2026 10-K (~Mar 2027); proxy SCT retrieval owed sooner |
 | AS | Amer Sports, Inc. | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (comp INDETERMINATE — FPI aggregate-only; ANTA ~40%+ caveat unpaired) | $36.84 (7 Aug 2026) | CHEAP ≈ $6.70–7.06 (EV/OI no-cash / MCap-FCF all-cash; no P12) | — | FY2026 20-F (~Mar 2027): Arc'teryx compounding vs the 32× entry bill; rolled-window flip path ~FY2027–28; ISIN backfill; alert < ≈ $8 |
@@ -373,9 +374,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v259 — 2026-08-18** — APTV (Aptiv) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 8.1%) + Future WEAK (breadth FAIL) + SF FAIL (pair); Versigent spin = perimeter break; band $15.93–19.54. Names 310.
 - **v258 — 2026-08-18** — ASH (Ashland) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE −0.6% + Future WEAK, 3 strong forces + SF FAIL, flag pair). Band n.m.; restores at OI ≈ $211m. Names 309, AVOID 239.
 - **v257 — 2026-08-18** — RECONCILE: Open items 108→1 (HFG deferred; CERT confirmed; entry dates waived); work→queue/TODO v10, ideas→queue/IDEAS v1. No verdict/band moves. Map: registers/archive/.
 - **v256 — 2026-08-17** — META v4 REVIEW: WATCH unchanged (all gates hold); px $589.85; Dist re-keyed per §7.1 (all-cash bound) +204% → +171%; band $183–218 holds. Next: Q3'26 10-Q 28 Oct.
 - **v255 — 2026-08-17** — GOOGL REVIEW v4: WATCH holds, all gates unchanged (CAUTION 1 flag); re-priced $345.90, Dist +327→+314%; div $0.22/q; ad-tech ruling pending; isin backfilled (§7.1a).
-- **v254 — 2026-08-17** — 7213.T (LECIP Holdings) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 9.4% + Future WEAK, 2 strong forces). Band ¥492–778, moot. Names 308, AVOID 238.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
