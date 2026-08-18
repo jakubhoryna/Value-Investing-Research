@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v257
+register_version: v258
 register_date: 2026-08-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 308
-verdict_split: "WATCH 69 · AVOID 238 · BUY 0 · DNAF 1"
+names_total: 309
+verdict_split: "WATCH 69 · AVOID 239 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v257 · 2026-08-18)
+# GSC Register — Master Watchlist (v258 · 2026-08-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -151,6 +151,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ARHS | Arhaus, Inc. | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | **FAIL** (P17 hard strike 1.58×/1.60×, primary proxy; founder-affiliated property leases + son as SVP Real Estate; 48.7% votes on 31.75% of shares) | $9.61 (7 Aug 2026) | CHEAP < ≈ $0.67–2.46 (EV/OI nc/ac bind on $527m of showroom leases; FCF leg $3.33) | — | 3 gates; **12.7% ROCE undone by OI/sh −46% in 2y and L/E 233.5% with no funded debt**; 2 declines standing — FY2026 fires P4; RPT rents unsized; alert < ≈ $2.50 |
 | ARQ | Arq, Inc. (f/k/a Advanced Emissions Solutions) | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | PASS (P17 INDETERMINATE — pair-risk live; P19 CAUTION unpaired) | $2.08 (7 Aug 2026) | n.m. — FY2025 OI −$53.0m; band restores at OI ≈ $18.2m no-cash / $17.6m all-cash | — | 1 gate; 0.53× book; FY2026 10-K (~Mar 2027); proxy SCT retrieval owed sooner |
 | AS | Amer Sports, Inc. | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (comp INDETERMINATE — FPI aggregate-only; ANTA ~40%+ caveat unpaired) | $36.84 (7 Aug 2026) | CHEAP ≈ $6.70–7.06 (EV/OI no-cash / MCap-FCF all-cash; no P12) | — | FY2026 20-F (~Mar 2027): Arc'teryx compounding vs the 32× entry bill; rolled-window flip path ~FY2027–28; ISIN backfill; alert < ≈ $8 |
+| ASH | Ashland Inc. | 2026-08-18 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 single-read flag + P19 CAUTION; hard strike INDETERMINATE) | $73.15 (18 Aug 2026) | n.m. — 7×OI < debt stack, both EV variants; no-cash bound restores at OI ≈ $211m, all-cash ≈ $148m (TTM OI $137m) | — | 3 gates; FY2026 10-K (~Nov 2026); FY2027 proxy P17 SCT re-test |
 | ASML.AS (was ASML) | ASML Holding N.V. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | €1,434.20 (31 Jul 2026) | CHEAP ≈ €192–226 (EV/OI no-cash/all-cash, FY25 basis; MCap/FCF leg €228; P12 edge €228 immaterial) — EXPENSIVE 48.8×/49.5× | — | FY2026 (Jan 2027) + 20-F (Feb 2027): a completed 2026 tranche with disclosed counts removes the range bound; Q3'26 (Oct) cadence; ≈€9.9bn undrawn |
 | ASSA-B.ST (was ASSA-B) | ASSA ABLOY AB | 2026-07-24 | v1 | AVOID (Past WEAK: 3y ROCE decline) | WEAK | STRONG | PASS | SEK 347.10 (24 Jul 2026) | CHEAP < ≈ SEK 88 (EV/OI, cons. EV) — academic given AVOID | — | FY2026 AR (~Mar 2027): ROCE-trend re-test; HHI P19 re-test |
 | ATKR | Atkore Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | PASS (1 flag — P19 CAUTION: $1.67bn at 6.6–13× knowably windfall FCF; throttled honestly) | $93.71 (7 Aug 2026) | n.m. — both EV/OI bounds negative on FY25/TTM OI (−$22.25/−$12.00 nc/ac); FCF leg $70.18 ref; backvalued FY21–23 ≈ 3.8× (tourniquet) | — | **P4 fires on STRONG-class level (w-o-4 29.4%)** — cleanest windfall-unwind; import-led entry; FY2026 10-K ~Nov 2026 near-dated |
@@ -372,9 +373,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v258 — 2026-08-18** — ASH (Ashland) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE −0.6% + Future WEAK, 3 strong forces + SF FAIL, flag pair). Band n.m.; restores at OI ≈ $211m. Names 309, AVOID 239.
 - **v257 — 2026-08-18** — RECONCILE: Open items 108→1 (HFG deferred; CERT confirmed; entry dates waived); work→queue/TODO v10, ideas→queue/IDEAS v1. No verdict/band moves. Map: registers/archive/.
 - **v256 — 2026-08-17** — META v4 REVIEW: WATCH unchanged (all gates hold); px $589.85; Dist re-keyed per §7.1 (all-cash bound) +204% → +171%; band $183–218 holds. Next: Q3'26 10-Q 28 Oct.
 - **v255 — 2026-08-17** — GOOGL REVIEW v4: WATCH holds, all gates unchanged (CAUTION 1 flag); re-priced $345.90, Dist +327→+314%; div $0.22/q; ad-tech ruling pending; isin backfilled (§7.1a).
 - **v254 — 2026-08-17** — 7213.T (LECIP Holdings) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 9.4% + Future WEAK, 2 strong forces). Band ¥492–778, moot. Names 308, AVOID 238.
-- **v253 — 2026-08-12** — 0700.HK (Tencent) v1 ANALYSE: WATCH (Past ADEQUATE rl-capped · Future ADEQUATE · SF PASS, 1 flag). Band ≈ HKD 142–192 (P20); px 461.60 = +140%. Names 307, WATCH 69.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
