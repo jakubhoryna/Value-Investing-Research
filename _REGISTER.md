@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v261
+register_version: v262
 register_date: 2026-08-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 313
-verdict_split: "WATCH 69 · AVOID 243 · BUY 0 · DNAF 1"
+names_total: 314
+verdict_split: "WATCH 69 · AVOID 244 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v261 · 2026-08-18)
+# GSC Register — Master Watchlist (v262 · 2026-08-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -110,7 +110,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 243 names, alphabetical
+### AVOID — 244 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -137,6 +137,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | 8TRA.ST (was 8TRA) | TRATON SE | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Navistar audit) | WEAK | ADEQUATE | FAIL | €36.04 (22 Jul 2026; 52-wk high €37.34) | n.m. — no positive price clears EV/OI ≤7 (captive debt €27.4bn) or MCap/FCF (FCF −€1.9bn); captive-adj. alt ≈ €16.7 — EXPENSIVE, moot | — | FY2026 AR (~mid-Mar 2027); structural — w-o-4 ROCE 4.4% + P19 strike (ages out ≥FY2031); no price flips it |
 | AAPL | Apple Inc. | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | ~$308 | CHEAP < ≈ $53 (MCap/FCF; P12 edge ≈ $55 via EV/OI) | — | FY2026 10-K (~Oct/Nov 2026) or Jan 2027 proxy — SF flip requires comp reform; earlier if price < ~$60 |
 | ABB (ABBNY ADR 1:1) | ABB Ltd | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $98.84 ADR (31 Jul 2026; CHF 78.66) | CHEAP ≈ $18.6–22.2 ADR (EV/OI no-cash/all-cash, FY25 basis; MCap/FCF leg ≈ $19.5; no P12) — EXPENSIVE 30.1×/31.0× | — | AR-2026 (~Feb 2027): completed 2026 pgm yr + Rotork/Advantics closing multiples; ADVERSE rests on ~$1.6bn undrawn at 29.3× EV/OI with no price criterion |
+| ABM | ABM Industries Incorporated | 2026-08-18 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 strike) | WEAK | WEAK | FAIL | $47.72 (17 Aug 2026) | CHEAP ≈ $3.58–5.18 (EV/OI no-cash/all-cash; FCF leg $20.99; no P12) — EXPENSIVE 15.4×/15.1×, moot | — | FY2026 10-K (~Dec 2026) + 2027 proxy: P17 re-read, P19 forward call; w-o-4 ROCE 6.2%, 4/4 forces STRONG — structural |
 | ABNB | Airbnb, Inc. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $151.52 (31 Jul 2026) | CHEAP ≈ $25.4–43.1 (EV/OI no-cash/all-cash, FY25 basis; MCap/FCF leg ≈ $59.1; no P12 — Past ADEQUATE) — EXPENSIVE 31.7×/36.4× | — | FY2026 10-K + 2027 proxy (~Feb–Apr 2027) judgment re-test; Q2'26 10-Q 12 Aug 2026 cadence; ADVERSE rests on $4.5bn undrawn at 27.1× EV/OI, no criterion |
 | ACP.WA | Asseco Poland S.A. | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (SOUND-leaning; tuck-in ledger INDETERMINATE) | PLN 217.40 (6 Aug 2026) | CHEAP ≈ PLN 54.4/141.7 (EV/OI no-cash/all-cash — NCI+cash judgment is the 2.6× spread; MCap/FCF n.m. under the NCI stack) | — | FY2026 (~Mar 2027): Sapiens-proceeds (7.2bn) deployment = the P19 re-test; w-o-4 7.9%, no year ≥10%; alert < ≈ PLN 140 |
 | AD.AS (was AD) | Koninklijke Ahold Delhaize N.V. | 2026-07-07 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 P19 flag) | €36.33 | CHEAP < ≈ €7 (EV/OI, conservative EV, lease-heavy; all-cash-excess leg ≈ €11; MCap/FCF leg ≈ €33) — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Feb 2027), low priority — structural (ROCE 8.4%, L/E 246%); P19 flag logged, no strike |
@@ -376,9 +377,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v262 — 2026-08-18** — ABM (ABM Industries) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 6.2%) + Future WEAK (4/4 forces) + SF FAIL (P17 both reads). Band $3.58–5.18. Names 314, AVOID 244.
 - **v261 — 2026-08-18** — KEX (Kirby) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 4.6%, 5y record-limited + Future WEAK, 3 strong forces). Band ≈$41.8–42.5, moot. Counts re-measured: 313 (AVOID 243).
 - **v260 — 2026-08-18** — XRAY (Dentsply Sirona) v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −4.89%; Future WEAK breadth FAIL; SF FAIL P19 ADVERSE). Band n.m., restores at OI ≈$336m. Names 311, AVOID 241.
 - **v259 — 2026-08-18** — APTV (Aptiv) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 8.1%) + Future WEAK (breadth FAIL) + SF FAIL (pair); Versigent spin = perimeter break; band $15.93–19.54. Names 310.
 - **v258 — 2026-08-18** — ASH (Ashland) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE −0.6% + Future WEAK, 3 strong forces + SF FAIL, flag pair). Band n.m.; restores at OI ≈ $211m. Names 309, AVOID 239.
-- **v257 — 2026-08-18** — RECONCILE: Open items 108→1 (HFG deferred; CERT confirmed; entry dates waived); work→queue/TODO v10, ideas→queue/IDEAS v1. No verdict/band moves. Map: registers/archive/.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
