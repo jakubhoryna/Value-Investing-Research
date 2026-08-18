@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v260
+register_version: v261
 register_date: 2026-08-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 311
-verdict_split: "WATCH 69 · AVOID 241 · BUY 0 · DNAF 1"
+names_total: 313
+verdict_split: "WATCH 69 · AVOID 243 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v260 · 2026-08-18)
+# GSC Register — Master Watchlist (v261 · 2026-08-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -110,7 +110,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 238 names, alphabetical
+### AVOID — 243 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -247,6 +247,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | INPST.AS (was INPST) | InPost S.A. | 2026-07-03 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €15.40 (≈PLN 66.05) | CHEAP < ≈ €0.6–1.0 (EV/OI) — academic: price pinned to €15.60 cash offer | — | Offer period closes 27 Jul 2026; on settlement (H2 2026) delist → archive row; if offer lapses, REVIEW at reverted price |
 | KBX.DE (was KBX) | Knorr-Bremse AG | 2026-07-22 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (acq audit INDETERMINATE; 59% control caveat) | €101.70 (22 Jul 2026) | CHEAP < ≈ €19.6 (EV/OI, consv EV; all-cash-excess leg ≈ €30.4; MCap/FCF leg ≈ €32.7) — EXPENSIVE | — | FY2026 AR (~Mar 2027): ROCE off 11–13% plateau?; duagon capital add; Alstom-signalling audit re-test |
 | KER.PA (was KER) | Kering SA | 2026-07-02 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €266.30 | CHEAP < ≈ €75–150 (MCap/TBV strict, MCap/FCF economic; EV/OI suspended at trough) — moot. Cheapness EXPENSIVE | — | FY2026 results (late-Feb 2027) OR Gucci recurring OI inflects up two consecutive halves |
+| KEX | Kirby Corporation | 2026-08-18 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (P19 CAUTION unpaired; P17 clean) | $139.82 (18 Aug 2026) | CHEAP < ≈ $41.8–42.5 (EV/OI no-cash/all-cash, converge 1.7%; MCap/FCF leg ≈ $60) — EXPENSIVE 17.4× | — | FY2026 10-K (~Feb 2027): ROCE level re-test (w-o-4 4.6%) + P19 tranche re-read; 5y record-limited, 10y rebuild queued |
 | KLAR | Klarna Group plc | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 comp) | WEAK | WEAK | FAIL | $17.36 (24 Jul 2026) | n.m. — NI-proxy anchor (§2·1A lender), no positive price while NI < 0; MCap/BV 2.61× context | — | FY2026 20-F (~Feb–Mar 2027) informational; structural — loss record + 2 strong forces + comp posture; first clean post-IPO comp year |
 | KNEBV.HE (was KNEBV) | KONE Oyj | 2026-07-31 | v2 | AVOID (SF FAIL: 2 flags — cap-allocation CAUTION on TKE + entrenchment structure) | ADEQUATE | STRONG | FAIL | €50.10 KONE B (31 Jul 2026) | Standalone CHEAP ≈ €16.3–17.1 (EV/OI no-cash/all-cash; MCap/FCF leg €17.9 above both; no P12) — EXPENSIVE 19.8×/20.1×. **Pro-forma band required post-close** | — | TKE block-or-close (EU review to ~mid-2027) → flips WATCH if blocked, both flags fall together; FY2026 (~Jan 2027); H1-2026 rpt |
 | KRN.DE (was KRN) | Krones AG | 2026-07-24 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €110.60 (23 Jul 2026) | CHEAP < ≈ €66.1 (MCap/FCF; EV/OI leg ≈ €86.4, cons EV; no P12) — FAIR 13.4×/8.8× | — | FY2026 AR (~Mar 2027) — window roll flips Past ≥10%; alert < ≈ €75 |
@@ -375,9 +376,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v261 — 2026-08-18** — KEX (Kirby) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 4.6%, 5y record-limited + Future WEAK, 3 strong forces). Band ≈$41.8–42.5, moot. Counts re-measured: 313 (AVOID 243).
 - **v260 — 2026-08-18** — XRAY (Dentsply Sirona) v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −4.89%; Future WEAK breadth FAIL; SF FAIL P19 ADVERSE). Band n.m., restores at OI ≈$336m. Names 311, AVOID 241.
 - **v259 — 2026-08-18** — APTV (Aptiv) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 8.1%) + Future WEAK (breadth FAIL) + SF FAIL (pair); Versigent spin = perimeter break; band $15.93–19.54. Names 310.
 - **v258 — 2026-08-18** — ASH (Ashland) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE −0.6% + Future WEAK, 3 strong forces + SF FAIL, flag pair). Band n.m.; restores at OI ≈ $211m. Names 309, AVOID 239.
 - **v257 — 2026-08-18** — RECONCILE: Open items 108→1 (HFG deferred; CERT confirmed; entry dates waived); work→queue/TODO v10, ideas→queue/IDEAS v1. No verdict/band moves. Map: registers/archive/.
-- **v256 — 2026-08-17** — META v4 REVIEW: WATCH unchanged (all gates hold); px $589.85; Dist re-keyed per §7.1 (all-cash bound) +204% → +171%; band $183–218 holds. Next: Q3'26 10-Q 28 Oct.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
