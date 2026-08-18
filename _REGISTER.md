@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v259
+register_version: v260
 register_date: 2026-08-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 310
-verdict_split: "WATCH 69 · AVOID 240 · BUY 0 · DNAF 1"
+names_total: 311
+verdict_split: "WATCH 69 · AVOID 241 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v259 · 2026-08-18)
+# GSC Register — Master Watchlist (v260 · 2026-08-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -349,6 +349,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | WMT | Walmart Inc. | 2026-08-06 | v2 | AVOID (SF FAIL: P19 ADVERSE) | ADEQUATE | STRONG | FAIL | $112.34 (5 Aug 2026) | CHEAP ≈ $14.9 (MCap/FCF binding; EV/OI leg $16.3/$17.7 no-cash/all-cash; no P12) — EXPENSIVE | — | Q2 FY27 10-Q (~Aug 2026); FY2027 10-K + 2027 proxy (~Mar–Apr 2027) re-test; $30bn pgm 94% undrawn; control caveat UNPAIRED |
 | WRBY | Warby Parker Inc. | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | **FAIL** (P17 hard strike: CFO $3.23m vs $1.74m FY ceiling; 3y read no positive leg) | $26.40 (7 Aug 2026) | n.m. — FY25 OI negative, no EV/OI leg; MCap/FCF leg $2.84 ref | — | FY2026 10-K (~Feb 2027) first candidate positive-OI FY restores band; 2027 proxy P17 re-test |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK | **WEAK** | **FAIL** (P17 hard strike 1.044×/1.196× — **primary SCT, no sourcing contingency**) | $50.00 (7 Aug 2026) | CHEAP < ≈ $15.08–16.92 (EV/OI nc/ac bind; FCF leg $18.26) | — | 4 gates on the run's best business: **P4 over a STRONG-class level** (w-o-4 25.1%, FCFROCE 17.0%) on 3 declines 31.7 → 19.1%; breadth FAIL; alert < ≈ $17 |
+| XRAY | DENTSPLY SIRONA Inc. | 2026-08-18 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 ADVERSE) | WEAK | WEAK | FAIL | $11.16 (18 Aug 2026) | n.m. — EV/OI leg no positive price on FY25 OI −$422m; no-cash restores at OI ≈ $336m; FCF leg $4.17 | — | 3 gates; w-o-4 ROCE −4.89%, L/E 305% no P6; Henry Schein 14% breadth FAIL; FY2026 10-K (~Feb 2027) + 2027 proxy — Campion FY25 comp INDETERMINATE |
 | ZAB.WA | Żabka Group S.A. | 2026-08-07 | v1 | AVOID | WEAK | STRONG | PASS (SOUND; CVC control caveat unpaired) | PLN 31.30 (7 Aug 2026) | CHEAP ≈ PLN 8.78–9.86 (EV/OI no-cash/all-cash; MCap/FCF leg 19.94 lease-bright) | — | FY2026 (~Mar 2027): **L/E ≈ 682% is the gate** (P5 breached 3.4×, no P6) — equity build to ~200–250% by ~FY2028 = earliest quality flip; Future already STRONG |
 | ZBRA | Zebra Technologies Corporation | 2026-08-09 | v2 | AVOID | ADEQUATE | WEAK | PASS (P19 CAUTION — buyback repetition; H1'26 $568m > FCF $361m, debt +$265m) | $376.49 (7 Aug 2026) | CHEAP < ≈ $68.27–71.59 (EV/OI nc/ac on TTM OI $858m; ex-tariff-recovery ref $57.47–60.79; FCF leg $140.52) | — | 1 gate (Future): breadth FAIL — 3 distributors 59%; Dist +426% (was +749%); FY26 10-K — P19 re-test, live ADVERSE path |
 | ZIP | ZipRecruiter, Inc. | 2026-08-05 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 strike + P19 ADVERSE) | WEAK | WEAK | FAIL | $4.49 | n.m. — FY25 OI −$19.4m; FCF leg alone ≈ $0.34 | — | FY2026 10-K + 2027 proxy (~Feb–Apr 2027); dormant — needs owner-earnings recovery before any gate can move |
@@ -374,9 +375,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v260 — 2026-08-18** — XRAY (Dentsply Sirona) v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −4.89%; Future WEAK breadth FAIL; SF FAIL P19 ADVERSE). Band n.m., restores at OI ≈$336m. Names 311, AVOID 241.
 - **v259 — 2026-08-18** — APTV (Aptiv) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 8.1%) + Future WEAK (breadth FAIL) + SF FAIL (pair); Versigent spin = perimeter break; band $15.93–19.54. Names 310.
 - **v258 — 2026-08-18** — ASH (Ashland) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE −0.6% + Future WEAK, 3 strong forces + SF FAIL, flag pair). Band n.m.; restores at OI ≈ $211m. Names 309, AVOID 239.
 - **v257 — 2026-08-18** — RECONCILE: Open items 108→1 (HFG deferred; CERT confirmed; entry dates waived); work→queue/TODO v10, ideas→queue/IDEAS v1. No verdict/band moves. Map: registers/archive/.
 - **v256 — 2026-08-17** — META v4 REVIEW: WATCH unchanged (all gates hold); px $589.85; Dist re-keyed per §7.1 (all-cash bound) +204% → +171%; band $183–218 holds. Next: Q3'26 10-Q 28 Oct.
-- **v255 — 2026-08-17** — GOOGL REVIEW v4: WATCH holds, all gates unchanged (CAUTION 1 flag); re-priced $345.90, Dist +327→+314%; div $0.22/q; ad-tech ruling pending; isin backfilled (§7.1a).
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
