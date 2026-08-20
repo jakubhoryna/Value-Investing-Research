@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v262
+register_version: v263
 register_date: 2026-08-18
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 314
-verdict_split: "WATCH 69 · AVOID 244 · BUY 0 · DNAF 1"
+names_total: 315
+verdict_split: "WATCH 69 · AVOID 245 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v262 · 2026-08-18)
+# GSC Register — Master Watchlist (v263 · 2026-08-18)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -110,7 +110,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 244 names, alphabetical
+### AVOID — 245 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -279,6 +279,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NGVT | Ingevity Corporation | 2026-08-08 | v1 | AVOID | WEAK | WEAK | PASS (1 flag — P19 CAUTION: caprolactone written off, course changed; **P17 INDETERMINATE — SCT owed, ceilings $13.68m/$7.00m = live pair risk**) | $73.11 (31 Jul 2026) | n.m. — FY25 OI −$44m; TTM EV/OI bounds both negative (−$22.51/−$19.67 — debt > 7×OI); FY25 MCap/FCF 9.2× on transition-year FCF, labelled | — | 3-gate AVOID; w-o-4 ROCE 4.90%, L/E 5,458% (impairment-crushed equity); FY2026 10-K = first New-Ingevity perimeter year + P17 retrieval |
 | NOKIA.HE | Nokia Oyj | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: criterion-free buybacks alongside dilutive strategic issuance) | €8.156 (7 Aug 2026) | CHEAP ≈ €0.48–0.76 (EV/OI no-cash / MCap-FCF all-cash; FY25 basis — the AI re-rating vs a €0.9bn reported-OP year) | — | FY2026 (~Jan 2027): €2.0–2.5bn comparable-OP guide vs the reported line; 5y record-limited window a-fortiori bounded; alert n/a (band academic) |
 | NOLA-B.ST (was NOLA-B) | Nolato AB | 2026-08-06 | v3 | AVOID (SF FAIL: flag pair — P17 year-read + P19 CAUTION) | ADEQUATE | ADEQUATE | FAIL | SEK 49.35 (6 Aug 2026) | CHEAP ≈ SEK 8.1 (MCap/FCF, all-capex FY25; EV/OI leg SEK 19.4/21.2 no-cash/all-cash) — EXPENSIVE 14.9×/48.7× | — | FY2026 AR (~Apr 2027) — P17 fiscal-yr re-test on FY26 FCF (R12M 468 clears); no AGM-26 buyback mandate; new CEO 17 Jul 2026 |
+| NOMD | Nomad Foods Limited | 2026-08-18 | v1 | AVOID | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION: FY25 payout €287m ≈ 2× FCF, part debt-funded; P17 INDETERMINATE — FPI aggregate-only) | $11.73 (14 Aug 2026) | n.m. — no-cash leg unattainable (debt €2,312m > 7×OI €2,278m); restores at OI ≈ €330m; all-cash bound ≈ $1.97; MCap/FCF leg ≈ $9.48 | — | FY2026 (~Feb 2027): 5y record-limited rebuild + P17 retrieval + Fortenova pre-deal audit; structural — w-o-4 ROCE 6.6% vs 10% floor |
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | $194.28 | CHEAP < ≈ $31.5 (MCap/FCF; P12 edge ≈ $37, where EV/OI binds) | — | FY2027 results (~Feb 2027), or structural change (customer deconcentration <10%s + comp reform) |
 | OKTA | Okta, Inc. | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | FAIL (P17 strike both reads — $36.8m maiden-profit-year raise) | $148.32 (7 Aug 2026) | CHEAP < ≈ $3.64–18.54 (EV/OI no-cash/all-cash on the first positive-OI year; FCF leg $39.72) | — | 3 gates; FY2027 10-K (~Mar 2027) + 2027 proxy |
 | ONON | On Holding AG | 2026-07-18 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | $37.20 (17 Jul 2026; ≈CHF 30.0) | CHEAP < ≈ CHF 6.2 ≈ $7.7 (MCap/FCF binding; EV/OI leg ≈ CHF 6.3; no P12 — Past WEAK) — EXPENSIVE | — | FY2026 20-F (~Mar 2027): worst-leg ROCE crosses 10% at OI ≈ CHF 450–480m — live flip; P17 headroom 4% re-test; Vietnam tariff watch; alert < ≈ $11 |
@@ -377,9 +378,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v263 — 2026-08-18** — NOMD (Nomad Foods) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 6.58%, 5y record-limited + Future WEAK, 2 strong forces). Band n.m.; restores at OI ≈ €330m. Names 315, AVOID 245.
 - **v262 — 2026-08-18** — ABM (ABM Industries) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 6.2%) + Future WEAK (4/4 forces) + SF FAIL (P17 both reads). Band $3.58–5.18. Names 314, AVOID 244.
 - **v261 — 2026-08-18** — KEX (Kirby) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 4.6%, 5y record-limited + Future WEAK, 3 strong forces). Band ≈$41.8–42.5, moot. Counts re-measured: 313 (AVOID 243).
 - **v260 — 2026-08-18** — XRAY (Dentsply Sirona) v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −4.89%; Future WEAK breadth FAIL; SF FAIL P19 ADVERSE). Band n.m., restores at OI ≈$336m. Names 311, AVOID 241.
 - **v259 — 2026-08-18** — APTV (Aptiv) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 8.1%) + Future WEAK (breadth FAIL) + SF FAIL (pair); Versigent spin = perimeter break; band $15.93–19.54. Names 310.
-- **v258 — 2026-08-18** — ASH (Ashland) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE −0.6% + Future WEAK, 3 strong forces + SF FAIL, flag pair). Band n.m.; restores at OI ≈ $211m. Names 309, AVOID 239.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
