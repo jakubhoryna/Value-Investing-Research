@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v264
+register_version: v265
 register_date: 2026-08-20
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 315
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v264 · 2026-08-20)
+# GSC Register — Master Watchlist (v265 · 2026-08-20)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -298,6 +298,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL | $134.83 (14 Jul 2026) | CHEAP < ≈ $6.6 (MCap/FCF 8×; EV/OI all-cash ≈ $6.6; strict ≈ $3.8; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 10-K (~Feb 2027) extends thin ~6y record; 2027 proxy re-tests governance; structural — no price flips |
 | PSH.L (was PSH) | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PTON | Peloton Interactive, Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: Stern $18.24m vs $16.19m FY25 FCF-leg ceiling, 3y read no positive leg; Oct 2026 proxy re-test severity-only — FY26 ceiling $3.16m) | $5.66 (7 Aug 2026) | Unattainable — EV/OI no-cash bound −$1.33 (debt > 7×OI), all-cash $1.42; **MCap/FCF leg $6.89 above price but SBC = 55% of FCF** | — | 4-gate AVOID; Σ window OI −$4.3bn, equity negative, subs −8.8%/yr; FY2027 results (~Aug 2027); the run's most instructive primary split |
+| PVH | PVH Corp. | 2026-08-20 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — P17 FY-read 12.8×, normalized acquits; P19 SOUND @6.6× FCF; Hilfiger comp INDETERMINATE) | $82.47 (14 Aug 2026 close — stale, SWEEP refreshes) | CHEAP ≈ $16.09–28.86 (EV/OI no-cash/all-cash, ex-imp FY25 OI; reported-OI legs n.m., restore at OI ≈$603m) — FAIR 11.3×/10.5× | — | FY2026 10-K (~Mar 2027): ROCE floor needs OI ≈$970m; 6y record-limited, FY16–19 rebuild queued; ASC 842 lease-in-EV sensitivity in memo App. F |
 | PYPL | PayPal Holdings, Inc. | 2026-07-28 | v2 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $56.07 (27 Jul 2026) | CHEAP ≈ $33.7–46.8 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ $51.6; no P12) — FAIR 8.7×/8.3× | — | FY2026 (~Feb 2027) drops FY2016 tranche + FY26 buyback re-test; v3.5.0 redemption limbs (a),(b) fail |
 | RACE.MI (was RACE) | Ferrari N.V. | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | €340.10 RACE.MI / $393.87 (31 Jul 2026) | CHEAP ≈ €63 (MCap/FCF binds; EV/OI cons leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 29.4×/30.1× EV/OI, 43.1× MCap/FCF | — | FY2026 20-F (~Feb 2027): 1st completed yr of the €3.5bn 2026–30 pgm + judgment re-test; H1-26 (~early Aug) cadence; highest execution multiples in the register |
 | ROK | Rockwell Automation, Inc. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $480.08 (31 Jul 2026) | CHEAP ≈ $77 (EV/OI binds; MCap/FCF leg ≈ $96; no P12 — Past ADEQUATE) — EXPENSIVE 33.8× EV/OI, 40.0× MCap/FCF. MCap/TBV n.m. (TBV −$1.0bn, buyback-depleted) | — | FY2026 10-K (~Nov 2026): completed pgm yr vs H1's $608m + re-test; Q3 FY26 print 4 Aug 2026 cadence; ~$1.3bn authorised and largely undrawn |
@@ -378,9 +379,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v265 — 2026-08-20** — PVH v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 4.0%; Future WEAK, 3 forces). Band $16.09–28.86 ex-imp, moot. Re-merged onto v264. Counts re-measured: 315 (AVOID 245).
 - **v264 — 2026-08-20** — CORRECTION: ABM memo re-dated 2026-08-18 → 2026-08-20 (session date error); file re-keyed, row + register_date realigned. Re-merged onto v263 post-collision.
 - **v263 — 2026-08-18** — NOMD (Nomad Foods) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 6.58%, 5y record-limited + Future WEAK, 2 strong forces). Band n.m.; restores at OI ≈ €330m. Names 315, AVOID 245.
 - **v262 — 2026-08-18** — ABM (ABM Industries) v1 ANALYSE: AVOID — Past WEAK (w-o-4 ROCE 6.2%) + Future WEAK (4/4 forces) + SF FAIL (P17 both reads). Band $3.58–5.18. Names 314, AVOID 244.
 - **v261 — 2026-08-18** — KEX (Kirby) v1 ANALYSE: AVOID (Past WEAK, w-o-4 ROCE 4.6%, 5y record-limited + Future WEAK, 3 strong forces). Band ≈$41.8–42.5, moot. Counts re-measured: 313 (AVOID 243).
-- **v260 — 2026-08-18** — XRAY (Dentsply Sirona) v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −4.89%; Future WEAK breadth FAIL; SF FAIL P19 ADVERSE). Band n.m., restores at OI ≈$336m. Names 311, AVOID 241.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
