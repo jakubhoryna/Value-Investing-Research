@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v274
+register_version: v275
 register_date: 2026-08-27
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 316
-verdict_split: "WATCH 68 · AVOID 247 · BUY 0 · DNAF 1"
+names_total: 317
+verdict_split: "WATCH 68 · AVOID 248 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v274 · 2026-08-27)
+# GSC Register — Master Watchlist (v275 · 2026-08-27)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -109,7 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 247 names, alphabetical
+### AVOID — 248 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -227,6 +227,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GEBN.SW (was GEBN) | Geberit AG | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | STRONG | FAIL | CHF 532.20 (31 Jul 2026) | CHEAP ≈ CHF 121.2–138.8 (EV/OI no-cash/all-cash; MCap/FCF leg CHF 169.5 above both; no P12) — EXPENSIVE 24.0×/24.8× | — | FY2026 (~mid-Mar 2027): first completed yr of the 2026–28 pgm + re-test; ~CHF 235m undrawn at 23.5–24.2× EV/OI, no price criterion; alert < ≈ CHF 200 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID (Past WEAK: L/E 497% + Future WEAK: 2 strong forces + SF FAIL: acq flag pair) | WEAK | WEAK | FAIL | $26.57 (14 Jul 2026) | CHEAP < ≈ $11.3 (EV/OI, consv EV; MCap/FCF leg ≈ $19.7; no P12) — FAIR, moot given AVOID | — | FY2027 (~May 2027) 1st full MoneyLion yr re-anchors OI/FCF; Avast ≈19–20× audit; alert < ≈ $12 |
 | GETI-B.ST (was GETI-B) | Getinge AB (publ) | 2026-07-25 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | SEK 230.30 (24 Jul 2026) | CHEAP < ≈ SEK 48.5 (EV/OI, consv EV; MCap/FCF leg ≈ SEK 77; no P12) — EXPENSIVE 23.8×/20.1× | — | FY2026 AR (~Mar 2027) re-tests Paragonix multiple (INDETERMINATE); P3 needs OI ≈ SEK 4.9bn sustained |
+| GPN | Global Payments Inc. | 2026-08-27 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 ADVERSE) | WEAK | WEAK | FAIL | $92.32 (27 Aug 2026) | n.m. — 7×OI < debt stack; OI ≥ ≈$3.5bn/$2.7bn (no-cash/all-cash) restores; MCap/FCF leg ≈ $60 (FY25 FCF incl. Issuer) | — | FY2026 10-K (~Feb 2027): 1st Worldpay-inclusive annual + P19 re-test; FY16–20 rebuild + proxy RPT backfill → TODO |
 | GRMN | Garmin Ltd | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | $293.78 (31 Jul 2026) | CHEAP ≈ $56.3 (MCap/FCF binds; EV/OI leg ≈ $88.2 well above; P12 edge ≈ $70.4) — EXPENSIVE 41.7× / 28.2×–30.4× | — | Q3'26 10-Q (~late Oct) cadence; FY2026 10-K (~Feb 2027) first completed yr of the 2026 Program + re-test; $448.1m (90%) undrawn; alert < ≈ $70 |
 | GRND | Grindr Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 strike — CEO $6.54m vs $4.70m/$3.00m FY24 ceilings, both reads; **P19 ADVERSE** — $524m FY25 buyback ≈25×+, debt-assisted, live, no criterion) | $17.78 (5 Aug 2026) | CHEAP ≈ $2.75–2.89 (EV/OI no-cash/all-cash, converged; MCap/FCF leg $6.34) | — | 4 gates; L/E ≈1,030% past P6, let-out denied; w-o-4 ROCE 14.7% — conduct, not operations; FY2026 10-K (~Feb/Mar 2027); 2027 proxy = severity-only P17 re-test |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
@@ -380,9 +381,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO. Re-merged onto v274.
 - **v274 — 2026-08-27** — NU v2 REVIEW: WATCH held; P19 SOUND→CAUTION ($1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no discipline — v1 miss logged). Band $4.75 held; Px ≈$15.10 der., Dist +219%. H1 resynced.
 - **v273 — 2026-08-27** — SMSH.TA v1 ANALYSE: AVOID (Past WEAK, Future WEAK). TASE IPO 2026-03, 3y history-limited; 41.5× MCap/FCF, EXPENSIVE; band ₪2.4–3.5.
 - **v272 — 2026-08-23** — NOVO-B.CO v8 REVIEW (held): WATCH/HOLD held. D.N.J. §10(b) ruling 28 Jul = INDETERMINATE, no pair. Buyback 53.9% @ 279.80 = 10.5×. Px 300.90; Dist +67%. Re-merged onto v271.
 - **v271 — 2026-08-23** — LULU v4 full re-derivation superseding same-day v3: 2nd live tranche (3–29 May, 5.5–5.7× EV/OI) added; shares → 113.554M; FAIR → EXPENSIVE. AVOID/1 gate held.
-- **v270 — 2026-08-23** — CROX v7 REVIEW (held): WATCH/HOLD unchanged. NYT Malta tax (5 Aug) — not an SF flag, INDETERMINATE; band tax-blind (EV/OI binds). Px $122.11; Dist +31%→+25%, 2nd in WATCH.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
