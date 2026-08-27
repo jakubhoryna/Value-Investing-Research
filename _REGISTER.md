@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v273
+register_version: v274
 register_date: 2026-08-27
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 316
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v272 · 2026-08-23)
+# GSC Register — Master Watchlist (v274 · 2026-08-27)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -68,11 +68,11 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-31 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: 2023 buyback @ €823.1 = 37.7× MCap/FCF; Tiffany 22.1× pre-deal OI; no criterion. Control caveat UNPAIRED) | €475.15 (31 Jul 2026) | CHEAP ≈ €179 (EV/OI binds, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE) — EXPENSIVE 16.4×/15.6× | +166% | FY2026 (~late Jan 2027) + URD-27 (~Mar 2027): H1-26 tranche price + CAUTION re-test; P4 3rd ROCE-decline test — 2 down-yrs, H1-26 stabilised not reversed |
 | META | Meta Platforms, Inc. | 2026-08-17 | v4 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 2021/22/24/25 at 22.1–24.3× MCap/FCF, no price criterion, suspension capex-driven. Dual-class UNPAIRED, per GOOGL) | $589.85 (14 Aug 2026) | CHEAP ≈ $183–218 (EV/OI no-cash/all-cash, Q2-26 BS, P20 active; maint MCap/FCF leg $230 = P12 edge; strict all-capex $143) — EXPENSIVE 19.4×/18.3× | +171% | Q3'26 10-Q 28 Oct — suspension 3rd-qtr test + $130–145bn capex plan; FY26 10-K + Apr-27 proxy (mega-grant SCT = 2nd-flag risk); DC Cir. 26-5028 in briefing |
 | SDZ.SW (SDZNY ADR 1:1; was SDZ) | Sandoz Group AG                 | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$79.43 (CHF 64.90, 28 Jul 2026) | CHEAP < ≈ $28 (mgmt-FCF) to ≈ $20 (strict). Cheapness EXPENSIVE. Thin spin-off history caveat                                           | +184% | FY2026 results (~Feb 2027), or USD into high-$20s/low-$30s; watch generic-semaglutide decision & penicillin-API normalisation                       |
-| NU | Nu Holdings Ltd. | 2026-08-09 | v1 | WATCH | ADEQUATE | STRONG | PASS (dual-class caveat; P19 SOUND) | $13.84 (7 Aug 2026) | NI-proxy anchor: CHEAP < ≈ $4.75 (8× FY2025 NI; §2·1A substitution; 3×BV/sh ≈ $7.77 context) | +191% | FY2026 results (~Feb 2027); EM credit-cycle tape (90+ NPL 6.6%) quarterly |
 | NVS (NOVN SIX; ADR 1:1) | Novartis AG                     | 2026-07-05 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 flag)                             | $159.83 ADR (28 Jul 2026) | CHEAP ≈ $48.3–54.5 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ $73; no P12 — Past ADEQUATE) — EXPENSIVE | +193% | FY2026 (~Feb 2027) Entresto-trough resets band; alert < ~$75; IRA/MFN or pelacarsen readout. Soft WATCH                                             |
 | AZA.ST (was AZA) | Avanza Bank Holding AB | 2026-07-24 | v1 | WATCH | STRONG | STRONG | PASS | SEK 387.60 (28 Jul 2026) | CHEAP < ≈ SEK 132 (MCap/NI 8×, substitution rule — EV/OI n.m.; P12 edge ≈ SEK 165). Cheapness EXPENSIVE | +194% | FY2026 prelim (~21 Jan 2027) re-anchors band (TTM drift → ≈ SEK 145); alert < ≈ SEK 165 |
 | ADYEN.AS (was ADYEN) | Adyen N.V.                      | 2026-06-11 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | €883.90 (28 Jul 2026) | CHEAP < ≈ €286 (MCap/FCF @1.25×; strict all-four ≈ €229)                                                                                | +209% | H1 2026 results (Aug 2026), Talon.One integration, or price < €350                                                                                  |
 | MORN | Morningstar, Inc. | 2026-07-31 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: FY2025 tranche 22.9× MCap/FCF / 20.6× EV/OI, no criterion, debt-funded; acq audits INDETERMINATE) | $192.57 (31 Jul 2026) | CHEAP ≈ $61 (EV/OI binds, conservative EV, Q2-26 BS; MCap/FCF leg ≈ $94; TTM cross-check ≈ $76; no P12) — EXPENSIVE 16.3×/17.3× | +213% | FY2026 10-K (~Feb 2027): completed pgm yr, L/E 285% vs the 200% P5 flag, CAUTION re-test; Q3-26 cadence on the $300M left; alert < ≈ $75 |
+| NU | Nu Holdings Ltd. | 2026-08-27 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: $1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no published discipline; dual-class caveat) | ≈$15.10 (27 Aug 2026, der.) | NI-proxy anchor: CHEAP < ≈ $4.75 (8× FY2025 NI; §2·1A substitution); FY26 run-rate ctx ≈ $6.5 | +219% | FY2026 (~Feb 2027) P19 execution re-test; 90+ NPL 6.9% tape quarterly |
 | SAP.DE (ADR 1:1; was SAP) | SAP SE | 2026-08-01 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: execution at 3.3× worth, no published price criterion, authorisation doubled €5bn→€10bn; comp-target-exclusion caveat) | €157.68 Xetra (31 Jul 2026) | CHEAP ≈ €48.6 (EV/OI no-excess-cash binds; cash-ded €55.6; MCap/FCF €56.3; no P12; FY26 guide lifts the FCF leg to ≈€68) — EXPENSIVE 19.5×/20.3× | +225% | FY2026 (~late Jan 2027): completed 2026 tranche, share-count movement vs SBC (named gap — Q2 count unsourced), CAUTION re-test; alert < ≈ €60 |
 | SKF-B.ST (was SKF-B) | AB SKF (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (dual-class caveat) | SEK 260.30 (28 Jul 2026) | CHEAP < ≈ SEK 80 (MCap/FCF; EV/OI leg ≈ SEK 81–102 no-cash/all-cash; no P12) — EXPENSIVE | +225% | Automotive Lex Asea separation (~Q4 2026) resets basis; else FY2026 AR (~Mar 2027); ROCE_wc 2 straight declines — 3rd fires P4 |
 | COLO-B.CO | Coloplast A/S | 2026-08-08 | v1 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-alloc CAUTION: Atos ~27× + Kerecis impaired 3.0bn Apr 2026; family 52%-votes caveat unpaired) | DKK 426.10 (6 Aug 2026) | CHEAP < ≈ DKK 123.3–127.5 (EV/OI nc/ac bind; MCap/FCF leg 189.7) | +234% | FY2025/26 (~Nov 2026): Kerecis stabilisation; Gavin Wood margin path; L/E exactly 200.0% — P5 fires at the line; alert < ≈ DKK 130 |
@@ -380,9 +380,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v274 — 2026-08-27** — NU v2 REVIEW: WATCH held; P19 SOUND→CAUTION ($1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no discipline — v1 miss logged). Band $4.75 held; Px ≈$15.10 der., Dist +219%. H1 resynced.
 - **v273 — 2026-08-27** — SMSH.TA v1 ANALYSE: AVOID (Past WEAK, Future WEAK). TASE IPO 2026-03, 3y history-limited; 41.5× MCap/FCF, EXPENSIVE; band ₪2.4–3.5.
 - **v272 — 2026-08-23** — NOVO-B.CO v8 REVIEW (held): WATCH/HOLD held. D.N.J. §10(b) ruling 28 Jul = INDETERMINATE, no pair. Buyback 53.9% @ 279.80 = 10.5×. Px 300.90; Dist +67%. Re-merged onto v271.
 - **v271 — 2026-08-23** — LULU v4 full re-derivation superseding same-day v3: 2nd live tranche (3–29 May, 5.5–5.7× EV/OI) added; shares → 113.554M; FAIR → EXPENSIVE. AVOID/1 gate held.
 - **v270 — 2026-08-23** — CROX v7 REVIEW (held): WATCH/HOLD unchanged. NYT Malta tax (5 Aug) — not an SF flag, INDETERMINATE; band tax-blind (EV/OI binds). Px $122.11; Dist +31%→+25%, 2nd in WATCH.
-- **v269 — 2026-08-23** — LULU v3 REVIEW: AVOID (Future WEAK); SF FAIL→PASS — §2·1C·3 CAUTION (ADVERSE fails still-expensive conjunct; Q1 FY26 tranche ≈7.6–7.8× EV/OI). Band ≈$64. Re-merged onto v268.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
