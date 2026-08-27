@@ -1,10 +1,10 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v272
-register_date: 2026-08-23
+register_version: v273
+register_date: 2026-08-27
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 315
-verdict_split: "WATCH 68 · AVOID 246 · BUY 0 · DNAF 1"
+names_total: 316
+verdict_split: "WATCH 68 · AVOID 247 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
@@ -109,7 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 246 names, alphabetical
+### AVOID — 247 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -311,6 +311,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SHA0.DE (was SHA0) | Schaeffler AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €8.53 (16 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt = 29× OI); MCap/FCF leg ≈ €3.23 ref only | — | FY2026 AR (~Mar 2027) — restructuring inflection + P17 re-test on positive NI |
 | SHOO | Steven Madden, Ltd. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: CEO $8.16m vs $2.23m yr / $6.43m 3y ceilings; P19 SOUND — the run's only one) | $48.45 (7 Aug 2026) | CHEAP ≈ $2.20–3.53 (EV/OI no-cash/all-cash, FY25 trough OI; MCap/FCF leg $13.49; TTM legs $14.30/$15.62 context) | — | **Best business of the block** (w-o-4 ROCE 19.1%); FY2026 10-K (~Mar 2027) growth-limb flip (TTM OI $205.6m vs FY25 $80.8m); FY16–20 rebuild owed; alert < ≈ $16 |
 | SHOP | Shopify Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 comp) | WEAK | STRONG | FAIL | $124.74 (14 Jul 2026) | CHEAP < ≈ $7.7 (EV/OI, consv EV; MCap/FCF leg ≈ $12.3; no P12) — EXPENSIVE, moot given AVOID | — | 2027 proxy (~Apr 2027) re-tests P17 (FY24 comp $150m = 1.9× cap); FY2026 10-K (~Feb 2027) re-anchors; Past flip ~FY2028 earliest |
+| SMSH.TA | Smart Shooter Ltd. | 2026-08-27 | v1 | AVOID | WEAK | WEAK | PASS | ₪17.96 | CHEAP ≈ ₪2.4–3.5 (EV/OI no-cash / MCap-FCF all-cash, FY25 USD) — EXPENSIVE | — | H1-26 report ≤2026-08-31; FY26 periodic re-tests P17/RPT + primary tie-out |
 | SNOW | Snowflake Inc. | 2026-08-09 | v1 | AVOID | WEAK | WEAK | FAIL (P19 ADVERSE — register #6; $2.81bn convert-assisted sterilisation) | $330.49 (7 Aug 2026) | n.m. — no positive OI in any year; today's price needs OI ≈ $16.8bn | — | 4 gates; FY2027 10-K + 2027 proxy — $448m CEO package first SCT print |
 | SONO | Sonos, Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 strike: Conrad $8.28m vs $5.41m/$4.88m FCF-leg ceilings; P19 CAUTION — $679m loss-year buybacks) | $15.64 (7 Aug 2026) | n.m. FY25 basis; TTM ref legs EV/OI $3.42/$5.63, FCF $7.95 — restores at first positive-OI year | — | 4 gates; w-o-4 −1.64%; Best Buy 15% + Inventec-majority breadth; FY2026 10-K ~Nov 2026; alert < ≈ $5.60 |
 | SOUN | SoundHound AI, Inc. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: both FY25 legs negative — NI −$14m, FCF −$99m — vs CEO $9.33m) | $7.58 (7 Aug 2026) | n.m. — no positive OI or FCF any year; both primaries unmeasurable (first register name where neither primary has a denominator) | — | FY2026 10-K (~Mar 2027) first candidate positive-OI year; customer-concentration sentence; 2027 proxy P17 re-test |
@@ -379,9 +380,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v273 — 2026-08-27** — SMSH.TA v1 ANALYSE: AVOID (Past WEAK, Future WEAK). TASE IPO 2026-03, 3y history-limited; 41.5× MCap/FCF, EXPENSIVE; band ₪2.4–3.5.
 - **v272 — 2026-08-23** — NOVO-B.CO v8 REVIEW (held): WATCH/HOLD held. D.N.J. §10(b) ruling 28 Jul = INDETERMINATE, no pair. Buyback 53.9% @ 279.80 = 10.5×. Px 300.90; Dist +67%. Re-merged onto v271.
 - **v271 — 2026-08-23** — LULU v4 full re-derivation superseding same-day v3: 2nd live tranche (3–29 May, 5.5–5.7× EV/OI) added; shares → 113.554M; FAIR → EXPENSIVE. AVOID/1 gate held.
 - **v270 — 2026-08-23** — CROX v7 REVIEW (held): WATCH/HOLD unchanged. NYT Malta tax (5 Aug) — not an SF flag, INDETERMINATE; band tax-blind (EV/OI binds). Px $122.11; Dist +31%→+25%, 2nd in WATCH.
 - **v269 — 2026-08-23** — LULU v3 REVIEW: AVOID (Future WEAK); SF FAIL→PASS — §2·1C·3 CAUTION (ADVERSE fails still-expensive conjunct; Q1 FY26 tranche ≈7.6–7.8× EV/OI). Band ≈$64. Re-merged onto v268.
-- **v268 — 2026-08-23** — PYPL v3 REVIEW: SF FAIL → PASS (P19 ladder retired at v4.0.0; cap-alloc CAUTION = 1 flag; H1'26 buybacks @ $45.18 = 7.1–7.8×). AVOID unchanged, 1 gate. Re-merged onto v267.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
