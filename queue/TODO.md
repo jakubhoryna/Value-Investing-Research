@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v15 · 2026-08-23)
+# GSC Work Queue — TODO.md (v16 · 2026-08-27)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -101,6 +101,8 @@ Tier 3 (context only, no queue action): WATCH-name P19 flags — INVE-B.ST, FIE.
 | v3.7.0 App-F restatements | BABA, 2330.TW, AMZN, LIFCO-B.ST, TROW, BKNG, ROG.SW, FIE.DE, ULVR.L, AXFO.ST, NVS — memo App. F restates the labelled no-cash/all-cash band at next REVIEW; IBKR upper bound not derivable (logged judgment, single figure) | next REVIEW each |
 
 **Standing session rules (pending codification at MODEL v4.2.0):** ISIN backfill at every REVIEW touch (§7.1a); primary tie-outs owed on every coherence-accepted memo from the 2026-08-07/09 cohorts (91 names) at their first REVIEW; prefer primary interim debt for EV inputs; regulated utilities are screened out at queue stage, never seeded for ANALYSE.
+
+- **GPN (Global Payments, US37940X1028-input)** — added 2026-08-27 (v1 ANALYSE, AVOID/3 gates): (a) FY2016–FY2020 record rebuild (window record-limited 5y; cap liftable); (b) 2026/2027 proxy backfill — RPT section, outside-director fees, insider ownership %, and CEO-comp extraction conflict ($20.31m vs $17.42m) resolved against the DEF 14A itself; (c) FY2021–FY2025 repurchase share counts from 10-K equity notes (tranche prices currently derived ±10–15%); (d) Worldpay announced EBITDA multiple (Apr-2025 deck) as hard lower bound on pre-deal EV/OI; (e) verify ISIN. Trigger: FY2026 10-K (~Feb 2027) REVIEW or earlier touch.
 
 ---
 
