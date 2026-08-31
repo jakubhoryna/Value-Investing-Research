@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v275
-register_date: 2026-08-27
+register_version: v276
+register_date: 2026-08-31
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 317
-verdict_split: "WATCH 68 · AVOID 248 · BUY 0 · DNAF 1"
+names_total: 318
+verdict_split: "WATCH 68 · AVOID 249 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v275 · 2026-08-27)
+# GSC Register — Master Watchlist (v276 · 2026-08-31)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -109,7 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 248 names, alphabetical
+### AVOID — 249 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -309,6 +309,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | S | SentinelOne, Inc. | 2026-08-09 | v1 | AVOID | WEAK (7y) | ADEQUATE | PASS (P17 year-read flag vs $2.51m collapsed ceiling; normalized lens blind; P19 SOUND-by-absence) | $21.40 (7 Aug 2026) | n.m. — GAAP OI negative every year (FY2026 −$321.3m); price needs OI ≈ $1.05bn ≈ revenue | — | 2 gates; 146× FCF; FY2027 10-K (~Mar 2027) + proxy |
 | SAF.PA (ADR SAFRY; was SAF) | Safran SA | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | STRONG | FAIL | €338.40 (31 Jul 2026) | CHEAP ≈ €75 (EV/OI résop binds €74.75; MCap/FCF leg €75.04; recurring-OI leg €82.77; no P12) — EXPENSIVE 32.6×/29.3× (25.5× TTM) | — | FY2026 (~Feb 2027): completed 2026 tranche, band re-anchors on FY26 earnings (guidance implies ≈€92), re-test; alert < ≈ €95 |
 | SAN.PA (was SAN) | Sanofi | 2026-07-15 | v1 | AVOID (Past WEAK + SF FAIL: P19 buyback) | WEAK | ADEQUATE | FAIL | €76.26 (15 Jul 2026) | CHEAP < ≈ €27.6 (EV/OI, consv EV, as-reported OI; MCap/FCF leg ≈ €47; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 (~Feb 2027) resets Opella-deconsol basis + P19 re-test (2026 €1bn pgm); business-OI ≈10× caveat; alert < ≈ €35 |
+| SEE.L | Seeing Machines Limited | 2026-08-31 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 loss-leg strike) | WEAK | WEAK | FAIL | 4.670p (28 Aug 2026) | n.m. — FY25 OI −$18.7m & FCF −$29.7m; no-cash bound needs OI > ≈$8.8m (7×OI < debt $61.4m) | — | FY2026 results (~late Sep/early Oct 2026); $47.5m convert matures 4 Oct 2026 — refi is the event; FY16–22 rebuild owed |
 | SHA0.DE (was SHA0) | Schaeffler AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €8.53 (16 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt = 29× OI); MCap/FCF leg ≈ €3.23 ref only | — | FY2026 AR (~Mar 2027) — restructuring inflection + P17 re-test on positive NI |
 | SHOO | Steven Madden, Ltd. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: CEO $8.16m vs $2.23m yr / $6.43m 3y ceilings; P19 SOUND — the run's only one) | $48.45 (7 Aug 2026) | CHEAP ≈ $2.20–3.53 (EV/OI no-cash/all-cash, FY25 trough OI; MCap/FCF leg $13.49; TTM legs $14.30/$15.62 context) | — | **Best business of the block** (w-o-4 ROCE 19.1%); FY2026 10-K (~Mar 2027) growth-limb flip (TTM OI $205.6m vs FY25 $80.8m); FY16–20 rebuild owed; alert < ≈ $16 |
 | SHOP | Shopify Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + SF FAIL: P17 comp) | WEAK | STRONG | FAIL | $124.74 (14 Jul 2026) | CHEAP < ≈ $7.7 (EV/OI, consv EV; MCap/FCF leg ≈ $12.3; no P12) — EXPENSIVE, moot given AVOID | — | 2027 proxy (~Apr 2027) re-tests P17 (FY24 comp $150m = 1.9× cap); FY2026 10-K (~Feb 2027) re-anchors; Past flip ~FY2028 earliest |
@@ -381,9 +382,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v276 — 2026-08-31** — SEE.L v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −30.0%; Future WEAK 3 strong forces, 2 customers 44%; SF FAIL — P17 loss-leg strike). Band n.m.; needs OI > ≈$8.8m. Window 3y.
 - **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO. Re-merged onto v274.
 - **v274 — 2026-08-27** — NU v2 REVIEW: WATCH held; P19 SOUND→CAUTION ($1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no discipline — v1 miss logged). Band $4.75 held; Px ≈$15.10 der., Dist +219%. H1 resynced.
 - **v273 — 2026-08-27** — SMSH.TA v1 ANALYSE: AVOID (Past WEAK, Future WEAK). TASE IPO 2026-03, 3y history-limited; 41.5× MCap/FCF, EXPENSIVE; band ₪2.4–3.5.
 - **v272 — 2026-08-23** — NOVO-B.CO v8 REVIEW (held): WATCH/HOLD held. D.N.J. §10(b) ruling 28 Jul = INDETERMINATE, no pair. Buyback 53.9% @ 279.80 = 10.5×. Px 300.90; Dist +67%. Re-merged onto v271.
-- **v271 — 2026-08-23** — LULU v4 full re-derivation superseding same-day v3: 2nd live tranche (3–29 May, 5.5–5.7× EV/OI) added; shares → 113.554M; FAIR → EXPENSIVE. AVOID/1 gate held.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
