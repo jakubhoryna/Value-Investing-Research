@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v276
+register_version: v277
 register_date: 2026-08-31
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 318
-verdict_split: "WATCH 68 · AVOID 249 · BUY 0 · DNAF 1"
+names_total: 319
+verdict_split: "WATCH 68 · AVOID 250 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v276 · 2026-08-31)
+# GSC Register — Master Watchlist (v277 · 2026-08-31)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -109,7 +109,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 249 names, alphabetical
+### AVOID — 250 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -215,6 +215,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | EVK.DE (was EVK) | Evonik Industries AG | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 INDET: 2017 APD audit) | €16.68 (22 Jul 2026) | CHEAP < ≈ €0.24 (EV/OI, consv EV; all-cash leg ≈ €1.30; MCap/FCF leg ≈ €10.20) — moot given AVOID. EXPENSIVE 20.3× | — | FY2026 AR (~Mar 2027): 1st full year of 3-segment structure; structural — no price flips it |
 | EVO.ST (was EVO) | Evolution AB (publ) | 2026-07-24 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG | WEAK | FAIL | SEK 694.40 (24 Jul 2026) | CHEAP < ≈ SEK 475 (EV/OI, consv EV; MCap/FCF leg ≈ 518; P12 edge ≈ 595) — FAIR 10.2× | — | FY2026 YE (4 Feb 2027): flip needs cust <10% + worth-ref buyback policy; P19 3 strikes ('21–'23) + NetEnt 48× acq; BTG INDET |
 | FIG | Figma, Inc. | 2026-08-09 | v1 | AVOID | WEAK (4y) | ADEQUATE | FAIL (P17 strike 12.9× — Field $156.2m listing-year) | $23.29 (7 Aug 2026) | n.m. — FY2025 OI −$1,290m (IPO RSU charges); today's price needs OI ≈ $1.78bn | — | 3 gates; FY2026 10-K (~Feb 2027) = first readable year |
+| FLUT | Flutter Entertainment plc | 2026-08-31 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 ADVERSE) | WEAK | WEAK | FAIL | $101.78 (28 Aug 2026) | n.m. — 7×OI $4.3bn < obligations $13.2bn; OI ≥ ≈$1.88bn/$1.66bn (no-cash/all-cash) restores; FCF leg $18.99 — EXPENSIVE 50.1×/47.6× | — | FY2026 10-K (~Feb 2027); Q3'26 (~Nov 2026) US trend; Snai pre-deal OI INDET; director fees/RPT/ISIN → TODO |
 | FORTUM.HE | Fortum Oyj | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (state 51% caveat unpaired; cap-alloc CAUTION — Uniper legacy, stale) | €19.375 (7 Aug 2026) | CHEAP ≈ €2.93–3.04 (EV/OI no-cash / MCap-FCF all-cash; FY2022–25 record-limited window, earlier years bound worse) | — | FY2026 bulletin (~Feb 2027): **3rd consecutive ROCE decline fires P4 formally** (5.8→9.5→8.1→6.0); 90% payout vs rising net debt re-test; alert n/a |
 | FR.PA | Valeo SE | 2026-08-07 | v1 | AVOID (Past WEAK: w-o-4 ROCE 4.13% + Future WEAK: breadth FAIL + 2 forces) | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION; director fees + Note 6.5 INDETERMINATE) | €14.53 (6 Aug 2026) | n.m. — no positive price clears EV/OI ≤7 no-cash (debt+NCI €7,637m > 7×OI); all-cash ≈ €3.83; MCap/FCF leg ≈ €7.58 — EXPENSIVE 14.2×/10.3× | — | FY2026 (~Feb 2027) + URD-26: 1st URD-sourced governance record, P15 re-test, VSeA audit, 10y rebuild; structural — no price flips it |
 | FRE.DE (was FRE) | Fresenius SE & Co. KGaA | 2026-07-20 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.1% + Future WEAK: breadth FAIL + 2 strong forces) | WEAK | WEAK | PASS | €42.63 (20 Jul 2026) | CHEAP < ≈ €6.35 (EV/OI, consv EV; MCap/FCF leg ≈ €20.9) — EXPENSIVE | — | FY2026 AR (~Mar 2027); hospital-reform Leistungsgruppen from 2027; SF capital-allocation flag standing |
@@ -382,9 +383,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v277 — 2026-08-31** — FLUT v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 1.08%; Future WEAK 4/4 forces; SF FAIL — P19 ADVERSE, FY25 buybacks 78–107×). Band n.m.; 7×OI < debt. 5y record-limited.
 - **v276 — 2026-08-31** — SEE.L v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −30.0%; Future WEAK 3 strong forces, 2 customers 44%; SF FAIL — P17 loss-leg strike). Band n.m.; needs OI > ≈$8.8m. Window 3y.
 - **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO. Re-merged onto v274.
 - **v274 — 2026-08-27** — NU v2 REVIEW: WATCH held; P19 SOUND→CAUTION ($1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no discipline — v1 miss logged). Band $4.75 held; Px ≈$15.10 der., Dist +219%. H1 resynced.
 - **v273 — 2026-08-27** — SMSH.TA v1 ANALYSE: AVOID (Past WEAK, Future WEAK). TASE IPO 2026-03, 3y history-limited; 41.5× MCap/FCF, EXPENSIVE; band ₪2.4–3.5.
-- **v272 — 2026-08-23** — NOVO-B.CO v8 REVIEW (held): WATCH/HOLD held. D.N.J. §10(b) ruling 28 Jul = INDETERMINATE, no pair. Buyback 53.9% @ 279.80 = 10.5×. Px 300.90; Dist +67%. Re-merged onto v271.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
