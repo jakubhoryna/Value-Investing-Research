@@ -385,7 +385,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 - **v277 — 2026-08-31** — FLUT v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 1.08%; Future WEAK 4/4 forces; SF FAIL — P19 ADVERSE, FY25 buybacks 78–107×). Band n.m.; 7×OI < debt. 5y record-limited.
 - **v276 — 2026-08-31** — SEE.L v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −30.0%; Future WEAK 3 strong forces, 2 customers 44%; SF FAIL — P17 loss-leg strike). Band n.m.; needs OI > ≈$8.8m. Window 3y.
-- **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO. Re-merged onto v274.
+- **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO.
 - **v274 — 2026-08-27** — NU v2 REVIEW: WATCH held; P19 SOUND→CAUTION ($1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no discipline — v1 miss logged). Band $4.75 held; Px ≈$15.10 der., Dist +219%. H1 resynced.
 - **v273 — 2026-08-27** — SMSH.TA v1 ANALYSE: AVOID (Past WEAK, Future WEAK). TASE IPO 2026-03, 3y history-limited; 41.5× MCap/FCF, EXPENSIVE; band ₪2.4–3.5.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
