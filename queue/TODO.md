@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v18 · 2026-08-31)
+# GSC Work Queue — TODO.md (v19 · 2026-08-31)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -10,7 +10,7 @@
 
 *(Also queued: a MODEL session on IDEAS A1 — the OI-line convention — user-scheduled 2026-08-18, **still not run**; requires a human in the loop and the exact phrase "commit model", so it cannot be executed unattended. A2–A7 stay parked.)*
 
-**CLEARED at registers v276–v277 — seven re-tests executed 27–28 Aug. Two verdicts moved:**
+**CLEARED at register v278 — seven re-tests executed 27–28 Aug, staged then blocked, recovered and committed 2026-08-31. Two verdicts moved:**
 
 1. ~~**7936.T (ASICS) — Q2 FY2026 tanshin, 14 Aug 2026**~~ → **v3 committed. No art. 459 authorisation announced.** Both of the year's candidate slots (13 Feb, 14 Aug) have now passed unused; H1 treasury purchases ¥2m. CAUTION confidence 70% → 80%. WATCH held. ✓ *The v3 sourcing caveat is **withdrawn**: the 28 Aug pass retrieved ASICS's statutory 半期報告書 for the identical period, so every figure is primary and ties on all four §4 anchors. Also closed: H1 FY2025 cash flow via EDINET (**TTM FCF now ¥91,060m**), both buyback notices (**8,072,900 shares for ¥29,999,803,800** — confirming the derived ¥3,716 to the yen), and **FY2025 top pay at ¥419m**, carried as "above ¥400m" since v1.*
 2. ~~**TRI (Thomson Reuters) — NCIB expiry, 18 Aug 2026**~~ → **v3 committed. The bid expired unrenewed.** No successor authorisation, no substitute mechanism, verified by two independent retrievals of the IR index. CAUTION confidence 70% → **87%** after a 28 Aug EDGAR sweep of every filing by the registrant in August returned no NCIB document. WATCH held. **New adverse alert: lease liabilities of $241m were retrieved from the Q2 6-K's XBRL notes, pulling the conviction line $116.04 → $115.49 and the band $27.23/$28.55 → $26.68/$28.00 — so the price now sits 9.3% below the line, not 10.8%.** The P17 trailing-3y NI leg is also computed rather than bounded (FY2023–25 sourced).
@@ -135,12 +135,371 @@ Tier 3 (context only, no queue action): WATCH-name P19 flags — INVE-B.ST, FIE.
 - **PYPL (PayPal) — Stripe/Advent approach, live.** Press-reported only (WSJ, 15 Jul + 14–18 Aug 2026): $60.50/share bid rejected as undervaluing; no 8-K, no company comment. On a definitive agreement → terminal row/archive + tax note; on lapse → full REVIEW at the de-pinned price (pre-bid low-$40s would sit inside the all-cash band).
 
 ---
+- **ABB — Rotork acquisition CONFIRMED, ~$5.5bn, announced 16 Jul 2026.** Surfaced while de-duplicating the re-seed block: the ABB row's `AR-2026` re-test already names "Rotork/Advantics closing multiples", and this is the deal. Rotork (`ROR.L`) is therefore **struck from the candidate universe** — it is an ABB P19 input, not a name to analyse. [ABB release](https://new.abb.com/news/detail/137499/abb-expands-automation-offering-with-acquisition-of-rotork)
+- **Candidate-stage strikes, 2026-08-28** (found by the corporate-action pass over the re-seed block; none has a register row, so none needs a row action — logged so they are not re-seeded): **`ITRK.L` Intertek** — EQT recommended cash offer £60.00/share, Rule 2.7 on 18 Jun 2026, **shareholders approved 6 Aug 2026**, delisting pending ([Rule 2.7](https://www.intertek.com/siteassets/investors/offer/rule-2.7-announcement-dated-18-june-2026.pdf) · [court/GM result](https://www.investegate.co.uk/announcement/rns/intertek-group--itrk/results-of-court-meeting-and-general-meeting/9709222)). **`SDF.AX` Steadfast Group** — binding scheme with the Amwins / Dragoneer / KKR consortium at A$6.00 cash, signed ~21–22 Aug 2026 ([report](https://www.insurancebusinessmag.com/au/news/breaking-news/steadfast-signs-binding-deal-with-us-consortium-587005.aspx)). All three deal figures are sourced, not derived.
 
-## Re-seeding the ANALYSE queue — user decision (unchanged from v9)
+## Re-seeding the ANALYSE queue — user decision (option (c) now carries stock, v17)
 
-- **(a) Run the named re-test backlog above as REVIEW work** — highest value per hour; every name is a delta, not a build.
-- **(b) The corporate-actions sweep** — cheap, mechanical, prevents quiet rot.
-- **(c) A new ANALYSE market block** — Canada, Australia, Korea/Taiwan beyond the two names held, India, the US mid-cap industrial tail (automation-thesis adjacency), or European small-cap compounders. Utilities are not seeded (standing screen).
+- **(a) Run the named re-test backlog above as REVIEW work** — highest value per hour; every name is a delta, not a build. **Still the recommended first call**: the ~50-name backlog is dated, verdict-moving and already half-sourced, where every name in the two new blocks is a cold build.
+- **(b) The corporate-actions sweep** — cheap, mechanical, prevents quiet rot. **Now overdue and demonstrably load-bearing:** the 2026-08-28 pass over the candidate block alone caught three live take-privates (Rotork, Intertek, Steadfast) and a fourth already inside the register's own ABB row. Two of the last fifteen backlog names had already ceased to exist as listings. The same rot is running through the 319 live rows unchecked.
+- **(c) A new ANALYSE market block** — **no longer an open question: 239 names are now queued above**, 58 from the top-100 coverage audit and 181 from the re-seed universe, across fifteen markets. Utilities are not seeded (standing screen). Sequencing is a user call; the note under Flags sets out what the register's shape argues for.
+
+---
+
+## Coverage audit — global top 100 by market cap (snapshot 2026-08-28)
+
+*Source: companiesmarketcap.com global ranking, retrieved 2026-08-28 (sourced data; ranks only — **no market-cap figures are carried into this file**, and the ranking itself is a third-party aggregation, tier-3 under §4, adequate for a coverage checklist and for nothing else). Matched against all 317 register rows on **company name, not the ticker key** (§7.1a) — cross-listings resolved, so Roche→`ROG.SW`, Novartis→`NVS`, Tencent→`0700.HK`, TSMC→`2330.TW`, Novo Nordisk→`NOVO-B.CO` all count as covered.*
+
+**Result: 42 of the top 100 carry a register row; 58 do not.** The gap is not random — it is concentrated in exactly the three groups the project has never seeded: mega-cap banks and insurers, the semiconductor complex, and state-controlled Asian and Gulf issuers.
+
+**Framing, stated plainly: this is a coverage audit, not a candidate screen.** Size is neither a quality nor a cheapness signal, and nothing here has been pre-judged on any gate. The value of working the list is that each absence becomes a recorded decision instead of an oversight — an AVOID row saves future time under §7.1 exactly as a WATCH row does.
+
+
+### Tier A — ordinary GSC treatment — 37 names
+
+Analysable on the standard machinery. Ranks are companiesmarketcap positions at the 2026-08-28 snapshot; no market-cap figures are carried into this file.
+
+| # | Key | Company | Country | Note |
+|---|---|---|---|---|
+| 8 | `AVGO` | Broadcom Inc. | USA | semiconductors |
+| 17 | `000660.KS` | SK hynix Inc. | South Korea | memory — cyclical; chaebol governance |
+| 19 | `AMD` | Advanced Micro Devices, Inc. | USA | semiconductors |
+| 22 | `XOM` | Exxon Mobil Corporation | USA | oil & gas — P4 cyclicality (EQNR precedent) |
+| 23 | `JNJ` | Johnson & Johnson | USA | pharma & medtech |
+| 27 | `INTC` | Intel Corporation | USA | semiconductors |
+| 28 | `ABBV` | AbbVie Inc. | USA | pharma |
+| 30 | `CSCO` | Cisco Systems, Inc. | USA | networking |
+| 35 | `LRCX` | Lam Research Corporation | USA | semicap |
+| 36 | `CVX` | Chevron Corporation | USA | oil & gas — P4 cyclicality |
+| 37 | `KO` | The Coca-Cola Company | USA | beverages |
+| 38 | `AMAT` | Applied Materials, Inc. | USA | semicap |
+| 39 | `CAT` | Caterpillar Inc. | USA | construction & mining equipment |
+| 41 | `MRK` | Merck & Co., Inc. | USA | pharma |
+| 42 | `GE` | GE Aerospace | USA | aero engines — perimeter reset (3-way split) |
+| 48 | `PG` | The Procter & Gamble Company | USA | household & personal care |
+| 50 | `HD` | The Home Depot, Inc. | USA | home improvement retail |
+| 52 | `DELL` | Dell Technologies Inc. | USA | IT hardware |
+| 54 | `PM` | Philip Morris International Inc. | USA | tobacco / nicotine |
+| 58 | `RTX` | RTX Corporation | USA | aerospace & defence |
+| 60 | `ARM` | Arm Holdings plc | UK | semiconductor IP — ADR line; SoftBank majority |
+| 66 | `AZN` | AstraZeneca PLC | UK | pharma |
+| 67 | `GEV` | GE Vernova Inc. | USA | power equipment — 2024 spin, short record |
+| 68 | `ANET` | Arista Networks, Inc. | USA | networking |
+| 71 | `SHEL` | Shell plc | UK | oil & gas — P4 cyclicality |
+| 72 | `BHP` | BHP Group Limited | Australia | mining — NO PRECEDENT in register; user call |
+| 73 | `TXN` | Texas Instruments Incorporated | USA | analog semiconductors |
+| 75 | `KLAC` | KLA Corporation | USA | semicap |
+| 77 | `AMGN` | Amgen Inc. | USA | biopharma |
+| 78 | `TMO` | Thermo Fisher Scientific Inc. | USA | life-science tools |
+| 81 | `TM` | Toyota Motor Corporation | Japan | autos — ADR; local line 7203.T |
+| 88 | `SNDK` | Sandisk Corporation | USA | NAND storage — 2025 WDC spin, short record |
+| 89 | `MRVL` | Marvell Technology, Inc. | USA | semiconductors |
+| 91 | `ITX.MC` | Industria de Diseno Textil, S.A. (Inditex) | Spain | apparel retail — also on the ES re-seed block |
+| 93 | `VZ` | Verizon Communications Inc. | USA | telecom |
+| 97 | `APH` | Amphenol Corporation | USA | connectors & interconnect |
+| 100 | `2454.TW` | MediaTek Inc. | Taiwan | fabless semis — also on the TW re-seed block |
+
+### Tier B — financials, substitution basis required — 12 names
+
+**Do not queue these onto the industrial CE/EV/TBV machinery.** The KSPI v1→v2 lesson (TODO v13): a pre-v3 memo priced a deposit-funded lender on industrial mechanics and the §2·1A substitution rule moved the band from $42–52 to ≈$98 with no change in the business. Every name here is a deposit- or premium-funded balance sheet.
+
+| # | Key | Company | Country | Note |
+|---|---|---|---|---|
+| 16 | `JPM` | JPMorgan Chase & Co. | USA | FINANCIAL — substitution basis |
+| 32 | `BAC` | Bank of America Corporation | USA | FINANCIAL — substitution basis |
+| 45 | `HSBC` | HSBC Holdings plc | UK | FINANCIAL — substitution basis; ADR, local HSBA.L |
+| 47 | `MS` | Morgan Stanley | USA | FINANCIAL — substitution basis |
+| 53 | `GS` | The Goldman Sachs Group, Inc. | USA | FINANCIAL — substitution basis |
+| 59 | `RY` | Royal Bank of Canada | Canada | FINANCIAL — substitution basis; also on the CA re-seed block |
+| 63 | `WFC` | Wells Fargo & Company | USA | FINANCIAL — substitution basis |
+| 69 | `MUFG` | Mitsubishi UFJ Financial Group, Inc. | Japan | FINANCIAL — substitution basis; ADR, local 8306.T |
+| 85 | `C` | Citigroup Inc. | USA | FINANCIAL — substitution basis |
+| 90 | `SAN.MC` | Banco Santander, S.A. | Spain | FINANCIAL — KEY COLLISION: SAN.PA is Sanofi; key Madrid line |
+| 96 | `TD` | The Toronto-Dominion Bank | Canada | FINANCIAL — substitution basis |
+| 98 | `ALV.DE` | Allianz SE | Germany | FINANCIAL — insurer; substitution basis |
+
+### Tier C — state-controlled; SF gate structurally compromised — 9 names
+
+The four shareholder-friendliness tests (§2·1C) read a proxy that either does not exist in comparable form or describes a controlling state owner. Recommend a **standing screen-out**, logged once, rather than nine Gate-0 abbreviated memos — but that is a user decision, not a framework output.
+
+| # | Key | Company | Country | Note |
+|---|---|---|---|---|
+| 9 | `2222.SR` | Saudi Arabian Oil Company (Saudi Aramco) | Saudi Arabia | STATE — .SR not in §7.1a suffix table |
+| 34 | `601939.SS` | China Construction Bank Corporation | China | STATE bank — SF gate structurally compromised |
+| 44 | `601288.SS` | Agricultural Bank of China Limited | China | STATE bank — SF gate structurally compromised |
+| 46 | `1398.HK` | Industrial and Commercial Bank of China Limited | China | STATE bank — SF gate structurally compromised |
+| 55 | `601988.SS` | Bank of China Limited | China | STATE bank — SF gate structurally compromised |
+| 74 | `600519.SS` | Kweichow Moutai Co., Ltd. | China | STATE-controlled (Guizhou province) |
+| 79 | `0857.HK` | PetroChina Company Limited | China | STATE — SF gate structurally compromised |
+| 86 | `IHC.AE` | International Holding Company PJSC | UAE | STATE-linked holding — .AE not in §7.1a suffix table |
+| 87 | `0941.HK` | China Mobile Limited | China | STATE — SF gate structurally compromised |
+
+---
+
+---
+
+## ANALYSE queue re-seed — candidate universe (built 2026-08-28)
+
+*Answers the standing re-seed question below, option (c). **181 names, none of which has a register row** — de-duplicated against all 317 rows live at the 2026-08-28 snapshot, on company name per §7.1a, not on the ticker key. **Re-verified 2026-08-31 against the two rows added since** — SEE.L (Seeing Machines) and FLUT (Flutter Entertainment): neither appears in either block, and a core-name sweep of all 319 live company names against both blocks returns no collision. Tickers are suggested keys, resolved and verified with ISIN at run time. Selection rule applied: understandable business · long continuous record under a stable perimeter · structurally decent returns or a durable niche · family/founder/anchor control welcome. Screened out at source: utilities and regulated networks (standing screen), pure-play miners, oil & gas E&P, REITs, closed-end funds and pure investment holdings, SPAC-derived names, and anything with under ~5 years of standalone statements. **No figures are carried here by design** — nothing below is sourced financial data, and no name below has been valued, screened for cheapness, or pre-judged on any gate.*
+
+
+### United Kingdom (.L) — 26 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `SPX.L` | Spirax Group plc | thermal energy / niche pumps | installed steam base drives self-renewing aftermarket |
+| `HLMA.L` | Halma plc | safety & environmental tech | decentralised regulation-driven niches, long compounding record |
+| `IMI.L` | IMI plc | flow control & automation | mission-critical engineered components, aftermarket pull-through |
+| `RSW.L` | Renishaw plc | precision metrology | founder-family anchor control, measurement-IP moat |
+| `HILS.L` | Hill & Smith PLC | infrastructure products, galvanizing | local-scale galvanizing and road-safety niches, cash-generative |
+| `DPLM.L` | Diploma PLC | value-added industrial distribution | essential low-cost consumables, sticky specification, disciplined bolt-ons |
+| `BNZL.L` | Bunzl plc | outsourced business supplies | dull consolidation of a fragmented category, decades of statements |
+| `RS1.L` | RS Group plc | industrial & electronics distribution | high-service low-order-value model, very long record |
+| `HWDN.L` | Howden Joinery Group plc | trade kitchens | trade-only depot model, vertically integrated |
+| `EXPN.L` | Experian plc | credit data & analytics | reciprocal-data bureau with entrenched network effects |
+| `REL.L` | RELX PLC | professional information & analytics | subscription info embedded in customer workflow |
+| `SGE.L` | The Sage Group plc | SME accounting & payroll software | high switching costs, among the longest UK software records |
+| `RMV.L` | Rightmove plc | property portal | two-sided marketplace dominance, negligible capital intensity |
+| `AUTO.L` | Auto Trader Group plc | automotive portal | dominant audience position, demonstrated pricing power |
+| `SCT.L` | Softcat plc | IT value-added reseller | negative working capital, culture-driven, consistent record |
+| `CCC.L` | Computacenter plc | IT infrastructure services | founder-anchored, conservative balance sheet, multi-decade record |
+| `CRW.L` | Craneware plc | US hospital revenue-cycle software | founder-led niche SaaS, contracted recurring revenue [AIM] |
+| `OXIG.L` | Oxford Instruments plc | scientific instruments | research-instrument niches with service annuity |
+| `GNS.L` | Genus plc | animal genetics | royalty-like genetics licensing, hard-to-copy biological asset |
+| `VCT.L` | Victrex plc | PEEK polymers | specified-in qualification-gated moat, habitually net cash |
+| `GAW.L` | Games Workshop Group PLC | owned-IP miniatures & licensing | wholly owned IP, vertically integrated, fanatical customer base |
+| `DGE.L` | Diageo plc | premium spirits | aged hard-to-replicate brand portfolio, structural pricing power |
+| `DNLM.L` | Dunelm Group plc | homewares retail | founder-family control, vertically integrated own-brand |
+| `BAG.L` | A.G. BARR p.l.c. | soft drinks | family-anchored heritage brands, conservatively financed |
+| `RAT.L` | Rathbones Group Plc | discretionary wealth management | FINANCIAL — substitution basis; real fee-earning operating business |
+| `IGG.L` | IG Group Holdings plc | retail trading platform | FINANCIAL — substitution basis; founder-built, transparent revenue drivers |
+
+### Canada (.TO) — 15 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `CNR.TO` | Canadian National Railway Company | rail freight | duopoly network, decades of statements, structurally high returns |
+| `TFII.TO` | TFI International Inc. | road transport & logistics | founder-run LTL consolidator, disciplined acquisition record |
+| `TIH.TO` | Toromont Industries Ltd. | equipment distribution & services | protected CAT dealer territory, recurring parts-and-service |
+| `RCH.TO` | Richelieu Hardware Ltd. | building products distribution | founder-led, debt-light, long uninterrupted record |
+| `WSP.TO` | WSP Global Inc. | engineering & professional services | asset-light consulting roll-up, proven integration playbook |
+| `ATD.TO` | Alimentation Couche-Tard Inc. | convenience retail & fuel | founder-anchored global consolidator, understandable unit economics |
+| `MRU.TO` | Metro Inc. | food & pharmacy retail | steady regional grocery and drug franchise, consistent record |
+| `CTC.A.TO` | Canadian Tire Corporation, Limited | general merchandise retail | family-anchored dual-class, owned brands, dealer network |
+| `DOL.TO` | Dollarama Inc. | value retail | dominant domestic dollar-store format, high returns on capital |
+| `CCL.B.TO` | CCL Industries Inc. | specialty packaging & labels | Lang-family controlled serial acquirer, long compounding record |
+| `ENGH.TO` | Enghouse Systems Limited | enterprise software | conservative net-cash software acquirer, founder-led allocation |
+| `GIB.A.TO` | CGI Inc. | IT & business consulting | founder-anchored dual-class, buy-and-build plus buybacks |
+| `TVK.TO` | TerraVest Industries Inc. | diversified industrial manufacturing | small-cap serial acquirer of unglamorous niches, anchor control |
+| `SJ.TO` | Stella-Jones Inc. | treated wood infrastructure products | utility poles and railway ties, repeat replacement demand |
+| `IFC.TO` | Intact Financial Corporation | P&C insurance | FINANCIAL — substitution basis; leading domestic underwriter |
+
+### Australia (.AX) — 15 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `WES.AX` | Wesfarmers Limited | diversified retail & industrial | long-record capital allocator, explicit return-on-capital discipline |
+| `JBH.AX` | JB Hi-Fi Limited | consumer electronics retail | low-cost high-turn model, long record of high returns |
+| `NCK.AX` | Nick Scali Limited | furniture retail | founder-family anchored, vertically integrated, simple |
+| `REH.AX` | Reece Limited | plumbing & HVAC distribution | Wilson-family control, decades of continuous statements |
+| `SNL.AX` | Supply Network Limited | commercial vehicle parts distribution | very simple aftermarket distributor, long record [small-cap] |
+| `ARB.AX` | ARB Corporation Limited | automotive accessories | founder-anchored brand, net cash, durable niche |
+| `BRG.AX` | Breville Group Limited | consumer appliances | owned-brand franchise, long record, global distribution runway |
+| `COH.AX` | Cochlear Limited | implantable medical devices | large installed base, recurring processor upgrade revenue |
+| `BXB.AX` | Brambles Limited | pallet pooling & logistics | scale network in reusable pallets, understandable unit economics |
+| `ALQ.AX` | ALS Limited | testing, inspection & certification | recurring lab testing; note minerals-division commodity cycle |
+| `TNE.AX` | TechnologyOne Limited | public-sector enterprise software | founder-anchored, net cash, very high retention |
+| `HSN.AX` | Hansen Technologies Limited | billing & customer-care software | sticky mission-critical software, disciplined serial acquirer |
+| `OCL.AX` | Objective Corporation Limited | government & regulatory software | founder-controlled, net cash, niche public-sector vendor |
+| `AUB.AX` | AUB Group Limited | insurance broking & agencies | asset-light broker network; PE approach lapsed, still independent |
+| `CDA.AX` | Codan Limited | detection & communications electronics | anchor-influenced, durable niche in metal detection and tactical radio |
+
+### United States — industrial & specialty tail — 39 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `CGNX` | Cognex Corporation | machine vision | dominant niche in vision-guided inspection, asset-light |
+| `NOVT` | Novanta Inc. | photonics & precision motion | designed-in components, long lifecycles, sticky OEM relationships |
+| `ATS` | ATS Corporation | factory automation integration | pure-play automation with growing installed-base service annuity |
+| `ESE` | ESCO Technologies Inc. | test chambers, filtration, aero instruments | portfolio of small defensible niches with qualified-position pull-through |
+| `KEYS` | Keysight Technologies, Inc. | electronic test & measurement | entrenched standard in RF/comms test, software and calibration pull |
+| `MTD` | Mettler-Toledo International Inc. | precision weighing & lab instruments | textbook installed-base plus service annuity, very long record |
+| `BMI` | Badger Meter, Inc. | flow measurement & water metering | replacement-cycle demand, structurally high returns, unbroken record |
+| `LFUS` | Littelfuse, Inc. | circuit protection & sensors | designed-in content, long qualification cycles |
+| `VPG` | Vishay Precision Group, Inc. | precision sensors & foil resistors | narrow engineered niches, long pre-history [small-cap] |
+| `CTS` | CTS Corporation | sensors & actuators | long-lived engineered components, diversifying away from transport |
+| `ALNT` | Allient Inc. | precision motion control | small-cap motion specialist, multi-decade record, stable perimeter |
+| `MOG.A` | Moog Inc. | precision motion & fluid control | aftermarket-heavy engineered content, dual-class anchored voting |
+| `WWD` | Woodward, Inc. | energy control & motion systems | very long record, sole-source positions, strong aftermarket pull |
+| `IPGP` | IPG Photonics Corporation | industrial fiber lasers | vertically integrated founder-built; returns compressed — value not quality screen |
+| `OSIS` | OSI Systems, Inc. | security screening & optoelectronics | certification-driven niches with service and consumables tails |
+| `GGG` | Graco Inc. | fluid handling equipment | premium-priced niche equipment, distributor lock-in, long high-return record |
+| `NDSN` | Nordson Corporation | precision dispensing systems | razor/blade parts-and-consumables pull-through on installed base |
+| `DCI` | Donaldson Company, Inc. | filtration & replacement filters | classic aftermarket annuity, multi-decade continuous statements |
+| `SSD` | Simpson Manufacturing Co., Inc. | structural connectors & anchors | code-specified products creating switching friction |
+| `WTS` | Watts Water Technologies, Inc. | flow control valves | replacement-driven demand, dual-class with family voting control |
+| `GRC` | The Gorman-Rupp Company | industrial & municipal pumps | family-anchored, conservatively financed, exceptionally long record |
+| `OFLX` | Omega Flex, Inc. | flexible metal hose & gas piping | single narrow niche, very high returns, majority anchor holder |
+| `LECO` | Lincoln Electric Holdings, Inc. | welding equipment & consumables | consumables attach rate on installed equipment, century-long record |
+| `SNA` | Snap-on Incorporated | professional tools & diagnostics | franchised van channel is a durable distribution moat |
+| `FELE` | Franklin Electric Co., Inc. | water & fuel pumping systems | replacement-led demand, long record, disciplined bolt-ons |
+| `FAST` | Fastenal Company | fastener & MRO distribution | onsite/vending model embeds it in customer plants |
+| `MSM` | MSC Industrial Direct Co., Inc. | metalworking & MRO distribution | dual-class family voting control, vending stickiness |
+| `AIT` | Applied Industrial Technologies, Inc. | bearings & power transmission distribution | technical-service distribution with fluid-power value-add |
+| `WSO` | Watsco, Inc. | HVAC/R distribution | replacement-driven, founder-family controlled, disciplined consolidation |
+| `POOL` | Pool Corporation | pool supplies distribution | consumables-dominated demand, scale in a fragmented channel |
+| `RELL` | Richardson Electronics, Ltd. | specialty components distribution | founder-family super-voting control, net-cash habit, legacy niches |
+| `EVI` | EVI Industries, Inc. | commercial laundry equipment distribution | founder-led roll-up with parts-and-service pull-through |
+| `DOV` | Dover Corporation | diversified decentralised industrial | long-standing decentralised model, consumables-weighted mix |
+| `AME` | AMETEK, Inc. | electronic instruments & electromechanical | disciplined bolt-ons funded from internal cash, high returns |
+| `IEX` | IDEX Corporation | fluidics & health/science niches | decentralised acquirer of small high-margin flow niches |
+| `HEI` | HEICO Corporation | aerospace aftermarket parts | family-controlled dual-class, decades of low-multiple acquisitions |
+| `TDY` | Teledyne Technologies Incorporated | instrumentation & digital sensing | disciplined acquirer with deliberate deleveraging after each deal |
+| `CSW` | CSW Industrials, Inc. | specialty industrial products | small-cap decentralised acquirer; ticker changed CSWI to CSW (2025) |
+| `KAI` | Kadant Inc. | process equipment & consumables | parts-and-consumables majority of revenue, steady bolt-ons |
+
+### Norway (.OL) — 10 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `KOG.OL` | Kongsberg Gruppen ASA | defence & maritime technology | decades of statements in sonar, missiles, maritime automation |
+| `TOM.OL` | TOMRA Systems ASA | reverse vending & sensor sorting | global installed base generating recurring service revenue |
+| `BOUV.OL` | Bouvet ASA | IT consulting | capital-light Nordic consultancy, unbroken profitable record |
+| `BRG.OL` | Borregaard ASA | specialty biochemicals from wood | niche lignin and cellulose products with few substitutes |
+| `ORK.OL` | Orkla ASA | branded consumer goods / holding hybrid | consolidated Nordic brands, Canica (Hagen) anchor control |
+| `ATEA.OL` | Atea ASA | IT infrastructure distribution | entrenched Nordic and Baltic public-sector position |
+| `AFG.OL` | AF Gruppen ASA | construction & civil engineering | unusually long record of decent returns for a contractor |
+| `MEDI.OL` | Medistim ASA | medical devices | narrow durable niche in intraoperative flow measurement |
+| `WAWI.OL` | Wallenius Wilhelmsen ASA | ro-ro shipping & vehicle logistics | multi-decade record, Wallenius/Wilhelmsen family anchors |
+| `ODF.OL` | Odfjell SE | chemical tankers & tank terminals | family-controlled specialist, record spanning a century |
+
+### Spain (.MC) — 9 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `AMS.MC` | Amadeus IT Group, S.A. | travel technology | entrenched distribution and airline IT, high switching costs |
+| `VIS.MC` | Viscofan, S.A. | food casings | world leader across all four casing technologies, single niche |
+| `VID.MC` | Vidrala, S.A. | glass container packaging | founding-family control, freight-protected regional plants |
+| `CIE.MC` | CIE Automotive, S.A. | automotive components | multi-technology tier-two, anchor shareholders, acquisitive record |
+| `FDR.MC` | Fluidra, S.A. | pool & wellness equipment | family-anchored, aftermarket-weighted on a large installed base |
+| `MCM.MC` | Miquel y Costas & Miquel, S.A. | specialty paper | family-controlled thin and cigarette papers, conservatively financed |
+| `LOG.MC` | Logista Holdings, S.A. | Iberian distribution | near-unavoidable network, negative working capital; Imperial controls |
+| `EBRO.MC` | Ebro Foods, S.A. | branded food | global rice and pasta brands, stable anchor shareholders |
+| `PSG.MC` | Prosegur Compania de Seguridad, S.A. | security services | family-controlled, long record in guarding, alarms, cash handling |
+
+### Belgium (.BR) — 8 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `LOTB.BR` | Lotus Bakeries NV | branded food | Boone family control, single-brand global rollout, very long record |
+| `MELE.BR` | Melexis NV | automotive semiconductors | family-anchored via Xtrion, fab-lite sensor niche, high-return record |
+| `DIE.BR` | D'Ieteren Group SA | vehicle glass & auto distribution | genuine operating subsidiaries, family control over centuries |
+| `EVS.BR` | EVS Broadcast Equipment SA | broadcast technology | narrow live-sports replay niche, long record, net cash |
+| `COLR.BR` | Colruyt Group N.V. | food retail | family control, decades built on lowest-price discipline |
+| `UCB.BR` | UCB SA | biopharmaceuticals | family-controlled via Tubize, immunology and neurology portfolio |
+| `BEKB.BR` | NV Bekaert SA | steel wire transformation | global leader in steel cord, family reference shareholder |
+| `ACKB.BR` | Ackermans & van Haaren NV | marine engineering, construction, banking | FINANCIAL leg — substitution basis; consolidated DEME/CFE operating subs |
+
+### Austria (.VI) — 7 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `ANDR.VI` | Andritz AG | plant engineering & equipment | large installed base driving rising aftermarket and service share |
+| `WIE.VI` | Wienerberger AG | building materials | world's largest brick maker, freight-protected local plants |
+| `MMK.VI` | Mayr-Melnhof Karton AG | cartonboard & folding cartons | family-controlled, vertically integrated, decades of statements |
+| `PAL.VI` | Palfinger AG | truck-mounted cranes | family control, global leader with dealer and service network |
+| `DOC.VI` | DO & CO Aktiengesellschaft | airline & event catering | founder-controlled, sticky long-dated contracts |
+| `STR.VI` | Strabag SE | construction | Haselsteiner family plus anchors, conservative for a contractor |
+| `FQT.VI` | Frequentis AG | air-traffic control & public-safety comms | mission-critical systems, very long product lives; listed 2019 (short record) |
+
+### Ireland (.IR) — 4 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `KRZ.IR` | Kerry Group plc | taste & nutrition ingredients | R&D-embedded, specification-locked customer relationships |
+| `KRX.IR` | Kingspan Group plc | insulation | founder-family (Murtagh) anchor, leadership in insulated panels |
+| `IR5B.IR` | Irish Continental Group plc | ferry shipping & container logistics | multi-decade Irish Sea corridor record, owned tonnage |
+| `OIZ.IR` | Origin Enterprises plc | agri-input distribution & agronomy | long record as crop-input distributor and agronomy adviser |
+
+### Portugal (.LS) — 2 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `JMT.LS` | Jeronimo Martins, SGPS, S.A. | food retail | Soares dos Santos family control, dominant Polish and Portuguese formats |
+| `COR.LS` | Corticeira Amorim, S.G.P.S., S.A. | cork | Amorim family control, world leader in cork stoppers over generations |
+
+### South Korea (.KS) — 9 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `009150.KS` | Samsung Electro-Mechanics Co., Ltd. | electronic components | defensible high-end MLCC position; chaebol affiliate, customer concentration |
+| `018260.KS` | Samsung SDS Co., Ltd. | IT services & logistics BPO | asset-light enterprise IT; heavy related-party revenue is the flag |
+| `012330.KS` | Hyundai Mobis Co., Ltd. | auto components | high-margin aftermarket parts franchise; chaebol governance flag |
+| `010120.KS` | LS ELECTRIC Co., Ltd. | electrical equipment | switchgear and automation supplier, not a utility; family-controlled |
+| `014680.KS` | Hansol Chemical Co., Ltd. | specialty chemicals | hydrogen peroxide and semiconductor precursors to domestic fabs |
+| `111770.KS` | Youngone Corporation | outdoor apparel manufacturing | founder-built outerwear OEM, sticky brand-customer relationships |
+| `000100.KS` | Yuhan Corporation | pharmaceuticals | among Korea's oldest pharma, foundation-anchored, clean balance sheet |
+| `004370.KS` | Nongshim Co., Ltd. | packaged food | dominant domestic instant-noodle brands, multi-decade statements |
+| `003230.KS` | Samyang Foods Co., Ltd. | packaged food | export brand transformed economics; past governance record warrants scrutiny |
+
+### Taiwan (.TW) — 8 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `2308.TW` | Delta Electronics, Inc. | power electronics | founder-built power-conversion franchise, decades of statements |
+| `2395.TW` | Advantech Co., Ltd. | industrial computing | founder-controlled, design-in industrial PC niche, high returns |
+| `2207.TW` | Hotai Motor Co., Ltd. | auto distribution | exclusive Toyota distributor for Taiwan; captive finance complicates accounts |
+| `2912.TW` | President Chain Store Corporation | convenience retail | dominant Taiwan network; Uni-President group control |
+| `1476.TW` | Eclat Textile Co., Ltd. | technical textiles | vertically integrated functional-fabric supplier; customer concentration |
+| `9910.TW` | Feng Tay Enterprises Co., Ltd. | footwear manufacturing | decades-long contract manufacturer; single-customer dependence |
+| `2360.TW` | Chroma ATE Inc. | test & measurement | founder-controlled instrument maker, narrow niches, high returns |
+| `8464.TW` | Nien Made Enterprise Co., LTD. | window coverings | family-controlled made-to-order blinds; US housing-channel concentration |
+
+### India (.NS) — 15 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `TCS.NS` | Tata Consultancy Services Limited | IT services | multi-decade record, asset-light, structurally high returns |
+| `PERSISTENT.NS` | Persistent Systems Limited | IT services | consistent engineering-services record; live cross-border bid is a flag |
+| `TITAN.NS` | Titan Company Limited | jewellery, watches, eyewear | branded retail taking share from unorganised market; Tata-promoted |
+| `MARICO.NS` | Marico Limited | household & personal care | founder-family control, category leadership in hair and coconut oils |
+| `PAGEIND.NS` | Page Industries Limited | innerwear apparel | exclusive Jockey/Speedo licensee; licence-renewal dependence is the flag |
+| `PIDILITIND.NS` | Pidilite Industries Limited | adhesives & specialty chemicals | family-controlled owner of a branded industrial consumable |
+| `VINATIORGA.NS` | Vinati Organics Limited | specialty chemicals | promoter-controlled global niche leader; product concentration flag |
+| `DIVISLAB.NS` | Divi's Laboratories Limited | APIs & custom synthesis | promoter-controlled, cost-position-led niche, multi-decade record |
+| `AIAENG.NS` | AIA Engineering Limited | industrial consumables | global niche in high-chrome grinding media; supplier to miners, not a miner |
+| `CUMMINSIND.NS` | Cummins India Limited | industrial machinery | engines and gensets with entrenched service network; MNC-parent RPT flag |
+| `ELGIEQUIP.NS` | Elgi Equipments Limited | air compressors | family-controlled, long record, service-and-spares annuity |
+| `SUNDRMFAST.NS` | Sundram Fasteners Limited | auto components | TVS-family controlled fastener and forging supplier, multi-decade record |
+| `CRISIL.NS` | CRISIL Limited | ratings & analytics | asset-light franchise; majority-owned by global parent, ratings arm regulated |
+| `ABBOTINDIA.NS` | Abbott India Limited | pharmaceuticals | very long Indian record, asset-light branded generics; MNC RPT/royalty flag |
+| `BAJAJ-AUTO.NS` | Bajaj Auto Limited | two- and three-wheelers | family-controlled, high returns; KTM consolidation resets perimeter |
+
+### Singapore (.SI) — 7 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `BSL.SI` | Raffles Medical Group Ltd | healthcare services | founder-controlled hospital and clinic network, multi-decade record |
+| `V03.SI` | Venture Corporation Limited | electronics manufacturing & design | design-led partner in regulated end-markets, historically net cash |
+| `558.SI` | UMS Integration Limited | semiconductor equipment components | founder-controlled precision machining; single-customer concentration |
+| `AP4.SI` | Riverstone Holdings Limited | cleanroom gloves | family-controlled, differentiated cleanroom niche, long record |
+| `Y92.SI` | Thai Beverage Public Company Limited | beverages | dominant Thai spirits franchise; leverage and complex structure flags |
+| `S63.SI` | Singapore Technologies Engineering Ltd | aerospace & defence services | aircraft MRO and P2F conversion annuity; Temasek majority — user call |
+| `OV8.SI` | Sheng Siong Group Ltd | grocery retail | family-controlled, owns much of its store estate, consistent record |
+
+### Hong Kong (.HK) — 7 names
+
+| Key | Company | Sector | Why queued |
+|---|---|---|---|
+| `0669.HK` | Techtronic Industries Company Limited | power tools & outdoor equipment | multi-decade record, strong professional-tool brand franchise |
+| `0303.HK` | VTech Holdings Limited | consumer electronics & learning products | founder-controlled, historically net cash, high-return niches |
+| `0522.HK` | ASMPT Limited | semiconductor assembly equipment | multi-decade record in back-end equipment; verify parent stake |
+| `2313.HK` | Shenzhou International Group Holdings Limited | knitwear manufacturing | founder-controlled vertically integrated supplier to global brands |
+| `2020.HK` | ANTA Sports Products Limited | sportswear | founder-family controlled brand builder; holds ~40%+ of register name `AS` (per that row's own SF cell) |
+| `1929.HK` | Chow Tai Fook Jewellery Group Limited | jewellery retail | family-controlled, franchise-led store network atop a far older business |
+| `0327.HK` | PAX Global Technology Limited | payment terminals | long record, historically high returns and net cash; confirm no state linkage |
+
+---
 
 ---
 
@@ -148,7 +507,7 @@ Tier 3 (context only, no queue action): WATCH-name P19 flags — INVE-B.ST, FIE.
 
 *Refreshed 2026-08-09 against register v248 rows; v10 adds the overdue markers above and re-points the Q1–Q2 2027 detail pointer (the register's Open items no longer carry it). Non-authoritative: the register wins. Dated triggers only; price alerts live in the rows.*
 
-**Aug 2026 — ~~7936.T Q2 tanshin 14 Aug~~ · ~~TRI NCIB expiry 18 Aug~~ · ~~STMN.SW H1 19 Aug~~ · ~~ZIP.AX FY26 Appx 4E 20 Aug~~ · ~~INTU FY2026 25 Aug~~ all CLEARED at register v276 (2026-08-27).** Still open from this month: **GAP Q2 (released 27 Aug — blocked on primary, retry in days)** · **HEXA-B.ST Q2 re-base (29 Jul — blocked on primary PDFs)** · BABA FY2027 Q1 · ADYEN.AS H1 · PAH3.DE H1 · WMT Q2 FY27 10-Q · TEAM FY2026 10-K (OI inflection + P19 on the $1.5bn 2024 programme) · CELH Q2 10-Q · RUSTA.ST AR 25/26 · BNR.DE H1 (optional) · 1211.HK H1 (optional). **None of these nine was touched this session** — the five dated re-tests consumed the run.
+**Aug 2026 — ~~7936.T Q2 tanshin 14 Aug~~ · ~~TRI NCIB expiry 18 Aug~~ · ~~STMN.SW H1 19 Aug~~ · ~~ZIP.AX FY26 Appx 4E 20 Aug~~ · ~~INTU FY2026 25 Aug~~ all CLEARED at register v278 (committed 2026-08-31).** Still open from this month: **GAP Q2 (released 27 Aug — blocked on primary, retry in days)** · **HEXA-B.ST Q2 re-base (29 Jul — blocked on primary PDFs)** · BABA FY2027 Q1 · ADYEN.AS H1 · PAH3.DE H1 · WMT Q2 FY27 10-Q · TEAM FY2026 10-K (OI inflection + P19 on the $1.5bn 2024 programme) · CELH Q2 10-Q · RUSTA.ST AR 25/26 · BNR.DE H1 (optional) · 1211.HK H1 (optional). **None of these nine was touched this session** — the five dated re-tests consumed the run.
 **Sep 2026:** FDS FY2026 results ~Sep (first Viswanathan-era print; make-whole SCT = named P17 strike risk) · PANW FY2026 10-K ~Sep (first CyberArk-consolidated statements) · UFI FY2026 10-K ~Sep · CRM Q2 FY27 ~2 Sep (optional) · LULU Q2 print 3 Sep (P19 CAUTION re-test; O'Neill eff. 8 Sep) · NKE Q1 FY2027 10-Q ~Sep/Oct + Sept proxy (dated second-flag risk) · RUSTA.ST AGM ~Sep (P19 authorisation watch) · **EA deal outside date 28 Sep**.
 **Oct 2026:** COST FY2026 10-K ~early Oct (completed programme year; Jan-2027 expiry the natural re-test) · MU FY2026 10-K ~Oct (band re-anchor only) · TER Q3 10-Q ~Oct · MSFT FY2026 proxy ~Oct (P17 absolute-trigger flag) · EL.PA Q3 20 Oct (informational) · **SW.PA FY2026 results 23 Oct** (band removal + P4 + P19) · AAPL FY2026 10-K ~Oct/Nov.
 **Nov 2026:** NET Q3 ~Nov (converts path) · **6758.T H1 FY3/27 10 Nov** (¥500bn facility re-test) · SOON.SW H1 ~Nov (successor programme) · **DLB FY2026 10-K ~Nov** (window-roll re-test — the most interesting near-dated flip) · QCOM FY2026 10-K ~Nov (falling-base re-anchor + CAUTION re-test) · ROK FY2026 10-K ~Nov · V FY2026 10-K ~Nov (11%-client disclosure) · ATKR · AZTA · SONO · COLO-B.CO FY2025/26 (L/E at the P5 line) · 7974.T Q2 · 8002.T H1 (¥100bn pgm execution multiple) · EKTA-B.ST H1 · WISE.L H1 FY2027 (the £405m tranche price) · **TRI.PA FY2026 results ~25 Nov** (first buyback year; closest AVOID at +7.7%) · SCHN.SW repurchase-cessation watch (programme to Nov 2026) · PANW 2026 proxy.
@@ -200,8 +559,17 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 - **Bed Bath & Beyond** — resolved by evidence, analysed as **BBBY** (AVOID, three gates); **NXH re-key pending** the rename's effectiveness (see Corporate actions).
 
 ---
+- **⚠ FRAMEWORK GAP — §7.1a suffix table has no key for five of the markets queued above. 23 names are blocked on it.** The suffix-always convention enumerates 28 exchanges; it omits **India (`.NS`/`.BO`), Ireland (`.IR`), Portugal (`.LS`), Saudi Arabia (`.SR`) and Abu Dhabi (`.AE`)**. Affected: 15 India + 4 Ireland + 2 Portugal in the re-seed block, plus `2222.SR` Saudi Aramco and `IHC.AE` in the coverage audit. The convention exists so the key doubles as the SWEEP price lookup, so this cannot be patched per-name at ANALYSE time without breaking that guarantee. **This is a framework change: it needs a MODEL session and the exact words "commit model" — it is not inferable and not covered by auto-commit.** Parked as an entry for `queue/IDEAS.md`; the 23 names stay queued but are **not runnable** until it lands.
+- **Key collision — Banco Santander.** `SAN.PA` is already taken by **Sanofi** in the register. Santander must key `SAN.MC` (Madrid) or its NYSE line, resolved at ANALYSE, never by string-append (§7.1a).
+- **Cross-holding — `2020.HK` ANTA Sports.** ANTA holds ~40%+ of **Amer Sports (`AS`)**, an existing register row whose SF cell already carries an unpaired "ANTA ~40%+ caveat". Analysing ANTA touches that caveat from the other side; run them as a pair, not independently.
+- **Corporate-action status UNVERIFIED — 16 Korea/Taiwan candidates.** `009150.KS` `018260.KS` `012330.KS` `010120.KS` `014680.KS` `111770.KS` `000100.KS` `004370.KS` `003230.KS` · `2395.TW` `2207.TW` `2912.TW` `1476.TW` `9910.TW` `2360.TW` `8464.TW`. These cleared group-level sweeps with no hits, but KRX/TWSE corporate actions (physical splits, spin-offs, tender offers) are disclosed locally and poorly indexed in English. **Not called clean** — verify per-name at ANALYSE before spending a build. `2308.TW` Delta Electronics *is* verified clean.
+- **Perimeter / event flags carried on otherwise-clean candidates** (still queued, warning attached): `CRW.L` Bain approach rebuffed 2025 · `WSP.TO` TRC acquisition, largest ever · `TFII.TO` US redomicile announced then abandoned · `ATD.TO` Seven & i proposal withdrawn Jul 2025 · `DIE.BR` Belron strategic review, Rothschild engaged Mar 2026 · `KRZ.IR` Kerry Dairy Ireland 70% sold · `ORK.OL` Orkla India IPO'd Nov 2025 · `BAJAJ-AUTO.NS` KTM/PIERER control acquired Nov 2025 · `2020.HK` 29% of PUMA agreed Jan 2026 · `ESE` SM&P acquisition Apr 2025 · `558.SI` Bursa Malaysia secondary listing · `Y92.SI` F&N/Frasers share swap · `0522.HK` KKR privatisation talks ended 2024 (recurrence risk) · `GEV` and `SNDK` are recent spins with short standalone records.
+- **What the register's shape argues for (analysis, not a recommendation).** Coverage by exchange suffix across the 317 rows live at the 2026-08-28 snapshot (319 now): US 154 · Germany 34 · Sweden 28 · France 22 · Japan 18 · Switzerland 13 · Netherlands 9 · Poland 6 · **UK 6** · Italy 5 · Denmark 5 · Finland 4 · Hong Kong 3 · **Canada 2** · Taiwan, Israel, Shanghai, Shenzhen, Madrid, Korea, **Australia 1 each** · Norway, Belgium, Austria, Ireland, Portugal, India, Singapore **0**. Germany has 34 rows and the UK 6, against comparable universes of quality industrials — that gap is an artefact of the block order the project happened to run, not a judgment anyone made. The UK, Canada and Australia blocks are where the marginal name is most likely to be both new and analysable on existing machinery.
+
+---
 
 ## Change log
+- **v19 — 2026-08-31** — **The second orphaned 2026-08-28 file, recovered.** A parallel session that day built its own TODO **v17** on the same live v16 base as the re-test batch — same number, different base, neither pushed because both sessions hit the identical dead write leg (`api.github.com` 502/403). The re-test batch was recovered first (v18); this is the other half. Additive only, exactly as its manifest promised — nothing in v16 or v18 is deleted or rewritten. Adds: **a global top-100 coverage audit** (58 uncovered names, tiered A 37 ordinary / B 12 financials needing the §2·1A substitution basis / C 9 state-controlled where the SF gate is structurally compromised); **an ANALYSE queue re-seed of 181 candidates across 15 markets**, de-duplicated on company name against every register row per §7.1a; the rewritten `Re-seeding` section (option (c) now carries stock); two corporate actions (ABB/Rotork ~$5.5bn confirmed 16 Jul 2026; two candidate-stage take-private strikes); and six flags. **Blocking item, not resolvable here: 23 of the queued names have no §7.1a key** — the suffix table carries nothing for India (`.NS`), Ireland (`.IR`), Portugal (`.LS`), Saudi Arabia (`.SR`) or Abu Dhabi (`.AE`). The key doubles as the SWEEP price lookup, so it cannot be patched per-name at ANALYSE without breaking that guarantee. This is a MODEL change and needs a dedicated session and the exact words "commit model" — never inferred, never bundled. `2222.SR` and `IHC.AE` are among the blocked. Two further flags carried forward: the **Banco Santander key collision** (`SAN.PA` is already Sanofi — Santander must key `SAN.MC`), and **PAT rotation, now unactioned across four sessions.** **Carried forward verbatim in substance from the re-seed's own v17 entry, which never became a committed version and would otherwise be lost:** the coverage audit was matched on company name and cross-listing per §7.1a against all 317 then-live rows and found **42 of the top 100 covered, 58 not** (source: companiesmarketcap.com global ranking, retrieved 2026-08-28 — ranks only, no market-cap figures carried, tier-3 under §4 and adequate for a coverage question); it is framed explicitly as **coverage completeness, not a candidate screen — size is neither a quality nor a cheapness signal**. The corporate-action pass over the candidate block caught **three live take-privates the name-generation pass had called clean** — Rotork (ABB, ~$5.5bn, 16 Jul 2026), Intertek (EQT £60.00 cash, Rule 2.7 on 18 Jun 2026, shareholders approved 6 Aug 2026), Steadfast (Amwins/Dragoneer/KKR, A$6.00 cash, ~21 Aug 2026) — all struck. **Two process findings worth keeping:** a first-pass "clean" means only "clean by that route", the v16 retrieval lesson restated on the queue side; and the Rotork deal was already sitting inside the register's own ABB row, matching only because the de-dup ran over row text rather than the ticker column — a de-dup keyed on the ticker column alone would have missed it. The re-seed's own `## PUSH-STATE` section is dropped as spent — the state it described no longer exists. Two stale register references corrected v276/v277 → v278. v18 archived → `queue/archive/TODO_v18_2026-08-31.md`.
 - **v18 — 2026-08-31** — **The blocked 2026-08-28 batch, recovered and re-merged.** Seven REVIEWs closed at register v278 (TRI v3, 7936.T v3, INTU v2, STMN.SW v3, ZIP.AX v2, HEXA-B.ST v3, GAP v2). One verdict moved — **STMN.SW WATCH→AVOID**, SF PASS→FAIL on a P19 ADVERSE (H1-2026 treasury purchases CHF 69,328k, 2.8× the FY2025 full year, unexplained, located in the interim statements the v2 session could not reach). One gate cleared — **HEXA-B.ST SF FAIL→PASS**, v2's P19 strike being a pre-v4 mechanical-ladder artefact against nil repurchases since 2023; AVOID narrows to Past alone. TRI, 7936.T and INTU held WATCH; ZIP.AX and GAP held AVOID with a new P19 CAUTION on GAP. **Why this sat for three days:** the 2026-08-28 session's write leg was dead — `api.github.com` 502 through the sandbox proxy, `git push` 403 on the authorized-repo set — so eleven files were staged as §6.5 paste-blocks and nothing was pushed. Read access was fine, which is what made the batch trustworthy on recovery. The staged register was numbered v277 against a v275 base; live had since moved to v276 (SEE.L) and v277 (FLUT), so the seven rows were re-merged memo-wins onto live head and renumbered v278, and the staged TODO v19 became v18 — its own draft v17/v18 never existed as committed versions and are collapsed into this entry. **Standing lesson:** a staged batch is not a committed batch, and a version number assigned before the push is a guess. Any session ending in paste-blocks must leave the recovery instruction where the *next* session will trip over it — the register or TODO change log, not only a manifest file. v17 archived → `queue/archive/TODO_v17_2026-08-31.md`.
 - **v17 — 2026-08-31** — FLUT (Flutter Entertainment) v1 ANALYSE committed at register v277. AVOID on three gates: Past WEAK (worst-of-four normalized ROCE 1.08% — $1.1bn of cumulative FY2021–25 operating income against a >$20bn capital base that is 78% goodwill and acquired intangibles; L/E 216.7%; BV/sh −10.3% p.a.), Future WEAK (4/4 forces STRONG; supplier breadth FAIL on the look-through call that the licensing state is the effective supplier; moat eroding), SF FAIL (P19 **ADVERSE** — FY2025's $1,123m of repurchases priced at 78–107× on all four reads, debt-funded alongside $2,688m of M&A against $412m of framework FCF; programme still live in H1 2026 at 32–54× with no published price criterion). **Two method findings worth keeping.** (1) The aggregator's capex line carried property and equipment only ($105m FY2025) and its headline FCF of $1,079m omitted $667m of intangible and capitalised-software purchases — framework FCF is $412m, a 2.6× overstatement that would have moved MCap/FCF from 42.9× to 16.4× and, on a marginal name, the verdict; the §4 tie-out passed on four exact FY2025 anchors and still did not protect the capex line, so **anchors validate balance-sheet splits, not cash-flow definitions**. (2) P17's dual read ran half-blind on both legs (net income negative in FY2025 and on the 3y average) and the CEO's $19.70m came within 4% of the $20.6m fiscal-year bar on the corrected FCF basis — on the aggregator's inflated FCF the bar would have been $54.0m. A rejected data basis can acquit as easily as convict. One backfill row added (Snai pre-deal OI INDETERMINATE, proxy director fees + RPT, FY2025 statements direct from the 10-K, buyback share count, ISIN), plus a US-domestic-filer retrieval addendum. v16 archived → `queue/archive/TODO_v16_2026-08-27.md`.
 - **v16 — 2026-08-27** — *(entry reconstructed at v17: v16 bumped the header and added the GPN backfill block but committed no change-log line — an integrity gap, logged rather than silently carried.)* GPN (Global Payments) v1 ANALYSE committed at register v275, AVOID on three gates. One backfill block added: FY2016–FY2020 record rebuild, 2026/2027 proxy backfill including the CEO-comp extraction conflict, FY2021–25 repurchase share counts, the Worldpay EBITDA multiple as a lower bound on pre-deal EV/OI, and ISIN verification. v15 archived → `queue/archive/TODO_v15_2026-08-27.md`.
