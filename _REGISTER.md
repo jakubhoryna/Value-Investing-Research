@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v278
-register_date: 2026-08-31
+register_version: v279
+register_date: 2026-09-01
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 319
-verdict_split: "WATCH 67 · AVOID 251 · BUY 0 · DNAF 1"
+verdict_split: "WATCH 66 · AVOID 252 · BUY 0 · DNAF 1"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v278 · 2026-08-31)
+# GSC Register — Master Watchlist (v279 · 2026-09-01)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -40,7 +40,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| KSPI | JSC Kaspi.kz | 2026-08-23 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: Türkiye reinvestment unproven) | $105.55 ADS (21 Aug 2026) | CHEAP < ≈ $98 (MCap/NI ≤8×, §2·1A substitution anchor; EV/OI n.m.). Cheapness FAIR | +8% | FY2026 (~Mar 2027); 3Q26 ~Nov — NI trend + Hepsi Bank drag; alert < ≈ $98 |
 | CROX | Crocs, Inc. | 2026-08-23 | v7 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION; HEYDUDE + Malta INDETERMINATE) | $122.11 (21 Aug 2026) | CHEAP < ≈ $94–98 (EV/OI 7× ex-imp FY25 OI, no-cash/all-cash; P12 edge ≈$110) — FAIR ex-imp / EXPENSIVE rep | +25% | Q3'26 29 Oct (1st tranche, ≈$2.0bn pgm); NYT Malta 5 Aug — not an SF flag, INDETERMINATE; FY26 10-K UTB/ETR; alert < ≈ $94 |
 | BRK.B                   | Berkshire Hathaway Inc.         | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | $508.74 (28 Jul 2026) | No usable CF trigger. Operative gauge P/B ≤1.2× ≈ $400 (MCap/BV & SOTP; substitution rule). Cheapness FAIR                              | +27% | FY2026 results (Feb 2027, Abel's first full year), or price < ~1.3× book (~$430)                                                                    |
 | CRCT | Cricut, Inc. | 2026-08-09 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (**P17 INDETERMINATE — severity-changing**; FY24 read breached 6.9×; P19 SOUND at ~7× FCF; Petrus control caveat) | $5.84 (7 Aug 2026) | CHEAP < ≈ $3.15–4.38 (EV/OI nc/ac bind; MCap/FCF leg $6.72 **passes P7 at 7.0×** but is flattered by inventory release) | +33% | FY2026 10-K (~Mar 2027) + FY2025 SCT retrieval; OI ≥ ≈$128m puts the all-cash bound at price; alert <$4.40 |
@@ -253,6 +252,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | KLAR | Klarna Group plc | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 comp) | WEAK | WEAK | FAIL | $17.36 (24 Jul 2026) | n.m. — NI-proxy anchor (§2·1A lender), no positive price while NI < 0; MCap/BV 2.61× context | — | FY2026 20-F (~Feb–Mar 2027) informational; structural — loss record + 2 strong forces + comp posture; first clean post-IPO comp year |
 | KNEBV.HE (was KNEBV) | KONE Oyj | 2026-07-31 | v2 | AVOID (SF FAIL: 2 flags — cap-allocation CAUTION on TKE + entrenchment structure) | ADEQUATE | STRONG | FAIL | €50.10 KONE B (31 Jul 2026) | Standalone CHEAP ≈ €16.3–17.1 (EV/OI no-cash/all-cash; MCap/FCF leg €17.9 above both; no P12) — EXPENSIVE 19.8×/20.1×. **Pro-forma band required post-close** | — | TKE block-or-close (EU review to ~mid-2027) → flips WATCH if blocked, both flags fall together; FY2026 (~Jan 2027); H1-2026 rpt |
 | KRN.DE (was KRN) | Krones AG | 2026-07-24 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS | €110.60 (23 Jul 2026) | CHEAP < ≈ €66.1 (MCap/FCF; EV/OI leg ≈ €86.4, cons EV; no P12) — FAIR 13.4×/8.8× | — | FY2026 AR (~Mar 2027) — window roll flips Past ≥10%; alert < ≈ €75 |
+| KSPI | JSC Kaspi.kz | 2026-09-01 | v3 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: Türkiye reinvestment unproven; repurchase limb cleared) | ₸48,350.50 / $106.29 ADS (28 Aug 2026) | CHEAP < ≈ ₸38,604–39,971 ≈ $84.86–87.87 (no-cash EV/OI · all-cash MCap/FCF; converge 3.5%) — FAIR | — | FY2026 20-F (~Mar 2027): window roll + Hepsi Bank PPA; 3Q26 ~Nov NI trend; lens question = IDEAS A2 |
 | KVYO | Klaviyo, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL (flag pair: P17 normalized-read breach ≈$8.5m vs $7.75m line + cap-alloc CAUTION, buybacks 38–61× FCF) | $16.73 (6 Aug 2026) | n.m. — no positive price clears EV/OI ≤ 7 (OI < 0); MCap/FCF leg ref ≈ $5.2 | — | FY2026 10-K (~Feb 2027): OI-inflection (TTM −$26m); exact-SCT P17 re-test; Shopify RPT retrieval; ISIN verify |
 | KWY | Kingsway Corporation | 2026-08-11 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL (P17 hard strike — more-than-token pay vs both owner-earnings legs negative FY2025) | $10.04 (10 Aug 2026) | n.m. — no positive price clears the primaries (FY25 OI & FCF < 0); MCap/BV 19–22× context — EXPENSIVE | — | FY2026 10-K (~Mar 2027): OI/FCF-inflection test — band computes if OI > 0; tier-2 tie-out + 10y rebuild flag |
 | LIGHT.AS (was LIGHT) | Signify N.V. | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €15.98 (23 Jul 2026) | CHEAP < ≈ €8.1 (EV/OI, cons EV; no P12) — FAIR 9.6×/5.0× | — | FY2026 AR (~Feb 2027) re-tests quality gates; P19 2022 flag logged |
@@ -383,9 +383,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v279 — 2026-09-01** — KSPI v3 ANALYSE on user-directed operating lens (§2·1A set aside): WATCH→AVOID, Past WEAK (L/E 340%, P6 unmet; ROCE down 3y). Band ≈₸39,000/$86. Lens → IDEAS A2.
 - **v278 — 2026-08-31** — 7 re-tests recovered from the blocked 2026-08-28 batch, re-merged onto live head. STMN.SW WATCH→AVOID (P19 ADVERSE); HEXA-B.ST SF FAIL→PASS; 5 held.
 - **v277 — 2026-08-31** — FLUT v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 1.08%; Future WEAK 4/4 forces; SF FAIL — P19 ADVERSE, FY25 buybacks 78–107×). Band n.m.; 7×OI < debt. 5y record-limited.
 - **v276 — 2026-08-31** — SEE.L v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −30.0%; Future WEAK 3 strong forces, 2 customers 44%; SF FAIL — P17 loss-leg strike). Band n.m.; needs OI > ≈$8.8m. Window 3y.
 - **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO.
-- **v274 — 2026-08-27** — NU v2 REVIEW: WATCH held; P19 SOUND→CAUTION ($1.0bn/12mo pgm 4 Jun @ ~20–25× NI, no discipline — v1 miss logged). Band $4.75 held; Px ≈$15.10 der., Dist +219%. H1 resynced.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
