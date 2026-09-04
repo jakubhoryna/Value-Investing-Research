@@ -1,4 +1,4 @@
-# GSC MODEL Ideas — IDEAS.md (v2 · 2026-09-01)
+# GSC MODEL Ideas — IDEAS.md (v3 · 2026-09-04)
 
 **Purpose.** Parking lot for framework questions — everything MODEL-mode-shaped that a session surfaces goes here, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). Each entry carries: status, the instances that raised it, the question in one line, a book-grounded recommendation with confidence, and the consequence scan. **Nothing here is operative** until a MODEL session adopts it under its own explicit "commit model"; recommendations below are pre-work, not doctrine. MODEL sessions open from this file and close by updating entry statuses.
 
@@ -43,6 +43,7 @@
 - **Recommendation (~85%):** codify the two scope extensions verbatim from the memos' App C/E statements, plus one general rule: **under any substitution, the P19 yardsticks restate on the name's cheapness anchor** — disciplined at ≤ the anchor threshold, clearly overpriced at ≈ anchor × (25/7). Handle the BH circular structure inside the same paragraph: where the consolidated entity holds parent stock, state both gross and look-through readings and let the more conservative bear the verdict.
 - **Consequence scan:** none retroactive — no current verdict rests on the calls.
 - **Class:** MINOR.
+- **Instance added 2026-09-04 — ABCA.PA (ABC arbitrage, v1):** proprietary stat-arb trader / asset manager; 86% of assets are trading assets and the revenue line is FV gains on own capital via an unconsolidated IFRS-10 investment entity. Substitution applied as "securities-heavy" without strain: ROE 15.2–15.8% → Past ADEQUATE; the literal lens gives "ROCE" 14.5% on the cash-inclusive variant and n.m. ex-cash → also ADEQUATE. **Non-determinative** (verdict carried by Future WEAK). Evidence that the clause reads cleanly for own-capital trading firms; the open boundary remains fee-based intermediaries (244920.KS ran ordinary, also cleanly).
 
 ### A5. Holdco / large-NCI substitution (CDI.PA)
 - **Status:** OPEN.
