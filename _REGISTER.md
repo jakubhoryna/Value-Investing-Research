@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v283
+register_version: v284
 register_date: 2026-09-04
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 320
-verdict_split: "WATCH 67 · AVOID 251 · BUY 0 · DNAF 2"
+names_total: 321
+verdict_split: "WATCH 67 · AVOID 252 · BUY 0 · DNAF 2"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v283 · 2026-09-04)
+# GSC Register — Master Watchlist (v284 · 2026-09-04)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -107,7 +107,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1030% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 251 names, alphabetical
+### AVOID — 252 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -115,6 +115,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | 1211.HK (1211.HK / 002594.SZ; was BYD) | BYD Company Limited | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | HK$83.00 / RMB 86.26 (9/7 Jul 2026) | CHEAP < ≈ RMB 10–26/sh (MCap/FCF on norm. FCF ≈ RMB 10; EV/OI ≈ RMB 26; reported FCF negative → n.m.); no P12 — moot given AVOID. Cheapness EXPENSIVE | — | FY2026 (~Mar 2027); structural — 3 strong forces + sub-10% ROCE + FY25 FCF −RMB 97.7bn; H1 (~Aug 2026) opt. |
 | 1913.HK | Prada S.p.A. | 2026-07-28 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (RPT flag; Versace audit INDETERMINATE) | HKD 38.90 (27 Jul 2026) | CHEAP < ≈ HKD 14.8 (EV/OI, consv EV; MCap/FCF leg ≈ HKD 29.1) — FAIR 10.7×/11.4× | — | FY2026 AR (~Mar 2027): Versace PPA final + 1st full yr; window roll lifts ROCE ≥10% by FY2028 |
 | 1COV.DE (was 1COV) | Covestro AG | 2026-07-22 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €59.46 (squeeze-out cash comp.; no reg-mkt quote since 5 May 2026) | n.m. — FY25 OI −€347m, FCF −€415m; backvalued FY21-peak band ≈ €52 (MCap/FCF; EV/OI leg ≈ €61) — EXPENSIVE | — | Archive row on Handelsregister entry of §327a squeeze-out; H1 31 Jul 2026 |
+| 244920.KS | A Plus Asset Advisor Co., Ltd. | 2026-09-04 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL (P17 hard strike — FY2024 pay ≈₩985m vs ₩124m/₩94m caps, both reads; + P19 CAUTION flag; RPT INDETERMINATE) | ₩13,960 (4 Sep 2026) | moot — mech. CHEAP ≈ ₩2,228–7,694 (EV/OI no-cash / MCap-FCF all-cash, FY25; record-limited 5y) — EXPENSIVE 16.1×/11.3× | — | FY2026 business report (~Mar 2027): P17 FY25–26 pay, buyback to 13 Jan 2027, H2-26 value-up; alert < ≈₩7,700 |
 | 2502.T | Asahi Group Holdings, Ltd. | 2026-07-09 | v1 | AVOID (Past WEAK + SF FAIL: P19) | WEAK | ADEQUATE | FAIL | ¥1,626.5 (9 Jul 2026; 8 Jul close ¥1,660.5) | CHEAP < ≈ ¥377 (EV/OI, conservative EV, FY2024 clean OI; no P12; FY25 20.3× a cyberattack artifact) — EXPENSIVE, moot | — | FY2026 (~Feb 2027) resets cyberattack-hit OI basis. Structural: ROCE ~6% + SF FAIL (CUB audit, buybacks, EABL debt). Not held |
 | 300750.SZ | Contemporary Amperex Technology Co., Ltd. (CATL) | 2026-08-09 | v1 | AVOID | ADEQUATE | WEAK (provisional) | PASS (founder 23%; HK raise vs ¥273bn net cash logged; P19 SOUND) | ¥388.07 (7 Aug 2026) | CHEAP < ≈ ¥92.42–180.17 (EV/OI no-cash/all-cash — the ¥273bn net-cash judgment is the bracket; FCF leg ¥162.53) | — | FY2026 AR (~Mar 2027): customer-concentration table is Future-deciding; alert < ≈ ¥185 |
 | 3382.T | Seven & i Holdings Co., Ltd. | 2026-08-07 | v1 | AVOID (Past WEAK + SF FAIL: flag pair) | WEAK | ADEQUATE | FAIL (flag pair: cap-alloc CAUTION ¥2tn pgm criterion-free + governance negative, 2024–25 control contest) | ¥2,066 (7 Aug 2026) | CHEAP ≈ ¥304–494 (EV/OI no-cash/all-cash, debt-heavy; MCap/FCF leg ¥909) — EXPENSIVE 18.2×/16.6× | — | 7-Eleven US IPO event or FY2/27 (~Apr 2027); w-o-4 5.6%/4.0%, no year ≥10%; TBV −¥959bn (Speedway audit logged) |
@@ -383,9 +384,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v284 — 2026-09-04** — 244920.KS (A Plus Asset Advisor) v1 ANALYSE: AVOID on 3 gates (Past WEAK w-o-4 ROCE 4.4%; Future WEAK 2 forces; SF FAIL P17 strike). EXPENSIVE ₩13,960; band ≈₩2.2–7.7k; record-limited 5y.
 - **v283 — 2026-09-04** — GAP v3 REVIEW (Q2 FY26 10-Q): AVOID held (Past+Future WEAK). Buyback avg $22.97 disclosed, P19 CAUTION held; $313m Q1 interchange gain found — H1 OI ex one-offs −29%.
 - **v282 — 2026-09-04** — LULU v5 REVIEW on Q2 FY2026: AVOID held (Future WEAK now over-determined — moat eroding in all 3 segments). Cheapness EXPENSIVE→FAIR at $97.50; band ≈$67. P19 CAUTION held.
 - **v281 — 2026-09-04** — PYPL v4 REVIEW: Stripe/Advent bid lapsed 27–28 Aug, px de-pinned $61.54→$56.82. AVOID (Future WEAK) held; band unchanged; $1.5bn cost pgm + Apr-27 P17 pair risk logged.
 - **v280 — 2026-09-04** — EA take-private closed 4 Aug ($210 cash, delisted) → DNAF terminal row. PYPL Stripe/Advent lapse 27–28 Aug (press) → REVIEW owed. Counts re-measured: 320 = W67/A251/D2.
-- **v279 — 2026-09-01** — KSPI v3 ANALYSE on user-directed operating lens (§2·1A set aside): WATCH→AVOID, Past WEAK (L/E 340%, P6 unmet; ROCE down 3y). Band ≈₸39,000/$86. Lens → IDEAS A2.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
