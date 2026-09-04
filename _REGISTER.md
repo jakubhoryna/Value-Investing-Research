@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v282
+register_version: v283
 register_date: 2026-09-04
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 320
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v282 · 2026-09-04)
+# GSC Register — Master Watchlist (v283 · 2026-09-04)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -220,7 +220,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | FSLY | Fastly, Inc. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: CEO $7.46m vs $0.26m FY ceiling, 28×; 3y read no positive leg) | $22.74 (7 Aug 2026) | n.m. — FY25 OI −$119m, no EV/OI leg; MCap/FCF leg $3.30 ref (55× FCF) | — | FY2026 10-K (~Feb 2027) first candidate positive-OI year; 2027 proxy (Compton package) P17 re-test; 4-gate AVOID |
 | FTK.DE (was FTK) | flatexDEGIRO SE | 2026-07-20 | v1 | AVOID (Future WEAK: 2 strong forces) | ADEQUATE | WEAK | PASS (1 flag: BaFin §44 special audit) | €35.58 (20 Jul 2026) | CHEAP < ≈ €12.55 (MCap/FCF anchor, §2·1A substitution; NI-proxy leg ≈ €11.94; EV/OI n.m.) — moot given AVOID. EXPENSIVE | — | FY2026 (~Mar 2027); NII 31% of revenue is ECB-rate-linked; 8y record caps Past; alert < ≈ €15 |
 | FTRE | Fortrea Holdings Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 strike: $12.5m inducement alone > $4.42m/$7.56m ceilings; P19 CAUTION subsumed) | $18.43 (7 Aug 2026) | n.m. — no positive OI denominator (FY25 −$872.6m incl. $797.9m impairment); nc bound needs OI > ≈$160m; FCF legs $7.43/$16.49 ref | — | 4 gates; 3y history-limited spin; L/E 382%; 17.2%-customer breadth FAIL; +180% rally; FY2026 10-K |
-| GAP | The Gap, Inc. | 2026-08-28 | v2 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (P19 CAUTION — 1 flag, unpaired) | $20.79 (close 27 Aug 2026) | CHEAP < ≈ $5.76 / $12.62 (EV/OI no-cash/all-cash, FY25 OI on 1-Aug-26 BS, leases as debt; MCap/FCF leg ≈ $18.19). FAIR. No P12 | — | Q2 FY2026 10-Q (~early Sep 2026) — Item 5 buyback table + full BS; then FY2026 10-K (~Mar 2027). Flip needs structural quality change, not price |
+| GAP | The Gap, Inc. | 2026-09-04 | v3 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (P19 CAUTION — 1 flag, unpaired; buyback avg disclosed $22.97) | $22.07 (close 3 Sep 2026) | CHEAP < ≈ $5.82 / $12.76 (EV/OI no-cash/all-cash, FY25 OI on 1-Aug-26 BS, leases as debt; MCap/FCF leg ≈ $18.38). FAIR at EXPENSIVE boundary. No P12 | — | Q3 FY2026 results (~19 Nov 2026): margin ex $730m one-offs, buyback pace; then FY2026 10-K (~Mar 2027) window roll |
 | GBF.DE (was GBF) | Bilfinger SE | 2026-07-24 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €85.35 (23 Jul 2026) | CHEAP < ≈ €42.96 (EV/OI, cons EV; MCap/FCF leg ≈ €63.2; no P12) — FAIR 10.8×/12.6× | — | FY2026 AR (~Mar 2027) re-tests P19 redemption; P3 unreachable before FY2030 window |
 | GEBN.SW (was GEBN) | Geberit AG | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | STRONG | FAIL | CHF 532.20 (31 Jul 2026) | CHEAP ≈ CHF 121.2–138.8 (EV/OI no-cash/all-cash; MCap/FCF leg CHF 169.5 above both; no P12) — EXPENSIVE 24.0×/24.8× | — | FY2026 (~mid-Mar 2027): first completed yr of the 2026–28 pgm + re-test; ~CHF 235m undrawn at 23.5–24.2× EV/OI, no price criterion; alert < ≈ CHF 200 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID (Past WEAK: L/E 497% + Future WEAK: 2 strong forces + SF FAIL: acq flag pair) | WEAK | WEAK | FAIL | $26.57 (14 Jul 2026) | CHEAP < ≈ $11.3 (EV/OI, consv EV; MCap/FCF leg ≈ $19.7; no P12) — FAIR, moot given AVOID | — | FY2027 (~May 2027) 1st full MoneyLion yr re-anchors OI/FCF; Avast ≈19–20× audit; alert < ≈ $12 |
@@ -383,9 +383,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v283 — 2026-09-04** — GAP v3 REVIEW (Q2 FY26 10-Q): AVOID held (Past+Future WEAK). Buyback avg $22.97 disclosed, P19 CAUTION held; $313m Q1 interchange gain found — H1 OI ex one-offs −29%.
 - **v282 — 2026-09-04** — LULU v5 REVIEW on Q2 FY2026: AVOID held (Future WEAK now over-determined — moat eroding in all 3 segments). Cheapness EXPENSIVE→FAIR at $97.50; band ≈$67. P19 CAUTION held.
 - **v281 — 2026-09-04** — PYPL v4 REVIEW: Stripe/Advent bid lapsed 27–28 Aug, px de-pinned $61.54→$56.82. AVOID (Future WEAK) held; band unchanged; $1.5bn cost pgm + Apr-27 P17 pair risk logged.
 - **v280 — 2026-09-04** — EA take-private closed 4 Aug ($210 cash, delisted) → DNAF terminal row. PYPL Stripe/Advent lapse 27–28 Aug (press) → REVIEW owed. Counts re-measured: 320 = W67/A251/D2.
 - **v279 — 2026-09-01** — KSPI v3 ANALYSE on user-directed operating lens (§2·1A set aside): WATCH→AVOID, Past WEAK (L/E 340%, P6 unmet; ROCE down 3y). Band ≈₸39,000/$86. Lens → IDEAS A2.
-- **v278 — 2026-08-31** — 7 re-tests recovered from the blocked 2026-08-28 batch, re-merged onto live head. STMN.SW WATCH→AVOID (P19 ADVERSE); HEXA-B.ST SF FAIL→PASS; 5 held.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
