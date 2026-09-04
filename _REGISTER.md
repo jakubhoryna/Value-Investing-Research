@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v279
-register_date: 2026-09-01
+register_version: v280
+register_date: 2026-09-04
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 319
-verdict_split: "WATCH 66 · AVOID 252 · BUY 0 · DNAF 1"
+names_total: 320
+verdict_split: "WATCH 67 · AVOID 251 · BUY 0 · DNAF 2"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v279 · 2026-09-01)
+# GSC Register — Master Watchlist (v280 · 2026-09-04)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -200,7 +200,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DOCU | Docusign, Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: buybacks + comp) | WEAK | WEAK | FAIL | $49.18 | CHEAP < ≈ $9.7 (EV/OI, consv EV) — EXPENSIVE | — | FY2027 10-K (~Mar 2027) re-anchors band |
 | DSY.PA (was DSY) | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
 | DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
-| EA | Electronic Arts Inc. | 2026-07-11 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $206.41 (10 Jul 2026; deal-pinned) | CHEAP < ≈ $38 (EV/OI, FY26 OI incl. merger fees; ≈ $47 on FY25 OI) — academic: $210/sh take-private pending | — | Deal close (row terminal, delist by outside date 28 Sep 2026) or termination → full REVIEW at de-pinned price |
 | EDEN.PA (was EDEN) | Edenred SE | 2026-07-29 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | €28.18 (29 Jul 2026) | CHEAP ≈ €10.59–25.11 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €34.84) — FAIR 7.4×/10.8× | — | FY2026 URD (~Mar 2027): P19 re-test of 2026 tranche + Brazil PAT ruling; Past hinges on float-in-CE call (memo App. C) |
 | EKTA-B.ST (was EKTA-B) | Elekta AB (publ) | 2026-07-25 | v1 | AVOID (Past WEAK — w-o-4 ROCE 7.6% + L/E 280%) | WEAK | ADEQUATE | PASS (1 flag: dividend > FCF FY22–24, net debt rose) | SEK 47.00 (24 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt+NCI ≈ 17.9× FY26 OI); MCap/FCF leg ≈ SEK 29.15. EXPENSIVE 94.7×/12.9× | — | H1 2026/27 (~Nov 2026); AR-2026/27 (~Jul 2027) re-anchors; structural — no price flips Past |
 | EL.PA | EssilorLuxottica SA | 2026-07-31 | v1 | AVOID (Past WEAK: w-o-4 ROCE 4.5% + SF FAIL: P19 sterilisation strikes 2021–25 + GrandVision 27.4×) | WEAK | STRONG | FAIL | €166.85 (31 Jul 2026) | CHEAP ≈ €16.4–20.6 (EV/OI no-cash/all-cash, H1-26 BS; MCap/FCF leg ≈ €64.8; no P12) — EXPENSIVE 20.6×/27.1× | — | FY2026 URD (~Mar 2027): FY26 tranche (4.56m @ €211.51) P19 re-test + Supreme/Optegra audits; Q3 20 Oct 2026 info only |
@@ -300,7 +299,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PSH.L (was PSH) | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PTON | Peloton Interactive, Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: Stern $18.24m vs $16.19m FY25 FCF-leg ceiling, 3y read no positive leg; Oct 2026 proxy re-test severity-only — FY26 ceiling $3.16m) | $5.66 (7 Aug 2026) | Unattainable — EV/OI no-cash bound −$1.33 (debt > 7×OI), all-cash $1.42; **MCap/FCF leg $6.89 above price but SBC = 55% of FCF** | — | 4-gate AVOID; Σ window OI −$4.3bn, equity negative, subs −8.8%/yr; FY2027 results (~Aug 2027); the run's most instructive primary split |
 | PVH | PVH Corp. | 2026-08-20 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — P17 FY-read 12.8×, normalized acquits; P19 SOUND @6.6× FCF; Hilfiger comp INDETERMINATE) | $82.47 (14 Aug 2026 close — stale, SWEEP refreshes) | CHEAP ≈ $16.09–28.86 (EV/OI no-cash/all-cash, ex-imp FY25 OI; reported-OI legs n.m., restore at OI ≈$603m) — FAIR 11.3×/10.5× | — | FY2026 10-K (~Mar 2027): ROCE floor needs OI ≈$970m; 6y record-limited, FY16–19 rebuild queued; ASC 842 lease-in-EV sensitivity in memo App. F |
-| PYPL | PayPal Holdings, Inc. | 2026-08-23 | v3 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (cap-alloc CAUTION, 1 flag — H1'26 $3.05bn @ $45.18 = 7.1–7.8×, 1st at bargain lines; FY16–22 overpricing, allocators departed) | $61.54 (21 Aug 2026) | CHEAP ≈ $33.96–47.12 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ $52.03; no P12) — FAIR 9.5×/9.0× | — | Stripe/Advent $60.50 bid rejected, talks reported — no 8-K, unconfirmed; definitive-agreement 8-K or Q3'26 (~late Oct), else FY2026 10-K |
+| PYPL | PayPal Holdings, Inc. | 2026-08-23 | v3 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (cap-alloc CAUTION, 1 flag — H1'26 $3.05bn @ $45.18 = 7.1–7.8×, 1st at bargain lines; FY16–22 overpricing, allocators departed) | $61.54 (21 Aug 2026) | CHEAP ≈ $33.96–47.12 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ $52.03; no P12) — FAIR 9.5×/9.0× | — | Stripe/Advent pursuit dropped 27–28 Aug 2026 (Bloomberg/Axios; no 8-K) → full REVIEW owed at de-pinned px (≈$54–57, 28 Aug–3 Sep); band question open |
 | RACE.MI (was RACE) | Ferrari N.V. | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | €340.10 RACE.MI / $393.87 (31 Jul 2026) | CHEAP ≈ €63 (MCap/FCF binds; EV/OI cons leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 29.4×/30.1× EV/OI, 43.1× MCap/FCF | — | FY2026 20-F (~Feb 2027): 1st completed yr of the €3.5bn 2026–30 pgm + judgment re-test; H1-26 (~early Aug) cadence; highest execution multiples in the register |
 | ROK | Rockwell Automation, Inc. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $480.08 (31 Jul 2026) | CHEAP ≈ $77 (EV/OI binds; MCap/FCF leg ≈ $96; no P12 — Past ADEQUATE) — EXPENSIVE 33.8× EV/OI, 40.0× MCap/FCF. MCap/TBV n.m. (TBV −$1.0bn, buyback-depleted) | — | FY2026 10-K (~Nov 2026): completed pgm yr vs H1's $608m + re-test; Q3 FY26 print 4 Aug 2026 cadence; ~$1.3bn authorised and largely undrawn |
 | RUN | Sunrun Inc. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (pair: P17 normalized-read breach, no positive 3y leg vs CEO $8.33m + P19 CAUTION debt-funded capex) | $10.20 (7 Aug 2026) | n.m. — both primaries unmeasurable (FY25 OI −$126m, FCF −$2.92bn); TTM EV/OI bounds −$62.5/−$59.8 | — | First register name below TBV (0.70×) failing both primaries; FY2026 10-K (~Feb 2027); post-25D demand data; 2027 proxy P17 re-test |
@@ -364,10 +363,11 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ZIP.AX | Zip Co Limited | 2026-08-27 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 ADVERSE) | WEAK | WEAK | FAIL | A$2.58 (28 Aug 2026) | CHEAP ≈ A$0.71–0.73 (MCap/NI subst. anchor, FY2026 audited NI; EV/OI n.m.) — EXPENSIVE 28.2× | — | 3rd A$50m pgm 14 Sep 26–14 Sep 27, no criterion; FY26 rem. report (P17 secondary read breaches) owed |
 | ZM | Zoom Communications, Inc. | 2026-07-29 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | $91.48 (28 Jul 2026) | CHEAP ≈ $26.00–51.27 (EV/OI no-cash / MCap/FCF all-cash; no P12) — EXPENSIVE, moot given AVOID | — | FY2027 10-K + 2027 proxy (~Mar–Apr 2027) P19 re-test + ROCE re-read (9.9% vs 10.0% floor) |
 
-### DNAF — 1 name
+### DNAF — 2 names
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px @ memo | Trigger band | Dist % | Next review / notes |
 |--------|---------|-----------|-----|---------|------|--------|----|-----------|--------------|--------|---------------------|
+| EA | Electronic Arts Inc. | 2026-07-11 | v1 | DNAF (delisted — take-private closed) | ADEQUATE | WEAK | FAIL | $210.00 cash/sh (close 4 Aug 2026) | n.m. — 100% private (PIF / Silver Lake / Affinity) since 4 Aug 2026; v1 AVOID band moot | — | Terminal — not held, no tax event; re-listing/IPO event only |
 | SYAB.DE (was SYAB) | SYNLAB AG | 2026-07-23 | v1 | DNAF (no listed security) | n/a | n/a | n/a | n/a — delisted | n.m. — 100% private (Cinven/Ephios) since Jul 2025 squeeze-out | — | Re-listing/IPO event only |
 
 ---
@@ -383,9 +383,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v280 — 2026-09-04** — EA take-private closed 4 Aug ($210 cash, delisted) → DNAF terminal row. PYPL Stripe/Advent lapse 27–28 Aug (press) → REVIEW owed. Counts re-measured: 320 = W67/A251/D2.
 - **v279 — 2026-09-01** — KSPI v3 ANALYSE on user-directed operating lens (§2·1A set aside): WATCH→AVOID, Past WEAK (L/E 340%, P6 unmet; ROCE down 3y). Band ≈₸39,000/$86. Lens → IDEAS A2.
 - **v278 — 2026-08-31** — 7 re-tests recovered from the blocked 2026-08-28 batch, re-merged onto live head. STMN.SW WATCH→AVOID (P19 ADVERSE); HEXA-B.ST SF FAIL→PASS; 5 held.
 - **v277 — 2026-08-31** — FLUT v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 1.08%; Future WEAK 4/4 forces; SF FAIL — P19 ADVERSE, FY25 buybacks 78–107×). Band n.m.; 7×OI < debt. 5y record-limited.
 - **v276 — 2026-08-31** — SEE.L v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE −30.0%; Future WEAK 3 strong forces, 2 customers 44%; SF FAIL — P17 loss-leg strike). Band n.m.; needs OI > ≈$8.8m. Window 3y.
-- **v275 — 2026-08-27** — GPN v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 3.4%; Future WEAK 2 strong forces; SF FAIL — P19 ADVERSE, serial M&A). Band n.m. (7×OI < debt); FY16–20 rebuild → TODO.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
