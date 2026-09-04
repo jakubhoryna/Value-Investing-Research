@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v281
+register_version: v282
 register_date: 2026-09-04
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 320
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v281 · 2026-09-04)
+# GSC Register — Master Watchlist (v282 · 2026-09-04)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -260,7 +260,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
 | LMND | Lemonade, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL (P17 hard strike — more-than-token pay vs both owner-earnings legs negative FY2025) | $51.86 (6 Aug 2026) | CHEAP ≈ $8.3 (MCap/BV 1.2×, substitution anchor; melting-BV caveat); NI-proxy n.m. — EXPENSIVE 7.5× book | — | FY2026 10-K (~Feb 2027): EBITDA-breakeven test; P17 re-read if FCF > 0; SCT/RPT backfill |
 | LOGI | Logitech International S.A. | 2026-07-22 | v1 | AVOID (Future WEAK + SF FAIL: P19) | STRONG | WEAK | FAIL | $102.91 (22 Jul 2026) | CHEAP < ≈ $47.8 (EV/OI, low-EV; P12 ≈ $52.7) — EXPENSIVE | — | FY2027 10-K (~May 2027); 2026 proxy re-tests P17; structural — no price flips |
-| LULU | lululemon athletica inc. | 2026-08-23 | v4 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (1 flag — cap-alloc CAUTION) | $121.07 (21 Aug 2026 close) | CHEAP < ≈ $65 (MCap/FCF, FY2025 FCF); ≈ $77–97 norm; EV/OI leg $136/$150 nc/ac lease-out — EXPENSIVE | — | Q2 FY2026 3 Sep 2026 — P19 CAUTION re-test (H1 tranches); O'Neill eff. 8 Sep; FY2026 10-K ~Mar 2027 rolls window |
+| LULU | lululemon athletica inc. | 2026-09-04 | v5 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (1 flag — cap-alloc CAUTION) | $97.50 (4 Sep 2026 pre-mkt; 3 Sep close $121.77) | CHEAP < ≈ $67 (MCap/FCF, FY2025 FCF); ≈ $79–100 norm; EV/OI leg $140/$152 nc/ac lease-out — FAIR | — | Q3 FY2026 ~early Dec 2026, 1st under O'Neill; FY2026 10-K ~Mar 2027 rolls window; 2027 proxy P17 backfill |
 | LYFT | Lyft, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION: FCF-funded pgm at/below 8× FCF but criterion-free, OI worth basis negative) | $16.30 (6 Aug 2026) | n.m. — no positive price clears EV/OI ≤ 7 (OI < 0); MCap/FCF leg ref ≈ $21.4 | — | FY2026 10-K (~Feb 2027): OI-inflection test — band computes if OI > 0; SCT/ownership/RPT backfill |
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
 | MAERSK-B.CO (was MAERSK-B) | A.P. Møller - Mærsk A/S | 2026-07-14 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | DKK 16,685 (14 Jul 2026) | CHEAP < ≈ DKK 12,000 (EV/OI, FY25 OI; MCap/FCF leg ≈ DKK 18,000 passes) — FAIR | — | FY2026 AR (~Feb 2027); FY26 guid. EBIT −1.5–1.0bn → band n.m.; structural: 2 strong forces, no moat |
@@ -383,9 +383,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v282 — 2026-09-04** — LULU v5 REVIEW on Q2 FY2026: AVOID held (Future WEAK now over-determined — moat eroding in all 3 segments). Cheapness EXPENSIVE→FAIR at $97.50; band ≈$67. P19 CAUTION held.
 - **v281 — 2026-09-04** — PYPL v4 REVIEW: Stripe/Advent bid lapsed 27–28 Aug, px de-pinned $61.54→$56.82. AVOID (Future WEAK) held; band unchanged; $1.5bn cost pgm + Apr-27 P17 pair risk logged.
 - **v280 — 2026-09-04** — EA take-private closed 4 Aug ($210 cash, delisted) → DNAF terminal row. PYPL Stripe/Advent lapse 27–28 Aug (press) → REVIEW owed. Counts re-measured: 320 = W67/A251/D2.
 - **v279 — 2026-09-01** — KSPI v3 ANALYSE on user-directed operating lens (§2·1A set aside): WATCH→AVOID, Past WEAK (L/E 340%, P6 unmet; ROCE down 3y). Band ≈₸39,000/$86. Lens → IDEAS A2.
 - **v278 — 2026-08-31** — 7 re-tests recovered from the blocked 2026-08-28 batch, re-merged onto live head. STMN.SW WATCH→AVOID (P19 ADVERSE); HEXA-B.ST SF FAIL→PASS; 5 held.
-- **v277 — 2026-08-31** — FLUT v1 ANALYSE: AVOID (Past WEAK w-o-4 ROCE 1.08%; Future WEAK 4/4 forces; SF FAIL — P19 ADVERSE, FY25 buybacks 78–107×). Band n.m.; 7×OI < debt. 5y record-limited.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
