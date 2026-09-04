@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v285
+register_version: v286
 register_date: 2026-09-04
 archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 322
-verdict_split: "WATCH 67 · AVOID 253 · BUY 0 · DNAF 2"
+names_total: 323
+verdict_split: "WATCH 68 · AVOID 253 · BUY 0 · DNAF 2"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v285 · 2026-09-04)
+# GSC Register — Master Watchlist (v286 · 2026-09-04)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 67 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 68 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,6 +48,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SGO.PA | Compagnie de Saint-Gobain | 2026-08-03 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: GCP 2022 @ 17.3× trailing adj EBITDA / ≈30× pre-deal EBIT, no published criterion; buybacks SOUND 6.4–10.9× EV/OI) | €81.28 (31 Jul 2026) | CHEAP ≈ €39.7–51.6 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ €56.7; no P12) — FAIR 10.8×/9.7× | +58% | FY2026 (~Feb 2027): knife-edge re-test (w-o-4 ROCE 10.07% vs 10% floor; BI basis 7.7% = WEAK), Dahl close, FY26 tranches; alert < ≈ €57 |
 | NOVO-B.CO (NVO 1:1; was NOVO-B) | Novo Nordisk A/S | 2026-08-23 | v8 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-alloc CAUTION; D.N.J. §10(b) ruling INDETERMINATE; Foundation/RPT caveats) | DKK 300.90 (21 Aug 2026) | CHEAP < ≈ DKK 170/180 (EV/OI no-cash/all-cash, FY25 OI, 30-Jun-26 BS; maint MCap/FCF ≈174–188, P20; P12 edge ≈220) — FAIR 11.2–11.6× | +67% | 9M 4 Nov 26 (zilti imp watch); CagriSema US dec Q3; AR-2026 3 Feb 27 + proxy = CAUTION + litigation re-test |
 | TROW                    | T. Rowe Price Group, Inc.       | 2026-07-31 | v4  | WATCH   | STRONG   | ADEQUATE | PASS                                      | $119.28 (30 Jul 2026) | CHEAP ≈ $66–69 (EV/OI no-cash $66 / MCap-FCF P12 $69; all-cash ≈$82; strict $55.5) — FAIR. MCap/TBV >3× cleared                     | +72% | FY2026 (~Feb 2027); Q3'26 flows (~Oct) — Q2 multi-asset +$0.4B, TDF n.d., moat amber; alert < ≈ $82                                                |
+| 6626.T | SEMITEC Corporation | 2026-09-04 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (0 flags; P17 FY-read INDETERMINATE ≤¥99.9m vs ¥84m cap; Ishizuka 46% control caveat; Seto RPT 2% COGS) | ¥2,449 (4 Sep 2026) | CHEAP < ≈ ¥1,403 (MCap/FCF 8×, P20 maint-capex basis FY3/26, binds both variants; EV/OI legs ≈ ¥2,342–3,344 no-cash/all-cash; no P12) — FAIR 14.0×/7.3× | +75% | Q2 FY3/27 tanshin (~Nov 2026): CFO normalisation + any new buyback; FY3/27 yūhō (~Jun 2027): P17 top-pay, 10y rebuild; alert < ≈ ¥1,450 |
 | ADBE | Adobe Inc. | 2026-08-09 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 flag — P17 absolute trigger $51.2m, unpaired; P19 SOUND) | $265.21 (7 Aug 2026) | CHEAP < ≈ $135.50–149.67 (EV/OI no-cash/all-cash; FCF leg $196.83; P12 edge ≈ $173.83–187.99) | +77% | CEO succession (Narayen exit announced 12 Mar 2026) or FY2026 10-K (~Jan 2027); alert < ≈ $188 |
 | 8002.T | Marubeni Corporation | 2026-08-07 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: live ¥100bn pgm @ ~14.8× NI / 1.84× BV, no worth criterion; substitution rule) | ¥4,936 (6 Aug 2026) | CHEAP < ≈ ¥2,674 (MCap/NI 8×, substitution anchor; 1.2×BV cross ≈ ¥3,219; EV/OI n.m.) — EXPENSIVE | +85% | H1 FY3/27 (~Nov 2026) ¥100bn pgm execution multiple; FY3/27 (~May 2027) re-anchor; alert < ≈ ¥3,200 |
 | BABA                    | Alibaba Group Holding Ltd       | 2026-07-02 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | $115.64 ADS (28 Jul 2026) | CHEAP ≈ $40.3–59.4 (EV/OI no-cash/all-cash, norm. OI; P12 edge ≈$55–74) — FAIR                                                                | +95% | FY2027 Q1 (Aug 2026), price < ≈$74, Anthropic/Pentagon resolution, or capex revision                                                                |
@@ -385,9 +386,9 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 ## Change log
 
+- **v286 — 2026-09-04** — 6626.T (SEMITEC) v1 ANALYSE: WATCH (Past/Future ADEQUATE, SF PASS, P19 SOUND — ¥3.8bn buybacks at 3–7× EV/OI). FAIR ¥2,449; band ≈¥1,403 (P20 maint-FCF binds). 5y record-limited.
 - **v285 — 2026-09-04** — ABCA.PA (ABC arbitrage) v1 ANALYSE: AVOID (Future WEAK — 3 strong forces, no moat). Past ADEQUATE (§2·1A ROE 15.2–15.8%, EPS −3%/yr); SF PASS 1 flag. FAIR €5.12; CHEAP < ≈€3.36 (8× NI).
 - **v284 — 2026-09-04** — 244920.KS (A Plus Asset Advisor) v1 ANALYSE: AVOID on 3 gates (Past WEAK w-o-4 ROCE 4.4%; Future WEAK 2 forces; SF FAIL P17 strike). EXPENSIVE ₩13,960; band ≈₩2.2–7.7k; record-limited 5y.
 - **v283 — 2026-09-04** — GAP v3 REVIEW (Q2 FY26 10-Q): AVOID held (Past+Future WEAK). Buyback avg $22.97 disclosed, P19 CAUTION held; $313m Q1 interchange gain found — H1 OI ex one-offs −29%.
 - **v282 — 2026-09-04** — LULU v5 REVIEW on Q2 FY2026: AVOID held (Future WEAK now over-determined — moat eroding in all 3 segments). Cheapness EXPENSIVE→FAIR at $97.50; band ≈$67. P19 CAUTION held.
-- **v281 — 2026-09-04** — PYPL v4 REVIEW: Stripe/Advent bid lapsed 27–28 Aug, px de-pinned $61.54→$56.82. AVOID (Future WEAK) held; band unchanged; $1.5bn cost pgm + Apr-27 P17 pair risk logged.
 *Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
