@@ -1,4 +1,4 @@
-# Secrets / credentials
+# Secrets / credentials — never committed; the PAT lives only in the project-settings bootstrap
 .env
 *.key
 *.pem
@@ -7,8 +7,9 @@ credentials
 # Claude Code local tooling config
 .claude/
 
-# Obsidian local state
-.obsidian/workspace*
+# Editor / vault configuration — local to each machine, not part of the research state
+.obsidian/
 
 # OS junk
 .DS_Store
+Thumbs.db
