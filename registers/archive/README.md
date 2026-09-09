@@ -1,6 +1,6 @@
 # registers/archive/ — verbatim register snapshots
 
-One file per outgoing register version, `REGISTER_v{N}_{YYYY-MM-DD}.md`, written unchanged in the same commit that supersedes it (MODEL §7.4a step 3, §7.5). Append-only. Git history of `_REGISTER.md` is the secondary net; these files exist so that any session — including API-only or mobile ones — can retrieve a past state without git.
+One file per outgoing register version, `{YYYY}/REGISTER_v{N}_{YYYY-MM-DD}.md` (year folder = year of the outgoing `register_date`; MODEL v4.2.1), written unchanged in the same commit that supersedes it (MODEL §7.4a step 3, §7.5). Append-only. Git history of `_REGISTER.md` is the secondary net; these files exist so that any session — including API-only or mobile ones — can retrieve a past state without git.
 
 ## Coverage and known gaps (audited 2026-09-09 against the git history of `_REGISTER.md`)
 
@@ -13,4 +13,4 @@ One file per outgoing register version, `REGISTER_v{N}_{YYYY-MM-DD}.md`, written
 
 Other files here: `MIGRATION_v43-to-v44_2026-07-12.md` (backend migration note), `RECONCILE_open-items_2026-08-18.md` (disposition map of the 108 open items cleared at v257), `RUNLOG_v237-v245_2026-08-07.md`.
 
-*Sharding by year (`registers/archive/<YYYY>/`) is queued as a MODEL PATCH ahead of the GitHub Contents API's 1,000-entries-per-directory listing limit.*
+*Sharded by year since MODEL v4.2.1 (2026-09-10) to stay clear of the GitHub Contents API's 1,000-entries-per-directory listing limit; this README stays at the folder root.*

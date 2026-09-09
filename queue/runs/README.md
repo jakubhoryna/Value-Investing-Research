@@ -6,6 +6,6 @@
 
 **Run-note content (≤ 300 words).** Preflight result (live `MODEL.md` version read, base sha); what committed (register version, memo files, queue version); what failed and why (host, robots, data gap); what needs the user (one line each). No verdicts, no figures that are not already in a committed file.
 
-**Retention.** Dated log; prune run notes older than a quarter in a RECONCILE session (post-mortems stay). Nothing here is authoritative state — the register wins on state, `instructions/MODEL.md` on rules.
+**Retention.** Dated log; prune run notes older than a quarter in a RECONCILE session (post-mortems stay). Nothing here is authoritative state — the register wins on state, `model/MODEL.md` on rules.
 
 **Seed.** `2026-09-09_scheduled-runs-postmortem-and-workflow-fix_v1.md` — why the 5–9 Sep scheduled runs could not push, and the workflow fix (repo attachment, one bounded daily run, evidence-only hard stop). Moved here from `reference/` on 2026-09-09 when that folder was retired.
