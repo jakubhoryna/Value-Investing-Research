@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v4.2.1
-model_date: 2026-09-10
+model_version: v4.2.2
+model_date: 2026-09-12
 status: live
-bootstrap_required: BOOTSTRAP v1.1.0+
+bootstrap_required: BOOTSTRAP v1.1.1+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.2.1 · 2026-09-10)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.2.2 · 2026-09-12)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -402,7 +402,7 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 
 1. **PUT memo** → `contents/memos/<KEY>/<KEY>_<date>_GSC.md` with body `{"message":"GSC: <TICKER> <ver> <verdict>","content":"<base64>","branch":"main"}`. Overwriting an existing path (same-day rerun) requires that file's current `sha` in the body.
 2. **GET** `contents/_REGISTER.md` (raw + metadata) → **base verification [v3.2.1]:** confirm the live file is byte-identical to the base this register build started from — equivalently, that the live change-log head is exactly the entry the new version increments. On mismatch, a parallel commit landed since the base fetch: **abort the PUT**, re-merge this session's rows onto the fresh live state (memo-wins), renumber to live-head + 1, re-print the diff, then proceed. Capture the current `"sha"` from this same fetch.
-3. **PUT snapshot [v3.3.0]** → `contents/registers/archive/{YYYY}/REGISTER_v{N}_{YYYY-MM-DD}.md` — `{YYYY}` is the year of the outgoing `register_date` [v4.2.1] — body = the outgoing register bytes captured in step 2, unchanged (new path, no sha; §7.5). On snapshot failure: abort before step 4 — nothing has changed.
+3. **PUT snapshot [v3.3.0]** → `contents/registers/{YYYY}/REGISTER_v{N}_{YYYY-MM-DD}.md` — `{YYYY}` is the year of the outgoing `register_date` [v4.2.1, path v4.2.2] — body = the outgoing register bytes captured in step 2, unchanged (new path, no sha; §7.5). On snapshot failure: abort before step 4 — nothing has changed.
 4. **PUT register** → `{"message":"GSC: register — <TICKER> <verdict>","content":"<base64>","sha":"<sha>","branch":"main"}`. On failure after a successful snapshot: retry this step only — the snapshot is idempotent for that version.
 5. Report the commit URLs in the chat reply.
 
@@ -420,9 +420,9 @@ You cannot write to project knowledge; the GitHub backend is the live write path
 
 ### §7.5 Register hygiene & archival [v3.3.0]
 
-The live `_REGISTER.md` stays lookup-thin; history lives in `registers/archive/{YYYY}/`.
+The live `_REGISTER.md` stays lookup-thin; history lives in `registers/{YYYY}/`.
 
-- **Per-version snapshots.** Every register commit archives the outgoing version before the live PUT: the exact bytes captured for §7.4a base verification are PUT unchanged to `registers/archive/{YYYY}/REGISTER_v{N}_{YYYY-MM-DD}.md` (N and date from the outgoing front matter, the year folder from its date; new path, no sha) [path v4.2.1]. Ordering makes this fail-safe: snapshot failure aborts before the live PUT (nothing has changed); live-PUT failure after a successful snapshot retries the live PUT only — the snapshot is idempotent for that version. Snapshots are append-only history, the register's counterpart to `model/archive/`; git history is the secondary net.
+- **Per-version snapshots.** Every register commit archives the outgoing version before the live PUT: the exact bytes captured for §7.4a base verification are PUT unchanged to `registers/{YYYY}/REGISTER_v{N}_{YYYY-MM-DD}.md` (N and date from the outgoing front matter, the year folder from its date; new path, no sha) [path v4.2.2 — the live file sits at the root, so `registers/` is the archive and needs no `archive/` level]. Ordering makes this fail-safe: snapshot failure aborts before the live PUT (nothing has changed); live-PUT failure after a successful snapshot retries the live PUT only — the snapshot is idempotent for that version. Snapshots are append-only history, the register's counterpart to `model/archive/`; git history is the secondary net.
 - **Change-log cap.** The live change log keeps only the **newest 5 entries, one line each, ≤ 200 characters**: `vN — date — TICKER(s) action: verdict (deciding gate); note`. A standing pointer line below the log names the archive folder. Trimmed entries are never lost — each survives verbatim in the snapshot of every version that carried it, and every full register state is one file in the archive. Narrative belongs in the memo (§6.3 G is the per-name change log); the register log is a pointer log.
 - **General hygiene rule.** Any standing repo artifact that accrues history follows the same pattern: capped in-file tail, full outgoing versions archived to a sibling `archive/` folder in the same commit that supersedes them, live file kept lean. `MODEL.md` already does this under §0; the register does it here; apply it by default to any future standing artifact.
 - **Queue files [v4.2.0].** `queue/TODO.md` (the single work sink) and `queue/IDEAS.md` (the framework parking lot — one entry per idea: status, instances, question, book-grounded recommendation, consequence scan) follow the same pattern: versioned, outgoing versions archived to `queue/archive/`, live file lean. Neither is authoritative state — the register wins on state, this file on rules; nothing in IDEAS is operative until its own "commit model".
@@ -492,6 +492,12 @@ Modes are detected in the bootstrap (needed before this file is fetched): ANALYS
 
 -----
 
+## v4.2.2 CHANGE LOG (2026-09-12)
+
+- **PATCH release (v4.2.1 → v4.2.2) — two path corrections to v4.2.1 (2026-09-10), zero rules moved, zero names flip.** (1) Register snapshots live at **`registers/{YYYY}/`**, not `registers/archive/{YYYY}/`: the live register is `_REGISTER.md` at the repository root, so the `registers/` folder *is* the archive and the extra level carried no information (§7.4a step 3, §7.5). (2) The `status: moved` stub at `instructions/MODEL.md` is **struck** and the `instructions/` folder ceases to exist; the transition is closed by BOOTSTRAP v1.1.1 (`register_archive: registers/{YYYY}/`), pasted in the same session. Cause: user review of the v4.2.1 tree.
+
+-----
+
 ## v4.2.1 CHANGE LOG (2026-09-10)
 
 - **PATCH release (v4.2.0 → v4.2.1) — repository paths only; no rule, threshold, gate, band, zone, ordering or mode step changes; §8.4 step-3 scan: zero names flip.** Three structural moves, executed in the same atomic commit as this file so no session ever fetches a path that has moved: (1) **`memos/<KEY>/` sharding** — one folder per §7.1a key holding every version of the name; §6 memo path, §7.1a re-key rule, §7.4a memo load / PUT / same-day supersession rewritten to the folder form; the ticker-prefix fallback is retired (the folder listing is deterministic). (2) **`registers/archive/{YYYY}/`** — snapshots sharded by the year of the outgoing `register_date` (§7.4a step 3, §7.5). (3) **`instructions/` → `model/`** — `MODEL.md`, `BOOTSTRAP.md`, `BOOK_EXTRACT.md` and `archive/` move; every path in §0, §2, §7.4a, §8.4 and the closing pointer updated. Cause: the GitHub Contents API lists at most 1,000 entries per directory — `memos/` (425 files after eleven weeks) and `registers/archive/` (240, one per commit) were on course to cross it in 2027, silently breaking every directory-based load; and "archive" had come to mean four different things across the tree. **Requires BOOTSTRAP v1.1.0** (`model_path`, `bootstrap_mirror`, `archive_path`, `memos_path`, session-start fetch; queue and register-archive paths added to §CONFIG) — pasted into project settings in the same session. A `status: moved` stub is left at `instructions/MODEL.md` for one transition window and is struck at the next PATCH.
@@ -506,13 +512,4 @@ Modes are detected in the bootstrap (needed before this file is fetched): ANALYS
 
 -----
 
-## v4.1.0 CHANGE LOG (2026-08-06)
-
-- **§7.1a added — company identity and the ticker key [user doctrine call].** Two linked rules. (a) **Suffix-always for non-US lines:** the key is the ticker of the priced listing as the price endpoint takes it — bare for US lines including ADRs, exchange-suffixed for everything else — frozen at first ANALYSE, with alternates and retired legacy keys in the parenthetical. (b) **Identity of record is company name + ISIN, not the key:** `isin:` joins the §6.1 front matter and the §8 pre-work prior-check now searches name and ISIN rather than the ticker string. The second rule is the one that prevents recurrence; the first makes keys canonical and doubles them as the SWEEP lookup.
-- **Cause this closes.** Saint-Gobain was carried twice with opposite verdicts (`SGO` AVOID 03 Aug, `SGO.PA` WATCH 05 Aug) because the second session's prior-check searched the key it intended to use, found nothing, and ran a fresh ANALYSE; §7.1's replace-the-row step is regex-anchored on the ticker string and cannot fire on a row it is not looking for. A suffix convention alone would not have caught it — under the new key rule the *first* session would have been the mis-keyed one. Hence the name/ISIN check.
-- **Migration: register rows and memo files re-key together [user doctrine call — supersedes the append-only draft].** The RECONCILE that re-keys the register also renames every affected memo file and rewrites its `ticker:` front matter and body H1; legacy keys survive as parenthetical aliases in the register row for one review cycle, and `isin:` backfills at each REVIEW touch. Divergent pairs repaired in the same pass: MC.PA↔`LVMH_*`, CDI.PA↔`CDI_*`, 005930.KS↔`005930_*`, 2502.T↔`2502_*`, 7936.T↔`7936_*`.
-- **No gate, threshold, band or verdict mechanics change at v4.1.0.** No register verdict moves as a consequence of this amendment.
-
------
-
-*Older change logs (v3 – v4.0.0): archived verbatim in `model/archive/` MODEL_v* snapshots, per the §0 cap.*
+*Older change logs (v3 – v4.1.0): archived verbatim in `model/archive/` MODEL_v* snapshots, per the §0 cap.*

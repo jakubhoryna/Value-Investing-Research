@@ -9,7 +9,7 @@ Every folder has one job and one retention rule. "Versioned archive" means: the 
 | Path | What lives here | Retention | Governed by |
 |---|---|---|---|
 | `_REGISTER.md` | Master watchlist + portfolio layer — one row per company, latest memo version only. **Source of truth on state.** Version, date and counts in the front matter. | Live; every change is a versioned commit | MODEL §7.1–§7.5 |
-| `registers/archive/{YYYY}/` | One verbatim snapshot per outgoing register version (`REGISTER_v{N}_{YYYY-MM-DD}.md`), sharded by the year of the outgoing `register_date`, plus migration/run notes. `registers/archive/README.md` lists known gaps. | Versioned archive, append-only | MODEL §7.4a, §7.5 |
+| `registers/{YYYY}/` | One verbatim snapshot per outgoing register version (`REGISTER_v{N}_{YYYY-MM-DD}.md`), sharded by the year of the outgoing `register_date`, plus migration/run notes. The live register is `_REGISTER.md` at the root, so this folder is its archive. `registers/README.md` lists known gaps. | Versioned archive, append-only | MODEL §7.4a, §7.5 |
 | `memos/<KEY>/` | One folder per §7.1a key; one Markdown memo per company-version inside it (`<KEY>_YYYY-MM-DD_GSC.md`). The folder is the memo history: a REVIEW adds a file, never overwrites; a same-day supersession renames the outgoing file `…_GSC_superseded-v{n}.md` in place. A re-key renames the folder. | Live history, append-only | MODEL §6, §7.1a, §7.4a |
 | `model/` | `MODEL.md` (live framework, semver + change log), `BOOTSTRAP.md` (token-redacted mirror of the project instructions), `BOOK_EXTRACT.md` (doctrine reference, fetch on demand). | Live | MODEL §0 |
 | `model/archive/` | Frozen superseded framework files: every `MODEL_v*` and `BOOTSTRAP_v*`, earlier book extractions and project instructions, relocation notes. Framework history lives here and nowhere else. | Versioned archive | MODEL §0, §8.4 |
@@ -27,7 +27,7 @@ Private repo — there is no tokenless raw URL. Attended sessions read and write
 
 ## Discipline
 
-- **Register commits** are versioned: front-matter version + counts derived from the rows, change log capped at the newest 5 entries of ≤ 200 characters, outgoing version snapshotted to `registers/archive/` before the live PUT, every PUT preceded by base verification against the live head (MODEL §7.4a). A sweep may commit a price/ordering refresh only.
+- **Register commits** are versioned: front-matter version + counts derived from the rows, change log capped at the newest 5 entries of ≤ 200 characters, outgoing version snapshotted to `registers/{YYYY}/` before the live PUT, every PUT preceded by base verification against the live head (MODEL §7.4a). A sweep may commit a price/ordering refresh only.
 - **Memo commits** never overwrite; the register row is regenerated from the memo's front matter (memo wins on conflict).
 - **Framework commits** require the exact phrase "commit model"; the outgoing `MODEL.md` freezes to `model/archive/` in the same commit. The bootstrap changes only by manual re-paste and a version bump.
 - **Queue commits** follow the same versioned-archive pattern; work routes to `TODO.md`, framework ideas to `IDEAS.md`, never to the register's `## Open items`.
@@ -35,6 +35,6 @@ Private repo — there is no tokenless raw URL. Attended sessions read and write
 
 ## Directory sizes
 
-The GitHub Contents API lists at most 1,000 entries per directory. Memos are sharded per key (`memos/<KEY>/`, ~3 files per folder; 322 folders at the top level) and register snapshots per year (`registers/archive/<YYYY>/`, ~250 per year at the 2026 pace), so no directory approaches the limit; the top-level `memos/` listing itself will need a second shard level only past ~1,000 names. `instructions/MODEL.md` is a `status: moved` stub for one transition window (MODEL v4.2.1) and is deleted at the next PATCH.
+The GitHub Contents API lists at most 1,000 entries per directory. Memos are sharded per key (`memos/<KEY>/`, ~3 files per folder; 322 folders at the top level) and register snapshots per year (`registers/<YYYY>/`, ~250 per year at the 2026 pace), so no directory approaches the limit; the top-level `memos/` listing itself will need a second shard level only past ~1,000 names.
 
 *Framework output, not investment advice.*
