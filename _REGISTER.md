@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v288
-register_date: 2026-09-11
-archive: "registers/archive/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
+register_version: v289
+register_date: 2026-09-12
+archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
-verdict_split: "WATCH 67 · AVOID 253 · BUY 0 · DNAF 2"
+verdict_split: "WATCH 66 · AVOID 254 · BUY 0 · DNAF 2"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v288 · 2026-09-11)
+# GSC Register — Master Watchlist (v289 · 2026-09-12)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 67 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 66 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -61,7 +61,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | INTU | Intuit Inc. | 2026-08-27 | v2 | WATCH | STRONG | ADEQUATE | PASS (1 flag — P19 CAUTION, one-limb, conf ~60%; **P17 INDETERMINATE ×2 — severity-changing**: CEO $36.85m vs ≈$40m, and Cook director $1.3m vs $672k stop) | $348.00 (27 Aug 2026) | CHEAP < ≈ $118.60–144.59 (EV/OI nc/ac; FCF leg $248.87; P12 edge ≈ $155.77–181.76) | +141% | FY2026 10-K ~Sep (Q4 tranche); FY2026 proxy ~Nov = two ways to FAIL SF; alert < ≈ $182, adverse > ≈ $778 |
 | SCHN.SW (SCHP PC; was SCHN) | Schindler Holding AG | 2026-08-01 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: FY24/FY25 tranches at 2.5×/2.7× worth, no worth-referenced criterion; control caveat unpaired) | CHF 247.5 N / 254.6 PC (31 Jul 2026; blended 251.31) | CHEAP ≈ CHF 103 (MCap/FCF binds; EV/OI leg ≈ CHF 123; no P12 — Past ADEQUATE) — EXPENSIVE 19.5× FCF / 17.0×–20.0× EV/OI | +144% | FY2026 (~Feb 2027): completed tranche vs the enlarged CHF 700m pgm + CAUTION re-test; H1-2026 rpt (~mid-Aug) interim tranche; alert < ≈ CHF 130 |
 | BKNG | Booking Holdings Inc. | 2026-08-05 | v3 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: $14.5bn of $20bn pgm live, no criterion, H1 payout > FCF; exec 14.5–16.6× = record's cheapest) | $194.27 (4 Aug 2026) | CHEAP ≈ $55–78 (EV/OI no-cash/all-cash, FY2025; P12 edge $75–97; TTM x-check $59–82) — EXPENSIVE | +149% | FY2026 10-K (~Feb 2027): band + P19 + P15 supplier look-through decides Future; alert < ≈ $100 |
-| NKE | NIKE, Inc. | 2026-07-31 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: FY20–25 at 25.0–47.5× EV/OI, 4.4–8.3× worth, no published criterion; dual-class caveat UNPAIRED) | $41.71 (31 Jul 2026) | CHEAP ≈ $10.5–16.6 (EV/OI no-cash/all-cash, FY2026 audited OI; MCap/FCF leg $11.80 inside; no P12) — EXPENSIVE 16.8×/19.2× | +151% | Q1 FY2027 10-Q (~Sep/Oct 2026): does the repurchase pause survive the Jun-2026 reapproval; Sept 2026 proxy = dated 2nd-flag risk on the allocation flag |
 | FDS | FactSet Research Systems Inc. | 2026-08-09 | v1 | WATCH | STRONG | ADEQUATE | PASS (FY2026 make-whole SCT = named strike risk; P19 SOUND) | $285.57 (7 Aug 2026) | CHEAP < ≈ $103.12–111.68 (EV/OI no-cash/all-cash; P12 edge ≈ $138.88 — FCF leg governs) | +156% | FY2026 results (~Sep 2026) + FY2026 SCT P17 re-test; alert < ≈ $139 |
 | BVI.PA | Bureau Veritas S.A. | 2026-08-06 | v1 | WATCH | ADEQUATE | STRONG | PASS (cap-alloc SOUND; Wendel caveat UNPAIRED 1.64× wedge; RPT + all acq audits INDETERMINATE) | €28.44 (6 Aug 2026) | CHEAP ≈ €8.7–10.8 (EV/OI no-cash/all-cash, FY25 statutory OI, 30-Jun-26 BS; MCap/FCF leg ≈ €14.8; no P12) — EXPENSIVE 15.9×/14.9× | +163% | FY2026 (~Feb 2027) + URD-26: 10y rebuild, €200m pgm execution, acq audits; ⚠ TTM OI −8% y/y, H1 statutory OP −16%; alert < ≈ €20 |
 | MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-31 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: 2023 buyback @ €823.1 = 37.7× MCap/FCF; Tiffany 22.1× pre-deal OI; no criterion. Control caveat UNPAIRED) | €475.15 (31 Jul 2026) | CHEAP ≈ €179 (EV/OI binds, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE) — EXPENSIVE 16.4×/15.6× | +165% | FY2026 (~late Jan 2027) + URD-27 (~Mar 2027): H1-26 tranche price + CAUTION re-test; P4 3rd ROCE-decline test — 2 down-yrs, H1-26 stabilised not reversed |
@@ -108,7 +107,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1031% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 253 names, alphabetical
+### AVOID — 254 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -280,6 +279,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | NET | Cloudflare, Inc. | 2026-08-09 | v2 | AVOID | WEAK | ADEQUATE | FAIL (P17 strike $61m + $60m twin; P19 CAUTION) | $300.27 (7 Aug 2026) | n.m. — no positive OI in any year; positive nc bound needs OI > ≈$467m; price needs OI ≈ $15.1bn ac / $15.7bn nc | — | 3 gates; L/E 300%; H1'26 OI −$268m incl. $151m restr., ex-restr. −$117m vs −$121m; $1,293m converts now CURRENT; Q3'26 ~Nov + FY26 10-K |
 | NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | ADEQUATE | WEAK | FAIL | $77.65 (close 2 Jul 2026; post 10:1 split) | CHEAP < ≈ $17.4 (MCap/FCF binding; EV/OI conservative ≈ $17.6). No P12 edge. Cheapness EXPENSIVE | — | FY2026 results (~late Jan 2027); or structural change — content-supplier leverage eases / switching-cost lock-in emerges AND comp reform (top pay < $30m) |
 | NGVT | Ingevity Corporation | 2026-08-08 | v1 | AVOID | WEAK | WEAK | PASS (1 flag — P19 CAUTION: caprolactone written off, course changed; **P17 INDETERMINATE — SCT owed, ceilings $13.68m/$7.00m = live pair risk**) | $73.11 (31 Jul 2026) | n.m. — FY25 OI −$44m; TTM EV/OI bounds both negative (−$22.51/−$19.67 — debt > 7×OI); FY25 MCap/FCF 9.2× on transition-year FCF, labelled | — | 3-gate AVOID; w-o-4 ROCE 4.90%, L/E 5,458% (impairment-crushed equity); FY2026 10-K = first New-Ingevity perimeter year + P17 retrieval |
+| NKE | NIKE, Inc. | 2026-09-12 | v4 | AVOID (Past WEAK: sustained returns decline; Future WEAK: eroding moat) | WEAK | WEAK | PASS (1 flag — cap-allocation CAUTION, conf 65%; P17 cleared on FY2026 proxy; dual-class UNPAIRED) | $36.85 (11 Sep 2026) | CHEAP ≈ $10.50–11.80 (no-cash/all-cash; EV/OI binds no-cash, MCap/FCF all-cash) — moot given AVOID. EXPENSIVE 25.0× FCF / 14.9–17.3× EV/OI | — | Q1 FY2027 10-Q (~Oct 2026): buyback resumption re-tests P19; FY2026 proxy RPT section INDETERMINATE |
 | NOKIA.HE | Nokia Oyj | 2026-08-07 | v1 | AVOID | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: criterion-free buybacks alongside dilutive strategic issuance) | €8.156 (7 Aug 2026) | CHEAP ≈ €0.48–0.76 (EV/OI no-cash / MCap-FCF all-cash; FY25 basis — the AI re-rating vs a €0.9bn reported-OP year) | — | FY2026 (~Jan 2027): €2.0–2.5bn comparable-OP guide vs the reported line; 5y record-limited window a-fortiori bounded; alert n/a (band academic) |
 | NOLA-B.ST (was NOLA-B) | Nolato AB | 2026-08-06 | v3 | AVOID (SF FAIL: flag pair — P17 year-read + P19 CAUTION) | ADEQUATE | ADEQUATE | FAIL | SEK 49.35 (6 Aug 2026) | CHEAP ≈ SEK 8.1 (MCap/FCF, all-capex FY25; EV/OI leg SEK 19.4/21.2 no-cash/all-cash) — EXPENSIVE 14.9×/48.7× | — | FY2026 AR (~Apr 2027) — P17 fiscal-yr re-test on FY26 FCF (R12M 468 clears); no AGM-26 buyback mandate; new CEO 17 Jul 2026 |
 | NOMD | Nomad Foods Limited | 2026-08-18 | v1 | AVOID | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION: FY25 payout €287m ≈ 2× FCF, part debt-funded; P17 INDETERMINATE — FPI aggregate-only) | $11.73 (14 Aug 2026) | n.m. — no-cash leg unattainable (debt €2,312m > 7×OI €2,278m); restores at OI ≈ €330m; all-cash bound ≈ $1.97; MCap/FCF leg ≈ $9.48 | — | FY2026 (~Feb 2027): 5y record-limited rebuild + P17 retrieval + Fortenova pre-deal audit; structural — w-o-4 ROCE 6.6% vs 10% floor |
@@ -386,10 +386,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v289 — 2026-09-12** — NKE v4 fresh ANALYSE: **WATCH → AVOID**. Past→WEAK (P4 decline, FCFROCE 22.8→12.3→7.7); Future→WEAK (eroding moat). SF PASS held; FY2026 proxy closed P17 gap.
 - **v288 — 2026-09-11** — SWEEP (partial: held + BRK.B, 10 Sep closes) + RECONCILE (322 memos vs rows, 0 conflicts). No verdict/band moved. CROX $108.83 +11% NEAR; TROW +56%; NOVO-B +57%; HFG €2.80.
 - **v287 — 2026-09-09** — RECONCILE hygiene, no verdict/band/price moved: counts 323/68 → 322/67; SIKA.SW Dist % on upper bound (+623% → +533%, §7.1); 14 Dist % roundings; 3 log lines trimmed.
 - **v286 — 2026-09-04** — 6626.T (SEMITEC) v1 ANALYSE: WATCH (Past/Future ADEQUATE, SF PASS, P19 SOUND — buybacks at 3–7× EV/OI). FAIR ¥2,449; band ≈¥1,403 (P20 maint-FCF binds); 5y record-limited.
 - **v285 — 2026-09-04** — ABCA.PA (ABC arbitrage) v1 ANALYSE: AVOID (Future WEAK — 3 strong forces, no moat). Past ADEQUATE (§2·1A ROE 15–16%); SF PASS 1 flag. FAIR €5.12; CHEAP < ≈€3.36 (8× NI).
-- **v284 — 2026-09-04** — 244920.KS (A Plus Asset Advisor) v1 ANALYSE: AVOID on 3 gates (Past WEAK ROCE 4.4%; Future WEAK 2 forces; SF FAIL P17). EXPENSIVE ₩13,960; band ≈₩2.2–7.7k; 5y record-limited.
 
-*Full change history and every prior register state: `registers/archive/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
+*Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
