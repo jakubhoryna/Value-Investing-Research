@@ -1,8 +1,19 @@
-# GSC Work Queue — TODO.md (v30 · 2026-09-12)
+# GSC Work Queue — TODO.md (v31 · 2026-09-13)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
 **Ticker discipline.** Tickers are suggested keys for convenience; resolved and verified at run time per §7.1a (prior-check on company name + ISIN, never the key alone).
+
+---
+
+## ▶ Routed from the 2330.TW (TSMC) v2 ANALYSE, register v290 (2026-09-13)
+
+1. **`2330.TW` — `isin:` not sourced.** The v2 memo front matter carries `n/a — not sourced this session`. Backfill the ROC common-share ISIN (and the ADR ISIN as a parenthetical) from a primary identifier source at the next REVIEW touch; this is one of the 199 memos on the item-5 gap list below.
+2. **`2330.TW` — FY2025 20-F read second-hand.** The customer-concentration disclosure used in Gate 1B (ten largest customers = **78% of FY2025 net revenue**), the 2026 capex guide (US$52–56bn) and annual capacity (>17m 12-inch equivalent wafers) were taken from a filing-summary page, not from the 20-F itself (accession 0001628280-26-025362, filed 2026-04-16). The verdict does not turn on them — the customer-breadth FAIL is decisive on its own and the waiver is reasoned separately — but **verify against the filing at the next REVIEW** and mark the memo's Appendix A flag closed.
+3. **`2330.TW` — P17 absolute-scrutiny trigger is INDETERMINATE.** The highest-paid individual's total is not disclosed in the consolidated financial statements; the disclosed bound (all directors + key management, ≈NT$9–10.5bn annualised) makes a breach of the ≈NT$1.26bn indexed line unlikely but does not exclude it. **Named re-test: the 2026 TSMC Annual Report (Taiwan)**, which discloses individual director remuneration and manager remuneration in bands. Proportionality is not at issue — it passes by ~50×.
+4. **`2330.TW` — P20 re-test condition.** P20 was turned **off** at v2 on the arithmetic (capex/sales 33.6% pre-cycle FY2016–18 vs 33.3%/33.7% FY2024–25). H1-2026 runs 35.8%. If FY2026 capex/sales returns materially above the pre-cycle anchor **and** management guides capex down, re-open P20 — it is worth ≈NT$174 on the trigger band (NT$306 → NT$480).
+5. **Ticker-field fix applied.** `2330.TW` is struck from the item-5 alias list below: the v2 memo front matter now carries the bare key. Nine names remain (`005930.KS`, `1211.HK`, `5332.T`, `ABB`, `CDI.PA`, `GOOGL`, `MC.PA`, `NVS`, `SDZ.SW`).
+6. **Note for the next SWEEP.** `stockanalysis.com` quote pages served a **fresh** 11 Sep close for TPE:2330 via `web_fetch` this session (NT$2,410.00, 1:30 PM CST), whereas the same route returned a stale cache for ETR:HFG on 11 Sep. The staleness in item 1 below is per-page, not per-host — worth re-testing a few non-US pages before accepting the partial-sweep pattern as permanent.
 
 ---
 
