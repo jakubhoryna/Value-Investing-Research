@@ -1,7 +1,7 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v289
-register_date: 2026-09-12
+register_version: v290
+register_date: 2026-09-13
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
 verdict_split: "WATCH 66 · AVOID 254 · BUY 0 · DNAF 2"
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v289 · 2026-09-12)
+# GSC Register — Master Watchlist (v290 · 2026-09-13)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -79,7 +79,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | TRI | Thomson Reuters Corporation | 2026-08-27 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION, conf ~87%: NCIB expired 18 Aug 2026 unrenewed; EDGAR Aug sweep clean) | $104.78 (27 Aug 2026, Nasdaq) | CHEAP ≈ $26.7–28.0 (EV/OI nc/ac, FY25 OI, 30-Jun-26 BS incl. sourced leases $241m; MCap/FCF leg ≈ $36.8; no P12) — EXPENSIVE | +274% | FY2026 (~Feb 2027) window roll + Global Print deconsol; alert < ≈ $45; adverse > ≈ $115 with a bid live |
 | SOON.SW (was SOON) | Sonova Holding AG | 2026-08-06 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION) | CHF 233.60 (6 Aug 2026) | CHEAP ≈ CHF 50.2–62.5 (EV/OI no-cash/all-cash, FY26 OI; MCap/FCF leg ≈ 78; no P12) — EXPENSIVE 23.1×/22.0× | +274% | H1 FY26/27 (~Nov 2026): successor-pgm watch + Consumer Hearing close; pgm expired 17 Apr 2025, ~72% undrawn; alert < ≈ CHF 78 |
 | SAVE.ST (was SAVE) | Nordnet AB (publ) | 2026-08-01 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: FY24/FY25 tranches at 2.3×/2.7× worth, no worth-referenced criterion; execution delegated on independent timing) | SEK 365.00 (31 Jul 2026) | CHEAP ≈ SEK 97.5 (MCap/NI 8×, §2·1A substitution anchor; TTM leg ≈ 106; 3×BV/sh ≈ 98; no P12 — 9y window) — EXPENSIVE 29.9× | +274% | FY2026 AR (~Mar 2027): window rolls to 10y — STRONG becomes available; new pgm terms if launched, Järborg's first comp disclosure; alert < ≈ SEK 120 |
-| 2330.TW (ADR TSM 1:5; was TSM) | Taiwan Semiconductor Mfg Co     | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | NT$2,280 (28 Jul 2026) | CHEAP ≈ NT$480–598 (EV/OI no-cash/all-cash; MCap/FCF suspended — P20 AI-capex) — EXPENSIVE                                                  | +281% | FY2026 results (Feb 2027), price < NT$700 (NEAR), or process-lead loss / Taiwan-Strait / export-control shift                                       |
 | EPI-A.ST (EPI-B; was EPI-A) | Epiroc AB (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: FY21/22 option-hedge tranches 17.7–24.9× EV/OI ≈2.6–3.1× worth; Stanley INDETERMINATE; dual-class caveat) | SEK 244.10 A / 208.60 B (31 Jul 2026) | CHEAP ≈ SEK 54.2–63.7 A (EV/OI no-cash/all-cash; MCap/FCF leg SEK 60.3 A between; no P12 — Past capped ADEQUATE until FY2027) — EXPENSIVE 25.4×/24.4× | +283% | FY2026 AR (~Mar 2027): 5th dormant yr?, 2027 mandate purpose, Stanley multiple, CAUTION re-test; 5 May 2026 mandate granted with stated intent to use |
 | THULE.ST (was THULE) | Thule Group AB (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | SEK 223.60 (28 Jul 2026) | CHEAP < ≈ SEK 58 (MCap/FCF, FY25 WC-trough FCF; EV/OI leg ≈ SEK 67–69 no-cash/all-cash; no P12) — EXPENSIVE | +286% | FY2026 year-end (~Feb 2027) re-anchors band; alert < ≈ SEK 90 |
 | SAND.ST (was SAND) | Sandvik AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: CNC Software 2021 at 28.7–38.1× pre-deal OI ≈4–5× worth, no acq-price discipline; DSI + Diemme INDETERMINATE) | SEK 356.00 (31 Jul 2026) | CHEAP ≈ SEK 87.51 (EV/OI binds; MCap/FCF leg ≈ SEK 98.02; no P12 — Past ADEQUATE) — EXPENSIVE 23.4×/23.2× | +307% | FY2026 AR (~Mar 2027): CAUTION re-test, Diemme Filtration multiple (INDETERMINATE), whether the 380bp tungsten benefit reverses; alert < ≈ SEK 110 |
@@ -104,6 +103,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DNP.WA | Dino Polska S.A. | 2026-08-07 | v1 | WATCH | ADEQUATE | STRONG | PASS (SOUND; founder 51% caveat unpaired) | PLN 32.32 (7 Aug 2026) | CHEAP < ≈ PLN 4.98 (MCap/FCF binds — all-capex FCF suppressed by build-out; EV/OI legs 14.09/15.07 no-cash/all-cash = earnings-power context) | +549% | FY2026 (~Mar 2027): **3rd ROCE decline fires P4** (26.4→22.0→20.5); price-war margin data; alert < ≈ PLN 15 |
 | ROCK-B.CO | ROCKWOOL A/S | 2026-08-08 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 dated flag — P17 year-read 2.24× vs Russia-crushed NI; normalized passes 5×) | DKK 232.00 (7 Aug 2026) | CHEAP < ≈ DKK 34.5–35.3 (FY25 OI incl. −392 Russia adj); backvalued 2024 bound ≈ DKK 126 (tourniquet) | +557% | **Verdict corrected AVOID→WATCH at RECONCILE — §2 has no price gate.** FY2026 (~Feb 2027) first clean post-Russia year; NIBCL rebuild owed; alert < ≈ DKK 126 |
 | NESN.SW (ADR NSRGY 1:1; was NESN) | Nestlé S.A. | 2026-07-31 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 8 strike-yrs 2017–24 at 20–47×, ~CHF 9.7bn realised loss; halt is deleveraging, not discipline; 2025 governance = caveat) | CHF 81.01 (31 Jul 2026) | CHEAP ≈ CHF 8.9–11.2 (EV/OI no-cash/all-cash, FY25 OI, H1-26 BS; MCap/FCF leg ≈ CHF 34; no P12) — EXPENSIVE 21.6×/22.1×. ⚠ L/E 287% = logged P5 flag | +623% | FY2026 (~Feb 2027) + comp report: 2nd near-nil yr?, status of the CHF 20bn 2024–26 authorisation (NOT ESTABLISHED); earlier if buybacks resume |
+| 2330.TW (ADR TSM 1:5; was TSM) | Taiwan Semiconductor Mfg Co     | 2026-09-13 | v2  | WATCH   | STRONG   | ADEQUATE | PASS                                      | NT$2,410 (11 Sep 2026) | CHEAP ≈ NT$306 (MCap/FCF binds; P20 off — capex/sales back at pre-cycle) — EXPENSIVE | +687% | FY2026 results (~Jan 2027) + 20-F (~Apr 2027); alert < ≈ NT$400; P17 absolute trigger INDETERMINATE — re-test at AR-2026 |
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 153.60 (28 Jul 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +753% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €282.65 (31 Jul 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1031% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
@@ -386,10 +386,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v290 — 2026-09-13** — 2330.TW (TSMC) v2 fresh ANALYSE: verdicts unchanged (WATCH). P20 off — capex/sales back at pre-cycle 33.6%; band ≈NT$600 → ≈NT$306 (MCap/FCF binds); Dist +281% → +687%.
 - **v289 — 2026-09-12** — NKE v4 fresh ANALYSE: **WATCH → AVOID**. Past→WEAK (P4 decline, FCFROCE 22.8→12.3→7.7); Future→WEAK (eroding moat). SF PASS held; FY2026 proxy closed P17 gap.
 - **v288 — 2026-09-11** — SWEEP (partial: held + BRK.B, 10 Sep closes) + RECONCILE (322 memos vs rows, 0 conflicts). No verdict/band moved. CROX $108.83 +11% NEAR; TROW +56%; NOVO-B +57%; HFG €2.80.
 - **v287 — 2026-09-09** — RECONCILE hygiene, no verdict/band/price moved: counts 323/68 → 322/67; SIKA.SW Dist % on upper bound (+623% → +533%, §7.1); 14 Dist % roundings; 3 log lines trimmed.
 - **v286 — 2026-09-04** — 6626.T (SEMITEC) v1 ANALYSE: WATCH (Past/Future ADEQUATE, SF PASS, P19 SOUND — buybacks at 3–7× EV/OI). FAIR ¥2,449; band ≈¥1,403 (P20 maint-FCF binds); 5y record-limited.
-- **v285 — 2026-09-04** — ABCA.PA (ABC arbitrage) v1 ANALYSE: AVOID (Future WEAK — 3 strong forces, no moat). Past ADEQUATE (§2·1A ROE 15–16%); SF PASS 1 flag. FAIR €5.12; CHEAP < ≈€3.36 (8× NI).
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
