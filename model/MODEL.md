@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v4.2.2
+model_version: v4.3.0
 model_date: 2026-09-12
 status: live
-bootstrap_required: BOOTSTRAP v1.1.1+
+bootstrap_required: BOOTSTRAP v1.2.0+
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.2.2 · 2026-09-12)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.3.0 · 2026-09-12)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -17,7 +17,7 @@ This file (`model/MODEL.md`) is the **live operative framework**, fetched at eve
 - **MINOR** — parameter or rule changes with potential verdict/zone/register impact: new or amended P-rows, ordering rules, substitution rules, mode additions.
 - **PATCH** — clarifications, wording, consequential edits with no verdict impact.
 
-**Release flow (MODEL mode, §8.4):** every framework change commits, under one explicit **"commit model"** confirmation (never inferred, never bundled with a register/memo confirm, never covered by session auto-commit): (a) the outgoing version frozen to `model/archive/MODEL_v{old}_{YYYY-MM-DD}.md`, then (b) the new live `MODEL.md` with version and change log bumped. The archive is append-only history; the live file is the only operative one. Changes take effect from the next session's fetch. Bootstrap changes are rarer and stay manual: bump the bootstrap version, re-paste into Claude project settings, commit the redacted mirror.
+**Release flow (MODEL mode, §8.4):** every framework change commits, under one explicit **"commit model"** confirmation (never inferred, never bundled with a register/memo confirm, never covered by session auto-commit): (a) the outgoing version frozen to `model/archive/MODEL_v{old}_{YYYY-MM-DD}.md`, then (b) the new live `MODEL.md` with version and change log bumped, then (c) `model/DRAFT_CARD.md` regenerated from the new file (§8.4 step 4; the card is the operative framework of unattended DRAFT sessions, §8.6). The archive is append-only history; the live file is the only operative one. Changes take effect from the next session's fetch. Bootstrap changes are rarer and stay manual: bump the bootstrap version, re-paste into Claude project settings, commit the redacted mirror.
 
 **Change-log cap [v3.9.0].** This file keeps only the **current release and the two prior** in-file, applying §7.5's capped-tail rule to itself; older logs survive verbatim in the `model/archive/` MODEL_v* snapshots.
 
@@ -165,7 +165,7 @@ Every tunable number in the framework, with its value and the section that defin
 |P11|MCap/TBV threshold — qualifier         |≤ 3|§2 Gate 2|B  |
 |P12|Bending allowance (entry)              |One **primary** metric ≤ 1.25× threshold, only when Past = STRONG|§2 Gate 2|P  |
 |P13|Memo body word cap                     |**800 words of running prose** — §6.2 body only; excludes headings, table cells and front matter; bullet sentences count [v3.9.0]|§6|P  |
-|P14|Web-operation budget                   |Exploratory search only: **~5 / ~2 / ~1** per name for ANALYSE / REVIEW / SWEEP; **directed enquiry ~6**, logged separately. Primary-document retrieval, GitHub API calls and RECONCILE uncounted|§4|P  |
+|P14|Web-operation budget                   |Exploratory search only: **~5 / ~2 / ~1** per name for ANALYSE / REVIEW / SWEEP; **DRAFT ~5** (as ANALYSE; no directed-enquiry extension — the run is unattended) [v4.3.0]; **directed enquiry ~6**, logged separately. Primary-document retrieval, GitHub API calls and RECONCILE uncounted|§4|P  |
 |P15|Breadth thresholds                     |Customer: no single customer > 10% of revenue. Supplier: no single supplier > 10% of COGS + opex (ready-alternatives exception)|§2·1B|B  |
 |P16|Forces rule                            |Four forces, binary STRONG/WEAK. 0 strong → favourable; 1 strong (contained) → ADEQUATE zone; ≥ 2 strong → Future WEAK|§2·1B|B  |
 |P17|Compensation strikes                   |Top-employee total vs **5% of lower(FCF, NI)**, fiscal-year and trailing-3y reads. Absolute scrutiny trigger **US$30m in 2017 dollars, CPI-indexed ≈ US$40m (2026)**, restated at use. Outside director > **2×** the current empirical seat norm (US 2026: chair/lead ≈ $509k → stop ≈ $1.02m; ordinary ≈ $336k → stop ≈ $672k; CPI-indexed $333k → $666k floor default). Scale to local norms|§2·1C·1|B/P|
@@ -385,7 +385,7 @@ When the user reports a transaction ("bought X @ Y", "added", "sold"): update th
 
 ### §7.4 Register backend & maintenance
 
-You cannot write to project knowledge; the GitHub backend is the live write path. Memo files, `_REGISTER.md`, and this framework live as Markdown in the repo (synced to the user's Obsidian vault); project-knowledge copies are a search convenience, never the source of truth.
+Chat sessions cannot write to project knowledge; the GitHub backend is the live write path. The one exception is the unattended DRAFT session (§8.6), which writes **project files only** — `DRAFT_QUEUE.md`, `inbox/`, `runs/` — and never the repo. Memo files, `_REGISTER.md`, and this framework live as Markdown in the repo (synced to the user's Obsidian vault); project-knowledge copies are a search convenience, never the source of truth.
 
 - **Config (repo, branch, paths, token) lives in the BOOTSTRAP** — the static project instructions — so this file never carries the secret. Token terms and handling per the bootstrap and §7.4a. Connection verified 2026-07-06 (write + delete round-trip).
 - **RECONCILE batches (always available).** Whatever the backend, §8.5 rebuilds the register from past chats and project memos in one pass, so mobile sessions never need to sync anything — one reconcile at the PC (one §7.4a commit) catches everything up.
@@ -432,7 +432,7 @@ The live `_REGISTER.md` stays lookup-thin; history lives in `registers/{YYYY}/`.
 
 ## §8. MODE PLAYBOOKS
 
-Modes are detected in the bootstrap (needed before this file is fetched): ANALYSE · REVIEW · SWEEP · MODEL · RECONCILE. **Before any web work in a register-touching mode:** the live register has been fetched per §7.4a and the repo `memos/` tree (one folder per key) checked for an existing memo — **searched on company name and ISIN, not on the ticker key** (§7.1a). The key is precisely what a second session most easily gets wrong, and a key-only check is what produced the Saint-Gobain double row (register v226–v231). Project knowledge as fallback.
+Modes are detected in the bootstrap (needed before this file is fetched): ANALYSE · REVIEW · SWEEP · MODEL · RECONCILE · DRAFT [v4.3.0]. **Before any web work in a register-touching mode:** the live register has been fetched per §7.4a and the repo `memos/` tree (one folder per key) checked for an existing memo — **searched on company name and ISIN, not on the ticker key** (§7.1a). The key is precisely what a second session most easily gets wrong, and a key-only check is what produced the Saint-Gobain double row (register v226–v231). Project knowledge as fallback.
 
 ### §8.1 ANALYSE
 
@@ -467,16 +467,28 @@ Modes are detected in the bootstrap (needed before this file is fetched): ANALYS
 1. Fetch `queue/IDEAS.md`; where the proposal has a parked entry, open from it and update its status at commit [v4.2.0]. Restate the proposed change and its rationale; stress-test it against the doctrine (three-question order, one-strike SF, primaries-decide price discipline, worst-of-four testing, no one-off tweaking, tax-respecting sell discipline). Push back if it fails — then defer to the user's decision.
 2. Draft the **complete amended MODEL.md** — version bumped per the §0 semver rules, change-log entry prepended — and print the exact diff in chat: every touched section, old text → new text. Never a fragmentary description in place of the diff. **Where a change touches a parameter, the diff must show both the defining section and the §3 value row [v3.10.0].**
 3. Scan the register and list every name whose verdict or zone could flip under the change, with one-line reasons, so stale memos can be queued for REVIEW.
-4. On the explicit words **"commit model"** (never inferred, never bundled with another confirmation, never covered by session auto-commit): (a) archive the outgoing live version to `model/archive/MODEL_v{old}_{YYYY-MM-DD}.md` (PUT, new path, no sha); (b) PUT the new `model/MODEL.md` (with its current sha); (c) report both commit URLs. The change takes effect from the next session's fetch; within the current session, apply it immediately.
+4. On the explicit words **"commit model"** (never inferred, never bundled with another confirmation, never covered by session auto-commit): (a) archive the outgoing live version to `model/archive/MODEL_v{old}_{YYYY-MM-DD}.md` (PUT, new path, no sha); (b) PUT the new `model/MODEL.md` (with its current sha); (c) **regenerate and PUT `model/DRAFT_CARD.md` [v4.3.0]** — front matter `card_title`, `derived_from: v{new}`, `card_date`, the fixed DRAFT preamble, then §2, §3, §4, §5, §6 and §9 of the new file **verbatim** (extracted, never paraphrased — the card must not drift from this file); (d) report all commit URLs and remind the user to **upload the new card to project files** (chat sessions cannot write there). Until it is uploaded, DRAFT memos fail intake on any MAJOR or MINOR bump (§8.6 step 7). The change takes effect from the next session's fetch; within the current session, apply it immediately.
 5. If the change touches bootstrap territory (config, resident guardrails, the mode table): additionally output the full new bootstrap text with its version bumped, remind the user it must be **pasted into Claude project settings manually** (the bootstrap cannot self-modify), and commit the token-redacted mirror to `model/BOOTSTRAP.md`.
 
 ### §8.5 RECONCILE
 
 1. Fetch the current register per §7.4a and note its `register_date` and version.
-2. Search past chats (conversation_search / recent_chats) for every ANALYSE, REVIEW, and position event since that date; cross-check against the memo files actually present in the repo `memos/` folder (and project knowledge).
+2. Search past chats (conversation_search / recent_chats) for every ANALYSE, REVIEW, and position event since that date; cross-check against the memo files actually present in the repo `memos/` folder (and project knowledge); **draft-inbox memos in project files (`inbox/`) enter here and are accepted or rejected per §8.6 step 7 [v4.3.0]**.
 3. Output, in one reply: (a) the complete replacement register file — front matter version bumped, all new/changed master rows merged into their verdict sections per the §7.1 ordering rule, portfolio table current, one-line change-log entries prepended and the log trimmed per §7.5 (a batch reconcile is one commit — one snapshot of the pre-reconcile base); (b) the list of memo files produced in chats but missing from the repo, committed in the same pass where recoverable; (c) any memo-vs-register conflicts, resolved memo-wins with a note.
 4. Commit the register (and any recovered memos) per §7.4a and report the commit URLs; on API failure deliver everything as one paste-ready block/file. No web work; past-chats tools only.
 5. **Triage [v4.2.0]:** `## Open items` against the §7.1 two-class rule (route strays to `queue/TODO.md` / `queue/IDEAS.md`); `queue/TODO.md` for staleness — an item 90+ days old with no dated trigger is re-dated, demoted to IDEAS, or struck; `queue/IDEAS.md` statuses against the MODEL change log.
+
+### §8.6 DRAFT [v4.3.0]
+
+Unattended ANALYSE producing **draft-inbox memos in the Claude project files**; triggered by a scheduled (Cowork) task or the explicit words "draft KEY". Designed for the environment the 2026-09-11 probe documented: repo traffic proxy-gated, credentials refused by the host, project knowledge search-only. **No credential exists for this mode and none may be requested, loaded or transmitted.** The repo is never read or written; the operative framework is `DRAFT_CARD.md` in project files, not this file.
+
+1. **Load.** From project files: `DRAFT_CARD.md` (record `derived_from`) and `DRAFT_QUEUE.md`. Either missing → write `runs/DRAFT_{YYYY-MM-DD}_ABORT.md` naming the gap and stop. The synced register mirror (project-knowledge search) is **advisory orientation only** — it lags the live head by however long since the user last re-synced and is never quoted as a live read.
+2. **Housekeeping.** For every `[~]` queue line, search the mirror for the key: a register row present means RECONCILE has landed it → delete `inbox/{KEY}_*.md`, rewrite the line `[x] {date}`. Lines with no row are left untouched.
+3. **Pick and claim.** Take the first `[ ]` line whose key has neither an inbox file nor a mirror row; rewrite it `[~] drafted {YYYY-MM-DD}` **before any research** (the claim). A key found in the mirror is REVIEW territory: mark `[x] prior — REVIEW` and skip. Held names never enter the queue. Queue exhausted → run note, stop.
+4. **Analyse.** §8.1 steps 1–8 under the card, budget P14 (DRAFT), full §6 memo: verdicts stated plainly and never softened, every figure labelled sourced / input / assumption. Step 8's commit is replaced by step 5 below; the §6.5 sequence does not run. Front-matter additions: `memo_status: draft-inbox`, `produced_by: DRAFT`, `card_version: {derived_from}`, `register_version_seen: {mirror front matter | "n/a — mirror silent"}`. `model_version` is set to the card's `derived_from` — a card read, not a live read, and labelled as such.
+5. **Output.** Write `inbox/{KEY}_{YYYY-MM-DD}_GSC.md` and `runs/DRAFT_{YYYY-MM-DD}_{KEY}.md` (verdict line, sources and document count, exploratory ops used, housekeeping actions, anything skipped) to project files, and emit the memo as a session output file for redundancy. The register row is printed for information only, headed "draft — not authoritative".
+6. **Forbidden.** Any repo read or write; any register row, zone, ADD or SELL-FLAG statement; REVIEW of any name; position events; edits to MODEL, TODO, IDEAS or the card; any project file outside `inbox/`, `runs/`, `DRAFT_QUEUE.md`; any credential handling; any retry of a blocked network path. A DRAFT memo has no standing until intake.
+7. **Intake (performed by RECONCILE, §8.5 step 2, from project context).** Accept iff: `card_version` equals the live `model_version` at MAJOR.MINOR (PATCH drift accepted); §6 front matter and body complete with the gates evaluated in order; every figure labelled; no held-name zone statement; P13 respected. Accepted → `memo_status` and `produced_by` struck, `model_version` restated as the live version, Appendix G line "promoted from DRAFT under card v{x}", committed to `memos/{KEY}/`, row merged into the rebuilt register. Rejected → `queue/evidence/{KEY}_{YYYY-MM-DD}_DRAFT-REJECTED.md` with the reason; the user resets (`[ ]`) or strikes the queue line. The user re-syncs project knowledge at the end of every RECONCILE so that step 2 can clean the inbox at the next run.
 
 -----
 
@@ -492,6 +504,10 @@ Modes are detected in the bootstrap (needed before this file is fetched): ANALYS
 
 -----
 
+## v4.3.0 CHANGE LOG (2026-09-12)
+
+- **MINOR release (v4.2.2 → v4.3.0) — new unattended mode, no mechanics moved; §8.4 step-3 scan: zero names flip.** New **§8.6 DRAFT**: scheduled ANALYSE in a proxy-gated, credential-free host, running under `DRAFT_CARD.md` (project files) and writing draft-inbox memos to project files only; memos gain standing solely at RECONCILE intake (§8.6 step 7, cross-referenced from §8.5 step 2 — RECONCILE's scope is otherwise unchanged; SWEEP untouched). Consequential edits: §0 release flow and §8.4 step 4 gain the card regeneration (verbatim §2–§6, §9 extract, `derived_from` stamped, user uploads to project files); P14 gains the DRAFT budget; §7.4 opening corrected (chat sessions cannot write project knowledge; DRAFT writes project files only); §8 mode list. **Requires BOOTSTRAP v1.2.0** (DRAFT mode row, proxy-gated resident rule, fetch-failure exception for draft-inbox memos, `draft_card` and project-files config). Cause: 2026-09-11 Cowork probe — repo traffic terminated by the agent proxy, PAT materialisation refused by the host classifier, project knowledge search-only and stale by ≥ 8 days.
+
 ## v4.2.2 CHANGE LOG (2026-09-12)
 
 - **PATCH release (v4.2.1 → v4.2.2) — two path corrections to v4.2.1 (2026-09-10), zero rules moved, zero names flip.** (1) Register snapshots live at **`registers/{YYYY}/`**, not `registers/archive/{YYYY}/`: the live register is `_REGISTER.md` at the repository root, so the `registers/` folder *is* the archive and the extra level carried no information (§7.4a step 3, §7.5). (2) The `status: moved` stub at `instructions/MODEL.md` is **struck** and the `instructions/` folder ceases to exist; the transition is closed by BOOTSTRAP v1.1.1 (`register_archive: registers/{YYYY}/`), pasted in the same session. Cause: user review of the v4.2.1 tree.
@@ -504,12 +520,6 @@ Modes are detected in the bootstrap (needed before this file is fetched): ANALYS
 
 -----
 
-## v4.2.0 CHANGE LOG (2026-08-18)
-
-- **Open-items routing (§7.1, §7.5, §8.4, §8.5) [user doctrine call].** The register carries state, never findings: `## Open items` admits only pending user decisions and register-integrity holds (one line each, cap 7). Work routes to `queue/TODO.md`; framework ideas to `queue/IDEAS.md` (new standing file under the §7.5 pattern); per-name re-tests to row cells + memo appendices. RECONCILE gains a triage step; MODEL sessions open from IDEAS. Cause: 108 accumulated open items — the majority essay-length duplicates of memo appendices in breach of §7.1's own one-line rule — cleared at register v257 (2026-08-18); disposition map at `registers/archive/RECONCILE_open-items_2026-08-18.md`.
-- **Standing methods codified from adopted practice (no behaviour change):** primary-interim-debt rule (§4); extraction-conflict rule (§4); `n.m.`-band restoring-OI statement (§2 Gate 2); commit-time compliance re-measure — P13 count, cell/log caps, four-gates check, register-wide comparatives computed at commit or struck — plus same-day memo archival to `memos/archive/` (§7.4a).
-- **MINOR release (v4.1.0 → v4.2.0)** — protocol and mode-step changes only; no threshold, gate, band, zone or ordering mechanics move. §8.4 step-3 scan: **zero names flip.** Verdict-affecting doctrinal questions were deliberately NOT decided here — parked with recommendations in `queue/IDEAS.md` A1–A7 for dedicated MODEL sessions.
-
 -----
 
-*Older change logs (v3 – v4.1.0): archived verbatim in `model/archive/` MODEL_v* snapshots, per the §0 cap.*
+*Older change logs (v3 – v4.2.0): archived verbatim in `model/archive/` MODEL_v* snapshots, per the §0 cap.*
