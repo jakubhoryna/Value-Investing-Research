@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v292
+register_version: v293
 register_date: 2026-09-13
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v292 · 2026-09-13)
+# GSC Register — Master Watchlist (v293 · 2026-09-13)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -302,7 +302,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | PSH.L (was PSH) | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID (SF FAIL: fee extraction) | ADEQUATE | ADEQUATE | FAIL | £37.96 (PSH.L close 8 Jul 2026; ≈$51.7) | n.m. — closed-end fund; MCap/NAV anchor ≈0.65× (~35% discount, price/£58.03 NAV 16 Jun); book primaries n.m.; moot given AVOID | — | FY2026 AR (~Feb 2027); or any fee change / discount-collapsing corporate action (US relisting, open-ending, liquidation) |
 | PTON | Peloton Interactive, Inc. | 2026-08-08 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: Stern $18.24m vs $16.19m FY25 FCF-leg ceiling, 3y read no positive leg; Oct 2026 proxy re-test severity-only — FY26 ceiling $3.16m) | $5.66 (7 Aug 2026) | Unattainable — EV/OI no-cash bound −$1.33 (debt > 7×OI), all-cash $1.42; **MCap/FCF leg $6.89 above price but SBC = 55% of FCF** | — | 4-gate AVOID; Σ window OI −$4.3bn, equity negative, subs −8.8%/yr; FY2027 results (~Aug 2027); the run's most instructive primary split |
 | PVH | PVH Corp. | 2026-08-20 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — P17 FY-read 12.8×, normalized acquits; P19 SOUND @6.6× FCF; Hilfiger comp INDETERMINATE) | $82.47 (14 Aug 2026 close — stale, SWEEP refreshes) | CHEAP ≈ $16.09–28.86 (EV/OI no-cash/all-cash, ex-imp FY25 OI; reported-OI legs n.m., restore at OI ≈$603m) — FAIR 11.3×/10.5× | — | FY2026 10-K (~Mar 2027): ROCE floor needs OI ≈$970m; 6y record-limited, FY16–19 rebuild queued; ASC 842 lease-in-EV sensitivity in memo App. F |
-| PYPL | PayPal Holdings, Inc. | 2026-09-04 | v4 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (cap-alloc CAUTION, 1 flag; P17 clean FY25 — Lores FY26 total may clear ~$40m trigger → pair → FAIL at ~Apr-27 proxy) | $56.82 (3 Sep 2026) | CHEAP ≈ $33.96–47.12 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ $52.03; no P12) — FAIR 8.7×/8.4× | — | Bid lapsed 27–28 Aug (Bloomberg; no 8-K) — px de-pinned; Q3'26 ~late Oct; DEF 14A ~Apr 2027 P17 re-test |
+| PYPL | PayPal Holdings, Inc. | 2026-09-13 | v5 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (cap-alloc CAUTION, 1 flag; P17 clean FY25 — Lores FY26 total may clear ~$40m trigger → pair → FAIL at ~Apr-27 proxy) | $53.72 (11 Sep 2026) | CHEAP ≈ $33.96–47.12 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ $52.03) — FAIR 8.3×/7.9× | — | Q3'26 27 Oct 2026; DEF 14A ~Apr 2027 P17 re-test; standalone plan (WSJ 11 Sep, press) |
 | RACE.MI (was RACE) | Ferrari N.V. | 2026-07-31 | v2 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | €340.10 RACE.MI / $393.87 (31 Jul 2026) | CHEAP ≈ €63 (MCap/FCF binds; EV/OI cons leg ≈ €67; P12 edge ≈ €67) — EXPENSIVE 29.4×/30.1× EV/OI, 43.1× MCap/FCF | — | FY2026 20-F (~Feb 2027): 1st completed yr of the €3.5bn 2026–30 pgm + judgment re-test; H1-26 (~early Aug) cadence; highest execution multiples in the register |
 | ROK | Rockwell Automation, Inc. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $480.08 (31 Jul 2026) | CHEAP ≈ $77 (EV/OI binds; MCap/FCF leg ≈ $96; no P12 — Past ADEQUATE) — EXPENSIVE 33.8× EV/OI, 40.0× MCap/FCF. MCap/TBV n.m. (TBV −$1.0bn, buyback-depleted) | — | FY2026 10-K (~Nov 2026): completed pgm yr vs H1's $608m + re-test; Q3 FY26 print 4 Aug 2026 cadence; ~$1.3bn authorised and largely undrawn |
 | RUN | Sunrun Inc. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (pair: P17 normalized-read breach, no positive 3y leg vs CEO $8.33m + P19 CAUTION debt-funded capex) | $10.20 (7 Aug 2026) | n.m. — both primaries unmeasurable (FY25 OI −$126m, FCF −$2.92bn); TTM EV/OI bounds −$62.5/−$59.8 | — | First register name below TBV (0.70×) failing both primaries; FY2026 10-K (~Feb 2027); post-25D demand data; 2027 proxy P17 re-test |
@@ -386,10 +386,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v293 — 2026-09-13** — PYPL v5 fresh ANALYSE: AVOID (Future WEAK) held, no gate moves. Px $56.82 → $53.72; MCap/FCF 8.3× (TTM 7.0×); band unchanged $33.96/$47.12; FY2024 BS conflict resolved.
 - **v292 — 2026-09-13** — GOOGL v5 fresh ANALYSE: **WATCH → AVOID** (Future WEAK, 2 strong forces; SF FAIL — P17 $42.2m vs $41.0m indexed + P19 CAUTION). Merge repair over parallel META v291.
 - **v291 — 2026-09-13** — META v5 fresh ANALYSE: WATCH held. P19 gains 3y-norm reads (2021 26.3×, 2025 25.4× EV/OI) — CAUTION survives; forces rebuilt binary; Dist +171% → +197%; P12 edge $239.
 - **v290 — 2026-09-13** — 2330.TW (TSMC) v2 fresh ANALYSE: verdicts unchanged (WATCH). P20 off — capex/sales back at pre-cycle 33.6%; band ≈NT$600 → ≈NT$306 (MCap/FCF binds); Dist +281% → +687%.
 - **v289 — 2026-09-12** — NKE v4 fresh ANALYSE: **WATCH → AVOID**. Past→WEAK (P4 decline, FCFROCE 22.8→12.3→7.7); Future→WEAK (eroding moat). SF PASS held; FY2026 proxy closed P17 gap.
-- **v288 — 2026-09-11** — SWEEP (partial: held + BRK.B, 10 Sep closes) + RECONCILE (322 memos vs rows, 0 conflicts). No verdict/band moved. CROX $108.83 +11% NEAR; TROW +56%; NOVO-B +57%; HFG €2.80.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
