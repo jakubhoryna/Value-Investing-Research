@@ -1,8 +1,19 @@
-# GSC Work Queue — TODO.md (v33 · 2026-09-13)
+# GSC Work Queue — TODO.md (v34 · 2026-09-13)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
 **Ticker discipline.** Tickers are suggested keys for convenience; resolved and verified at run time per §7.1a (prior-check on company name + ISIN, never the key alone).
+
+---
+
+## ▶ Routed from the NOVO-B.CO v9 fresh ANALYSE, register v296 (2026-09-13)
+
+1. **`NOVO-B.CO` (held) — SELL-FLAG SR2 is a pending user decision** (register Open items). The flag is quality — Future WEAK (moat eroding; breadth FAIL, waiver refused; two strong forces) + SF FAIL (P19 CAUTION + RPT flag) — not price; P9 ≈ DKK 697 is not tripped. Log the decision and realised outcome in the register.
+2. **`NOVO-B.CO` — AR-2025 notes 2.1 and 5.4 not retrieved.** The 2025 wholesaler-concentration sentence and the 2025 related-party table (any Novo Holdings share sales in 2025; new transactions) are owed. The 2024 20-F disclosures (23/17/17%; Catalent DKK 82.1bn; DKK 10.2bn of shares bought from Novo Holdings) are the latest primary read. Backfill at the next touch; re-test the RPT flag at AR-2026.
+3. **`NOVO-B.CO` — P4 named re-test at FY2026 (3 Feb 2027).** FCFROCE fell FY2023–25 on the end-of-period bases and ROCE FY2024–25 on all four; not applied at v9 (capex build-out, P20 conditions met, AMZN v3 precedent). If FY2026 shows a third consecutive ROCE decline on every basis **with operating income itself lower**, P4 downgrades Past one tier (MSFT v4 precedent). Also owed at FY2026: the framework CFO reconstruction for the 1 Jan 2026 interest reclassification (H1: 79,283 + 342 − 2,759 = 76,866), and the 340B-reversal-adjusted operating income (DKK 26.8bn non-cash in Q1 2026) — the band should be re-anchored on adjusted OI, labelled.
+4. **`NOVO-B.CO` — 2018 and 2025 repurchase share counts not retrieved** (FY2018 and FY2025 treasury-share notes); yardstick-moot years, backfill opportunistically.
+5. **`NOVO-B.CO` — Q3 2026 (4 Nov) events:** ziltivekimab impairment (HERMES/ATHENA halted 7 Sep 2026; ARTEMIS continues to H1 2027); CagriSema US decision by year-end; CMD 21 Sep 2026 new strategic aspirations — moat evidence (share, net price, pipeline replacement) is the re-test.
+6. **Retrieval note — EDGAR `Financial_Report.xlsx` is the cheap primary route for IFRS 20-F filers.** The XBRL workbook of each 6-K/20-F (`/Archives/edgar/data/{cik}/{accession}/Financial_Report.xlsx`) returns the full statements first and every note after, in the reporting currency, and the fetch tool renders it as HTML; a decade of Novo (FY2015–FY2025, 11 balance sheets) was rebuilt from five of them plus two results releases. URLs must first be surfaced by a search (the tool refuses unseen URLs) — searching the indexed title form `"Quarterly Earnings Tables - quarter ended Dec YYYY"` / `"Annual Financial Statement Tables - full year YYYY"` works. The company-announcement HTML (`caqNYYYY.htm`) truncates before the appendices for the 40-page year-end releases even at a 90k limit; the shorter interim releases (≤37 pp) get through. Append to the retrieval doctrine (block D).
 
 ---
 
