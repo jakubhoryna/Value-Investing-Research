@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v294
+register_version: v295
 register_date: 2026-09-13
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v294 · 2026-09-13)
+# GSC Register — Master Watchlist (v295 · 2026-09-13)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -272,7 +272,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ML.PA | Compagnie Générale des Établissements Michelin SCA | 2026-08-06 | v1 | AVOID (Past WEAK: w-o-4 ROCE 8.39% + P4 3 straight declines) | WEAK | ADEQUATE | PASS (1 flag — cap-allocation CAUTION; SCA control caveat UNPAIRED) | €34.17 (6 Aug 2026) | CHEAP ≈ €12.5–17.5 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ €21.6; no P12) — EXPENSIVE | — | FY2026 (~Feb 2027) + URD-26: P4 4th-decline, €750m mandate close, **OI-line re-test (seg-OI 10.09% → WATCH)**, FY17–20 rebuild |
 | MMB.PA | Lagardère SA | 2026-08-07 | v1 | AVOID (Past WEAK: w-o-4 ROCE 5.11% + L/E 980% > P6 cap; Future WEAK: 3 forces) | WEAK | WEAK | PASS (cap-alloc SOUND; LHG control caveat UNPAIRED 1.05× wedge; RPT + acq audits INDETERMINATE) | €18.78 (6 Aug 2026) | n.m. — **no positive price clears EV/OI ≤7 on either variant** (debt+leases+NCI+puts 5,175 > 7×OI 4,291); MCap/FCF leg €20.7–61.4 | — | FY2026 (25 Feb 2027) + URD-26: RPT note + acq audits INDETERMINATE, FY19–20 rebuild; €500m pgm undrawn; structural |
 | MONC.MI (was MONC) | Moncler S.p.A. | 2026-07-28 | v1 | AVOID (SF FAIL: flag pair — P19 FY22 buyback + Stone Island acquisition audit) | ADEQUATE (5y window) | ADEQUATE | FAIL | €47.60 (28 Jul 2026) | CHEAP < ≈ €19.4–21.8 (EV/OI no-cash / MCap/FCF all-cash) — EXPENSIVE 15.4×/13.8×, 17.5× | — | FY2026 AR (~Feb 2027): 3rd ROCE_wc decline fires P4; Rem. Report verifies P17; SPW D&A + FY22 tranche price INDETERMINATE |
-| MSFT | Microsoft Corporation | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | STRONG | ADEQUATE | FAIL | $464.72 (31 Jul 2026) | CHEAP ≈ $138–148 (EV/OI cons/all-cash, **FY2026 basis**, P20 maint; MCap/FCF maint leg $158 = P12 edge; strict all-capex ≈ $72) — EXPENSIVE 22.6×/22.1× | — | FY2026 proxy (~Oct 2026) P17 absolute-trigger flag; Q1 FY27 10-Q cadence on the $40.6bn left; FY2027 10-K (~Jul 2027) completed pgm yr + re-test |
+| MSFT | Microsoft Corporation | 2026-09-13 | v4 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE (was STRONG — P4 5th decline) | ADEQUATE | **FAIL** | $495.63 (11 Sep 2026) | CHEAP ≈ $129–139 (EV/OI no-cash/all-cash, **FY2026 basis**, P20 maint; MCap/FCF maint leg $158; all-capex $72; **no P12**) — EXPENSIVE 24.5×/24.0× | — | FY2026 proxy (~Oct 2026) P17; **Sept-2026 div/buyback declaration**; Q1 FY27 10-Q cadence on $40.6bn left; FY2027 10-K P4 trend + P20 anchor |
 | MU | Micron Technology, Inc. | 2026-07-09 | v1 | AVOID (Future WEAK + SF FAIL: P19 buybacks) | ADEQUATE | WEAK | FAIL | $1,009.23 (9 Jul 2026) | CHEAP < ≈ $12 (MCap/FCF, FY25 all-capex FCF; EV/OI leg ≈ $78; no P12) — maximally stale; FY2026 10-K re-anchors ~10× | — | FY2026 10-K (~Oct 2026) band re-anchor only — structural: breadth FAIL + 2 strong forces + P19 hard strike (FY2024 tranche 85× EV/OI) |
 | NEE | NextEra Energy, Inc. | 2026-08-09 | v1 | AVOID | WEAK | STRONG | PASS (structural CAUTION unpaired) | $84.65 (7 Aug 2026) | n.m. — both EV/OI bounds negative (−$25.00 no-cash / −$23.62 all-cash); price needs OI ≈ $41.0bn | — | Structural utility (ROCE 3–5%; Σ7y FCF ≈ −$70bn); largest MMB.PA-class instance; no flip path |
 | NESTE.HE | Neste Oyj | 2026-08-07 | v1 | AVOID | WEAK | **WEAK** | PASS (1 flag — cap-alloc CAUTION: supercycle FIDs + Martinez impairment; state ~36% unpaired) | €28.41 (7 Aug 2026) | n.m.-negative on FY25 basis (EV/OI no-cash bound −€2.16 — debt > 7×OI; MCap/FCF leg €8.59; backvalued 2022-cycle leg ≈ €14.21, labelled) | — | FY2026 (~Feb 2027): RD margin vs the capacity glut; **2 gates** — flip needs a full margin cycle cleared + per-share record restored (ΔOI/sh −8.8%/yr) |
@@ -386,10 +386,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v295 — 2026-09-13** — MSFT v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE on 4-read tranches). Past STRONG→ADEQUATE (P4 5th decline). EV lease fix +$72bn: band $138–148 → $129–139.
 - **v294 — 2026-09-13** — AMZN v3 fresh ANALYSE: WATCH held. Band $44.5–56.0 → $31–42 (H1-26 debt, LTD face $69→$133bn; tighter P20 anchor); P19 → CAUTION; Dist +514%. Re-merged over PYPL v293.
 - **v293 — 2026-09-13** — PYPL v5 fresh ANALYSE: AVOID (Future WEAK) held, no gate moves. Px $56.82 → $53.72; MCap/FCF 8.3× (TTM 7.0×); band unchanged $33.96/$47.12; FY2024 BS conflict resolved.
 - **v292 — 2026-09-13** — GOOGL v5 fresh ANALYSE: **WATCH → AVOID** (Future WEAK, 2 strong forces; SF FAIL — P17 $42.2m vs $41.0m indexed + P19 CAUTION). Merge repair over parallel META v291.
 - **v291 — 2026-09-13** — META v5 fresh ANALYSE: WATCH held. P19 gains 3y-norm reads (2021 26.3×, 2025 25.4× EV/OI) — CAUTION survives; forces rebuilt binary; Dist +171% → +197%; P12 edge $239.
-- **v290 — 2026-09-13** — 2330.TW (TSMC) v2 fresh ANALYSE: verdicts unchanged (WATCH). P20 off — capex/sales back at pre-cycle 33.6%; band ≈NT$600 → ≈NT$306 (MCap/FCF binds); Dist +281% → +687%.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
