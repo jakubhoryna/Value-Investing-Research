@@ -1,7 +1,7 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v296
-register_date: 2026-09-13
+register_version: v297
+register_date: 2026-09-25
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
 verdict_split: "WATCH 64 · AVOID 256 · BUY 0 · DNAF 2"
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v296 · 2026-09-13)
+# GSC Register — Master Watchlist (v297 · 2026-09-25)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -132,7 +132,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | 7751.T | Canon Inc. | 2026-08-07 | v1 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: FY25 distributions 2.1× FCF, debt-bridged; escalating criterion-free ladder) | ¥4,535 (7 Aug 2026) | CHEAP < ≈ ¥1,946 (MCap/FCF binds; EV/OI legs ¥2,378/¥3,082 sit FAIR-corridor) — EXPENSIVE on FCF primary | — | FY2026 (~Jan 2027): buyback funding-mix re-test; w-o-4 6.1%/4.9%, no year ≥8% in ten; alert < ≈ ¥2,000 |
 | 8TRA.ST (was 8TRA) | TRATON SE | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Navistar audit) | WEAK | ADEQUATE | FAIL | €36.04 (22 Jul 2026; 52-wk high €37.34) | n.m. — no positive price clears EV/OI ≤7 (captive debt €27.4bn) or MCap/FCF (FCF −€1.9bn); captive-adj. alt ≈ €16.7 — EXPENSIVE, moot | — | FY2026 AR (~mid-Mar 2027); structural — w-o-4 ROCE 4.4% + P19 strike (ages out ≥FY2031); no price flips it |
 | AAPL | Apple Inc. | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | ~$308 | CHEAP < ≈ $53 (MCap/FCF; P12 edge ≈ $55 via EV/OI) | — | FY2026 10-K (~Oct/Nov 2026) or Jan 2027 proxy — SF flip requires comp reform; earlier if price < ~$60 |
-| ABB (ABBNY ADR 1:1) | ABB Ltd | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $98.84 ADR (31 Jul 2026; CHF 78.66) | CHEAP ≈ $18.6–22.2 ADR (EV/OI no-cash/all-cash, FY25 basis; MCap/FCF leg ≈ $19.5; no P12) — EXPENSIVE 30.1×/31.0× | — | AR-2026 (~Feb 2027): completed 2026 pgm yr + Rotork/Advantics closing multiples; ADVERSE rests on ~$1.6bn undrawn at 29.3× EV/OI with no price criterion |
+| ABB (ABBNY ADR 1:1) | ABB Ltd | 2026-09-25 | v4 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | STRONG | FAIL | $97.88 ADR (24 Sep 2026) | CHEAP ≈ $18.1–18.7 ADR (no-cash EV/OI / all-cash MCap/FCF binds; FY25 cont.; no P12) — EXPENSIVE 30.0×/30.9× | — | Q3'26 (~late Oct 2026): pgm pace + Robotics close; AR-2026 (~Feb 2027): full 2026 pgm yr + Rotork audit |
 | ABCA.PA | ABC arbitrage SA | 2026-09-04 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (1 flag — cap-alloc CAUTION: Momentum 2028 €15–25m cost ramp + scrip seed-capital plan; P17 top-employee INDETERMINATE) | €5.12 (31 Aug 2026) | moot — CHEAP < ≈ €3.36 (MCap/NI 8×, §2·1A substitution, EV/OI n.m.; P/B 1.2× ≈ €3.41 converges) — FAIR 12.2× NI / 1.80× BV | — | H1-2026 results 22 Sep 2026 (cost ramp, AUM); FY2026 AFR ~Apr 2027: top-employee pay, scrip vote; alert < ≈ €3.60 |
 | ABM | ABM Industries Incorporated | 2026-08-20 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 strike) | WEAK | WEAK | FAIL | $47.72 (17 Aug 2026) | CHEAP ≈ $3.58–5.18 (EV/OI no-cash/all-cash; FCF leg $20.99; no P12) — EXPENSIVE 15.4×/15.1×, moot | — | FY2026 10-K (~Dec 2026) + 2027 proxy: P17 re-read, P19 forward call; w-o-4 ROCE 6.2%, 4/4 forces STRONG — structural |
 | ABNB | Airbnb, Inc. | 2026-07-31 | v3 | AVOID (SF FAIL: capital allocation ADVERSE) | ADEQUATE | ADEQUATE | FAIL | $151.52 (31 Jul 2026) | CHEAP ≈ $25.4–43.1 (EV/OI no-cash/all-cash, FY25 basis; MCap/FCF leg ≈ $59.1; no P12 — Past ADEQUATE) — EXPENSIVE 31.7×/36.4× | — | FY2026 10-K + 2027 proxy (~Feb–Apr 2027) judgment re-test; Q2'26 10-Q 12 Aug 2026 cadence; ADVERSE rests on $4.5bn undrawn at 27.1× EV/OI, no criterion |
@@ -381,16 +381,16 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 - **HFG.DE (held) SELL-FLAG (SR2, re-affirmed v3 2026-08-01)** — decision deferred to FY2026 results (~Mar 2027) [user, 2026-08-18]; flag stands; log the decision + realised outcome here.
 - **NOVO-B.CO (held) SELL-FLAG (SR2, v9 2026-09-13 — Future WEAK + SF FAIL)** — user decision pending; log the decision + realised outcome here [2026-09-13].
-- **ABB — pending re-key (§7.1a)** — memo v3 prices the OTC ADR ABBNY ($98.84); bare `ABB` is a retired NYSE line. Target `ABBNY` (or `ABBN.SW` if SIX is chosen) — user call, then RECONCILE renames memos [2026-09-11].
+- **ABB — pending re-key (§7.1a)** — memo v4 prices the OTC ADR ABBNY ($97.88); bare `ABB` is a retired NYSE line. Target `ABBNY` (or `ABBN.SW` if SIX is chosen) — user call, then RECONCILE renames memos [2026-09-11].
 
 
 ---
 
 ## Change log
+- **v297 — 2026-09-25** — ABB v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE — live pgm bank-timed, no criterion). Future → STRONG. Band $18.6–22.2 → $18.1–18.7 (EV adds leases + NCI).
 - **v296 — 2026-09-13** — NOVO-B.CO v9 fresh ANALYSE: **WATCH → AVOID** (Future WEAK: eroding moat, 2 strong forces, breadth FAIL; SF FAIL: P19 CAUTION + RPT flag); Past → ADEQUATE; **SELL-FLAG SR2**.
 - **v295 — 2026-09-13** — MSFT v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE on 4-read tranches). Past STRONG→ADEQUATE (P4 5th decline). EV lease fix +$72bn: band $138–148 → $129–139.
 - **v294 — 2026-09-13** — AMZN v3 fresh ANALYSE: WATCH held. Band $44.5–56.0 → $31–42 (H1-26 debt, LTD face $69→$133bn; tighter P20 anchor); P19 → CAUTION; Dist +514%. Re-merged over PYPL v293.
 - **v293 — 2026-09-13** — PYPL v5 fresh ANALYSE: AVOID (Future WEAK) held, no gate moves. Px $56.82 → $53.72; MCap/FCF 8.3× (TTM 7.0×); band unchanged $33.96/$47.12; FY2024 BS conflict resolved.
-- **v292 — 2026-09-13** — GOOGL v5 fresh ANALYSE: **WATCH → AVOID** (Future WEAK, 2 strong forces; SF FAIL — P17 $42.2m vs $41.0m indexed + P19 CAUTION). Merge repair over parallel META v291.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
