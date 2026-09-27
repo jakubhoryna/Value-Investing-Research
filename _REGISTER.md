@@ -1,7 +1,7 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v297
-register_date: 2026-09-25
+register_version: v298
+register_date: 2026-09-27
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
 verdict_split: "WATCH 64 · AVOID 256 · BUY 0 · DNAF 2"
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v297 · 2026-09-25)
+# GSC Register — Master Watchlist (v298 · 2026-09-27)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -199,7 +199,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | DLG.MI (was DLG) | De' Longhi S.p.A. | 2026-07-28 | v2 | AVOID (SF FAIL: La Marzocco RPT pair) | ADEQUATE | ADEQUATE | FAIL | €38.82 | CHEAP < ≈ €23.79 (MCap/FCF; EV/OI leg ≈ €24.81; no P12) — FAIR 13.1×/11.6× | — | FY2026 AR (~Mar 2027): LM standalone OI re-tests 20×; hard dates Feb 2028 IPO right / Feb 2029 demerger right |
 | DOCU | Docusign, Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: buybacks + comp) | WEAK | WEAK | FAIL | $49.18 | CHEAP < ≈ $9.7 (EV/OI, consv EV) — EXPENSIVE | — | FY2027 10-K (~Mar 2027) re-anchors band |
 | DSY.PA (was DSY) | Dassault Systèmes SE | 2026-07-03 | v1 | AVOID (Past WEAK + SF FAIL) | WEAK | STRONG | FAIL | €18.39 | CHEAP < ≈ €4.7–7.8 (EV/OI, cash-treatment range) — academic given AVOID | — | FY2026 results (~early Feb 2027) or price < €10 |
-| DUOL | Duolingo, Inc. | 2026-07-07 | v1 | AVOID (Past WEAK · Future WEAK · SF FAIL: buybacks) | WEAK | WEAK | FAIL | $125.76 | CHEAP < ≈ $41 (EV/OI, conservative EV; no P12 — Past WEAK; MCap/FCF leg ≈ $60) | — | FY2026 results (~Feb 2027); earlier if price → ≈$45 or on AI-substitution / buyback news (P19 hard strike: Q1'26 repurchases at 27.4× EV/OI) |
+| DUOL | Duolingo, Inc. | 2026-09-27 | v2 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 ADVERSE) | WEAK | WEAK | FAIL | $143.51 (25 Sep 2026) | CHEAP ≈ $17.1–43.4 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ $57.6; no P12) — EXPENSIVE 53.6×/44.0× | — | FY2026 10-K + 2027 proxy (~Feb–Apr 2027): P19 re-test of 2026 tranches; FY19–20 S-1 rebuild owed (record-limited) |
 | EDEN.PA (was EDEN) | Edenred SE | 2026-07-29 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19) | WEAK | WEAK | FAIL | €28.18 (29 Jul 2026) | CHEAP ≈ €10.59–25.11 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €34.84) — FAIR 7.4×/10.8× | — | FY2026 URD (~Mar 2027): P19 re-test of 2026 tranche + Brazil PAT ruling; Past hinges on float-in-CE call (memo App. C) |
 | EKTA-B.ST (was EKTA-B) | Elekta AB (publ) | 2026-07-25 | v1 | AVOID (Past WEAK — w-o-4 ROCE 7.6% + L/E 280%) | WEAK | ADEQUATE | PASS (1 flag: dividend > FCF FY22–24, net debt rose) | SEK 47.00 (24 Jul 2026) | n.m. — no positive price clears EV/OI ≤ 7 (net debt+NCI ≈ 17.9× FY26 OI); MCap/FCF leg ≈ SEK 29.15. EXPENSIVE 94.7×/12.9× | — | H1 2026/27 (~Nov 2026); AR-2026/27 (~Jul 2027) re-anchors; structural — no price flips Past |
 | EL.PA | EssilorLuxottica SA | 2026-07-31 | v1 | AVOID (Past WEAK: w-o-4 ROCE 4.5% + SF FAIL: P19 sterilisation strikes 2021–25 + GrandVision 27.4×) | WEAK | STRONG | FAIL | €166.85 (31 Jul 2026) | CHEAP ≈ €16.4–20.6 (EV/OI no-cash/all-cash, H1-26 BS; MCap/FCF leg ≈ €64.8; no P12) — EXPENSIVE 20.6×/27.1× | — | FY2026 URD (~Mar 2027): FY26 tranche (4.56m @ €211.51) P19 re-test + Supreme/Optegra audits; Q3 20 Oct 2026 info only |
@@ -387,10 +387,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v298 — 2026-09-27** — DUOL v2 fresh ANALYSE: AVOID held (Past WEAK · Future WEAK · SF FAIL: P19 ADVERSE). Px $125.76→$143.51; band ≈$41 → $17.1–43.4 (nc/ac). Re-merged over ABB v297.
 - **v297 — 2026-09-25** — ABB v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE — live pgm bank-timed, no criterion). Future → STRONG. Band $18.6–22.2 → $18.1–18.7 (EV adds leases + NCI).
 - **v296 — 2026-09-13** — NOVO-B.CO v9 fresh ANALYSE: **WATCH → AVOID** (Future WEAK: eroding moat, 2 strong forces, breadth FAIL; SF FAIL: P19 CAUTION + RPT flag); Past → ADEQUATE; **SELL-FLAG SR2**.
 - **v295 — 2026-09-13** — MSFT v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE on 4-read tranches). Past STRONG→ADEQUATE (P4 5th decline). EV lease fix +$72bn: band $138–148 → $129–139.
 - **v294 — 2026-09-13** — AMZN v3 fresh ANALYSE: WATCH held. Band $44.5–56.0 → $31–42 (H1-26 debt, LTD face $69→$133bn; tighter P20 anchor); P19 → CAUTION; Dist +514%. Re-merged over PYPL v293.
-- **v293 — 2026-09-13** — PYPL v5 fresh ANALYSE: AVOID (Future WEAK) held, no gate moves. Px $56.82 → $53.72; MCap/FCF 8.3× (TTM 7.0×); band unchanged $33.96/$47.12; FY2024 BS conflict resolved.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
