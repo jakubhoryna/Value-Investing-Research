@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v298
+register_version: v299
 register_date: 2026-09-27
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v298 · 2026-09-27)
+# GSC Register — Master Watchlist (v299 · 2026-09-27)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -56,13 +56,13 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | FIE.DE (was FIE) | Fielmann Group AG | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 P19 acq flag; Shopko >20× INDETERMINATE) | €41.30 (28 Jul 2026) | CHEAP ≈ €16.7–19.4 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €33.25; no P12 — Past ADEQUATE) — FAIR | +113% | FY2026 AR (~Apr 2027): Shopko audit re-test + window rolls to 9y (only 8y retrievable); alert < ≈ €26 |
 | 6758.T (ADR 1:1; was SONY) | Sony Group Corporation | 2026-08-06 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION) | ¥3,626 (6 Aug 2026, TSE) | CHEAP ≈ ¥1,328–1,694 (EV/OI no-cash/all-cash, 30-Jun-26 BS; MCap/FCF leg ≈ ¥2,040; no P12) — EXPENSIVE 14.2×/14.9× | +114% | H1 FY3/27 (10 Nov 2026): 1st completed half of the ¥500bn pgm re-tests §2·1C·3; live @ ¥3,464 = 18.3× worst read; ex-FS ROCE on the 10% floor |
 | ESSITY-B.ST (ESSITY-A; was ESSITY-B) | Essity Aktiebolag (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 3 consecutive criterion-free pgm yrs above the disciplined line; BSN INDETERMINATE; dual-class caveat) | SEK 277.20 (31 Jul 2026) | CHEAP ≈ SEK 124 (MCap/FCF maint binds; EV/OI legs 127.75/137.88 no-cash/all-cash; strict all-capex 98.51; no P12) — EXPENSIVE 12.47×/12.10× | +124% | FY2026 (~21 Jan 2027) + AR: 3rd pgm as a completed tranche-yr, CAUTION re-test, BSN multiple; earlier on a Consumer Tissue separation decision |
+| MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-09-27 | v3 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION; control caveat unpaired) | €396.85 (25 Sep 2026) | CHEAP ≈ €151–176 (EV/OI no-cash/all-cash, FY25 OI) — EXPENSIVE | +125% | FY2026 (~late Jan 2027): P4 3rd ROCE-decline test + CAUTION re-test; alert < ≈ €176 |
 | 0700.HK | Tencent Holdings Ltd | 2026-08-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION, FY25 tranche 18–24× reads; P17 absolute trigger INDETERMINATE) | HKD 461.60 (12 Aug 2026) | CHEAP ≈ HKD 142–192 (EV/OI no-cash/all-cash, FY25 OI, P20 maint; strict-FCF leg ≈ HKD 168) — EXPENSIVE 18.2×/16.4× | +140% | FY2026 AR (~Mar 2027): P17 top-pay note + P19 tranche re-test; rebuild FY2016–20 record; alert < ≈ HKD 210 |
 | INTU | Intuit Inc. | 2026-08-27 | v2 | WATCH | STRONG | ADEQUATE | PASS (1 flag — P19 CAUTION, one-limb, conf ~60%; **P17 INDETERMINATE ×2 — severity-changing**: CEO $36.85m vs ≈$40m, and Cook director $1.3m vs $672k stop) | $348.00 (27 Aug 2026) | CHEAP < ≈ $118.60–144.59 (EV/OI nc/ac; FCF leg $248.87; P12 edge ≈ $155.77–181.76) | +141% | FY2026 10-K ~Sep (Q4 tranche); FY2026 proxy ~Nov = two ways to FAIL SF; alert < ≈ $182, adverse > ≈ $778 |
 | SCHN.SW (SCHP PC; was SCHN) | Schindler Holding AG | 2026-08-01 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: FY24/FY25 tranches at 2.5×/2.7× worth, no worth-referenced criterion; control caveat unpaired) | CHF 247.5 N / 254.6 PC (31 Jul 2026; blended 251.31) | CHEAP ≈ CHF 103 (MCap/FCF binds; EV/OI leg ≈ CHF 123; no P12 — Past ADEQUATE) — EXPENSIVE 19.5× FCF / 17.0×–20.0× EV/OI | +144% | FY2026 (~Feb 2027): completed tranche vs the enlarged CHF 700m pgm + CAUTION re-test; H1-2026 rpt (~mid-Aug) interim tranche; alert < ≈ CHF 130 |
 | BKNG | Booking Holdings Inc. | 2026-08-05 | v3 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: $14.5bn of $20bn pgm live, no criterion, H1 payout > FCF; exec 14.5–16.6× = record's cheapest) | $194.27 (4 Aug 2026) | CHEAP ≈ $55–78 (EV/OI no-cash/all-cash, FY2025; P12 edge $75–97; TTM x-check $59–82) — EXPENSIVE | +149% | FY2026 10-K (~Feb 2027): band + P19 + P15 supplier look-through decides Future; alert < ≈ $100 |
 | FDS | FactSet Research Systems Inc. | 2026-08-09 | v1 | WATCH | STRONG | ADEQUATE | PASS (FY2026 make-whole SCT = named strike risk; P19 SOUND) | $285.57 (7 Aug 2026) | CHEAP < ≈ $103.12–111.68 (EV/OI no-cash/all-cash; P12 edge ≈ $138.88 — FCF leg governs) | +156% | FY2026 results (~Sep 2026) + FY2026 SCT P17 re-test; alert < ≈ $139 |
 | BVI.PA | Bureau Veritas S.A. | 2026-08-06 | v1 | WATCH | ADEQUATE | STRONG | PASS (cap-alloc SOUND; Wendel caveat UNPAIRED 1.64× wedge; RPT + all acq audits INDETERMINATE) | €28.44 (6 Aug 2026) | CHEAP ≈ €8.7–10.8 (EV/OI no-cash/all-cash, FY25 statutory OI, 30-Jun-26 BS; MCap/FCF leg ≈ €14.8; no P12) — EXPENSIVE 15.9×/14.9× | +163% | FY2026 (~Feb 2027) + URD-26: 10y rebuild, €200m pgm execution, acq audits; ⚠ TTM OI −8% y/y, H1 statutory OP −16%; alert < ≈ €20 |
-| MC.PA (LVMH) | LVMH Moët Hennessy Louis Vuitton SE | 2026-07-31 | v2 | WATCH | ADEQUATE | STRONG | PASS (1 flag — cap-allocation CAUTION: 2023 buyback @ €823.1 = 37.7× MCap/FCF; Tiffany 22.1× pre-deal OI; no criterion. Control caveat UNPAIRED) | €475.15 (31 Jul 2026) | CHEAP ≈ €179 (EV/OI binds, conservative EV; MCap/FCF leg ≈ €230; no P12 — Past ADEQUATE) — EXPENSIVE 16.4×/15.6× | +165% | FY2026 (~late Jan 2027) + URD-27 (~Mar 2027): H1-26 tranche price + CAUTION re-test; P4 3rd ROCE-decline test — 2 down-yrs, H1-26 stabilised not reversed |
 | ROG.SW (SIX; RO bearer; RHHBY 8:1; was ROG) | Roche Holding AG | 2026-07-15 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 P19 flag; dual-class caveat) | CHF 366.71 (RHHBY $56.10 ×8 ×0.8171, 28 Jul 2026) | CHEAP ≈ CHF 135–138 (EV/OI no-cash / MCap/FCF; P12 edge ≈CHF 154 all-cash) — EXPENSIVE | +166% | FY2026 (~Feb 2027) resets OI/FCF; obesity Ph3 (CT-388) & US IRA/MFN pricing; alert < ≈ CHF 200 |
 | SDZ.SW (SDZNY ADR 1:1; was SDZ) | Sandoz Group AG                 | 2026-06-12 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | ~$79.43 (CHF 64.90, 28 Jul 2026) | CHEAP < ≈ $28 (mgmt-FCF) to ≈ $20 (strict). Cheapness EXPENSIVE. Thin spin-off history caveat                                           | +184% | FY2026 results (~Feb 2027), or USD into high-$20s/low-$30s; watch generic-semaglutide decision & penicillin-API normalisation                       |
 | NVS (NOVN SIX; ADR 1:1) | Novartis AG                     | 2026-07-05 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 flag)                             | $159.83 ADR (28 Jul 2026) | CHEAP ≈ $48.3–54.5 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ $73; no P12 — Past ADEQUATE) — EXPENSIVE | +193% | FY2026 (~Feb 2027) Entresto-trough resets band; alert < ~$75; IRA/MFN or pelacarsen readout. Soft WATCH                                             |
@@ -387,10 +387,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v299 — 2026-09-27** — MC.PA v3 fresh ANALYSE: WATCH held (P4 3rd-decline test at FY26). Px €475.15→€396.85; band ≈€179 → €151–176 (H1-26 BS); Dist +165% → +125%. Re-merged over DUOL v298.
 - **v298 — 2026-09-27** — DUOL v2 fresh ANALYSE: AVOID held (Past WEAK · Future WEAK · SF FAIL: P19 ADVERSE). Px $125.76→$143.51; band ≈$41 → $17.1–43.4 (nc/ac). Re-merged over ABB v297.
 - **v297 — 2026-09-25** — ABB v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE — live pgm bank-timed, no criterion). Future → STRONG. Band $18.6–22.2 → $18.1–18.7 (EV adds leases + NCI).
 - **v296 — 2026-09-13** — NOVO-B.CO v9 fresh ANALYSE: **WATCH → AVOID** (Future WEAK: eroding moat, 2 strong forces, breadth FAIL; SF FAIL: P19 CAUTION + RPT flag); Past → ADEQUATE; **SELL-FLAG SR2**.
 - **v295 — 2026-09-13** — MSFT v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE on 4-read tranches). Past STRONG→ADEQUATE (P4 5th decline). EV lease fix +$72bn: band $138–148 → $129–139.
-- **v294 — 2026-09-13** — AMZN v3 fresh ANALYSE: WATCH held. Band $44.5–56.0 → $31–42 (H1-26 debt, LTD face $69→$133bn; tighter P20 anchor); P19 → CAUTION; Dist +514%. Re-merged over PYPL v293.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
