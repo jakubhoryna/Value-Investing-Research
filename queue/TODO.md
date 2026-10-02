@@ -1,8 +1,16 @@
-# GSC Work Queue — TODO.md (v34 · 2026-09-13)
+# GSC Work Queue — TODO.md (v35 · 2026-10-03)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
 **Ticker discipline.** Tickers are suggested keys for convenience; resolved and verified at run time per §7.1a (prior-check on company name + ISIN, never the key alone).
+
+---
+
+## ▶ Routed from the HFG.DE v4 REVIEW, register v303 (2026-10-03)
+
+1. **`HFG.DE` (held) — SELL-FLAG SR2 re-affirmed; the user decision stays deferred to FY2026** (register Open items). Quality, not price: Past WEAK + Future WEAK + SF FAIL (compensation-practice flag + P19 CAUTION). FY2026 guidance cut on 24 Sep 2026 (revenue −9% to −11% cc; AEBITDA €350–370m); position [redacted] vs cost at €2.39.
+2. **`HFG.DE` — H1-2026 notes 10/11/14/15/16 not rendered** (financialfilings digital view truncates at the income statement; the CDN PDF refuses robots): current-lease split, treasury count, EPS diluted count, the €350m 5.5% 2031 bond's settlement and use of proceeds, interim RPT. Backfill at the Q3 statement (5 Nov 2026) or the FY2026 AR. If bond proceeds fund a repurchase or dividend while after-lease FCF is negative, the P19 debt-funded-distribution limb engages (memo E names the re-test).
+3. **Retrieval note — `financialfilings.com` is a working primary route for EU filers** whose IR sites are JavaScript-rendered and whose EQS document paths cannot be derived: the company page and the `/companies/{slug}/{YYYY}/` year index list every regulatory filing (ad-hocs, PDMR, voting rights, own shares, reports, §162 reports) with readable digital views. Long PDFs truncate at roughly 100k characters (HFG H1 report cut at the income statement), and the `cdn.financialreports.eu` originals refuse automated access. Append to the retrieval doctrine (block D).
 
 ---
 
@@ -308,7 +316,7 @@ Tier 3 (context only, no queue action): WATCH-name P19 flags — INVE-B.ST, FIE.
 | SKF-B.ST | **P4 — 3rd decline fires → Past WEAK**; John Sample multiple; Lex Asea separation ~Q4 2026 resets basis (re-underwrite both entities) | Q4 2026 / FY2026 AR |
 | INDT.ST | **P4 — 3rd straight decline at FY2026 → Past WEAK/AVOID**; re-read FY2026 acquisition cohort | FY2026 AR |
 | MYCR.ST | FY2026 acquisition cohort + supplier spend; P19 de-minimis + sterilisation re-test | FY2026 AR |
-| HFG.DE | FY2015-end BS if the Nov-2017 IPO prospectus surfaces (beginning-CE legs record-limited); §162 Compensation Report 2025 (P17 INDETERMINATE) | next REVIEW |
+| HFG.DE | FY2015-end BS if the Nov-2017 IPO prospectus surfaces (beginning-CE legs record-limited); H1-26 notes 10/15 (lease split, €350m bond use of proceeds) — §162 item closed at v4 (P17 PASS) | Q3 5 Nov 2026 / FY2026 AR |
 | 6702.T | FY2017–FY2023 OI/NIBCL/capex rebuild (IR archive purged; 3y window carried); FY24 OI vintage question | next REVIEW |
 | 6367.T | FY17 capital-employed inputs + Mar-16 NIBCL from FY17/FY18 tanshin (9y carried) | next REVIEW |
 | Japan comp bounds | Exact top-exec comp for 7974.T, 6367.T, 6954.T, 6301.T, 5108.T, 7751.T (all clear P17 on bounds); 7974.T outside-director fees + FY18–21 intangibles alignment | first REVIEW each |
@@ -782,6 +790,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v35 — 2026-10-03** — HFG.DE v4 REVIEW committed at register v303: **AVOID / SELL-FLAG (SR2) held, no gate moves.** New head block routes three items (SELL-FLAG decision context after the 24-Sep guidance cut; H1-26 note backfill incl. the €350m bond's use of proceeds; the financialfilings retrieval route). Named re-tests row for HFG.DE updated — the §162 / P17 item closed (PASS on the granted-and-owed basis; basis question → IDEAS D9). v34 archived → `queue/archive/TODO_v34_2026-09-13.md`.
 - **v32 — 2026-09-13** — PYPL v5 fresh ANALYSE committed at register v293: **AVOID (Future WEAK) held, no gate moves.** New head block routes four items — the FY2024 balance-sheet extraction conflict (carried $81,611m/$48,376m vs the FY2025 release's $78,725m/$45,490m, a $2,886m gross-up both sides; primary adopted; **capital employed identical at $33,235m, so no gate moves**; re-test = FY2024 10-K Item 8, whose cover carries a checked error-correction box), the FY2020–FY2024 short-term-debt-in-NIBCL defect now quantified as a sensitivity (12.9%/12.7%/12.5% worst-of-four ROCE on $1–3bn per year, never reaching the 10% floor), the FY2016–FY2023 rows still being second-hand because `data.sec.gov` is unreachable from this fetch path, and a retrieval note that **SEC 10-K fetches truncate before Item 8 — use the earnings-release 8-K exhibits for the statements**. Two stale items struck in place: the **NKE block-B draft item**, closed at register v289 on 2026-09-12 when NKE v4 committed WATCH → AVOID, and the **PAT-rotation flag**, closed 2026-09-12 per BOOTSTRAP v1.2.0. v31 archived → `queue/archive/TODO_v31_2026-09-13.md`.
 - **v31 — 2026-09-13** — *(entry reconstructed at v32: v31 bumped the header and added the 2330.TW head block but committed no change-log line — the same integrity gap logged at v16, logged rather than silently carried.)* Six items routed from the TSMC v2 fresh ANALYSE at register v290: the unsourced ISIN, the second-hand FY2025 20-F read on customer concentration and capex guidance, the P17 absolute-scrutiny INDETERMINATE with the 2026 Taiwan AR named as the re-test, the P20 re-test condition worth ≈NT$174 on the band, the ticker-field fix striking `2330.TW` from the item-5 alias list (nine names remain), and a note that stockanalysis quote-page staleness is per-page rather than per-host.
 - **v30 — 2026-09-12** — MODEL v4.2.2 / BOOTSTRAP v1.1.1 committed (paths PATCH, re-merged on register v288 / TODO v29 after a parallel commit): `registers/archive/{YYYY}/` → `registers/{YYYY}/` (242 snapshots moved incl. v287); `instructions/MODEL.md` stub struck — `instructions/` no longer exists; v29 head-block item 4 closed. Remaining: mirror MODEL v4.2.2 into project knowledge; recreate the scheduled tasks against the new paths; PAT rotation. v29 archived → `queue/archive/TODO_v29_2026-09-11.md`.
