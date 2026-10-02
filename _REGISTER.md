@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v302
+register_version: v303
 register_date: 2026-10-03
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v302 · 2026-10-03)
+# GSC Register — Master Watchlist (v303 · 2026-10-03)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -19,12 +19,12 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 ## Portfolio table (HELD names — §7.2)
 
-*Positions mirrored from the IBKR snapshot of 2026-07-06 (§7.3); entry dates not tracked (user waiver 2026-08-18). Zone distances at the 10 Sep 2026 US closes (partial sweep 2026-09-11 — held names + BRK.B only; sandbox price hosts blocked, quotes via stockanalysis.com quote pages); NOVO-B.CO at the 2 Oct 2026 Copenhagen close DKK 248.75 (NVO $37.91, 30 Sep; v10 REVIEW 2026-10-03); HFG.DE last sourced close 4 Sep 2026. Bias tick-through run — none invalidates (detail in the HFG v3, NOVO-B.CO v10, and CROX v7 memos).*
+*Positions mirrored from the IBKR snapshot of 2026-07-06 (§7.3); entry dates not tracked (user waiver 2026-08-18). Zone distances at the 10 Sep 2026 US closes (partial sweep 2026-09-11 — held names + BRK.B only; sandbox price hosts blocked, quotes via stockanalysis.com quote pages); NOVO-B.CO at the 2 Oct 2026 Copenhagen close DKK 248.75 (NVO $37.91, 30 Sep; v10 REVIEW 2026-10-03); HFG.DE at €2.39 (Lang & Schwarz, 2 Oct 2026; v4 REVIEW 2026-10-03). Bias tick-through run — none invalidates (detail in the HFG v4, NOVO-B.CO v10, and CROX v7 memos).*
 
 | Ticker | Entry date(s) | Avg cost | Verdict | Zone | ADD band (P21) | Sell-flag line (P9) | Last zone check | Next review |
 |--------|---------------|----------|---------|------|----------------|---------------------|-----------------|-------------|
 | CROX (size redacted) | n/a — not tracked | [redacted] | WATCH | **HOLD** | < ≈ $94 (no-cash bound, ex-imp FY25 OI; P12 edge $110 not ADD-eligible — Future ADEQUATE) — −13.3% away | ≈ $431 (ex-imp OI); reported-OI line ≈ $46 trips — impairment artifact, mitigated per P9 | 2026-09-11 @ $108.83 (10 Sep close) | Q3'26 29 Oct 2026 (1st tranche under ≈$2.0bn pgm); FY2026 10-K UTB/ETR note; alert < ≈ $94 |
-| HFG.DE (size redacted, XETRA; was HFG) | n/a — not tracked | [redacted] | AVOID | **SELL-FLAG** (SR2 — v3 re-verdict: Past WEAK + Future WEAK + SF FAIL [flag pair]) | n/a — AVOID | n.m. — flag is quality, not price (P9 line ≈ €13.9, labelled adj-OI) | 2026-09-11 @ €2.80 (4 Sep close) | Decision deferred (2026-08-18) → FY2026 (~Mar 2027) |
+| HFG.DE (size redacted, XETRA; was HFG) | n/a — not tracked | [redacted] | AVOID | **SELL-FLAG** (SR2 — v4 re-verdict: Past WEAK + Future WEAK + SF FAIL [flag pair]) | n/a — AVOID | n.m. — flag is quality, not price (P9 line ≈ €14.1, labelled adj-OI) | 2026-10-03 @ €2.39 (L&S 2 Oct; [redacted] vs cost) | Decision deferred (2026-08-18) → FY2026 (~Mar 2027) |
 | NOVO-B.CO (NVO ADR, 1:1; was NOVO-B) | n/a — not tracked | [redacted] | AVOID | **SELL-FLAG** (SR2 — v10 re-affirmed: Future WEAK + SF FAIL [flag pair]) | n/a — AVOID (no-cash bound ≈ DKK 170 ≈ $25 ADR, reference only) | ≈ DKK 697 ≈ $104 ADR (P9) — flag is quality, not price | 2026-10-03 @ DKK 248.75 / $37.91 (2 Oct / 30 Sep closes; [redacted] vs cost) | Decision pending (user); 9M 4 Nov 2026; AR-2026 3 Feb 2027 |
 | TROW (size redacted) | n/a — not tracked | [redacted] | WATCH | **HOLD** | < ≈ $55.5 — no-cash bound confirmed (MCap/FCF binds; P12 $66–69 excluded — Future ADEQUATE) — −48.4% away | ≈ $266 (+148%) | 2026-09-11 @ $107.55 (10 Sep close) | FY2026 (~Feb 2027); Q3'26 flows (~Oct) TDF check; alert < ≈ $82 |
 
@@ -232,7 +232,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $32.42 (10 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ $10.5, SBC-flattered FCF) | — | FY2027 10-K (~Mar 2027): first positive-OI print restores a band; P19 re-test on full FY27 buyback table |
 | HEN3.DE (was HEN3) | Henkel AG & Co. KGaA | 2026-07-16 | v1 | AVOID (Past WEAK + SF FAIL: P19 2022 buyback hard strike) | WEAK | ADEQUATE | FAIL | €74.98 (16 Jul 2026) | CHEAP < ≈ €34 (MCap/FCF binding; EV/OI leg ≈ €39; no P12) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027): P19 re-test on full 2025/26 program + Stahl/Olaplex/ATP acq audit |
 | HEXA-B.ST (was HEXA-B) | Hexagon AB | 2026-08-28 | v3 | AVOID (Past WEAK) | WEAK | ADEQUATE | PASS (v2 P19 strike withdrawn — nil repurchases since 2023; treasury frozen 21.1m sh) | SEK 101.75 (27 Aug 2026) | CHEAP < ≈ SEK 8.95 / 17.84 (EV/OI no-cash/all-cash, FY25 continuing OI). EXPENSIVE. No P12 | — | Q3 2026 interim (~late Oct); Past cannot re-base before FY2027 — no post-Octave ROCE year exists (BS not restated) |
-| HFG.DE (was HFG) | HelloFresh SE | 2026-08-01 | v3 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €2.80 (4 Sep 2026) | CHEAP unattainable on reported FY25 OI (neg.); labelled adj-OI strict ≈ €1.4 (AC leg; NC leg n.m.); FCF-leg €7.62. Cheapness FAIR | — | FY2026 results (~mid-Mar 2027); earlier on 2+ quarters group order growth or announced pay-system reform. Say-on-pay rejected 4th time (54.7% against) |
+| HFG.DE (was HFG) | HelloFresh SE | 2026-10-03 | v4 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | €2.39 (L&S 2 Oct 2026) | CHEAP n.m. (EV/OI; FY25 OI neg. — no-cash restores at OI ≈ €108m); labelled adj-OI ≈ €1.48 all-cash / n.m. no-cash; FCF leg €7.70. FAIR | — | FY2026 results (~Mar 2027); Q3 5 Nov 2026 delta (orders, bond use); earlier on 2+ qtrs group order growth. FY26 guide cut 24 Sep |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17 + P19) | WEAK | WEAK | FAIL | $71.67 | n.m. — EV/OI ≤7 unattainable (7×OI < net debt + pref); MCap/FCF leg ≈ $33 | — | FY2026 10-K (~Feb 2027): first Vantage-consolidated FY; re-test substitution rule |
 | HLAG.DE (was HLAG) | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID (Future WEAK: customer power + entrants STRONG, no moat) | ADEQUATE | WEAK | PASS | €123.20 (20 Jul 2026) | CHEAP < ≈ €20.3 (EV/OI, consv EV; MCap/FCF leg ≈ €32; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 AR (~Mar 2027); ZIM close → mandatory 1C acquisition audit |
 | HLE.DE (was HLE) | HELLA GmbH & Co. KGaA (FORVIA HELLA) | 2026-07-23 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS | €72.20 (22 Jul 2026) | CHEAP < ≈ €8.7 (EV/OI, conservative EV; all-cash-excess leg ≈ €21.7; MCap/FCF leg ≈ €21.3) — moot given AVOID. EXPENSIVE | — | FY2026 AR (~Mar 2027); earlier on FORVIA squeeze-out / domination agreement. P17 pay 4.3% of NI — re-test if earnings fall |
@@ -379,7 +379,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 
 *Two admissible classes — pending user decisions and register-integrity holds (§7.1 routing, MODEL v4.2.0). Everything else routes: work → `queue/TODO.md` · framework ideas → `queue/IDEAS.md` · per-name re-tests → row cells + memo appendices. Full disposition of the 108 items cleared at this version: `registers/archive/RECONCILE_open-items_2026-08-18.md`.*
 
-- **HFG.DE (held) SELL-FLAG (SR2, re-affirmed v3 2026-08-01)** — decision deferred to FY2026 results (~Mar 2027) [user, 2026-08-18]; flag stands; log the decision + realised outcome here.
+- **HFG.DE (held) SELL-FLAG (SR2, re-affirmed v4 2026-10-03)** — decision deferred to FY2026 results (~Mar 2027) [user, 2026-08-18]; flag stands; log the decision + realised outcome here.
 - **NOVO-B.CO (held) SELL-FLAG (SR2, v9 2026-09-13; re-affirmed v10 2026-10-03 — Future WEAK + SF FAIL)** — user decision pending; log the decision + realised outcome here [2026-09-13].
 - **ABB — pending re-key (§7.1a)** — memo v4 prices the OTC ADR ABBNY ($97.88); bare `ABB` is a retired NYSE line. Target `ABBNY` (or `ABBN.SW` if SIX is chosen) — user call, then RECONCILE renames memos [2026-09-11].
 
@@ -387,10 +387,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v303 — 2026-10-03** — HFG.DE v4 REVIEW: AVOID held (Past WEAK + Future WEAK + SF FAIL); SELL-FLAG SR2 re-affirmed. FY26 guide cut; P17 INDET.→PASS; band n.m. / €1.48 ac. Re-merged over NOVO v302.
 - **v302 — 2026-10-03** — NOVO-B.CO v10 REVIEW (CMD 21 Sep): AVOID held (Future WEAK; SF FAIL pair); SELL-FLAG SR2 re-affirmed. Px DKK 276.50→248.75; FAIR 10.4×→9.4×; band ≈170/180 unch.
 - **v301 — 2026-10-02** — MAERSK-B.CO v2 REVIEW: AVOID held (Future WEAK); FAIR→EXPENSIVE (DKK 16,685→24,240); band ≈12,000 → 2,700–11,400 (nc/ac, Jun-26 BS); SF PASS (P19 SOUND).
 - **v300 — 2026-09-27** — EDEN.PA v2 fresh ANALYSE: AVOID held (Past WEAK + Future WEAK); SF FAIL→PASS (v4 P19: CAUTION); band €10.59–25.11 → €9.20–23.50 (Jun-26 BS). Merged over MC.PA v299.
 - **v299 — 2026-09-27** — MC.PA v3 fresh ANALYSE: WATCH held (P4 3rd-decline test at FY26). Px €475.15→€396.85; band ≈€179 → €151–176 (H1-26 BS); Dist +165% → +125%. Re-merged over DUOL v298.
-- **v298 — 2026-09-27** — DUOL v2 fresh ANALYSE: AVOID held (Past WEAK · Future WEAK · SF FAIL: P19 ADVERSE). Px $125.76→$143.51; band ≈$41 → $17.1–43.4 (nc/ac). Re-merged over ABB v297.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
