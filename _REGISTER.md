@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v303
+register_version: v304
 register_date: 2026-10-03
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v303 · 2026-10-03)
+# GSC Register — Master Watchlist (v304 · 2026-10-03)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -19,14 +19,14 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 ## Portfolio table (HELD names — §7.2)
 
-*Positions mirrored from the IBKR snapshot of 2026-07-06 (§7.3); entry dates not tracked (user waiver 2026-08-18). Zone distances at the 10 Sep 2026 US closes (partial sweep 2026-09-11 — held names + BRK.B only; sandbox price hosts blocked, quotes via stockanalysis.com quote pages); NOVO-B.CO at the 2 Oct 2026 Copenhagen close DKK 248.75 (NVO $37.91, 30 Sep; v10 REVIEW 2026-10-03); HFG.DE at €2.39 (Lang & Schwarz, 2 Oct 2026; v4 REVIEW 2026-10-03). Bias tick-through run — none invalidates (detail in the HFG v4, NOVO-B.CO v10, and CROX v7 memos).*
+*Positions mirrored from the IBKR snapshot of 2026-07-06 (§7.3); entry dates not tracked (user waiver 2026-08-18). Zone distances at the 10 Sep 2026 US closes (partial sweep 2026-09-11 — held names + BRK.B only; sandbox price hosts blocked, quotes via stockanalysis.com quote pages); NOVO-B.CO at the 2 Oct 2026 Copenhagen close DKK 248.75 (NVO $37.91, 30 Sep; v10 REVIEW 2026-10-03); TROW at the 2 Oct 2026 close $104.62 (v5 REVIEW 2026-10-03); HFG.DE at €2.39 (Lang & Schwarz, 2 Oct 2026; v4 REVIEW 2026-10-03). Bias tick-through run — none invalidates (detail in the HFG v4, NOVO-B.CO v10, TROW v5, and CROX v7 memos).*
 
 | Ticker | Entry date(s) | Avg cost | Verdict | Zone | ADD band (P21) | Sell-flag line (P9) | Last zone check | Next review |
 |--------|---------------|----------|---------|------|----------------|---------------------|-----------------|-------------|
 | CROX (size redacted) | n/a — not tracked | [redacted] | WATCH | **HOLD** | < ≈ $94 (no-cash bound, ex-imp FY25 OI; P12 edge $110 not ADD-eligible — Future ADEQUATE) — −13.3% away | ≈ $431 (ex-imp OI); reported-OI line ≈ $46 trips — impairment artifact, mitigated per P9 | 2026-09-11 @ $108.83 (10 Sep close) | Q3'26 29 Oct 2026 (1st tranche under ≈$2.0bn pgm); FY2026 10-K UTB/ETR note; alert < ≈ $94 |
 | HFG.DE (size redacted, XETRA; was HFG) | n/a — not tracked | [redacted] | AVOID | **SELL-FLAG** (SR2 — v4 re-verdict: Past WEAK + Future WEAK + SF FAIL [flag pair]) | n/a — AVOID | n.m. — flag is quality, not price (P9 line ≈ €14.1, labelled adj-OI) | 2026-10-03 @ €2.39 (L&S 2 Oct; [redacted] vs cost) | Decision deferred (2026-08-18) → FY2026 (~Mar 2027) |
 | NOVO-B.CO (NVO ADR, 1:1; was NOVO-B) | n/a — not tracked | [redacted] | AVOID | **SELL-FLAG** (SR2 — v10 re-affirmed: Future WEAK + SF FAIL [flag pair]) | n/a — AVOID (no-cash bound ≈ DKK 170 ≈ $25 ADR, reference only) | ≈ DKK 697 ≈ $104 ADR (P9) — flag is quality, not price | 2026-10-03 @ DKK 248.75 / $37.91 (2 Oct / 30 Sep closes; [redacted] vs cost) | Decision pending (user); 9M 4 Nov 2026; AR-2026 3 Feb 2027 |
-| TROW (size redacted) | n/a — not tracked | [redacted] | WATCH | **HOLD** | < ≈ $55.5 — no-cash bound confirmed (MCap/FCF binds; P12 $66–69 excluded — Future ADEQUATE) — −48.4% away | ≈ $266 (+148%) | 2026-09-11 @ $107.55 (10 Sep close) | FY2026 (~Feb 2027); Q3'26 flows (~Oct) TDF check; alert < ≈ $82 |
+| TROW (size redacted) | n/a — not tracked | [redacted] | WATCH | **HOLD** | < ≈ $55.5 — no-cash bound (MCap/FCF binds; no P12 — Past ADEQUATE) — −47.0% away | ≈ $268.6 (+157%) | 2026-10-03 @ $104.62 (2 Oct close) | Q3'26 30 Oct 2026 (TDF flows); FY2026 10-K (~Feb 2027); 2027 proxy; alert < ≈ $84 |
 
 ---
 
@@ -45,11 +45,11 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | CRCT | Cricut, Inc. | 2026-08-09 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (**P17 INDETERMINATE — severity-changing**; FY24 read breached 6.9×; P19 SOUND at ~7× FCF; Petrus control caveat) | $5.84 (7 Aug 2026) | CHEAP < ≈ $3.15–4.38 (EV/OI nc/ac bind; MCap/FCF leg $6.72 **passes P7 at 7.0×** but is flattered by inventory release) | +33% | FY2026 10-K (~Mar 2027) + FY2025 SCT retrieval; OI ≥ ≈$128m puts the all-cash bound at price; alert <$4.40 |
 | INVE-B.ST (was INVE-B) | Investor AB                     | 2026-07-09 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 soft P19 flag; dual-class caveat) | SEK 407.15 (28 Jul 2026) | CHEAP < ≈ SEK 294 (adj-NAV −20%; substitution rule; strict −25% ≈ SEK 275) — EXPENSIVE                                                  | +38% | Q2'26 interim (16 Jul 2026); FY2026 (~late Jan 2027) re-anchors NAV; or price < ≈ SEK 330                                                           |
 | ABEV | Ambev S.A. (ADR) | 2026-08-09 | v1 | WATCH | STRONG | STRONG | PASS (ABI 62% control + licence RPT logged; P19 SOUND) | $3.025 (6–7 Aug 2026) | CHEAP < ≈ $1.86–2.08 (EV/OI no-cash/all-cash; FCF leg $1.76–2.43, tie-out owed; P12 edge ≈ $2.33–2.43) | +45% | FY2026 results (~Feb 2027); FCF tie-out is band-moving; alert < ≈ $2.45 |
-| TROW | T. Rowe Price Group, Inc. | 2026-07-31 | v4 | WATCH | STRONG | ADEQUATE | PASS | $107.55 (10 Sep 2026) | CHEAP ≈ $66–69 (EV/OI no-cash $66 / MCap-FCF P12 $69; all-cash ≈$82; strict $55.5) — FAIR. MCap/TBV >3× cleared | +56% | FY2026 (~Feb 2027); Q3'26 flows (~Oct) — Q2 multi-asset +$0.4B, TDF n.d., moat amber; alert < ≈ $82 |
 | SGO.PA | Compagnie de Saint-Gobain | 2026-08-03 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: GCP 2022 @ 17.3× trailing adj EBITDA / ≈30× pre-deal EBIT, no published criterion; buybacks SOUND 6.4–10.9× EV/OI) | €81.28 (31 Jul 2026) | CHEAP ≈ €39.7–51.6 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ €56.7; no P12) — FAIR 10.8×/9.7× | +58% | FY2026 (~Feb 2027): knife-edge re-test (w-o-4 ROCE 10.07% vs 10% floor; BI basis 7.7% = WEAK), Dahl close, FY26 tranches; alert < ≈ €57 |
 | 6626.T | SEMITEC Corporation | 2026-09-04 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (0 flags; P17 FY-read INDETERMINATE ≤¥99.9m vs ¥84m cap; Ishizuka 46% control caveat; Seto RPT 2% COGS) | ¥2,449 (4 Sep 2026) | CHEAP < ≈ ¥1,403 (MCap/FCF 8×, P20 maint-capex basis FY3/26, binds both variants; EV/OI legs ≈ ¥2,342–3,344 no-cash/all-cash; no P12) — FAIR 14.0×/7.3× | +75% | Q2 FY3/27 tanshin (~Nov 2026): CFO normalisation + any new buyback; FY3/27 yūhō (~Jun 2027): P17 top-pay, 10y rebuild; alert < ≈ ¥1,450 |
 | ADBE | Adobe Inc. | 2026-08-09 | v1 | WATCH | STRONG | ADEQUATE | PASS (1 flag — P17 absolute trigger $51.2m, unpaired; P19 SOUND) | $265.21 (7 Aug 2026) | CHEAP < ≈ $135.50–149.67 (EV/OI no-cash/all-cash; FCF leg $196.83; P12 edge ≈ $173.83–187.99) | +77% | CEO succession (Narayen exit announced 12 Mar 2026) or FY2026 10-K (~Jan 2027); alert < ≈ $188 |
 | 8002.T | Marubeni Corporation | 2026-08-07 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: live ¥100bn pgm @ ~14.8× NI / 1.84× BV, no worth criterion; substitution rule) | ¥4,936 (6 Aug 2026) | CHEAP < ≈ ¥2,674 (MCap/NI 8×, substitution anchor; 1.2×BV cross ≈ ¥3,219; EV/OI n.m.) — EXPENSIVE | +85% | H1 FY3/27 (~Nov 2026) ¥100bn pgm execution multiple; FY3/27 (~May 2027) re-anchor; alert < ≈ ¥3,200 |
+| TROW | T. Rowe Price Group, Inc. | 2026-10-03 | v5 | WATCH | ADEQUATE (was STRONG — ΔFCF/sh 2.6% < 3%) | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: buybacks 1.7–2.0× band, no criterion, FY23–25 payout 117–151% FCF; August pledge caveat unpaired) | $104.62 (2 Oct 2026) | CHEAP < ≈ $55.5 (MCap/FCF binds; EV/OI legs $64.2/$83.9 no-cash/all-cash; no P12 — Past ADEQUATE) — FAIR | +89% | Q3'26 30 Oct (TDF flows); FY2026 10-K (~Feb 2027) P19 year-read; 2027 proxy (pledge, August pay); alert < ≈ $84 |
 | BABA                    | Alibaba Group Holding Ltd       | 2026-07-02 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | $115.64 ADS (28 Jul 2026) | CHEAP ≈ $40.3–59.4 (EV/OI no-cash/all-cash, norm. OI; P12 edge ≈$55–74) — FAIR                                                                | +95% | FY2027 Q1 (Aug 2026), price < ≈$74, Anthropic/Pentagon resolution, or capex revision                                                                |
 | QCOM | QUALCOMM Incorporated | 2026-07-31 | v3 | WATCH | STRONG | ADEQUATE (borderline) | PASS (1 flag — cap-allocation CAUTION: no worth-referenced criterion; **$20.6bn authorised, no expiration, ~13% of MCap**) | $147.61 (31 Jul 2026, −19% vs v2) | CHEAP ≈ $67–75 (EV/OI cons/all-cash, FY25 basis, Q3-FY26 BS; MCap/FCF leg ≈ $97; P12 edge ≈ $96; TTM EV/OI leg ≈ $53) — EXPENSIVE | +97% | FY2026 10-K (~Nov 2026): FY26 tranche, band re-anchors on a falling base (9M OI −23%), CAUTION re-test; Apple licence expiry 2027 = standing Future re-test |
 | GSK.L (was GSK) | GSK plc | 2026-07-14 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | £20.53 (2052.5p LSE, 28 Jul 2026) | CHEAP ≈ £9.08–10.08 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ £11.10; no P12 — Past ADEQUATE) — FAIR | +104% | FY2026 (~Feb 2027) resets litigation-trough OI; ViiV HIV cliff ~2028 & IRA are Future watch; L/E 276% flag; alert < ≈ £12 |
@@ -387,10 +387,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v304 — 2026-10-03** — TROW v5 REVIEW: WATCH held (HOLD); Past STRONG→ADEQUATE (ΔFCF/sh 2.6% < 3%); P19 CAUTION, pledge caveat; band ≈$66–69 → $55.5; Dist +56%→+89%. Re-merged over HFG.DE v303.
 - **v303 — 2026-10-03** — HFG.DE v4 REVIEW: AVOID held (Past WEAK + Future WEAK + SF FAIL); SELL-FLAG SR2 re-affirmed. FY26 guide cut; P17 INDET.→PASS; band n.m. / €1.48 ac. Re-merged over NOVO v302.
 - **v302 — 2026-10-03** — NOVO-B.CO v10 REVIEW (CMD 21 Sep): AVOID held (Future WEAK; SF FAIL pair); SELL-FLAG SR2 re-affirmed. Px DKK 276.50→248.75; FAIR 10.4×→9.4×; band ≈170/180 unch.
 - **v301 — 2026-10-02** — MAERSK-B.CO v2 REVIEW: AVOID held (Future WEAK); FAIR→EXPENSIVE (DKK 16,685→24,240); band ≈12,000 → 2,700–11,400 (nc/ac, Jun-26 BS); SF PASS (P19 SOUND).
 - **v300 — 2026-09-27** — EDEN.PA v2 fresh ANALYSE: AVOID held (Past WEAK + Future WEAK); SF FAIL→PASS (v4 P19: CAUTION); band €10.59–25.11 → €9.20–23.50 (Jun-26 BS). Merged over MC.PA v299.
-- **v299 — 2026-09-27** — MC.PA v3 fresh ANALYSE: WATCH held (P4 3rd-decline test at FY26). Px €475.15→€396.85; band ≈€179 → €151–176 (H1-26 BS); Dist +165% → +125%. Re-merged over DUOL v298.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
