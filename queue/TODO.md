@@ -1,8 +1,18 @@
-# GSC Work Queue — TODO.md (v35 · 2026-10-03)
+# GSC Work Queue — TODO.md (v36 · 2026-10-03)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
 **Ticker discipline.** Tickers are suggested keys for convenience; resolved and verified at run time per §7.1a (prior-check on company name + ISIN, never the key alone).
+
+---
+
+## ▶ Routed from the TROW v5 REVIEW, register v304 (2026-10-03)
+
+1. **`TROW` (held) — August's FY2025 SCT total not re-read** (2026 DEF 14A fetch truncated before the Summary Compensation Table). Confirm Sharps ($17.2m) is the fattest number; at the 2027 proxy re-test August's first OHA partner-pool year (8-K 22 Apr 2026: 16.333% of the partner pool + supplemental pool) against the ≈$40m absolute trigger and the $60.9–74.0m proportional lines. SF carries one flag (P19 CAUTION) — a P17 flag pairs and fails the gate.
+2. **`TROW` — remaining repurchase authorisation unverified** (12.20M shares at 12/31/25 per equibles → ≈6.9M at 6/30/26, derived). Confirm from the FY2025 10-K Item 5 or the Q3 2026 10-Q; a fresh authorisation is the ADVERSE conjunct-(iii) evidence.
+3. **`TROW` — P19 context years not retrieved:** FY2016–22 tranche prices and share counts (FY2021–22 cash tier-2 only: $1.14bn / $850m); rNCI at 12/31/23 and discretionary investments at 12/31/23–24 (the FY2023–24 implied EVs are labelled bounds). Backfill from the 10-Ks opportunistically.
+4. **`TROW` — August ~$50m pledge carried from v1** (2026 proxy ownership footnote not re-read this session). Re-verify size and status at the 2027 proxy; the caveat-vs-flag doctrine question is IDEAS A9 (verdict-bearing — the flag reading = SF FAIL → AVOID → SELL-FLAG SR2).
+5. **Discharged by TROW v5:** the F/m Investments acquisition-audit note owed at the next REVIEW (2026-09-11 sweep entry) — logged INDETERMINATE in memo App. E; the TROW entry in the v3.7.0 App-F restatement row (done at v4). Strike both at the next RECONCILE triage.
 
 ---
 
@@ -790,6 +800,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v36 — 2026-10-03** — TROW v5 REVIEW routed at register v304: 4 items (August SCT / P17 re-test, authorisation check, P19 context backfill, pledge re-verify) + 2 discharges noted.
 - **v35 — 2026-10-03** — HFG.DE v4 REVIEW committed at register v303: **AVOID / SELL-FLAG (SR2) held, no gate moves.** New head block routes three items (SELL-FLAG decision context after the 24-Sep guidance cut; H1-26 note backfill incl. the €350m bond's use of proceeds; the financialfilings retrieval route). Named re-tests row for HFG.DE updated — the §162 / P17 item closed (PASS on the granted-and-owed basis; basis question → IDEAS D9). v34 archived → `queue/archive/TODO_v34_2026-09-13.md`.
 - **v32 — 2026-09-13** — PYPL v5 fresh ANALYSE committed at register v293: **AVOID (Future WEAK) held, no gate moves.** New head block routes four items — the FY2024 balance-sheet extraction conflict (carried $81,611m/$48,376m vs the FY2025 release's $78,725m/$45,490m, a $2,886m gross-up both sides; primary adopted; **capital employed identical at $33,235m, so no gate moves**; re-test = FY2024 10-K Item 8, whose cover carries a checked error-correction box), the FY2020–FY2024 short-term-debt-in-NIBCL defect now quantified as a sensitivity (12.9%/12.7%/12.5% worst-of-four ROCE on $1–3bn per year, never reaching the 10% floor), the FY2016–FY2023 rows still being second-hand because `data.sec.gov` is unreachable from this fetch path, and a retrieval note that **SEC 10-K fetches truncate before Item 8 — use the earnings-release 8-K exhibits for the statements**. Two stale items struck in place: the **NKE block-B draft item**, closed at register v289 on 2026-09-12 when NKE v4 committed WATCH → AVOID, and the **PAT-rotation flag**, closed 2026-09-12 per BOOTSTRAP v1.2.0. v31 archived → `queue/archive/TODO_v31_2026-09-13.md`.
 - **v31 — 2026-09-13** — *(entry reconstructed at v32: v31 bumped the header and added the 2330.TW head block but committed no change-log line — the same integrity gap logged at v16, logged rather than silently carried.)* Six items routed from the TSMC v2 fresh ANALYSE at register v290: the unsourced ISIN, the second-hand FY2025 20-F read on customer concentration and capex guidance, the P17 absolute-scrutiny INDETERMINATE with the 2026 Taiwan AR named as the re-test, the P20 re-test condition worth ≈NT$174 on the band, the ticker-field fix striking `2330.TW` from the item-5 alias list (nine names remain), and a note that stockanalysis quote-page staleness is per-page rather than per-host.
