@@ -1,7 +1,7 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v300
-register_date: 2026-09-27
+register_version: v301
+register_date: 2026-10-02
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 322
 verdict_split: "WATCH 64 · AVOID 256 · BUY 0 · DNAF 2"
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v300 · 2026-09-27)
+# GSC Register — Master Watchlist (v301 · 2026-10-02)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -264,7 +264,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LULU | lululemon athletica inc. | 2026-09-04 | v5 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (1 flag — cap-alloc CAUTION) | $97.50 (4 Sep 2026 pre-mkt; 3 Sep close $121.77) | CHEAP < ≈ $67 (MCap/FCF, FY2025 FCF); ≈ $79–100 norm; EV/OI leg $140/$152 nc/ac lease-out — FAIR | — | Q3 FY2026 ~early Dec 2026, 1st under O'Neill; FY2026 10-K ~Mar 2027 rolls window; 2027 proxy P17 backfill |
 | LYFT | Lyft, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION: FCF-funded pgm at/below 8× FCF but criterion-free, OI worth basis negative) | $16.30 (6 Aug 2026) | n.m. — no positive price clears EV/OI ≤ 7 (OI < 0); MCap/FCF leg ref ≈ $21.4 | — | FY2026 10-K (~Feb 2027): OI-inflection test — band computes if OI > 0; SCT/ownership/RPT backfill |
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
-| MAERSK-B.CO (was MAERSK-B) | A.P. Møller - Mærsk A/S | 2026-07-14 | v1 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | DKK 16,685 (14 Jul 2026) | CHEAP < ≈ DKK 12,000 (EV/OI, FY25 OI; MCap/FCF leg ≈ DKK 18,000 passes) — FAIR | — | FY2026 AR (~Feb 2027); FY26 guid. EBIT −1.5–1.0bn → band n.m.; structural: 2 strong forces, no moat |
+| MAERSK-B.CO (was MAERSK-B) | A.P. Møller - Mærsk A/S | 2026-10-02 | v2 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS | DKK 24,240 (2 Oct 2026) | CHEAP ≈ DKK 2,700–11,400 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ DKK 18,200; no P12) — EXPENSIVE 15.0×/20.4× | — | FY2026 AR (~Feb 2027): FY16 exits window; P19 re-test of 2026 tranches; director-fee check open |
 | MBLY | Mobileye Global Inc. | 2026-08-09 | v1 | AVOID | WEAK (4y) | WEAK | PASS (Intel-control caveat; below-book buyback SOUND) | $8.73 (7 Aug 2026) | n.m. — GAAP OI negative every year + Q1 2026 ≈$3.9bn goodwill impairment; 0.89× book | — | 3 gates; Tier-1/OEM breadth FAIL (waiver denied, VC precedent); FY2026 10-K (~Mar 2027) |
 | MGNI | Magnite, Inc. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (pair: P17 normalized-read breach 43× — 3y NI-leg ceiling $0.137m vs CEO $5.84m + P19 CAUTION) | $25.31 (7 Aug 2026) | CHEAP ≈ $1.73–3.89 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg $8.60; TTM x-check $2.56–4.72) | — | FY2026 10-K (~Feb 2027); 2027 proxy P17 normalized re-test; FCFROCE 11–15% vs Σ OI −$200m = amortisation wedge; alert < ≈ $4 |
 | MICC.AS (was MICC) | The Magnum Ice Cream Company N.V. | 2026-07-14 | v1 | AVOID (Past WEAK: L/E ~1,097% + thin history · Future WEAK: 2 strong forces) | WEAK | WEAK | PASS (2 flags) | €16.31 (14 Jul 2026; $18.53 NYSE) | n.m. for entry (AVOID) — context CHEAP < ≈ €3.8 (EV/OI, norm FY24 OI; net debt €3.0bn); ≈ €1.7 as-reported FY25 | — | FY2026 results (~Feb–Mar 2027) reset returns/FCF + normalize B/S; alert < ≈ €4; confirm CEO comp vs €6.3m P17 line |
@@ -387,10 +387,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v301 — 2026-10-02** — MAERSK-B.CO v2 REVIEW: AVOID held (Future WEAK); FAIR→EXPENSIVE (DKK 16,685→24,240); band ≈12,000 → 2,700–11,400 (nc/ac, Jun-26 BS); SF PASS (P19 SOUND).
 - **v300 — 2026-09-27** — EDEN.PA v2 fresh ANALYSE: AVOID held (Past WEAK + Future WEAK); SF FAIL→PASS (v4 P19: CAUTION); band €10.59–25.11 → €9.20–23.50 (Jun-26 BS). Merged over MC.PA v299.
 - **v299 — 2026-09-27** — MC.PA v3 fresh ANALYSE: WATCH held (P4 3rd-decline test at FY26). Px €475.15→€396.85; band ≈€179 → €151–176 (H1-26 BS); Dist +165% → +125%. Re-merged over DUOL v298.
 - **v298 — 2026-09-27** — DUOL v2 fresh ANALYSE: AVOID held (Past WEAK · Future WEAK · SF FAIL: P19 ADVERSE). Px $125.76→$143.51; band ≈$41 → $17.1–43.4 (nc/ac). Re-merged over ABB v297.
 - **v297 — 2026-09-25** — ABB v4 fresh ANALYSE: AVOID held (SF FAIL; P19 ADVERSE — live pgm bank-timed, no criterion). Future → STRONG. Band $18.6–22.2 → $18.1–18.7 (EV adds leases + NCI).
-- **v296 — 2026-09-13** — NOVO-B.CO v9 fresh ANALYSE: **WATCH → AVOID** (Future WEAK: eroding moat, 2 strong forces, breadth FAIL; SF FAIL: P19 CAUTION + RPT flag); Past → ADEQUATE; **SELL-FLAG SR2**.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
