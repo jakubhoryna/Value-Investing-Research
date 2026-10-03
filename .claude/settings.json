@@ -1,0 +1,46 @@
+{
+  "disableAllHooks": false,
+  "permissions": {
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Read(//**/.git-credentials)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|NotebookEdit|Bash|Monitor",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$GSC_SESSION\" = routine ] || exit 0; python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/gsc_guard.py\"; rc=$?; [ $rc -eq 0 ] && exit 0; [ $rc -eq 2 ] || echo \"GSC guard: internal error rc=$rc - failing closed\" >&2; exit 2",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|Monitor|Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$GSC_SESSION\" = routine ] || exit 0; python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/gsc_guard_post.py\"; rc=$?; [ $rc -eq 0 ] && exit 0; [ $rc -eq 2 ] && exit 2; echo \"GSC guard post-check: internal error rc=$rc - nothing restored\" >&2; exit 1",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "ConfigChange": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$GSC_SESSION\" = routine ] || exit 0; echo \"GSC guard: settings changes are blocked in routine sessions\" >&2; exit 2"
+          }
+        ]
+      }
+    ]
+  }
+}

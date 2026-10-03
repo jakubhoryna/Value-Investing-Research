@@ -1,0 +1,70 @@
+# gsc-guard: checks every pull request against the routine write contract
+# (MODEL §8.7, routines/README.md §3). The rules live in gsc_guard_check.py.
+#
+# How it works
+# - The job runs on every PR (no job-level if:). The checker decides whether
+#   the PR is a routine PR: head branch starts with claude/gsc, or the title
+#   starts with "GSC {JOB}" or "HELD · GSC {JOB}". Any other PR prints
+#   "not a routine PR - skipped" and passes.
+# - A routine PR fails if it does not target main, if its branch name is not
+#   claude/gsc-{job}-[{KEY}-]{D}-{T}, if the title job and branch job differ,
+#   or if any changed path is outside its job's contract.
+# - pull_request_target: GitHub always takes this workflow file from the
+#   default branch, and the checkout below has no ref:, so the checker script
+#   also comes from main. A PR cannot weaken its own check.
+# - No PR code is executed. The PR head is fetched as data and diffed.
+# - Branch name and PR title are untrusted. They reach the scripts only
+#   through env:, never as an inline expression inside run:.
+# - "edited" re-runs the check after a retitle or a base change.
+#
+# Limits (GitHub Free, private repo)
+# - No required checks exist on this plan, so a red X is advisory. Jakub's
+#   merge is the confirm; read the ::error:: lines before merging.
+# - The check sees only PRs. A push straight to main never triggers it. The
+#   routine guard hook (.claude/hooks/gsc_guard.py) is the primary barrier.
+# - Cloud sessions cannot push .github/workflows/* (no workflow scope).
+#   Changes to these files come only from an attended local push.
+#
+# Tests: python3 .github/workflows/test_gsc_guard_check.py (exit 0 = all pass).
+name: gsc-guard
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out the default branch (trusted checker)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch the PR head as data (never executed)
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "+refs/heads/${DEFAULT_BRANCH}:refs/remotes/origin/${DEFAULT_BRANCH}"
+          git fetch --no-tags origin "+refs/pull/${PR_NUMBER}/head:refs/remotes/pr/head"
+          fetched="$(git rev-parse refs/remotes/pr/head)"
+          if [ "$fetched" != "$HEAD_SHA" ]; then
+            echo "::error::PR head moved (event $HEAD_SHA, fetched $fetched); re-run the check"
+            exit 1
+          fi
+
+      - name: Check changed paths against the write contract
+        env:
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: python3 .github/workflows/gsc_guard_check.py

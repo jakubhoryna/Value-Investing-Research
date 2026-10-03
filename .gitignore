@@ -1,11 +1,12 @@
-# Secrets / credentials — never committed; the PAT lives only in the project-settings bootstrap
+# Secrets / credentials — never committed; none is held in the repo (cloud sessions use the Claude Code session proxy; local attended sessions use Jakub's own git/gh login)
 .env
 *.key
 *.pem
 credentials
 
-# Claude Code local tooling config
-.claude/
+# Claude Code local files — .claude/settings.json and .claude/hooks/ are committed (routine guard)
+.claude/settings.local.json
+.claude/worktrees/
 
 # Editor / vault configuration — local to each machine, not part of the research state
 .obsidian/

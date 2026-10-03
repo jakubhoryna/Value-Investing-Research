@@ -1,10 +1,18 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v1 · 2026-09-13)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v2 · 2026-10-03)
 
-**Operative copy: this project file.** Record copy: `queue/DRAFT_QUEUE.md` in the repo, re-snapshotted from the project file at each Sunday RECONCILE — between snapshots the project file governs and the repo copy is stale by design.
+**Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `queue/archive/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, or add `retry`. The claude.ai project copy, if any, is a read-only mirror.
 
-**Rules (MODEL §8.6, verbatim in effect).** One name per run. The run takes the first `[ ]` line whose key has neither an `inbox/` file nor a register-mirror row and rewrites it `[~] drafted YYYY-MM-DD` **before any research**. A `[~]` line whose key later shows a mirror row is closed `[x] YYYY-MM-DD` and its inbox file deleted. A key found in the mirror is REVIEW territory → `[x] prior — REVIEW`. Held names never enter. DRAFT runs edit lines; the user resets (`[ ]`) or strikes rejected names at RECONCILE and restocks below the last line. Never reorder.
+**Rules (MODEL §8.7; `routines/ANALYSE.md` holds the pick logic).** One name per ANALYSE run: the first eligible `[ ]` line, top-down. Held names never enter. Never reorder; restock lines are appended below the last line. A marker replaces only the line's leading token; the rest of the line (`KEY — Company — route — notes`) stays. Dates are Europe/Prague run dates. Markers:
+- `[ ]` open
+- `[x] {D}` done — memo merged and applied
+- `[x] prior — REVIEW` — a prior memo exists; REVIEW territory
+- `[-] rejected {D} (PR #n)` — Jakub closed the ANALYSE PR unmerged
+- `[!] incomplete {D} — {path}` — the data-completeness gate stopped the run; `{path}` is the INCOMPLETE evidence file
+- `[!] stalled {D} (PR #a, #b)` — abandoned twice within 14 days; skipped until Jakub edits the line
 
-**Seeding basis (2026-09-13).** §7.1a prior-check on key against live register v296 (322 rows): none of the keys below has a row. Sources: `queue/TODO.md` v34 block C1 (evidence file `queue/evidence/<KEY>_draft-evidence_2026-09.md` in project knowledge — **orientation only; its verdicts are void and every figure re-derives from primaries under §4**) and block C2 (no research). Keys are suggested §7.1a keys, resolved with company name + ISIN at run time. **Excluded from this mode by design:** `.KS` names (primaries bot-blocked from the sandbox); suffix-gap markets `.NS` `.IR` `.LS` `.SR` `.AE` `.BD` (framework change pending); §2·1A / captive-finance names — `KGX.DE`, `JUN3.DE`, `BG.VI`, `AVARDA.ST`, the automakers (IDEAS A2 open — attended sessions only); `VALMT.HE` (segment-separation review to FY2026 results); `CHG.DE` (Gate 0 form question); `.SZ` mainland names (governance check first); sub-€200m micro-caps.
+A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an earlier rejection.
+
+**Seeding basis (2026-09-13).** §7.1a prior-check on key against live register v296 (322 rows): none of the keys below has a row. Sources: `queue/TODO.md` v34 block C1 (evidence file `queue/evidence/<KEY>_draft-evidence_2026-09.md` — **orientation only; its verdicts are void and every figure re-derives from primaries under §4**) and block C2 (no research). Keys are suggested §7.1a keys, resolved with company name + ISIN at run time. **Excluded from routine ANALYSE by design:** `.KS` names (primaries bot-blocked from the sandbox); suffix-gap markets `.NS` `.IR` `.LS` `.SR` `.AE` `.BD` (framework change pending); §2·1A / captive-finance names — `KGX.DE`, `JUN3.DE`, `BG.VI`, `AVARDA.ST`, the automakers (IDEAS A2 open — attended sessions only); `VALMT.HE` (segment-separation review to FY2026 results); `CHG.DE` (Gate 0 form question); `.SZ` mainland names (governance check first); sub-€200m micro-caps.
 
 **Ordering.** Retrieval reliability in the cloud sandbox first (SEC filers → Japan via the kabupro EDINET mirror → issuers with verified IR stores), thesis fit second, consumer/media last. Notes are carry-over facts to check first, not findings.
 
@@ -52,4 +60,4 @@
 - [ ] VSURE.ST — Verisure plc — Sweden — evidence file; IPO Oct 2025 → history-limited; PE-era leverage; capitalised subscriber-acquisition cost is the CE/FCF question
 - [ ] ACAST.ST — Acast AB — Sweden — evidence file; short listed history; loss-making years → P17 loss-leg logic
 
-*Restock at RECONCILE when fewer than ~8 `[ ]` lines remain: TODO block C2 (verify listing and corporate-action status first — one issuer per query), then the UK / Canada / Australia re-seed blocks the register's shape argues for. Never restock from the named re-test backlog — those are REVIEWs, which DRAFT cannot run.*
+*QUEUE-SEED restocks when fewer than 10 unclaimed lines remain; INTAKE appends merged restock lines above this note. Never restock from the named re-test backlog — those are REVIEWs.*
