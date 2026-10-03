@@ -1,4 +1,4 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v2 · 2026-10-03)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v3 · 2026-10-04)
 
 **Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `queue/archive/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, or add `retry`. The claude.ai project copy, if any, is a read-only mirror.
 
@@ -59,5 +59,45 @@ A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an
 - [ ] RRTL.DE — RTL Group S.A. — Germany line — evidence file; Bertelsmann ~75%; Sky Deutschland contingent consideration belongs in EV
 - [ ] VSURE.ST — Verisure plc — Sweden — evidence file; IPO Oct 2025 → history-limited; PE-era leverage; capitalised subscriber-acquisition cost is the CE/FCF question
 - [ ] ACAST.ST — Acast AB — Sweden — evidence file; short listed history; loss-making years → P17 loss-leg logic
+- [ ] KEYS — Keysight Technologies, Inc. — US SEC filer — re-seed universe; electronic test & measurement, RF/comms test standard, software + calibration pull (TODO v36 L554)
+- [ ] MTD — Mettler-Toledo International Inc. — US SEC filer — re-seed universe; precision weighing & lab instruments, installed base + service annuity, very long record (TODO v36 L555)
+- [ ] AME — AMETEK, Inc. — US SEC filer — re-seed universe; electronic instruments & electromechanical; bolt-ons funded from internal cash → acquisition audit (TODO v36 L583)
+- [ ] NDSN — Nordson Corporation — US SEC filer — re-seed universe; precision dispensing, parts-and-consumables pull-through on installed base (TODO v36 L566)
+- [ ] GGG — Graco Inc. — US SEC filer — re-seed universe; fluid handling equipment, distributor lock-in, long record (TODO v36 L565)
+- [ ] IEX — IDEX Corporation — US SEC filer — re-seed universe; fluidics & health/science niches; decentralised acquirer → acquisition audit (TODO v36 L584)
+- [ ] DOV — Dover Corporation — US SEC filer — re-seed universe; diversified decentralised industrial, consumables-weighted mix; multi-segment Gate 0 (TODO v36 L582)
+- [ ] TDY — Teledyne Technologies Incorporated — US SEC filer — re-seed universe; instrumentation & digital sensing; acquirer that deleverages after deals (TODO v36 L586)
+- [ ] DCI — Donaldson Company, Inc. — US SEC filer — re-seed universe; filtration & replacement filters, aftermarket annuity, multi-decade statements (TODO v36 L567)
+- [ ] BMI — Badger Meter, Inc. — US SEC filer — re-seed universe; flow measurement & water metering, replacement-cycle demand (TODO v36 L556)
+- [ ] NOVT — Novanta Inc. — US SEC filer — re-seed universe; photonics & precision motion, designed-in OEM components (TODO v36 L551)
+- [ ] WWD — Woodward, Inc. — US SEC filer — re-seed universe; energy control & motion, sole-source positions, aftermarket pull (TODO v36 L562)
+- [ ] LECO — Lincoln Electric Holdings, Inc. — US SEC filer — re-seed universe; welding equipment & consumables, consumables attach rate (TODO v36 L572)
+- [ ] FAST — Fastenal Company — US SEC filer — re-seed universe; fastener & MRO distribution, onsite/vending model (TODO v36 L575)
+- [ ] SNA — Snap-on Incorporated — US SEC filer — re-seed universe; professional tools & diagnostics, franchised van channel (TODO v36 L573)
+- [ ] HEI — HEICO Corporation — US SEC filer — re-seed universe; aerospace aftermarket parts; family-controlled dual-class acquirer → acquisition audit, key the class priced (TODO v36 L585)
+- [ ] WTS — Watts Water Technologies, Inc. — US SEC filer — re-seed universe; flow control valves, replacement demand; dual-class family voting control (TODO v36 L569)
+- [ ] CAT — Caterpillar Inc. — US SEC filer — coverage audit Tier A (rank #39); construction & mining equipment; verify listing/corporate actions first (TODO v36 L405)
+- [ ] APH — Amphenol Corporation — US SEC filer — coverage audit Tier A (rank #97); connectors & interconnect; verify listing/corporate actions first (TODO v36 L428)
+- [ ] TXN — Texas Instruments Incorporated — US SEC filer — coverage audit Tier A (rank #73); analog semiconductors; verify listing/corporate actions first (TODO v36 L419)
+- [ ] 6861.T — Keyence — Japan (kabupro EDINET) — C2; factory automation, core-thesis name; runs' "expensive on sight" drop is not a queue exclusion; verify listing/corporate actions first (TODO v36 L194)
+- [ ] 6273.T — SMC — Japan (kabupro EDINET) — C2; pneumatics, core-thesis name; verify listing/corporate actions first (TODO v36 L194)
+- [ ] 6645.T — Omron — Japan (kabupro EDINET) — C2; automation, core-thesis name; multi-segment Gate 0; verify listing/corporate actions first (TODO v36 L194)
+- [ ] 6506.T — Yaskawa — Japan (kabupro EDINET) — C2; robotics/drives, core-thesis name; peer to 6954.T FANUC row; verify listing/corporate actions first (TODO v36 L194)
+- [ ] LSS.PA — Lectra SA — France — C2; Industry-4.0 cutting rooms + SaaS, installed base + recurring; listed, H1 report 30 Jul 2026 (verified) (TODO v36 L171)
+- [ ] SPX.L — Spirax Group plc — UK — re-seed universe; thermal energy / niche pumps, installed steam base drives aftermarket (TODO v36 L479)
+- [ ] HLMA.L — Halma plc — UK — re-seed universe; safety & environmental tech, decentralised regulation-driven niches (TODO v36 L480)
+- [ ] IMI.L — IMI plc — UK — re-seed universe; flow control & automation, engineered components, aftermarket pull-through (TODO v36 L481)
+- [ ] DPLM.L — Diploma PLC — UK — re-seed universe; value-added industrial distribution, sticky specification, bolt-ons → acquisition audit (TODO v36 L484)
+- [ ] OXIG.L — Oxford Instruments plc — UK — re-seed universe; scientific instruments, research niches with service annuity (TODO v36 L496)
+- [ ] BNZL.L — Bunzl plc — UK — re-seed universe; outsourced business supplies, consolidator of a fragmented category (TODO v36 L485)
+- [ ] REL.L — RELX PLC — UK — re-seed universe; professional information & analytics, subscription embedded in workflow (TODO v36 L489)
+- [ ] EXPN.L — Experian plc — UK — re-seed universe; credit data & analytics, reciprocal-data bureau network effects (TODO v36 L488)
+- [ ] CNR.TO — Canadian National Railway Company — Canada — re-seed universe; rail freight duopoly network, decades of statements (TODO v36 L510)
+- [ ] TIH.TO — Toromont Industries Ltd. — Canada — re-seed universe; equipment distribution & services, protected CAT dealer territory, parts-and-service (TODO v36 L512)
+- [ ] CCL.B.TO — CCL Industries Inc. — Canada — re-seed universe; specialty packaging & labels; Lang-family controlled serial acquirer → acquisition audit, control caveat (TODO v36 L519)
+- [ ] COH.AX — Cochlear Limited — Australia — re-seed universe; implantable medical devices, installed base + processor upgrades (TODO v36 L537)
+- [ ] BXB.AX — Brambles Limited — Australia — re-seed universe; pallet pooling, scale network, understandable unit economics (TODO v36 L538)
+- [ ] TNE.AX — TechnologyOne Limited — Australia — re-seed universe; public-sector enterprise software, founder-anchored, net cash (TODO v36 L540)
+- [ ] REH.AX — Reece Limited — Australia — re-seed universe; plumbing & HVAC distribution, Wilson-family control (TODO v36 L533)
 
 *QUEUE-SEED restocks when fewer than 10 unclaimed lines remain; INTAKE appends merged restock lines above this note. Never restock from the named re-test backlog — those are REVIEWs.*
