@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v4.4.0
-model_date: 2026-10-03
+model_version: v4.4.1
+model_date: 2026-10-04
 status: live
-bootstrap_required: BOOTSTRAP v1.3.0+ (claude.ai project) · BOOTSTRAP-CC v1.0.0+ (CLAUDE.md)
+bootstrap_required: BOOTSTRAP v1.3.0+ (claude.ai project) · BOOTSTRAP-CC v1.0.1+ (CLAUDE.md)
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.4.0 · 2026-10-03)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.4.1 · 2026-10-04)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -495,7 +495,7 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
    - Each run is a fresh cloud session with a fresh clone of `main` and **exactly one repository attached** — hooks and repo permission rules load only then.
    - GitHub access comes through the session proxy (`GH_TOKEN` holds only the proxy placeholder). No credential appears in any repo file, prompt or chat, and the run never requests, prints, sets or stores one. REST only (§7.4a Access).
    - The routine environment sets `GSC_SESSION=routine`, which arms the guard hook `.claude/hooks/gsc_guard.py`.
-   - Preflight (`routines/README.md` §0) stops the run unless: `GSC_SESSION` is `routine`; the guard is live — `.claude/settings.json` and `.claude/hooks/gsc_guard.py` are tracked (`git ls-files --error-unmatch`) **and** the canary `: git push origin main` is refused with a message containing `GSC guard`; the paginated PR ledger loads; exactly one repository is attached.
+   - Preflight (`routines/README.md` §0) stops the run unless: `GSC_SESSION` is `routine`; the guard is live — `.claude/settings.json` and `.claude/hooks/gsc_guard.py` are tracked (`git ls-files --error-unmatch`) **and** the self-test `: gsc-guard-canary` is refused with a message containing `GSC guard canary`; the paginated PR ledger loads; exactly one repository is attached.
    - The run date `D` and time `T` (Europe/Prague) are fixed once at preflight. `D` is the `memo_date`, the row `run_date` and every date the run writes; the clock is never re-read for a date.
 2. **Framework.** The run reads this file from the clone. Below v4.4.0 → evidence-only stop. Memos carry the live `model_version` plus `produced_by: ROUTINE` and `run_base: {sha}` (§6.1).
 3. **Commit gate.** Each run pushes one `claude/gsc-{job}-…` branch and opens one PR (exact names and commands: `routines/README.md` §1); the PR body is the §7.4a printed diff. **Jakub's merge is the confirm.**
@@ -538,6 +538,10 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
 
 -----
 
+## v4.4.1 CHANGE LOG (2026-10-04)
+
+- **PATCH release (v4.4.0 → v4.4.1) — guard self-test replaced; no rule, gate, threshold, band or zone moves; §8.4 step-3 scan: zero names flip.** The routine preflight's guard canary was `: git push origin main`. In the first live routine runs (2026-10-04) Claude Code's auto-mode permission classifier read that refused push as an attempt on `main` and then blocked the read-only PR-ledger call that follows (`[CI Bypass]`, `[Modify Shared Resources]`), so INTAKE and ANALYSE stopped safely at preflight step 4 with nothing written. The canary is now the dedicated, harmless self-test `: gsc-guard-canary`, which the guard refuses with `GSC guard canary` (§8.7 item 1; `routines/README.md` §0; `.claude/hooks/gsc_guard.py`). `CLAUDE.md` (BOOTSTRAP-CC v1.0.1) now states the routine GitHub workflow in one paragraph, because the classifier reads `CLAUDE.md`. Consequential: guard tests updated. **Requires BOOTSTRAP-CC v1.0.1.**
+
 ## v4.4.0 CHANGE LOG (2026-10-03)
 
 - **MINOR release (v4.3.0 → v4.4.0) — new ROUTINE mode, git commit protocol, DRAFT retired; no gate, threshold, band or zone mechanic moves; §8.4 step-3 scan: zero names flip.** New **§8.7 ROUTINE**: scheduled Claude Code routines (ANALYSE, REVIEW, SWEEP, QUEUE-SEED, INTAKE) with the repo attached. They read the live framework, claim by PR title, and follow a single-writer contract (only INTAKE writes the register, TODO and DRAFT_QUEUE, regenerating rows from the latest memo). Jakub's PR merge is the commit confirm. GitHub Free has no branch protection, so a guard hook, the gsc-guard check and an INTAKE audit stand in for it. A data-completeness gate (INCOMPLETE = retrievable but not retrieved) stops a routine instead of a guess. **§7.4a restated in git form:** Access (session proxy, no token, REST only, failure path); session start (routine-traffic check); REVIEW memo load; session end (base verification restated in git form and repeated before the merge; one commit; PR, guard-check wait, squash-merge); the lost-update paragraph (conflict rule; precedent kept); framework commits; project sessions. The compliance re-measure is unchanged; the generation rule's failure sentence is restated in git form. **§8.6 DRAFT retired** to a tombstone; `DRAFT_CARD.md` archived. Consequential edits: §0 (`CLAUDE.md` as bootstrap, release flow, archive-date rule, framework-files rule); §3 P14 and the §4 budget rule (ROUTINE entry; DRAFT entry struck); §6 (file in the checkout; optional `produced_by` and `run_base` in §6.1; §6.5 failure path); §7.3 (memory mirror optional); §7.4 (write path, config, PR-only by rule); §7.5 (atomic snapshot; DRAFT_QUEUE versioned); §8 intro (routine traffic, no project-knowledge fallback); §8.1–§8.3 step 1; §8.4 steps 4–5; §8.5 (past-chat recovery retired; IDEAS-candidates triage); §9 (guardrail list, plain-Markdown scope). Cause: scheduled runs cannot reach the repo without an attached source (2026-09-09 post-mortem, re-confirmed 2026-09-25); DRAFT aborted six times on 13–14 Sep; the PAT in the project bootstrap reached every transcript. **Requires BOOTSTRAP v1.3.0 (no token) and BOOTSTRAP-CC v1.0.0 (`CLAUDE.md`).**
@@ -546,10 +550,6 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
 
 - **MINOR release (v4.2.2 → v4.3.0) — new unattended mode, no mechanics moved; §8.4 step-3 scan: zero names flip.** New **§8.6 DRAFT**: scheduled ANALYSE in a proxy-gated, credential-free host, running under `DRAFT_CARD.md` (project files) and writing draft-inbox memos to project files only; memos gain standing solely at RECONCILE intake (§8.6 step 7, cross-referenced from §8.5 step 2 — RECONCILE's scope is otherwise unchanged; SWEEP untouched). Consequential edits: §0 release flow and §8.4 step 4 gain the card regeneration (verbatim §2–§6, §9 extract, `derived_from` stamped, user uploads to project files); P14 gains the DRAFT budget; §7.4 opening corrected (chat sessions cannot write project knowledge; DRAFT writes project files only); §8 mode list. **Requires BOOTSTRAP v1.2.0** (DRAFT mode row, proxy-gated resident rule, fetch-failure exception for draft-inbox memos, `draft_card` and project-files config). Cause: 2026-09-11 Cowork probe — repo traffic terminated by the agent proxy, PAT materialisation refused by the host classifier, project knowledge search-only and stale by ≥ 8 days.
 
-## v4.2.2 CHANGE LOG (2026-09-12)
-
-- **PATCH release (v4.2.1 → v4.2.2) — two path corrections to v4.2.1 (2026-09-10), zero rules moved, zero names flip.** (1) Register snapshots live at **`registers/{YYYY}/`**, not `registers/archive/{YYYY}/`: the live register is `_REGISTER.md` at the repository root, so the `registers/` folder *is* the archive and the extra level carried no information (§7.4a step 3, §7.5). (2) The `status: moved` stub at `instructions/MODEL.md` is **struck** and the `instructions/` folder ceases to exist; the transition is closed by BOOTSTRAP v1.1.1 (`register_archive: registers/{YYYY}/`), pasted in the same session. Cause: user review of the v4.2.1 tree.
-
 -----
 
-*Older change logs (v3 – v4.2.1): archived verbatim in `model/archive/` MODEL_v* snapshots, per the §0 cap.*
+*Older change logs (v3 – v4.2.2): archived verbatim in `model/archive/` MODEL_v* snapshots, per the §0 cap.*

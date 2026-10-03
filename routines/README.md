@@ -16,9 +16,9 @@ GSC ROUTINE: <JOB> — follow routines/README.md and routines/<JOB>.md exactly.
 2. **Environment.** `echo "$GSC_SESSION"` must print `routine`. If it doesn't, the run is in the wrong environment and the guard is inactive.
 3. **Guard live.** Both must hold:
    - `git ls-files --error-unmatch .claude/settings.json .claude/hooks/gsc_guard.py` succeeds;
-   - the canary `: git push origin main`, run as its own Bash command, is **refused** with a message containing `GSC guard`. (`:` is a no-op, so the canary is harmless when the guard is off.)
+   - the self-test `: gsc-guard-canary`, run as its own Bash command, is **refused** with a message containing `GSC guard canary`. (`:` is a no-op, so the self-test is harmless when the guard is off. Never use a push or a locked-path write as a self-test: the permission classifier reads those as real attempts and then blocks the run's next GitHub calls.)
 
-   If the canary runs (exit 0) or the files are untracked, the guard is off.
+   If the self-test runs (exit 0) or the files are untracked, the guard is off.
 4. **Ledger.** Run the paginated ledger command (§1). Its output is this run's **claim ledger** (§2). If the call fails, stop: without the ledger a run can collide with another.
 5. **Fix the run date and time, once.** `D=$(TZ=Europe/Prague date +%F)` and `T=$(TZ=Europe/Prague date +%H%M)`. Write both down and reuse them literally (§5: never re-read the clock).
 6. **Exactly one repository.** `git rev-parse --show-toplevel` must print the session's starting directory (`pwd -P`), and so must `$CLAUDE_PROJECT_DIR` if it is set; `ls -d ../*/.git` must list no other clone. With a second repository attached, hooks and deny rules don't load.

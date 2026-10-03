@@ -28,6 +28,8 @@ import sys
 # ---------------------------------------------------------------- constants
 
 REPO = "jakubhoryna/Value-Investing-Model"
+# Preflight self-test (routines/README §0): always refused, harmless when the guard is off.
+CANARY = ": gsc-guard-canary"
 LOCKED_DIRS = ("model", "routines", ".claude", ".github")
 LOCKED_NAMES = ("CLAUDE.md", "CLAUDE.local.md", "AGENTS.md")
 
@@ -417,6 +419,8 @@ class Guard:
             if not isinstance(cmd, str):
                 # Monitor's field name is not documented: check every string field.
                 cmd = "\n".join(v for v in ti.values() if isinstance(v, str))
+            if cmd.strip() == CANARY:
+                block("GSC guard canary — the guard is live; this refusal is the expected preflight self-test")
             if TOKEN_LITERAL_RE.search(cmd):
                 block("a GitHub token literal appeared in the command")
             self.check_command(cmd, 0, self.cwd)
