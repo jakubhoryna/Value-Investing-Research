@@ -11,6 +11,10 @@ credentials
 # Editor / vault configuration — local to each machine, not part of the research state
 .obsidian/
 
+# Python byte-code left by running the guard scripts and their tests
+__pycache__/
+*.pyc
+
 # OS junk
 .DS_Store
 Thumbs.db
