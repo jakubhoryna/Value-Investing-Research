@@ -1,7 +1,7 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v305
-register_date: 2026-10-04
+register_version: v306
+register_date: 2026-10-05
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
 names_total: 384
 verdict_split: "WATCH 88 · AVOID 294 · BUY 0 · DNAF 2"
@@ -9,7 +9,7 @@ portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v305 · 2026-10-04)
+# GSC Register — Master Watchlist (v306 · 2026-10-05)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -42,8 +42,8 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | CROX | Crocs, Inc. | 2026-08-23 | v7 | WATCH | STRONG | ADEQUATE | PASS (1 flag — cap-allocation CAUTION; HEYDUDE + Malta INDETERMINATE) | $108.83 (10 Sep 2026) | CHEAP < ≈ $94–98 (EV/OI 7× ex-imp FY25 OI, no-cash/all-cash; P12 edge ≈$110) — FAIR ex-imp / EXPENSIVE rep | +11% | Q3'26 29 Oct (1st tranche, ≈$2.0bn pgm); NYT Malta 5 Aug — not an SF flag, INDETERMINATE; FY26 10-K UTB/ETR; alert < ≈ $94 |
 | BRK.B                   | Berkshire Hathaway Inc.         | 2026-06-24 | v1  | WATCH   | STRONG   | ADEQUATE | PASS                                      | $507.00 (10 Sep 2026) | No usable CF trigger. Operative gauge P/B ≤1.2× ≈ $400 (MCap/BV & SOTP; substitution rule). Cheapness FAIR                              | +27% | FY2026 results (Feb 2027, Abel's first full year), or price < ~1.3× book (~$430)                                                                    |
+| INVE-B.ST (was INVE-B) | Investor AB | 2026-10-05 | v2 | WATCH | ADEQUATE | ADEQUATE | PASS (cap-alloc SOUND; dual-class caveat) | SEK 403.80 (5 Oct 2026) | CHEAP < ≈ SEK 318 (P/adj-NAV ≤ 0.80, Jun-26 NAV SEK 397; substitution rule; strict −25% ≈ SEK 298) — FAIR | +27% | Q3 IMS 16 Oct 2026 + CMU 4 Nov (NAV refresh); YE-2026 22 Jan 2027 re-anchors band; alert < ≈ SEK 350 |
 | CRCT | Cricut, Inc. | 2026-08-09 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (**P17 INDETERMINATE — severity-changing**; FY24 read breached 6.9×; P19 SOUND at ~7× FCF; Petrus control caveat) | $5.84 (7 Aug 2026) | CHEAP < ≈ $3.15–4.38 (EV/OI nc/ac bind; MCap/FCF leg $6.72 **passes P7 at 7.0×** but is flattered by inventory release) | +33% | FY2026 10-K (~Mar 2027) + FY2025 SCT retrieval; OI ≥ ≈$128m puts the all-cash bound at price; alert <$4.40 |
-| INVE-B.ST (was INVE-B) | Investor AB                     | 2026-07-09 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS (1 soft P19 flag; dual-class caveat) | SEK 407.15 (28 Jul 2026) | CHEAP < ≈ SEK 294 (adj-NAV −20%; substitution rule; strict −25% ≈ SEK 275) — EXPENSIVE                                                  | +38% | Q2'26 interim (16 Jul 2026); FY2026 (~late Jan 2027) re-anchors NAV; or price < ≈ SEK 330                                                           |
 | ABEV | Ambev S.A. (ADR) | 2026-08-09 | v1 | WATCH | STRONG | STRONG | PASS (ABI 62% control + licence RPT logged; P19 SOUND) | $3.025 (6–7 Aug 2026) | CHEAP < ≈ $1.86–2.08 (EV/OI no-cash/all-cash; FCF leg $1.76–2.43, tie-out owed; P12 edge ≈ $2.33–2.43) | +45% | FY2026 results (~Feb 2027); FCF tie-out is band-moving; alert < ≈ $2.45 |
 | SGO.PA | Compagnie de Saint-Gobain | 2026-08-03 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: GCP 2022 @ 17.3× trailing adj EBITDA / ≈30× pre-deal EBIT, no published criterion; buybacks SOUND 6.4–10.9× EV/OI) | €81.28 (31 Jul 2026) | CHEAP ≈ €39.7–51.6 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg ≈ €56.7; no P12) — FAIR 10.8×/9.7× | +58% | FY2026 (~Feb 2027): knife-edge re-test (w-o-4 ROCE 10.07% vs 10% floor; BI basis 7.7% = WEAK), Dahl close, FY26 tranches; alert < ≈ €57 |
 | 6626.T | SEMITEC Corporation | 2026-09-04 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (0 flags; P17 FY-read INDETERMINATE ≤¥99.9m vs ¥84m cap; Ishizuka 46% control caveat; Seto RPT 2% COGS) | ¥2,449 (4 Sep 2026) | CHEAP < ≈ ¥1,403 (MCap/FCF 8×, P20 maint-capex basis FY3/26, binds both variants; EV/OI legs ≈ ¥2,342–3,344 no-cash/all-cash; no P12) — FAIR 14.0×/7.3× | +75% | Q2 FY3/27 tanshin (~Nov 2026): CFO normalisation + any new buyback; FY3/27 yūhō (~Jun 2027): P17 top-pay, 10y rebuild; alert < ≈ ¥1,450 |
@@ -449,10 +449,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v306 — 2026-10-05** — INTAKE: INVE-B.ST REVIEW v2 WATCH held (PR #74); P19 soft flag retired (SOUND); band ≈ SEK 294 → 318 (P/adj-NAV 0.80); EXPENSIVE→FAIR; Dist +38%→+27%.
 - **v305 — 2026-10-04** — INTAKE: 62 ANALYSE new names — 24 WATCH, 38 AVOID (routine PRs #4–#8, #10–#69); keys, verdicts and gates in INTAKE PR #70.
 - **v304 — 2026-10-03** — TROW v5 REVIEW: WATCH held (HOLD); Past STRONG→ADEQUATE (ΔFCF/sh 2.6% < 3%); P19 CAUTION, pledge caveat; band ≈$66–69 → $55.5; Dist +56%→+89%. Re-merged over HFG.DE v303.
 - **v303 — 2026-10-03** — HFG.DE v4 REVIEW: AVOID held (Past WEAK + Future WEAK + SF FAIL); SELL-FLAG SR2 re-affirmed. FY26 guide cut; P17 INDET.→PASS; band n.m. / €1.48 ac. Re-merged over NOVO v302.
 - **v302 — 2026-10-03** — NOVO-B.CO v10 REVIEW (CMD 21 Sep): AVOID held (Future WEAK; SF FAIL pair); SELL-FLAG SR2 re-affirmed. Px DKK 276.50→248.75; FAIR 10.4×→9.4×; band ≈170/180 unch.
-- **v301 — 2026-10-02** — MAERSK-B.CO v2 REVIEW: AVOID held (Future WEAK); FAIR→EXPENSIVE (DKK 16,685→24,240); band ≈12,000 → 2,700–11,400 (nc/ac, Jun-26 BS); SF PASS (P19 SOUND).
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
