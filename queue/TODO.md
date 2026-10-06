@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v38 · 2026-10-05)
+# GSC Work Queue — TODO.md (v39 · 2026-10-06)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -8,7 +8,26 @@
 
 ## ▶ Review requests (SWEEP)
 
-*None pending — no SWEEP row applied yet. INTAKE replaces this block with each applied sweep's `## Review requests`.*
+*From the SWEEP of 2026-10-05 (PR #76), applied by INTAKE 2026-10-06. INTAKE replaces this block with each applied sweep's `## Review requests`.*
+
+- `QCOM` — move +25.2% vs the carried $147.61 (31 Jul), confirmed on a second source — sweep 2026-10-05
+- `IFCN.SW` — move +28.1% vs the carried CHF 153.60 (28 Jul), confirmed on a second source — sweep 2026-10-05
+- `ROCK-B.CO` — move −19.7% vs the carried DKK 232.00 (7 Aug), confirmed on a second source — sweep 2026-10-05
+- `INTU` — move −19.2% vs the carried $348.00 (27 Aug), confirmed on a second source — sweep 2026-10-05
+- `SGO.PA` — move −18.7% vs the carried €81.28 (31 Jul), confirmed on a second source — sweep 2026-10-05
+- `BKNG` — move −18.1% vs the carried $194.27 (4 Aug), confirmed on a second source — sweep 2026-10-05
+- `SAP.DE` — move +17.4% vs the carried €157.68 (31 Jul), confirmed on a second source — sweep 2026-10-05
+- `RMS.PA` — move −16.0% vs the carried €1,531.50 (31 Jul), confirmed on a second source — sweep 2026-10-05
+- `THULE.ST` — move −14.4% vs the carried SEK 223.60 (28 Jul), confirmed on a second source — sweep 2026-10-05
+- `GSK.L` — move −14.3% vs the carried £20.53 (28 Jul), confirmed on a second source — sweep 2026-10-05
+- `MYCR.ST` — move +13.1% vs the carried SEK 313.80 (31 Jul), confirmed on a second source — sweep 2026-10-05
+- `BA.L` — move −12.9% vs the carried 2,220p (8 Aug), confirmed on a second source — sweep 2026-10-05
+- `META` — move +12.4% vs the carried $648.03 (11 Sep), confirmed on a second source — sweep 2026-10-05
+- `NVS` — move −11.8% vs the carried $159.83 (28 Jul), confirmed on a second source — sweep 2026-10-05
+- `CRCT` — move +11.6% vs the carried $5.84 (7 Aug), confirmed on a second source — sweep 2026-10-05
+- `NU` — move −11.1% vs the carried ≈$15.10 (27 Aug), confirmed on a second source — sweep 2026-10-05
+- `SIKA.SW` — move −10.5% vs the carried CHF 195.50 (5 Aug), confirmed on a second source — sweep 2026-10-05
+- `ADBE` — move −10.4% vs the carried $265.21 (7 Aug), confirmed on a second source — sweep 2026-10-05
 
 ---
 
@@ -67,6 +86,12 @@
 - 2026-10-04 · 6645.T ANALYSE — US-GAAP Japanese filers (Omron) print no operating-income line: OI must be built from the face plus the "other expense (income), net" note, where impairments, restructuring and quality costs sit beside interest and investment gains. Question whether §2·1A should name a standard OI construction for US-GAAP/IFRS filers that bury operating charges in a mixed "other" line, so two sessions derive the same OI.
 - 2026-10-04 · 6506.T ANALYSE — P3 growth clause scope (6506.T): "growth flat-to-positive nominal" is read here on both per-share series P2 names (ΔOI/sh and ΔFCF/sh). Yaskawa clears the P3 ROCE level (10.6%) and OI/sh (+2.8%) but FCF/sh is −6.0% geo-mean, which decides Past WEAK vs ADEQUATE (AVOID vs WATCH). Should P3 state explicitly which per-share series it tests?
 - 2026-10-05 · INVE-B.ST REVIEW — Holdco cheapness calibration (INVE-B.ST v2): Gate 2 anchors securities-heavy holding companies on MCap/BV with the BRK.B ≈ 1.2× precedent but gives no band multiple. INVE uses 0.80 × adjusted NAV (≈ 0.90× reported BV) because its book is largely marked to market. Should the rule name the band multiple, or the NAV basis, for mark-to-market holding companies?
+
+---
+
+## ▶ Routed by INTAKE 2026-10-06, register v307
+
+*1 routine row file (SWEEP 2026-10-05, PR #76): Px refresh only — no TODO additions, no Open items, no IDEAS candidates. Audit clean: no direct commits, no orphan `claude/gsc-*` branches.*
 
 ---
 
@@ -947,6 +972,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v39 — 2026-10-06** — INTAKE (register v307) — 1 merged row file (SWEEP 2026-10-05, PR #76): head block `▶ Review requests (SWEEP)` filled with 18 sweep requests; new block `▶ Routed by INTAKE 2026-10-06` (no items); audit clean. Outgoing v38 archived to `queue/archive/TODO_v38_2026-10-05.md`.
 - **v38 — 2026-10-05** — INTAKE (register v306) — 1 merged row file (INVE-B.ST REVIEW v2, PR #74): 1 IDEAS candidate added to the head block; new block `▶ Routed by INTAKE 2026-10-05` with 4 items; audit clean. Outgoing v37 archived to `queue/archive/TODO_v37_2026-10-04.md`.
 - **v37 — 2026-10-04** — INTAKE (register v305) — routine intake of 65 merged row files: two standing head blocks created (`▶ Review requests (SWEEP)` empty; `▶ IDEAS candidates (attended triage)` 50 lines); new block `▶ Routed by INTAKE 2026-10-04` with 64 items + 1 audit item (20 pre-v4.4.0 direct commits). Outgoing v36 archived to `queue/archive/TODO_v36_2026-10-03.md`.
 - **v36 — 2026-10-03** — TROW v5 REVIEW routed at register v304: 4 items (August SCT / P17 re-test, authorisation check, P19 context backfill, pledge re-verify) + 2 discharges noted.
