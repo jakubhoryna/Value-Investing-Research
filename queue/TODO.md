@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v39 · 2026-10-06)
+# GSC Work Queue — TODO.md (v40 · 2026-10-07)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here**, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -86,6 +86,21 @@
 - 2026-10-04 · 6645.T ANALYSE — US-GAAP Japanese filers (Omron) print no operating-income line: OI must be built from the face plus the "other expense (income), net" note, where impairments, restructuring and quality costs sit beside interest and investment gains. Question whether §2·1A should name a standard OI construction for US-GAAP/IFRS filers that bury operating charges in a mixed "other" line, so two sessions derive the same OI.
 - 2026-10-04 · 6506.T ANALYSE — P3 growth clause scope (6506.T): "growth flat-to-positive nominal" is read here on both per-share series P2 names (ΔOI/sh and ΔFCF/sh). Yaskawa clears the P3 ROCE level (10.6%) and OI/sh (+2.8%) but FCF/sh is −6.0% geo-mean, which decides Past WEAK vs ADEQUATE (AVOID vs WATCH). Should P3 state explicitly which per-share series it tests?
 - 2026-10-05 · INVE-B.ST REVIEW — Holdco cheapness calibration (INVE-B.ST v2): Gate 2 anchors securities-heavy holding companies on MCap/BV with the BRK.B ≈ 1.2× precedent but gives no band multiple. INVE uses 0.80 × adjusted NAV (≈ 0.90× reported BV) because its book is largely marked to market. Should the rule name the band multiple, or the NAV basis, for mark-to-market holding companies?
+- 2026-10-05 · LSS.PA ANALYSE — Pay-ratio-only disclosure: French/EU filers publish highest-paid ÷ median (CSRD S1-16) without either amount; a P17 note on when a published ratio plus a sourced national or group median may stand in (or must stay INDETERMINATE) would make these calls repeatable.
+- 2026-10-05 · SPX.L ANALYSE — P4 "sustained decline" where returns fall in acquisition-led steps and then plateau (SPX.L: ROCE 22% → 11% over FY2016–25, FY2022–25 flat at 11–13%, FCFROCE rising since FY2022) — should §2·1A define "sustained" (e.g. consecutive years, or latest N years below all earlier window years)?
+- 2026-10-06 · BABA REVIEW — Outside-director pay vs accounting expense (BABA v2): the P17 director test reads the disclosed total, which includes the share-based compensation expense recognised in the year. At Alibaba that expense almost doubled to RMB 4.63m per INED, which pushed six seats over the US stop. Cash fees alone are $211–396k. Should the test read the grant-date value of awards made in the year, or the expense, when a filer discloses both?
+- 2026-10-06 · BABA REVIEW — Investment-heavy operating companies (BABA v2): equity-method stakes and long-term equity securities are about one-third of total assets and stay in CE under the subtractive rule (0700.HK precedent). Worst-of-four ROCE is 7.5% on that basis. Should the rule name a treatment, or a disclosed alternate read, when non-operating investments are this large but the substitution rule does not apply?
+
+---
+
+## ▶ Routed by INTAKE 2026-10-07, register v308
+
+*4 items from 3 routine row files (LSS.PA ANALYSE v1, PR #77; SPX.L ANALYSE v1, PR #79; BABA REVIEW v2, PR #81). Audit clean: no direct commits, no orphan `claude/gsc-*` branches.*
+
+- `LSS.PA` — FY2026 results (10 Feb 2027) / AFR: re-test P4 (ROCE_wc 5.1% FY2025) and P19 CAUTION (2026 buyback €13.6m at €16.62; Launchmetrics/TextileGenesis minority buy-out prices; any new deal multiple); retrieve the highest-paid employee's total to resolve P17 INDETERMINATE (25× undisclosed median).
+- `BABA` — backfill `isin:` (not established in the 2026-10-06 v2 REVIEW).
+- `BABA` — FY2027 20-F + annual report (~May–Jul 2027): primary tie-out of FY2022–26 capex (tier-2 in v1/v2); FY2025 Item 16E monthly repurchase prices (v2 derives the average from cash ÷ retired shares); exchangeable bonds FY2023–25 for the P19 tranche EVs; director pay re-test (FY2026 totals RMB 6.1–7.4m vs ≈ $672k stop).
+- `BABA` — TODO "v3.7.0 App-F restatements" list: drop BABA (v2 restates the band as a labelled no-cash/all-cash bracket, 2026-10-06).
 
 ---
 
@@ -972,6 +987,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v40 — 2026-10-07** — INTAKE (register v308) — 3 merged row files (LSS.PA ANALYSE, PR #77; SPX.L ANALYSE, PR #79; BABA REVIEW v2, PR #81): 4 IDEAS candidates added to the head block; new block `▶ Routed by INTAKE 2026-10-07` with 4 items; audit clean. Outgoing v39 archived to `queue/archive/TODO_v39_2026-10-06.md`.
 - **v39 — 2026-10-06** — INTAKE (register v307) — 1 merged row file (SWEEP 2026-10-05, PR #76): head block `▶ Review requests (SWEEP)` filled with 18 sweep requests; new block `▶ Routed by INTAKE 2026-10-06` (no items); audit clean. Outgoing v38 archived to `queue/archive/TODO_v38_2026-10-05.md`.
 - **v38 — 2026-10-05** — INTAKE (register v306) — 1 merged row file (INVE-B.ST REVIEW v2, PR #74): 1 IDEAS candidate added to the head block; new block `▶ Routed by INTAKE 2026-10-05` with 4 items; audit clean. Outgoing v37 archived to `queue/archive/TODO_v37_2026-10-04.md`.
 - **v37 — 2026-10-04** — INTAKE (register v305) — routine intake of 65 merged row files: two standing head blocks created (`▶ Review requests (SWEEP)` empty; `▶ IDEAS candidates (attended triage)` 50 lines); new block `▶ Routed by INTAKE 2026-10-04` with 64 items + 1 audit item (20 pre-v4.4.0 direct commits). Outgoing v36 archived to `queue/archive/TODO_v36_2026-10-03.md`.

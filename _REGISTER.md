@@ -1,15 +1,15 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v307
-register_date: 2026-10-06
+register_version: v308
+register_date: 2026-10-07
 archive: "registers/{YYYY}/ — one verbatim snapshot per outgoing version; live change log = newest 5 (MODEL §7.5)"
-names_total: 384
-verdict_split: "WATCH 88 · AVOID 294 · BUY 0 · DNAF 2"
+names_total: 386
+verdict_split: "WATCH 87 · AVOID 297 · BUY 0 · DNAF 2"
 portfolio_names: 4
 ordering: "v3.2 — PORTFOLIO → BUY → WATCH → AVOID; WATCH ascending by Dist %"
 ---
 
-# GSC Register — Master Watchlist (v307 · 2026-10-06)
+# GSC Register — Master Watchlist (v308 · 2026-10-07)
 
 Source of truth for every name analysed in this project. **One row per company, latest memo version only** — replace the row after each REVIEW. Rows are drawn from each memo's machine-readable front matter; the memo wins over the register when they disagree (§7.1).
 
@@ -36,7 +36,7 @@ Source of truth for every name analysed in this project. **One row per company, 
 
 None. The expected outcome of most analyses is WATCH; an empty BUY section is the model working, not failing.
 
-### WATCH — 88 names, ascending by Dist % (closest to the buy zone first)
+### WATCH — 87 names, ascending by Dist % (closest to the buy zone first)
 
 | Ticker                  | Company                         | Memo date  | Ver | Verdict | Past     | Future   | SF                                        | Px @ memo                                | Trigger band                                                                                                                            | Dist % | Next review / notes                                                                                                                                 |
 | ----------------------- | ------------------------------- | ---------- | --- | ------- | -------- | -------- | ----------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -50,7 +50,6 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | 6626.T | SEMITEC Corporation | 2026-09-04 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (0 flags; P17 FY-read INDETERMINATE ≤¥99.9m vs ¥84m cap; Ishizuka 46% control caveat; Seto RPT 2% COGS) | ¥2,449 (2 Oct 2026) | CHEAP < ≈ ¥1,403 (MCap/FCF 8×, P20 maint-capex basis FY3/26, binds both variants; EV/OI legs ≈ ¥2,342–3,344 no-cash/all-cash; no P12) — FAIR 14.0×/7.3× | +75% | Q2 FY3/27 tanshin (~Nov 2026): CFO normalisation + any new buyback; FY3/27 yūhō (~Jun 2027): P17 top-pay, 10y rebuild; alert < ≈ ¥1,450 |
 | GSK.L (was GSK) | GSK plc | 2026-07-14 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | £17.59 (1759p LSE) (5 Oct 2026) | CHEAP ≈ £9.08–10.08 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ £11.10; no P12 — Past ADEQUATE) — FAIR | +75% | FY2026 (~Feb 2027) resets litigation-trough OI; ViiV HIV cliff ~2028 & IRA are Future watch; L/E 276% flag; alert < ≈ £12 |
 | 8002.T | Marubeni Corporation | 2026-08-07 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: live ¥100bn pgm @ ~14.8× NI / 1.84× BV, no worth criterion; substitution rule) | ¥4,725 (2 Oct 2026) | CHEAP < ≈ ¥2,674 (MCap/NI 8×, substitution anchor; 1.2×BV cross ≈ ¥3,219; EV/OI n.m.) — EXPENSIVE | +77% | H1 FY3/27 (~Nov 2026) ¥100bn pgm execution multiple; FY3/27 (~May 2027) re-anchor; alert < ≈ ¥3,200 |
-| BABA                    | Alibaba Group Holding Ltd       | 2026-07-02 | v1  | WATCH   | ADEQUATE | ADEQUATE | PASS                                      | $105.85 ADS (2 Oct 2026) | CHEAP ≈ $40.3–59.4 (EV/OI no-cash/all-cash, norm. OI; P12 edge ≈$55–74) — FAIR                                                                | +78% | FY2027 Q1 (Aug 2026), price < ≈$74, Anthropic/Pentagon resolution, or capex revision                                                                |
 | TROW | T. Rowe Price Group, Inc. | 2026-10-03 | v5 | WATCH | ADEQUATE (was STRONG — ΔFCF/sh 2.6% < 3%) | ADEQUATE | PASS (1 flag — cap-alloc CAUTION: buybacks 1.7–2.0× band, no criterion, FY23–25 payout 117–151% FCF; August pledge caveat unpaired) | $104.62 (2 Oct 2026) | CHEAP < ≈ $55.5 (MCap/FCF binds; EV/OI legs $64.2/$83.9 no-cash/all-cash; no P12 — Past ADEQUATE) — FAIR | +89% | Q3'26 30 Oct (TDF flows); FY2026 10-K (~Feb 2027) P19 year-read; 2027 proxy (pledge, August pay); alert < ≈ $84 |
 | FIE.DE (was FIE) | Fielmann Group AG | 2026-07-24 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS (1 P19 acq flag; Shopko >20× INDETERMINATE) | €37.60 (5 Oct 2026) | CHEAP ≈ €16.7–19.4 (EV/OI no-cash/all-cash; MCap/FCF leg ≈ €33.25; no P12 — Past ADEQUATE) — FAIR | +94% | FY2026 AR (~Apr 2027): Shopko audit re-test + window rolls to 9y (only 8y retrievable); alert < ≈ €26 |
 | INTU | Intuit Inc. | 2026-08-27 | v2 | WATCH | STRONG | ADEQUATE | PASS (1 flag — P19 CAUTION, one-limb, conf ~60%; **P17 INDETERMINATE ×2 — severity-changing**: CEO $36.85m vs ≈$40m, and Cook director $1.3m vs $672k stop) | $281.08 (2 Oct 2026) | CHEAP < ≈ $118.60–144.59 (EV/OI nc/ac; FCF leg $248.87; P12 edge ≈ $155.77–181.76) | +94% | FY2026 10-K ~Sep (Q4 tranche); FY2026 proxy ~Nov = two ways to FAIL SF; alert < ≈ $182, adverse > ≈ $778 |
@@ -129,7 +128,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | IFCN.SW (SIX; was IFCN) | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG | ADEQUATE | PASS | CHF 196.80 (5 Oct 2026) | CHEAP < ≈ CHF 18 (MCap/FCF 8× FY25; EV/OI leg ≈ CHF 24.5–28.8 no-cash/all-cash; P12 edge ≈ CHF 22.5) — EXPENSIVE | +993% | FY2026 AR (~Mar 2027) resets cyclical FY25 basis; semi upcycle & tariff/margin watch; alert < ≈ CHF 30 |
 | SIE.DE (was SIE) | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS (1 flag — cap-allocation CAUTION: 10 yrs of criterion-free repurchase at 1.3–8.4× worth; not sterilisation — count −4.5%) | €275.00 (5 Oct 2026) | CHEAP ≈ €6.4–25.0 (EV/OI no-cash/all-cash, primaries only; MCap/FCF leg €112.8; no P12; informational SFS-adjusted ≈ €43.5–62.0) — EXPENSIVE 28.0×/29.5× | +1000% | Q3 FY26 (~7 Aug 2026) interim; FY2026 (~Dec 2026) tranche + CAUTION re-test; Feb-2027 AGM Healthineers spin vote → mandatory full quality re-base; SFS item open |
 
-### AVOID — 294 names, alphabetical
+### AVOID — 297 names, alphabetical
 
 |Ticker|Company|Memo date|Ver|Verdict|Past|Future|SF|Px @ memo|Trigger band|Dist %|Next review / notes|
 |------|-------|---------|---|-------|----|------|--|---------|------------|------|-------------------|
@@ -190,6 +189,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | AUTO.OL | AutoStore Holdings Ltd. | 2026-10-04 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL (P17 hard strike; P19 ADVERSE) | NOK 16.31 (2 Oct 2026) | CHEAP < ≈ NOK 0.23 (MCap/FCF binds, FY25 FCF USD 10.3m); EV/OI leg NOK 2.21/2.50 no-cash/all-cash | — | FY2026 AR (~Apr 2027): 4 partners 74% of rev; ROCE 4.2% on buyout CE |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID (Future WEAK + SF FAIL) | STRONG (lender substitution; alt WEAK logged) | WEAK | FAIL | $348.08 | CHEAP < ≈ $184 (MCap/FCF binding; EV/OI n.m. for a bank; NI-proxy anchor ≈ $125; P12 edge ≈ $230) — moot given AVOID | — | FY2026 results (~late Jan 2027) and 2027 proxy; flip requires comp reform ($46.2m strike) AND Delta-supplier diversification (agreement to end-2029) |
 | AZTA | Azenta, Inc. | 2026-08-09 | v1 | AVOID | WEAK | ADEQUATE | **FAIL** (P17 hard strike 5.4×/21.6× on the FCF leg alone; P19 CAUTION — ~$1.5bn of divestiture-funded buybacks at ~2× today's price) | $32.04 (7 Aug 2026) | n.m. — no positive OI any year; **restores at OI ≈ $7.3m**; MCap/FCF leg $7.00 | — | 3 gates; Σ 3y OI −$151m, FCFROCE 0.35%; **0.81× book with $543m cash/securities**; real switching-cost moat in biorepository; FY2026 (~Nov 2026); alert < ≈ $7 |
+| BABA | Alibaba Group Holding Ltd | 2026-10-06 | v2 | AVOID | WEAK | WEAK | FAIL (hard strike: outside-director pay; flag pair P17 abs. + P19 CAUTION) | $110.80 ADS (5 Oct 2026) | CHEAP < ≈ $14.4 (MCap/FCF P20 maintenance basis binds); EV/OI n.m./$21.7 (no-cash/all-cash, FY26 OI); strict all-capex FCF leg n.m. — EXPENSIVE | — | 3 gates; Dec-qtr 2026 (~Feb 2027); FY2027 20-F + AR (~May–Jul 2027) re-tests worst-of-4 ROCE 7.5%, director pay, P19 |
 | BAS.DE (was BAS) | BASF SE | 2026-07-17 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buyback) | WEAK | WEAK | FAIL | €48.44 (17 Jul 2026) | n.m. — EV/OI ≤7 unattainable on FY25 OI (net debt+NCI ≈ 11.9× OI); MCap/FCF leg ≈ €12.1; backvalued FY21 band ≈ €33.6 | — | FY2026 AR (~Feb 2027): P19 re-test on €1.5bn pgm 2026 tranches; Ag Solutions separation watch |
 | BAYN.DE (was BAYN) | Bayer AG | 2026-07-16 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL | €47.17 (16 Jul 2026) | n.m. while OI < 0 — EV/OI leg unreachable (MCap/FCF leg ≈ €17.0 on FY25 co-def FCF €2.08bn). Cheapness EXPENSIVE | — | FY2026 (~Mar 2027): first positive-OI print restores a band; Roundup class-settlement approval + post-Durnell provisioning check (H2 2026) |
 | BBBY | Bed Bath & Beyond, Inc. (f/k/a Beyond/Overstock) | 2026-08-09 | v1 | AVOID | WEAK | WEAK | FAIL (P17 hard strike, loss-legs rule) | $4.50 (6 Aug 2026) | n.m. — restoring OI ≈ $63.5m no-cash / $38.5m all-cash vs −$61m FY2025; FCF leg needs ≈ $53.6m | — | FY2026 10-K (~Feb 2027); ⚠ NXH/Nasdaq rename = RECONCILE re-key; 46.23m-sh offering live |
@@ -307,6 +307,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID (SF FAIL: P19 buybacks) | STRONG (leverage-caveated, L/E 324%) | ADEQUATE | FAIL | $1,213 | CHEAP < ≈ $119 (MCap/FCF binding, P20 maintenance basis; EV/OI leg ≈ $156 conservative EV; P12 edge ≈ $149; strict all-capex ≈ $80). Cheapness EXPENSIVE | — | FY2026 10-K (~Feb 2027) re-anchors band; Apr 2027 proxy re-tests P19 (~31× at execution); P17 passes under v3 |
 | LMND | Lemonade, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P17) | WEAK | WEAK | FAIL (P17 hard strike — more-than-token pay vs both owner-earnings legs negative FY2025) | $51.86 (6 Aug 2026) | CHEAP ≈ $8.3 (MCap/BV 1.2×, substitution anchor; melting-BV caveat); NI-proxy n.m. — EXPENSIVE 7.5× book | — | FY2026 10-K (~Feb 2027): EBITDA-breakeven test; P17 re-read if FCF > 0; SCT/RPT backfill |
 | LOGI | Logitech International S.A. | 2026-07-22 | v1 | AVOID (Future WEAK + SF FAIL: P19) | STRONG | WEAK | FAIL | $102.91 (22 Jul 2026) | CHEAP < ≈ $47.8 (EV/OI, low-EV; P12 ≈ $52.7) — EXPENSIVE | — | FY2027 10-K (~May 2027); 2026 proxy re-tests P17; structural — no price flips |
+| LSS.PA | Lectra SA | 2026-10-05 | v1 | AVOID | WEAK | ADEQUATE | PASS (1 flag: cap-alloc CAUTION) | €20.70 (5 Oct 2026) | CHEAP < ≈ €1.1–2.3 (EV/OI no-cash/all-cash, FY25 OI; FCF leg €13.7; no P12 — Past WEAK) — EXPENSIVE | — | 9M'26 28 Oct 2026; FY2026 10 Feb 2027 re-tests ROCE decline (P4), P19 buy-out pricing |
 | LULU | lululemon athletica inc. | 2026-09-04 | v5 | AVOID (Future WEAK) | ADEQUATE | WEAK | PASS (1 flag — cap-alloc CAUTION) | $97.50 (4 Sep 2026 pre-mkt; 3 Sep close $121.77) | CHEAP < ≈ $67 (MCap/FCF, FY2025 FCF); ≈ $79–100 norm; EV/OI leg $140/$152 nc/ac lease-out — FAIR | — | Q3 FY2026 ~early Dec 2026, 1st under O'Neill; FY2026 10-K ~Mar 2027 rolls window; 2027 proxy P17 backfill |
 | LYFT | Lyft, Inc. | 2026-08-07 | v1 | AVOID (Past WEAK + Future WEAK) | WEAK | WEAK | PASS (1 flag — cap-alloc CAUTION: FCF-funded pgm at/below 8× FCF but criterion-free, OI worth basis negative) | $16.30 (6 Aug 2026) | n.m. — no positive price clears EV/OI ≤ 7 (OI < 0); MCap/FCF leg ref ≈ $21.4 | — | FY2026 10-K (~Feb 2027): OI-inflection test — band computes if OI > 0; SCT/ownership/RPT backfill |
 | MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID (SF FAIL) | STRONG | ADEQUATE | FAIL | $535.82 (close 2 Jul 2026) | CHEAP < ≈ $128 (EV/OI, conservative EV; P12 edge ≈ $149, where MCap/FCF binds) | — | 2027 proxy (~Apr 2027) re-tests comp strike ($35.4m > $30m stop); FY2026 10-K (~Feb 2027) refreshes band |
@@ -376,6 +377,7 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 | SOUN | SoundHound AI, Inc. | 2026-08-07 | v1 | AVOID | WEAK | WEAK | **FAIL** (P17 hard strike: both FY25 legs negative — NI −$14m, FCF −$99m — vs CEO $9.33m) | $7.58 (7 Aug 2026) | n.m. — no positive OI or FCF any year; both primaries unmeasurable (first register name where neither primary has a denominator) | — | FY2026 10-K (~Mar 2027) first candidate positive-OI year; customer-concentration sentence; 2027 proxy P17 re-test |
 | SPCX | Space Exploration Technologies Corp. | 2026-07-09 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL) | WEAK | WEAK | FAIL | $152.88 (9 Jul 2026 intraday) | n.m. — FY2025 OI −$2.6bn & FCF −$14.0bn; no positive price clears either primary | — | First public 10-K (~Feb–Mar 2027) informational; triple-gate structural. Starlink spin-out filing → fresh ANALYSE |
 | SPOT | Spotify Technology S.A. | 2026-07-10 | v1 | AVOID (Past WEAK + Future WEAK + SF FAIL: P19 buybacks) | WEAK | WEAK | FAIL | $485.88 (9 Jul 2026; ≈€424.63) | CHEAP < ≈ $73 / €64 (EV/OI, conservative EV; no P12) — EXPENSIVE, moot given AVOID | — | FY2026 20-F (~Feb 2027) informational — structural: ROCE 4.3% + supplier breadth FAIL + P19 strikes on every tranche ever executed |
+| SPX.L | Spirax Group plc | 2026-10-05 | v1 | AVOID | WEAK | ADEQUATE | PASS (1 flag: P19 CAUTION) | 7,275p (5 Oct 2026) | CHEAP < ≈ £10.44–15.56 (EV/OI no-cash/all-cash, FY25 OI; MCap/FCF leg £19.80; no P12) — EXPENSIVE 24.3×/22.9× EV/OI | — | FY2026 results (~Mar 2027): P4 re-test vs FY22–25 ROCE 11–13%; ETS returns |
 | SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK | STRONG | PASS (structural CAUTION unpaired) | $83.88 (7 Aug 2026) | n.m. — both EV/OI bounds negative (−$30.06 no-cash / −$29.99 all-cash); price needs OI ≈ $13.1bn | — | Structural utility (ROCE ≈ 3%); wildfire/LNG execution noted; no flip path |
 | SRT3.DE (was SRT3) | Sartorius AG | 2026-07-22 | v1 | AVOID (Past WEAK + SF FAIL: P19 Polyplus) | WEAK | STRONG | FAIL | €215.85 pref / €174.00 ord (22 Jul 2026) | n.m. — EV/OI ≤7 unreachable at any price (net debt+NCI = 9.0× FY25 OI); MCap/FCF leg ≈ €24.8 | — | FY2026 AR (~Feb 2027); P19 acquisition strike stands to FY2032 |
 | STMN.SW (was STMN) | Straumann Holding AG | 2026-08-27 | v3 | AVOID (SF FAIL: P19 ADVERSE — H1-26 treasury purchases CHF 69.3m, 2.8× FY25 full year, unexplained) | STRONG | STRONG | FAIL | CHF 92.18 (27 Aug 2026) | CHEAP ≈ CHF 14.1 (MCap/FCF; EV/OI leg 20.9/23.5 nc/ac, 30-Jun-26 interim BS; P12 edge ≈ 17.6) — EXPENSIVE 27.7×/27.0× | — | FY2026 AR ~24 Feb 2027 — full-yr tranche + its purpose; CEO Norbye from 1 Dec 26; P4 2nd-decline |
@@ -449,10 +451,10 @@ None. The expected outcome of most analyses is WATCH; an empty BUY section is th
 ---
 
 ## Change log
+- **v308 — 2026-10-07** — INTAKE: LSS.PA ANALYSE AVOID (Past); SPX.L ANALYSE AVOID (Past); BABA REVIEW v2 WATCH→AVOID (Past + Future + SF), band ≈ $40–59 → $14.4 (PRs #77, #79, #81).
 - **v307 — 2026-10-06** — INTAKE: SWEEP 2026-10-05 refresh (75 Px; PR #76); Dist % recomputed, WATCH re-sorted; held Last zone check CROX, HFG.DE, NOVO-B.CO; no verdict rows changed.
 - **v306 — 2026-10-05** — INTAKE: INVE-B.ST REVIEW v2 WATCH held (PR #74); P19 soft flag retired (SOUND); band ≈ SEK 294 → 318 (P/adj-NAV 0.80); EXPENSIVE→FAIR; Dist +38%→+27%.
 - **v305 — 2026-10-04** — INTAKE: 62 ANALYSE new names — 24 WATCH, 38 AVOID (routine PRs #4–#8, #10–#69); keys, verdicts and gates in INTAKE PR #70.
 - **v304 — 2026-10-03** — TROW v5 REVIEW: WATCH held (HOLD); Past STRONG→ADEQUATE (ΔFCF/sh 2.6% < 3%); P19 CAUTION, pledge caveat; band ≈$66–69 → $55.5; Dist +56%→+89%. Re-merged over HFG.DE v303.
-- **v303 — 2026-10-03** — HFG.DE v4 REVIEW: AVOID held (Past WEAK + Future WEAK + SF FAIL); SELL-FLAG SR2 re-affirmed. FY26 guide cut; P17 INDET.→PASS; band n.m. / €1.48 ac. Re-merged over NOVO v302.
 
 *Full change history and every prior register state: `registers/{YYYY}/` — one verbatim snapshot per outgoing version (v43 onward; verified complete 2026-07-25). Older log entries live inside the snapshots.*
