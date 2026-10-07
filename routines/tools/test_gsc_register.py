@@ -31,7 +31,8 @@ strict line on every key, trigger_basis and the held trigger = ADD band,
 the Future concentration caveat, the lint of the ten new fields (the
 trigger as the no-cash bound, the P28 down-year basis, the P20 FCF basis
 and the all-capex order), the no-cash band parser and the one-time
-retrigger.
+retrigger. v4.5.2: lint-row (the row file against its name, its title and
+the exact row-from-memo --table print, read as gsc-automerge reads it).
 """
 import contextlib
 import io
@@ -1085,6 +1086,123 @@ class LintTests(unittest.TestCase):
         # Before v4.5.0 the FCF basis is free text.
         fails, _ = self.lint(model_version="v4.4.1", core_fcf_basis="FY2025 levered FCF")
         self.assertEqual(fails, [])
+
+
+class LintRowTests(unittest.TestCase):
+    """lint-row (v4.5.2): the PR 87 failure (a table pasted without its header) and its neighbours."""
+    MEMO = "memos/TROW/TROW_2026-10-03_GSC.md"
+    ROW = "queue/rows/2026-10-03_2250_REVIEW_TROW.md"
+    TITLE = "HELD · GSC REVIEW TROW 2026-10-03 — WATCH; zone HOLD"
+
+    def tables(self, fm=None):
+        root = TempRoot({self.MEMO: memo_text(fm or TROW_FM)})
+        try:
+            code, out, _err = run_main(["--root", root.path, "row-from-memo", self.MEMO, "--table"])
+        finally:
+            root.close()
+        self.assertEqual(code, 0)
+        master, _, portfolio = out.strip("\n").partition("\n\n")
+        return master, portfolio
+
+    def row_text(self, master=None, portfolio=None, **fm):
+        m, p = self.tables()
+        front = {"row_type": "REVIEW", "key": "TROW", "company": "T. Rowe Price Group, Inc.",
+                 "memo_path": self.MEMO, "run_date": "2026-10-03", "run_time": "2250", "held": "true",
+                 "pr_title": self.TITLE}
+        front.update(fm)
+        lines = ["---"] + ["%s: %s" % kv for kv in front.items()] + ["---", "## Register row (new)",
+                                                                     m if master is None else master]
+        lines += ["## Replaces", "| TROW | ... |", "## Portfolio row", p if portfolio is None else portfolio,
+                  "## Queue update", "none"]
+        return "\n".join(lines) + "\n"
+
+    def lint(self, text, rel=None, memo=None):
+        memo_text_ = memo_text(TROW_FM) if memo is None else memo
+        return r.lint_row(rel or self.ROW, text, lambda path: memo_text_ if path == self.MEMO else None)
+
+    def test_the_printed_tables_pass(self):
+        self.assertEqual(self.lint(self.row_text()), [])
+        root = TempRoot({self.MEMO: memo_text(TROW_FM), self.ROW: self.row_text()})
+        try:
+            code, out, _err = run_main(["--root", root.path, "lint-row", self.ROW])
+        finally:
+            root.close()
+        self.assertEqual(code, 0, out)
+        self.assertIn("lint-row %s: OK" % self.ROW, out)
+
+    def test_header_missing_is_the_pr87_case(self):
+        master, _ = self.tables()
+        text = self.row_text(master=master.split("\n")[2])
+        fails = self.lint(text)
+        self.assertTrue(any("header and separator lines are missing" in f for f in fails), fails)
+        self.assertTrue(any(f.startswith("verdicts differ: row table ?, memo WATCH, pr_title WATCH") for f in fails),
+                        fails)
+        # gsc-automerge reads the same cell the same way: no Verdict column, so no verdict.
+        self.assertIsNone(r.row_file_verdict(text))
+        self.assertEqual(r.row_file_verdict(self.row_text()), "WATCH")
+        root = TempRoot({self.MEMO: memo_text(TROW_FM), self.ROW: text})
+        try:
+            code, out, _err = run_main(["--root", root.path, "lint-row", self.ROW])
+        finally:
+            root.close()
+        self.assertEqual(code, 1)
+        self.assertIn("FAIL (2)", out)
+
+    def test_separator_missing_or_cells_edited(self):
+        master, portfolio = self.tables()
+        lines = master.split("\n")
+        fails = self.lint(self.row_text(master="\n".join([lines[0], lines[2]])))
+        self.assertTrue(any("separator line" in f for f in fails), fails)
+        fails = self.lint(self.row_text(master=master.replace("| 55.5 |", "| 55.6 |", 1)))
+        self.assertEqual(fails, ["## Register row (new): cells differ from row-from-memo --table: Trigger "
+                                 "(never type a row by hand)"])
+        fails = self.lint(self.row_text(portfolio=portfolio.split("\n")[2]))
+        self.assertTrue(any(f.startswith("## Portfolio row: the header and separator") for f in fails), fails)
+        fails = self.lint(self.row_text(portfolio=""))
+        self.assertTrue(any(f.startswith("## Portfolio row: no table") for f in fails), fails)
+
+    def test_unheld_memo_prints_no_portfolio_row(self):
+        fm = dict(TROW_FM, position="—")
+        master, portfolio = self.tables(fm)
+        self.assertEqual(portfolio, "")
+        text = self.row_text(master=master, held="false")
+        fails = self.lint(text, memo=memo_text(fm))
+        self.assertEqual(fails, ["## Portfolio row: the memo is not held, so row-from-memo --table prints none"])
+
+    def test_title_and_front_matter(self):
+        fails = self.lint(self.row_text(pr_title="GSC REVIEW TROW 2026-10-03 — AVOID; was WATCH"))
+        self.assertEqual(fails, ["verdicts differ: row table WATCH, memo WATCH, pr_title AVOID "
+                                 "(gsc-automerge would hold the PR)"])
+        fails = self.lint(self.row_text(run_time="2251", key="TROW.X", row_type="ANALYSE", held="yes"))
+        self.assertEqual(len(fails), 4, fails)
+        fails = self.lint(self.row_text(memo_path="memos/TROW/TROW_2026-10-02_GSC.md"))
+        self.assertTrue(fails and fails[0].startswith("memo_path:"), fails)
+        self.assertTrue(r.lint_row(self.ROW, self.row_text(), lambda path: None)[0].startswith(
+            "memo_path: cannot read"))
+        self.assertTrue(self.lint(self.row_text(), memo="")[0].endswith("has no front matter"))
+        self.assertEqual(self.lint("no front matter\n"), ["no front matter (the --- block of README section 4)"])
+        self.assertTrue(self.lint(self.row_text(), rel="queue/rows/TROW.md")[0].endswith("[_{KEY}].md)"))
+
+    def test_other_row_types(self):
+        inc = ("---\nrow_type: INCOMPLETE\nkey: TROW\nrun_date: 2026-10-03\nrun_time: 2250\nheld: true\n"
+               "pr_title: HELD · GSC REVIEW TROW 2026-10-03 — INCOMPLETE (dependency: AZN)\n---\n"
+               "## Group dependency\n`AZN` — holding of TROW, memo missing\n")
+        self.assertEqual(self.lint(inc), [])
+        queue = ("---\nrow_type: QUEUE\nrun_date: 2026-10-03\nrun_time: 2250\n"
+                 "pr_title: GSC ANALYSE 2026-10-03 — queue exhausted\n---\n## Queue update\nnone\n")
+        self.assertEqual(self.lint(queue, rel="queue/rows/2026-10-03_2250_ANALYSE.md"), [])
+        self.assertTrue(self.lint(queue)[0].startswith("row_type: 'QUEUE'; this file name takes REVIEW"))
+        sweep = ("---\nrow_type: SWEEP\nrun_date: 2026-10-03\nrun_time: 0700\n"
+                 "pr_title: GSC SWEEP 2026-10-03 — 9/9 priced · 0 review requests\n---\n"
+                 "## Portfolio table\n| Ticker | Avg cost | Current | Zone (ADD / HOLD / SELL-FLAG) |\n"
+                 "|---|---|---|---|\n| TROW | 10.00 | 104.62 | HOLD |\n")
+        sweep_rel = "queue/rows/2026-10-03_0700_SWEEP.md"
+        self.assertEqual(self.lint(sweep, rel=sweep_rel), [])
+        headless = sweep.replace("| Ticker | Avg cost | Current | Zone (ADD / HOLD / SELL-FLAG) |\n|---|---|---|---|\n", "")
+        self.assertEqual(self.lint(headless, rel=sweep_rel),
+                         ["## Portfolio table: needs its header line with the Ticker and Zone columns"])
+        self.assertEqual(self.lint(sweep.split("## Portfolio table")[0], rel=sweep_rel),
+                         ["## Portfolio table is missing (every held name, README section 4)"])
 
 
 class ParserTests(unittest.TestCase):

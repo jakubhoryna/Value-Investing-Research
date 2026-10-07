@@ -42,7 +42,7 @@ SWEEP never writes the register. It writes one row file. INTAKE applies that fil
    - `## Held names — info only`
 
    Verdicts, bands and memo references don't change. Write the run note too.
-8. **Push** and finish the PR (README §1) as `GSC SWEEP {D} — {n}/{N} priced · {k} in range · {s} stale`, where N is the `sweep-scope` count. The PR body carries the two tables, the mismatches and the review requests. A SWEEP sends no push (README §5): a held zone change reaches Jakub through the morning digest (J11). gsc-automerge merges the PR unless a held name is missing from the portfolio table or its Zone cell has no zone word.
+8. **Lint the row file** (`python3 routines/tools/gsc_register.py lint-row queue/rows/{D}_{T}_SWEEP.md` exits 0, README §5 [v4.5.2]), **push** and finish the PR (README §1) as `GSC SWEEP {D} — {n}/{N} priced · {k} in range · {s} stale`, where N is the `sweep-scope` count. The PR body carries the two tables, the mismatches and the review requests. A SWEEP sends no push (README §5): a held zone change reaches Jakub through the morning digest (J11). gsc-automerge merges the PR unless a held name is missing from the portfolio table or its Zone cell has no zone word.
 
 **Forbidden:**
 - any edit to an existing file

@@ -29,7 +29,10 @@ snapshot pair (.md and .csv, same N and date); the head register.csv must
 carry the tool's header and one data row per names_total, and _REGISTER.md
 must be exactly its rendering by routines/tools/gsc_register.py from this
 checkout (text_lookup; fails closed without it). No other job and no other
-path may hold a .csv. classify(), check() and evaluate() take plain values, so
+path may hold a .csv. Every row file an ANALYSE, REVIEW or SWEEP PR adds must
+pass the tool's lint-row at the PR head (MODEL v4.5.2: its name, title and
+verdicts, and for a verdict row the exact row-from-memo --table print of its
+memo; text_lookup, fails closed without it). classify(), check() and evaluate() take plain values, so
 test_gsc_guard_check.py can call them without git. Run the tests with:
     python3 .github/workflows/test_gsc_guard_check.py
 """
@@ -560,6 +563,34 @@ def _check_register_pair(entries, text_lookup):
     return errors
 
 
+def _check_row_files(entries, text_lookup):
+    """Each added row file passes routines/tools/gsc_register.py lint-row at the
+    PR head (MODEL v4.5.2), read with the default branch's tool; fails closed
+    when the tool, the row file or the text lookup is missing. A path outside
+    the row grammar is left to the write-contract check."""
+    rows = [path for status, path in entries
+            if status == "A" and seg_match(path, "queue/rows/*.md") and path != "queue/rows/README.md"]
+    if not rows:
+        return []
+    tool = register_tool()
+    if tool is None or not hasattr(tool, "lint_row"):
+        return ["A %s: cannot load the lint-row check from routines/tools/gsc_register.py on the default branch"
+                % rows[0]]
+    if text_lookup is None:
+        return ["A %s: no file reader for the lint-row check (fail closed)" % path for path in rows]
+    errors = []
+    for path in rows:
+        if not tool.ROW_FILE_RE.match(path):
+            continue
+        text = text_lookup("head", path)
+        if text is None:
+            errors.append("A %s: cannot read the row file at the PR head" % path)
+            continue
+        for fail in tool.lint_row(path, text, lambda memo: text_lookup("head", memo)):
+            errors.append("A %s: lint-row: %s" % (path, fail))
+    return errors
+
+
 def check(job, entries, branch_info, blob_lookup, tree_lookup=None, text_lookup=None):
     """Check a routine PR's changes against its job's write contract.
 
@@ -577,7 +608,9 @@ def check(job, entries, branch_info, blob_lookup, tree_lookup=None, text_lookup=
                  which fail closed without it (see make_tree_lookup()).
     text_lookup: f(side, path) -> file text or None; side 'head'. Used by the
                  INTAKE register checks (register.csv and _REGISTER.md at the
-                 PR head), which fail closed without it (make_text_lookup()).
+                 PR head) and the row-file lint of ANALYSE, REVIEW and SWEEP
+                 (the row file and its memo at the PR head), which fail closed
+                 without it (make_text_lookup()).
     Returns a list of violation messages (empty = OK).
     """
     if job not in JOBS:
@@ -588,9 +621,11 @@ def check(job, entries, branch_info, blob_lookup, tree_lookup=None, text_lookup=
     key = branch_info.get("key")
     if job in ("analyse", "review"):
         errors += _check_analyse_review(job, clean, date, time, key, blob_lookup, tree_lookup)
+        errors += _check_row_files(clean, text_lookup)
     elif job == "sweep":
         errors += _check_exact(job, clean, {"queue/rows/%s_%s_SWEEP.md" % (date, time),
                                             "queue/runs/%s_%s_SWEEP.md" % (date, time)})
+        errors += _check_row_files(clean, text_lookup)
     elif job == "seed":
         errors += _check_exact(job, clean, {"queue/proposals/%s_%s_QUEUE-SEED.md" % (date, time),
                                             "queue/runs/%s_%s_SEED.md" % (date, time)})

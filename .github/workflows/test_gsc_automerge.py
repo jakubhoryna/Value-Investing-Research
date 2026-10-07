@@ -65,15 +65,24 @@ def memo_text(key, verdict, date, past="ADEQUATE", future="ADEQUATE", sf="PASS",
                trigger, position, key, key, summary))
 
 
-def row_text(job, key, title, verdict=None, row_type=None, held="false", date=D):
+def row_text(job, key, title, verdict=None, row_type=None, held="false", date=D, memo=None):
+    """A row file whose tables are the register tool's row-from-memo --table
+    print for its memo (v4.5.2 lint-row), with the Verdict cell set to
+    `verdict` (a differing cell is a mismatch fixture)."""
+    memo_path = "memos/%s/%s_%s_GSC.md" % (key, key, date)
     lines = ["---", "row_type: %s" % (row_type or job), "key: %s" % key, "company: Company %s" % key,
-             "isin: n/a", "memo_path: memos/%s/%s_%s_GSC.md" % (key, key, date), "run_date: %s" % date,
+             "isin: n/a", "memo_path: %s" % memo_path, "run_date: %s" % date,
+             "run_time: %s" % {"ANALYSE": "2130", "REVIEW": "0610"}[job],
              "held: %s" % held, "pr_title: %s" % title, "---", "## Register row (new)"]
     if verdict:
-        lines += ["| Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF "
-                  "| EV/OI | Next review |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|",
-                  "| %s | Company %s | %s | v2 | %s | ADEQUATE | ADEQUATE | PASS | 110 | 100 | - | - | Nov 2026 |"
-                  % (key, key, date, verdict)]
+        row = TOOL.row_from_memo(memo_path, memo or memo_text(key, verdict, date), [])
+        cells = TOOL.master_cells(row)
+        cells[TOOL.MASTER_COLUMNS.index("Verdict")] = verdict
+        lines += [TOOL.table_line(TOOL.MASTER_COLUMNS), "|" + "---|" * len(TOOL.MASTER_COLUMNS),
+                  TOOL.table_line(cells)]
+        if row["held"] == "true":
+            lines += ["## Portfolio row", TOOL.table_line(TOOL.PORTFOLIO_COLUMNS),
+                      "|" + "---|" * len(TOOL.PORTFOLIO_COLUMNS), TOOL.table_line(TOOL.portfolio_cells(row))]
     else:
         lines.append("none")
     lines += ["## Queue update", "none", "## TODO additions", "none", ""]
@@ -428,10 +437,12 @@ class Fixture:
 def analyse_changes(key="NEW", verdict="WATCH", title=None, time_="2130", memo_verdict=None, cell=None,
                     row_held="false", position="—", row_type=None, extra=None, row_title=None):
     title = title or "GSC ANALYSE %s %s — %s (Cheapness)" % (key, D, verdict)
+    memo = memo_text(key, memo_verdict or verdict, D, position=position)
     changes = {
-        "memos/%s/%s_%s_GSC.md" % (key, key, D): memo_text(key, memo_verdict or verdict, D, position=position),
+        "memos/%s/%s_%s_GSC.md" % (key, key, D): memo,
         "queue/rows/%s_%s_ANALYSE_%s.md" % (D, time_, key): row_text("ANALYSE", key, row_title or title,
-                                                                      cell or verdict, row_type, row_held),
+                                                                      cell or verdict, row_type, row_held,
+                                                                      memo=memo),
         "queue/runs/%s_%s_ANALYSE_%s.md" % (D, time_, key): "run note\n",
     }
     changes.update(extra or {})
@@ -443,10 +454,11 @@ def review_changes(key="REV", prior="2026-09-01", verdict="WATCH", moved="band u
     title = "%sGSC REVIEW %s %s — %s%s; %s" % ("HELD · " if held_prefix else "", key, D, verdict,
                                               " (%s)" % gate if gate else "", moved)
     prior_path = "memos/%s/%s_%s_GSC.md" % (key, key, prior)
+    memo = memo_text(key, memo_verdict or verdict, D, position=position, version="v3")
     changes = {
-        "memos/%s/%s_%s_GSC.md" % (key, key, D): memo_text(key, memo_verdict or verdict, D, position=position,
-                                                          version="v3"),
-        "queue/rows/%s_%s_REVIEW_%s.md" % (D, time_, key): row_text("REVIEW", key, title, verdict, held=row_held),
+        "memos/%s/%s_%s_GSC.md" % (key, key, D): memo,
+        "queue/rows/%s_%s_REVIEW_%s.md" % (D, time_, key): row_text("REVIEW", key, title, verdict, held=row_held,
+                                                                     memo=memo),
         "queue/runs/%s_%s_REVIEW_%s.md" % (D, time_, key): "run note\n",
     }
     if move:
@@ -462,7 +474,8 @@ def sweep_changes(zones=None, title=None, time_="0630"):
     table = ["## Portfolio table", "", "| Ticker | Avg cost | Current | Zone (ADD / HOLD / SELL-FLAG) | Distance to "
              "ADD band | Distance to sell-flag line |", "|---|---|---|---|---|---|"]
     table += ["| %s | $10 | $11 | %s | n.m. | n.m. |" % (k, z) for k, z in zones.items()]
-    row = "\n".join(["---", "row_type: SWEEP", "run_date: %s" % D, "pr_title: %s" % title, "---"] + table +
+    row = "\n".join(["---", "row_type: SWEEP", "run_date: %s" % D, "run_time: %s" % time_, "pr_title: %s" % title,
+                     "---"] + table +
                     ["## Price/ordering refresh", "| Key | Px | Px unit | Close date | Source |", "|---|---|---|---|---|",
                      "| WAT1 | 111 | USD | 2026-10-02 | Yahoo |", ""])
     return title, {"queue/rows/%s_%s_SWEEP.md" % (D, time_): row, "queue/runs/%s_%s_SWEEP.md" % (D, time_): "note\n"}
@@ -531,7 +544,8 @@ def run_classifier_cases():
         expect("merge: ANALYSE queue exhausted with a QUEUE row",
                fx.decide(fx.pr(nxt(), br("analyse", None, "2130"), title,
                                {"queue/runs/%s_2130_ANALYSE.md" % D: "note\n",
-                                "queue/rows/%s_2130_ANALYSE.md" % D: "---\nrow_type: QUEUE\n---\n## Queue update\n"})),
+                                "queue/rows/%s_2130_ANALYSE.md" % D: "---\nrow_type: QUEUE\nrun_date: %s\n"
+                                "run_time: 2130\npr_title: %s\n---\n## Queue update\n" % (D, title)})),
                am.MERGE, "exhausted")
         title, ch = review_changes()
         expect("merge: REVIEW same verdict with the prior-memo move",
@@ -644,11 +658,13 @@ def run_classifier_cases():
         expect("hold: title key differs from the branch key",
                fx.decide(fx.pr(nxt(), br("analyse", "NEW", "2130"), title, ch)), am.HOLD_NOTIFY, "title-branch")
         title, ch = analyse_changes(memo_verdict="AVOID")
-        expect("hold: title verdict differs from the memo", fx.decide(fx.pr(nxt(), br("analyse", "NEW", "2130"),
-                                                                          title, ch)), am.HOLD_NOTIFY, "mismatch")
+        # v4.5.2: the write-contract re-check runs lint-row first, so a verdict mismatch holds as 'contract'.
+        o = fx.decide(fx.pr(nxt(), br("analyse", "NEW", "2130"), title, ch))
+        expect("hold: title verdict differs from the memo (lint-row)", o, am.HOLD_NOTIFY, "contract")
+        record("hold text names lint-row", "lint-row" in o.text, o.text)
         title, ch = analyse_changes(cell="AVOID")
-        expect("hold: memo verdict differs from the row cell",
-               fx.decide(fx.pr(nxt(), br("analyse", "NEW", "2130"), title, ch)), am.HOLD_NOTIFY, "mismatch")
+        expect("hold: memo verdict differs from the row cell (lint-row)",
+               fx.decide(fx.pr(nxt(), br("analyse", "NEW", "2130"), title, ch)), am.HOLD_NOTIFY, "contract")
         title, ch = analyse_changes(row_title="GSC ANALYSE NEW %s — WATCH (something else)" % D)
         expect("hold: row pr_title differs from the live title",
                fx.decide(fx.pr(nxt(), br("analyse", "NEW", "2130"), title, ch)), am.HOLD_NOTIFY, "mismatch")

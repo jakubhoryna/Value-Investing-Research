@@ -161,12 +161,9 @@ def verdict_word(ctx, value):
 
 
 def row_verdict_cell(ctx, text):
-    """First word of the Verdict cell under '## Register row (new)'."""
-    sections = ctx.tool.sections_of(text or "")
-    rows = ctx.tool.table_rows(sections.get("Register row (new)", []))
-    if not rows or "verdict" not in rows[0]:
-        return None
-    return verdict_word(ctx, rows[0]["verdict"])
+    """First word of the Verdict cell under '## Register row (new)', read by the
+    register tool's own parser, which its lint-row also uses [v4.5.2]."""
+    return verdict_word(ctx, ctx.tool.row_file_verdict(text))
 
 
 def register_rows(ctx, rev):

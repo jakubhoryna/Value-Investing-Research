@@ -4,7 +4,8 @@
 register.csv, beside _REGISTER.md, is the machine twin of the register: every
 register column plus the core numbers, one line per key. _REGISTER.md is
 rendered from it and is never edited by hand. INTAKE and every attended
-register write run this tool; ANALYSE and REVIEW run its lint-memo check.
+register write run this tool; ANALYSE and REVIEW run its lint-memo and lint-row
+checks.
 
 Subcommands
   render --version vN --date D       write _REGISTER.md from register.csv
@@ -22,6 +23,8 @@ Subcommands
                                      holding_keys)
   check [--base REV] [--tree REV]    INTAKE step 7: register integrity
   lint-memo MEMO                     the v4.5.0 front-matter re-measure
+  lint-row ROWFILE                   a row file against its name, its title and what
+                                     row-from-memo --table prints for its memo (v4.5.2)
   rebuild --base REV --out DIR [--assisted FILE] [--version vN --date D]
                                      attended, one-time: the lean register from the outgoing
                                      legacy register and the memos its rows cite
@@ -1948,6 +1951,131 @@ def lint_memo(memo_rel, text):
     return fails, warns
 
 
+# ------------------------------------------------------------------ lint-row (README section 4) [v4.5.2]
+
+ROW_FILE_RE = re.compile(r"^queue/rows/(?P<date>\d{4}-\d{2}-\d{2})_(?P<time>\d{4})_(?P<job>ANALYSE|REVIEW|SWEEP)"
+                         r"(?:_(?P<key>[A-Za-z0-9._-]+))?\.md$", re.ASCII)
+# The row types a row file may carry, by its file name (README section 4).
+ROW_TYPES_BY_FILE = {("ANALYSE", True): ("ANALYSE", "INCOMPLETE", "PRIOR"),
+                     ("REVIEW", True): ("REVIEW", "INCOMPLETE"),
+                     ("ANALYSE", False): ("QUEUE",),
+                     ("SWEEP", False): ("SWEEP",)}
+PASTE_HINT = "paste every line row-from-memo --table prints: header, separator, row"
+
+
+def row_file_verdict(text):
+    """The Verdict cell's first word under '## Register row (new)', read the way
+    gsc-automerge reads it (the table's header line names the columns); None
+    when the table has no Verdict column or no data row."""
+    rows = table_rows(sections_of(text or "").get("Register row (new)", []))
+    if not rows or "verdict" not in rows[0]:
+        return None
+    return first_token(rows[0]["verdict"]) or None
+
+
+def title_verdict(title):
+    """First word of a finished title's outcome ('GSC ANALYSE K D — WATCH (…)' -> 'WATCH')."""
+    _head, sep, outcome = (title or "").partition(" — ")
+    return first_token(outcome) if sep else ""
+
+
+def _table_lines(lines):
+    return [s.strip() for s in lines if s.strip().startswith("|")]
+
+
+def _table_problems(name, got, want):
+    """Why a pasted table differs from the printed one, or [] when it is the print."""
+    if got == want:
+        return []
+    if not got:
+        return ["## %s: no table (%s)" % (name, PASTE_HINT)]
+    if got[0] != want[0]:
+        if got[0] == want[-1]:
+            return ["## %s: the header and separator lines are missing (%s)" % (name, PASTE_HINT)]
+        return ["## %s: the first line is not the header row-from-memo --table prints (%s)" % (name, PASTE_HINT)]
+    if len(got) < 2 or got[1] != want[1]:
+        return ["## %s: the separator line under the header is missing or changed (%s)" % (name, PASTE_HINT)]
+    if len(got) != len(want):
+        return ["## %s: %d table lines, row-from-memo --table prints %d" % (name, len(got), len(want))]
+    have, need = table_rows(got)[0], table_rows(want)[0]
+    cols = [c for c in [h.strip() for h in want[0].strip("|").split("|")] if have.get(c.lower()) != need.get(c.lower())]
+    return ["## %s: cells differ from row-from-memo --table: %s (never type a row by hand)"
+            % (name, ", ".join(cols) or "spacing")]
+
+
+def lint_row(row_rel, text, read_memo):
+    """Failures of one row file against its file name and, for a verdict row,
+    against what row-from-memo --table prints for its memo (README section 4).
+    read_memo(path) returns the memo text or None. The verdict check reads the
+    file the way gsc-automerge does (MODEL section 8.7 item 10)."""
+    fails = []
+    m = ROW_FILE_RE.match(row_rel)
+    if not m:
+        return ["%s is not a row file name (queue/rows/{D}_{T}_{JOB}[_{KEY}].md)" % row_rel]
+    fm = parse_front_matter(text or "")
+    if not fm:
+        return ["no front matter (the --- block of README section 4)"]
+    key, job = m.group("key"), m.group("job")
+    row_type = fm.get("row_type", "")
+    allowed = ROW_TYPES_BY_FILE[(job, key is not None)]
+    if row_type not in allowed:
+        fails.append("row_type: %r; this file name takes %s" % (row_type, " or ".join(allowed)))
+    for name, want in (("run_date", m.group("date")), ("run_time", m.group("time"))):
+        if fm.get(name) != want:
+            fails.append("%s: %r differs from the file name (%s)" % (name, fm.get(name), want))
+    if key is not None and fm.get("key") != key:
+        fails.append("key: %r differs from the file name (%s)" % (fm.get("key"), key))
+    title = fm.get("pr_title", "")
+    if not re.match(r"^(HELD · )?GSC %s\b" % job, title):
+        fails.append("pr_title: %r does not start 'GSC %s' (it equals the final PR title)" % (title[:80], job))
+    held = fm.get("held")
+    if held is not None and held not in ("true", "false"):
+        fails.append("held: %r is not true or false" % held)
+    sections = sections_of(text)
+
+    if row_type == "SWEEP":
+        heading = next((h for h in sections if h.lower().startswith("portfolio table")), None)
+        rows = table_rows(sections.get(heading, [])) if heading else []
+        head = list(rows[0]) if rows else []
+        if not heading:
+            fails.append("## Portfolio table is missing (every held name, README section 4)")
+        elif not ("ticker" in head and any(c.startswith("zone") for c in head)):
+            fails.append("## Portfolio table: needs its header line with the Ticker and Zone columns")
+        return fails
+    if row_type not in ("ANALYSE", "REVIEW"):
+        return fails
+
+    memo_path = fm.get("memo_path", "")
+    mm = MEMO_PATH_RE.match(memo_path)
+    if not mm or mm.group("dir") != mm.group("key") or mm.group("date") != m.group("date"):
+        fails.append("memo_path: %r is not memos/{KEY}/{KEY}_%s_GSC.md" % (memo_path, m.group("date")))
+        return fails
+    memo_text = read_memo(memo_path)
+    if memo_text is None:
+        fails.append("memo_path: cannot read %s" % memo_path)
+        return fails
+    try:
+        row = row_from_memo(memo_path, memo_text, [])
+    except ToolError as exc:
+        fails.append("memo_path: %s" % exc)
+        return fails
+    want = [table_line(MASTER_COLUMNS), "|" + "---|" * len(MASTER_COLUMNS), table_line(master_cells(row))]
+    fails += _table_problems("Register row (new)", _table_lines(sections.get("Register row (new)", [])), want)
+    got_p = _table_lines(sections.get("Portfolio row", []))
+    if row["held"] == "true":
+        want_p = [table_line(PORTFOLIO_COLUMNS), "|" + "---|" * len(PORTFOLIO_COLUMNS),
+                  table_line(portfolio_cells(row))]
+        fails += _table_problems("Portfolio row", got_p, want_p)
+    elif got_p:
+        fails.append("## Portfolio row: the memo is not held, so row-from-memo --table prints none")
+    # The three verdicts gsc-automerge compares: the row table's, the memo's and the title's.
+    cell_v, memo_v, title_v = row_file_verdict(text), first_token(row["verdict"]), title_verdict(title)
+    if not (cell_v == memo_v == title_v):
+        fails.append("verdicts differ: row table %s, memo %s, pr_title %s (gsc-automerge would hold the PR)"
+                     % (cell_v or "?", memo_v or "?", title_v or "?"))
+    return fails
+
+
 # ------------------------------------------------------------------ next_review_short helper
 
 def parse_next_review_short(text, after=None):
@@ -3722,6 +3850,21 @@ def cmd_lint_memo(args):
     return 1 if fails else 0
 
 
+def cmd_lint_row(args):
+    rel = args.row.replace("\\", "/")
+
+    def read_memo(path):
+        try:
+            return read_repo_text(args.root, path)
+        except ToolError:
+            return None
+    fails = lint_row(rel, read_repo_text(args.root, rel), read_memo)
+    for f in fails:
+        print("FAIL  " + f)
+    print("lint-row %s: %s" % (rel, "FAIL (%d)" % len(fails) if fails else "OK"))
+    return 1 if fails else 0
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description="GSC register tool (MODEL v4.5.0, sections 7.1, 7.1b).")
     parser.add_argument("--root", default=None, help="repository root (default: the one holding this file)")
@@ -3754,6 +3897,8 @@ def main(argv=None):
     p.add_argument("--tree", default="HEAD")
     p = sub.add_parser("lint-memo")
     p.add_argument("memo")
+    p = sub.add_parser("lint-row")
+    p.add_argument("row")
     p = sub.add_parser("rebuild")
     p.add_argument("--base", required=True)
     p.add_argument("--assisted")
@@ -3773,6 +3918,7 @@ def main(argv=None):
     handler = {"render": cmd_render, "row-from-memo": cmd_row_from_memo, "apply": cmd_apply,
                "position": cmd_position, "rekey": cmd_rekey, "metrics": cmd_metrics,
                "sweep-scope": cmd_sweep_scope, "check": cmd_check, "lint-memo": cmd_lint_memo,
+               "lint-row": cmd_lint_row,
                "rebuild": cmd_rebuild, "retrigger": cmd_retrigger}[args.cmd]
     try:
         return handler(args)

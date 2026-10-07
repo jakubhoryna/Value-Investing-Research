@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v4.5.1
-model_date: 2026-10-07
+model_version: v4.5.2
+model_date: 2026-10-08
 status: live
 bootstrap_required: BOOTSTRAP v1.4.0+ (claude.ai project) · BOOTSTRAP-CC v1.1.0+ (CLAUDE.md)
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.5.1 · 2026-10-07)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.5.2 · 2026-10-08)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -966,7 +966,7 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
    - **Archive [v4.5.0].** A routine never modifies or deletes anything under `archive/`, and never writes the retired paths `registers/` or `queue/archive/`.
    - **Register page [v4.5.0].** After a run that wrote a register version, INTAKE renders the §7.4 register page to `/tmp` and republishes it in place to the one private artifact (Artifact `read`, then `publish`; the guard hook refuses every other artifact action, url or field and any other job), best-effort: a failure is one run-note line, never a stop, and the page is never committed (`routines/INTAKE.md` step 9).
    - **Audit — the free-plan compensating control.** Each INTAKE lists in its PR body any commits on `main` that did not arrive through a PR merge, any `claude/gsc-*` branches with no PR, and any modification or deletion under `archive/` on `main` (expected only from a `GSC: RECONCILE` re-key, a `GSC: MODEL` release or a `Revert "…"` of a merged PR); a direct commit, and an archive change from any other commit, also becomes a TODO item. A `Revert "GSC …"` commit is Jakub's undo, not a direct commit; INTAKE records it as a rejection (item 5) [v4.5.0].
-   - The write contract is checked on every routine PR by the `gsc-guard` check.
+   - The write contract is checked on every routine PR by the `gsc-guard` check. It also runs `lint-row` on every row file an ANALYSE, REVIEW or SWEEP PR adds, at the PR head [v4.5.2].
 5. **Claims.** The PR title is the claim: `GSC {JOB} {KEY} {D} [running]` (keyless jobs omit KEY; `{JOB}` is the title word — ANALYSE, REVIEW, SWEEP, INTAKE or SEED for QUEUE-SEED; exact forms in `routines/README.md` §1), opened before any research — REVIEW's due-check operations are the one exception.
    - A key with an open PR, or with a closed-unmerged PR (ANALYSE 90 days, REVIEW 7 days), is claimed; PRs closed as `[abandoned]` or `[superseded]`, or closed while still `[running]`, don't count. A merged PR reverted on `main` counts as a rejection for the same windows (`routines/README.md` §2) [v4.5.0]. A queue line marked `retry` overrides a rejection.
    - Only INTAKE (daily) applies the abandoned-claim rule: a `[running]` PR not updated for more than 6 h is closed as `[abandoned]`, and its key becomes eligible again. A key abandoned twice within 14 days is marked `[!] stalled {D} (PR #a, #b)` on its queue line and skipped until Jakub edits the line (a REVIEW key, which has no queue line, gets a TODO item instead and is skipped until 14 days after #b closed). Jakub keeps a stalled run for repair by retitling its PR to end `[fixing]`.
@@ -975,7 +975,7 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
    - P14 applies (ROUTINE entry): ANALYSE ~5, REVIEW ~2 plus up to 4 due-check operations, SWEEP ~1 per name, QUEUE-SEED ≤ 15 discovery + ≤ 8 decay-pass queries, INTAKE none.
    - **Data-completeness gate.** INCOMPLETE = an input required by a gate or the cheapness leg that exists in a primary document but could not be retrieved this run (including a record-limited shortfall where more years are published). Such a run writes `queue/evidence/{KEY}_{D}_INCOMPLETE.md` and an INCOMPLETE row file instead of a memo; no new verdict class exists. History-limited records, "n/a — not disclosed" and §2·1C INDETERMINATE findings proceed to a memo exactly as in attended runs.
    - **Overflow and repeats [v4.5.0].** A group build or a v4.5.0 method re-test that cannot finish within one run is `INCOMPLETE (group build exceeds budget)` or `INCOMPLETE (method re-test exceeds budget)`; INTAKE then writes the TODO item `` `KEY` — attended group build owed `` (or `` `KEY` — attended re-test owed ``), and ANALYSE and REVIEW skip the key while it is open. A REVIEW of a key with a `▶ Method re-tests v4.5.0` line, or a `` `KEY` — parent re-run owed `` line in `▶ Group dependencies`, that ends INCOMPLETE for any other gap is marked on that line by INTAKE (` — incomplete {D}: {gap}`) and skipped for 14 days; a second INCOMPLETE turns the line into `attended re-test owed`, skipped until Jakub clears it (`routines/REVIEW.md` step 2). A dependency line (`` `HKEY` — dependency of PARENT ``) never takes that 14-day marker: it carries its key's queue outcome (` — [!] incomplete {D}: {gap}` for any INCOMPLETE ANALYSE or REVIEW of HKEY, `[!] stalled`, or rewritten to a prior's key), which makes the holding ungradeable at once, and ANALYSE and REVIEW take only unmarked ones; an ungradeable dependency resolves per §2 Group grades (WEAK with its weight, no credit; `sub dependency`).
-   - The §7.4a compliance re-measure is done by script before the final push, with its numbers in the PR body; for a memo it includes `gsc_register.py lint-memo` [v4.5.0].
+   - The §7.4a compliance re-measure is done by script before the final push, with its numbers in the PR body; for a memo it includes `gsc_register.py lint-memo` [v4.5.0], and for each row file `gsc_register.py lint-row` [v4.5.2].
    - One name per ANALYSE or REVIEW run, and about 90 minutes per run.
 7. **Framework lock.** Routines never touch `model/**`, any `CLAUDE.md`, `CLAUDE.local.md` or `AGENTS.md`, `routines/**`, `.claude/**` or `.github/**`. MODEL mode stays attended-only, on "commit model".
 8. **Held names.**
@@ -1039,6 +1039,10 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
 - Same data ⇒ same verdict. Where judgment is unavoidable, apply §3 and record the call in Appendix C.
 
 -----
+
+## v4.5.2 CHANGE LOG (2026-10-08)
+
+- **PATCH release (v4.5.1 → v4.5.2), from the first auto-merge hold (PR 87, ANALYSE HLMA.L, 2026-10-07). §8.4 step-3 scan: no verdict, grade or zone moves; no memo or register row changes.** The run pasted only the data line of `row-from-memo --table` into its row file, so gsc-automerge, which finds the Verdict cell by the table's header line, read no verdict and held the PR for a title/memo/row mismatch (fail-closed, as designed; the register was unaffected because INTAKE builds rows from the memo). **Fix at the source:** `routines/tools/gsc_register.py lint-row` checks a row file against its name, its `pr_title` and the exact `row-from-memo --table` print of its memo (header and separator included), and reads the verdict with the same parser gsc-automerge now calls (`row_file_verdict`). ANALYSE, REVIEW and SWEEP run it before the final push (README §5; ANALYSE step 7, REVIEW step 6, SWEEP step 8), and README §4 says to paste every line of each table. **Fix at the check:** gsc-guard runs `lint-row` on every row file an ANALYSE, REVIEW or SWEEP PR adds, at the PR head, failing closed when the row or its memo cannot be read, so a bad paste shows as a red guard check with the reason instead of a hold on the needs-Jakub issue. The parser stays strict: a table without its header is never guessed at. Tests: test_gsc_register.py (lint-row cases), test_gsc_guard_check.py (row fixtures and the PR 87 case), test_gsc_guard.py (the hook allows `lint-row`).
 
 ## v4.5.1 CHANGE LOG (2026-10-07)
 

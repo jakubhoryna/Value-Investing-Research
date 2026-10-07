@@ -179,10 +179,10 @@ held: true | false
 pr_title: GSC … (as final)
 ---
 ## Register row (new)
-| … the lean §7.1 row (15 columns), as printed by row-from-memo --table … |
+| Ticker | Company | … |   all three table lines row-from-memo --table prints: header, separator, row |
 ## Replaces
 | … the key's current row in _REGISTER.md, verbatim … |   or   new name
-## Portfolio row                    (held names only) the 7-column §7.2 row, as printed by row-from-memo --table
+## Portfolio row                    (held names only) the 7-column §7.2 table row-from-memo --table prints: header, separator, row
 ## Queue update                     one line per key, e.g. DRAFT_QUEUE: KEY → [x]  or  DRAFT_QUEUE: KEY → [x] prior — REVIEW
                                     (a dependency pick, ANALYSE.md step 2: Group dependency: KEY → prior KEY2  or  Group dependency: KEY → memo exists)
 ## Group dependency                 (INCOMPLETE only) one line per material controlled listed subsidiary or listed holding without a current memo:
@@ -200,7 +200,7 @@ pr_title: GSC … (as final)
 
 - `row_type: QUEUE` is the keyless ANALYSE row: only `## Queue update` (prior markers found while walking the queue and the `▶ Group dependencies` block).
 - `## Group dependency` (MODEL §2 Group dependencies) appears only in an `INCOMPLETE (dependency: KEY)` row. Each line names a controlled listed subsidiary (`subsidiary of`) or a non-controlled listed holding (`holding of`). INTAKE adds each line to the `queue/TODO.md` head block `▶ Group dependencies` (INTAKE.md step 3), where ANALYSE (no memo) or REVIEW (stale memo) takes the subsidiary or holding first.
-- `## Register row (new)` and `## Portfolio row` are pasted from `python3 routines/tools/gsc_register.py row-from-memo memos/{KEY}/{KEY}_{D}_GSC.md --table`; never typed by hand.
+- `## Register row (new)` and `## Portfolio row` are pasted from `python3 routines/tools/gsc_register.py row-from-memo memos/{KEY}/{KEY}_{D}_GSC.md --table`; never typed by hand. Paste every line of each table it prints: the header line, the `|---|` separator and the row. gsc-automerge finds the Verdict cell by the header line, so a row without its header reads as no verdict and the PR is held (PR 87, 2026-10-07). `lint-row` (§5) checks the paste [v4.5.2].
 - `## Open items` follows MODEL §7.1: only pending user decisions and register-integrity holds, one line each. INTAKE applies them to the `queue/TODO.md` head block `▶ Open items (register)`. A run never clears a pending user decision; only Jakub decides.
 - In the SWEEP refresh, `Px` is a plain number (no symbol, no separator) in the endpoint's `currency`, written verbatim in `Px unit` (it must equal the row's `px_unit`); `Close date` is `YYYY-MM-DD`. `## FX` rates are major-unit rates written `{core_currency}/{px currency}` (px currency per 1 core_currency, e.g. `USD/GBP` for a GBp line reporting in USD), ECB reference via frankfurter, else the endpoint's `{CCY1}{CCY2}=X` close.
 
@@ -251,6 +251,11 @@ pr_title: GSC … (as final)
 
     Paste its output. Its `WARN` lines (px vs `price_at_memo`, trigger vs the no-cash bound `trigger_band` states first, an unusual `px_unit`) are checked by eye and explained in the PR body. A `FAIL` is a breach.
   - How: write a short script to `/tmp`, run it with `python3`, count characters (not bytes), and paste the numbers into the PR body.
+  - **Row file [v4.5.2]**, for every ANALYSE, REVIEW and SWEEP row file: `python3 routines/tools/gsc_register.py lint-row queue/rows/{file}` exits 0, and its output goes into the PR body. It reads the file the way gsc-automerge does and checks:
+    - the file name against `row_type`, `key`, `run_date` and `run_time`, and that `pr_title` starts with the job's title word;
+    - for a verdict row (ANALYSE or REVIEW): `memo_path` is the run's memo, `## Register row (new)` (and `## Portfolio row` for a held memo) is exactly what `row-from-memo --table` prints for it, header and separator included, and the row table's verdict equals the memo's and the one in `pr_title`;
+    - for a SWEEP: `## Portfolio table` is present, with its header line naming the Ticker and Zone columns.
+    The gsc-guard check runs the same lint on the PR head, so a row that fails it shows a red guard check.
   - **Self-containment (MODEL §6.6)**, for a full ANALYSE or REVIEW memo, in the same script:
     1. the body headings `## 1.`–`## 8.` and the appendix headings `## A.`–`## G.` each appear exactly once;
     2. under `## B.`, the B1 block (a heading or line starting `B1`) holds a Markdown table with a row for each fiscal year in `window:` (N years; a row's first cell names its fiscal year, e.g. `2025`, `FY2025`, `3/26`), and the B2 and B3 blocks each hold one with at least N − 1 such rows (a growth or beginning-of-period series may start a year later);

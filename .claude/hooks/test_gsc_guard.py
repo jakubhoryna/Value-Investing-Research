@@ -489,6 +489,7 @@ bash("SWEEP: scope and metrics with the tool",
      TOOL + " sweep-scope && " + TOOL + " metrics TROW 104.62 --fx 1.1", 0)
 bash("ANALYSE: lint the new memo", TOOL + " lint-memo memos/7309.T/7309.T_2026-10-04_GSC.md", 0)
 bash("ANALYSE: register row for the row file", TOOL + " row-from-memo memos/CGNX/CGNX_2026-10-04_GSC.md --table", 0)
+bash("ANALYSE: lint the row file (v4.5.2)", TOOL + " lint-row queue/rows/2026-10-04_2250_ANALYSE_CGNX.md", 0)
 bash("read register.csv", "head -3 register.csv && grep -c , register.csv", 0)
 bash("INTAKE: the one-time rebuild is attended only", TOOL + " rebuild --base HEAD --out /tmp/rb", 2,
      branch=INTAKE_BR)

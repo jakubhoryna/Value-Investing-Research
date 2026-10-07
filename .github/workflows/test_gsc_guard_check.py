@@ -10,7 +10,9 @@ Covers: every correct run per job (expect OK), every known violation
 the memo-folder checks (MODEL v4.5.0), the register.csv twin and its
 snapshot pair (lockstep, header, row count, rendering by the register tool),
 the -z name-status parser, make_tree_lookup(), make_text_lookup(), and main()
-end to end with a fake git.
+end to end with a fake git. MODEL v4.5.2: every added row file passes the
+tool's lint-row at the PR head; the cases read consistent row and memo
+fixtures (fixture_text) unless they pass their own texts.
 """
 import contextlib
 import io
@@ -76,7 +78,10 @@ def case(name, branch, title, entries, expect, base="main", blobs=None, msg=None
         return table.get((side, path))
 
     def text_lookup(side, path):
-        return text_table.get((side, path))
+        text = text_table.get((side, path))
+        if text is None and texts is None and side == "head":
+            text = fixture_text(path)
+        return text
 
     try:
         errors = g.evaluate(branch, title, base, "main", entries, lookup,
@@ -182,6 +187,43 @@ REG_ROWS = [reg_row("CGNX", "9.5"), reg_row("TROW", "10.9"), reg_row("7309.T", "
 INTAKE_CSV = reg.csv_text(REG_ROWS)
 INTAKE_MD = reg.render(REG_ROWS, "v305", "2026-10-04")
 INTAKE_TEXTS = {("head", "register.csv"): INTAKE_CSV, ("head", "_REGISTER.md"): INTAKE_MD}
+
+
+# Row and memo fixtures (MODEL v4.5.2 lint-row): a keyed ANALYSE or REVIEW row
+# is a WATCH verdict row whose table is the tool's print for its memo; a
+# keyless ANALYSE row is a QUEUE row; a SWEEP row carries its portfolio table.
+def fixture_memo(key, date):
+    return ("---\nticker: %s\ncompany: %s Corp\nmemo_date: %s\nmemo_version: v1\nmodel_version: v4.5.2\n"
+            "verdict: WATCH (fixture)\nposition: —\n---\n# memo\n" % (key, key, date))
+
+
+def fixture_row(path, table=True):
+    m = reg.ROW_FILE_RE.match(path)
+    date, time, job, key = m.group("date"), m.group("time"), m.group("job"), m.group("key")
+    if job == "SWEEP":
+        return ("---\nrow_type: SWEEP\nrun_date: %s\nrun_time: %s\nheld: false\npr_title: GSC SWEEP %s — "
+                "1/1 priced · fixture\n---\n## Portfolio table\n| Ticker | Avg cost | Current | Zone | "
+                "Distance to ADD band | Distance to sell-flag line |\n|---|---|---|---|---|---|\n"
+                "| HFG.DE | 10 | 12 | HOLD | 20%% | 30%% |\n" % (date, time, date))
+    if key is None:
+        return ("---\nrow_type: QUEUE\nrun_date: %s\nrun_time: %s\npr_title: GSC ANALYSE %s — queue "
+                "exhausted\n---\n## Queue update\nnone\n" % (date, time, date))
+    memo = "memos/%s/%s_%s_GSC.md" % (key, key, date)
+    row = reg.row_from_memo(memo, fixture_memo(key, date), [])
+    lines = [reg.table_line(reg.MASTER_COLUMNS), "|" + "---|" * len(reg.MASTER_COLUMNS),
+             reg.table_line(reg.master_cells(row))]
+    return ("---\nrow_type: %s\nkey: %s\ncompany: %s Corp\nmemo_path: %s\nrun_date: %s\nrun_time: %s\n"
+            "held: false\npr_title: GSC %s %s %s — WATCH (fixture)\n---\n## Register row (new)\n%s\n"
+            "## Replaces\nnew name\n" % (job, key, key, memo, date, time, job, key, date,
+                                            "\n".join(lines if table else lines[2:])))
+
+
+def fixture_text(path):
+    """A consistent fixture for an added row file or its memo, else None."""
+    if reg.ROW_FILE_RE.match(path):
+        return fixture_row(path)
+    m = reg.MEMO_PATH_RE.match(path)
+    return fixture_memo(m.group("key"), m.group("date")) if m else None
 
 
 # REVIEW (MODEL v4.5.0): the new memo plus the move of its one prior memo to
@@ -774,19 +816,52 @@ classify_case("classify: attended PR is not routine", "claude/model-v4.4.0-routi
 classify_case("classify: queue-seed spelling is routine but malformed",
               "claude/gsc-queue-seed-2026-10-05-0800", "GSC SEED 2026-10-05 [running]", True, clean=False)
 
+# Row files (MODEL v4.5.2): lint-row at the PR head
+CGNX_ROW = "queue/rows/2026-10-04_2250_ANALYSE_CGNX.md"
+CGNX_MEMO = "memos/CGNX/CGNX_2026-10-04_GSC.md"
+CGNX_TITLE = "GSC ANALYSE CGNX 2026-10-04 — WATCH (fixture)"
+ROW_TEXTS = {**INTAKE_TEXTS, ("head", CGNX_MEMO): fixture_memo("CGNX", D)}
+case("ANALYSE row: the table pasted without its header and separator fails", AN_CGNX, CGNX_TITLE,
+     ANALYSE_CGNX_FULL, "fail", texts={**ROW_TEXTS, ("head", CGNX_ROW): fixture_row(CGNX_ROW, table=False)},
+     msg="lint-row: ## Register row (new): the header and separator lines are missing")
+case("ANALYSE row: a hand-edited verdict cell fails", AN_CGNX, CGNX_TITLE, ANALYSE_CGNX_FULL, "fail",
+     texts={**ROW_TEXTS, ("head", CGNX_ROW): fixture_row(CGNX_ROW).replace("| WATCH |", "| AVOID |")},
+     msg="verdicts differ: row table AVOID, memo WATCH")
+case("ANALYSE row: its memo unreadable at the head fails closed", AN_CGNX, CGNX_TITLE, ANALYSE_CGNX_FULL,
+     "fail", texts={**INTAKE_TEXTS, ("head", CGNX_ROW): fixture_row(CGNX_ROW)}, msg="memo_path: cannot read")
+case("ANALYSE row: unreadable at the head fails closed", AN_CGNX, CGNX_TITLE, ANALYSE_CGNX_FULL, "fail",
+     texts=ROW_TEXTS, msg="cannot read the row file at the PR head")
+case("ANALYSE row: the explicit fixtures pass", AN_CGNX, CGNX_TITLE, ANALYSE_CGNX_FULL, "ok",
+     texts={**ROW_TEXTS, ("head", CGNX_ROW): fixture_row(CGNX_ROW)})
+SWEEP_ROW = "queue/rows/2026-10-03_0700_SWEEP.md"
+case("SWEEP row without its portfolio table fails", SWEEP, "GSC SWEEP 2026-10-03 — 14 prices, 2 review requests",
+     E("A " + SWEEP_ROW, "A queue/runs/2026-10-03_0700_SWEEP.md"), "fail",
+     texts={**INTAKE_TEXTS, ("head", SWEEP_ROW): fixture_row(SWEEP_ROW).split("## Portfolio table")[0]},
+     msg="## Portfolio table is missing")
+
 # check() called directly with the documented signature
+FIXTURES = lambda side, path: fixture_text(path) if side == "head" else None  # noqa: E731
 try:
     direct = g.check("sweep", E("A queue/rows/2026-10-03_0700_SWEEP.md"),
-                     {"key": None, "date": "2026-10-03", "time": "0700"}, lambda side, path: None)
+                     {"key": None, "date": "2026-10-03", "time": "0700"}, lambda side, path: None,
+                     text_lookup=FIXTURES)
     record("check(): direct call, SWEEP row", direct == [], repr(direct))
 except Exception as exc:
     record("check(): direct call, SWEEP row", False, "raised %r" % exc)
 try:
     direct = g.check("review", REVIEW_TROW_FULL, {"key": "TROW", "date": D, "time": T},
-                     lambda side, path: REVIEW_TROW_BLOBS.get((side, path)), tree_lookup_for(REVIEW_TROW_TREES))
+                     lambda side, path: REVIEW_TROW_BLOBS.get((side, path)), tree_lookup_for(REVIEW_TROW_TREES),
+                     FIXTURES)
     record("check(): direct call, REVIEW move with tree_lookup", direct == [], repr(direct))
 except Exception as exc:
     record("check(): direct call, REVIEW move with tree_lookup", False, "raised %r" % exc)
+try:
+    direct = g.check("sweep", E("A queue/rows/2026-10-03_0700_SWEEP.md"),
+                     {"key": None, "date": "2026-10-03", "time": "0700"}, lambda side, path: None)
+    record("check(): a row file without text_lookup fails closed",
+           any("fail closed" in e for e in direct), repr(direct))
+except Exception as exc:
+    record("check(): a row file without text_lookup fails closed", False, "raised %r" % exc)
 
 
 # ===================================================== make_tree_lookup()
@@ -892,6 +967,7 @@ def fake_git(diff, blobs, head_sha=HEAD, trees=None, texts=None):
     back to 'base'); a value of None makes ls-tree fail. texts: {(side, path):
     text} served to `git cat-file blob` (default: the consistent register pair)."""
     trees = trees or {}
+    fixtures = texts is None
     texts = INTAKE_TEXTS if texts is None else texts
     sides = {MB: "base", g.HEAD_REV: "head", "refs/remotes/origin/main": "main"}
 
@@ -910,6 +986,8 @@ def fake_git(diff, blobs, head_sha=HEAD, trees=None, texts=None):
         if args[0] == "cat-file":
             rev, _, path = args[-1].partition(":")
             text = texts.get(("base" if rev == MB else "head", path))
+            if text is None and fixtures and rev != MB:
+                text = fixture_text(path)
             return (0, text.encode("utf-8")) if text is not None else (128, b"")
         if "diff" in args:
             return 0, diff
@@ -969,6 +1047,11 @@ main_case("main: INTAKE register unreadable at the head fails closed",
 main_case("main: ANALYSE full run is OK",
           env_for(AN_CGNX, "GSC ANALYSE CGNX 2026-10-04 — BUY"),
           fake_git(diff_bytes(ANALYSE_CGNX_FULL), {}), 0, must=("OK —",))
+main_case("main: ANALYSE row pasted without its table header fails (the PR 87 case)",
+          env_for(AN_CGNX, CGNX_TITLE),
+          fake_git(diff_bytes(ANALYSE_CGNX_FULL), {},
+                   texts={**ROW_TEXTS, ("head", CGNX_ROW): fixture_row(CGNX_ROW, table=False)}), 1,
+          must=("::error::", "header and separator lines are missing"))
 main_case("main: newline in a file name cannot inject a workflow command",
           env_for(AN_CGNX, "GSC ANALYSE CGNX 2026-10-04 — BUY"),
           fake_git(b"A\0queue/runs/x\n::warning::pwned.md\0", {}), 1,
