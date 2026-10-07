@@ -1103,6 +1103,29 @@ def run_allowlist_cases():
     except gsc_gh.NotAllowed:
         ok = True
     record("pagination: a next link to another repository is refused", ok)
+    # GitHub may page by repository id and workflow id; the request is rebuilt
+    # from the original path with the page number [v4.5.1].
+    seen2 = []
+    byid = {"Link": '<https://api.github.com/repositories/123/actions/workflows/456/runs?created=%3E%3D2026-10-01T00%3A00%3A00Z&per_page=100&page=2>; rel="next"'}
+
+    def paged_id(method, url, headers, body):
+        seen2.append(url)
+        if "page=2" in url:
+            return 200, {}, b'{"workflow_runs": [2]}'
+        return 200, byid, b'{"workflow_runs": [1]}'
+    got = gsc_gh.Gh("t", REPO, transport=paged_id).get_all(
+        "actions/workflows/gsc-guard.yml/runs?created=%3E%3D2026-10-01T00:00:00Z&per_page=100", key="workflow_runs")
+    record("pagination: a repositories/{id} next link is rebuilt on this repository's own path",
+           got == [1, 2] and len(seen2) == 2
+           and seen2[1] == "https://api.github.com/repos/%s/actions/workflows/gsc-guard.yml/runs"
+                           "?created=%%3E%%3D2026-10-01T00:00:00Z&per_page=100&page=2" % REPO, seen2)
+    nopage = {"Link": '<https://api.github.com/repositories/123/actions/runs?cursor=abc>; rel="next"'}
+    try:
+        gsc_gh.Gh("t", REPO, transport=lambda m, u, h, b: (200, nopage, b"[1]")).get_all("actions/runs?per_page=100")
+        ok = False
+    except gsc_gh.NotAllowed:
+        ok = True
+    record("pagination: a next link without a page number is refused", ok)
     # The needs-Jakub comment goes only to a verified issue.
     fake = FakeGitHub()
     fake.add_issue(gsc_gh.NEEDS_TITLE, login="someone")            # not the bot

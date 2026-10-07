@@ -1,4 +1,4 @@
-# GSC MODEL Ideas — IDEAS.md (v11 · 2026-10-07)
+# GSC MODEL Ideas — IDEAS.md (v12 · 2026-10-07)
 
 **Purpose.** Parking lot for framework questions — everything MODEL-mode-shaped that a session surfaces goes here, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). Each entry carries: status, the instances that raised it, the question in one line, a book-grounded recommendation with confidence, and the consequence scan. **Nothing here is operative** until a MODEL session adopts it under its own explicit "commit model"; recommendations below are pre-work, not doctrine. MODEL sessions open from this file and close by updating entry statuses.
 
@@ -121,6 +121,31 @@ Shareholder-friendliness (R8, R9, V1, V3, V4, V13, V17):
 - Struck, not promoted: RCO.PA aged-spirits inventory (answered by D5 — the conservatism is intended) · CPR.MI one-off settlement in P17 (the rule applies as written).
 
 ---
+
+## G. v4.5.0 landing-gate findings (2026-10-07) — OPEN
+
+*From the seven attended dry-run memos (SNA, AMZN, NESN.SW, SIE.DE, KSPI, BRK.B, CDI.PA; all pass `lint-memo`; memos not committed). The two Gate 0 blockers were fixed in MODEL v4.5.1. Each line below is a non-blocking reading or gap to settle before the first re-test it touches; the names in brackets are the dry runs that raised it.*
+
+- **G1.** lines (non-blocking)
+- **G2.** §2·1B silence in groups (SNA, AMZN, SIE.DE): a consolidated "no customer ≥10%" statement covers every unit unless the filer names one for a unit; for marketplaces, silence flags concentration only where payers are few. This rule grades AMZN International WEAK today; do it first.
+- **G3.** §2·1B captive funding look-through (SNA, SIE.DE): every bond-funded captive arm grades WEAK; confirm with Jakub that this is intended and name the denominator.
+- **G4.** funding pairing and R2 OI build (SNA, SIE.DE): core fields carry the governing pairing, tagged "pre-funding"; pairing B removes the arm's attributed external debt; a year without the arm's funding cost reads on B; add only the part of the arm's result booked below the OI line.
+- **G5.** P29 bases (SNA, SIE.DE, BRK.B, AMZN, CDI.PA, NESN.SW): a captive arm is weighted after its funding cost; J3 financial income comes out; the revenue fallback tests the 3-year average; segments inside a controlled listed subsidiary are its units; after a resegmentation, use the years published on the new segments.
+- **G6.** §2·1A capex (AMZN, SNA): use gross purchases, never netted (this decides AMZN Past WEAK vs ADEQUATE); count finance-lease principal as capex; count capitalised development as capex when its cash-flow line is undisclosed.
+- **G7.** §2·1A lending books (SNA): test the whole book against the 3% band; take net charge-offs out of FCF when book flows sit in investing.
+- **G8.** P20 inputs (SNA, SIE.DE, AMZN): organic revenue = prior revenue × (1 + the filer's organic rate); CPI as the annual average; define π for TTM.
+- **G9.** §6.1 fields (SNA, NESN.SW, CDI.PA, AMZN): tag a constructed tier that was not built "(not built)" and keep it off the §8.3 strict line, because the tool counts "= all capex" as a P20 tag; core_period may name separate OI and FCF periods.
+- **G10.** §7.1 reasons (AMZN, NESN.SW, CDI.PA, SNA): a ROCE level "fails" only below every P3 bar still reachable; `ROCE decline` covers any J6 series; allow a "unit {x}" caveat for a WEAK part.
+- **G11.** Gate 2 and worth reads (SNA, NESN.SW): sum the deficits of underfunded pension plans and never net a surplus plan against them; worth reads use the governing pairing; an owed holding runs uncredited.
+- **G12.** look-through record (NESN.SW): replace the holding's carrying value with the parent's share of its BV, so the stake is not counted twice; test the guard's P6 on the consolidated record; name IAS 29 items in J3.
+- **G13.** §2 Group dependencies (NESN.SW, SIE.DE, CDI.PA, KSPI): run a dependency's v4.5.0 memo before its parent's and always queue it; add a dependency_keys field; verdict invariance covers the too-hard lens, and stays provisional until the dependency's Gate 0 is known.
+- **G14.** §6.4 and Gate 0 order (KSPI, BRK.B): test the lens, then the decomposition, then Group Gate 0, and print every route that fails; allow Appendix C for the lens evidence (memo bodies reached 791 and 745 of 800 words); print the part table with weights; every core_ field is n.m. except core_credit.
+- **G15.** R4, FI, P24/P25 (KSPI, BRK.B): a "regulated bank or insurance holding" and US lead-state supervision count as consolidated supervision; "mainly deposits" means over half of the bank's liabilities, payment-product accounts excluded; define a non-financial part and a captive arm; in doubt, the company is too hard; drop "Berkshire" from the P25 label; close IDEAS line 245.
+- **G16.** §2·1C pay and conduct (AMZN, NESN.SW, CDI.PA): confirm with Jakub that compensation actually paid may trigger a strike by itself, and that European chairs paid above US$1.33m are meant as hard strikes; name the CPI year and the FX date; an unlisted stake above 1% of EV is a deal; support outsourced to the controller counts under V17.
+- **G17.** listed NCI (SIE.DE, CDI.PA): every listed subsidiary's minority enters at market; P7 and the FCF leg use FCF × the parent's share; read L/E on total equity where NCI exceeds BV.
+- **G18.** small definitions (SIE.DE, CDI.PA, NESN.SW, SNA): S3 "partner"; securities of undisclosed composition stay out of cash; NIBCL "other" lines count as far as the note itemises them; fiscal year-end changes; which tax rate applies to a holding; unit returns.
+- **G19.** §8.2 legacy REVIEW budget (NESN.SW, SIE.DE): rebuilding old group memos on the v4.5.0 method will stop routines INCOMPLETE; run them attended, or allow a bounded window when the grade does not depend on it.
+- **G20.** lint-memo (KSPI): warn when lens is n.m. but no Gate 0 FAIL line is present, or when a REVIEW memo lacks supersedes:.
 
 ## A. Verdict-affecting — each needs a dedicated MODEL decision
 

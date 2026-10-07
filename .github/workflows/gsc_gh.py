@@ -96,6 +96,28 @@ def _next_link(headers):
     return None
 
 
+def _next_page(url, prefix):
+    """The page number of a rel="next" link. GitHub may address this
+    repository as repositories/{id}/ (and a workflow by its numeric id)
+    instead of repos/{owner}/{name}/, so get_all never follows the link
+    itself: it reads the page number and rebuilds the request from its own
+    path. A link naming another repository is refused."""
+    if not (url.startswith(API + prefix) or re.match(re.escape(API) + r"repositories/\d+/", url)):
+        raise NotAllowed("pagination left the repository")
+    m = re.search(r"[?&]page=(\d+)(?:&|$)", url)
+    if not m:
+        raise NotAllowed("pagination link without a page number")
+    return int(m.group(1))
+
+
+def _with_page(rel, page):
+    """`rel` with its page parameter set to `page`."""
+    path, _, query = rel.partition("?")
+    parts = [p for p in query.split("&") if p and not p.startswith("page=")]
+    parts.append("page=%d" % page)
+    return path + "?" + "&".join(parts)
+
+
 class Gh:
     """REST client restricted to the allowlist above."""
 
@@ -208,11 +230,11 @@ class Gh:
             url = _next_link(headers)
             if not url or pages >= limit:
                 return items
-            if not url.startswith(API + self.prefix):
-                raise NotAllowed("pagination left the repository")
-            nxt = url[len(API + self.prefix):]
+            # Only the page number is taken from the link; the request is
+            # rebuilt from this repository's own path [v4.5.1].
+            nxt = _with_page(rel, _next_page(url, self.prefix))
             self.check("GET", nxt, None)
-            payload, headers = self._send("GET", url, nxt, None)
+            payload, headers = self._send("GET", API + self.prefix + nxt, nxt, None)
             pages += 1
 
     # ---- verified targets
