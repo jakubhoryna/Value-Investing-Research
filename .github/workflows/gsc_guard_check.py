@@ -14,12 +14,27 @@ Result:
           whose every change fits its job's write contract ("OK - ...").
   exit 1  one "::error::" line per violation, then a summary line.
 
-The rules are routines/README.md section 3 (v2 spec section 6). classify(),
-check() and evaluate() take plain values, so test_gsc_guard_check.py can call
-them without git. Run the tests with:
+The rules are routines/README.md section 3 (v2 spec section 6). Every job:
+archive/ is append-only (adds only) and the retired registers/ and
+queue/archive/ paths are rejected (MODEL v4.5.0 section 7.5). Memo folders
+(MODEL v4.5.0 sections 6, 6.6, 7.4a): memos/{KEY}/ holds exactly one file, the
+current memo. A REVIEW that adds memos/K/K_D_GSC.md moves its one prior
+memos/K/K_P_GSC.md (P before D) unchanged to archive/memos/K/ in the same PR;
+nothing else moves a memo. ANALYSE is only for a key with no memos/K/ and no
+archive/memos/K/. The folder checks list trees at the merge base, at the PR
+head and on the current default branch (tree_lookup); without a listing they
+fail closed. The register (MODEL v4.5.0 section 7.1): INTAKE modifies
+_REGISTER.md and its machine twin register.csv together, with a byte-copy
+snapshot pair (.md and .csv, same N and date); the head register.csv must
+carry the tool's header and one data row per names_total, and _REGISTER.md
+must be exactly its rendering by routines/tools/gsc_register.py from this
+checkout (text_lookup; fails closed without it). No other job and no other
+path may hold a .csv. classify(), check() and evaluate() take plain values, so
+test_gsc_guard_check.py can call them without git. Run the tests with:
     python3 .github/workflows/test_gsc_guard_check.py
 """
 import datetime
+import importlib.util
 import os
 import re
 import subprocess
@@ -48,16 +63,35 @@ MEMO_RE = re.compile(
     r"memos/(?P<dir>[A-Za-z0-9._-]+)/(?P<key>[A-Za-z0-9._-]+)_(?P<date>\d{4}-\d{2}-\d{2})_GSC\.md",
     re.ASCII,
 )
+# Root archive/ tree (MODEL v4.5.0, section 7.5): append-only history that
+# mirrors the live paths. registers/ and queue/archive/ are retired.
+ARCHIVE_TOP = "archive"
+RETIRED_TOP = ("registers/", "queue/archive/")
 SNAPSHOT_RE = re.compile(
-    r"registers/(?P<folder>\d{4})/REGISTER_v\d+_(?P<date>(?P<year>\d{4})-\d{2}-\d{2})\.md",
+    r"archive/registers/(?P<folder>\d{4})/REGISTER_v(?P<n>\d+)_(?P<date>(?P<year>\d{4})-\d{2}-\d{2})\.md",
+    re.ASCII,
+)
+# The register's machine twin (MODEL v4.5.0 section 7.1) and its snapshot.
+REGISTER_CSV = "register.csv"
+CSV_SNAPSHOT_RE = re.compile(
+    r"archive/registers/(?P<folder>\d{4})/REGISTER_v(?P<n>\d+)_(?P<date>(?P<year>\d{4})-\d{2}-\d{2})\.csv",
     re.ASCII,
 )
 # Versions may be dotted (DRAFT_QUEUE has been v1.1); the blob check still
 # requires a byte copy of the outgoing file.
-TODO_ARCHIVE_RE = re.compile(r"queue/archive/TODO_v\d+(?:\.\d+)*_\d{4}-\d{2}-\d{2}\.md", re.ASCII)
-DRAFT_QUEUE_ARCHIVE_RE = re.compile(r"queue/archive/DRAFT_QUEUE_v\d+(?:\.\d+)*_\d{4}-\d{2}-\d{2}\.md", re.ASCII)
-PROPOSAL_ARCHIVE_RE = re.compile(r"queue/archive/proposals/(?P<name>[^/]+\.md)")
-INTAKE_MODIFIABLE = ("_REGISTER.md", "queue/TODO.md", "queue/DRAFT_QUEUE.md")
+TODO_ARCHIVE_RE = re.compile(r"archive/queue/TODO_v\d+(?:\.\d+)*_\d{4}-\d{2}-\d{2}\.md", re.ASCII)
+DRAFT_QUEUE_ARCHIVE_RE = re.compile(r"archive/queue/DRAFT_QUEUE_v\d+(?:\.\d+)*_\d{4}-\d{2}-\d{2}\.md", re.ASCII)
+PROPOSAL_ARCHIVE_RE = re.compile(r"archive/queue/proposals/(?P<name>[^/]+\.md)")
+INTAKE_MODIFIABLE = ("_REGISTER.md", REGISTER_CSV, "queue/TODO.md", "queue/DRAFT_QUEUE.md")
+# Paths whose movement on the default branch since an INTAKE PR's merge base
+# makes that PR stale (gsc-automerge's INTAKE base check, MODEL v4.5.0 section
+# 8.7 item 10): everything INTAKE reads to build a version or writes.
+INTAKE_BASE_PATHS = ("_REGISTER.md", REGISTER_CSV, "queue/TODO.md", "queue/DRAFT_QUEUE.md",
+                     "archive/registers/", "archive/queue/")
+# routines/tools/gsc_register.py in this (trusted, default-branch) checkout.
+TOOL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                         "routines", "tools", "gsc_register.py")
+_TOOL = []
 
 HEAD_REV = "refs/remotes/pr/head"
 
@@ -189,8 +223,14 @@ def global_problems(status, path):
         problems.append("hidden path segment (a folder or file name starting with '.')")
     if segments[-1].lower() in BANNED_NAMES:
         problems.append("file name not allowed in a routine PR (CLAUDE.md, CLAUDE.local.md, AGENTS.md, README.md)")
-    if not path.endswith(".md"):
-        problems.append("only .md files are allowed")
+    if not (path.endswith(".md") or path == REGISTER_CSV or CSV_SNAPSHOT_RE.fullmatch(path)):
+        problems.append("only .md files are allowed (plus INTAKE's register.csv and its "
+                        "archive/registers/{YYYY}/ .csv snapshot)")
+    if segments[0].lower() == ARCHIVE_TOP and status != "A":
+        problems.append("archive/ is append-only: a routine never modifies or deletes a file there (MODEL section 7.5)")
+    if path.lower().startswith(RETIRED_TOP):
+        problems.append("retired path: archives live under archive/ since MODEL v4.5.0 "
+                        "(archive/registers/, archive/queue/)")
     return problems
 
 
@@ -207,19 +247,85 @@ def split_global(entries):
     return errors, clean
 
 
-def _check_analyse_review(job, entries, date, time, branch_key):
+SIDE_NAMES = {"base": "the merge base", "head": "the PR head", "main": "the current default branch"}
+
+
+def _list_dir(errors, tree_lookup, side, folder):
+    """Sorted basenames directly under `folder` at `side` ('base', 'head' or
+    'main'), or None after recording a fail-closed error (no lookup, or git
+    could not list it)."""
+    names = tree_lookup(side, folder) if tree_lookup is not None else None
+    if names is None:
+        errors.append("cannot list %s at %s; memo folder unverifiable" % (folder, SIDE_NAMES.get(side, side)))
+    return names
+
+
+def _check_review_move(errors, memo_path, memo_key, memo_dels, arch_adds, date, blob_lookup, tree_lookup):
+    """A REVIEW that adds memos/K/K_D_GSC.md must move exactly its one prior
+    memo memos/K/K_P_GSC.md (P before D) to archive/memos/K/ unchanged, in
+    the same PR (MODEL v4.5.0 sections 6.6 and 7.4a). memos/K/ must hold only
+    that prior at the merge base and on the current default branch, and only
+    the new memo at the PR head."""
+    folder = "memos/%s" % memo_key
+
+    def is_prior(path):
+        m = MEMO_RE.fullmatch(path)
+        return bool(m) and m.group("dir") == memo_key and m.group("key") == memo_key and m.group("date") < date
+
+    prior = [p for p in memo_dels if is_prior(p)]
+    if len(memo_dels) != 1 or len(prior) != 1:
+        errors.append("A %s: a REVIEW must move exactly its one prior memo %s/%s_{P}_GSC.md "
+                      "(P before D) to archive/memos/%s/ in the same PR (found %d memo deletion(s): %s)"
+                      % (memo_path, folder, memo_key, memo_key, len(memo_dels), ", ".join(memo_dels) or "none"))
+        return
+    deleted = prior[0]
+    archived = "archive/" + deleted
+    if arch_adds != [archived]:
+        errors.append("D %s: the archived prior must be %s (same filename, nothing else under archive/; "
+                      "found %s)" % (deleted, archived, ", ".join(arch_adds) or "none"))
+        if archived not in arch_adds:
+            return
+    _same_blob(errors, blob_lookup, archived, deleted, "archived memo")
+    prior_name = deleted.rsplit("/", 1)[1]
+    for side in ("base", "main"):
+        names = _list_dir(errors, tree_lookup, side, folder)
+        if names is None:
+            break
+        if names != [prior_name]:
+            if side == "base":
+                errors.append("D %s: %s holds %d file(s) at the merge base (%s); a REVIEW moves exactly "
+                              "one prior, so an attended clean-up comes first"
+                              % (deleted, folder, len(names), ", ".join(names) or "none"))
+            else:
+                errors.append("D %s: %s on the current default branch holds %s, not this REVIEW's prior: "
+                              "main moved for this key since the PR's base, so the REVIEW is stale"
+                              % (deleted, folder, ", ".join(names) or "nothing"))
+            break
+    head = _list_dir(errors, tree_lookup, "head", folder)
+    if head is not None and head != [memo_path.rsplit("/", 1)[1]]:
+        errors.append("A %s: after the REVIEW %s must hold only the new memo (holds %s)"
+                      % (memo_path, folder, ", ".join(head) or "nothing"))
+
+
+def _check_analyse_review(job, entries, date, time, branch_key, blob_lookup=None, tree_lookup=None):
     word = job.upper()
     errors = []
-    memo_entries = [(s, p) for s, p in entries if p.startswith("memos/")]
-    other = [(s, p) for s, p in entries if not p.startswith("memos/")]
-    if len(memo_entries) > 1:
-        errors.append("%d memo paths in one %s PR: a run writes at most one memo" % (len(memo_entries), word))
+    memo_adds = [p for s, p in entries if s == "A" and p.startswith("memos/")]
+    memo_dels = [p for s, p in entries if s == "D" and p.startswith("memos/")]
+    memo_mods = [p for s, p in entries if s == "M" and p.startswith("memos/")]
+    arch_adds = [p for s, p in entries if s == "A" and p.lower().startswith(ARCHIVE_TOP + "/")]
+    other = [(s, p) for s, p in entries
+             if not p.startswith("memos/") and not p.lower().startswith(ARCHIVE_TOP + "/")]
+    for path in memo_mods:
+        errors.append("M %s: a routine never changes a memo (a REVIEW writes a new file and moves "
+                      "the prior to archive/memos/)" % path)
+    if len(memo_adds) > 1:
+        errors.append("%d memos added in one %s PR: a run writes at most one memo" % (len(memo_adds), word))
     memo_key = None
-    for status, path in memo_entries:
+    memo_path = None
+    for path in memo_adds:
         m = MEMO_RE.fullmatch(path)
-        if status != "A":
-            errors.append("%s %s: a routine may only add a new memo, never change or delete one" % (status, path))
-        elif not m or m.group("dir") != m.group("key"):
+        if not m or m.group("dir") != m.group("key"):
             errors.append("A %s: a memo must be memos/{KEY}/{KEY}_%s_GSC.md" % (path, date))
         elif m.group("date") != date:
             errors.append("A %s: memo date %s is not the run date %s from the branch" % (path, m.group("date"), date))
@@ -227,8 +333,39 @@ def _check_analyse_review(job, entries, date, time, branch_key):
             errors.append("A %s: a keyless ANALYSE branch (queue exhausted) may not add a memo" % path)
         elif job == "review" and m.group("key") != branch_key:
             errors.append("A %s: a REVIEW memo must be for the branch key %s" % (path, branch_key))
-        elif len(memo_entries) == 1:
+        elif len(memo_adds) == 1:
             memo_key = m.group("key")
+            memo_path = path
+
+    # Memo moves (MODEL v4.5.0): only a REVIEW with its one valid new memo
+    # moves the prior; ANALYSE is only for keys with no memo history at all.
+    if job == "analyse":
+        for path in memo_dels + arch_adds:
+            status = "D" if path in memo_dels else "A"
+            errors.append("%s %s: ANALYSE never moves or deletes a memo, and adds nothing under archive/"
+                          % (status, path))
+        if memo_key is not None:
+            for folder in ("memos/%s" % memo_key, "archive/memos/%s" % memo_key):
+                for side in ("base", "main"):
+                    names = _list_dir(errors, tree_lookup, side, folder)
+                    if names is None:
+                        break
+                    if names:
+                        errors.append("A %s: %s already exists at %s (%d file(s)): this key is REVIEW "
+                                      "territory, never a new ANALYSE"
+                                      % (memo_path, folder, SIDE_NAMES[side], len(names)))
+                        break
+    elif memo_key is not None:
+        _check_review_move(errors, memo_path, memo_key, memo_dels, arch_adds, date, blob_lookup, tree_lookup)
+    elif not memo_adds:
+        for path in memo_dels + arch_adds:
+            status = "D" if path in memo_dels else "A"
+            errors.append("%s %s: a REVIEW without a new memo (claim stub, INCOMPLETE) moves no memo"
+                          % (status, path))
+    else:
+        for path in memo_dels + arch_adds:
+            status = "D" if path in memo_dels else "A"
+            errors.append("%s %s: a REVIEW moves its prior only alongside one valid new memo" % (status, path))
 
     # K in {branch key, memo key}: the memo key may differ after a re-key (MODEL 7.1a).
     keys = []
@@ -240,7 +377,7 @@ def _check_analyse_review(job, entries, date, time, branch_key):
     # that key from the run's single keyed ANALYSE row. It allows adds only:
     # without a memo, no evidence of the resolved key may be deleted.
     deletable = ["queue/evidence/%s_*.md" % k for k in keys]
-    if job == "analyse" and branch_key is not None and not memo_entries:
+    if job == "analyse" and branch_key is not None and not memo_adds:
         row_re = re.compile(r"queue/rows/%s_%s_ANALYSE_(?P<key>[A-Za-z0-9._-]+)\.md"
                             % (re.escape(date), re.escape(time)), re.ASCII)
         row_keys = [m.group("key") for m in (row_re.fullmatch(p) for s, p in other if s == "A") if m]
@@ -285,7 +422,7 @@ def _same_blob(errors, blob_lookup, added, source, what):
         errors.append("A %s: %s is not a byte copy of %s at the merge base" % (added, what, source))
 
 
-def _check_intake(entries, date, time, blob_lookup):
+def _check_intake(entries, date, time, blob_lookup, text_lookup=None):
     errors = []
     deleted = {p for s, p in entries if s == "D"}
     run_note = "queue/runs/%s_%s_INTAKE.md" % (date, time)
@@ -301,13 +438,18 @@ def _check_intake(entries, date, time, blob_lookup):
         # status == "A"
         if path == run_note:
             continue
-        m = SNAPSHOT_RE.fullmatch(path)
+        m = None
+        for regex, source, what in ((SNAPSHOT_RE, "_REGISTER.md", "register snapshot"),
+                                    (CSV_SNAPSHOT_RE, REGISTER_CSV, "register.csv snapshot")):
+            m = regex.fullmatch(path)
+            if m:
+                if m.group("folder") != m.group("year"):
+                    errors.append("A %s: snapshot folder %s is not the year of its date %s"
+                                  % (path, m.group("folder"), m.group("date")))
+                else:
+                    _same_blob(errors, blob_lookup, path, source, what)
+                break
         if m:
-            if m.group("folder") != m.group("year"):
-                errors.append("A %s: snapshot folder %s is not the year of its date %s"
-                              % (path, m.group("folder"), m.group("date")))
-            else:
-                _same_blob(errors, blob_lookup, path, "_REGISTER.md", "register snapshot")
             continue
         if TODO_ARCHIVE_RE.fullmatch(path):
             _same_blob(errors, blob_lookup, path, "queue/TODO.md", "TODO archive")
@@ -323,13 +465,102 @@ def _check_intake(entries, date, time, blob_lookup):
                               % (path, source))
             _same_blob(errors, blob_lookup, path, source, "archived proposal")
             continue
-        errors.append("A %s: not in the INTAKE write contract (allowed adds: %s, registers/{YYYY}/REGISTER_v{N}_{date}.md, "
-                      "queue/archive/TODO_v{n}_{date}.md, queue/archive/DRAFT_QUEUE_v{n}_{date}.md, "
-                      "queue/archive/proposals/{name}.md)" % (path, run_note))
+        errors.append("A %s: not in the INTAKE write contract (allowed adds: %s, "
+                      "archive/registers/{YYYY}/REGISTER_v{N}_{date}.md and .csv, "
+                      "archive/queue/TODO_v{n}_{date}.md, archive/queue/DRAFT_QUEUE_v{n}_{date}.md, "
+                      "archive/queue/proposals/{name}.md)" % (path, run_note))
+    errors += _check_register_pair(entries, text_lookup)
     return errors
 
 
-def check(job, entries, branch_info, blob_lookup):
+def register_tool():
+    """routines/tools/gsc_register.py from this checkout (the default branch,
+    so trusted), or None when it cannot be loaded. Loaded once; no byte-code
+    is written."""
+    if not _TOOL:
+        module = None
+        saved = sys.dont_write_bytecode
+        sys.dont_write_bytecode = True
+        try:
+            spec = importlib.util.spec_from_file_location("gsc_register_tool", TOOL_PATH)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            if not isinstance(getattr(module, "CSV_HEADER", None), list):
+                module = None
+        except Exception:  # fail closed: the caller reports it
+            module = None
+        finally:
+            sys.dont_write_bytecode = saved
+        _TOOL.append(module)
+    return _TOOL[0]
+
+
+def _first_lines(text, n=3):
+    lines = [line.strip() for line in str(text).splitlines() if line.strip()]
+    more = " (+%d more)" % (len(lines) - n) if len(lines) > n else ""
+    return " ".join(lines[:n]) + more
+
+
+def _check_register_pair(entries, text_lookup):
+    """MODEL v4.5.0 section 7.1: _REGISTER.md and register.csv change together,
+    with exactly one .md and one .csv snapshot of the same N and date, and the
+    head files are what routines/tools/gsc_register.py renders."""
+    errors = []
+    modified = {p for s, p in entries if s == "M"}
+    md_snaps = [m for m in (SNAPSHOT_RE.fullmatch(p) for s, p in entries if s == "A") if m]
+    csv_snaps = [m for m in (CSV_SNAPSHOT_RE.fullmatch(p) for s, p in entries if s == "A") if m]
+    md_changed, csv_changed = "_REGISTER.md" in modified, REGISTER_CSV in modified
+    if not md_changed and not csv_changed:
+        for m in md_snaps + csv_snaps:
+            errors.append("A %s: a register snapshot without a register change" % m.group(0))
+        return errors
+    if md_changed != csv_changed:
+        errors.append("M %s: _REGISTER.md and register.csv change together, with matching snapshots "
+                      "(MODEL section 7.1; the register tool writes both)"
+                      % ("_REGISTER.md" if md_changed else REGISTER_CSV))
+    if len(md_snaps) != 1 or len(csv_snaps) != 1:
+        errors.append("M _REGISTER.md: a register version adds exactly one .md and one .csv snapshot of the "
+                      "outgoing version (found %d .md, %d .csv)" % (len(md_snaps), len(csv_snaps)))
+    elif (md_snaps[0].group("n"), md_snaps[0].group("date")) != (csv_snaps[0].group("n"),
+                                                                  csv_snaps[0].group("date")):
+        errors.append("A %s: the .md and .csv snapshots must share N and date (%s)"
+                      % (csv_snaps[0].group(0), md_snaps[0].group(0)))
+    if not csv_changed:
+        return errors
+    csv_text = text_lookup("head", REGISTER_CSV) if text_lookup is not None else None
+    md_text = text_lookup("head", "_REGISTER.md") if text_lookup is not None else None
+    if csv_text is None or md_text is None:
+        errors.append("M register.csv: cannot read register.csv and _REGISTER.md at the PR head; "
+                      "register contents unverifiable")
+        return errors
+    tool = register_tool()
+    if tool is None:
+        errors.append("M register.csv: cannot load routines/tools/gsc_register.py from the default branch; "
+                      "register contents unverifiable")
+        return errors
+    if csv_text.split("\n", 1)[0].rstrip("\r") != ",".join(tool.CSV_HEADER):
+        errors.append("M register.csv: the first line is not the MODEL section 7.1b header")
+        return errors
+    try:
+        rows, problems = tool.read_csv_text(csv_text)
+    except tool.ToolError as exc:
+        return errors + ["M register.csv: %s" % _first_lines(exc)]
+    errors += ["M register.csv: %s" % p for p in problems]
+    fm = tool.parse_front_matter(md_text)
+    if fm.get("names_total") != str(len(rows)):
+        errors.append("M register.csv: %d data rows, but _REGISTER.md names_total is %s"
+                      % (len(rows), fm.get("names_total", "missing")))
+    try:
+        rendered = tool.render(rows, fm.get("register_version", ""), fm.get("register_date", ""))
+    except tool.ToolError as exc:
+        return errors + ["M register.csv: %s" % _first_lines(exc)]
+    if rendered != md_text.replace("\r\n", "\n"):
+        errors.append("M _REGISTER.md: not the rendering of register.csv by routines/tools/gsc_register.py "
+                      "(never edit the register by hand)")
+    return errors
+
+
+def check(job, entries, branch_info, blob_lookup, tree_lookup=None, text_lookup=None):
     """Check a routine PR's changes against its job's write contract.
 
     job:         'analyse' | 'review' | 'seed' | 'sweep' | 'intake'
@@ -337,7 +568,16 @@ def check(job, entries, branch_info, blob_lookup):
     branch_info: {'key', 'date', 'time'} from the branch (parse_branch())
     blob_lookup: f(side, path) -> blob id or None; side 'base' = the merge
                  base of the default branch and the PR head, 'head' = the PR
-                 head. Used only by the INTAKE byte-copy checks.
+                 head. Used by the INTAKE byte-copy checks and by REVIEW's
+                 archived-prior byte copy.
+    tree_lookup: f(side, folder) -> sorted basenames directly under folder
+                 ([] when it does not exist), or None when it cannot be
+                 listed; side 'base', 'head' or 'main' (the current default
+                 branch). Used by the ANALYSE and REVIEW memo-folder checks,
+                 which fail closed without it (see make_tree_lookup()).
+    text_lookup: f(side, path) -> file text or None; side 'head'. Used by the
+                 INTAKE register checks (register.csv and _REGISTER.md at the
+                 PR head), which fail closed without it (make_text_lookup()).
     Returns a list of violation messages (empty = OK).
     """
     if job not in JOBS:
@@ -347,7 +587,7 @@ def check(job, entries, branch_info, blob_lookup):
     time = branch_info["time"]
     key = branch_info.get("key")
     if job in ("analyse", "review"):
-        errors += _check_analyse_review(job, clean, date, time, key)
+        errors += _check_analyse_review(job, clean, date, time, key, blob_lookup, tree_lookup)
     elif job == "sweep":
         errors += _check_exact(job, clean, {"queue/rows/%s_%s_SWEEP.md" % (date, time),
                                             "queue/runs/%s_%s_SWEEP.md" % (date, time)})
@@ -355,13 +595,16 @@ def check(job, entries, branch_info, blob_lookup):
         errors += _check_exact(job, clean, {"queue/proposals/%s_%s_QUEUE-SEED.md" % (date, time),
                                             "queue/runs/%s_%s_SEED.md" % (date, time)})
     else:
-        errors += _check_intake(clean, date, time, blob_lookup)
+        errors += _check_intake(clean, date, time, blob_lookup, text_lookup)
     return errors
 
 
-def evaluate(head_ref, title, base_ref, default_branch, entries, blob_lookup):
+def evaluate(head_ref, title, base_ref, default_branch, entries, blob_lookup, tree_lookup=None,
+             text_lookup=None):
     """Full decision for one PR. Returns None for a non-routine PR (skip),
-    else the list of violations (empty = OK)."""
+    else the list of violations (empty = OK). blob_lookup, tree_lookup and
+    text_lookup are as in check(); without tree_lookup every ANALYSE or REVIEW
+    memo fails closed, without text_lookup every INTAKE register change."""
     routine, info, errors = classify(head_ref, title)
     if not routine:
         return None
@@ -371,7 +614,7 @@ def evaluate(head_ref, title, base_ref, default_branch, entries, blob_lookup):
     if info is None:
         errors += split_global(entries)[0]
     else:
-        errors += check(info["job"], entries, info, blob_lookup)
+        errors += check(info["job"], entries, info, blob_lookup, tree_lookup, text_lookup)
     return errors
 
 
@@ -392,6 +635,50 @@ def make_blob_lookup(git, base_rev, head_rev):
         rc, out = git(["rev-parse", "--verify", "--quiet", "%s:%s" % (rev, path)])
         blob = out.decode("ascii", "replace").strip()
         return blob if rc == 0 and blob else None
+    return lookup
+
+
+def make_text_lookup(git, base_rev, head_rev):
+    """File text via `git cat-file blob <rev>:<path>` ('base' or 'head');
+    None when git fails or the file is not UTF-8."""
+    def lookup(side, path):
+        rev = base_rev if side == "base" else head_rev
+        rc, out = git(["cat-file", "blob", "%s:%s" % (rev, path)])
+        if rc != 0:
+            return None
+        try:
+            return out.decode("utf-8")
+        except UnicodeDecodeError:
+            return None
+    return lookup
+
+
+def make_tree_lookup(git, base_rev, head_rev, main_rev=None):
+    """Folder listings via `git ls-tree -z --name-only --full-tree <rev> -- <folder>/`.
+
+    side 'base' -> base_rev, 'head' -> head_rev, 'main' -> main_rev (the
+    current default branch; base_rev when not given). Returns the sorted
+    basenames directly under the folder, [] when it does not exist, or None
+    when git fails (the caller then fails closed). Results are cached."""
+    revs = {"base": base_rev, "head": head_rev, "main": main_rev or base_rev}
+    cache = {}
+
+    def lookup(side, folder):
+        rev = revs.get(side)
+        if not rev:
+            return None
+        folder = folder.rstrip("/")
+        if (rev, folder) not in cache:
+            rc, out = git(["ls-tree", "-z", "--name-only", "--full-tree", rev, "--", folder + "/"])
+            if rc != 0:
+                cache[(rev, folder)] = None
+            else:
+                prefix = folder + "/"
+                names = [item[len(prefix):] for item in out.decode("utf-8", "replace").split("\0")
+                         if item.startswith(prefix) and len(item) > len(prefix)]
+                cache[(rev, folder)] = sorted(names)
+        names = cache[(rev, folder)]
+        return None if names is None else list(names)
     return lookup
 
 
@@ -453,7 +740,9 @@ def main(env=None, git=None):
         print("  %s\t%s" % (status, printable(path)))
 
     errors = evaluate(head_ref, title, base_ref, default_branch, entries,
-                      make_blob_lookup(git, merge_base, HEAD_REV))
+                      make_blob_lookup(git, merge_base, HEAD_REV),
+                      make_tree_lookup(git, merge_base, HEAD_REV, base_rev),
+                      make_text_lookup(git, merge_base, HEAD_REV))
     return report(errors or [], label)
 
 

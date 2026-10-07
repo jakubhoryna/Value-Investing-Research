@@ -1,9 +1,10 @@
 # QUEUE-SEED routine — evidence-only queue upkeep (under MODEL §8.7)
 
-**Schedule:** weekdays at 06:20 Europe/Prague.
+**Schedule:** Monday and Thursday at 06:20 Europe/Prague.
+Weekdays 09:00–18:00 are routine-free and 02:00–06:00 is quiet outside the weekend sprint. These times must equal the live routine crons (MODEL §8.7 item 12).
 **Branch:** `claude/gsc-seed-{D}-{T}`. **PR title:** `GSC SEED {D} [running]`. The job token is `seed` in the branch and `SEED` in the title and run note (`queue/runs/{D}_{T}_SEED.md`); only the proposal file keeps the full name, `queue/proposals/{D}_{T}_QUEUE-SEED.md`.
 
-Output is **proposals only**. Merging the PR approves section 6 (the restock), which INTAKE then appends to `queue/DRAFT_QUEUE.md`. To change the restock, edit or delete lines in the PR before merging.
+Output is **proposals only**. Merging the PR approves section 6 (the restock), which INTAKE then appends to `queue/DRAFT_QUEUE.md`. To change the restock, edit or delete lines in the PR before merging. A SEED PR is never auto-merged; Jakub's merge approves the proposal (MODEL §8.7 item 10).
 
 1. **Preflight** per `routines/README.md` §0. If an open `GSC SEED` PR exists, stop with no PR.
 2. **Claim** before any web work (README §2): branch, run-note stub, push, PR.
@@ -19,25 +20,26 @@ Output is **proposals only**. Merging the PR approves section 6 (the restock), w
      - the register's named coverage gaps (UK, Canada, Australia, pure automation platforms, manufacturing software)
      - event-driven names: a first buyback, a control change, or a first annual report in the last ~90 days, in markets on the §7.1a table
 5. **Build the exclusion set.** A name in any of these places isn't new; at most you can propose re-ranking it:
-   - every register row, matched on company name (the register has no ISIN column), and every memo's `isin:` where the candidate's ISIN is known
+   - every register row, matched on company name, and every ISIN in the `isin` column of `register.csv` and in every memo's `isin:` — every file in `memos/` and `archive/memos/` — where the candidate's ISIN is known
+   - every `key` and every `aliases` entry in `register.csv`
    - every key and company in TODO, including block C3's recorded exclusions (never re-seed those)
    - every line of `DRAFT_QUEUE.md`, whatever its marker
    - every held name
    - every open or recently rejected claim
 6. **Verify each candidate,** one issuer per query:
-   - the listed line and a suffix on the §7.1a table
+   - the listed line, its §7.1a suffix, and one GET to the price endpoint for that key (a fresh bar; record `exchangeName` and `currency` only, never the price)
    - no pending take-private, merger, delisting, squeeze-out or separation. If one is pending, the name goes under "Excluded", with the fact and its source.
    - the reporting currency and fiscal year-end
    - a primary-filing route actually reachable from the sandbox; record what you fetched
 
-   Suffix-gap markets (`.NS .BO .IR .LS .SR .AE .BD`) go under "Blocked — framework", not into the queue.
+   A venue the price endpoint does not serve (MODEL §7.1a, "Not served"), or a name whose quote is stale on a served venue, goes under "Blocked — data access" with a one-line retrieval note, not into the queue. No market is blocked by the framework (MODEL v4.5.0).
 7. **Write `queue/proposals/{D}_{T}_QUEUE-SEED.md`** with exactly these sections:
    1. Header: the TODO, register and queue state read, and the searches used.
    2. New names: `| Key | Company | Sector | Why queued | Status | Source |`. Propose at most 10, and only names that would rank in the top half of the current queue.
    3. Excluded at verification: one line each, with the fact and its source.
-   4. Blocked — framework.
+   4. Blocked — data access (venue not served, or a stale quote).
    5. Decay findings and re-ranking proposals, each with its criterion and source.
-   6. **DRAFT_QUEUE restock:** paste-ready lines `- [ ] KEY — Company — market/route — note`. Draw from existing supply first. Retrieval route comes first in the ordering.
+   6. **DRAFT_QUEUE restock:** paste-ready lines `- [ ] KEY — Company — market/route — note`. Draw from existing supply first. Retrieval route comes first in the ordering. A note carries facts to check first, never a lens or gate call. Where they apply, it names the facts the Gate 0 lens test will need: a banking or insurance licence, a captive finance arm, or a material listed subsidiary or holding (MODEL §2 Gate 0, round 2).
    7. Method notes: routes that worked or failed, for TODO block D.
 
    Close the file with: "Proposal only — approved by merge; INTAKE applies section 6."

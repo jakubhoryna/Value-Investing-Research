@@ -1,0 +1,6 @@
+# Line ends (MODEL v4.5.0 §7.1; framework file, changes only under "commit model").
+# The register and its machine twin are rendered and byte-compared by
+# routines/tools/gsc_register.py, so they keep LF line ends on every checkout,
+# Windows (core.autocrlf=true) included.
+_REGISTER.md text eol=lf
+register.csv text eol=lf

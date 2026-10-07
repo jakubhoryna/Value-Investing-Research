@@ -10,7 +10,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Edit|Write|NotebookEdit|Bash|Monitor",
+        "matcher": "Edit|Write|NotebookEdit|Bash|Monitor|PushNotification|Artifact|ArtifactComments|ArtifactData",
         "hooks": [
           {
             "type": "command",

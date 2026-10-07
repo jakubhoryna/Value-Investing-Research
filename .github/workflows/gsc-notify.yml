@@ -1,0 +1,105 @@
+# gsc-notify: the morning digest, the standing 'GSC - needs Jakub' issue and
+# the daily maintenance run (MODEL v4.5.0 §8.7 items 10-12). The rules live in
+# gsc_notify.py; it imports gsc_automerge.decide() to list what needs Jakub.
+#
+# - Digest: weekdays 08:30, Saturday/Sunday 09:45 Europe/Prague. Each target
+#   has three UTC crons (CEST and CET, plus one spare tick so a dropped
+#   scheduled run still leaves one inside the window); the script posts only
+#   when the Prague clock is inside the 3 h window after the target and no
+#   digest exists yet for that Prague date, so the other ticks exit (DST-safe;
+#   does not rely on a schedule timezone key, V5).
+# - Maintenance: 06:30 Europe/Prague (04:30 UTC CEST / 05:30 UTC CET; the
+#   script runs only when 06:30 <= Prague time < 08:30 and gsc-automerge has
+#   not been dispatched since 06:30 today). Never in the 02:00-06:00 quiet
+#   window: each merge wakes the routine session watching that PR. Re-runs
+#   guard runs that a GitHub incident cancelled (attempt 1 only, at most 20,
+#   never a 'failure'), flags a PR whose guard never ran or is stuck, creates
+#   the needs-Jakub issue once if missing, then dispatches gsc-automerge.
+# - Two jobs, so only maintenance holds actions: write. Uses only the per-run
+#   GITHUB_TOKEN (env GH_TOKEN); no secret exists. Writes only issues (digest
+#   create/close, needs-Jakub comments), guard re-runs and the gsc-automerge
+#   dispatch; never touches a pull request.
+# - A manual dispatch runs only from main.
+#
+# Day-1 checks: V6 a routine PushNotification reaches the phone; V7
+# assignment and @mention notifications from github-actions[bot] reach GitHub
+# Mobile, and whether closing the previous digest sends a second push.
+#
+# Tests: python3 .github/workflows/test_gsc_notify.py and test_gsc_workflows.py.
+name: gsc-notify
+
+on:
+  schedule:
+    - cron: '30 6,7,8 * * 1-5'   # digest 08:30 Prague Mon-Fri (06:30 UTC CEST / 07:30 UTC CET, + spare)
+    - cron: '45 7,8,9 * * 0,6'   # digest 09:45 Prague Sat/Sun (07:45 UTC CEST / 08:45 UTC CET, + spare)
+    - cron: '30 4,5 * * *'       # maintenance 06:30 Prague (04:30 UTC CEST / 05:30 UTC CET)
+  workflow_dispatch:
+    inputs:
+      task:
+        type: choice
+        options: [digest, maintenance]
+        default: digest
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gsc-notify
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule != '30 4,5 * * *') ||
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+       inputs.task != 'maintenance')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: read           # guard and merger runs for the Health section
+      issues: write           # the digest and the needs-Jakub issue
+    steps:
+      - name: Check out the default branch (trusted scripts)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GSC_AUTOMERGE: ${{ vars.GSC_AUTOMERGE }}
+          REPO: ${{ github.repository }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          TASK: digest
+        run: python3 .github/workflows/gsc_notify.py
+
+  maintenance:
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '30 4,5 * * *') ||
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' &&
+       inputs.task == 'maintenance')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: write          # re-run cancelled guard runs; dispatch gsc-automerge
+      issues: write           # the needs-Jakub issue
+    steps:
+      - name: Check out the default branch (trusted scripts)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Maintenance
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GSC_AUTOMERGE: ${{ vars.GSC_AUTOMERGE }}
+          REPO: ${{ github.repository }}
+          EVENT_SCHEDULE: ${{ github.event.schedule }}
+          TASK: maintenance
+        run: python3 .github/workflows/gsc_notify.py

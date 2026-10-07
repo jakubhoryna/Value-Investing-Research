@@ -1,46 +1,76 @@
 # REVIEW routine — one due name per run (MODEL §8.2 under §8.7)
 
-**Schedule:** weekdays at 07:20 and 15:20 Europe/Prague. During the burn-in week it runs only at 07:20.
+**Schedule:** Monday–Friday at 06:10 and 21:10 Europe/Prague; weekend sprint Friday 22:20 and 23:20, Saturday hourly at :20, Sunday 00:20–07:20 hourly at :20.
+Weekdays 09:00–18:00 are routine-free and 02:00–06:00 is quiet outside the weekend sprint. These times must equal the live routine crons (MODEL §8.7 item 12).
 **Branch:** `claude/gsc-review-{KEY}-{D}-{T}`. **PR title:** `GSC REVIEW {KEY} {D} [running]`, with the `HELD · ` prefix for portfolio names.
 
 1. **Preflight** per `routines/README.md` §0.
 2. **Find what's due.** Build the candidate list in this priority order:
    1. **Held names** (portfolio table) whose `Next review` trigger has fired.
-   2. **Review requests** in the `queue/TODO.md` block `▶ Review requests (SWEEP)`. Skip a request whose key's latest memo date is on or after the request's sweep date: that name has already been reviewed since.
+   1a. **Held and IN RANGE review requests** — lines in the `queue/TODO.md` block `▶ Review requests (SWEEP)` for a held name (a changed held zone included: a SWEEP merges with it and the digest only reports it, MODEL §8.7 items 10–11, J11), then lines whose reason starts `IN RANGE`; oldest sweep date first within each. These would otherwise wait behind the method re-tests and expire after 4 weeks (critic O2).
+   1b. **Method re-tests** — keys listed in the `queue/TODO.md` head block `▶ Method re-tests v4.5.0`: held names first, then the top line first. The trigger is the rule change itself; the REVIEW applies every v4.5.0 method rule (step 4) and says in Appendix G whether the verdict moved.
+   1c. **Group dependencies** (MODEL §2 Group dependencies; P26), in this order:
+       - keys of unmarked `▶ Group dependencies` lines whose memo is stale — more than 15 months old, or written under a MODEL version below v4.5.0 (a listed subsidiary or listed holding a parent waits on);
+       - `` `KEY` — parent re-run owed … `` lines in the same block (INTAKE re-queued a REVIEW parent whose last dependency cleared);
+       - keys that `python3 routines/tools/gsc_register.py check` lists as `parent stale` (a listed subsidiary's or holding's memo is newer than the parent's, or it has no register row). For `parent stale - holding HKEY … is not current (P26)` (its memo is more than 15 months old or below v4.5.0) the candidate is HKEY itself, not the parent: a parent run would stop `INCOMPLETE (dependency: HKEY)` unless verdict invariance holds (ANALYSE step 5). Once HKEY's memo lands, `check` lists the parent as `parent stale` (holding memo newer).
+   2. **Other review requests** in `▶ Review requests (SWEEP)`, oldest sweep date first. Requests carry forward for up to 4 weeks (INTAKE step 3).
    3. **WATCH rows** whose dated trigger (a results date, a filing or an event) is past.
    4. **AVOID rows** whose dated trigger is past. These are low priority by construction.
+
+   Skip a review request (1a, 2) whose key's current memo date (the date in the name of the one file in `memos/{KEY}/`) is on or after the request's sweep date: that name has already been reviewed since. A row's dated trigger is its register `Next review` — a `YYYY-MM-DD` on or before D, or a `Mon YYYY` or `Qn YYYY` whose month or quarter has ended; the memo's `next_review` names the event to check.
 
    Drop any key that:
    - is claimed (README §2);
    - has a pending `queue/rows/*_{KEY}.md`;
-   - already has a memo dated D (`memos/{KEY}/{KEY}_{D}_GSC.md`);
+   - already has a current memo dated D (`memos/{KEY}/{KEY}_{D}_GSC.md`);
+   - has a `memos/{KEY}/` folder that does not hold exactly one file (name it in the session summary; RECONCILE cleans it up, MODEL §8.5);
+   - has a `queue/TODO.md` item `` `KEY` — attended roll-up owed …``, `` `KEY` — attended re-test owed …`` or `` `KEY` — attended group build owed …`` (a routine run overran its budget; Jakub deletes the item after the attended run);
+   - has a `▶ Method re-tests v4.5.0` line or a `parent re-run owed` line marked ` — incomplete {date}: {gap}` with that date less than 14 days before D, or marked `attended re-test owed` (MODEL §8.7 item 6: an INCOMPLETE re-test is retried once after 14 days, then left to Jakub; critic B1). A `dependency of …` line marked `[!]` gets no retry from that line (priority 1c takes unmarked lines only): the subsidiary or holding stays ungradeable for its parent until a memo of it lands (INTAKE step 3, Mark). Example: `` `KCR.HE` — … → re-test (25%) — incomplete 2026-10-20: FY2016 segment notes not retrieved `` is skipped until 2026-11-03; a second INCOMPLETE turns it into `… — attended re-test owed (incomplete 2026-10-20, 2026-11-04)`;
    - is a stalled REVIEW key (README §2): it has two abandoned REVIEW PRs closed within 14 days of each other, and the later one was closed less than 14 days ago.
 
-   Check at most 4 candidates, in order, to see whether the cited document or event has actually been published. Use one search or IR-page lookup per candidate and log these as "due-check operations". They are the one web work allowed before the claim. The first confirmed candidate is the run's name.
+   Priorities 1a–2 need no due-check: their trigger is a price, a rule change or a dependency, so the first candidate that survives the drops is the run's name. For 1, 3 and 4, check at most 4 candidates, in order, to see whether the cited document or event has actually been published. Use one search or IR-page lookup per candidate and log these as "due-check operations". They are the one web work allowed before the claim. The first confirmed candidate is the run's name.
 
    If nothing is confirmed, open no PR. End with a session summary listing each candidate checked and why it isn't due. A due-but-unpublished trigger (for example "10-K not yet filed") is worth one line under `## TODO additions` only if a row file is being written anyway.
 3. **Claim** before any further research (README §2).
 4. **Review.** Follow MODEL §8.2 steps 1–6 exactly, within the P14 REVIEW budget.
-   - Load the prior memo per §7.4a: the latest-dated file in `memos/{KEY}/`, never a `_superseded-` file. Confirm its date matches the register row.
-   - Fetch only the delta.
-   - Re-test the sections the new information touches, plus any section whose mechanics changed between the prior memo's `model_version` and the live version.
-   - **Held names** also get step 4: the sell-reason audit, the current zone with distances to the ADD band and the sell-flag line, and the bias tick-through before the zone statement. Jakub decides at merge; the PR title carries `HELD · `. A SELL-FLAG decision for Jakub goes under `## Open items` in the row file.
+   - Load the prior memo per §7.4a: the one file in `memos/{KEY}/` (its filename is `{P_FILE}`, its date P). Confirm its date matches the register row. If it points to an earlier version ("unchanged from v…", "see v…", a memo file name), read the files in `archive/memos/{KEY}/`, newest first, until every pointer is resolved. These are repo reads, never P14.
+   - Fetch only the delta; reuse every figure the prior chain already holds, and write it out in full (MODEL §6.6). The current price comes from one GET to the key's endpoint symbol (README §5); its `currency` is `px_unit`.
+   - Re-test the sections the new information touches, plus any section whose mechanics changed between the prior memo's `model_version` and the live version. **A prior below v4.5.0 is re-tested on every v4.5.0 method rule** (MODEL §8.2 step 3), listed in `▶ Method re-tests v4.5.0` or not, as round 2 left them (MODEL §2 tag line: the R and V decisions of 2026-10-07 supersede the matching J-texts):
+     - **Gate 0:** the lens test (STD, FI, or too hard → DNAF), captive finance arms consolidated on STD, and, for a group, the part sentences, the weighted grades (P29) and the dependency check.
+     - **Past:** the J1 OI line and financial income out; maintenance-capex FCF (P20) in every FCF test, with the all-capex reading beside it; the 10-year and 5-year bars, the harsher-of growth reads, the P3 paths and the J6 decline (a single P28 year never fires limb (b) alone).
+     - **Future:** the paying customer; customer and supplier concentration, flagged and judged against the moat (R7: carried by a strong moat at an ADEQUATE cap, otherwise a STRONG force under P16; funding concentration stays strict); supplier evidence, containment and the market-growth cap.
+     - **SF**, read on the §2·1C ladder: the hairiest pay number against the P17 flag and egregious-strike lines; the director cap; the P23 alignment call and votes versus economics, as inputs (no pledge flag); the glaring RPT; the worth test on maintenance-capex FCF, with the sterilisation floor; and the acquisition stop (J14, V1).
+     - **Gate 2:** the debt-equivalents (a listed subsidiary's NCI at the higher of market and book); the securities classes; holding credits at the holding's own intrinsic value (V14); the P28 down-year test; the 3-year and 5-year readings; the lens's own band; and the trigger at the no-cash bound (R10).
+
+     The TODO line's notes are pointers, never findings. A note written before round 2 (a SOTP or SOTP-DOUBT reading, a part grade, a waiver, a pledge flag, an all-cash trigger) is read under the rules above. Appendix G says which rules moved what.
+   - **Lens, groups and the round-2 method steps**, exactly as ANALYSE step 5:
+     - Gate 0 states the lens: STD or FI, or too hard → DNAF, with the §6.4 too-hard line.
+     - For a group: Group Gate 0; the dependency check (`INCOMPLETE (dependency: {HKEY})` with `## Group dependency`, unless verdict invariance holds); the weighted grades; and the holding credits. A dependency marked `[!]` in `▶ Group dependencies`, or on a venue the endpoint does not serve, counts WEAK with its weight in the weighted Future, adds nothing to the look-through Past and earns no credit (`sub dependency`); Past is never weighted (MODEL §2·1A Groups).
+     - Then the P20 build, the P28 test, the R7 worksheet, the pay, director and alignment worksheets, the averaged readings, and the trigger at the no-cash bound.
+   - **Budget overrun (MODEL §8.7 item 6).** A group build that cannot finish within the time budget stops with `INCOMPLETE (group build exceeds budget)` and `` `KEY` — attended group build owed (REVIEW {D}) `` under `## TODO additions`; a v4.5.0 method re-test that cannot finish stops with `INCOMPLETE (method re-test exceeds budget)` and `` `KEY` — attended re-test owed (REVIEW {D}) ``.
+   - **Held names** also get step 4: the sell-reason audit, the current zone with distances to the ADD band and the sell-flag line, and the bias tick-through before the zone statement (MODEL §7.2).
+     - The ADD band is the trigger, the no-cash bound (P21, R10). The memo's `add_band` equals its `trigger`, and the zone is ADD only at or under it (with the other §7.2 ADD conditions).
+     - The sell-flag line runs on the governing OI: the latest-FY J1 line, or the P28 average in a one-off down year. FI names and names with holding credits use their own lines. Evidenced, quantified mitigating facts that bring the reading within the line hold the flag as `SR1 mitigated`: the zone is HOLD, with the facts and both readings in Appendix F. In doubt, the flag fires (V11).
+     - Jakub decides at merge; the PR title carries `HELD · `. A SELL-FLAG decision for Jakub goes under `## Open items` in the row file.
    - Any `queue/evidence/{KEY}_*` file is orientation only.
-   - If a gate or cheapness input is missing, apply the data-completeness gate (README §5, D3).
+   - If a gate or cheapness input is missing, apply the data-completeness gate (README §5, D3). A pointer that can't be resolved from `archive/memos/{KEY}/` is re-retrieved from the primary document (uncounted); failing that it is a D3 gap.
+   - **Legacy roll-up.** If the complete memo (MODEL §6.6) can't be finished within the time budget (README §5), stop with `INCOMPLETE (roll-up exceeds budget)` and add `` `KEY` — attended roll-up owed (REVIEW {D}, prior {P_FILE}) `` under `## TODO additions` in the row file.
 5. **Write:**
    - **Memo:**
-     - the new memo `memos/{KEY}/{KEY}_{D}_GSC.md`, with the version bumped and an Appendix G entry. Front matter: `memo_date: {D}`, the live `model_version`, `produced_by: ROUTINE` and `run_base: {sha}`. Never overwrite a memo.
-     - `queue/rows/{D}_{T}_REVIEW_{KEY}.md` (README §4) with the replacement row, plus the portfolio row if the name is held
+     - the new memo `memos/{KEY}/{KEY}_{D}_GSC.md`: one complete, self-contained memo per MODEL §6.6 — full front matter, body and Appendices A–G, folding the prior findings and the new evidence into one current analysis. Front matter: `memo_date: {D}`; `memo_version: v{n+1}`, where n is the number in the prior's `memo_version` (if it has none, n = the number of files in `archive/memos/{KEY}/` + 1); `supersedes: archive/memos/{KEY}/{P_FILE}`; the live `model_version`; `produced_by: ROUTINE`; `run_base: {sha}`. Appendix G: one history line per earlier version, then this version's full entry. Every MODEL §6.1 machine field (v4.5.0 with round 2; ANALYSE step 5): `px`, `px_unit`, `px_date`, `trigger` (the no-cash bound) with `trigger_basis: no-cash`, the three multiples and the four averaged ones, `lens`, `holding_keys`, `core_credit` (Σ H at the buy line, from each holding's current memo, never a market price), the reasons, `next_review_short`, one-word enumerations, and the core numbers. `core_shares_diluted`, `core_debt_eq` and `core_cash` are re-derived from the primary interim balance sheet (MODEL §4), never copied from the prior; `core_oi`, `core_fcf` (maintenance-capex, P20), `core_fcf_all` and the 3-year and 5-year averages follow the window; `aliases` from `register.csv` and the prior memo (a key retired a full review cycle ago drops out). A legacy prior without machine fields is no excuse: the new memo establishes them, or the run is INCOMPLETE. Never overwrite a memo.
+     - **the move of the prior memo**, once the step-6 re-measure passes and before the commit: `mkdir -p archive/memos/{KEY}`, then `git mv memos/{KEY}/{P_FILE} archive/memos/{KEY}/{P_FILE}` (README §1). Never edit the prior first; never move any other file. Afterwards `memos/{KEY}/` holds only the new memo.
+     - `queue/rows/{D}_{T}_REVIEW_{KEY}.md` (README §4) with the replacement row, plus the portfolio row if the name is held, both pasted from `python3 routines/tools/gsc_register.py row-from-memo memos/{KEY}/{KEY}_{D}_GSC.md --table`
      - a deletion of this name's `queue/evidence/{KEY}_*.md` orientation files, if any exist
      - the final run note
-   - **INCOMPLETE:** `queue/evidence/{KEY}_{D}_INCOMPLETE.md`, the row file with `row_type: INCOMPLETE`, and the final run note. Delete no evidence file.
-6. **Re-measure compliance** (README §5), commit (`GSC: {KEY} v{n} {VERDICT}`, or `GSC: {KEY} INCOMPLETE`), push, and finish the PR (README §1) as `GSC REVIEW {KEY} {D} — {VERDICT}; {what moved}`, or `— INCOMPLETE ({named gap})`.
+   - **INCOMPLETE:** `queue/evidence/{KEY}_{D}_INCOMPLETE.md`, the row file with `row_type: INCOMPLETE` (with `## Group dependency` for a dependency gap, and the `attended … owed` TODO addition for a budget overrun), and the final run note. Move no memo and delete no evidence file. INTAKE marks the key's `▶ Method re-tests v4.5.0` or `▶ Group dependencies` line from the title's named gap (INTAKE.md step 3).
+6. **Re-measure compliance** (README §5, including the MODEL §6.6 self-containment check and `python3 routines/tools/gsc_register.py lint-memo memos/{KEY}/{KEY}_{D}_GSC.md`), move the prior (step 5), commit (`GSC: {KEY} v{n+1} {VERDICT}`, or `GSC: {KEY} INCOMPLETE`), push, and finish the PR (README §1) as `GSC REVIEW {KEY} {D} — {VERDICT}; {what moved}` (when the verdict changed, `{what moved}` begins `was {OLD}`, and only then; gsc-automerge reads it), or `— INCOMPLETE ({named gap})`. A finished REVIEW whose verdict is unchanged and whose name is not held is merged by gsc-automerge; a verdict change, a BUY or a held name waits for Jakub (MODEL §8.7 item 10). Then send the README §5 push if the outcome is one of its classes (BUY, HELD, VERDICT CHANGE). The PR file list shows the move as `memos/{KEY}/{P_FILE}` → `archive/memos/{KEY}/{P_FILE}`; the gsc-guard check reads it as a delete plus a byte-identical add (README §3).
 7. **Stop.** One name per run.
 
 **Forbidden:**
 - a second name
 - any edit to the register, TODO, the queue or IDEAS
 - position events: a "bought" or "sold" line in any source never becomes a portfolio change here
+- any edit to the prior memo, and any change under `archive/` other than the one move in step 5
 - any change to a locked path
 
 *Framework output, not investment advice.*

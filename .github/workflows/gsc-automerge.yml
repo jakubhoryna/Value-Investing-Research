@@ -1,0 +1,82 @@
+# gsc-automerge: squash-merges finished routine PRs in a merge class
+# (MODEL v4.5.0 §8.7 item 10). The rules live in gsc_automerge.py.
+#
+# - Uses only the per-run GITHUB_TOKEN; no secret exists. GitHub mints the
+#   token for the run and expires it afterwards; it reaches the script only as
+#   env GH_TOKEN and is never printed or written.
+# - Never comments on, labels, reviews, edits or closes a PR (each would wake
+#   the routine session watching it). Held PRs get one comment on the standing
+#   issue 'GSC - needs Jakub' instead.
+# - Merges by events created with GITHUB_TOKEN trigger no workflows.
+# - Kill switch: repo variable GSC_AUTOMERGE = off | dry-run | on; anything
+#   else, including unset, is off. off: decide and write the job summary only.
+#   dry-run: also post the needs-Jakub comments, never merge. on: merge.
+# - Fail closed: a guard result other than 'success' on the exact head sha, a
+#   write-contract error under the trusted checker, a title/memo/row mismatch,
+#   unexpected files, BUY, HELD, a REVIEW verdict change, every QUEUE-SEED PR,
+#   an exception: the PR is held. The merge is pinned to that head sha
+#   (sha=) and titled '{PR title} (#n)'.
+# - Trusted code only: workflow_run and workflow_dispatch run this file and the
+#   checkout from the default branch; PR content is fetched and read as data
+#   (git cat-file / diff / ls-tree), never executed. The checkout keeps its
+#   credentials so the script can fetch refs/pull/{n}/head of this private
+#   repo; no PR code runs, so nothing else can use them.
+# - A guard completion decides its own PR first, then any other open routine
+#   PR updated in the last 2 h (bounded to ~40 s), so a pending run that the
+#   concurrency group replaces loses little; workflow_dispatch (the daily
+#   gsc-notify maintenance at 06:30 Prague, or by hand, from main only)
+#   sweeps every open routine PR. Each merge wakes the routine session
+#   watching that PR, so no sweep is scheduled in the 02:00-06:00 quiet window.
+#
+# Day-1 checks (no dry-run week; each failure only delays a merge):
+#   V1 a guard run whose only job was skipped reports conclusion 'skipped'
+#      (otherwise this workflow runs more often; still idempotent);
+#   V2 workflow_run.head_branch is the PR branch (confirmed 2026-10-06);
+#   V3 the bot squash-merge deletes the head branch and adds no check suite;
+#   V4 whether '#n' or a PR URL in an issue comment wakes the routine session
+#      (until checked, no PR is linked or written '#n': open and closed PRs
+#      are 'PR n' with a search link, merged ones link their commit or memo).
+#
+# Tests: python3 .github/workflows/test_gsc_automerge.py and test_gsc_workflows.py.
+name: gsc-automerge
+
+on:
+  workflow_run:
+    workflows: [gsc-guard]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write        # PUT pulls/{n}/merge
+  pull-requests: write   # merge only; gsc_gh.py's allowlist forbids every other PR write
+  actions: read          # guard runs and their jobs
+  issues: write          # comments on 'GSC - needs Jakub' only
+
+concurrency:
+  group: gsc-automerge
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event.workflow_run.conclusion != 'skipped' &&
+       startsWith(github.event.workflow_run.head_branch, 'claude/gsc') &&
+       !endsWith(github.event.workflow_run.display_title, '[running]'))
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - name: Check out the default branch (trusted scripts)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          filter: blob:none
+
+      - name: Merge eligible routine PRs (fail closed)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GSC_AUTOMERGE: ${{ vars.GSC_AUTOMERGE }}
+          REPO: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          TRIGGER_BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: python3 .github/workflows/gsc_automerge.py

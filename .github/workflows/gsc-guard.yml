@@ -2,10 +2,15 @@
 # (MODEL §8.7, routines/README.md §3). The rules live in gsc_guard_check.py.
 #
 # How it works
-# - The job runs on every PR (no job-level if:). The checker decides whether
-#   the PR is a routine PR: head branch starts with claude/gsc, or the title
-#   starts with "GSC {JOB}" or "HELD · GSC {JOB}". Any other PR prints
-#   "not a routine PR - skipped" and passes.
+# - The job runs once per routine PR, on its final title (MODEL v4.5.0 §8.7
+#   item 3): it is skipped while a claude/gsc… PR's title ends '[running]'
+#   (the claim and the final push), on body-only edits and on closed PRs.
+#   The finishing PATCH ('edited' with a title change) runs it on the final
+#   head sha. Attended PRs run on opened, synchronize, reopened and retitles.
+# - The checker decides whether the PR is a routine PR: head branch starts
+#   with claude/gsc, or the title starts with "GSC {JOB}" or
+#   "HELD · GSC {JOB}". Any other PR prints "not a routine PR - skipped" and
+#   passes.
 # - A routine PR fails if it does not target main, if its branch name is not
 #   claude/gsc-{job}-[{KEY}-]{D}-{T}, if the title job and branch job differ,
 #   or if any changed path is outside its job's contract.
@@ -14,18 +19,26 @@
 #   also comes from main. A PR cannot weaken its own check.
 # - No PR code is executed. The PR head is fetched as data and diffed.
 # - Branch name and PR title are untrusted. They reach the scripts only
-#   through env:, never as an inline expression inside run:.
-# - "edited" re-runs the check after a retitle or a base change.
+#   through env: (and the job-level if:), never as an inline expression
+#   inside run:.
+# - "edited" re-runs the check after a retitle or a base change, never after
+#   a body-only edit.
+# - runs-on is pinned to ubuntu-24.04 rather than ubuntu-latest.
 #
 # Limits (GitHub Free, private repo)
-# - No required checks exist on this plan, so a red X is advisory. Jakub's
-#   merge is the confirm; read the ::error:: lines before merging.
+# - No required checks exist on this plan, so a red X is advisory for Jakub.
+#   gsc-automerge (gsc-automerge.yml) merges a routine PR only when the newest
+#   non-skipped guard run on its exact head sha concluded 'success' (a success
+#   on a re-run counts). A skipped run shows as a green 'Success' in the UI,
+#   so every consumer reads the guard job's conclusion and requires
+#   'success', never 'skipped'.
 # - The check sees only PRs. A push straight to main never triggers it. The
 #   routine guard hook (.claude/hooks/gsc_guard.py) is the primary barrier.
 # - Cloud sessions cannot push .github/workflows/* (no workflow scope).
 #   Changes to these files come only from an attended local push.
 #
-# Tests: python3 .github/workflows/test_gsc_guard_check.py (exit 0 = all pass).
+# Tests: python3 .github/workflows/test_gsc_guard_check.py and
+# test_gsc_workflows.py (exit 0 = all pass).
 name: gsc-guard
 
 on:
@@ -37,11 +50,18 @@ permissions:
 
 jobs:
   guard:
-    runs-on: ubuntu-latest
+    # Once per PR on its final title: never while a routine claim is
+    # '[running]', never for a body-only edit, never on a closed PR.
+    if: >-
+      github.event.pull_request.state == 'open' &&
+      (github.event.action != 'edited' || github.event.changes.title || github.event.changes.base) &&
+      !(startsWith(github.event.pull_request.head.ref, 'claude/gsc') &&
+        endsWith(github.event.pull_request.title, '[running]'))
+    runs-on: ubuntu-24.04
     timeout-minutes: 3
     steps:
       - name: Check out the default branch (trusted checker)
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           fetch-depth: 0
 

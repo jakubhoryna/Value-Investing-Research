@@ -9,13 +9,49 @@ In routine sessions it blocks (exit 2, one stderr line):
   * Edit/Write/NotebookEdit into framework-locked paths;
   * Bash/Monitor commands that push anything but the run's own claude/gsc-*
     branch, merge or rewrite history, call gh outside the REST allowlist,
-    handle tokens, or visibly write into locked paths.
+    handle tokens, or visibly write into locked paths;
+  * any edit of the append-only archive/ tree (MODEL v4.5.0 section 7.5):
+    Edit/Write/NotebookEdit, redirections, tee, touch, truncate, in-place
+    sed/perl/awk into archive/, mv or git mv out of archive/, and rm, git rm
+    or cp/mv onto an archive/ file that git tracks. New archive files are made
+    with cp or git mv; untracked ones (INTAKE's restart) stay removable;
+  * Edit/Write/NotebookEdit of a memo that exists on origin/main (MODEL v4.5.0
+    section 6.6): a memo is never edited in place; a REVIEW writes a new file
+    and moves the prior to archive/memos/ with git mv;
+  * any hand write of the register (MODEL v4.5.0 section 7.1): editor tools,
+    redirections, tee, touch, truncate, dd, in-place sed/perl/awk, cp/mv onto,
+    mv away and rm of _REGISTER.md or register.csv at the repo root. Only
+    routines/tools/gsc_register.py writes them (run with python3; reading and
+    copying them elsewhere, and git checkout of them, stay allowed). Its
+    `rebuild` subcommand (the one-time attended lean rebuild) and `retrigger`
+    subcommand (the one-time attended trigger re-read of round 2, R10) are
+    refused;
+  * PushNotification outside the routine push rule (MODEL v4.5.0 §8.7 item
+    11, routines/README.md §5): the message must start 'GSC {CLASS} · {JOB}'
+    with CLASS one of BUY, HELD, VERDICT CHANGE, STOPPED, BLOCKED, STALL (HELD
+    never from a SWEEP: its zone changes reach Jakub through the digest, J11),
+    be one line of at most 200 characters without '#', and each class is sent
+    at most once per run (a marker file per session and class in the temp dir);
+  * any comment on a PR or issue: routines never comment (a comment wakes the
+    session watching it; the needs-Jakub and digest issues belong to the
+    gsc-automerge and gsc-notify workflows);
+  * the claude.ai Artifact tools outside INTAKE's register page step (MODEL
+    v4.5.0 section 7.4, routines/INTAKE.md step 9): Artifact passes only on a
+    claude/gsc-intake-* branch, only as action read or publish, only on the one
+    register page url (REGISTER_PAGE_URL), and a publish only of the rendered
+    file REGISTER_PAGE_FILE from outside the repo, with no other field (no new
+    artifact, delete, list, open, pin, capabilities, assets, type, force or
+    sharing). ArtifactComments, ArtifactData and any other artifact tool are
+    refused.
 Any unexpected error also exits 2 (fail closed).
 
-Python 3.11 stdlib only, no network. At most one subprocess per call
-(`git symbolic-ref`, only for `git push`). This is a guard rail, not a
-sandbox: gsc_guard_post.py self-heals locked files after each tool call and
-the gsc-guard PR check is the visible second layer.
+Python 3.11 stdlib only, no network. Subprocesses: `git symbolic-ref`, only
+for `git push` and the Artifact tool; `git ls-files`, only when a command would remove or
+overwrite a path under archive/; `git ls-tree origin/main`, only when an
+editor tool targets a path under memos/. This is a guard rail, not a sandbox:
+gsc_guard_post.py self-heals locked files after each tool call and the
+gsc-guard PR check is the visible second layer (it also rejects any M or D
+under archive/).
 """
 import glob
 import json
@@ -24,6 +60,7 @@ import re
 import shlex
 import subprocess
 import sys
+import tempfile
 
 # ---------------------------------------------------------------- constants
 
@@ -32,6 +69,49 @@ REPO = "jakubhoryna/Value-Investing-Model"
 CANARY = ": gsc-guard-canary"
 LOCKED_DIRS = ("model", "routines", ".claude", ".github")
 LOCKED_NAMES = ("CLAUDE.md", "CLAUDE.local.md", "AGENTS.md")
+# Append-only history (MODEL v4.5.0 §7.5). Not locked: routines add files here
+# (INTAKE snapshots and archives by cp / git mv). Not in the post hook's
+# pathspecs either, which would unstage those adds.
+APPEND_ONLY_DIRS = ("archive",)
+APPEND_ONLY_HINT = "archive/ is append-only: copy with cp or move with git mv (MODEL §7.5)"
+# Memos on main are never edited in place (MODEL v4.5.0 §6.6). The run's own
+# new memo is not on main yet, so writing and fixing it stays allowed.
+MEMO_DIR = "memos"
+MAIN_REF = "refs/remotes/origin/main"
+MEMO_HINT = ("a memo on main is never edited in place: a REVIEW writes a new memo and moves "
+             "the prior to archive/memos/ with git mv (MODEL §6.6)")
+
+# The register and its machine twin (MODEL v4.5.0 §7.1): written only by the register
+# tool, never by a hand edit. Repo-root files, compared without case.
+REGISTER_FILES = ("_register.md", "register.csv")
+REGISTER_HINT = ("the register is written only by routines/tools/gsc_register.py (MODEL §7.1): "
+                 "run its apply/render commands; never edit _REGISTER.md or register.csv by hand")
+
+# Routine phone pushes (MODEL v4.5.0 §8.7 item 11, routines/README.md §5): these classes
+# only, one per class per run, one line of at most PUSH_MAX characters, no '#'. HELD is a
+# REVIEW of a held name only: a SWEEP zone change reaches Jakub through the digest (J11).
+PUSH_RE = re.compile(r"^GSC (BUY|HELD|VERDICT CHANGE|STOPPED|BLOCKED|STALL) · "
+                     r"(ANALYSE|REVIEW|SWEEP|INTAKE|SEED)\b")
+PUSH_MAX = 200
+PUSH_HINT = ("only 'GSC BUY|HELD|VERDICT CHANGE|STOPPED|BLOCKED|STALL · {JOB} {KEY} {D} · PR {n} · {reason}', "
+             "HELD only for a REVIEW (routines/README.md §5)")
+# The jobs that may send each class (routines/README.md §5): BUY from an ANALYSE or REVIEW
+# memo, HELD and VERDICT CHANGE from a REVIEW, STALL from INTAKE's watchdog. STOPPED and
+# BLOCKED come from any job.
+PUSH_JOBS = {"BUY": ("ANALYSE", "REVIEW"), "HELD": ("REVIEW",), "VERDICT CHANGE": ("REVIEW",),
+             "STALL": ("INTAKE",)}
+
+# The register page (MODEL v4.5.0 §7.4, routines/INTAKE.md step 9): INTAKE refreshes one
+# private claude.ai artifact in place, best-effort. read is the Artifact tool's own
+# precondition for an update; publish sends the page rendered outside the repo by
+# routines/tools/gsc_site.py. Only these fields pass: never a new artifact, a delete, a
+# listing, open/pin, capabilities, assets, a type, force or sharing.
+REGISTER_PAGE_URL = "https://claude.ai/artifact/FnU69xTYSTMEjqHB21rVPs"
+REGISTER_PAGE_FILE = "gsc-register-page.html"
+ARTIFACT_FIELDS = {"read": {"action", "url"}, "publish": {"action", "url", "file_path", "label"}}
+ARTIFACT_HINT = ("only INTAKE's register page step may use the Artifact tool: action read or publish on "
+                 + REGISTER_PAGE_URL + ", publishing /tmp/" + REGISTER_PAGE_FILE
+                 + " (routines/INTAKE.md step 9)")
 
 # Strict run-branch name (spec §1).
 BRANCH_RE = re.compile(
@@ -406,6 +486,14 @@ class Guard:
         ti = self.event.get("tool_input") or {}
         if not isinstance(ti, dict):
             block("tool input is not an object")
+        if tool == "PushNotification":
+            self.check_push(ti)
+            return
+        if tool == "Artifact":
+            self.check_artifact(ti)
+            return
+        if "artifact" in tool.lower():
+            block(f"{tool} is not allowed in routines: " + ARTIFACT_HINT)
         if tool in ("Edit", "Write", "NotebookEdit", "MultiEdit"):
             target = ti.get("file_path") or ti.get("notebook_path") or ""
             if not isinstance(target, str):
@@ -413,6 +501,18 @@ class Guard:
             hit = self.locked(target, self.cwd)
             if hit:
                 block(f"'{hit}' is framework-locked")
+            arch = self.archive_rels(target, self.cwd)
+            if arch:
+                block(f"{tool} of '{arch[0]}': {APPEND_ONLY_HINT}")
+            self.need_not_register([target], self.cwd, tool)
+            memo = self.memo_rel(target, self.cwd)
+            if memo:
+                found = self.on_main(memo)
+                if found is None:
+                    block(f"{tool} of '{memo}': cannot list memos/ on origin/main to rule out an "
+                          "in-place memo edit (fail closed; run git fetch origin main)")
+                if found:
+                    block(f"{tool} of '{memo}': {MEMO_HINT}")
             return
         if tool in ("Bash", "Monitor"):
             cmd = ti.get("command")
@@ -424,6 +524,74 @@ class Guard:
             if TOKEN_LITERAL_RE.search(cmd):
                 block("a GitHub token literal appeared in the command")
             self.check_command(cmd, 0, self.cwd)
+
+    # ---- phone pushes
+
+    def check_push(self, ti):
+        """A routine push must follow routines/README.md §5: an allowed class,
+        one line, at most PUSH_MAX characters, no '#', once per class per run."""
+        msg = ti.get("message")
+        if not isinstance(msg, str) or not msg.strip():
+            block("routine push without a message; " + PUSH_HINT)
+        msg = msg.strip()
+        m = PUSH_RE.match(msg)
+        if not m:
+            block("routine push not allowed: " + PUSH_HINT)
+        if m.group(1) == "HELD" and m.group(2) == "SWEEP":
+            block("routine push not allowed: a SWEEP zone change reaches Jakub through the digest, J11 "
+                  "(a SWEEP sends no push; routines/README.md §5)")
+        jobs = PUSH_JOBS.get(m.group(1))
+        if jobs and m.group(2) not in jobs:
+            block("routine push not allowed: a %s push comes only from %s (routines/README.md §5)"
+                  % (m.group(1), " or ".join(jobs)))
+        if "\n" in msg or "\r" in msg:
+            block("routine push must be one line")
+        if len(msg) > PUSH_MAX:
+            block(f"routine push longer than {PUSH_MAX} characters")
+        if "#" in msg:
+            block("routine push contains '#': write 'PR n' (a '#n' may wake the session watching that PR)")
+        session = re.sub(r"[^A-Za-z0-9_-]", "", str(self.event.get("session_id") or ""))[:80] or "nosession"
+        marker = os.path.join(tempfile.gettempdir(), "gsc_push_%s_%s" % (session, m.group(1).replace(" ", "_")))
+        if os.path.exists(marker):
+            block(f"one push per class per run: a {m.group(1)} push was already sent (routines/README.md §5)")
+        with open(marker, "w", encoding="utf-8") as fh:
+            fh.write(msg[:PUSH_MAX] + "\n")
+
+    # ---- the register page (MODEL v4.5.0 §7.4, routines/INTAKE.md step 9)
+
+    def check_artifact(self, ti):
+        """Artifact passes only for INTAKE's register page step: read or publish, in place,
+        on REGISTER_PAGE_URL; a publish sends only the rendered REGISTER_PAGE_FILE from
+        outside the repo. Every other action and every other field is refused."""
+        action = ti.get("action", "publish")
+        if not isinstance(action, str) or action not in ARTIFACT_FIELDS:
+            block(f"Artifact action '{short(action, 30)}' is not allowed in routines (never a new artifact, "
+                  "delete, list, open, pin or quickstart); " + ARTIFACT_HINT)
+        extra = sorted(set(ti) - ARTIFACT_FIELDS[action])
+        if extra:
+            block(f"Artifact {action} with {extra} is not allowed (no capabilities, assets, files, type, "
+                  "force, pin or sharing); " + ARTIFACT_HINT)
+        if ti.get("url") != REGISTER_PAGE_URL:
+            block(f"Artifact {action} of '{short(ti.get('url') or 'no url (a new artifact)', 60)}' is not "
+                  "allowed: routines update only the register page, in place; " + ARTIFACT_HINT)
+        m = BRANCH_RE.match(self.current_branch())
+        if not m or m.group(1) != "intake":
+            block(f"Artifact {action} outside INTAKE (current branch '{self.current_branch() or 'detached HEAD'}'): "
+                  + ARTIFACT_HINT)
+        if action == "read":
+            return
+        path = ti.get("file_path")
+        if not isinstance(path, str) or not path.strip():
+            block("Artifact publish without a file_path; " + ARTIFACT_HINT)
+        if os.path.basename(path.replace("\\", "/")) != REGISTER_PAGE_FILE:
+            block(f"Artifact publish of '{short(path, 60)}': only the rendered {REGISTER_PAGE_FILE} is "
+                  "published; " + ARTIFACT_HINT)
+        full = self.resolve(path, self.cwd)
+        if rel_to(full, self.root) is not None:
+            block(f"Artifact publish of '{short(path, 60)}' inside the repo: the page is rendered outside it "
+                  "and never committed; " + ARTIFACT_HINT)
+        if os.path.isdir(full):
+            block(f"Artifact publish of the folder '{short(path, 60)}'; " + ARTIFACT_HINT)
 
     # ---- paths
 
@@ -476,6 +644,107 @@ class Guard:
             hit = self.locked(p, base, whole)
             if hit:
                 block(f"{what} on '{hit}' (framework-locked)")
+
+    # ---- append-only archive/ (MODEL v4.5.0 §7.5)
+
+    def archive_rels(self, path, base):
+        """Repo-relative paths under archive/ that `path` names (globs expanded), or []."""
+        if not path or SUBST in path or "__GSC_HEREDOC_" in path:
+            return []
+        out = []
+        for word in expand_braces(path):
+            full = self.resolve(word, base)
+            cands = [full]
+            if any(ch in word for ch in "*?["):
+                cands += [norm(g) for g in glob.glob(full)]
+            for c in cands:
+                rel = rel_to(c, self.root)
+                if rel and rel != "." and rel.split("/")[0].lower() in APPEND_ONLY_DIRS:
+                    out.append(rel)
+        return out
+
+    def tracked(self, rels):
+        """True if any of these repo-relative paths (files, folders or globs) is in the
+        git index. One `git ls-files`; an error counts as tracked (fail closed)."""
+        if not rels:
+            return False
+        try:
+            r = subprocess.run(["git", "-C", self.root, "ls-files", "-z", "--"] +
+                               [":(icase)" + p for p in rels], capture_output=True, timeout=10)
+        except (OSError, subprocess.SubprocessError):
+            return True
+        return r.returncode != 0 or bool(r.stdout.strip(b"\0"))
+
+    # ---- memos on main are never edited in place (MODEL v4.5.0 §6.6)
+
+    def memo_rel(self, path, base):
+        """Repo-relative path of `path` when it lies under memos/, else None."""
+        if not path or SUBST in path or "__GSC_HEREDOC_" in path:
+            return None
+        rel = rel_to(self.resolve(path, base), self.root)
+        if rel and rel != "." and "/" in rel and rel.split("/")[0].lower() == MEMO_DIR:
+            return rel
+        return None
+
+    def on_main(self, rel):
+        """True if the file `rel` exists under memos/ on origin/main, compared without
+        case (paths here may be case-folded); None when git cannot list it (the caller
+        fails closed). One `git ls-tree -r`."""
+        try:
+            r = subprocess.run(["git", "-C", self.root, "ls-tree", "-r", "-z", "--name-only", MAIN_REF,
+                                "--", MEMO_DIR], capture_output=True, timeout=10)
+        except (OSError, subprocess.SubprocessError):
+            return None
+        if r.returncode != 0:
+            return None
+        names = {n.lower() for n in r.stdout.decode("utf-8", "replace").split("\0") if n}
+        return rel.lower() in names
+
+    def register_rel(self, path, base):
+        """'_REGISTER.md' or 'register.csv' when `path` names one of them at the repo
+        root (globs expanded), else None."""
+        if not path or SUBST in path or "__GSC_HEREDOC_" in path:
+            return None
+        for word in expand_braces(path):
+            full = self.resolve(word, base)
+            cands = [full]
+            if any(ch in word for ch in "*?["):
+                cands += [norm(g) for g in glob.glob(full)]
+            for c in cands:
+                rel = rel_to(c, self.root)
+                if rel and rel.lower() in REGISTER_FILES:
+                    return rel
+        return None
+
+    def need_not_register(self, paths, base, what):
+        """No hand write of the register files (MODEL v4.5.0 §7.1)."""
+        for p in paths:
+            rel = self.register_rel(p, base)
+            if rel:
+                block(f"{what} on '{rel}': {REGISTER_HINT}")
+
+    def need_not_archive(self, paths, base, what):
+        """Any write at all into archive/ (editors, redirections, touch …)."""
+        for p in paths:
+            rels = self.archive_rels(p, base)
+            if rels:
+                block(f"{what} on '{rels[0]}': {APPEND_ONLY_HINT}")
+
+    def need_untracked_archive(self, paths, base, what):
+        """Removing or overwriting an archive/ path is allowed only while git does not
+        track it (INTAKE's restart removes its own uncommitted snapshot copies)."""
+        rels = [r for p in paths for r in self.archive_rels(p, base)]
+        if rels and self.tracked(rels):
+            block(f"{what} on tracked '{rels[0]}': {APPEND_ONLY_HINT}")
+
+    def dest_paths(self, dest, sources, base):
+        """The files a copy or move writes: dest/<basename of each source> when dest is a
+        folder, else dest itself."""
+        full = self.resolve(dest, base)
+        if dest.endswith("/") or os.path.isdir(full):
+            return [os.path.join(full, os.path.basename(s.rstrip("/"))) for s in sources
+                    if os.path.basename(s.rstrip("/"))]
+        return [dest]
 
     # ---- variables
 
@@ -585,6 +854,8 @@ class Guard:
                 hit = self.locked(target, base)
                 if hit:
                     block(f"redirection into '{hit}' (framework-locked)")
+                self.need_not_archive([target], base, "redirection")
+                self.need_not_register([target], base, "redirection")
         return out
 
     def check_segment(self, seg, base, depth, lvl):
@@ -731,35 +1002,57 @@ class Guard:
     def check_writes(self, prog, args, base):
         pos, target = self.positionals(prog, args)
         if prog in ("cp", "install", "rsync"):
-            if target:
-                self.check_dest(target, pos, base, prog)
-            elif len(pos) >= 2:
-                self.check_dest(pos[-1], pos[:-1], base, prog)
+            sources, dest = (pos, target) if target else (pos[:-1], pos[-1] if len(pos) >= 2 else None)
+            if dest:
+                self.check_dest(dest, sources, base, prog)
+                self.need_untracked_archive(self.dest_paths(dest, sources, base), base, prog)
+                self.need_not_register(self.dest_paths(dest, sources, base), base, prog)
         elif prog == "mv":
             sources = pos if target else pos[:-1]
             self.need_unlocked(sources, base, "mv", whole=True)
+            self.need_not_archive(sources, base, "mv out of archive/")
+            self.need_not_register(sources, base, "mv")
             dest = target or (pos[-1] if len(pos) >= 2 else None)
             if dest:
                 self.check_dest(dest, sources, base, "mv")
+                self.need_untracked_archive(self.dest_paths(dest, sources, base), base, "mv")
+                self.need_not_register(self.dest_paths(dest, sources, base), base, "mv")
         elif prog in ("rm", "rmdir", "unlink", "shred", "chmod", "chown", "chgrp"):
             self.need_unlocked(pos, base, prog, whole=True)
+            self.need_not_register(pos, base, prog)
+            if prog in ("chmod", "chown", "chgrp"):
+                self.need_not_archive(pos, base, prog)
+            else:
+                self.need_untracked_archive(pos, base, prog)
         elif prog in ("touch", "mkdir", "truncate", "ln", "tee"):
             self.need_unlocked(pos + ([target] if target else []), base, prog)
+            if prog != "mkdir":
+                self.need_not_archive(pos + ([target] if target else []), base, prog)
+                self.need_not_register(pos + ([target] if target else []), base, prog)
         elif prog == "dd":
-            self.need_unlocked([a[3:] for a in args if a.startswith("of=")], base, "dd")
+            outs = [a[3:] for a in args if a.startswith("of=")]
+            self.need_unlocked(outs, base, "dd")
+            self.need_not_archive(outs, base, "dd")
+            self.need_not_register(outs, base, "dd")
         elif prog == "sed":
             if any(re.match(r"^-[A-Za-z]*i", a) or a.startswith("--in-place") for a in args):
                 # Without -e/-f the first positional is the sed script, not a file.
                 scripted = any(a in ("-e", "-f") or a.startswith(("--expression", "--file"))
                                for a in args)
                 self.need_unlocked(pos if scripted else pos[1:], base, "sed -i")
+                self.need_not_archive(pos if scripted else pos[1:], base, "sed -i")
+                self.need_not_register(pos if scripted else pos[1:], base, "sed -i")
         elif prog == "perl":
             if any(re.match(r"^-[A-Za-z]*i", a) for a in args):
                 self.need_unlocked(pos, base, "perl -i")
+                self.need_not_archive(pos, base, "perl -i")
+                self.need_not_register(pos, base, "perl -i")
         elif prog in ("awk", "gawk"):
             joined = " ".join(args)
             if re.search(r"(^|\s)(-i\s*inplace|--include[= ]inplace)", joined):
                 self.need_unlocked(pos, base, f"{prog} -i inplace")
+                self.need_not_archive(pos, base, f"{prog} -i inplace")
+                self.need_not_register(pos, base, f"{prog} -i inplace")
         elif prog in ("tar", "unzip"):
             if prog == "unzip":
                 # -l/-v list, -p prints to stdout, -t tests, -Z/-z show info: nothing is written.
@@ -779,6 +1072,7 @@ class Guard:
                         dest = self.resolve(a.split("=", 1)[1], base)
                 # The repo root counts as locked here: extract archives under /tmp.
                 self.need_unlocked([dest], base, f"{prog} extraction", whole=True)
+                self.need_not_archive([dest], base, f"{prog} extraction")
 
     def check_find(self, args, base):
         """find … -delete / -exec <writer>: the start paths must not hold locked files."""
@@ -795,6 +1089,7 @@ class Guard:
                 break
             starts.append(a)
         self.need_unlocked(starts or ["."], base, "find with -delete/-exec", whole=True)
+        self.need_untracked_archive(starts or ["."], base, "find with -delete/-exec")
 
     # ---- interpreters
 
@@ -867,6 +1162,13 @@ class Guard:
             if shell:
                 self.check_command(code, depth + 1, base)
         if script:
+            if os.path.basename(script.replace("\\", "/")).lower() == "gsc_register.py":
+                if "rebuild" in args[i + 1:]:
+                    block("gsc_register.py rebuild is the one-time attended lean rebuild (MODEL v4.5.0 §7.1b); "
+                          "routines never run it")
+                if "retrigger" in args[i + 1:]:
+                    block("gsc_register.py retrigger is the one-time attended trigger re-read (MODEL v4.5.0 "
+                          "round 2, R10); routines never run it")
             self.check_script(script, base, shell, depth)
         if not codes and not script and not module:
             stdin = True
@@ -1052,6 +1354,11 @@ class Guard:
         k = rest.index("--") if "--" in rest else len(rest)
         paths = [a for a in rest[:k] if not a.startswith("-")] + rest[k + 1:]
         self.git_paths(paths, gitcwd, f"git {sub}")
+        if sub == "rm":
+            self.need_untracked_archive(paths, gitcwd, "git rm")
+        elif sub == "mv" and len(paths) >= 2:
+            self.need_not_archive(paths[:-1], gitcwd, "git mv out of archive/")
+            self.need_untracked_archive(self.dest_paths(paths[-1], paths[:-1], gitcwd), gitcwd, "git mv")
 
     def git_add(self, sub, rest, gitcwd):
         if any(a in ("-A", "--all", "-u", "--update", "--no-ignore-removal") or
@@ -1208,13 +1515,11 @@ class Guard:
             if "state" in kv and kv["state"] != "closed":
                 block("PR PATCH may only set state=closed")
             return
-        if method == "POST" and re.fullmatch(repo + r"/issues/" + num + r"/comments", ep, re.I):
-            extra = set(kv) - {"body"}
-            if extra:
-                block(f"comment with fields {sorted(extra)} is not allowed")
-            return
+        if re.search(r"/comments$", ep, re.I):
+            block("routines never comment on a PR or issue (MODEL v4.5.0 §8.7 item 1): a comment wakes the "
+                  "session watching it; put the text in the run note or the PR body")
         block(f"gh api {method} {short(ep, 70)} is not on the routine allowlist "
-              f"(never merge, contents, git refs, graphql or other repos)")
+              f"(never merge, comment, contents, git refs, graphql or other repos)")
 
     # ---- curl / wget
 
