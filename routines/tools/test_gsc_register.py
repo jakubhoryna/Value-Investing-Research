@@ -33,6 +33,8 @@ trigger as the no-cash bound, the P28 down-year basis, the P20 FCF basis
 and the all-capex order), the no-cash band parser and the one-time
 retrigger. v4.5.2: lint-row (the row file against its name, its title and
 the exact row-from-memo --table print, read as gsc-automerge reads it).
+v4.5.3: check() does not recompute a Gate-0 DNAF row's n.m. multiples
+(MODEL 6.4) while validate_row still governs its fields.
 """
 import contextlib
 import io
@@ -1332,6 +1334,32 @@ class CheckTests(unittest.TestCase):
         self.assertFalse(any(b.startswith("TRW2:") for b in breaches), breaches)
         self.assertTrue(any(b.startswith("TRW3: ev_oi_5y 13.0 does not recompute from the core numbers at Px 104.62 "
                                          "(12.6)") for b in breaches), breaches)
+
+    def test_dnaf_row_multiples_are_not_recomputed(self):
+        # [v4.5.3] A Gate-0 DNAF memo sets its core numbers and multiples to n.m. (MODEL 6.4), as
+        # row-from-memo prints for 6383.T: core_source memo at a numeric memo Px. check() does not
+        # recompute them; a non-DNAF row with a wrong multiple still breaches, and validate_row
+        # still governs the DNAF row's fields.
+        nm = dict((name, r.NM) for name in r.CORE_FIELDS + r.MULTIPLES + r.R10_FIELDS)
+        nm.update(next_review_short=r.NM, trigger=r.NM)
+        gate = csv_row("GATE", verdict="DNAF", past=r.NM, future=r.NM, sf=r.NM, px="5875", px_unit="JPY",
+                       core_source="memo", memo_path="memos/GATE/GATE_2026-09-01_GSC.md", **nm)
+        bad = dict(gate, key="GAT2", memo_path="memos/GAT2/GAT2_2026-09-01_GSC.md", mcap_fcf="12")
+        wrong = held_core(csv_row("TRW2", px="104.62", ev_oi="10.9", mcap_fcf="15.1", ev_oi_all_cash="9.5",
+                                  memo_path="memos/TRW2/TRW2_2026-09-01_GSC.md"))
+        self.assertEqual(r.validate_row(gate), [])
+        self.assertEqual(r.compute_metrics(gate, gate["px"], gate["px_unit"])["mcap_fcf"], r.OWED)
+        # render() refuses GAT2, so _REGISTER.md renders the valid rows; check() reads register.csv.
+        root = self.build([gate, bad, wrong], md=r.render([gate, wrong], "v10", "2026-10-07"))
+        try:
+            breaches, _listed, _ = r.check(root.path, base="HEAD")
+        finally:
+            root.close()
+        self.assertFalse(any(b.startswith("GATE:") for b in breaches), breaches)
+        self.assertFalse(any("does not recompute" in b for b in breaches if not b.startswith("TRW2:")), breaches)
+        self.assertIn("GAT2: mcap_fcf: '12' is not a one-decimal multiple", breaches)
+        self.assertTrue(any(b.startswith("TRW2: ev_oi_all_cash 9.5 does not recompute") for b in breaches),
+                        breaches)
 
     def test_holding_findings_are_listed_not_breaches(self):
         parent = held_core(csv_row("PAR", holding_keys="HLD1; GONE", core_credit="12000",

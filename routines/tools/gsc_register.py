@@ -1515,7 +1515,9 @@ def check(root, base=None, tree="HEAD"):
             breaches.append("%s: duplicate key in register.csv" % row["key"])
         seen.add(row["key"])
         breaches += ["%s: %s" % (row["key"], e) for e in validate_row(row)]
-        if row["core_source"] != OWED and is_num(row["px"]):
+        # [v4.5.3] Not on a DNAF row: a Gate-0 memo sets its core numbers and multiples
+        # to n.m. by design (MODEL section 6.4); validate_row above still governs its fields.
+        if row["core_source"] != OWED and is_num(row["px"]) and row["verdict"] != "DNAF":
             # Every row with core numbers: exact after a SWEEP or the rebuild (the tool
             # recomputed them); a memo's own print at its own price within lint-memo's 0.1.
             # The averaged readings (R10) recompute the same way from the average core numbers.

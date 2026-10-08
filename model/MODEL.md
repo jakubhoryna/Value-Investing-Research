@@ -1,12 +1,12 @@
 ---
 model_title: GSC Model — Operative Framework
-model_version: v4.5.2
+model_version: v4.5.3
 model_date: 2026-10-08
 status: live
 bootstrap_required: BOOTSTRAP v1.4.0+ (claude.ai project) · BOOTSTRAP-CC v1.1.0+ (CLAUDE.md)
 ---
 
-# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.5.2 · 2026-10-08)
+# GOOD STOCKS CHEAP — OPERATIVE FRAMEWORK (MODEL v4.5.3 · 2026-10-08)
 
 ## §0. GOVERNANCE & VERSIONING
 
@@ -1039,6 +1039,10 @@ Unattended ANALYSE, REVIEW, SWEEP, QUEUE-SEED and INTAKE, run as scheduled Claud
 - Same data ⇒ same verdict. Where judgment is unavoidable, apply §3 and record the call in Appendix C.
 
 -----
+
+## v4.5.3 CHANGE LOG (2026-10-08)
+
+- **PATCH release (v4.5.2 → v4.5.3), from the blocked INTAKE of 2026-10-08 (PR 120). §8.4 step-3 scan: no verdict, grade or zone moves; no memo or register row changes.** `routines/tools/gsc_register.py check` recomputed the multiples of every row with core numbers at a numeric Px, so the Gate-0 DNAF rows of 6383.T, RSW.L, 8002.T and INTU, whose core numbers and multiples are n.m. by §6.4, breached 28 times and INTAKE stopped. **Fix:** `check()` no longer recomputes multiples on a DNAF row; `validate_row` still governs its fields. **Ledger:** the README §1 ledger reads its pages explicitly (`&page=1`, `2`, … up to the first page with fewer than 100 PRs) because `gh api --paginate` follows GitHub's `repositories/{id}` Link URL, which the cloud proxy refuses (HTTP 403) from page 2 on. Tests: test_gsc_register.py (a DNAF row at a numeric Px is not recomputed while validate_row still applies; a non-DNAF row with a wrong multiple still breaches), test_gsc_guard.py (the hook allows the README §1 ledger command verbatim).
 
 ## v4.5.2 CHANGE LOG (2026-10-08)
 

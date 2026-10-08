@@ -71,8 +71,8 @@ End the body with *"Framework output, not investment advice."*
 **GitHub commands — REST through `gh api` only.** Write the repo path, branch name and PR number literally: shell variables don't survive between tool calls, and the guard checks the literal text. `{BR}` is this run's branch and `{n}` its PR number.
 
 ```
-# ledger (all pages, lean output) — §0 step 4
-gh api --paginate "repos/jakubhoryna/Value-Investing-Model/pulls?state=all&per_page=100&sort=updated&direction=desc" --jq '(now - 90*86400 | todate) as $c90 | (now - 14*86400 | todate) as $c14 | .[] | select(.state == "open" or (.merged_at == null and .updated_at >= $c90) or .updated_at >= $c14 or ((.title | startswith("GSC INTAKE ")) and .updated_at >= $c90)) | [.number, .state, (.merged_at // "-"), .updated_at, .head.ref, .title] | @tsv'
+# ledger (all pages, lean output) — §0 step 4; page by page, never --paginate (see below)
+p=1; while :; do n=$(gh api "repos/jakubhoryna/Value-Investing-Model/pulls?state=all&per_page=100&sort=updated&direction=desc&page=$p" --jq length) || exit 1; [ "$n" -gt 0 ] || break; gh api "repos/jakubhoryna/Value-Investing-Model/pulls?state=all&per_page=100&sort=updated&direction=desc&page=$p" --jq '(now - 90*86400 | todate) as $c90 | (now - 14*86400 | todate) as $c14 | .[] | select(.state == "open" or (.merged_at == null and .updated_at >= $c90) or .updated_at >= $c14 or ((.title | startswith("GSC INTAKE ")) and .updated_at >= $c90)) | [.number, .state, (.merged_at // "-"), .updated_at, .head.ref, .title] | @tsv' || exit 1; [ "$n" -lt 100 ] && break; p=$((p+1)); done
 # claim: create the PR, keep the number it prints
 gh api "repos/jakubhoryna/Value-Investing-Model/pulls" -f head="{BR}" -f base=main -f title="GSC … [running]" -f body="Claim — run in progress. Do not merge." --jq .number
 # state check before finishing (repeat until head.sha is the pushed sha)
@@ -85,7 +85,7 @@ gh api -X PATCH "repos/jakubhoryna/Value-Investing-Model/pulls/{n}" -f state=clo
 gh api -X PATCH "repos/jakubhoryna/Value-Investing-Model/pulls/{n}" -f state=closed -f title="{old title} [superseded]"
 ```
 
-The ledger lists open PRs, closed-unmerged PRs updated in the last 90 days, everything updated in the last 14 days, and `GSC INTAKE` PRs of the last 90 days. That covers every claim, stall, rejection and audit window in §2 and INTAKE. Older merged PRs are left out on purpose. The closing PATCHes keep the PR body (the printed diff): the reason goes in the title suffix and in the run note.
+The ledger lists open PRs, closed-unmerged PRs updated in the last 90 days, everything updated in the last 14 days, and `GSC INTAKE` PRs of the last 90 days. It reads the pages one by one (`&page=1`, `2`, … up to the first page with fewer than 100 PRs): `--paginate` follows GitHub's `Link` header, whose `repositories/{id}` URL the cloud proxy refuses with HTTP 403 from page 2 on (v4.5.3). That covers every claim, stall, rejection and audit window in §2 and INTAKE. Older merged PRs are left out on purpose. The closing PATCHes keep the PR body (the printed diff): the reason goes in the title suffix and in the run note.
 
 Never merge. Never comment on any PR or issue: a comment wakes the session watching it, and the `GSC - needs Jakub` and `GSC digest` issues belong to the gsc-automerge and gsc-notify workflows (the guard hook refuses every comment). Never `gh pr …`. Never `gh api graphql`. Never PUT or DELETE. Never PATCH a PR's `base`.
 

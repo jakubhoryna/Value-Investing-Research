@@ -31,6 +31,12 @@ with open(TOOL_SRC, encoding="utf-8") as _fh:
 SITE_SRC = os.path.join(os.path.dirname(TOOL_SRC), "gsc_site.py")
 with open(SITE_SRC, encoding="utf-8") as _fh:
     SITE_TEXT = _fh.read()
+# The README §1 ledger command, verbatim (v4.5.3: an explicit page loop, since --paginate
+# follows a repositories/{id} link that the cloud proxy refuses with HTTP 403).
+with open(os.path.join(os.path.dirname(os.path.dirname(HERE)), "routines", "README.md"), encoding="utf-8") as _fh:
+    README_LEDGER = next((line for line in _fh.read().splitlines()
+                          if line.startswith("p=1; while :; do n=$(gh api ")), None)
+assert README_LEDGER, "routines/README.md §1: the ledger command (p=1; while :; do …) is missing"
 
 R = "repos/jakubhoryna/Value-Investing-Model"
 BR = "claude/gsc-analyse-7309.T-2026-10-04-2250"
@@ -189,6 +195,7 @@ bash("ledger (lean, MODEL v4.5.0)",
      "'(now - 90*86400 | todate) as $c90 | (now - 14*86400 | todate) as $c14 | .[] | select(.state == \"open\" "
      "or (.merged_at == null and .updated_at >= $c90) or .updated_at >= $c14 or ((.title | startswith(\"GSC INTAKE \")) "
      "and .updated_at >= $c90)) | [.number, .state, (.merged_at // \"-\"), .updated_at, .head.ref, .title] | @tsv'", 0)
+bash("ledger (README §1 verbatim, v4.5.3: explicit pages)", README_LEDGER, 0)
 bash("INTAKE: supersede a stale INTAKE PR (one PATCH, body kept)",
      f'gh api -X PATCH "{R}/pulls/80" -f state=closed '
      '-f title="GSC INTAKE 2026-10-05 — register v307 (1 rows) [superseded]"', 0, branch=INTAKE_BR)
