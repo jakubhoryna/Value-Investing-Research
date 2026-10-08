@@ -1,4 +1,4 @@
-# GSC MODEL Ideas — IDEAS.md (v12 · 2026-10-07)
+# GSC MODEL Ideas — IDEAS.md (v13 · 2026-10-08)
 
 **Purpose.** Parking lot for framework questions — everything MODEL-mode-shaped that a session surfaces goes here, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). Each entry carries: status, the instances that raised it, the question in one line, a book-grounded recommendation with confidence, and the consequence scan. **Nothing here is operative** until a MODEL session adopts it under its own explicit "commit model"; recommendations below are pre-work, not doctrine. MODEL sessions open from this file and close by updating entry statuses.
 
@@ -146,6 +146,110 @@ Shareholder-friendliness (R8, R9, V1, V3, V4, V13, V17):
 - **G18.** small definitions (SIE.DE, CDI.PA, NESN.SW, SNA): S3 "partner"; securities of undisclosed composition stay out of cash; NIBCL "other" lines count as far as the note itemises them; fiscal year-end changes; which tax rate applies to a holding; unit returns.
 - **G19.** §8.2 legacy REVIEW budget (NESN.SW, SIE.DE): rebuilding old group memos on the v4.5.0 method will stop routines INCOMPLETE; run them attended, or allow a bounded window when the grade does not depend on it.
 - **G20.** lint-memo (KSPI): warn when lens is n.m. but no Gate 0 FAIL line is present, or when a REVIEW memo lacks supersedes:.
+
+## H. TROW v6 → v7 attended review (2026-10-08) — OPEN
+
+*An attended review of the routine TROW v6 memo (PR 89): three investigations of its named judgment lines, each challenged by three skeptics (rule text, book doctrine, evidence and arithmetic); three re-audits (Past, Price, SF) with every material finding independently verified; a completeness critic. Result: TROW v7 (AVOID, SELL-FLAG SR2; SF PASS → FAIL; band $49.8 → $41.9; sell line $256.4 → $248.6). The entries below are the framework questions it raised, ranked. The three IDEAS candidates of row file `queue/rows/2026-10-08_0006_REVIEW_TROW.md` are folded into H1, H3 and H4. Nothing here is operative until a MODEL session adopts it under "commit model".*
+
+**Rulings on the v6 judgment lines (for the record).** Line 1, the CFO basis: GAAP governs on the letter (L95 lists its corrections, none reaches a consolidated fund's securities book) and on the harsher-reading sentence (L41 reaches basis choices, which is why R6 had to override it at L100); the economics favour the attributable basis → H1. Line 2, containment: Future WEAK is required on limb 1 alone (index target-date series compete for the same default slot; the filer blames passive for target-date flow losses, FY2016 10-K, and cut target-date fees in July 2021); the dissent is closed. Line 3, the FY2023 worth read: v6's "above worth, not clearly above" matched none of the six readings; both CAUTION and ADVERSE are permitted by the text, and naming the line concedes doubt, so the less flattering governs (v7: ADVERSE) → H5. A fourth line v6 missed: OHA, earlier window, non-positive pro-forma proxy, CFO still in office → H6.
+
+### H1. Consolidated investment vehicles — read them through (FCF, CE, EV)
+- **Status:** OPEN.
+- **Instances (1):** TROW v6/v7. GAAP CFO carries the net change in trading securities of consolidated sponsored funds (FY2023–25 −1,070.3 / −760.4 / −1,002.7), funded largely by third-party redeemable-NCI subscriptions booked in financing (+358.8 / +606.2 / +543.2). The filer prints CFO attributable to the parent (FY2025 2,489.5 vs GAAP 1,753.4). On GAAP, TROW's FY2016–17 FCF is near nil (an ASU 2015-02 consolidation artefact), the J6 FCFROCE limb (b) fires, the band is $41.9 and the FY2023 repurchase read is 35.5× (ADVERSE); on the attributable basis the band is ≈ $58.7–63.3, cheapness FAIR and the ADVERSE route disappears. The same seed decision lands in operations or investing depending only on whether the fund is consolidated. Meanwhile the memo adds the funds' NCI (1,009.3) to EV while their income is non-operating (out of OI) and their securities earn no cash credit, and the funds' warehouse borrowings (220.1) belong in D by L298. Related: the BABA v2 candidate on investment-heavy operating companies (TODO head block).
+- **Question:** should consolidated investment vehicles (sponsored funds, CLOs, carried-interest and co-investment entities) whose results sit outside the J1 OI be read deconsolidated throughout, and if so how?
+- **Book grounding:** Ch9 FCF is "the cash-generating power of present operations"; MODEL J3 already takes financial-asset income out of OI and FCF, and L107 already takes a financial book's change and its funding principal out of FCF. Ch7/Ch11 include-both principle (D19/D41). BOOK_EXTRACT L197: NCI enters EV because consolidated OI carries 100% of the subsidiary — not true where the vehicle's income is outside OI.
+- **Recommendation (~75%):** add to §2·1A Groups and Gate 2: "Consolidated investment vehicles whose results sit outside the J1 OI are read deconsolidated: (i) CFO is the CFO the filer prints as attributable to the parent, else GAAP CFO less the vehicles' column plus eliminations, labelled `derived`; (ii) the vehicles' gross assets and liabilities leave CE, replaced by the parent's net interest, classed S1/S2/S3; (iii) their redeemable or permanent NCI and their non-recourse debt are not debt-equivalents unless the parent guarantees or must fund them; (iv) the fiscal year in which an accounting change starts consolidating them is flagged as a window artefact." Interim clause until adopted: on GAAP CFO the vehicles' borrowings enter D and their disclosed income leaves FCF under J3, and any undisclosed remainder is a named gap.
+- **Counter-case:** the letter (consolidated CFO) is simple and repeatable, and J13 picks the harsher basis; the attributable figure is filer-chosen and not every filer prints it. But J13's harsher basis flips across window rolls (TROW FY2017–25: GAAP 4.8% vs attributable 2.2%), so it does not give a stable basis.
+- **Consequence scan:** TROW (band, cheapness, SF; Past WEAK on both bases on unrounded figures). Other sponsors with consolidated funds: BEN, IVZ, AMG, BLK, JHG, SEIC, SCHN-class European managers, MORN (check), alternative managers with consolidated CLOs or funds (KKR, APO, BX, ARES, CG, EQT.ST, PGHN.SW); insurers' consolidated funds are FI-lens and out of scope.
+- **Class:** MINOR (band- and SF-affecting; verdict-affecting only together with Future).
+
+### H2. One FCF basis per memo, fixed across window rolls — reopen D10
+- **Status:** OPEN; reopens D10 (CODIFIED v4.5.0, J13).
+- **Instances (1):** TROW. D10 assumed the harsher-of growth reads neutralise the FY2016 GAAP-CFO artefact at the FY2026 roll. Its premise fails: FY2017's $0.10 FCF/share also sits inside the first-three average, so on the FY2017–25 window the GAAP endpoint read can pass (≈ 4.8%) where the attributable read fails (≈ 2.2%) — the harsher basis flips at the roll.
+- **Question:** may the harsher-reading sentence (L41) choose an FCF basis test by test or year by year, or must one basis serve the whole memo and every window roll?
+- **Book grounding:** Ch11 L1631 (one record, read on both windows); R6 (L100) already fixes the maintenance-capex basis "never governing … including where a rule takes the less flattering of two readings"; J1 "one OI serves the whole memo" (L83).
+- **Recommendation (~80%):** add to §2·1A FCF: "One CFO basis serves the whole memo — Gates 1A, 1C and 2 — and stays fixed across window rolls until a MODEL decision changes it; where the harsher-reading sentence (L41) chooses between bases, it compares them once per memo, on the record as a whole, never test by test." Word it around the L41 sentence, not "J13": L78 and L95 are basis rules already tagged J13.
+- **Counter-case:** a fixed basis can be the flattering one on some test; per-test harshness is the stricter design. But it mixes bases inside one memo and makes the verdict depend on which test is run.
+- **Consequence scan:** TROW at the FY2026 roll (~Feb 2027); any filer with a CFO artefact at a window edge (D6 names).
+- **Class:** MINOR.
+
+### H3. J3 completeness — the cash side, one dividend basis, liability remeasurements, equity-method income in revenue
+- **Status:** OPEN.
+- **Instances (1):** TROW v6/v7. (a) v6 removed accrued carried interest from OI as an equity-accounted result but left its realised cash (FY2023–25 109.8 / 139.6 / 117.8, printed every year) in CFO. (b) v6 used the notes' dividend basis for FY2016–18 and the smaller MD&A basis for FY2019–25. (c) OHA earn-out fair-value gains booked in operating expenses (2022 161.2, 2023 82.4, 2024 13.4) and deferred-compensation market credits inside compensation (2018 5.6, 2022 132.3) raised OI. (d) The capital allocation-based income line nets the accrued carry change and its basis-difference amortisation (FY2025 149.5 − 68.3 = 81.2), while the pass-through compensation (58.5) sits in compensation; v6 netted the compensation instead (2,097.8), v7 nets the class (2,107.6), a third reading keeps both charges (2,039.3). (e) Whether product dividends removed from CFO were reinvested (and so already outside CFO) is not disclosed — a possible double count.
+- **Question:** what exactly does J3 remove, from which line, on which basis?
+- **Book grounding:** Ch8 OI strips capital structure and tax only; Ch9 FCF is operating cash; MODEL L88–94.
+- **Recommendation (~80%):** amend L88–94: "(1) Where an item leaves OI under J3 and the filings disclose its cash receipt without a CFO line (realised carried interest, distributions from equity-method investees, dividends from a listed holding), the disclosed amount leaves CFO, labelled `derived`. (2) The derived dividend removal takes one basis across every window year — the larger of the income-statement or MD&A lines and the notes' dividends and capital-gain distributions; per-year conflicts go to front matter. (3) Remeasurement of a financial liability at fair value inside the OI line (contingent consideration, deferred-compensation and other market-linked obligations) is a fair-value change: a net gain leaves OI, a net loss stays, logged. (4) An equity-accounted result booked in revenue leaves as one class per year, including the basis-difference amortisation the filer books in the same line; compensation the filer passes to vehicle NCI holders stays in OI unless the filer books it in the same line." Add: a removal the CFO reconciliation may already exclude is logged with its direction.
+- **Counter-case:** each addition widens J3 and the analyst's work; (4)'s compensation rule could go the other way (net it, harsher on neither side).
+- **Consequence scan:** TROW (with H8 and the Gate 2 fixes: band $49.8 → $41.9, sell line $256.4 → $248.6); any register name with carried interest or equity-method income booked in revenue, and every acquirer whose earn-out remeasurements sit in operating expenses.
+- **Class:** MINOR (band-affecting).
+
+### H4. The containment test — define "returns have held"; observable criteria for an eroding moat; cause classes
+- **Status:** OPEN.
+- **Instances (1):** TROW. L148's limb 2 reads two ways: outcome (returns did not decline) or causal (the force did not depress them). TROW's ROCE fell 36% → 16% largely through capital (OHA goodwill, cash and consolidated-fund assets in CE), while the margin fell 40.5% → 28.8% on the fee rate. v6 also named "competitive erosion" as a J6 cause and called the moat stable, which L151 ("Erosion means the moat is eroding") contradicts; the decline that fired was mainly a CFO classification artefact (H1). Moat direction is genuinely unresolved: TROW's target-date AUM compounded ≈ 13.0% a year against an industry ≈ 11.9% (Morningstar 2026), yet flows and fees weakened from 2021.
+- **Question:** which return measure and reading does limb 2 use, what makes a moat "eroding", and which cause classes does L151 admit?
+- **Book grounding:** Ch12 L1834 (when in doubt, quit); Kone (BOOK_EXTRACT L171: a STRONG substitute that fights for new business while the moat sits in the installed base); BOOK_EXTRACT L145 (substitutes kept low by lower value).
+- **Recommendation (~65%):** amend L148: "Returns have held = no J6 decline on the force's own channel and a pooled first-three vs last-three test of the margin and the price or fee rate, with capital-side causes (acquired capital, cash, financial assets) quantified and set aside." Add to L149: "A moat is eroding when, over the window, the moat's own source loses share, concedes price, or loses its value gap against the substitute; one of the three, evidenced, is enough." Add to L151 a cause class "classification artefact (vehicle or lending-book flows in CFO)" and require each named cause's quantified share; erosion in an unmoated part may be named without making the moat eroding only between P22 units.
+- **Counter-case:** the outcome reading is simpler and harsher (J13); a causal test invites storytelling.
+- **Consequence scan:** TROW (no grade change — limb 1 fails regardless); asset managers and any name with one contained STRONG force (BKNG, MORN, ROCK-B.CO, …).
+- **Class:** MINOR.
+
+### H5. Repurchase straddles — one governing reading, a stated doubt, and the V13 split
+- **Status:** OPEN; reopens part of A19 (CLOSED by V13); related to A8.
+- **Instances (1):** TROW. FY2023's six readings: year MCap/FCF 35.5 (clearly above), year EV/OI no-cash 14.2 (above worth), trailing 12.2 and EV/OI 9.0–13.0 (below). v6 printed a class no reading occupied; skeptics showed both CAUTION and ADVERSE are permitted. Sterilising shares (2.055M of 2.427M) count toward materiality (L239) but are read on their own limb (CAUTION unless dilutive): is the ordinary 0.372M residue (0.17%) material because the gross tranche is (1.10%)?
+- **Question:** how is the governing reading chosen and documented, and how does V13's split interact with materiality and ADVERSE?
+- **Book grounding:** Ch13 L2117–2133 (repurchases at other-than-discount prices are overpriced acquisitions); J14 worth "as knowable at execution" (L233); MODEL L237.
+- **Recommendation (~70%):** PATCH L237: "The analyst names one governing reading per tranche-year at each yardstick and states whether he is in doubt; the tranche takes that reading's class; a reason drawn from a basis the memo rejects elsewhere counts only as context." PATCH L248: "Matching is per fiscal year; materiality is tested per limb (ordinary tranches on their own, sterilising on theirs); one programme is one behaviour across both limbs." MINOR option (contentious; it reverses J14's removal of 'all four reads'): "clearly above worth needs the trailing read to concur, or evidence that the year is representative."
+- **Counter-case:** per-limb materiality lets a company sterilise its way out of ADVERSE; gross materiality is the harsher reading.
+- **Consequence scan:** TROW (SF FAIL ↔ PASS caution together with H6), every name with a sterilisation-heavy programme (RMS.PA, HMS.ST, ATCO-B.ST, AXFO.ST).
+- **Class:** PATCH (core) / MINOR (option).
+
+### H6. Earlier-window deals with a non-positive pro-forma proxy; insider sellers who join at closing
+- **Status:** OPEN.
+- **Instances (1):** TROW / OHA (FY2021): deal EV 3,788.7; the ASC 805 pro forma (the L256 proxy) puts OHA's contribution at −82.5 / −282.3 (2021 / 2020), depressed by the deal's own purchase accounting (intangible amortisation, post-combination compensation, basis-difference amortisation, deal costs); the CFO who made the deal is in office. L258 ("no positive pre-deal OI: worth is not demonstrated — at least CAUTION") sits inside the acquisition stop, not the earlier-window clause (L261, clearly above worth only). v7 took the harsher reading (clearly above → CAUTION `acquisitions`). The seller August joined the board at closing; L228 (insider counterparty) does not say when insider status is tested.
+- **Question:** does an earlier-window deal with no positive proxy count as clearly above worth, and is the proxy read before the acquirer's purchase-accounting charges?
+- **Book grounding:** Ch10 L1488 (would I have paid that price?, judged on the target as it stood pre-deal).
+- **Recommendation (~60%):** add to L256: "The pro-forma proxy is read before the acquirer's purchase-accounting charges where the filer itemises them; otherwise as printed, labelled." Add to L261: "An earlier-window deal with no positive OI proxy, under a CEO or CFO still in office, is CAUTION." Add to L228: "Insider status is tested at signing or at any payment date of deferred consideration; a deal so caught is one behaviour with its acquisition finding."
+- **Counter-case:** without a printed pre-deal profit, "clearly above worth" is an inference; context is the softer reading.
+- **Consequence scan:** TROW (a second flag; SF FAIL even if H5 resolves to CAUTION); other memos with undisclosed pre-deal profit marked INDETERMINATE (re-read: a printed proxy makes INDETERMINATE wrong, L180).
+- **Class:** MINOR.
+
+### H7. Threshold tests run on unrounded figures; knife-edges are logged
+- **Status:** OPEN.
+- **Instances (1):** TROW: v6's J6 FCFROCE limb (b) fired by 0.010pp; v7's attributable ΔFCF/sh is 2.997% against the 3% floor (3.0% at print precision).
+- **Recommendation (~85%):** add to §5: "Every threshold test (P2–P4 bars, P3 floors, J6 limbs, Gate 2 multiples, P9) runs on unrounded figures; §5 rounding governs printing only. A margin smaller than the print precision is logged as a knife-edge with the inputs it depends on."
+- **Class:** PATCH.
+
+### H8. The share count N — balance-sheet date, participating awards for two-class filers
+- **Status:** OPEN.
+- **Instances (1):** TROW: v6 used the Q2 weighted-average diluted count (214.2M); the two-class method leaves 6.378M dividend-receiving unvested RSUs out of the filer's diluted count. v7: 219.89M.
+- **Recommendation (~80%):** define N at L340 and §6.1: "N = shares outstanding at the balance-sheet date + the treasury-method increment + unvested participating awards where the filer's diluted count excludes them (two-class method); the period average is never N."
+- **Class:** PATCH.
+
+### H9. NCI enters EV only with the OI it claims; undisclosed MMFs; a debt-and-securities ledger
+- **Status:** OPEN.
+- **Instances (1):** TROW: consolidated funds' NCI in D while their income is outside OI (H1); money funds whose government status the filings do not state; no securities class table in v6 (L325 requires one).
+- **Recommendation (~70%):** append to L301: "Where a subsidiary's results leave OI (J3) and its assets earn no cash credit, its NCI is not a debt-equivalent; log it." Add to S1 (L326): "An MMF whose government or treasury status the filings do not state is an other MMF (× 0.9) unless the memo logs evidence of its status." Add to §6.3 Appendix C: "a ledger of every liability, temporary-equity and NCI line and every cash or investment line of the interim balance sheet, one row each, with class, haircut and reason"; lint-memo can check that the ledger exists.
+- **Class:** PATCH.
+
+### H10. P20 — "printed organic volume growth"
+- **Status:** OPEN.
+- **Instances (1):** TROW v6 used net flows ÷ beginning AUM as organic volume; the filer prints no such rate. v7 uses the revenue route.
+- **Recommendation (~75%):** add to P20 tier 2: "Organic volume growth is a rate the filer prints as such; a rate the analyst derives (net flows ÷ AUM, unit volumes) is context and never replaces the revenue route." If asset managers' flows should count, name them explicitly and apply them evenly.
+- **Class:** PATCH.
+
+### H11. A named judgment line carries its complete alternative
+- **Status:** OPEN.
+- **Instances (1):** TROW v6 said the attributable basis "restores Past ADEQUATE" and that the J6 limb "does not fire"; with the same J3 removals the endpoint read is 2.997% and limb (a) fires; it omitted the cheapness, SF and band consequences.
+- **Recommendation (~85%):** add to §2·1C logging discipline and §6.3: "A named judgment line prints the alternative's full consequence set — every Past metric and J6 limb, SF, cheapness, band, sell line, verdict and zone — computed on the same inputs as the governing reading, and names the lines it moots."
+- **Class:** PATCH.
+
+### H12. Smaller patches
+- **EXPENSIVE label:** "EXPENSIVE = any primary more than ~75% above its threshold (EV/OI on the no-cash variant), or n.m. on a base ≤ 0" (L371 says "primaries" without saying all or any).
+- **"The stock still above worth" (L243):** name the readings used and print the per-share worth and clearly-above prices (TROW at px: worth ≈ $83.9 on FCF, ≈ $125.8 on EV/OI no-cash).
+- **Tranche inputs:** use the filer's printed average price and the same D and K as Gate 2 (v6 used an unsourced ≈ $106.0 for FY2023; filer $104.63).
+- **Pay coverage:** the three-year table is the union of the latest three proxies' SCTs and director tables; US PvP non-PEO CAP printed only as an average takes the aggregate floor/ceiling rule; contingent tables (termination, change of control) are not totals.
+- **Containment evidence procedure:** read the filer's own attributions of flow or share loss to the substitute in the first, middle and latest window years.
+- **Class:** PATCH (each).
 
 ## A. Verdict-affecting — each needs a dedicated MODEL decision
 

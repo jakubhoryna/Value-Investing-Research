@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v311
+register_version: v312
 register_date: 2026-10-08
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
 names_total: 387
-verdict_split: "BUY 0 · WATCH 89 · AVOID 296 (one gate 102 · two+ 194) · DNAF 2"
+verdict_split: "BUY 0 · WATCH 88 · AVOID 297 (one gate 102 · two+ 195) · DNAF 2"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v311 · 2026-10-08)
+# GSC Register — Master Watchlist (v312 · 2026-10-08)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -23,20 +23,19 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 | CROX | HOLD | 118.09 | 94 | 431 | 2026-10-02 | 2026-10-29 |
 | HFG.DE | SELL-FLAG SR2 | 2.338 | n.m. | n.m. | 2026-10-06 | 2026-11-05 |
 | NOVO-B.CO | SELL-FLAG SR2 | 245.55 | 57.5 | 696.8 | 2026-10-06 | 2026-11-04 |
-| TROW | HOLD | 104.62 | 55.5 | 268.6 | 2026-10-02 | 2026-10-30 |
+| TROW | SELL-FLAG SR2 | 104.07 | 41.9 | 248.6 | 2026-10-07 | 2026-10-30 |
 
 ## BUY (0)
 
 None.
 
-## WATCH (89)
+## WATCH (88)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 6626.T | SEMITEC Corporation (SEMITEC株式会社) | 2026-09-04 | v1 | WATCH | ADEQUATE · 14.6% ROCE | ADEQUATE | PASS | 2449 | 1403 | 80.2 | 7.3 | - | - | Nov 2026 |
 | CROX | Crocs, Inc. | 2026-08-23 | v7 | WATCH | STRONG · 21% ROCE | ADEQUATE | PASS CAUTION · buybacks | 118.09 | 94 | 8.6 | 8.3 | - | - | 2026-10-29 |
 | SGO.PA | Compagnie de Saint-Gobain S.A. | 2026-08-03 | v1 | WATCH | ADEQUATE · 10.1% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 66.12 | 39.7 | 9.3 | 9.4 | - | - | Feb 2027 |
-| TROW | T. Rowe Price Group, Inc. | 2026-10-03 | v5 | WATCH | ADEQUATE · 23.9% ROCE | ADEQUATE | PASS CAUTION · buybacks | 104.62 | 55.5 | 15.1 | 10.9 | - | - | 2026-10-30 |
 | ABEV | Ambev S.A. | 2026-08-09 | v1 | WATCH | STRONG · 20.6% ROCE | STRONG | PASS | 2.99 | 1.86 | - | 11.2 | - | - | Feb 2027 |
 | GSK.L | GSK plc | 2026-07-14 | v1 | WATCH | ADEQUATE · 14.5% ROCE | ADEQUATE | PASS | 1759 | 908 | 12.7 | 11.4 | - | - | Feb 2027 |
 | ADBE | Adobe Inc. | 2026-08-09 | v1 | WATCH | STRONG · 26% ROCE | ADEQUATE | PASS CAUTION · compensation | 237.69 | 135.5 | 9.7 | 11.7 | - | - | Jan 2027 |
@@ -230,7 +229,7 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (194)
+## AVOID - two or more gates failed (195)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -249,6 +248,7 @@ None.
 | NOMD | Nomad Foods Limited | 2026-08-18 | v1 | AVOID | WEAK · 6.6% ROCE | WEAK · 2+ forces | PASS CAUTION · distributions | 11.73 | n.m. | 9.9 | 11.5 | - | - | Feb 2027 |
 | CSG.AS | CSG N.V. (Czechoslovak Group) | 2026-07-10 | v1 | AVOID | WEAK · leverage | WEAK · customer conc. | FAIL · flag pair | 13.6 | n.m. | n.m. | 11.6 | - | - | 2026-08-07 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID | WEAK · leverage | WEAK · 2+ forces | FAIL · flag pair | 26.57 | 11.3 | 10.8 | 11.7 | - | - | May 2027 |
+| TROW | T. Rowe Price Group, Inc. | 2026-10-08 | v7 | AVOID | WEAK · growth | WEAK · forces: substitutes | FAIL · buybacks | 104.07 | 41.9 | 19.8 | 11.7 | 24.6 · 14.5 | 12.1 · 10.4 | 2026-10-30 |
 | HUSQ-B.ST | Husqvarna AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 9.1% ROCE | WEAK · moat eroding | PASS | 37.13 | 12.43 | 10.9 | 11.9 | - | - | Feb 2027 |
 | DG.PA | VINCI SA | 2026-08-01 | v1 | AVOID | WEAK · 8.4% ROCE | WEAK · 2+ forces | PASS CAUTION · acquisitions | 122.55 | 38.8 | 8.9 | 12.0 | - | - | Feb 2027 |
 | BOL.ST | Boliden AB | 2026-07-24 | v1 | AVOID | ADEQUATE · 14.1% ROCE | WEAK · breadth | FAIL · buybacks | 480.4 | 146 | 26.3 | 12.1 | - | - | Mar 2027 |
