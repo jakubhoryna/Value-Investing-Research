@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v314
-register_date: 2026-10-08
+register_version: v315
+register_date: 2026-10-13
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 387
-verdict_split: "BUY 0 · WATCH 73 · AVOID 307 (one gate 104 · two+ 203) · DNAF 7"
+names_total: 389
+verdict_split: "BUY 0 · WATCH 72 · AVOID 308 (one gate 104 · two+ 204) · DNAF 9"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v314 · 2026-10-08)
+# GSC Register — Master Watchlist (v315 · 2026-10-13)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -29,7 +29,7 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 
 None.
 
-## WATCH (73)
+## WATCH (72)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -59,7 +59,6 @@ None.
 | 0700.HK | Tencent Holdings Limited | 2026-08-12 | v1 | WATCH | ADEQUATE · 12.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 421.2 | 142 | 20.1 | 16.7 | - | - | Mar 2027 |
 | MORN | Morningstar, Inc. | 2026-07-31 | v2 | WATCH | ADEQUATE · 13.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 183.55 | 61 | 15.6 | 16.7 | - | - | Feb 2027 |
 | 6758.T | Sony Group Corporation | 2026-08-06 | v2 | WATCH | ADEQUATE · 10% ROCE | ADEQUATE | PASS CAUTION · buybacks | 3753 | 1328 | 14.7 | 16.9 | - | - | 2026-11-10 |
-| NVS | Novartis AG | 2026-07-05 | v1 | WATCH | ADEQUATE · 15.6% ROCE | ADEQUATE | PASS CAUTION · buybacks | 141 | 55 | 15.3 | 17.1 | - | - | Feb 2027 |
 | SKF-B.ST | AB SKF (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE · 11.3% ROCE | ADEQUATE | PASS | 275.1 | 80 | 27.4 | 18.4 | - | - | Mar 2027 |
 | AXFO.ST | Axfood AB (publ) | 2026-07-07 | v1 | WATCH | ADEQUATE · 16.6% ROCE | STRONG | PASS | 249.3 | 46 | 10.8 | 19.6 | - | - | 2026-07-15 |
 | DCI | Donaldson Company, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 20.4% ROCE | STRONG | PASS CAUTION · buybacks | 88.65 | 23.9 | 24.5 | 19.7 | - | - | Oct 2026 |
@@ -216,7 +215,7 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (203)
+## AVOID - two or more gates failed (204)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -266,6 +265,7 @@ None.
 | PTC | PTC Inc. | 2026-10-04 | v1 | AVOID | WEAK · 9.5% ROCE | STRONG | FAIL · flag pair | 144.03 | 45.66 | 18.2 | 17.9 | - | - | Nov 2026 |
 | BILI-A.ST | Bilia AB (publ) | 2026-07-28 | v1 | AVOID | WEAK · ROCE decline | WEAK · forces: suppliers | FAIL · flag pair | 152.4 | n.m. | 23.5 | 18.1 | - | - | Mar 2027 |
 | ADS.DE | adidas AG | 2026-07-04 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 185.3 | - | 613.0 | 19.0 | - | - | Mar 2027 |
+| NVS | Novartis AG | 2026-10-12 | v2 | AVOID | WEAK · 9.0% ROCE | WEAK · 2+ forces | FAIL · director pay | 143.75 | 34.87 | 18.5 | 19.3 | 20.3 · 21.6 | 23.5 · 26.5 | Feb 2027 |
 | PAYO | Payoneer Global Inc. | 2026-08-08 | v1 | AVOID | WEAK · 8.7% ROCE | WEAK · forces: substitutes | FAIL · compensation | 7.1 | 2.27 | 11.6 | 19.3 | - | - | Mar 2027 |
 | RUSTA.ST | Rusta AB (publ) | 2026-07-27 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 84.9 | 8.1 | 11.0 | 19.3 | - | - | Aug 2026 |
 | CRM | Salesforce, Inc. | 2026-07-12 | v2 | AVOID | WEAK | ADEQUATE | FAIL · buybacks | 163.32 | 55 | 9.3 | 19.4 | - | - | 2026-09-02 |
@@ -424,14 +424,16 @@ None.
 | TRNS | Transcat, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 4.8% ROCE | ADEQUATE | FAIL · compensation | 93.11 | n.m. | - | - | - | - | May 2027 |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK · ROCE decline | WEAK · supplier conc. | FAIL · compensation | 50 | 15.08 | - | - | - | - | Feb 2027 |
 
-## DNAF (7)
+## DNAF (9)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 6383.T | Daifuku Co., Ltd. | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 5875 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | 8002.T | Marubeni Corporation | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 4787 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | ANDR.VI | ANDRITZ AG | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 80.9 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
+| DPLM.L | Diploma PLC | 2026-10-12 | v1 | DNAF | n.m. | n.m. | n.m. | 7870 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | DNAF | ADEQUATE · 14.7% ROCE | WEAK | FAIL | 206.41 | n.m. | n.m. | n.m. | - | - | n.m. |
+| IMI.L | IMI plc | 2026-10-12 | v1 | DNAF | n.m. | n.m. | n.m. | 3110 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | INTU | Intuit Inc. | 2026-10-08 | v3 | DNAF | n.m. | n.m. | n.m. | 297.24 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | RSW.L | Renishaw plc | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 5990 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | SYAB.DE | SYNLAB AG | 2026-07-23 | v1 | DNAF | n.m. | n.m. | n.m. | - | n.m. | n.m. | n.m. | - | - | n.m. |

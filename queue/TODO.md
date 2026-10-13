@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v45 · 2026-10-08)
+# GSC Work Queue — TODO.md (v46 · 2026-10-13)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -19,7 +19,6 @@
 - `GSK.L` — move −14.3% vs the carried £20.53 (28 Jul), confirmed on a second source — sweep 2026-10-05
 - `MYCR.ST` — move +13.1% vs the carried SEK 313.80 (31 Jul), confirmed on a second source — sweep 2026-10-05
 - `META` — move +12.4% vs the carried $648.03 (11 Sep), confirmed on a second source — sweep 2026-10-05
-- `NVS` — move −11.8% vs the carried $159.83 (28 Jul), confirmed on a second source — sweep 2026-10-05
 - `CRCT` — move +11.6% vs the carried $5.84 (7 Aug), confirmed on a second source — sweep 2026-10-05
 - `NU` — move −11.1% vs the carried ≈$15.10 (27 Aug), confirmed on a second source — sweep 2026-10-05
 - `SIKA.SW` — move −10.5% vs the carried CHF 195.50 (5 Aug), confirmed on a second source — sweep 2026-10-05
@@ -77,6 +76,9 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - 2026-10-08 · ANDR.VI REVIEW — A diversified-industrial Gate 0 DNAF resting on the J13 "named without shares" limb: ANDRITZ's Metals segment is two filer-named sectors with their own goodwill CGUs and different paying customers (steel producers; car makers), and E&E four named divisions, none with revenue shares. Should goodwill CGUs or filer commentary that evidences two large sides be enough, or should the limb require the filer to name the sub-businesses as reporting lines?
 - 2026-10-08 · NMAN.ST REVIEW — J6 limb (a) on a near-flat step: beginning-of-period ROCE_wc went 13.7% → 13.6% → 12.6% → 12.2% → 9.0% (FY2021–25), so a 0.1-point dip counts as the first of four "declines"; the ROCE_xc (beg) series fires on three clear declines anyway here, but should limb (a) carry a minimum step (e.g. rounding to the printed decimal, or a relative threshold) so that noise cannot complete a run?
 - 2026-10-08 · NMAN.ST REVIEW — Acquisition-stop materiality line "more than 1% of the acquirer's EV": this run read it on today's EV (≈ SEK 72m), the harsher reading, which pulled the FY2024 Duroair + Olicem aggregate (SEK 79.2m) into the test; on the deal-time EV (≈ SEK 9bn in 2024) it would fall below. Should the rule name which EV (deal-time, as knowable at execution, or the memo's)?
+- 2026-10-12 · NVS REVIEW — Spin-offs inside the P1 window (NVS: Alcon 2019, Sandoz 2023): MODEL is silent on whether the consolidated record reads each year on its own filed perimeter or on the filer's restated continuing-operations flows against unrestated balance sheets; NVS v2 used the filed perimeter and logged the restated reading (lower) as a sensitivity. A rule would fix the reading for every spin-off name.
+- 2026-10-12 · IMI.L ANALYSE — "Industry is read at the level of the filer's own segment description" (v4.5.1) when the description is itself a list of sectors: IMI's Life Technology segment is described as "technologies that enhance and improve everyday life … across the Climate Control, Transport and Life Science & Fluid Control sectors" (building HVAC, commercial vehicles, life-science instruments; 51% / 20% / 29% of the unit). This run read the listed sectors as differing industries and paying customers (DNAF); the parallel Automation segment (Process vs Industrial Automation) was left on the filer's "automation" description. A line on whether a description that enumerates sectors sets one industry would keep such calls repeatable.
+- 2026-10-12 · DPLM.L ANALYSE — Value-added distributors under the one-level decomposition: Diploma's Controls Sector (55% of revenue) prints its businesses' shares — Windy City Wire 36% (low-voltage building and datacentre wire sold to systems integrators) beside Peerless 23% and Clarendon 13% (aerospace and defence fasteners) — so it fails Gate 0 as irreducible (DNAF). Distribution roll-ups whose segments group unrelated product lines (BNZL.L, next on the queue, and similar serial acquirers) will likely land the same way. Should a distributor's industry be read as the distribution activity (stocking, kitting, technical sales of specialised consumables), or does the paying-customer and product-industry test stand as written? Precedent split: HLMA.L (2026-10-07) took the softer reading, IMI.L (2026-10-12) the harsher one.
 
 ---
 
@@ -120,7 +122,6 @@ None.
 **WATCH → AVOID, high confidence (≥ 80%).**
 
 - `SGO.PA` — J1, acquisition stop: on Business income ROCE is 7.7–9.3% → Past WEAK; buybacks at 6.4–10.5× EV/OI are below worth (SOUND); GCP (2022, ≈ 30×-class pre-deal EBIT, same CEO) is an earlier-window CAUTION; CSR (2024, a listed target: read its last annual report) and FOSROC (2025) are not in the memo (verify) → AVOID (85%).
-- `NVS` — V3, R7, acquisition stop: the three US wholesalers are flagged and likely contained (pass-through) → Future ADEQUATE; the non-executive chair's CHF 2.9–3.8m is above twice the director cap, a strike unless the filings state a full-time executive role (the memo calls it a near-full-time Swiss chair: verify); the pre-profit biotech deals (no positive pre-deal OI: CAUTION) and the US$1.3bn sterilising sleeve at about $121.5 (about at worth) → AVOID (80%).
 - `SKF-B.ST` — P3, R6, R3, R7: ΔFCF/sh −0.9% (a negative read fails P3) may turn positive on maintenance-capex FCF; ΔOI/sh +0.3%; Industrial and Automotive enter the weighted Future, Past on the consolidated record; a missing customer statement is a flag judged against the moat → AVOID (80%).
 - `ROCK-B.CO` — R9, J1/P3, V4: the CEO's €3.13m is 2.24× the FY2025 line (a fiscal-year read of about 11%), but the trailing read passes, so a flag, not a strike; ΔOI/sh about −18% on the J1 OI (verify) fails P3; with the Foundation's and the Kähler family's A-share control (separated votes) and management NOT ALIGNED (holdings: verify), the single pay flag also fails at step 3; buybacks at about 12× EV/OI are below worth → AVOID (80%).
 - `DOV` — J6, worth test, R3: ROCE 12% with a decline → Past WEAK (approx; the five segments are no longer graded apart); the 2024–25 buybacks ($1.04bn) at 19–23× EV/OI and 25–27× FCF (lower on the maintenance basis) are above worth (CAUTION); Sikora's ($608.5m) pre-deal OI undisclosed (verify) → AVOID (80%).
@@ -217,7 +218,6 @@ None.
 - `THULE.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `ULVR.L` — backfill: ISIN, trigger, Px on the key's line (the last SWEEP did not price it), core numbers — fill at next REVIEW or attended pass
 - `MORN` — backfill: ISIN — fill at next REVIEW or attended pass
-- `NVS` — backfill: ISIN — fill at next REVIEW or attended pass
 - `SKF-B.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `AXFO.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `SCHN.SW` — backfill: ISIN — fill at next REVIEW or attended pass
@@ -318,7 +318,6 @@ None.
 - `FIE.DE` — trigger 19.44 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `THULE.ST` — trigger 58 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `MORN` — trigger 61 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
-- `NVS` — trigger 55 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `SKF-B.ST` — trigger 80 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `AXFO.ST` — trigger 46 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `SCHN.SW` — trigger 103 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
@@ -363,6 +362,14 @@ None.
 - `FTK.DE` — trigger 12.55 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `OR.PA` — trigger 86 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - AVOID two-or-more-gate and DNAF rows: 43 keys still at all-cash, never priced — set by each name's next REVIEW memo; list in the RETRIGGER report. `BABA` among them: its memo prints the no-cash bound as `n.m.` ("EV/OI n.m./$21.7"), which the v310 parser missed; the parser now reads it (review fix, 2026-10-07), and the row takes trigger n.m. on the no-cash basis at its next memo or an attended `retrigger`.
+
+---
+
+## ▶ Routed by INTAKE 2026-10-13, register v315
+
+*1 item from 3 routine row files (NVS REVIEW v2, PR #124; IMI.L ANALYSE v1, PR #125; DPLM.L ANALYSE v1, PR #126). Audit clean: no direct commits, no archive changes, no orphan `claude/gsc-*` branches. The NVS lines in `▶ Review requests (SWEEP)`, `▶ Method re-tests v4.5.0` and both `▶ Backfill owed` blocks were removed by this INTAKE (step 3): memo v2 is written under MODEL v4.5.3.*
+
+- `NVS` — earlier-window deals (AveXis and AAA 2018, The Medicines Company 2020): pre-deal OI and price/FCF not re-read; SF fails at step 1 regardless — re-test at the FY2026 review (REVIEW 2026-10-12)
 
 ---
 
@@ -1367,6 +1374,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v46 — 2026-10-13** — INTAKE (register v315) — 3 merged row files (NVS REVIEW v2, PR #124; IMI.L ANALYSE, PR #125; DPLM.L ANALYSE, PR #126): 3 IDEAS candidates added to the head block; review request NVS cleared; 1 `▶ Method re-tests v4.5.0` line and 2 `▶ Backfill owed` lines (NVS) removed; new block `▶ Routed by INTAKE 2026-10-13, register v315` with 1 item; audit clean. Outgoing v45 archived to `archive/queue/TODO_v45_2026-10-08.md`.
 - **v45 — 2026-10-08** — INTAKE (register v314) — 19 merged row files (17 REVIEWs: CROX, 6383.T, CDR.WA, NESN.SW, BKNG, RSW.L, KNIN.SW, ADBE, QCOM, BA.L, ROG.SW, IBKR, 8002.T, CRL.MI, INTU, ANDR.VI, NMAN.ST; TXN and SGO.PA REVIEW INCOMPLETE): 28 IDEAS candidates added to the head block; Open item CROX SELL-FLAG added (ROG.SW re-key item over the 7-entry cap, routed to the dated block); 5 review requests cleared (ADBE, BA.L, BKNG, INTU, QCOM); 17 `▶ Method re-tests v4.5.0` and 12 `▶ Backfill owed` lines removed; new block `▶ Routed by INTAKE 2026-10-08, register v314` with 29 items; audit clean. Outgoing v44 archived to `archive/queue/TODO_v44_2026-10-08.md`.
 - **v44 — 2026-10-08** — BOX ISIN owed (attended, register v313): memo v1 carries Booking Holdings' ISIN US09857L1089 (CUSIP 09857L108), which collided with BKNG's new memo and blocked INTAKE's duplicate-ISIN check; register `isin` for BOX set to `-` (owed); Open item BOX register-integrity hold added (the next BOX REVIEW writes the correct ISIN from a primary source). Outgoing v43 archived to `archive/queue/TODO_v43_2026-10-08.md`.
 - **v43 — 2026-10-08** — TROW v7 attended REVIEW (register v312): the merged v6 row file `queue/rows/2026-10-08_0006_REVIEW_TROW.md` taken in (memo wins: v7) and deleted; `TROW` removed from `▶ Method re-tests v4.5.0`; Open item TROW SELL-FLAG added; v5 routed items 1–4 marked discharged; new block `▶ Routed from the TROW v7 attended REVIEW` with 4 dated items; the v6 IDEAS candidates folded into `queue/IDEAS.md` §H (v13). Outgoing v42 archived to `archive/queue/TODO_v42_2026-10-08.md`.
