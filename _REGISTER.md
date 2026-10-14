@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v315
-register_date: 2026-10-13
+register_version: v316
+register_date: 2026-10-14
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 389
-verdict_split: "BUY 0 · WATCH 72 · AVOID 308 (one gate 104 · two+ 204) · DNAF 9"
+names_total: 391
+verdict_split: "BUY 0 · WATCH 70 · AVOID 309 (one gate 104 · two+ 205) · DNAF 12"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v315 · 2026-10-13)
+# GSC Register — Master Watchlist (v316 · 2026-10-14)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -29,7 +29,7 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 
 None.
 
-## WATCH (72)
+## WATCH (70)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -59,7 +59,6 @@ None.
 | 0700.HK | Tencent Holdings Limited | 2026-08-12 | v1 | WATCH | ADEQUATE · 12.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 421.2 | 142 | 20.1 | 16.7 | - | - | Mar 2027 |
 | MORN | Morningstar, Inc. | 2026-07-31 | v2 | WATCH | ADEQUATE · 13.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 183.55 | 61 | 15.6 | 16.7 | - | - | Feb 2027 |
 | 6758.T | Sony Group Corporation | 2026-08-06 | v2 | WATCH | ADEQUATE · 10% ROCE | ADEQUATE | PASS CAUTION · buybacks | 3753 | 1328 | 14.7 | 16.9 | - | - | 2026-11-10 |
-| SKF-B.ST | AB SKF (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE · 11.3% ROCE | ADEQUATE | PASS | 275.1 | 80 | 27.4 | 18.4 | - | - | Mar 2027 |
 | AXFO.ST | Axfood AB (publ) | 2026-07-07 | v1 | WATCH | ADEQUATE · 16.6% ROCE | STRONG | PASS | 249.3 | 46 | 10.8 | 19.6 | - | - | 2026-07-15 |
 | DCI | Donaldson Company, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 20.4% ROCE | STRONG | PASS CAUTION · buybacks | 88.65 | 23.9 | 24.5 | 19.7 | - | - | Oct 2026 |
 | BMI | Badger Meter, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 18.9% ROCE | STRONG | PASS CAUTION · buybacks | 127.77 | 43.21 | 21.9 | 20.4 | - | - | Oct 2026 |
@@ -89,7 +88,6 @@ None.
 | SIE.DE | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS CAUTION · buybacks | 275 | 6.4 | 19.5 | 28.8 | - | - | 2026-08-07 |
 | ATCO-B.ST | Atlas Copco AB (publ) | 2026-07-31 | v2 | WATCH | STRONG · 24.6% ROCE | STRONG | PASS CAUTION · buybacks | 180.35 | 39.8 | 36.5 | 29.3 | - | - | Mar 2027 |
 | LIFCO-B.ST | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.4% ROCE | ADEQUATE | PASS | 323.8 | 59.3 | 32.1 | 30.6 | - | - | 2027-01-29 |
-| ROCK-B.CO | ROCKWOOL A/S | 2026-08-08 | v1 | WATCH | ADEQUATE · 12.4% ROCE | ADEQUATE | PASS | 186.3 | 34.5 | 42.2 | 30.9 | - | - | Feb 2027 |
 | 6861.T | Keyence Corporation (株式会社キーエンス) | 2026-10-04 | v1 | WATCH | STRONG · 17.7% ROCE | STRONG | PASS | 80270 | 12210 | 52.6 | 32.7 | - | - | Oct 2026 |
 | 2330.TW | Taiwan Semiconductor Manufacturing Company Limited | 2026-09-13 | v2 | WATCH | STRONG · 23.3% ROCE | ADEQUATE | PASS | 2500 | 306 | 65.3 | 34.1 | - | - | Jan 2027 |
 | FAST | Fastenal Company | 2026-10-04 | v1 | WATCH | STRONG · 34.3% ROCE | STRONG | PASS CAUTION · buybacks | 50.75 | 7.31 | 55.6 | 35.5 | - | - | Oct 2026 |
@@ -215,7 +213,7 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (204)
+## AVOID - two or more gates failed (205)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -303,6 +301,7 @@ None.
 | GRND | Grindr Inc. | 2026-08-08 | v1 | AVOID | WEAK · leverage | WEAK · breadth | FAIL · compensation | 17.78 | 2.75 | 22.4 | 28.1 | - | - | Mar 2027 |
 | 7309.T | Shimano Inc. (株式会社シマノ) | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | PASS CAUTION · buybacks | 17485 | 1696 | 82.5 | 28.9 | - | - | 2027-01-31 |
 | KER.PA | Kering SA | 2026-07-02 | v1 | AVOID | WEAK · ROCE decline | WEAK · moat eroding | FAIL · acquisitions | 266.3 | 150 | 14.4 | 29.2 | - | - | Feb 2027 |
+| OXIG.L | Oxford Instruments plc | 2026-10-13 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE · unit customer conc. | FAIL · buybacks | 2988 | 587.1 | 40.7 | 29.7 | 42.1 · 38.3 | 32.0 · 30.9 | Jun 2027 |
 | BC.MI | Brunello Cucinelli S.p.A. | 2026-07-28 | v1 | AVOID | WEAK · leverage | WEAK · forces: suppliers | FAIL · buybacks | 83.56 | 8.71 | 56.7 | 30.2 | - | - | Mar 2027 |
 | V | Visa Inc. | 2026-07-03 | v1 | AVOID | STRONG · 21.9% ROCE | WEAK · customer conc. | FAIL · compensation | 362.13 | 72 | 32.4 | 30.2 | - | - | Nov 2026 |
 | HLE.DE | HELLA GmbH & Co. KGaA (FORVIA HELLA) | 2026-07-23 | v1 | AVOID | WEAK · 7.1% ROCE | WEAK · customer conc. | PASS | 72.2 | 8.7 | 27.2 | 30.3 | - | - | Mar 2027 |
@@ -424,16 +423,19 @@ None.
 | TRNS | Transcat, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 4.8% ROCE | ADEQUATE | FAIL · compensation | 93.11 | n.m. | - | - | - | - | May 2027 |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK · ROCE decline | WEAK · supplier conc. | FAIL · compensation | 50 | 15.08 | - | - | - | - | Feb 2027 |
 
-## DNAF (9)
+## DNAF (12)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 6383.T | Daifuku Co., Ltd. | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 5875 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | 8002.T | Marubeni Corporation | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 4787 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | ANDR.VI | ANDRITZ AG | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 80.9 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
+| BNZL.L | Bunzl plc | 2026-10-13 | v1 | DNAF | n.m. | n.m. | n.m. | 2776 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | DPLM.L | Diploma PLC | 2026-10-12 | v1 | DNAF | n.m. | n.m. | n.m. | 7870 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | DNAF | ADEQUATE · 14.7% ROCE | WEAK | FAIL | 206.41 | n.m. | n.m. | n.m. | - | - | n.m. |
 | IMI.L | IMI plc | 2026-10-12 | v1 | DNAF | n.m. | n.m. | n.m. | 3110 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | INTU | Intuit Inc. | 2026-10-08 | v3 | DNAF | n.m. | n.m. | n.m. | 297.24 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
+| ROCK-B.CO | ROCKWOOL A/S | 2026-10-13 | v2 | DNAF | n.m. | n.m. | n.m. | 186.5 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | RSW.L | Renishaw plc | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 5990 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
+| SKF-B.ST | AB SKF (publ) | 2026-10-13 | v2 | DNAF | n.m. | n.m. | n.m. | 272.8 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | SYAB.DE | SYNLAB AG | 2026-07-23 | v1 | DNAF | n.m. | n.m. | n.m. | - | n.m. | n.m. | n.m. | - | - | n.m. |

@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v46 · 2026-10-13)
+# GSC Work Queue — TODO.md (v47 · 2026-10-14)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -11,7 +11,6 @@
 *From the SWEEP of 2026-10-05 (PR #76), applied by INTAKE 2026-10-06. INTAKE merges each applied sweep's `## Review requests` into this block; a request carries forward until the key's memo is reviewed or it is 4 weeks old (`routines/INTAKE.md` step 3).*
 
 - `IFCN.SW` — move +28.1% vs the carried CHF 153.60 (28 Jul), confirmed on a second source — sweep 2026-10-05
-- `ROCK-B.CO` — move −19.7% vs the carried DKK 232.00 (7 Aug), confirmed on a second source — sweep 2026-10-05
 - `SGO.PA` — move −18.7% vs the carried €81.28 (31 Jul), confirmed on a second source — sweep 2026-10-05
 - `SAP.DE` — move +17.4% vs the carried €157.68 (31 Jul), confirmed on a second source — sweep 2026-10-05
 - `RMS.PA` — move −16.0% vs the carried €1,531.50 (31 Jul), confirmed on a second source — sweep 2026-10-05
@@ -79,6 +78,10 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - 2026-10-12 · NVS REVIEW — Spin-offs inside the P1 window (NVS: Alcon 2019, Sandoz 2023): MODEL is silent on whether the consolidated record reads each year on its own filed perimeter or on the filer's restated continuing-operations flows against unrestated balance sheets; NVS v2 used the filed perimeter and logged the restated reading (lower) as a sensitivity. A rule would fix the reading for every spin-off name.
 - 2026-10-12 · IMI.L ANALYSE — "Industry is read at the level of the filer's own segment description" (v4.5.1) when the description is itself a list of sectors: IMI's Life Technology segment is described as "technologies that enhance and improve everyday life … across the Climate Control, Transport and Life Science & Fluid Control sectors" (building HVAC, commercial vehicles, life-science instruments; 51% / 20% / 29% of the unit). This run read the listed sectors as differing industries and paying customers (DNAF); the parallel Automation segment (Process vs Industrial Automation) was left on the filer's "automation" description. A line on whether a description that enumerates sectors sets one industry would keep such calls repeatable.
 - 2026-10-12 · DPLM.L ANALYSE — Value-added distributors under the one-level decomposition: Diploma's Controls Sector (55% of revenue) prints its businesses' shares — Windy City Wire 36% (low-voltage building and datacentre wire sold to systems integrators) beside Peerless 23% and Clarendon 13% (aerospace and defence fasteners) — so it fails Gate 0 as irreducible (DNAF). Distribution roll-ups whose segments group unrelated product lines (BNZL.L, next on the queue, and similar serial acquirers) will likely land the same way. Should a distributor's industry be read as the distribution activity (stocking, kitting, technical sales of specialised consumables), or does the paying-customer and product-industry test stand as written? Precedent split: HLMA.L (2026-10-07) took the softer reading, IMI.L (2026-10-12) the harsher one.
+- 2026-10-13 · SKF-B.ST REVIEW — Specialty-components segments: SKF's Specialized Industrial Solutions groups four stand-alone businesses (aerospace bearings, seals, lubrication systems, magnetic bearings) that the filer presents under one friction-reduction technology base and the SKF brand. §2 Gate 0 fails it as irreducible because aerospace bearings and vehicle and industrial seals differ in industry and paying customer. Should "industry" for this test be read at the level of a common technology platform (friction and rotation components) when the filer manages the businesses as one segment, or does the test stand as written?
+- 2026-10-13 · ROCK-B.CO REVIEW — Shared-input segments: Rockwool's Systems segment sells stone-wool products made on the same melting technology to two industries (Rockfon ceilings and Rockpanel façades to the construction trade; Grodan growing media to greenhouse and indoor growers). §2 Gate 0 (J13) fails it as irreducible because the filer names the business units without shares and they differ in industry and paying customer. Should a common production input (stone wool) bear on the one-level test, or does the test stand as written, as it did for SKF's Specialized Industrial Solutions the same day?
+- 2026-10-13 · OXIG.L ANALYSE — Unit-level customer breadth when only a group statement exists: Oxford Instruments states no customer exceeds 10% of group revenue, which bounds any customer at about 13% of the 74% Imaging & Analysis unit but says nothing for the 26% Advanced Technologies unit. This run read both units as silent (flagged) and used the group bound as containment evidence for I&A only. A line on whether the bound a group statement implies for a unit counts as a filer statement for that unit (it clears the unit only when the unit is 100% of revenue) would keep such calls repeatable.
+- 2026-10-13 · BNZL.L ANALYSE — Second distributor DNAF after DPLM.L (2026-10-12), as that run predicted: Bunzl's geographic business areas each serve several customer sectors (grocers, foodservice redistributors, industrial PPE buyers, retailers, hospitals), and the filer prints sector revenue only for the Group ("results are not monitored on this basis") and names the business-area sub-businesses without shares, so J13 makes North America (53% of revenue) irreducible. A ruling on whether a distributor of goods-not-for-resale is one industry, and whether a Group-only sector table can bound a geographic unit's split, would decide this class (likely also future geographic-segment distributors).
 
 ---
 
@@ -122,8 +125,6 @@ None.
 **WATCH → AVOID, high confidence (≥ 80%).**
 
 - `SGO.PA` — J1, acquisition stop: on Business income ROCE is 7.7–9.3% → Past WEAK; buybacks at 6.4–10.5× EV/OI are below worth (SOUND); GCP (2022, ≈ 30×-class pre-deal EBIT, same CEO) is an earlier-window CAUTION; CSR (2024, a listed target: read its last annual report) and FOSROC (2025) are not in the memo (verify) → AVOID (85%).
-- `SKF-B.ST` — P3, R6, R3, R7: ΔFCF/sh −0.9% (a negative read fails P3) may turn positive on maintenance-capex FCF; ΔOI/sh +0.3%; Industrial and Automotive enter the weighted Future, Past on the consolidated record; a missing customer statement is a flag judged against the moat → AVOID (80%).
-- `ROCK-B.CO` — R9, J1/P3, V4: the CEO's €3.13m is 2.24× the FY2025 line (a fiscal-year read of about 11%), but the trailing read passes, so a flag, not a strike; ΔOI/sh about −18% on the J1 OI (verify) fails P3; with the Foundation's and the Kähler family's A-share control (separated votes) and management NOT ALIGNED (holdings: verify), the single pay flag also fails at step 3; buybacks at about 12× EV/OI are below worth → AVOID (80%).
 - `DOV` — J6, worth test, R3: ROCE 12% with a decline → Past WEAK (approx; the five segments are no longer graded apart); the 2024–25 buybacks ($1.04bn) at 19–23× EV/OI and 25–27× FCF (lower on the maintenance basis) are above worth (CAUTION); Sikora's ($608.5m) pre-deal OI undisclosed (verify) → AVOID (80%).
 - `AME` — worth test, acquisition stop, R6: the 2025 tranche at 23.9–26.9× (three of four reads at or above 25×; the FCF reads fall on the maintenance basis), with $807m of a price-blind authorisation live (H1 2026 only $28.1m; a pause does not defeat it, A8) → ADVERSE or CAUTION; Indicor ($5.0bn, 2026) at about 14× EBITDA, a lower bound on EV/OI, is above worth (CAUTION, a distinct behaviour) → AVOID (80%).
 - `BRK.B` — R4, Gate 0: a group with material licensed insurers (not captive) is too hard, and the Manufacturing segment is an irreducible portfolio unit besides → Gate 0 FAIL → WATCH → DNAF (85%).
@@ -218,7 +219,6 @@ None.
 - `THULE.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `ULVR.L` — backfill: ISIN, trigger, Px on the key's line (the last SWEEP did not price it), core numbers — fill at next REVIEW or attended pass
 - `MORN` — backfill: ISIN — fill at next REVIEW or attended pass
-- `SKF-B.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `AXFO.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `SCHN.SW` — backfill: ISIN — fill at next REVIEW or attended pass
 - `RMS.PA` — backfill: ISIN — fill at next REVIEW or attended pass
@@ -318,7 +318,6 @@ None.
 - `FIE.DE` — trigger 19.44 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `THULE.ST` — trigger 58 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `MORN` — trigger 61 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
-- `SKF-B.ST` — trigger 80 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `AXFO.ST` — trigger 46 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `SCHN.SW` — trigger 103 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `SAND.ST` — trigger 87.51 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
@@ -362,6 +361,15 @@ None.
 - `FTK.DE` — trigger 12.55 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `OR.PA` — trigger 86 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - AVOID two-or-more-gate and DNAF rows: 43 keys still at all-cash, never priced — set by each name's next REVIEW memo; list in the RETRIGGER report. `BABA` among them: its memo prints the no-cash bound as `n.m.` ("EV/OI n.m./$21.7"), which the v310 parser missed; the parser now reads it (review fix, 2026-10-07), and the row takes trigger n.m. on the no-cash basis at its next memo or an attended `retrigger`.
+
+---
+
+## ▶ Routed by INTAKE 2026-10-14, register v316
+
+*2 items from 4 routine row files (SKF-B.ST REVIEW v2, PR #128; ROCK-B.CO REVIEW v2, PR #129; OXIG.L ANALYSE v1, PR #130; BNZL.L ANALYSE v1, PR #131). Audit clean: no direct commits, no archive changes, no orphan `claude/gsc-*` branches. The ROCK-B.CO line in `▶ Review requests (SWEEP)`, the SKF-B.ST and ROCK-B.CO lines in `▶ Method re-tests v4.5.0` and the SKF-B.ST lines in both `▶ Backfill owed` blocks were removed by this INTAKE (step 3): both memos v2 are written under MODEL v4.5.3.*
+
+- `SKF-B.ST` — Gate 0 DNAF (REVIEW 2026-10-13) rests on Specialized Industrial Solutions (19.4% of FY2025 restated segment sales, 24.5% of positive segment results, 29.3% of segment net assets), which combines the stand-alone Aerospace (about a third of the unit, derived from Aerospace at 9% of FY2025 Industrial sales) and Sealing Solutions (at least 13%, the BSEK ~2.4 automotive sealing transfer) businesses. Re-test Gate 0 if SIS is re-segmented or a business is disposed of; then run the full v4.5.x re-test from the worked figures in the memo's Appendix G (J3 removals, constructed P20 with k 0.263, TTM Q2-2026 FCF, post-employment provision and SKF India minorities at market in EV, the separation cash incentive under R9). The SKF Vertevo distribution (record date 27 Nov 2026, first trading 1 Dec 2026) changes the perimeter only.
+- `ROCK-B.CO` — Gate 0 DNAF (REVIEW 2026-10-13) rests on the Systems segment (17.3% of FY2025 revenue, 14.4% of FY2025 and 15.4% of FY2023–25 segment EBIT), which "comprises the three business units Rockfon, Grodan and Rockpanel" with no printed revenue shares; Grodan (growing media for growers, "the second largest business unit in the Systems segment") differs in industry and paying customer from Rockfon and Rockpanel (building products). Re-test Gate 0 if Rockwool discloses Grodan below 10% of Systems, re-segments, or disposes of Grodan; then run the full v4.5.x re-test from the worked figures in the memo's Appendix G (FY2015–25 rebuild, constructed P20 with k 0.5617, TTM Q2-2026 J1 OI 120 and FCF about −44, debt-equivalents 603 at 30 Jun 2026, the FY2025 pay flag and the 2024–25 buybacks against worth).
 
 ---
 
@@ -1374,6 +1382,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v47 — 2026-10-14** — INTAKE (register v316) — 4 merged row files (SKF-B.ST REVIEW v2, PR #128; ROCK-B.CO REVIEW v2, PR #129; OXIG.L ANALYSE, PR #130; BNZL.L ANALYSE, PR #131): 4 IDEAS candidates added to the head block; review request ROCK-B.CO cleared; 2 `▶ Method re-tests v4.5.0` lines (SKF-B.ST, ROCK-B.CO) and 2 `▶ Backfill owed` lines (SKF-B.ST) removed; new block `▶ Routed by INTAKE 2026-10-14, register v316` with 2 items; audit clean. Outgoing v46 archived to `archive/queue/TODO_v46_2026-10-13.md`.
 - **v46 — 2026-10-13** — INTAKE (register v315) — 3 merged row files (NVS REVIEW v2, PR #124; IMI.L ANALYSE, PR #125; DPLM.L ANALYSE, PR #126): 3 IDEAS candidates added to the head block; review request NVS cleared; 1 `▶ Method re-tests v4.5.0` line and 2 `▶ Backfill owed` lines (NVS) removed; new block `▶ Routed by INTAKE 2026-10-13, register v315` with 1 item; audit clean. Outgoing v45 archived to `archive/queue/TODO_v45_2026-10-08.md`.
 - **v45 — 2026-10-08** — INTAKE (register v314) — 19 merged row files (17 REVIEWs: CROX, 6383.T, CDR.WA, NESN.SW, BKNG, RSW.L, KNIN.SW, ADBE, QCOM, BA.L, ROG.SW, IBKR, 8002.T, CRL.MI, INTU, ANDR.VI, NMAN.ST; TXN and SGO.PA REVIEW INCOMPLETE): 28 IDEAS candidates added to the head block; Open item CROX SELL-FLAG added (ROG.SW re-key item over the 7-entry cap, routed to the dated block); 5 review requests cleared (ADBE, BA.L, BKNG, INTU, QCOM); 17 `▶ Method re-tests v4.5.0` and 12 `▶ Backfill owed` lines removed; new block `▶ Routed by INTAKE 2026-10-08, register v314` with 29 items; audit clean. Outgoing v44 archived to `archive/queue/TODO_v44_2026-10-08.md`.
 - **v44 — 2026-10-08** — BOX ISIN owed (attended, register v313): memo v1 carries Booking Holdings' ISIN US09857L1089 (CUSIP 09857L108), which collided with BKNG's new memo and blocked INTAKE's duplicate-ISIN check; register `isin` for BOX set to `-` (owed); Open item BOX register-integrity hold added (the next BOX REVIEW writes the correct ISIN from a primary source). Outgoing v43 archived to `archive/queue/TODO_v43_2026-10-08.md`.

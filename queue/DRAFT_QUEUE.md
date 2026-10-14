@@ -1,4 +1,4 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v9 · 2026-10-13)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v10 · 2026-10-14)
 
 **Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `archive/queue/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, or add `retry`. The claude.ai project copy, if any, is a read-only mirror.
 
@@ -91,8 +91,8 @@ A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an
 - [x] 2026-10-08 HLMA.L — Halma plc — UK — re-seed universe; safety & environmental tech, decentralised regulation-driven niches (TODO v36 L480)
 - [x] 2026-10-13 IMI.L — IMI plc — UK — re-seed universe; flow control & automation, engineered components, aftermarket pull-through (TODO v36 L481)
 - [x] 2026-10-13 DPLM.L — Diploma PLC — UK — re-seed universe; value-added industrial distribution, sticky specification, bolt-ons → acquisition audit (TODO v36 L484)
-- [ ] OXIG.L — Oxford Instruments plc — UK — re-seed universe; scientific instruments, research niches with service annuity (TODO v36 L496)
-- [ ] BNZL.L — Bunzl plc — UK — re-seed universe; outsourced business supplies, consolidator of a fragmented category (TODO v36 L485)
+- [x] 2026-10-14 OXIG.L — Oxford Instruments plc — UK — re-seed universe; scientific instruments, research niches with service annuity (TODO v36 L496)
+- [x] 2026-10-14 BNZL.L — Bunzl plc — UK — re-seed universe; outsourced business supplies, consolidator of a fragmented category (TODO v36 L485)
 - [ ] REL.L — RELX PLC — UK — re-seed universe; professional information & analytics, subscription embedded in workflow (TODO v36 L489)
 - [ ] EXPN.L — Experian plc — UK — re-seed universe; credit data & analytics, reciprocal-data bureau network effects (TODO v36 L488)
 - [ ] CNR.TO — Canadian National Railway Company — Canada — re-seed universe; rail freight duopoly network, decades of statements (TODO v36 L510)
