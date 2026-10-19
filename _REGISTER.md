@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v317
-register_date: 2026-10-15
+register_version: v318
+register_date: 2026-10-19
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 393
-verdict_split: "BUY 0 · WATCH 70 · AVOID 309 (one gate 104 · two+ 205) · DNAF 14"
+names_total: 395
+verdict_split: "BUY 0 · WATCH 70 · AVOID 310 (one gate 104 · two+ 206) · DNAF 15"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v317 · 2026-10-15)
+# GSC Register — Master Watchlist (v318 · 2026-10-19)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -213,7 +213,7 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (205)
+## AVOID - two or more gates failed (206)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -268,6 +268,7 @@ None.
 | RUSTA.ST | Rusta AB (publ) | 2026-07-27 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 84.9 | 8.1 | 11.0 | 19.3 | - | - | Aug 2026 |
 | CRM | Salesforce, Inc. | 2026-07-12 | v2 | AVOID | WEAK | ADEQUATE | FAIL · buybacks | 163.32 | 55 | 9.3 | 19.4 | - | - | 2026-09-02 |
 | DEC.PA | JCDecaux SE | 2026-07-29 | v1 | AVOID | WEAK · 3% ROCE | WEAK · 2+ forces | PASS | 22.08 | 1.87 | 5.4 | 19.4 | - | - | Mar 2027 |
+| CNR.TO | Canadian National Railway Company | 2026-10-18 | v1 | AVOID | WEAK · 12.4% ROCE | WEAK · customer conc. | PASS CAUTION · buybacks | 172.39 | 36.15 | 27.3 | 19.5 | 23.0 · 23.5 | 19.9 · 20.3 | Jan 2027 |
 | RCO.PA | Rémy Cointreau SA | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | FAIL · flag pair | 41.88 | 5.52 | 40.9 | 19.6 | - | - | Nov 2026 |
 | ROG.SW | Roche Holding AG | 2026-10-08 | v2 | AVOID | WEAK · ROCE decline | WEAK · unit 2+ forces | FAIL · director pay | 360.0 | 82.46 | 24.5 | 19.6 | 23.9 · 21.8 | 22.1 · 21.0 | Feb 2027 |
 | LOGI | Logitech International S.A. | 2026-07-22 | v1 | AVOID | STRONG · 27.2% ROCE | WEAK · customer conc. | FAIL · buybacks | 102.91 | 47.8 | 15.6 | 19.8 | - | - | Jul 2026 |
@@ -423,7 +424,7 @@ None.
 | TRNS | Transcat, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 4.8% ROCE | ADEQUATE | FAIL · compensation | 93.11 | n.m. | - | - | - | - | May 2027 |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK · ROCE decline | WEAK · supplier conc. | FAIL · compensation | 50 | 15.08 | - | - | - | - | Feb 2027 |
 
-## DNAF (14)
+## DNAF (15)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -441,3 +442,4 @@ None.
 | RSW.L | Renishaw plc | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 5990 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | SKF-B.ST | AB SKF (publ) | 2026-10-13 | v2 | DNAF | n.m. | n.m. | n.m. | 272.8 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | SYAB.DE | SYNLAB AG | 2026-07-23 | v1 | DNAF | n.m. | n.m. | n.m. | - | n.m. | n.m. | n.m. | - | - | n.m. |
+| TIH.TO | Toromont Industries Ltd. | 2026-10-18 | v1 | DNAF | n.m. | n.m. | n.m. | 210.16 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |

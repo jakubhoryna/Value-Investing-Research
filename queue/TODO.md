@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v48 · 2026-10-15)
+# GSC Work Queue — TODO.md (v49 · 2026-10-19)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -84,6 +84,8 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - 2026-10-13 · BNZL.L ANALYSE — Second distributor DNAF after DPLM.L (2026-10-12), as that run predicted: Bunzl's geographic business areas each serve several customer sectors (grocers, foodservice redistributors, industrial PPE buyers, retailers, hospitals), and the filer prints sector revenue only for the Group ("results are not monitored on this basis") and names the business-area sub-businesses without shares, so J13 makes North America (53% of revenue) irreducible. A ruling on whether a distributor of goods-not-for-resale is one industry, and whether a Group-only sector table can bound a geographic unit's split, would decide this class (likely also future geographic-segment distributors).
 - 2026-10-14 · REL.L ANALYSE — First information-services DNAF under the one-level decomposition: RELX's Risk segment (36% of revenue) is run as "market-facing industry/sector verticals" sized by the filer (Business Services >40% to banks and corporates, Insurance ~40% to insurance carriers, Specialised Industry Data Services just over 10% to commodity, aviation, HR and tax professionals), so the paying-customer limb fails it; Legal (law firms ~70% vs government, academic and news-and-business ~30%) fails the same way. A ruling on whether customer-industry verticals of one data and analytics platform are one paying customer would decide this class (likely also later data and software names organised by customer vertical, e.g. EXPN.L next in the queue).
 - 2026-10-14 · EXPN.L ANALYSE — Second information-services DNAF in one day under the one-level decomposition, after REL.L: Experian reports its segments as regions, and the filer's own business-line revenue for North America (note 9(a): Financial Services 42.3% to lenders, Verticals 27.0% to US healthcare providers, auto makers, dealers and insurers, and advertisers, Consumer Services 30.7% to consumers and marketplace partners) makes the main unit irreducible; Latin America and UK and Ireland fail the same way. The ruling the REL.L candidate asks for (are customer business lines of one data and analytics platform one paying customer?) would decide this name too, and likely the remaining bureau and data names in the queue.
+- 2026-10-18 · CNR.TO ANALYSE — TTM maintenance capex when the annual tier is disclosed but the interims print no split: CN's FY2025 maintenance FCF (tier 1, capex less disclosed strategic capex) is C$4,791m, but the TTM figure falls to the constructed tier (C$3,831m) because the interims carry no split, and TTM then governs as the lower reading. The tier switch alone moves the FCF leg of the trigger by about 20%. A line on whether a TTM may carry the latest annual disclosed growth share forward (pro rata), or must always construct, would keep TTM readings repeatable across filers.
+- 2026-10-18 · TIH.TO ANALYSE — Gate 0 one-level decomposition, "same products through different channels" exception: TIH.TO's CIMCO sells one engineered product (natural-refrigerant refrigeration systems, designed, built, installed and serviced) to two end markets the filer reports separately (food and cold-storage operators; ice-rink owners). The paying customers differ, but the product, industry and delivery model are the same. Question for an attended ruling: does one product sold to two end markets count as one sub-business, as one product through two channels does? It decides TIH.TO here, and a unit sitting just above the 10% P22 line flips the whole group (ANALYSE TIH.TO 2026-10-18)
 
 ---
 
@@ -363,6 +365,14 @@ None.
 - `FTK.DE` — trigger 12.55 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `OR.PA` — trigger 86 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - AVOID two-or-more-gate and DNAF rows: 43 keys still at all-cash, never priced — set by each name's next REVIEW memo; list in the RETRIGGER report. `BABA` among them: its memo prints the no-cash bound as `n.m.` ("EV/OI n.m./$21.7"), which the v310 parser missed; the parser now reads it (review fix, 2026-10-07), and the row takes trigger n.m. on the no-cash basis at its next memo or an attended `retrigger`.
+
+---
+
+## ▶ Routed by INTAKE 2026-10-19, register v318
+
+*From 2 routine row files (CNR.TO ANALYSE v1, PR #141; TIH.TO ANALYSE v1, PR #142). Audit clean: no direct commits, no archive changes, no orphan `claude/gsc-*` branches.*
+
+- `TIH.TO` — Gate 0 re-test at FY2026 results (Feb–Mar 2027): DNAF rests on CIMCO at 10.1% of FY2025 revenue (FY2024 9.2%); if CIMCO is below 10% of revenue, segment assets and Σ positive segment results at the FY2026 year-end, the unit is immaterial and a full ANALYSE is owed (ANALYSE 2026-10-18)
 
 ---
 
@@ -1390,6 +1400,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v49 — 2026-10-19** — INTAKE (register v318) — 2 merged row files (CNR.TO ANALYSE, PR #141; TIH.TO ANALYSE, PR #142): 2 IDEAS candidates added to the head block; new block `▶ Routed by INTAKE 2026-10-19, register v318` (1 item: TIH.TO Gate 0 re-test at FY2026 results); audit clean. Outgoing v48 archived to `archive/queue/TODO_v48_2026-10-15.md`.
 - **v48 — 2026-10-15** — INTAKE (register v317) — 2 merged row files (REL.L ANALYSE, PR #135; EXPN.L ANALYSE, PR #136): 2 IDEAS candidates added to the head block; new block `▶ Routed by INTAKE 2026-10-15, register v317` (no items); audit clean. Outgoing v47 archived to `archive/queue/TODO_v47_2026-10-14.md`.
 - **v47 — 2026-10-14** — INTAKE (register v316) — 4 merged row files (SKF-B.ST REVIEW v2, PR #128; ROCK-B.CO REVIEW v2, PR #129; OXIG.L ANALYSE, PR #130; BNZL.L ANALYSE, PR #131): 4 IDEAS candidates added to the head block; review request ROCK-B.CO cleared; 2 `▶ Method re-tests v4.5.0` lines (SKF-B.ST, ROCK-B.CO) and 2 `▶ Backfill owed` lines (SKF-B.ST) removed; new block `▶ Routed by INTAKE 2026-10-14, register v316` with 2 items; audit clean. Outgoing v46 archived to `archive/queue/TODO_v46_2026-10-13.md`.
 - **v46 — 2026-10-13** — INTAKE (register v315) — 3 merged row files (NVS REVIEW v2, PR #124; IMI.L ANALYSE, PR #125; DPLM.L ANALYSE, PR #126): 3 IDEAS candidates added to the head block; review request NVS cleared; 1 `▶ Method re-tests v4.5.0` line and 2 `▶ Backfill owed` lines (NVS) removed; new block `▶ Routed by INTAKE 2026-10-13, register v315` with 1 item; audit clean. Outgoing v45 archived to `archive/queue/TODO_v45_2026-10-08.md`.

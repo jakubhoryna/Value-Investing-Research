@@ -1,4 +1,4 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v11 · 2026-10-15)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v12 · 2026-10-19)
 
 **Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `archive/queue/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, or add `retry`. The claude.ai project copy, if any, is a read-only mirror.
 
@@ -95,8 +95,8 @@ A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an
 - [x] 2026-10-14 BNZL.L — Bunzl plc — UK — re-seed universe; outsourced business supplies, consolidator of a fragmented category (TODO v36 L485)
 - [x] 2026-10-15 REL.L — RELX PLC — UK — re-seed universe; professional information & analytics, subscription embedded in workflow (TODO v36 L489)
 - [x] 2026-10-15 EXPN.L — Experian plc — UK — re-seed universe; credit data & analytics, reciprocal-data bureau network effects (TODO v36 L488)
-- [ ] CNR.TO — Canadian National Railway Company — Canada — re-seed universe; rail freight duopoly network, decades of statements (TODO v36 L510)
-- [ ] TIH.TO — Toromont Industries Ltd. — Canada — re-seed universe; equipment distribution & services, protected CAT dealer territory, parts-and-service (TODO v36 L512)
+- [x] 2026-10-19 CNR.TO — Canadian National Railway Company — Canada — re-seed universe; rail freight duopoly network, decades of statements (TODO v36 L510)
+- [x] 2026-10-19 TIH.TO — Toromont Industries Ltd. — Canada — re-seed universe; equipment distribution & services, protected CAT dealer territory, parts-and-service (TODO v36 L512)
 - [ ] CCL.B.TO — CCL Industries Inc. — Canada — re-seed universe; specialty packaging & labels; Lang-family controlled serial acquirer → acquisition audit, control caveat (TODO v36 L519)
 - [ ] COH.AX — Cochlear Limited — Australia — re-seed universe; implantable medical devices, installed base + processor upgrades (TODO v36 L537)
 - [ ] BXB.AX — Brambles Limited — Australia — re-seed universe; pallet pooling, scale network, understandable unit economics (TODO v36 L538)
