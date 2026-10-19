@@ -505,6 +505,65 @@ bash("no GSC_SESSION: attended rebuild", TOOL + " rebuild --base HEAD --out /tmp
 bash("INTAKE: the one-time retrigger is attended only", TOOL + " retrigger --date 2026-10-07", 2, branch=INTAKE_BR)
 bash("REVIEW: the retrigger behind --root", TOOL + " --root . retrigger --date 2026-10-07 --block /tmp/b.md", 2)
 bash("no GSC_SESSION: attended retrigger", TOOL + " retrigger --date 2026-10-07", 0, session=None)
+# MODEL v4.6.0 §7.1 (G5): the RETIRED state is set and undone only in attended sessions.
+bash("INTAKE: retire is attended only", TOOL + " retire --key EA --date 2026-08-04 --source 'Form 25'", 2,
+     branch=INTAKE_BR)
+bash("REVIEW: retire --undo behind --root", TOOL + " --root . retire --undo --key EA", 2)
+bash("INTAKE: retire behind env -S", "env -S python3 " + TOOL.split("python3 ", 1)[-1] + " retire --key EA "
+     "--date 2026-08-04 --source notice", 2, branch=INTAKE_BR)
+bash("REVIEW: retire behind env -S joined", "env -S'python3 routines/tools/gsc_register.py retire --undo --key EA'", 2)
+bash("ANALYSE: retire behind env --split-string", "env --split-string='python3 routines/tools/gsc_register.py "
+     "retire --undo --key EA'", 2)
+bash("ANALYSE: retire behind env -iS", "env -iS 'python3 routines/tools/gsc_register.py retire --undo --key EA'", 2)
+bash("ANALYSE: retire behind an abbreviated env --split", "env --split 'python3 routines/tools/gsc_register.py "
+     "retire --undo --key EA'", 2)
+bash("ANALYSE: retire behind env --s=", "env --s='python3 routines/tools/gsc_register.py retire --undo --key EA'", 2)
+bash("ANALYSE: retire behind env --unset NAME", "env --unset FOO python3 routines/tools/gsc_register.py retire "
+     "--undo --key EA", 2)
+bash("ANALYSE: retire behind env --chdir DIR", "env --chdir . python3 routines/tools/gsc_register.py retire "
+     "--undo --key EA", 2)
+bash("ANALYSE: retire behind env -iu NAME", "env -iu FOO python3 routines/tools/gsc_register.py retire --undo --key EA", 2)
+bash("ANALYSE: env -u NAME still runs the register check", "env -u FOO python3 routines/tools/gsc_register.py check", 0)
+bash("ANALYSE: plain env still runs the register check", "env LC_ALL=C python3 routines/tools/gsc_register.py check", 0)
+bash("ANALYSE: retire through python3 -B", "python3 -B routines/tools/gsc_register.py retire --key SYAB.DE "
+     "--date 2024-07-12 --source notice", 2)
+bash("no GSC_SESSION: attended retire", TOOL + " retire --key EA --date 2026-08-04 --source 'Form 25'", 0,
+     session=None)
+bash("no GSC_SESSION: attended retire --undo", TOOL + " retire --undo --key EA", 0, session=None)
+bash("ANALYSE: a key spelled like the subcommand is no subcommand",
+     TOOL + " lint-memo memos/RETIRE/RETIRE_2026-10-04_GSC.md", 0)
+# The module form refuses the same attended-only subcommands (v4.6.0): python3 -m, attached or clustered,
+# from routines/tools, or behind a runner module; interpreter options with an argument never hide the script.
+MOD = "python3 -m routines.tools.gsc_register"
+bash("ANALYSE: retire as a module", MOD + " retire --key EA --date 2026-08-04 --source notice", 2)
+bash("INTAKE: retire --undo as a module", MOD + " retire --undo --key EA", 2, branch=INTAKE_BR)
+bash("REVIEW: retrigger as a module", MOD + " retrigger --date 2026-10-07", 2)
+bash("SWEEP: rebuild as a module behind -B", "python3 -B -m routines.tools.gsc_register rebuild --base HEAD "
+     "--out /tmp/rb", 2)
+bash("INTAKE: retire as a module from routines/tools",
+     "cd routines/tools && python3 -m gsc_register retire --key EA --date 2026-08-04 --source notice", 2,
+     branch=INTAKE_BR)
+bash("REVIEW: retire as an attached -m module", "python3 -mroutines.tools.gsc_register retire --undo --key EA", 2)
+bash("REVIEW: retrigger as a clustered -Bm module", "python3 -Bm routines.tools.gsc_register retrigger "
+     "--date 2026-10-07", 2)
+bash("ANALYSE: retire behind runpy", "python3 -m runpy routines.tools.gsc_register retire --undo --key EA", 2)
+bash("ANALYSE: retire behind pdb", "python3 -m pdb routines/tools/gsc_register.py retire --key EA "
+     "--date 2026-08-04 --source notice", 2)
+bash("ANALYSE: retire behind -W ignore", "python3 -W ignore routines/tools/gsc_register.py retire --key EA "
+     "--date 2026-08-04 --source notice", 2)
+bash("REVIEW: retrigger behind -X dev", "python3 -X dev routines/tools/gsc_register.py retrigger --date 2026-10-07", 2)
+bash("ANALYSE: python3 -Bc code is read as code", "python3 -Bc \"open('model/MODEL.md','a').write('x')\"", 2)
+bash("a heredoc fed to a module is read as code", "python3 -m code <<'EOF'\nopen('model/MODEL.md','a').write('x')\n"
+     "EOF", 2)
+bash("INTAKE: render as a module", MOD + " render --version v305 --date 2026-10-04", 0, branch=INTAKE_BR)
+bash("INTAKE: check as a module behind -W ignore", "python3 -W ignore -m routines.tools.gsc_register check "
+     "--base abc1234", 0, branch=INTAKE_BR)
+bash("ANALYSE: lint a RETIRE-named memo as a module", MOD + " lint-memo memos/RETIRE/RETIRE_2026-10-04_GSC.md", 0)
+bash("ANALYSE: check with the tool behind -W ignore", "python3 -W ignore routines/tools/gsc_register.py check "
+     "--base abc1234", 0)
+bash("ANALYSE: an unrelated module", "python3 -m json.tool queue/rows/x.md", 0)
+bash("no GSC_SESSION: attended retire as a module", MOD + " retire --key EA --date 2026-08-04 --source notice", 0,
+     session=None)
 write("Write _REGISTER.md by hand", "_REGISTER.md", 2)
 write("Edit register.csv by hand", "register.csv", 2, tool="Edit")
 write("Write REGISTER.CSV (mixed case)", "REGISTER.CSV", 2)

@@ -34,9 +34,26 @@ and the all-capex order), the no-cash band parser and the one-time
 retrigger. v4.5.2: lint-row (the row file against its name, its title and
 the exact row-from-memo --table print, read as gsc-automerge reads it).
 v4.5.3: check() does not recompute a Gate-0 DNAF row's n.m. multiples
-(MODEL 6.4) while validate_row still governs its fields.
+(MODEL 6.4) while validate_row still governs its fields. v4.6.0: the SF
+token `reinvestment` (G4) after `distributions`; the RETIRED register state
+(G5): retire and retire --undo (the row restored exactly as apply writes
+it), every refusal (held, already retired, a bad date or source, the entry
+cap), apply refused for a RETIRED key and a memo never carrying RETIRED,
+the validate_row rules, the section last and its counts only while a
+RETIRED row exists (a register without one renders byte for byte as
+before, the repository's own register included), check() not recomputing
+its multiples, SWEEP and sweep-scope leaving it out, and position,
+retrigger and the one-time rebuild never re-writing it; retire refusing a
+last trading day after today (the system date, injected in tests);
+retire --undo rebuilding from the one file in memos/{KEY}/ (a memo landed
+or moved after retirement), refusing a folder that does not hold exactly
+one memo; a parent whose holding_keys names a RETIRED key listed once
+('holding HKEY retired — re-test the parent'), a RETIRED parent never; and
+the Future tokens `unit dependency` (an undescribed material unit, new) and
+`sub dependency` (MODEL v4.6.0 section 7.1).
 """
 import contextlib
+import datetime
 import io
 import json
 import os
@@ -2264,6 +2281,456 @@ class HeldBandTests(unittest.TestCase):
                                                                                             "268.6"))
         self.assertIn("NOTE LEFT ADD band 60 follows the memo's no-cash trigger 55.5 (P21, R10)", report["notes"])
 
+
+# ------------------------------------------------------------------ v4.6.0: reinvestment (G4), RETIRED (G5)
+
+class PastLevelTests(unittest.TestCase):
+    def test_worst_of_eight_is_read_like_worst_of_four(self):
+        cases = [
+            ("Worst-of-four normalized ROCE 31.2% (end-of-period, with-cash).", "31.2% ROCE"),
+            ("Worst of eight normalized ROCE 5.17% (exclude-both governs; G6).", "5.2% ROCE"),
+            ("The worst-of-eight ROCE is 4.03% on the include reading.", "4% ROCE"),
+        ]
+        for text, want in cases:
+            self.assertEqual(r.past_level(text)[0], want, text)
+        self.assertEqual(r.past_level("Worst of six normalized ROCE 9.0%."), (None, None))
+
+
+class ReinvestmentTokenTests(unittest.TestCase):
+    def test_reinvestment_follows_distributions(self):
+        self.assertEqual(r.SF_REASONS.index("reinvestment"), r.SF_REASONS.index("distributions") + 1)
+        self.assertNotIn("reinvestment", r.SF_FAIL_ONLY)
+        self.assertEqual(r.validate_row(csv_row("A", sf_reason="reinvestment")), [])               # PASS caution
+        self.assertEqual(r.validate_row(csv_row("A", verdict="AVOID", sf="FAIL", sf_reason="reinvestment")), [])
+        self.assertEqual(r.grade_cell("PASS", "reinvestment", sf=True), "PASS CAUTION · reinvestment")
+        for name, grade in (("past_reason", "past"), ("future_reason", "future")):
+            row = csv_row("A", verdict="AVOID", **{grade: "WEAK", name: "reinvestment"})
+            self.assertTrue(any("reason vocabulary" in p for p in r.validate_row(row)), name)
+        self.assertEqual(r.lint_memo(LintTests.PATH, memo_text(TROW_FM, sf_reason="reinvestment"))[0], [])
+        self.assertEqual(r.lint_memo(LintTests.PATH, memo_text(TROW_FM, sf="FAIL", verdict="AVOID",
+                                                               sf_reason="reinvestment"))[0], [])
+
+
+def retired_row(key, **over):
+    """A RETIRED register row: the last memo's grades kept, Next review its last trading day."""
+    base = dict(verdict="RETIRED", past="ADEQUATE", future="WEAK", sf="FAIL", past_reason="14.7% ROCE",
+                future_reason="no moat", sf_reason="buybacks", ev_oi="22.5",
+                next_review_short="retired 2026-08-04")
+    base.update(over)
+    return csv_row(key, **base)
+
+
+GONE_MEMO = "memos/GONE/GONE_2026-10-03_GSC.md"
+
+
+class RetiredTests(unittest.TestCase):
+    def setUp(self):
+        held = held_core(csv_row("TROW", held="true", zone="HOLD", add_band="55.5", trigger="55.5", sell_line="268.6",
+                                 last_zone_check="2026-10-04", avg_cost="10.00 USD",
+                                 memo_path="memos/TROW/TROW_2026-10-03_GSC.md", memo_date="2026-10-03"))
+        self.root = TempRoot({
+            "register.csv": r.csv_text([held, csv_row("OTHER")]),
+            "memos/TROW/TROW_2026-10-03_GSC.md": memo_text(TROW_FM),
+            GONE_MEMO: memo_text(TROW_FM, drop=("position", "zone", "add_band", "sell_flag_line", "avg_cost"),
+                                 ticker="GONE", company="Gone Corp.", isin="US0000000001"),
+        })
+        r.apply_memo(self.root.path, GONE_MEMO)
+        self.applied = self.rows()["GONE"]
+
+    def tearDown(self):
+        self.root.close()
+
+    def rows(self):
+        return {x["key"]: x for x in r.load_csv(self.root.path)[0]}
+
+    def test_retire_and_undo_round_trip(self):
+        report = r.retire(self.root.path, "GONE", "2026-08-04", "  Form 25,\n 2026-08-04 ")
+        gone = self.rows()["GONE"]
+        self.assertEqual((gone["verdict"], gone["section"], gone["next_review_short"]),
+                         ("RETIRED", "RETIRED", "retired 2026-08-04"))
+        self.assertEqual({n: v for n, v in gone.items() if gone[n] != self.applied[n]},
+                         {"verdict": "RETIRED", "section": "RETIRED", "next_review_short": "retired 2026-08-04"})
+        self.assertEqual(report["entry"], "GONE retired: RETIRED (was WATCH; last trading day 2026-08-04; "
+                                          "source: Form 25, 2026-08-04)")
+        self.assertIn("| WATCH |", report["old"])
+        self.assertTrue(report["new"].endswith("| RETIRED | ADEQUATE · 23.9% ROCE | ADEQUATE | PASS CAUTION · buybacks "
+                                               "| 104.62 | 55.5 | 15.1 | 10.9 | 15.9 · 17.2 | 11.7 · 12.6 | "
+                                               "retired 2026-08-04 |"), report["new"])
+        self.assertEqual([x["key"] for x in r.load_csv(self.root.path)[0]][-1], "GONE")     # the RETIRED rows last
+        self.assertEqual(r.validate_row(gone), [])
+        undo = r.unretire(self.root.path, "GONE")
+        self.assertEqual(self.rows()["GONE"], self.applied)       # exactly the row apply wrote from the memo
+        self.assertEqual(undo["changes"][0]["new"], r.table_line(r.master_cells(self.applied)))
+        self.assertNotIn("RETIRED", r.render(list(self.rows().values()), "v2", "2026-10-15"))
+
+    def test_retire_refusals_leave_the_register_alone(self):
+        before = self.root.read("register.csv")
+        cases = [(("NOPE", "2026-08-04", "x"), "not in register.csv"),
+                 (("GONE", "2026-02-30", "x"), "last trading day as YYYY-MM-DD"),
+                 (("GONE", "4 Aug 2026", "x"), "last trading day as YYYY-MM-DD"),
+                 (("GONE", "2026-08-04", " \n "), "primary notice"),
+                 (("TROW", "2026-08-04", "x"), "a held name is never retired"),
+                 (("GONE", "2026-08-04", "x" * (r.ENTRY_CAP)), "shorten --source")]
+        for args, needle in cases:
+            with self.assertRaises(r.ToolError) as caught:
+                r.retire(self.root.path, *args)
+            self.assertIn(needle, str(caught.exception), args)
+            self.assertEqual(self.root.read("register.csv"), before, args)
+        with self.assertRaises(r.ToolError) as caught:
+            r.unretire(self.root.path, "GONE")
+        self.assertIn("is not RETIRED (verdict WATCH): nothing to undo", str(caught.exception))
+        r.retire(self.root.path, "GONE", "2026-08-04", "x")
+        after = self.root.read("register.csv")
+        with self.assertRaises(r.ToolError) as caught:
+            r.retire(self.root.path, "GONE", "2026-08-05", "y")
+        self.assertIn("already RETIRED (retired 2026-08-04)", str(caught.exception))
+        with self.assertRaises(r.ToolError) as caught:
+            r.set_position(self.root.path, "GONE", True, "10.00 USD")
+        self.assertIn("never held", str(caught.exception))
+        self.assertEqual(self.root.read("register.csv"), after)
+
+    def test_apply_refuses_a_retired_key(self):
+        r.retire(self.root.path, "GONE", "2026-08-04", "x")
+        before = self.root.read("register.csv")
+        for row_type in ("ANALYSE", "REVIEW"):
+            rel = "queue/rows/2026-10-05_2130_%s_GONE.md" % row_type
+            self.root.write(rel, "---\nrow_type: %s\nmemo_path: %s\nrun_date: 2026-10-05\n---\n" % (row_type, GONE_MEMO))
+            with self.assertRaises(r.ToolError) as caught:
+                r.apply_row(self.root.path, rel)
+            self.assertIn("GONE is RETIRED (retired 2026-08-04)", str(caught.exception))
+            self.assertIn("`retire --undo --key GONE` first", str(caught.exception))
+        code, _out, err = run_main(["--root", self.root.path, "apply", "--memo", GONE_MEMO])
+        self.assertEqual(code, 2)
+        self.assertIn("apply refuses %s" % GONE_MEMO, err)
+        self.assertEqual(self.root.read("register.csv"), before)
+        # A SWEEP leaves it out; a QUEUE row changes nothing.
+        self.root.write("queue/rows/2026-10-06_0630_SWEEP.md", "\n".join([
+            "---", "row_type: SWEEP", "run_date: 2026-10-06", "run_time: 0630", "---",
+            "## Price/ordering refresh", "| Key | Px | Px unit | Close date | Source |", "|---|---|---|---|---|",
+            "| GONE | 90 | USD | 2026-10-05 | endpoint |", ""]))
+        report = r.apply_row(self.root.path, "queue/rows/2026-10-06_0630_SWEEP.md")
+        self.assertEqual(report["skips"], [{"key": "GONE", "reason": "out of SWEEP scope (RETIRED, never refreshed)"}])
+        self.assertEqual(self.root.read("register.csv"), before)
+
+    def test_a_memo_never_carries_retired(self):
+        text = memo_text(TROW_FM, drop=("position", "zone", "add_band", "sell_flag_line", "avg_cost"), ticker="NEWK",
+                         verdict="RETIRED", next_review_short="retired 2026-08-04")
+        self.root.write("memos/NEWK/NEWK_2026-10-03_GSC.md", text)
+        with self.assertRaises(r.ToolError) as caught:
+            r.apply_memo(self.root.path, "memos/NEWK/NEWK_2026-10-03_GSC.md")
+        self.assertIn("a memo's verdict is one of BUY/WATCH/AVOID/DNAF", str(caught.exception))
+        fails, _ = r.lint_memo("memos/NEWK/NEWK_2026-10-03_GSC.md", text)
+        self.assertTrue(any(f.startswith("verdict: 'RETIRED' is not one word of BUY/WATCH/AVOID/DNAF") for f in fails),
+                        fails)
+        self.assertTrue(any(f.startswith("next_review_short: 'retired 2026-08-04'") for f in fails), fails)
+
+    def test_retire_refuses_a_date_after_today(self):
+        before = self.root.read("register.csv")
+        with self.assertRaises(r.ToolError) as caught:
+            r.retire(self.root.path, "GONE", "2026-10-16", "Form 25", today="2026-10-15")
+        self.assertIn("--date 2026-10-16 is after today (2026-10-15)", str(caught.exception))
+        self.assertIn("a delisting awaiting retirement", str(caught.exception))
+        self.assertEqual(self.root.read("register.csv"), before)
+        # The last trading day may be today itself.
+        r.retire(self.root.path, "GONE", "2026-10-15", "Form 25", today="2026-10-15")
+        self.assertEqual(self.rows()["GONE"]["next_review_short"], "retired 2026-10-15")
+        r.unretire(self.root.path, "GONE")
+        self.assertEqual(self.rows()["GONE"], self.applied)
+        # The CLI reads the system date.
+        tomorrow = (datetime.date.today() + datetime.timedelta(days=1)).isoformat()
+        code, _out, err = run_main(["--root", self.root.path, "retire", "--key", "GONE", "--date", tomorrow,
+                                    "--source", "Form 25"])
+        self.assertEqual(code, 2)
+        self.assertIn("--date %s is after today (%s)" % (tomorrow, datetime.date.today().isoformat()), err)
+        self.assertEqual(self.root.read("register.csv"), before)
+
+    def test_undo_on_the_same_memo_keeps_every_other_field(self):
+        """retire changes three fields; undo on the memo the key was retired on takes those three from that memo
+        and keeps what the memo cannot give (a SWEEP Px and its source, rebuild core numbers, the trigger basis)."""
+        rows = self.rows()
+        swept = dict(rows["GONE"], px_date="2026-10-05", px_source="SWEEP 2026-10-05", core_source="rebuild-assisted")
+        self.assertEqual(r.validate_row(swept), [])
+        self.assertNotEqual((swept["px_date"], swept["px_source"], swept["core_source"]),
+                            (self.applied["px_date"], self.applied["px_source"], self.applied["core_source"]))
+        self.root.write("register.csv", r.csv_text([swept if x["key"] == "GONE" else x for x in rows.values()]))
+        before = self.rows()["GONE"]
+        r.retire(self.root.path, "GONE", "2026-08-04", "Form 25")
+        report = r.unretire(self.root.path, "GONE")
+        self.assertEqual(self.rows()["GONE"], before)
+        self.assertIn("NOTE GONE restored from %s, the memo it was retired on: verdict WATCH, section WATCH and Next "
+                      "review %s come from that memo (memo wins); every other field kept"
+                      % (GONE_MEMO, before["next_review_short"]), report["notes"])
+        self.assertEqual(report["changes"][0]["new"], r.table_line(r.master_cells(before)))
+
+    def test_undo_takes_the_memo_verdict_over_a_register_hold(self):
+        """A row held at DNAF against its memo's AVOID (EA, register v280) comes back at the memo's verdict: undo
+        restores from the memo, never from the value retire overwrote, and its note says so."""
+        rows = self.rows()
+        # Grades kept (EA's own shape): the three fields come back from the memo, the rest stays.
+        hold = dict(rows["GONE"], verdict="DNAF", section="DNAF", next_review_short="n.m.")
+        self.assertEqual(r.validate_row(hold), [])
+        self.root.write("register.csv", r.csv_text([hold if x["key"] == "GONE" else x for x in rows.values()]))
+        r.retire(self.root.path, "GONE", "2026-08-04", "Form 25")
+        report = r.unretire(self.root.path, "GONE")
+        gone = self.rows()["GONE"]
+        self.assertEqual(gone, dict(hold, verdict=self.applied["verdict"], section=self.applied["section"],
+                                    next_review_short=self.applied["next_review_short"]))
+        self.assertTrue(any("verdict %s" % self.applied["verdict"] in n and "memo wins" in n for n in report["notes"]))
+        # Grades blanked by the hold: that row cannot carry the memo's verdict, so undo rebuilds it from the memo.
+        blank = dict(hold, past="n.m.", future="n.m.", sf="n.m.", past_reason="n.m.", future_reason="n.m.",
+                     sf_reason="n.m.", gates_failed="0")
+        self.assertEqual(r.validate_row(blank), [])
+        self.root.write("register.csv", r.csv_text([blank if x["key"] == "GONE" else x for x in rows.values()]))
+        r.retire(self.root.path, "GONE", "2026-08-04", "Form 25")
+        report = r.unretire(self.root.path, "GONE")
+        self.assertEqual(self.rows()["GONE"], self.applied)
+        self.assertTrue(any(n.startswith("NOTE GONE rebuilt from %s: the memo's verdict" % GONE_MEMO)
+                            for n in report["notes"]), report["notes"])
+
+    def test_undo_reads_the_current_memo_after_retirement(self):
+        """retire --undo rebuilds from the one file in memos/GONE/, never from the memo_path the RETIRED row kept:
+        here a REVIEW memo landed after the key was retired and its predecessor moved to archive/memos/GONE/."""
+        r.retire(self.root.path, "GONE", "2026-08-04", "Form 25")
+        newer = "memos/GONE/GONE_2026-10-10_GSC.md"
+        text = memo_text(TROW_FM, drop=("position", "zone", "add_band", "sell_flag_line", "avg_cost"), ticker="GONE",
+                         company="Gone Corp.", isin="US0000000001", memo_date="2026-10-10", memo_version="v6",
+                         verdict="AVOID", quality_future="WEAK", future_reason="no moat")
+        os.makedirs(os.path.join(self.root.path, "archive", "memos", "GONE"))
+        os.replace(os.path.join(self.root.path, GONE_MEMO), os.path.join(self.root.path, "archive", GONE_MEMO))
+        self.root.write(newer, text)
+        self.assertEqual(self.rows()["GONE"]["memo_path"], GONE_MEMO)          # what the RETIRED row cites
+        others = [x for k, x in self.rows().items() if k != "GONE"]
+        report = r.unretire(self.root.path, "GONE")
+        gone = self.rows()["GONE"]
+        # Exactly the row apply --memo writes from that memo onto the register as it stood before retirement.
+        twin = TempRoot({"register.csv": r.csv_text(others + [self.applied]), newer: text})
+        try:
+            r.apply_memo(twin.path, newer)
+            expected = {x["key"]: x for x in r.load_csv(twin.path)[0]}["GONE"]
+        finally:
+            twin.close()
+        self.assertEqual(gone, expected)
+        self.assertEqual((gone["memo_path"], gone["memo_date"], gone["memo_version"], gone["verdict"],
+                          gone["section"], gone["future_reason"]),
+                         (newer, "2026-10-10", "v6", "AVOID", "AVOID-1", "no moat"))
+        self.assertIn("NOTE GONE rebuilt from the current memo %s (the RETIRED row cited %s)" % (newer, GONE_MEMO),
+                      report["notes"])
+        self.assertEqual(report["changes"][0]["new"], r.table_line(r.master_cells(gone)))
+
+    def test_undo_needs_exactly_one_memo_in_the_folder(self):
+        r.retire(self.root.path, "GONE", "2026-08-04", "Form 25")
+        before = self.root.read("register.csv")
+        folder = os.path.join(self.root.path, "memos", "GONE")
+
+        def refused(needle):
+            with self.assertRaises(r.ToolError) as caught:
+                r.unretire(self.root.path, "GONE")
+            self.assertIn(needle, str(caught.exception))
+            self.assertEqual(self.root.read("register.csv"), before)
+
+        second = "memos/GONE/GONE_2026-10-10_GSC.md"
+        self.root.write(second, memo_text(TROW_FM, ticker="GONE"))
+        refused("memos/GONE/ holds 2 files (GONE_2026-10-03_GSC.md, GONE_2026-10-10_GSC.md): the current memo is "
+                "the one file there")
+        code, _out, err = run_main(["--root", self.root.path, "retire", "--undo", "--key", "GONE"])
+        self.assertEqual(code, 2)
+        self.assertIn("memos/GONE/ holds 2 files", err)
+        os.remove(os.path.join(self.root.path, second))
+        os.remove(os.path.join(self.root.path, GONE_MEMO))
+        refused("memos/GONE/ holds 0 files: the current memo is the one file there")
+        os.rmdir(folder)
+        refused("memos/GONE/ holds 0 files")
+        self.root.write("memos/GONE/notes.md", "x")
+        refused("memos/GONE/notes.md is not memos/{KEY}/{KEY}_{date}_GSC.md for GONE")
+        os.remove(os.path.join(folder, "notes.md"))
+        self.root.write("memos/GONE/GON2_2026-10-03_GSC.md", memo_text(TROW_FM, ticker="GON2"))
+        refused("memos/GONE/GON2_2026-10-03_GSC.md is not memos/{KEY}/{KEY}_{date}_GSC.md for GONE")
+
+    def test_cli(self):
+        code, out, err = run_main(["--root", self.root.path, "retire", "--key", "GONE", "--date", "2026-08-04",
+                                   "--source", "Form 25"])
+        self.assertEqual(code, 0, err)
+        self.assertEqual(json.loads(out)["entry"],
+                         "GONE retired: RETIRED (was WATCH; last trading day 2026-08-04; source: Form 25)")
+        for argv, needle in ((["retire", "--key", "GONE", "--date", "2026-08-04"], "retire takes --key"),
+                             (["retire", "--undo", "--key", "GONE", "--date", "2026-08-04"], "--undo takes only --key")):
+            code, _out, err = run_main(["--root", self.root.path] + argv)
+            self.assertEqual(code, 2, argv)
+            self.assertIn(needle, err)
+        code, out, err = run_main(["--root", self.root.path, "retire", "--undo", "--key", "GONE"])
+        self.assertEqual(code, 0, err)
+        self.assertEqual(json.loads(out)["row"], "retire --undo GONE")
+        self.assertEqual(self.rows()["GONE"], self.applied)
+
+
+class RetiredRowTests(unittest.TestCase):
+    def test_validate_row_rules(self):
+        self.assertEqual(r.section_for("RETIRED", 2), "RETIRED")
+        self.assertEqual(r.validate_row(retired_row("A")), [])
+        nm = retired_row("B", past=r.NM, future=r.NM, sf=r.NM, past_reason=r.NM, future_reason=r.NM,
+                         sf_reason=r.NM, trigger_basis=r.NM, px=r.OWED, trigger=r.NM, mcap_fcf=r.NM, ev_oi=r.NM)
+        self.assertEqual(r.validate_row(nm), [])                 # a Gate-0 memo's n.m. grades and basis stay
+        bad = [(dict(next_review_short=r.NM), "reads 'retired YYYY-MM-DD'"),
+               (dict(next_review_short="retired 2026-02-30"), "reads 'retired YYYY-MM-DD'"),
+               (dict(next_review_short="2026-08-04"), "reads 'retired YYYY-MM-DD'"),
+               (dict(held="true", zone="HOLD", add_band="80", sell_line="200", last_zone_check="2026-08-01",
+                     avg_cost="50 USD"), "a held name is never retired"),
+               (dict(gates_failed="1"), "gates_failed: 1, but the grades give 2"),
+               (dict(section="DNAF"), "section: DNAF, but verdict and gates give RETIRED"),
+               (dict(sf_reason="delisted"), "reason vocabulary")]
+        for over, needle in bad:
+            problems = r.validate_row(retired_row("C", **over))
+            self.assertTrue(any(needle in p for p in problems), (over, problems))
+        problems = r.validate_row(csv_row("D", next_review_short="retired 2026-08-04"))
+        self.assertTrue(any("is not YYYY-MM-DD, Qn YYYY, Mon YYYY or n.m." in p for p in problems), problems)
+        problems = r.validate_row(csv_row("E", verdict="GONE"))
+        self.assertTrue(any("is not one of BUY/WATCH/AVOID/DNAF/RETIRED" in p for p in problems), problems)
+
+    def test_render_order_counts_and_byte_identity_without_retired(self):
+        rows = RenderTests().rows()
+        plain = r.render(rows, "v308", "2026-10-07")
+        self.assertNotIn("RETIRED", plain)
+        self.assertIn('\nordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI '
+                      'ascending, n.m. then - last; DNAF alphabetical"\n', plain)
+        both = rows + [retired_row("ZED"), retired_row("ABC", past=r.NM, future=r.NM, sf=r.NM, past_reason=r.NM,
+                                                        future_reason=r.NM, sf_reason=r.NM)]
+        text = r.render(both, "v308", "2026-10-07")
+        heads = [l for l in text.split("\n") if l.startswith("## ")]
+        self.assertEqual(heads[-2:], ["## DNAF (2)", "## RETIRED (2)"])
+        tail = text.split("## RETIRED (2)")[1]
+        self.assertLess(tail.index("| ABC |"), tail.index("| ZED |"))
+        self.assertIn("names_total: 12\n", text)
+        self.assertIn('verdict_split: "BUY 0 · WATCH 6 · AVOID 2 (one gate 1 · two+ 1) · DNAF 2 · RETIRED 2"', text)
+        self.assertIn('\nordering: "v4.6.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF → RETIRED; '
+                      'EV/OI ascending, n.m. then - last; DNAF and RETIRED alphabetical"\n', text)
+        # Everything else is the rendering without them, the RETIRED section appended last.
+        body = lambda t: t.split("---\n", 2)[2]
+        self.assertTrue(body(text).startswith(body(plain) + "\n## RETIRED (2)\n\n"), body(text)[-600:])
+        self.assertEqual([x["key"] for x in r.canonical(both)][-2:], ["ABC", "ZED"])
+
+    def test_the_repository_register_renders_byte_for_byte(self):
+        """The committed _REGISTER.md is what this tool renders from the committed register.csv (the v4.5.x
+        tool rendered it while no RETIRED row existed)."""
+        csv_path, md_path = os.path.join(REPO, "register.csv"), os.path.join(REPO, "_REGISTER.md")
+        if not (os.path.isfile(csv_path) and os.path.isfile(md_path)):
+            self.skipTest("no register in this checkout")
+        rows, problems = r.load_csv(REPO)
+        self.assertEqual(problems, [])
+        with open(md_path, "rb") as fh:
+            md = fh.read().decode("utf-8").replace("\r\n", "\n")
+        fm = r.parse_front_matter(md)
+        self.assertEqual(r.render(rows, fm["register_version"], fm["register_date"]), md)
+
+    def test_check_does_not_recompute_a_retired_row(self):
+        gone = held_core(retired_row("GONE", px="104.62", mcap_fcf="15.1", ev_oi="10.9", ev_oi_all_cash="9.5",
+                                     memo_path="memos/GONE/GONE_2026-09-01_GSC.md"))
+        bad = dict(gone, key="GON2", memo_path="memos/GON2/GON2_2026-09-01_GSC.md", mcap_fcf="12")
+        self.assertEqual(r.validate_row(gone), [])
+        root = CheckTests().build([gone, bad], md=r.render([gone], "v10", "2026-10-07"))
+        try:
+            breaches, _listed, counts = r.check(root.path, base="HEAD")
+        finally:
+            root.close()
+        self.assertFalse(any("does not recompute" in b for b in breaches), breaches)
+        self.assertIn("GON2: mcap_fcf: '12' is not a one-decimal multiple", breaches)
+        self.assertEqual(counts["RETIRED"], 2)
+
+    def test_sweep_scope_position_retrigger_and_rebuild_leave_it(self):
+        rows = [csv_row("LIVE"), retired_row("GONE")]
+        root = TempRoot({"register.csv": r.csv_text(rows)})
+        try:
+            code, out, _err = run_main(["--root", root.path, "sweep-scope"])
+        finally:
+            root.close()
+        self.assertEqual(code, 0)
+        self.assertEqual([line.split(",")[0] for line in out.splitlines()[1:]], ["LIVE"])
+        old = retired_row("OLDR", trigger="70", trigger_basis="all-cash", model_version="v4.4.1")
+        self.assertEqual(r.validate_row(old), [])
+        resolved, unresolved, nm_rows, _rejected = r.retrigger_rows("/nonexistent", [dict(old)])
+        self.assertEqual((resolved, unresolved, nm_rows), ([], [], []))
+        root = TempRoot({"_REGISTER.md": r.render([csv_row("LIVE"), retired_row("GONE")], "v10", "2026-10-07"),
+                         "register.csv": r.csv_text([csv_row("LIVE"), retired_row("GONE")])}, git=True)
+        try:
+            with self.assertRaises(r.ToolError) as caught:
+                r.rebuild(root.path, "HEAD")
+        finally:
+            root.close()
+        self.assertIn("holds a RETIRED section", str(caught.exception))
+
+
+class RetiredHoldingTests(unittest.TestCase):
+    """MODEL v4.6.0 section 7.1 (G5) and section 2 Group dependencies (G4): a RETIRED holding is never reviewed, so
+    its parent, not the holding, is the work item; a RETIRED parent is never re-run."""
+
+    def test_a_retired_holding_lists_its_parent_once(self):
+        rows = [csv_row("PAR", holding_keys="GONE; OLDV", memo_date="2026-09-01"),
+                retired_row("GONE", memo_date="2026-09-20", model_version="v4.4.0",
+                            memo_path="memos/GONE/GONE_2026-09-20_GSC.md", next_review_short="retired 2026-09-25"),
+                csv_row("OLDV", memo_date="2026-08-01", model_version="v4.4.0"),
+                retired_row("RPAR", holding_keys="OLDV; NOPE", memo_date="2026-01-01",
+                            memo_path="memos/RPAR/RPAR_2026-01-01_GSC.md")]
+        listed = r.holding_findings(rows, "2026-10-15")
+        self.assertEqual([x for x in listed if "GONE" in x],
+                         ["PAR: parent stale - holding GONE retired — re-test the parent"])
+        self.assertIn("PAR: parent stale - holding OLDV memo 2026-08-01 v4.4.0 is not current (P26)", listed)
+        self.assertFalse(any(x.startswith("RPAR:") for x in listed), listed)
+        # The same holding, not RETIRED, reads as a stale memo (REVIEW would take the holding itself) and a newer one.
+        live = r.holding_findings([rows[0], dict(rows[1], verdict="AVOID"), rows[2]], "2026-10-15")
+        self.assertIn("PAR: parent stale - holding GONE memo 2026-09-20 v4.4.0 is not current (P26)", live)
+        self.assertIn("PAR: parent stale - holding GONE memo 2026-09-20 is newer than this memo 2026-09-01", live)
+
+    def test_check_lists_it_never_as_a_breach(self):
+        rows = [csv_row("PAR", holding_keys="GONE", memo_date="2026-09-01"),
+                retired_row("GONE", next_review_short="retired 2026-09-25")]
+        root = CheckTests().build(rows)
+        try:
+            breaches, listed, _counts = r.check(root.path, base="HEAD")
+            code, out, _err = run_main(["--root", root.path, "check", "--base", "HEAD"])
+        finally:
+            root.close()
+        self.assertEqual(breaches, [])
+        self.assertEqual([x for x in listed if "holding" in x],
+                         ["PAR: parent stale - holding GONE retired — re-test the parent"])
+        self.assertEqual(code, 0, out)
+        self.assertIn("LIST    PAR: parent stale - holding GONE retired — re-test the parent", out)
+
+
+    def test_a_parent_memo_after_the_last_trading_day_has_re_read_it(self):
+        # The finding fires once: a parent memo dated after the holding's last trading day already re-read it,
+        # so check does not re-queue the parent every day (no loop at REVIEW priority 1c).
+        rows = [csv_row("PAR", holding_keys="GONE", memo_date="2026-10-01"),
+                retired_row("GONE", next_review_short="retired 2026-09-25")]
+        self.assertEqual([x for x in r.holding_findings(rows, "2026-10-15") if "GONE" in x], [])
+        same_day = [dict(rows[0], memo_date="2026-09-25"), rows[1]]
+        self.assertEqual([x for x in r.holding_findings(same_day, "2026-10-15") if "GONE" in x],
+                         ["PAR: parent stale - holding GONE retired — re-test the parent"])
+
+
+class DependencyTokenTests(unittest.TestCase):
+    def test_unit_and_sub_dependency_are_future_reasons(self):
+        # MODEL v4.6.0 section 7.1: `dependency` is an ungradeable part, printed `sub dependency` for a listed
+        # subsidiary or holding and `unit dependency` for an undescribed material unit (new); never Past or SF.
+        for value in ("unit dependency", "sub dependency", "dependency"):
+            self.assertTrue(r.reason_ok("future", value), value)
+            self.assertFalse(r.reason_ok("past", value), value)
+            self.assertFalse(r.reason_ok("sf", value), value)
+            self.assertEqual(r.validate_row(csv_row("A", verdict="AVOID", future="WEAK", future_reason=value)), [],
+                             value)
+            for name, grade in (("past_reason", "past"), ("sf_reason", "sf")):
+                row = csv_row("A", verdict="AVOID", **{grade: "FAIL" if grade == "sf" else "WEAK", name: value})
+                self.assertTrue(any("reason vocabulary" in p for p in r.validate_row(row)), (name, value))
+            # An ADEQUATE prints a concentration caveat or nothing: an ungradeable part is no caveat.
+            problems = r.validate_row(csv_row("A", future="ADEQUATE", future_reason=value))
+            self.assertTrue(any("concentration caveat" in p for p in problems), (value, problems))
+        for value in ("unit sub dependency", "units dependency", "unit dependency owed"):
+            self.assertFalse(r.reason_ok("future", value), value)
+        # A group memo (its B4 Division table) prints either; a memo that is no group carries no group prefix.
+        for value in ("unit dependency", "sub dependency"):
+            fails, warns = LintTests().group(verdict="AVOID", quality_future="WEAK", future_reason=value)
+            self.assertEqual(fails, [], (value, warns))
+        fails, _ = r.lint_memo(LintTests.PATH, memo_text(TROW_FM, verdict="AVOID", quality_future="WEAK",
+                                                         future_reason="unit dependency"))
+        self.assertTrue(any("carries the group prefix 'unit'" in f for f in fails), fails)
 
 if __name__ == "__main__":
     result = unittest.main(exit=False, verbosity=1).result

@@ -13,7 +13,7 @@ the Held marker, its legend line, the holdings sentence of the notice, the
 lead's sweep count and the AVOID / not-analysed price dates), HTML escaping of
 hostile names and memo text, section membership and counts against
 register.csv, the stat strip and the re-test banner (only the '▶ Method
-re-tests' block counts, only keys in the register), distance arithmetic and the
+re-tests' blocks count, only keys in the register), distance arithmetic and the
 closeness bar, the WATCH reason read from its own distance, buy-zone prices on
 BUY and WATCH only, not-analysed rows without grades, returns or multiples,
 page order (WATCH by distance, AVOID by EV/OI with n.m. then '-' last), the
@@ -28,8 +28,16 @@ before an aside, 'Remains', a cross-reference to another memo, 'real and ...
 (source)'), clause-aware clipping, the plain-language reason tables, and that
 the tool's own source passes the routine guard hook's code scan. A smoke test
 renders the real register when it is present, with and without the Held
-marker.
+marker. v4.6.0: RETIRED rows (G5) stay off the page, its sections, counts and
+lead; the plain words for `reinvestment` (G4) and for `unit dependency` and
+`sub dependency` (G3, G4); the groups paragraph without the retired too-hard
+pile (G2); the one Gate-0 ground left (G2, P30) in the not-analysed reason,
+its definition and the first question, and ROE for banks and insurers on the
+bank lens only; every '▶ Method re-tests' block counts, the v4.6.0 block
+above the v4.5.0 one (the union of their keys, each under its first block's
+version), on the page, the banner and stats.
 """
+import collections
 import contextlib
 import io
 import json
@@ -408,7 +416,7 @@ class PageTests(unittest.TestCase):
             self.assertEqual(dnaf[field], "", field)
         self.assertEqual((dnaf["mf"], dnaf["eo"], dnaf["d"]), (s.DASH, s.DASH, s.DASH))
         self.assertEqual(dnaf["v"], "DNAF")
-        self.assertEqual(dnaf["vw"], s.DNAF_WHY)
+        self.assertEqual(dnaf["vw"], s.DNAF_WHY_EARLIER)                 # a DNAF memo below v4.6.0
         # An older memo's grades and figures never reach a not-analysed row.
         old = s.page_row(row("KKK", "DNAF", past="ADEQUATE", past_reason="14.7% ROCE", future="WEAK",
                              sf="FAIL", sf_reason="control", mcap_fcf="12.0"), "", {"moat": "Brand", "roce": "9%"},
@@ -773,17 +781,64 @@ class RoundTwoTests(unittest.TestCase):
         self.assertEqual(self.rows["BBB.DE"]["fw"], "")
 
     def test_groups_and_the_too_hard_pile(self):
-        # R3-R5: groups judged as a whole; R4: banks and insurers outside the bank lens, and anything neither
-        # lens reads, are not analysed further; no holding company reads ROE.
+        # R3-R5: groups judged as a whole; no holding company reads ROE. v4.6.0: conglomerates, trading houses
+        # and holding companies are analysed at the parent, their allocation across the parts included (G4);
+        # the R4 too-hard pile is retired (G2): a bank or insurer outside the bank lens is read on the
+        # industrial lens.
         self.assertNotIn("some holding companies", self.page)
-        self.assertIn("Groups are judged as a whole: returns on the group accounts, competitive position as an "
-                      "income-weighted average of the businesses, price on the whole group. Banks and insurers that "
-                      "do not fit the bank lens, and businesses neither lens can read, are not analysed further.",
+        self.assertIn("Groups, conglomerates, trading houses and holding companies included, are judged as a whole: "
+                      "returns on the group accounts, competitive position as an income-weighted average of the "
+                      "businesses, shareholder-friendliness including how the group allocates capital among them, "
+                      "price on the whole group. Banks and insurers that do not fit the bank lens are read on the "
+                      "industrial lens, with conservative rules for deposits, insurance funds and unlisted stakes.",
                       self.page)
+        self.assertNotIn("neither lens can read, are not analysed further", self.page)
         self.assertEqual(s.PLAIN_FUTURE["dependency"], "depends on a listed subsidiary or holding that cannot be graded")
         self.assertNotIn("dependency", s.PLAIN_PAST)          # Past is never weighted (review fix B1)
         self.assertEqual(set(s.PLAIN_PREFIX), {"unit", "sub"})
-        self.assertIn("neither of the method's two lenses can read it", s.DNAF_WHY)
+        # v4.6.0 (G2, P30): the one Gate-0 ground left; the two-lens, no-listed-share and too-hard grounds retired.
+        why = ("Stopped at the first question: the filings do not show what the business sells, and who pays for "
+               "it, for most of its revenue.")
+        self.assertEqual(s.DNAF_WHY, why)
+        # Only a DNAF memo written under v4.6.0 or later stopped on that ground; an earlier one keeps its own.
+        self.assertEqual(self.rows["HHH"]["vw"], s.DNAF_WHY_EARLIER)
+        for version, want in (("v4.6.0", why), ("v4.10.2", why), ("v5.0.0", why), ("4.6.0", why), ("v4.6", why),
+                              (" v4.6.1 ", why), ("v4.5.3", s.DNAF_WHY_EARLIER), ("4.5", s.DNAF_WHY_EARLIER),
+                              ("v4.4.1", s.DNAF_WHY_EARLIER), ("-", s.DNAF_WHY_EARLIER), ("", s.DNAF_WHY_EARLIER)):
+            self.assertEqual(s.verdict_why(row("NNN", "DNAF", model_version=version)), want, version)
+        self.assertNotIn("filings do not show", s.DNAF_WHY_EARLIER)
+        self.assertIn('<dt><span class="v v-DNAF">Not analysed</span></dt><dd>%s</dd>' % why, self.page)
+        self.assertIn("<li><b>Do I understand it?</b> The business is described in one plain sentence, the best its "
+                      "filings allow: what it sells, who pays for it, its industry, its legal and operating form, "
+                      "where it works, and its status. A long sentence or a list of businesses still passes. Only "
+                      "when the filings do not show what the business sells, and who pays for it, for most of its "
+                      "revenue is it not analysed further.</li>", self.page)
+        for retired in ("two lenses", "neither lens", "no listed share", "cannot be described simply",
+                        "must fit one plain sentence", "not analysed further."):
+            # The method text never states a retired ground; only an earlier DNAF row's own reason names one.
+            page = self.page.replace("revenue is it not analysed further.", "").replace(
+                json.dumps(s.DNAF_WHY_EARLIER, ensure_ascii=False)[1:-1], "")
+            self.assertNotIn(retired, page, retired)
+        # ROE and the capital test are for banks and insurers on the bank lens only; the rest read on STD.
+        terms = s.terms({"units": [], "retest_count": 0, "held_marker": False})
+        self.assertIn("ROE (return on equity) replaces ROCE for banks and insurers on the bank lens.", terms)
+        self.assertIn("For banks and insurers on the bank lens it reads market value ÷ net income", terms)
+        self.assertIn("(and EV/OI for banks and insurers on the bank lens)", terms)
+        self.assertIn("Banks and insurers on the bank lens (a licensed bank or insurer that publishes a regulatory "
+                      "capital ratio for the whole group, with no sizeable non-financial business) are graded on "
+                      "return on equity and a regulatory capital test instead.", self.page)
+        self.assertIn("<span>Banks and insurers on the bank lens: return on equity <code>≥ 15%</code> and a capital "
+                      "test, for Strong or Adequate</span>", self.page)
+        self.assertNotIn("replaces ROCE for banks and insurers.", terms)
+        self.assertNotIn("<span>Banks and insurers: return on equity", self.page)
+        # `dependency` reads whole with its prefix (MODEL section 7.1, v4.6.0): a listed part, or an undescribed unit.
+        self.assertEqual(s.future_why("WEAK", "sub dependency"),
+                         "depends on a listed subsidiary or holding that cannot be graded")
+        self.assertEqual(s.future_why("WEAK", "unit dependency"),
+                         "depends on a business unit that its filings do not describe, which cannot be graded")
+        self.assertEqual(s.plain_reason(s.PLAIN_FUTURE, "unit breadth"),
+                         "in one business unit: customer or supplier base too narrow")
+        self.assertEqual(s.plain_reason(s.PLAIN_PAST, "unit dependency"), "in one business unit: dependency")
 
     def test_sf_vocabulary_matches_the_register_tool(self):
         import gsc_register
@@ -796,6 +851,119 @@ class RoundTwoTests(unittest.TestCase):
                       "the economics. Otherwise a single warning sign is noted as a caution.", self.page)
         self.assertNotIn("pledg", self.page.lower())
         self.assertNotIn("pledg", render(self.fx, no_held=True).lower())
+
+
+class RetiredTests(unittest.TestCase):
+    """MODEL v4.6.0 section 7.1 (G5): a RETIRED row's listed line has ceased to trade; the page leaves it out."""
+
+    def test_retired_rows_stay_off_the_page(self):
+        gone = row("RRR", "RETIRED", verdict="RETIRED", company="Retired Holdings", past="ADEQUATE",
+                   past_reason="14.7% ROCE", future="WEAK", future_reason="no moat", sf="FAIL", sf_reason="buybacks",
+                   gates_failed="2", px_source="memo", next_review_short="retired 2026-08-04")
+        fx = Fixture(rows=default_rows() + [gone], files={
+            "memos/RRR/RRR_2026-09-01_GSC.md": memo("RRR", [("2. Understanding", "RRR sells retired widgets.")])})
+        base = Fixture()
+        try:
+            page, plain = render(fx), render(base)
+            ctx, sections, _extraction, rows = s.build(fx.path)
+            code, out, err = run_main(["stats", "--repo", fx.path])
+        finally:
+            fx.close()
+            base.close()
+        self.assertEqual(page, plain)                       # byte for byte the page without the RETIRED row
+        for text in ("RRR", "Retired Holdings", "retired widgets", "RETIRED", "retired 2026"):
+            self.assertNotIn(text, page)
+        self.assertEqual(ctx["names"], 8)
+        self.assertEqual([sec["id"] for sec in sections], list(s.SECTION_ORDER))
+        self.assertNotIn("RETIRED", s.SECTION_ORDER)
+        self.assertNotIn("RRR", [r["key"] for r in rows])
+        self.assertEqual(code, 0, err)
+        self.assertIn("8 rows", out)
+
+    def test_reinvestment_in_plain_words(self):
+        self.assertEqual(s.plain_reason(s.PLAIN_SF, "reinvestment"),
+                         "most of the group's new capital went into businesses earning below the method's 10% "
+                         "return line")
+
+
+TWO_BLOCKS = ("# TODO\n\n## ▶ Review requests\n\n- `DDD.L` — review\n\n"
+              "## ▶ Method re-tests v4.6.0\n\n*Intro.*\n\n**Held — first.**\n\nNone.\n\n"
+              "- `HHH` — DNAF on a retired ground → run the full analysis.\n"
+              "- `AAA` — also in the v4.5.0 block.\n- `ZZZ` — not in the register.\n\n---\n\n"
+              "## ▶ Method re-tests v4.5.0\n\n*Intro.*\n\n- `AAA` — worth test → AVOID (60%).\n"
+              "  - `BBB.DE` — an indented line counts too.\n- `CCC` — R7.\n\n"
+              "## ▶ Other block\n\n- `EEE.ST` — not a re-test.\n")
+
+
+class RetestBlocksTests(unittest.TestCase):
+    """MODEL v4.6.0 section 8.2 step 3: `▶ Method re-tests v4.6.0` sits above `▶ Method re-tests v4.5.0`, and both
+    count: the union of their keys, each under the version of the first block that lists it."""
+
+    def test_both_blocks_count(self):
+        fx = Fixture(files={"queue/TODO.md": TWO_BLOCKS})
+        try:
+            versions, keys = s.retest_block(fx.path)
+            ctx, sections, _extraction, _rows = s.build(fx.path)
+            page = s.render_page(ctx, sections)
+            code, out, err = run_main(["stats", "--repo", fx.path])
+        finally:
+            fx.close()
+        self.assertEqual(versions, ["v4.6.0", "v4.5.0"])
+        self.assertEqual(list(keys.items()), [("HHH", "v4.6.0"), ("AAA", "v4.6.0"), ("ZZZ", "v4.6.0"),
+                                              ("BBB.DE", "v4.5.0"), ("CCC", "v4.5.0")])
+        self.assertEqual((ctx["retest_count"], ctx["retest_watch"]), (4, 3))     # ZZZ is not in the register
+        self.assertEqual(ctx["retest_versions"], [("v4.6.0", 2), ("v4.5.0", 2)])
+        self.assertEqual(ctx["retest_version"], "v4.6.0 and v4.5.0")
+        rows = {r["k"]: r for sec in page_data(page)["sections"] for r in sec["rows"]}
+        self.assertEqual(sorted(k for k in rows if rows[k].get("r")), ["AAA", "BBB.DE", "CCC", "HHH"])
+        plain = page.replace("<b>", "").replace("</b>", "")
+        self.assertIn("4 companies, including 3 of the 3 on the shortlist, are being re-tested under updated "
+                      "versions of the method (v4.6.0 and v4.5.0).", plain)
+        self.assertIn('<div class="stat stat-note"><b>4</b><span>Being re-tested</span></div>', page)
+        self.assertEqual(code, 0, err)
+        self.assertIn("re-test 4 (v4.6.0 2, v4.5.0 2)", out)
+
+    def test_a_block_without_register_keys_drops_out_of_the_label(self):
+        todo = TWO_BLOCKS.replace("- `HHH` — DNAF on a retired ground → run the full analysis.\n", "").replace(
+            "- `AAA` — also in the v4.5.0 block.\n", "")
+        fx = Fixture(files={"queue/TODO.md": todo})
+        try:
+            ctx, sections, _extraction, _rows = s.build(fx.path)
+            code, out, err = run_main(["stats", "--repo", fx.path])
+        finally:
+            fx.close()
+        self.assertEqual(ctx["retest_versions"], [("v4.5.0", 3)])
+        self.assertEqual(ctx["retest_version"], "v4.5.0")
+        self.assertIn("are being re-tested under an updated version of the method (v4.5.0).",
+                      s.retest_banner(ctx).replace("<b>", "").replace("</b>", ""))
+        self.assertEqual(code, 0, err)
+        self.assertIn("re-test 3 (v4.5.0)", out)
+        self.assertEqual(s.retest_versions(["v4.6.0", "", "v4.6.0"], {}), [("v4.6.0", 0)])
+        fx = Fixture(files={"queue/TODO.md": "# TODO\n\n## ▶ Other block\n\n- `AAA` — x\n"})
+        try:
+            self.assertEqual(s.retest_block(fx.path), ([], {}))
+            code, out, err = run_main(["stats", "--repo", fx.path])
+        finally:
+            fx.close()
+        self.assertIn("re-test 0 (no block)", out)
+
+    def test_the_checkout_todo_counts_every_block(self):
+        todo = os.path.join(REPO, "queue", "TODO.md")
+        if not (os.path.isfile(todo) and os.path.isfile(os.path.join(REPO, "register.csv"))):
+            self.skipTest("no queue/TODO.md or register.csv in this checkout")
+        with open(todo, encoding="utf-8") as fh:
+            text = fh.read()
+        ctx, _sections, _extraction, rows = s.build(REPO)
+        in_register = {r["key"] for r in rows}
+        first = {}                                  # key -> the version of the first block listing it
+        for title, block in re.findall(r"(?ms)^## ▶ Method re-tests([^\n]*)\n(.*?)(?=^## |\Z)", text):
+            version = re.search(r"v\d+\.\d+\.\d+", title)
+            for key in re.findall(r"(?m)^\s*-\s+`([A-Za-z0-9._-]+)`", block):
+                if key in in_register:
+                    first.setdefault(key, version.group(0) if version else "")
+        self.assertEqual(ctx["retest_count"], len(first))
+        self.assertEqual(dict(ctx["retest_versions"]),
+                         {v: n for v, n in collections.Counter(first.values()).items() if v})
 
 
 class CliTests(unittest.TestCase):

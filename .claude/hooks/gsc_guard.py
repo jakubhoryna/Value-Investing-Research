@@ -23,9 +23,12 @@ In routine sessions it blocks (exit 2, one stderr line):
     mv away and rm of _REGISTER.md or register.csv at the repo root. Only
     routines/tools/gsc_register.py writes them (run with python3; reading and
     copying them elsewhere, and git checkout of them, stay allowed). Its
-    `rebuild` subcommand (the one-time attended lean rebuild) and `retrigger`
-    subcommand (the one-time attended trigger re-read of round 2, R10) are
-    refused;
+    `rebuild` subcommand (the one-time attended lean rebuild), `retrigger`
+    subcommand (the one-time attended trigger re-read of round 2, R10) and
+    `retire` subcommand (the attended RETIRED state and its --undo, MODEL
+    v4.6.0 section 7.1, G5) are refused, whether the tool runs as a script
+    or as a module (python3 -m routines.tools.gsc_register, or a runner
+    module such as runpy or pdb in front of it);
   * PushNotification outside the routine push rule (MODEL v4.5.0 §8.7 item
     11, routines/README.md §5): the message must start 'GSC {CLASS} · {JOB}'
     with CLASS one of BUY, HELD, VERDICT CHANGE, STOPPED, BLOCKED, STALL (HELD
@@ -120,7 +123,7 @@ BRANCH_RE = re.compile(
 
 # Command wrappers skipped before the real program. Value = options taking an argument.
 WRAPPERS = {
-    "sudo": {"-u", "-g", "-C", "-h", "-p"}, "env": {"-u", "-C", "-S"},
+    "sudo": {"-u", "-g", "-C", "-h", "-p"}, "env": {"-u", "-C"},
     "command": set(), "nice": {"-n"}, "time": {"-f", "-o"}, "nohup": set(),
     "stdbuf": {"-i", "-o", "-e"}, "exec": {"-a"}, "builtin": set(),
     "timeout": {"-s", "-k", "--signal", "--kill-after"},
@@ -173,6 +176,18 @@ TOKEN_LITERAL_RE = re.compile(r"(?<![A-Za-z0-9])(github_pat_|gh[pousr]_)[A-Za-z0
 
 INTERPRETERS = re.compile(r"^(python[0-9.]*|node|nodejs|perl|ruby|bash|sh|zsh|dash|ksh)$")
 SHELLS = {"bash", "sh", "zsh", "dash", "ksh"}
+# Python's short options that take an argument: the rest of their cluster ('-mpkg', '-Wignore',
+# '-Bc code') or the next word. -c and -m end the interpreter's own options.
+PY_ARG_OPTS = "cmWX"
+# The register tool's attended-only subcommands (MODEL v4.5.0 §7.1b; round 2, R10; v4.6.0 §7.1, G5).
+REGISTER_ATTENDED = (
+    ("rebuild", "gsc_register.py rebuild is the one-time attended lean rebuild (MODEL v4.5.0 §7.1b); "
+                "routines never run it"),
+    ("retrigger", "gsc_register.py retrigger is the one-time attended trigger re-read (MODEL v4.5.0 "
+                  "round 2, R10); routines never run it"),
+    ("retire", "gsc_register.py retire sets or undoes the RETIRED register state, attended only (MODEL "
+               "v4.6.0 §7.1, G5); a routine raises a delisting awaiting retirement as an open item"),
+)
 LOCKED_FRAG_RE = re.compile(r"model/|routines/|\.claude|\.github|CLAUDE\.md|CLAUDE\.local\.md|"
                             r"AGENTS\.md|settings\.local\.json|disableAllHooks")
 WRITE_IND_RE = re.compile(
@@ -196,6 +211,32 @@ SUBST = "__GSC_SUBST__"          # placeholder for $( ), ` `, <( ), >( )
 HEREDOC = "__GSC_HEREDOC_%d__"   # placeholder for a heredoc operator
 HEREDOC_OP_RE = re.compile(r"<<(-?)[ \t]*(\\?)(['\"]?)(\w+)\3")
 MAX_DEPTH = 6
+
+
+def python_short_option(word):
+    """(option, attached value) for the first argument-taking option of a python short-option
+    cluster ('-m' -> ('m', ''), '-Bmpkg' -> ('m', 'pkg'), '-Wignore' -> ('W', 'ignore')), or
+    (None, None) for a cluster of plain flags ('-B', '-OO')."""
+    for k, ch in enumerate(word[1:], 1):
+        if ch in PY_ARG_OPTS:
+            return ch, word[k + 1:]
+    return None, None
+
+
+def register_tool_word(word):
+    """True when a word names the register tool: its script (any path to gsc_register.py) or
+    its module (routines.tools.gsc_register, or gsc_register run from routines/tools)."""
+    w = word.replace("\\", "/")
+    if os.path.basename(w).lower() == "gsc_register.py":
+        return True
+    return "/" not in w and w.rsplit(".", 1)[-1].lower() == "gsc_register"
+
+
+def check_register_tool(rest):
+    """The words after the register tool: refuse its attended-only subcommands."""
+    for sub, reason in REGISTER_ATTENDED:
+        if sub in rest:
+            block(reason)
 
 
 class Blocked(Exception):
@@ -820,6 +861,18 @@ class Guard:
             opts, j = WRAPPERS[w], 1
             while j < len(words):
                 a = words[j]
+                if w == "env":
+                    # GNU env takes any unambiguous prefix of a long option (getopt_long).
+                    name = a.split("=", 1)[0]
+                    long_opt = a.startswith("--") and len(name) >= 3
+                    if re.match(r"^-[A-Za-z0-9]*S", a) or (long_opt and "--split-string".startswith(name)):
+                        # env -S splits one string into the command and its arguments, which the guard
+                        # cannot read word by word (MODEL v4.6.0 review): run the command directly.
+                        block("env -S (split string) runs a command the guard cannot check; run the command directly")
+                    if ((long_opt and "=" not in a and ("--unset".startswith(name) or "--chdir".startswith(name)))
+                            or re.match(r"^-[A-Za-z0-9]*[uC]$", a)):
+                        j += 2                     # --unset NAME, --chdir DIR, a cluster ending in -u or -C
+                        continue
                 if a in opts:
                     j += 2
                 elif a.startswith("-") and a != "-":
@@ -1121,7 +1174,8 @@ class Guard:
         shell = prog in SHELLS
         if args[:1] and args[0] in ("--version", "-V", "--help", "-h"):
             return
-        codes, script, stdin, module, i = [], None, False, False, 0
+        codes, script, stdin, i = [], None, False, 0
+        module_words = []
         while i < len(args):
             a = args[i]
             nxt = args[i + 1] if i + 1 < len(args) else ""
@@ -1129,12 +1183,22 @@ class Guard:
                 stdin = True
                 break
             if prog.startswith("python"):
-                if a == "-c":
-                    codes.append(nxt)
+                if a == "--check-hash-based-pycs":
+                    i += 2
+                    continue
+                opt, value = python_short_option(a) if re.match(r"^-[A-Za-z]", a) else (None, None)
+                taken = 1 if value else 2           # the attached value, or the next word
+                if opt == "c":
+                    codes.append(value or nxt)
                     break
-                if a == "-m":
-                    module = True
+                if opt == "m":
+                    # The module and its arguments: python3 -m routines.tools.gsc_register retire …,
+                    # or a runner module (runpy, pdb, cProfile, trace) in front of the tool.
+                    module_words = ([value] if value else []) + args[i + 1:]
                     break
+                if opt in ("W", "X"):
+                    i += taken
+                    continue
             elif prog in ("node", "nodejs"):
                 if a in ("-e", "--eval", "-p", "--print"):
                     codes.append(nxt)
@@ -1163,14 +1227,14 @@ class Guard:
                 self.check_command(code, depth + 1, base)
         if script:
             if os.path.basename(script.replace("\\", "/")).lower() == "gsc_register.py":
-                if "rebuild" in args[i + 1:]:
-                    block("gsc_register.py rebuild is the one-time attended lean rebuild (MODEL v4.5.0 §7.1b); "
-                          "routines never run it")
-                if "retrigger" in args[i + 1:]:
-                    block("gsc_register.py retrigger is the one-time attended trigger re-read (MODEL v4.5.0 "
-                          "round 2, R10); routines never run it")
+                check_register_tool(args[i + 1:])
             self.check_script(script, base, shell, depth)
-        if not codes and not script and not module:
+        for k, word in enumerate(module_words):
+            if register_tool_word(word):
+                check_register_tool(module_words[k + 1:])
+                break
+        # A module may read its stdin as code (code, pdb), so a heredoc fed to it is checked as code too.
+        if not codes and not script:
             stdin = True
         if stdin:
             lvl["stdin_shell" if shell else "stdin_code"] = True

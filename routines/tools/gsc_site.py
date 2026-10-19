@@ -15,6 +15,13 @@ written). Round 2 (2026-10-07): the buy-zone price is the no-cash bound, the
 strict line (R10; a row still carrying the older all-cash reading is marked),
 the MCap/FCF and EV/OI cells add the 3- and 5-year averaged readings, and a
 Future ADEQUATE carried with a concentration flag shows it as a caveat (R7).
+v4.6.0: a RETIRED row (MODEL section 7.1, G5: the listed line has ceased to
+trade) is no longer an investable name and is left off the page, its counts
+included; groups are described as v4.6.0 reads them (G2, G4); a not-analysed
+row names the one Gate-0 ground left (G2, P30: the filings do not show what
+the business sells, and who pays for it, for most of its revenue); ROE and
+the capital test are for banks and insurers on the bank lens only; every
+'▶ Method re-tests' block in queue/TODO.md counts (v4.6.0 above v4.5.0).
 
 Subcommands
   render --out PATH [--repo DIR] [--no-held]   write the page: artifact page content, no
@@ -70,6 +77,7 @@ NM = "n.m."            # not meaningful
 OWED = "-"             # not established in the register
 DASH = "—"             # the page's sign for "not available"
 SECTION_ORDER = ("BUY", "WATCH", "AVOID-1", "AVOID-2", "DNAF")
+RETIRED = "RETIRED"    # a register state (MODEL v4.6.0 section 7.1): never on the page
 AVOID_NOTE = "Sorted by EV/OI, lowest first · a low multiple does not make it a buy"
 SECTIONS = {
     # id: (label - the same words on the stat tile, the filter chip and the section title; one-line note)
@@ -79,8 +87,16 @@ SECTIONS = {
     "AVOID-2": ("AVOID · failed two or more", AVOID_NOTE),
     "DNAF": ("Not analysed further", "Stopped at the first question · alphabetical"),
 }
-DNAF_WHY = ("Stopped at the first question: the business cannot be described simply, neither of the method's "
-            "two lenses can read it, or there is no listed share to assess.")
+# MODEL v4.6.0 (G2, P30): the only Gate-0 FAIL is a business whose filings do not show what it sells, and who pays
+# for it, for more than half of its revenue (incomprehension or obfuscation); the v4.5.x grounds (the one-level
+# decomposition, the too-hard pile) are retired, and a key without a listed line is RETIRED, never on the page.
+DNAF_WHY = ("Stopped at the first question: the filings do not show what the business sells, and who pays for it, "
+            "for most of its revenue.")
+# A DNAF memo written before v4.6.0 stopped on a v4.5.x ground that v4.6.0 retired; its row keeps the earlier
+# wording until the name is re-tested, so the page never states a reason that memo did not give.
+DNAF_WHY_EARLIER = ("Stopped at the first question under an earlier version of the method: the business could not "
+                    "be described simply, neither of the method's two lenses could read it, or there was no listed "
+                    "share to assess.")
 WATCH_WHY = "Passes all three quality tests; the price is above the buy zone."
 # Sections whose prices stay dated under --no-held. A SWEEP prices BUY, WATCH and one-test AVOID
 # (MODEL section 8.3) plus every held name, so a dated sweep price elsewhere - or in one-test AVOID
@@ -130,6 +146,9 @@ PLAIN_SF = {
     "buybacks": "share buybacks at prices the method judges too high",
     "acquisitions": "acquisitions at prices the method judges too high",
     "distributions": "dividends or payouts beyond what free cash flow covers",
+    # v4.6.0 (G4): a group's allocation of capital across its businesses.
+    "reinvestment": "most of the group's new capital went into businesses earning below the method's 10% return "
+                    "line",
     "RPT": "dealings with related parties",
     "control": "a controlling owner or voting structure can override other shareholders",
     "dilution": "existing shareholders diluted by new shares",
@@ -140,6 +159,13 @@ PLAIN_SF = {
     "inherited": "inherits the failure of a listed subsidiary it controls",
 }
 PLAIN_PREFIX = {"unit": "in one business unit: ", "sub": "in a listed subsidiary: "}
+# v4.6.0 (G3, G4; MODEL section 7.1): `dependency` names the ungradeable part by kind - `sub` a listed subsidiary
+# or holding without a gradeable memo, `unit` a material unit its filings do not describe - so the prefixed
+# Future token reads whole, never as a prefix before the token's own words.
+PLAIN_GROUP_FUTURE = {
+    "sub dependency": "depends on a listed subsidiary or holding that cannot be graded",
+    "unit dependency": "depends on a business unit that its filings do not describe, which cannot be graded",
+}
 LEVEL_RE = re.compile(r"^(?:(?P<prefix>unit|sub) )?(?P<value>\d{1,3}(?:\.\d{1,2})?)% (?P<metric>ROCE|ROE)$")
 LEGACY_TRIGGER_NOTE = "older, looser reading — review pending"
 
@@ -337,24 +363,38 @@ def model_version(root):
 
 
 def retest_block(root):
-    """(version, keys) of the queue/TODO.md block '## ▶ Method re-tests ...':
-    the keys its bullet lines open with. ('', []) when there is no such block."""
+    """(versions, keys) of the queue/TODO.md blocks '## ▶ Method re-tests ...'. Every
+    such block counts: a release adds its own block above the earlier ones (v4.6.0:
+    `▶ Method re-tests v4.6.0` above `▶ Method re-tests v4.5.0`, MODEL section 8.2
+    step 3), and a key stays under re-test while any block lists it. versions: each
+    block's version label in file order ('' where its title names none); keys: the
+    union of the keys their bullet lines open with, in file order, each mapped to the
+    version label of the first block that lists it. ([], {}) when there is no such block."""
     text = read_text(root, TODO_FILE) or ""
-    version, keys, inside = "", [], False
+    versions, keys, version, inside = [], collections.OrderedDict(), "", False
     for line in text.replace("\r\n", "\n").split("\n"):
         if line.startswith("## "):
+            inside = line.startswith("## ▶ Method re-tests")
             if inside:
-                break
-            if line.startswith("## ▶ Method re-tests"):
-                inside = True
                 m = re.search(r"v\d+\.\d+\.\d+", line)
                 version = m.group(0) if m else ""
+                versions.append(version)
             continue
         if inside:
             m = re.match(r"^\s*-\s+`([A-Za-z0-9._-]+)`", line)
             if m and m.group(1) not in keys:
-                keys.append(m.group(1))
-    return version, keys
+                keys[m.group(1)] = version
+    return versions, keys
+
+
+def retest_versions(versions, retest):
+    """[(version, count)] of the re-test blocks, in block order, for the keys on the page
+    (retest: {key: version label}); every block's version with count 0 when no listed key
+    is on the page. Unversioned blocks and repeats are folded away."""
+    order = [v for i, v in enumerate(versions) if v and v not in versions[:i]]
+    counts = collections.Counter(retest.values())
+    found = [(v, counts[v]) for v in order if counts[v]]
+    return found or [(v, 0) for v in order]
 
 
 def read_memo(root, row):
@@ -785,6 +825,8 @@ def plain_reason(table, value):
     """A register reason token in plain words (group prefix kept); unknown tokens as written."""
     if value in ("", OWED, NM):
         return ""
+    if table is PLAIN_FUTURE and value in PLAIN_GROUP_FUTURE:
+        return PLAIN_GROUP_FUTURE[value]
     m = re.match(r"^(unit|sub) (.+)$", value)
     prefix, token = (m.group(1), m.group(2)) if m else ("", value)
     return PLAIN_PREFIX.get(prefix, "") + table.get(token, token)
@@ -838,7 +880,8 @@ def verdict_why(row):
                     "pending review.")
         return WATCH_WHY
     if section == "DNAF":
-        return DNAF_WHY
+        m = re.match(r"^v?(\d+)\.(\d+)", (row.get("model_version") or "").strip())   # as gsc_register.model_at_least
+        return DNAF_WHY if m and (int(m.group(1)), int(m.group(2))) >= (4, 6) else DNAF_WHY_EARLIER
     failed = failed_gates(row)
     if len(failed) == 1:
         gate = failed[0]
@@ -1052,13 +1095,17 @@ def build(root, no_held=False):
     """Everything the page needs: (context, sections, extraction, register rows). The page
     itself is render_page(context, sections); stats_text() reads the extraction."""
     rows, reg_fm = load_register(root)
+    # [v4.6.0; G5] A RETIRED row's line has ceased to trade: it is no investable name, so the
+    # page leaves it out, from the sections, the counts and the lead alike.
+    rows = [row for row in rows if row["section"] != RETIRED]
     for row in rows:
         if row["section"] not in SECTION_ORDER:
             raise ToolError("%s: unknown section %r" % (row["key"], row["section"]))
     extraction = extract_all(root, rows)
-    retest_version, retest_keys = retest_block(root)
+    versions, retest_keys = retest_block(root)
     keys = {r["key"] for r in rows}
-    retest = [k for k in retest_keys if k in keys]
+    retest = collections.OrderedDict((k, v) for k, v in retest_keys.items() if k in keys)
+    by_version = retest_versions(versions, retest)
     as_of = reg_fm.get("register_date", "")
     ordered = ordered_sections(rows)
     sections = []
@@ -1080,7 +1127,10 @@ def build(root, no_held=False):
         # Under --no-held the lead names no sweep: a held name is the only one a sweep prices
         # outside BUY, WATCH and one-test AVOID, so a sweep count would point at it (DATED_SECTIONS).
         "sweep": (0, [], False) if no_held else sweep_prices(rows),
-        "retest_version": retest_version,
+        # Every re-test block counts (retest_block); the label names the versions whose blocks
+        # list a key on the page, newest block first ("v4.6.0 and v4.5.0").
+        "retest_version": " and ".join(v for v, _n in by_version),
+        "retest_versions": by_version,
         "retest_count": len(retest),
         "retest_watch": sum(1 for r in rows if r["key"] in retest and r["section"] == "WATCH"),
         "no_held": no_held,
@@ -1164,14 +1214,17 @@ def retest_banner(ctx):
     if not ctx["retest_count"]:
         return ""
     version = (" (%s)" % esc(ctx["retest_version"])) if ctx["retest_version"] else ""
+    # Two re-test blocks at once (v4.6.0 above v4.5.0): the names are re-tested under updated versions.
+    updated = ("updated versions" if len([v for v, n in ctx.get("retest_versions") or [] if n]) > 1
+               else "an updated version")
     count, watch, total_watch = ctx["retest_count"], ctx["retest_watch"], ctx["counts"]["WATCH"]
     subject = "%d %s" % (count, "company" if count == 1 else "companies")
     if watch and count > 1:
         subject += ", including %d of the %d on the shortlist," % (watch, total_watch)
-    return ('  <p class="banner" role="status"><b>%s %s being re-tested</b> under an updated version of the '
+    return ('  <p class="banner" role="status"><b>%s %s being re-tested</b> under %s of the '
             'method%s. Treat %s as provisional: %s%s. %s a <span class="tag tag-re">Re-test</span> mark '
             'below.</p>\n'
-            % (subject, "is" if count == 1 else "are", version,
+            % (subject, "is" if count == 1 else "are", updated, version,
                "its verdict" if count == 1 else "their verdicts",
                "it may change" if count == 1 else "they may change",
                ", including from WATCH to AVOID" if watch else "",
@@ -1198,13 +1251,15 @@ def terms(ctx):
     items = [
         ("ROCE · FCFROCE", "Operating income, and free cash flow, as a share of the capital the business uses; "
                            "the worst of four averaged readings over up to ten years ('negative': every reading "
-                           "is below zero). ROE (return on equity) replaces ROCE for banks and insurers."),
+                           "is below zero). ROE (return on equity) replaces ROCE for banks and insurers on the "
+                           "bank lens."),
         ("MCap/FCF", "Market value ÷ free cash flow: cash from operations less the capital spending needed to "
                      "maintain the business (the company's figure or a stated estimate); growth spending is not "
                      "counted against it. A row not yet reviewed under the updated method may still deduct all "
-                     "capital spending, which can only make this multiple look higher. For banks and insurers it reads market value ÷ net income, and the "
-                     "buy-zone price comes from the lower of 8× net income and 3× tangible book value; EV/OI "
-                     "does not apply and shows n.m."),
+                     "capital spending, which can only make this multiple look higher. For banks and insurers "
+                     "on the bank lens it reads market value ÷ net income, and the buy-zone price comes from "
+                     "the lower of 8× net income and 3× tangible book value; EV/OI does not apply and shows "
+                     "n.m."),
         ("EV/OI", "Enterprise value (market value plus debt and debt-like items) ÷ operating income, with no "
                   "cash counted as spare: the stricter of the method's two readings."),
         ("3y · 5y", "The same multiples at today's price on the average operating income and free cash flow of "
@@ -1217,7 +1272,7 @@ def terms(ctx):
         ("To buy zone", "Price ÷ buy-zone price − 1, with the price fall needed to reach the buy-zone price. "
                         "The bar shows how close the price is: a full bar is in the buy zone."),
         ("n.m.", "Not meaningful: for example a multiple of zero or negative cash flow or income (and EV/OI for "
-                 "banks and insurers)."),
+                 "banks and insurers on the bank lens)."),
         (DASH, "Not available in the register or the memo. Figures are never estimated."),
         ("Review due", "The next scheduled review date has passed as of this register version."),
     ]
@@ -1562,23 +1617,23 @@ PAGE_TEMPLATE = """<title>@@TITLE@@</title>
     <div class="method-body">
       <p>Every company goes through the same three questions, in this order. A company that fails a quality test is set aside whatever its price.</p>
       <ol>
-        <li><b>Do I understand it?</b> The business must fit one plain sentence: what it sells, who pays for it, its industry, its legal and operating form, where it works, and its status. If it does not, it is not analysed further.</li>
+        <li><b>Do I understand it?</b> The business is described in one plain sentence, the best its filings allow: what it sells, who pays for it, its industry, its legal and operating form, where it works, and its status. A long sentence or a list of businesses still passes. Only when the filings do not show what the business sells, and who pays for it, for most of its revenue is it not analysed further.</li>
         <li><b>Is it good?</b> Three tests, graded one by one.
           <ul>
-            <li><b>Past record</b> (Strong, Adequate or Weak), from up to ten years of audited accounts. Return on capital (ROCE) and free-cash-flow return on capital (FCFROCE) are averaged four conservative ways, and the worst reading counts. Strong needs ROCE of at least 15% and FCFROCE of at least 8%, with operating income and free cash flow per share growing at least 3% a year. Adequate needs, with neither per-share figure shrinking, either the same returns with at least one of the two growing 3% a year, or ROCE of at least 10% and FCFROCE of at least 5.3% with both growing at least 6% a year. Losses, lower returns, shrinking per-share results or liabilities above twice equity (with narrow exceptions) make it Weak; a sustained decline in returns caps the grade at Adequate while returns stay high, and makes it Weak otherwise. Banks and insurers are graded on return on equity and a regulatory capital test instead.</li>
+            <li><b>Past record</b> (Strong, Adequate or Weak), from up to ten years of audited accounts. Return on capital (ROCE) and free-cash-flow return on capital (FCFROCE) are averaged four conservative ways, and the worst reading counts. Strong needs ROCE of at least 15% and FCFROCE of at least 8%, with operating income and free cash flow per share growing at least 3% a year. Adequate needs, with neither per-share figure shrinking, either the same returns with at least one of the two growing 3% a year, or ROCE of at least 10% and FCFROCE of at least 5.3% with both growing at least 6% a year. Losses, lower returns, shrinking per-share results or liabilities above twice equity (with narrow exceptions) make it Weak; a sustained decline in returns caps the grade at Adequate while returns stay high, and makes it Weak otherwise. Banks and insurers on the bank lens (a licensed bank or insurer that publishes a regulatory capital ratio for the whole group, with no sizeable non-financial business) are graded on return on equity and a regulatory capital test instead.</li>
             <li><b>Competitive position</b> (Strong, Adequate or Weak). The customer and supplier base (any paying customer above a tenth of revenue, distributors and retailers included, or any supplier above a tenth of costs, is flagged; for a business selling to other businesses, its filings must rule a large customer out); four competitive forces (the bargaining power of customers and of suppliers, substitutes, new entrants); a moat with one identified source (government, cost, brand, network, switching costs or ingrainedness) and its direction; and whether the market grows. A flagged dependence passes, as Adequate with a caveat, only behind a dominant, stable moat with pricing power over that customer or supplier; otherwise it counts as a strong force against the company. Two or more strong forces, no moat or an eroding moat make it Weak.</li>
             <li><b>Shareholder-friendliness</b> (Pass or Fail): executive and board pay (the largest pay figure on any basis), management's own shareholding, dealings with related parties, and capital allocation, with buybacks and acquisitions judged against what the business is worth. One serious finding, or two separate warning signs, is a Fail; so is a single warning sign where management owns little and voting control sits apart from the economics. Otherwise a single warning sign is noted as a caution.</li>
           </ul>
         </li>
         <li><b>Is it cheap?</b> At the current price, market value must be at most <code>8×</code> free cash flow <em>and</em> enterprise value at most <code>7×</code> operating income, whether none or all of the company's cash is counted as spare. Free cash flow deducts only the capital spending needed to maintain the business, so spending on growth never counts against it. The buy-zone price is the highest price at which both hold with no cash counted as spare. When the latest year was a one-off down year (an impairment, a restructuring or a disruption, with recovery evidenced), the lower of the three- and five-year averages is used instead.</li>
       </ol>
-      <p>Groups are judged as a whole: returns on the group accounts, competitive position as an income-weighted average of the businesses, price on the whole group. Banks and insurers that do not fit the bank lens, and businesses neither lens can read, are not analysed further.</p>
+      <p>Groups, conglomerates, trading houses and holding companies included, are judged as a whole: returns on the group accounts, competitive position as an income-weighted average of the businesses, shareholder-friendliness including how the group allocates capital among them, price on the whole group. Banks and insurers that do not fit the bank lens are read on the industrial lens, with conservative rules for deposits, insurance funds and unlisted stakes.</p>
       <h3>Verdicts</h3>
       <dl class="defs">
         <dt><span class="v v-BUY">BUY</span></dt><dd>Passes all three quality tests and the price is in the buy zone. A mechanical signal of the framework, not a recommendation.</dd>
         <dt><span class="v v-WATCH">WATCH</span></dt><dd>Passes all three quality tests, but the price is above the buy zone. The shortlist ranks these by how far the price is from it.</dd>
         <dt><span class="v v-AVOID">AVOID</span></dt><dd>Fails at least one quality test. A lower price does not change this.</dd>
-        <dt><span class="v v-DNAF">Not analysed</span></dt><dd>Stopped at the first question: the business cannot be described simply, neither of the method's two lenses can read it, or there is no listed share to assess.</dd>
+        <dt><span class="v v-DNAF">Not analysed</span></dt><dd>Stopped at the first question: the filings do not show what the business sells, and who pays for it, for most of its revenue.</dd>
       </dl>
       <h3>Reading the table</h3>
       <dl class="defs">
@@ -1588,7 +1643,7 @@ PAGE_TEMPLATE = """<title>@@TITLE@@</title>
   </details>
   <div class="rules" role="group" aria-label="Thresholds">
     <span>Past record: worst-case ROCE <code>≥ 15%</code> and FCFROCE <code>≥ 8%</code> for Strong · at least ROCE <code>≥ 10%</code> and FCFROCE <code>≥ 5.3%</code>, with <code>6%</code> yearly growth, for Adequate</span>
-    <span>Banks and insurers: return on equity <code>≥ 15%</code> and a capital test, for Strong or Adequate</span>
+    <span>Banks and insurers on the bank lens: return on equity <code>≥ 15%</code> and a capital test, for Strong or Adequate</span>
     <span>Buy zone: MCap/FCF <code>≤ 8×</code> and EV/OI <code>≤ 7×</code>, no cash counted as spare</span>
     <span>To buy zone = price ÷ buy-zone price − 1</span>
   </div>
@@ -1682,7 +1737,9 @@ def stats_text(root):
         "  FCFROCE shown      %3d/%d" % (fcf_any, n),
         "  memo ROCE agrees with the register level (±0.15 pt) on %d of %d rows" % (agree, compared),
         "  sections: " + " · ".join("%s %d" % (s, ctx["counts"][s]) for s in SECTION_ORDER)
-        + " · re-test %d (%s)" % (ctx["retest_count"], ctx["retest_version"] or "no block"),
+        + " · re-test %d (%s)" % (ctx["retest_count"], (", ".join("%s %d" % item for item in ctx["retest_versions"])
+                                                          if len(ctx["retest_versions"]) > 1
+                                                          else ctx["retest_version"]) or "no block"),
         "  countries: " + ", ".join("%s %d" % item for item in sorted(collections.Counter(
             page[k]["c"] for k in page).items())),
     ]

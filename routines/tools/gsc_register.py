@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GSC register tool: the only place register numbers are computed (MODEL v4.5.0, sections 7.1, 7.1b, 7.2).
+"""GSC register tool: the only place register numbers are computed (MODEL v4.6.0, sections 7.1, 7.1b, 7.2).
 
 register.csv, beside _REGISTER.md, is the machine twin of the register: every
 register column plus the core numbers, one line per key. _REGISTER.md is
@@ -35,7 +35,27 @@ Subcommands
                                      trigger_basis all-cash and are listed; writes register.csv
                                      (lean-2, from the current or an older header) and the
                                      report archive/registers/{YYYY}/RETRIGGER_v{N}-to-v{N+1}_{D}.md
+  retire --key KEY --date D --source TEXT
+                                     attended (MODEL v4.6.0 section 7.1 RETIRED, G5): the key's
+                                     listed line has ceased to trade (D: its last trading day,
+                                     never after today's system date: the delisting is effective);
+                                     verdict and section turn RETIRED, Next review 'retired D';
+                                     every other field stays as the row holds it; prints the
+                                     version's one-line register entry
+  retire --undo --key KEY            attended: where the one file in memos/{KEY}/ is still the memo
+                                     the key was retired on, the verdict, section and Next review
+                                     come from it and every other field stays; where another memo
+                                     is current, or the kept fields cannot carry its verdict, the
+                                     row is rebuilt from the memo exactly as apply --memo would
+                                     (a re-listing's ANALYSE applies after it)
 Common option: --root DIR (default: the repository that holds this file).
+
+RETIRED [v4.6.0; G5] is a register state, never a memo verdict: only `retire` sets it,
+apply refuses a RETIRED key until `retire --undo`, SWEEP never prices it, check()
+never recomputes its multiples and lists a parent that names it in holding_keys
+for a re-test (never the RETIRED key itself), and _REGISTER.md prints its section
+(last) and its counts only while a RETIRED row exists, so a register without one
+renders exactly as before.
 
 Python 3.8+, standard library only, no network. Git is used read-only
 (`git show`, `git ls-tree`). Writes only register.csv, _REGISTER.md, the
@@ -45,6 +65,7 @@ give byte-identical outputs: UTF-8, LF line ends, no BOM. Exit codes: 0 ok,
 """
 import argparse
 import csv
+import datetime
 import io
 import itertools
 import json
@@ -87,13 +108,14 @@ R10_FIELDS = ("trigger_basis", "core_fcf_all") + AVG_CORE + AVG_MULTIPLES
 R10_DEFAULTS = dict([("trigger_basis", "all-cash")] + [(name, "-") for name in R10_FIELDS[1:]])
 # Fields of the lean-1 register (MODEL v4.5.0 before round 2) that round 2 retired.
 RETIRED_FIELDS = ("sotp_keys", "core_credit_fix", "core_credit_mkt", "core_credit_px")
-SECTION_ORDER = ("BUY", "WATCH", "AVOID-1", "AVOID-2", "DNAF")
+SECTION_ORDER = ("BUY", "WATCH", "AVOID-1", "AVOID-2", "DNAF", "RETIRED")
 SECTION_TITLES = {
     "BUY": "BUY",
     "WATCH": "WATCH",
     "AVOID-1": "AVOID - one gate failed",
     "AVOID-2": "AVOID - two or more gates failed",
     "DNAF": "DNAF",
+    "RETIRED": "RETIRED",
 }
 MASTER_COLUMNS = ["Ticker", "Company", "Memo date", "Ver", "Verdict", "Past", "Future", "SF",
                   "Px", "Trigger", "MCap/FCF", "EV/OI", "MCap/FCF 3y · 5y", "EV/OI 3y · 5y", "Next review"]
@@ -116,7 +138,17 @@ LEGEND = (
 NM = "n.m."            # not meaningful
 OWED = "-"             # not established: backfill owed
 CELL_CAP = 160
-VERDICTS = ("BUY", "WATCH", "AVOID", "DNAF")
+VERDICTS = ("BUY", "WATCH", "AVOID", "DNAF")          # a memo's verdict (lint-memo)
+# MODEL v4.6.0 section 7.1 (G5): RETIRED is a register state, like HELD - never a memo
+# verdict and never a Gate-0 outcome. Only `retire` sets it; its Next review reads
+# 'retired YYYY-MM-DD' (the last trading day). The grades and reasons stay as the last memo
+# left them (graded, or n.m. as a Gate-0 memo prints them).
+RETIRED = "RETIRED"
+REGISTER_VERDICTS = VERDICTS + (RETIRED,)
+RETIRED_REVIEW_RE = re.compile(r"^retired (\d{4}-\d{2}-\d{2})$", re.ASCII)
+# The version's one-line entry (MODEL section 7.4a) is at most 200 characters with its
+# 'vN — YYYY-MM-DD — ' prefix; `retire` prints the rest and leaves room for a five-character vN.
+ENTRY_CAP = 200 - len("v9999 — 2026-01-01 — ")
 GRADES = ("STRONG", "ADEQUATE", "WEAK")
 SF_GRADES = ("PASS", "FAIL")
 CHEAPNESS = ("CHEAP", "FAIR", "EXPENSIVE")
@@ -155,8 +187,10 @@ FUTURE_REASONS = ("breadth", "customer conc.", "supplier conc.", "funding conc."
 FUTURE_CAVEATS = ("customer conc.", "supplier conc.")
 # R8: pledges and insider sales are no flag (P23 is the alignment call); `alignment` is a
 # single flag that fails at strike-logic step 3 (FAIL only), as are `flag pair` and `inherited`.
-SF_REASONS = ("compensation", "director pay", "buybacks", "acquisitions", "distributions", "RPT",
-              "control", "dilution", "alignment", "flag pair", "inherited")
+# v4.6.0 (G4): `reinvestment` - a group whose growth in segment assets went mainly into units
+# below the 10% line (section 2·1C·3, allocation across the parts) - follows `distributions`.
+SF_REASONS = ("compensation", "director pay", "buybacks", "acquisitions", "distributions", "reinvestment",
+              "RPT", "control", "dilution", "alignment", "flag pair", "inherited")
 SF_FAIL_ONLY = ("alignment", "flag pair", "inherited")
 REASON_PREFIX_RE = re.compile(r"^(unit|sub) (.+)$")
 
@@ -306,6 +340,14 @@ def add_months(day, months):
     last = 31 if month in (1, 3, 5, 7, 8, 10, 12) else 30 if month != 2 else (
         29 if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0) else 28)
     return "%04d-%02d-%02d" % (year, month, min(dom, last))
+
+
+def real_date(day):
+    """True when YYYY-MM-DD is a calendar day."""
+    if not DATE_RE.match(day or ""):
+        return False
+    year, month, dom = (int(x) for x in day.split("-"))
+    return 1 <= month <= 12 and 1 <= dom <= int(add_months("%04d-%02d-31" % (year, month), 0)[8:])
 
 
 def review_last_day(short):
@@ -567,7 +609,7 @@ def gates_failed(past, future, sf):
 def section_for(verdict, gates):
     if verdict == "AVOID":
         return "AVOID-1" if gates == 1 else ("AVOID-2" if gates >= 2 else "")
-    return verdict if verdict in VERDICTS else ""
+    return verdict if verdict in REGISTER_VERDICTS else ""
 
 
 def grade_cell(grade, reason, sf=False):
@@ -604,9 +646,9 @@ def table_line(cells):
 
 
 def sort_key(row):
-    """EV/OI ascending, then n.m., then '-'; ties by key. DNAF by key."""
-    if row["section"] == "DNAF":
-        return (SECTION_ORDER.index("DNAF"), 0, Decimal(0), row["key"])
+    """EV/OI ascending, then n.m., then '-'; ties by key. DNAF and RETIRED by key."""
+    if row["section"] in ("DNAF", RETIRED):
+        return (SECTION_ORDER.index(row["section"]), 0, Decimal(0), row["key"])
     rank = SECTION_ORDER.index(row["section"]) if row["section"] in SECTION_ORDER else len(SECTION_ORDER)
     value = row.get("ev_oi", OWED)
     if MULT_RE.match(value or ""):
@@ -633,9 +675,11 @@ def validate_row(row):
     if not KEY_RE.match(key):
         p.append("key: not a section 7.1a key")
     verdict = row["verdict"]
-    dnaf = verdict == "DNAF"
-    if verdict not in VERDICTS:
-        p.append("verdict: %r is not one of %s" % (verdict, "/".join(VERDICTS)))
+    retired = verdict == RETIRED
+    # A RETIRED row keeps what its last memo left: a Gate-0 memo's n.m. grades and trigger basis too.
+    dnaf = verdict == "DNAF" or retired
+    if verdict not in REGISTER_VERDICTS:
+        p.append("verdict: %r is not one of %s" % (verdict, "/".join(REGISTER_VERDICTS)))
     for name, allowed in (("past", GRADES), ("future", GRADES), ("sf", SF_GRADES)):
         if row[name] not in allowed and not (dnaf and row[name] == NM):
             p.append("%s: %r is not one of %s" % (name, row[name], "/".join(allowed)))
@@ -690,10 +734,18 @@ def validate_row(row):
     elif basis == "all-cash" and model_at_least(row["model_version"]):
         p.append("trigger_basis: all-cash, but a memo written under MODEL %s prints the no-cash bound as its "
                  "trigger (R10)" % row["model_version"])
-    if row["next_review_short"] != OWED and not NEXT_REVIEW_RE.match(row["next_review_short"]):
+    if retired:
+        m = RETIRED_REVIEW_RE.match(row["next_review_short"])
+        if not m or not real_date(m.group(1)):
+            p.append("next_review_short: %r, but a RETIRED row reads 'retired YYYY-MM-DD', its last trading day "
+                     "(MODEL v4.6.0 section 7.1)" % row["next_review_short"])
+    elif row["next_review_short"] != OWED and not NEXT_REVIEW_RE.match(row["next_review_short"]):
         p.append("next_review_short: %r is not YYYY-MM-DD, Qn YYYY, Mon YYYY or n.m." % row["next_review_short"])
     if row["held"] not in ("true", "false"):
         p.append("held: %r is not true/false" % row["held"])
+    elif retired and row["held"] == "true":
+        p.append("held: true on a RETIRED row: a held name is never retired (the position event comes first, "
+                 "MODEL section 7.3)")
     elif row["held"] == "true":
         if row["zone"] != OWED and not ZONE_RE.match(row["zone"]):
             p.append("zone: %r is not ADD/HOLD/SELL-FLAG [SRn]" % row["zone"])
@@ -886,6 +938,16 @@ def render(rows, version, date):
     avoid = n["AVOID-1"] + n["AVOID-2"]
     split = "BUY %d · WATCH %d · AVOID %d (one gate %d · two+ %d) · DNAF %d" % (
         n["BUY"], n["WATCH"], avoid, n["AVOID-1"], n["AVOID-2"], n["DNAF"])
+    # [v4.6.0; G5] The RETIRED section, its count and its place in the ordering line print only
+    # while a RETIRED row exists: a register without one renders byte for byte as before.
+    sections = [s for s in SECTION_ORDER if s != RETIRED or n[RETIRED]]
+    if n[RETIRED]:
+        split += " · RETIRED %d" % n[RETIRED]
+        ordering = ('ordering: "v4.6.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF → RETIRED; '
+                    'EV/OI ascending, n.m. then - last; DNAF and RETIRED alphabetical"')
+    else:
+        ordering = ('ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; '
+                    'EV/OI ascending, n.m. then - last; DNAF alphabetical"')
     out = [
         "---",
         "register_title: %s" % REGISTER_TITLE,
@@ -897,8 +959,7 @@ def render(rows, version, date):
         "names_total: %d" % len(rows),
         'verdict_split: "%s"' % split,
         "portfolio_names: %d" % len(held),
-        'ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; '
-        'EV/OI ascending, n.m. then - last; DNAF alphabetical"',
+        ordering,
         "---",
         "",
         "# %s (%s · %s)" % (REGISTER_TITLE, version, date),
@@ -915,7 +976,7 @@ def render(rows, version, date):
         out += [table_line(portfolio_cells(r)) for r in held]
     else:
         out.append("None.")
-    for section in SECTION_ORDER:
+    for section in sections:
         out += ["", "## %s (%d)" % (SECTION_TITLES[section], n[section]), ""]
         if by_section[section]:
             out.append(table_line(MASTER_COLUMNS))
@@ -1241,7 +1302,7 @@ def apply_sweep(rows_by_key, fm, sections):
         if not is_num(px) or not DATE_RE.match(close):
             skips.append({"key": key, "reason": "Px %r or close date %r unparseable" % (px, close)})
             continue
-        if row["section"] in ("AVOID-2", "DNAF") and row["held"] != "true":
+        if row["section"] == RETIRED or (row["section"] in ("AVOID-2", "DNAF") and row["held"] != "true"):
             skips.append({"key": key, "reason": "out of SWEEP scope (%s, never refreshed)" % row["section"]})
             continue
         adopted = False
@@ -1339,36 +1400,15 @@ def apply_row(root, row_rel, fm=None, rows_by_key=None):
               "changes": [], "skips": [], "notes": []}
     if row_type in ("ANALYSE", "REVIEW"):
         memo_rel = fm.get("memo_path", "")
-        memo_text = read_repo_text(root, memo_rel)
-        new = row_from_memo(memo_rel, memo_text, report["notes"])
-        old = rows_by_key.get(new["key"])
-        if not parse_front_matter(memo_text).get("px"):
-            report["notes"] = legacy_fill(new, memo_text, old, report["notes"])
-        if old is None and row_type == "REVIEW":
-            report["notes"].append("NOTE %s REVIEW row for a key not in the register: added" % new["key"])
-        if old is not None and row_type == "ANALYSE":
-            report["notes"].append("NOTE %s ANALYSE row for a key already in the register: replaced "
-                                   "(memo wins)" % new["key"])
-        memo_held = new["held"] == "true"
-        report["notes"] += keep_position(new, old)
-        if (new["held"] == "true" and not memo_held and new["trigger_basis"] == "no-cash"
-                and is_num(new["trigger"]) and is_num(new["add_band"])
-                and dec(new["add_band"]) != dec(new["trigger"])):
-            # P21 (R10): a held name's ADD band is its operative trigger, the no-cash bound. The
-            # memo prints no position fields, so the band follows its trigger; zone and sell
-            # line stay the register's until a held memo sets them.
-            report["notes"].append("NOTE %s ADD band %s follows the memo's no-cash trigger %s (P21, R10)"
-                                   % (new["key"], new["add_band"], new["trigger"]))
-            new["add_band"] = new["trigger"]
-        problems = validate_row(new)
-        if new["section"] not in SECTION_ORDER:
-            problems.append("no register section for verdict %r" % new["verdict"])
-        if problems:
-            raise ToolError("%s: the memo yields an invalid row: %s" % (memo_rel, "; ".join(problems)))
-        rows_by_key[new["key"]] = new
-        report["changes"].append({"key": new["key"],
-                                  "old": table_line(master_cells(old)) if old else "new name",
-                                  "new": table_line(master_cells(new))})
+        m = MEMO_PATH_RE.match(memo_rel)
+        old = rows_by_key.get(m.group("key")) if m and m.group("dir") == m.group("key") else None
+        if old is not None and old["verdict"] == RETIRED:
+            # [v4.6.0; G5] A RETIRED row is never re-verdicted; a re-listing is an attended ANALYSE.
+            raise ToolError("%s is RETIRED (%s): its listed line has ceased to trade, so apply refuses %s (MODEL "
+                            "v4.6.0 section 7.1 RETIRED). A re-listing is an attended ANALYSE: run `retire --undo "
+                            "--key %s` first, then apply the new memo" % (old["key"], old["next_review_short"],
+                                                                          memo_rel, old["key"]))
+        apply_memo_row(root, memo_rel, row_type, rows_by_key, report)
     elif row_type == "SWEEP":
         report["changes"], report["skips"] = apply_sweep(rows_by_key, fm, sections)
     elif row_type in ("INCOMPLETE", "PRIOR", "QUEUE"):
@@ -1380,6 +1420,48 @@ def apply_row(root, row_rel, fm=None, rows_by_key=None):
     return report
 
 
+def apply_memo_row(root, memo_rel, row_type, rows_by_key, report):
+    """The register row one memo yields, written into rows_by_key as apply writes it:
+    row-from-memo (memo wins), the legacy fill of a memo without machine fields, the
+    register's own held flag and position record (keep_position), a held ADD band that
+    follows a memo without position fields (P21, R10), validated. `retire --undo` takes
+    the same path. Notes and the change go into report."""
+    memo_text = read_repo_text(root, memo_rel)
+    new = row_from_memo(memo_rel, memo_text, report["notes"])
+    old = rows_by_key.get(new["key"])
+    if not parse_front_matter(memo_text).get("px"):
+        report["notes"] = legacy_fill(new, memo_text, old, report["notes"])
+    if old is None and row_type == "REVIEW":
+        report["notes"].append("NOTE %s REVIEW row for a key not in the register: added" % new["key"])
+    if old is not None and row_type == "ANALYSE":
+        report["notes"].append("NOTE %s ANALYSE row for a key already in the register: replaced "
+                               "(memo wins)" % new["key"])
+    memo_held = new["held"] == "true"
+    report["notes"] += keep_position(new, old)
+    if (new["held"] == "true" and not memo_held and new["trigger_basis"] == "no-cash"
+            and is_num(new["trigger"]) and is_num(new["add_band"])
+            and dec(new["add_band"]) != dec(new["trigger"])):
+        # P21 (R10): a held name's ADD band is its operative trigger, the no-cash bound. The
+        # memo prints no position fields, so the band follows its trigger; zone and sell
+        # line stay the register's until a held memo sets them.
+        report["notes"].append("NOTE %s ADD band %s follows the memo's no-cash trigger %s (P21, R10)"
+                               % (new["key"], new["add_band"], new["trigger"]))
+        new["add_band"] = new["trigger"]
+    problems = validate_row(new)
+    if new["verdict"] not in VERDICTS:
+        # [v4.6.0; G5] RETIRED is a register state that only `retire` sets; a memo never carries it.
+        problems.append("verdict %r: a memo's verdict is one of %s" % (new["verdict"], "/".join(VERDICTS)))
+    elif new["section"] not in SECTION_ORDER:
+        problems.append("no register section for verdict %r" % new["verdict"])
+    if problems:
+        raise ToolError("%s: the memo yields an invalid row: %s" % (memo_rel, "; ".join(problems)))
+    rows_by_key[new["key"]] = new
+    report["changes"].append({"key": new["key"],
+                              "old": table_line(master_cells(old)) if old else "new name",
+                              "new": table_line(master_cells(new))})
+    return new
+
+
 def set_position(root, key, held, avg_cost=None):
     """Attended position event (MODEL section 7.3): the only way the held flag
     and avg_cost change. Zone and lines come from the current memo when it is
@@ -1388,6 +1470,9 @@ def set_position(root, key, held, avg_cost=None):
     row = rows_by_key.get(key)
     if row is None:
         raise ToolError("%s is not in register.csv" % key)
+    if held and row["verdict"] == RETIRED:
+        raise ToolError("%s is RETIRED (%s): its listed line has ceased to trade and a RETIRED row is never held "
+                        "(MODEL v4.6.0 section 7.1)" % (key, row["next_review_short"]))
     old = dict(row)
     notes = []
     if held:
@@ -1440,6 +1525,125 @@ def rekey(root, old_key, new_key):
     return {"old_key": old_key, "new_key": new_key, "memo_path": row["memo_path"], "aliases": row["aliases"]}
 
 
+def retire(root, key, date, source, today=None):
+    """Attended RETIRED state (MODEL v4.6.0 section 7.1; G5): the key's listed line has
+    ceased to trade (a take-private or merger closed, a squeeze-out registered, a
+    delisting effective); date is the last trading day, source the primary notice. A
+    date after today (the system date; `today`, YYYY-MM-DD, for tests) is refused: a
+    delisting that is only announced is not yet effective, and stays an open item. The
+    verdict and section turn RETIRED and Next review reads 'retired DATE'; every other
+    field stays as the row holds it (the last memo's grades and reasons, its Px and
+    multiples, the memo itself). A held name is never retired: the position event comes
+    first (MODEL section 7.3). Returns the report with the version's one-line entry for
+    the commit and PR body (section 7.4a)."""
+    if not real_date(date):
+        raise ToolError("--date must be the last trading day as YYYY-MM-DD (got %r)" % (date,))
+    today = today or datetime.date.today().isoformat()
+    if date > today:
+        raise ToolError("--date %s is after today (%s): a key retires only once its line has ceased to trade (the "
+                        "close or delisting effective, MODEL v4.6.0 section 7.1); until then it stays an open item, "
+                        "a delisting awaiting retirement" % (date, today))
+    source = " ".join((source or "").split())
+    if not source:
+        raise ToolError("--source must cite the primary notice of the close or delisting (MODEL v4.6.0 section 7.1)")
+    rows_by_key = load_rows_by_key(root)
+    row = rows_by_key.get(key)
+    if row is None:
+        raise ToolError("%s is not in register.csv" % key)
+    if row["verdict"] == RETIRED:
+        raise ToolError("%s is already RETIRED (%s); `retire --undo --key %s` restores it to its memo first"
+                        % (key, row["next_review_short"], key))
+    if row["held"] == "true":
+        raise ToolError("%s is held: a held name is never retired; record the position event first (`position %s "
+                        "--held false`, MODEL section 7.3)" % (key, key))
+    old = dict(row)
+    row["verdict"] = row["section"] = RETIRED
+    row["next_review_short"] = "retired %s" % date
+    problems = validate_row(row)
+    if problems:
+        raise ToolError("%s: %s" % (key, "; ".join(problems)))
+    entry = "%s retired: RETIRED (was %s; last trading day %s; source: %s)" % (key, old["verdict"], date, source)
+    if len(entry) > ENTRY_CAP:
+        raise ToolError("the register entry is %d characters; with its 'vN — date — ' prefix the version's one-line "
+                        "entry stays within 200 (MODEL section 7.4a): shorten --source to the notice itself"
+                        % len(entry))
+    save_rows(root, rows_by_key)
+    return {"key": key, "old": table_line(master_cells(old)), "new": table_line(master_cells(row)),
+            "entry": entry}
+
+
+def current_memo(root, key):
+    """memos/{KEY}/{file}: the one file the working tree's memos/{KEY}/ holds, the key's
+    current memo (MODEL section 7.1: memo wins; git HEAD's listing only where the
+    folder cannot be listed, as read_repo_text falls back). ToolError unless the
+    folder holds exactly one file, named {KEY}_{date}_GSC.md."""
+    folder = os.path.join(root, "memos", key)
+    try:
+        names = sorted(n for n in os.listdir(folder) if os.path.isfile(os.path.join(folder, n)))
+    except OSError:
+        names = sorted((memo_tree(root, "HEAD") or {}).get(key, []))
+    if len(names) != 1:
+        raise ToolError("memos/%s/ holds %d files%s: the current memo is the one file there (MODEL section 7.1), so "
+                        "nothing is guessed; leave exactly one (earlier versions go to archive/memos/%s/ unchanged) "
+                        "and run again" % (key, len(names), (" (%s)" % ", ".join(names)) if names else "", key))
+    rel = "memos/%s/%s" % (key, names[0])
+    m = MEMO_PATH_RE.match(rel)
+    if not m or m.group("key") != key:
+        raise ToolError("%s is not memos/{KEY}/{KEY}_{date}_GSC.md for %s" % (rel, key))
+    return rel
+
+
+def unretire(root, key):
+    """`retire --undo` (MODEL v4.6.0 section 7.1). The key's current memo is the one file
+    in memos/{KEY}/, never the memo_path the row kept, since a memo can land or move
+    after retirement. Where it is still the memo the key was retired on, `retire`
+    changed only the verdict, section and Next review, so undo takes those three from
+    that memo (memo wins) and keeps every other field as the row holds it (a SWEEP Px,
+    rebuild core numbers, the R10 trigger basis), which a legacy memo's text cannot give
+    back; where that row would be invalid (a register hold whose grades do not fit the
+    memo's verdict), and where another memo is current, the row is rebuilt from the memo
+    exactly as `apply --memo` writes it (apply_memo_row; the held flag stays false). A
+    re-listing's attended ANALYSE applies its new memo after this."""
+    rows_by_key = load_rows_by_key(root)
+    row = rows_by_key.get(key)
+    if row is None:
+        raise ToolError("%s is not in register.csv" % key)
+    if row["verdict"] != RETIRED:
+        raise ToolError("%s is not RETIRED (verdict %s): nothing to undo" % (key, row["verdict"]))
+    memo_rel = current_memo(root, key)
+    report = {"row": "retire --undo %s" % key, "row_type": "REVIEW", "changes": [], "skips": [], "notes": []}
+    if memo_rel != row["memo_path"]:
+        report["notes"].append("NOTE %s rebuilt from the current memo %s (the RETIRED row cited %s)"
+                               % (key, memo_rel, row["memo_path"]))
+        apply_memo_row(root, memo_rel, "REVIEW", rows_by_key, report)
+        save_rows(root, rows_by_key)
+        return report
+    scratch = {"row": report["row"], "row_type": "REVIEW", "changes": [], "skips": [], "notes": []}
+    rebuilt = apply_memo_row(root, memo_rel, "REVIEW", dict(rows_by_key), scratch)
+    restored = dict(row, verdict=rebuilt["verdict"], section=rebuilt["section"],
+                    next_review_short=rebuilt["next_review_short"])
+    problems = validate_row(restored)
+    if problems:
+        # The row the key was retired from does not hold the memo's verdict (a register hold, such as a DNAF row
+        # whose memo grades the name): rebuild the whole row from the memo instead, as apply --memo would.
+        report["notes"].append("NOTE %s rebuilt from %s: the memo's verdict %s does not fit the retired row (%s)"
+                               % (key, memo_rel, rebuilt["verdict"], "; ".join(problems)))
+        report["notes"] += scratch["notes"]
+        rows_by_key[key] = rebuilt
+        report["changes"].append({"key": key, "old": table_line(master_cells(row)),
+                                  "new": table_line(master_cells(rebuilt))})
+        save_rows(root, rows_by_key)
+        return report
+    rows_by_key[key] = restored
+    report["notes"].append("NOTE %s restored from %s, the memo it was retired on: verdict %s, section %s and Next "
+                           "review %s come from that memo (memo wins); every other field kept"
+                           % (key, memo_rel, restored["verdict"], restored["section"], restored["next_review_short"]))
+    report["changes"].append({"key": key, "old": table_line(master_cells(row)),
+                              "new": table_line(master_cells(restored))})
+    save_rows(root, rows_by_key)
+    return report
+
+
 # ------------------------------------------------------------------ check (INTAKE step 7)
 
 def legacy_register_keys(text):
@@ -1477,21 +1681,38 @@ def holding_findings(rows, register_date):
     'parent stale' - a listed subsidiary or holding named in a row's
     holding_keys has no register row, a memo that is not current (more than
     15 months older than the register date, or written under a MODEL version
-    below v4.5.0) or a memo newer than the parent's. REVIEW takes it at
-    priority 1c (REVIEW playbook, step 2). Round 2 (V14) retired the
-    credit-heavy review: a credit no longer moves with any market price."""
+    below v4.5.0) or a memo newer than the parent's. Since v4.6.0 (G4) a
+    missing or stale memo never stops the parent: its run completes with the
+    part ungradeable (WEAK in the weighted Future, nothing in the look-through
+    Past, no credit), and the part's memo landing owes the parent a re-run.
+    REVIEW takes it at priority 1c (REVIEW playbook, step 2). A holding whose
+    row is RETIRED (v4.6.0, G5: its listed line has ceased to trade, and it is
+    never reviewed) gets one finding instead of the P26 and newer-memo ones:
+    'holding HKEY retired — re-test the parent', until a parent memo dated after the
+    holding's last trading day has re-read it; a RETIRED parent gets none.
+    Round 2 (V14) retired the credit-heavy review: a credit no longer moves
+    with any market price."""
     out = []
     by_key = {r["key"]: r for r in rows}
     dated = bool(DATE_RE.match(register_date or ""))
     for row in rows:
         keys = row.get("holding_keys", NM)
-        if keys in (NM, OWED):
-            continue
+        if keys in (NM, OWED) or row["verdict"] == RETIRED:
+            continue                        # a RETIRED parent is never re-run (v4.6.0, G5)
         for holding in [k.strip() for k in keys.split(";") if k.strip()]:
             other = by_key.get(holding)
             if other is None:
                 out.append("%s: parent stale - holding %s has no register row (group dependency)"
                            % (row["key"], holding))
+                continue
+            if other["verdict"] == RETIRED:
+                # [v4.6.0; G5] A RETIRED holding is never reviewed, so its memo's age is no work item:
+                # the parent is the one to re-test (the part's listed line has ceased to trade), once:
+                # a parent memo dated after the holding's last trading day has already re-read it.
+                gone = (other.get("next_review_short") or "")[len("retired "):]
+                if not (DATE_RE.match(gone) and DATE_RE.match(row["memo_date"] or "")
+                        and row["memo_date"] > gone):
+                    out.append("%s: parent stale - holding %s retired — re-test the parent" % (row["key"], holding))
                 continue
             if not model_at_least(other.get("model_version")) or (
                     dated and DATE_RE.match(other["memo_date"] or "")
@@ -1517,7 +1738,8 @@ def check(root, base=None, tree="HEAD"):
         breaches += ["%s: %s" % (row["key"], e) for e in validate_row(row)]
         # [v4.5.3] Not on a DNAF row: a Gate-0 memo sets its core numbers and multiples
         # to n.m. by design (MODEL section 6.4); validate_row above still governs its fields.
-        if row["core_source"] != OWED and is_num(row["px"]) and row["verdict"] != "DNAF":
+        # [v4.6.0; G5] Nor on a RETIRED row: its line has ceased to trade and is never priced.
+        if row["core_source"] != OWED and is_num(row["px"]) and row["verdict"] not in ("DNAF", RETIRED):
             # Every row with core numbers: exact after a SWEEP or the rebuild (the tool
             # recomputed them); a memo's own print at its own price within lint-memo's 0.1.
             # The averaged readings (R10) recompute the same way from the average core numbers.
@@ -2157,7 +2379,7 @@ DAY_MONTH_RE = re.compile(r"\b(\d{1,2})(?:\s?[–-]\s?\d{1,2})?(?:\s|-)(%s)[a-z]
 MONTH_DAY_RE = re.compile(r"\b(%s)[a-z]*\.? (\d{1,2}),? (\d{4})\b" % "|".join(MONTHS))
 ISO_DATE_RE = re.compile(r"\b(\d{4})-(\d{2})-(\d{2})\b")
 PAST_LEVEL_TEXT_RE = re.compile(
-    r"[Ww]orst[- ]of[- ](?:the[- ])?four[^%\n]{0,24}?\b(ROCE|ROE)\b[^%\n\d]{0,24}?(\d{1,3}(?:\.\d+)?)\s?%")
+    r"[Ww]orst[- ]of[- ](?:the[- ])?(?:four|eight)[^%\n]{0,24}?\b(ROCE|ROE)\b[^%\n\d]{0,24}?(\d{1,3}(?:\.\d+)?)\s?%")
 FCF_LEG_RE = re.compile(r"(?:MCap\s?/\s?FCF|FCF)[ -]leg[^0-9;()]{0,14}?(?P<cur>%s)?\s?(?P<num>%s)(?P<p>p\b)?"
                         r"(?P<range>\s?(?:–|-|/)\s?(?:%s)?\s?(?:%s))?(?:\s(?P<cls>[A-Z])\b)?"
                         % (CURRENCY_RE, NUM_TEXT, CURRENCY_RE, NUM_TEXT))
@@ -2471,7 +2693,8 @@ def no_cash_figure(band, key, memo_unit, quote_unit=None):
 
 
 def past_level(text):
-    """'{x}% ROCE' (or ROE) from the memo's worst-of-four statement, else None."""
+    """'{x}% ROCE' (or ROE) from the memo's worst-of-four statement (worst of eight
+    where the G6 readings apply, MODEL v4.6.0), else None."""
     sections = sections_of(text)
     ordered = [lines for title, lines in sections.items() if title.startswith("3.")]
     ordered += [text.replace("\r\n", "\n").split("\n")]
@@ -3186,6 +3409,10 @@ def rebuild(root, base, assisted_path=None, version=None, date=None):
     old_text = batch_show(root, base, [REGISTER_FILE]).get(REGISTER_FILE)
     if old_text is None:
         raise ToolError("no %s at %s" % (REGISTER_FILE, base))
+    if re.search(r"(?m)^## RETIRED\b", old_text):
+        # [v4.6.0; G5] Only a lean register holds RETIRED rows; rebuilding one would re-verdict them.
+        raise ToolError("the register at %s holds a RETIRED section: it is lean, and the one-time rebuild reads "
+                        "only the pre-lean register" % base)
     master, portfolio, old_fm = legacy_register(old_text)
     if not master:
         raise ToolError("the register at %s has no legacy master table (already lean?)" % base)
@@ -3501,8 +3728,8 @@ def retrigger_rows(root, rows, assisted_rows=()):
             rejected += ["line %d: %s is not a register key" % (a["line"], key) for a in by_key[key]]
     resolved, unresolved, nm_rows = [], [], []
     for row in canonical(rows):
-        if row["trigger_basis"] != "all-cash":
-            continue
+        if row["trigger_basis"] != "all-cash" or row["verdict"] == RETIRED:
+            continue                        # a RETIRED row keeps what its last memo left (v4.6.0)
         key = row["key"]
         if row["trigger"] == NM:
             row["trigger_basis"] = "no-cash"
@@ -3749,6 +3976,19 @@ def cmd_rekey(args):
     return 0
 
 
+def cmd_retire(args):
+    if args.undo:
+        if args.date or args.source:
+            raise ToolError("retire --undo takes only --key")
+        report = unretire(args.root, args.key)
+    else:
+        if not args.date or not args.source:
+            raise ToolError("retire takes --key KEY --date YYYY-MM-DD --source TEXT (or --undo --key KEY)")
+        report = retire(args.root, args.key, args.date, args.source)
+    print(json.dumps(report, ensure_ascii=False, indent=1))
+    return 0
+
+
 def cmd_metrics(args):
     rows, _problems = load_csv(args.root)
     row = {r["key"]: r for r in rows}.get(args.key)
@@ -3793,7 +4033,8 @@ def cmd_sweep_scope(args):
     writer.writerow(["key", "endpoint_symbol", "px_unit", "section", "held", "px", "px_date", "trigger",
                      "core_currency", "holding_keys"])
     for row in canonical(rows):
-        if row["held"] == "true" or row["section"] in ("BUY", "WATCH", "AVOID-1"):
+        # Two-or-more-gate AVOID, DNAF and RETIRED rows are never priced (MODEL section 8.3 step 2).
+        if row["section"] != RETIRED and (row["held"] == "true" or row["section"] in ("BUY", "WATCH", "AVOID-1")):
             writer.writerow([row["key"], endpoint_symbol(row["key"]), row["px_unit"], row["section"],
                              row["held"], row["px"], row["px_date"], row["trigger"], row["core_currency"],
                              row["holding_keys"]])
@@ -3868,7 +4109,7 @@ def cmd_lint_row(args):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="GSC register tool (MODEL v4.5.0, sections 7.1, 7.1b).")
+    parser = argparse.ArgumentParser(description="GSC register tool (MODEL v4.6.0, sections 7.1, 7.1b).")
     parser.add_argument("--root", default=None, help="repository root (default: the one holding this file)")
     sub = parser.add_subparsers(dest="cmd")
     p = sub.add_parser("render")
@@ -3888,6 +4129,11 @@ def main(argv=None):
     p = sub.add_parser("rekey")
     p.add_argument("old")
     p.add_argument("new")
+    p = sub.add_parser("retire")
+    p.add_argument("--key", required=True)
+    p.add_argument("--date", help="YYYY-MM-DD: the last trading day")
+    p.add_argument("--source", help="the primary notice of the close or delisting")
+    p.add_argument("--undo", action="store_true", help="rebuild the RETIRED row from its memo, as apply would")
     p = sub.add_parser("metrics")
     p.add_argument("key")
     p.add_argument("px")
@@ -3918,7 +4164,7 @@ def main(argv=None):
         return 2
     args.root = os.path.abspath(args.root or default_root())
     handler = {"render": cmd_render, "row-from-memo": cmd_row_from_memo, "apply": cmd_apply,
-               "position": cmd_position, "rekey": cmd_rekey, "metrics": cmd_metrics,
+               "position": cmd_position, "rekey": cmd_rekey, "retire": cmd_retire, "metrics": cmd_metrics,
                "sweep-scope": cmd_sweep_scope, "check": cmd_check, "lint-memo": cmd_lint_memo,
                "lint-row": cmd_lint_row,
                "rebuild": cmd_rebuild, "retrigger": cmd_retrigger}[args.cmd]

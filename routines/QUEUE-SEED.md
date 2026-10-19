@@ -19,8 +19,10 @@ Output is **proposals only**. Merging the PR approves section 6 (the restock), w
      - direct listed peers of live WATCH rows
      - the register's named coverage gaps (UK, Canada, Australia, pure automation platforms, manufacturing software)
      - event-driven names: a first buyback, a control change, or a first annual report in the last ~90 days, in markets on the §7.1a table
+
+   A closed take-private or merger, a registered squeeze-out or an effective delisting that this run finds for a name with a register row (matched on company name or ISIN) is never retired here: it goes into section 5 as an open item, `ADD: KEY — delisting awaiting retirement (§7.1 RETIRED) — {event}, {date}, {source}`, which INTAKE applies to `▶ Open items (register)` once the PR is merged; retirement is attended only (MODEL §7.1 RETIRED) [v4.6.0; G5]. The same finding for a queue name, which has no register row, is a decay finding in section 5; the routine edits no queue line, and ANALYSE marks it `[x] no listed security` when it reaches it (ANALYSE.md step 5).
 5. **Build the exclusion set.** A name in any of these places isn't new; at most you can propose re-ranking it:
-   - every register row, matched on company name, and every ISIN in the `isin` column of `register.csv` and in every memo's `isin:` — every file in `memos/` and `archive/memos/` — where the candidate's ISIN is known
+   - every register row (RETIRED rows included, MODEL §7.1 RETIRED), matched on company name, and every ISIN in the `isin` column of `register.csv` and in every memo's `isin:` — every file in `memos/` and `archive/memos/` — where the candidate's ISIN is known
    - every `key` and every `aliases` entry in `register.csv`
    - every key and company in TODO, including block C3's recorded exclusions (never re-seed those)
    - every line of `DRAFT_QUEUE.md`, whatever its marker
@@ -38,7 +40,7 @@ Output is **proposals only**. Merging the PR approves section 6 (the restock), w
    2. New names: `| Key | Company | Sector | Why queued | Status | Source |`. Propose at most 10, and only names that would rank in the top half of the current queue.
    3. Excluded at verification: one line each, with the fact and its source.
    4. Blocked — data access (venue not served, or a stale quote).
-   5. Decay findings and re-ranking proposals, each with its criterion and source.
+   5. Decay findings and re-ranking proposals, each with its criterion and source; then the open items for register names, one `ADD: KEY — delisting awaiting retirement (§7.1 RETIRED) — …` line each (step 4), or "none".
    6. **DRAFT_QUEUE restock:** paste-ready lines `- [ ] KEY — Company — market/route — note`. Draw from existing supply first. Retrieval route comes first in the ordering. A note carries facts to check first, never a lens or gate call. Where they apply, it names the facts the Gate 0 lens test will need: a banking or insurance licence, a captive finance arm, or a material listed subsidiary or holding (MODEL §2 Gate 0, round 2).
    7. Method notes: routes that worked or failed, for TODO block D.
 
