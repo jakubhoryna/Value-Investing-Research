@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v53 · 2026-10-20)
+# GSC Work Queue — TODO.md (v54 · 2026-10-21)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -98,7 +98,11 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 
 *INTAKE maintains this block (MODEL §2 Group dependencies; §8.7 item 6; `routines/INTAKE.md` step 3). **v4.6.0 (G4): a dependency never stops its parent.** A group run (a parent with a material controlled listed subsidiary or listed holding) completes with a part whose memo is missing or stale read as ungradeable (WEAK with its weight in the Future, nothing added to the look-through Past, no credit) and lists it; INTAKE adds `` `HKEY` — dependency of PARENT (run {D}) ``, removes it when HKEY's ANALYSE or REVIEW memo lands, and then adds `` `PARENT` — parent re-run owed (HKEY memo {date}) `` for REVIEW priority 1c. ANALYSE takes an unmarked key with no memo first; REVIEW takes a stale one (memo older than 15 months, written below MODEL v4.5.0, or a DNAF memo written below v4.6.0) at priority 1c. A marked key stays ungradeable for its parents. `INCOMPLETE (dependency: KEY)` and verdict invariance are retired; before v4.6.0 a line was added when a group run ended `INCOMPLETE (dependency: KEY)`.*
 
-None.
+- `ABB` — dependency of INVE-B.ST (run 2026-10-21)
+- `ATCO-B.ST` — dependency of INVE-B.ST (run 2026-10-21)
+- `SAAB-B.ST` — dependency of INVE-B.ST (run 2026-10-21)
+- `AZN.L` — dependency of INVE-B.ST (run 2026-10-21)
+- `SEB-A.ST` — dependency of INVE-B.ST (run 2026-10-21)
 
 ---
 
@@ -146,7 +150,6 @@ None: no held name rests on a retired v4.5.x ground.
 **R4 and decomposition names of `▶ Method re-tests v4.5.0` (DNAF expected under v4.5.x; their lines there are rewritten to the v4.6.0 reading and keep their other pointers).**
 
 - `6752.T` — the one-level decomposition (two portfolio units ≈ 35% of revenue and a block named "Other"), retired (G2, G3) → run the full analysis (G1–G4) as a group at the parent → memo v1 and its `▶ Method re-tests v4.5.0` line; projection AVOID (memo v1: Past WEAK on 4.6% ROCE). — also G6
-- `INVE-B.ST` — Patricia Industries under the decomposition and the R4(c) stake test, both retired (G2, G3) → run the full analysis (G1–G4): Patricia Industries graded as one unit, unlisted stakes and other securities S3 on STD, holdings without a current memo ungradeable while the run completes (G4) → memo v2 and its `▶ Method re-tests v4.5.0` line. — also G6
 - `UNH` — R4 too hard (UnitedHealthcare beside Optum), retired (G2) → run the full analysis (G1–G4) on STD, the insurer consolidated → memo v1 and its `▶ Method re-tests v4.5.0` line. — also G6
 - `NU` — R4 too hard unless FI fits, retired (G2) → run the full analysis (G1–G4) on FI where it fits, else STD → memo v2 and its `▶ Method re-tests v4.5.0` line.
 - `AZA.ST` — R4 too hard unless FI fits, retired (G2) → run the full analysis (G1–G4) on FI where it fits, else STD → memo v1 and its `▶ Method re-tests v4.5.0` line. — also G6 where read on STD
@@ -227,7 +230,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `GSK.L` — R7, V3, acquisition stop: three US wholesalers ≈ 77% of US sales are flagged and contained (pass-through) → Future ADEQUATE likely; the chair's about £0.7m is a director flag; the £2bn buyback at about 13× EV/OI is SOUND; it fails only if the pre-profit biotech deals (no positive pre-deal OI; size against 1% of EV: verify) add a deal CAUTION → AVOID (55%).
 - `0700.HK` — R9, worth test, R3: the 2024–25 tranches at 15.6–24.2× EV/OI and 21–25× FCF are above worth (CAUTION); the FY2025 top pay is unretrieved (2017's RMB 383m ≈ US$59m): above ≈ US$40m a flag that pairs, above ≈ US$80m a strike; worst ROCE 10.0% on the consolidated record clears only path (b) → AVOID (55%).
 - `NU` — R4: a digital bank group funded by its own retail deposits (Mexico licensed since August 2026; the Banco Porto Real agreement) takes FI only if a published capital ratio covers ≥ 90% of consolidated assets (Brazil's prudential conglomerate ratio: verify its coverage), else it is read on STD (v4.6.0, G2: deposits in L/E and as debt-equivalents with the funding pairing, the cash and securities backing them never cash); on FI the fresh US$1.0bn authorisation at 25.5× FY2025 / ~20× TTM NI is above the FI worth (≈ 16× NI), one flag, and the founder's stake (verify) keeps step 3 off → WATCH stays on FI; on STD a deposit-funded balance sheet breaches P5 without P6 (the KSPI reading, IDEAS A2) → AVOID; no DNAF under v4.6.0 (the 55% move not re-scanned).
-- `INVE-B.ST` — R4, V14, R5, Gate 0: Patricia Industries (about 17% of assets) is described and graded as one unit (v4.6.0, G3), and non-material listed holdings, fund stakes and other securities read on STD as S3 — read with their income on the G6 readings in Gate 1A, no credit at Gate 2 (G2, G6; the R4(c) test retired); ABB and Atlas Copco are credited at their own intrinsic value from v4.5.0 memos (`ABB` awaits its re-key), and AZN, SEB and Saab (no keys) are ungradeable until their memos land — WEAK with their weights, no credit — while the run completes (G4); the SEK 137m of H1 2026 plan hedges sit below the 1% floor → graded, neither DNAF nor INCOMPLETE on these grounds (outcome open; the 55% not re-scanned).
 - `AZA.ST` — R4, P25: a bank-and-insurer group takes FI only if its financial-conglomerate ratio (or the bank and insurer ratios together) covers ≥ 90% of consolidated assets, else it is read on STD (v4.6.0, G2: deposits and policyholder liabilities in L/E, the assets backing them never cash, the float portfolio and its income read together on the G6 readings in Gate 1A, the income out of OI at Gate 2); on FI the NI basis is the P1 average (about SEK 1,347m), so the band about halves (≈ SEK 68 from 132.3), and an undisclosed or failing capital ratio (the FY2025 leverage ratio and the insurer's SCR ratio: verify) gives Past WEAK `capital` → WATCH with the band halved, or AVOID (on FI with a failing capital test, or on STD); no DNAF under v4.6.0 (the 55% not re-scanned).
 - `AMZN` — R6, R3: FCFROCE 2.5% on all capex rises on maintenance-capex FCF where revenue growth or disclosed project spend evidences the build-out as growth; ROCE 11.1% still needs P3 path (b) (FCFROCE ≥ 5.3%, both growth reads ≥ 6%) and no ROCE decline (a build-out counts); Future is the OI-weighted grade of North America, International and AWS (P29), International no longer deciding alone → AVOID (50%).
 - `IP.MI` — J6 (approx), P3, R6: FCFROCE 6.8% < 8% with a decline → WEAK unless the maintenance basis lifts it; the H1 2026 tranche at 12.5–13.6× EV/OI and 16.5–18.7× FCF sits about at worth → AVOID (50%).
@@ -313,7 +315,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `HUBN.SW` — backfill: ISIN, core numbers (cash) — fill at next REVIEW or attended pass
 - `IFCN.SW` — backfill: ISIN — fill at next REVIEW or attended pass
 - `AZA.ST` — backfill: ISIN — fill at next REVIEW or attended pass
-- `INVE-B.ST` — backfill: ISIN — fill at next REVIEW or attended pass
 - `NU` — backfill: Past reason — fill at next REVIEW or attended pass
 - `SAVE.ST` — backfill: ISIN, core numbers (FCF) — fill at next REVIEW or attended pass
 - `BABA` — backfill: ISIN, Past reason, core numbers — fill at next REVIEW or attended pass
@@ -378,7 +379,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `WISE.L` — backfill: Px, Px date, trigger, core numbers — fill at next REVIEW or attended pass
 - AVOID two-or-more-gate and DNAF rows: 191 keys with owed values, never priced — filled by each name's next REVIEW memo; list in the REBUILD report.
 - `VSURE.ST` — ISIN not established (memo v1) — fill at next REVIEW or attended pass (MODEL v4.5.0 decision 12).
-- `INVE-B.ST` — ISIN not established (memo v2) — its line above carries it (decision 12).
 
 ---
 
@@ -401,7 +401,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `HUBN.SW` — trigger 31.2 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `IFCN.SW` — trigger 18 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `AZA.ST` — trigger 132 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
-- `INVE-B.ST` — trigger 318 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `NU` — trigger 4.75 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `SAVE.ST` — trigger 97.5 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `KRN.DE` — trigger 66.1 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
@@ -617,8 +616,8 @@ None: no held name rests on a retired v4.5.x ground.
 
 *4 items from 1 routine row file (INVE-B.ST REVIEW v2, PR #74). Audit clean: no direct commits, no orphan `claude/gsc-*` branches.*
 
-- `INVE-B.ST` — backfill `isin:` (not established in the 2026-10-05 v2 REVIEW).
-- `INVE-B.ST` — Year-end report 2026 (22 Jan 2027) / AR 2026: re-anchor the band on Dec-2026 adjusted NAV (superseded: MODEL v4.5.0 J4 retires the NAV anchor — see `▶ Method re-tests v4.5.0`); JADA deal-multiple re-test (pre-deal OI INDETERMINATE); 2026 AGM board fees; the ABB + Atlas Copco concentration (36% of assets at 30 Jun 2026).
+- `INVE-B.ST` — backfill `isin:` (not established in the 2026-10-05 v2 REVIEW). — **done v3, 2026-10-21 (SE0015811963)**
+- `INVE-B.ST` — Year-end report 2026 (22 Jan 2027) / AR 2026: re-anchor the band on Dec-2026 adjusted NAV (superseded: MODEL v4.5.0 J4 retires the NAV anchor — see `▶ Method re-tests v4.5.0`); JADA deal-multiple re-test (pre-deal OI INDETERMINATE); 2026 AGM board fees; the ABB + Atlas Copco concentration (36% of assets at 30 Jun 2026). — **closed by v3 (2026-10-21): the NAV band is retired (trigger n.m.); JADA (≈ SEK 4.5bn) is below 1% of EV, logged**
 - `INVE-B.ST` — TODO v13 note (pre-v3 substitution-rule check, financial-institution rows): INVE-B.ST done at v2 (2026-10-05). The anchor stays at P/adj-NAV ≤ 0.80 (≈ 0.90× reported BV), and the label is corrected EXPENSIVE → FAIR under the Gate-2 FAIR range. *(MODEL v4.5.0, J4: no holding company is valued on NAV; INVE-B.ST is re-tested on the SOTP rules.)*
 - `INVE-B.ST` — TODO tier-3 WATCH-name P19 flag list: drop INVE-B.ST (v2: capital allocation SOUND, soft flag retired).
 
@@ -1492,6 +1491,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v54 — 2026-10-21** — INVE-B.ST v3 REVIEW (attended; full v4.5.0/v4.6.0 method re-test under MODEL v4.6.1; register v327): AVOID on three gates. `▶ Group dependencies` gains `ABB`, `ATCO-B.ST`, `SAAB-B.ST`, `AZN.L` and `SEB-A.ST` (dependencies of INVE-B.ST, all ungradeable at the run). `INVE-B.ST` is removed from `▶ Method re-tests v4.6.0` and `▶ Method re-tests v4.5.0` and from both `▶ Backfill owed` blocks (ISIN SE0015811963; trigger now n.m. on the no-cash basis), and its v306 ISIN backfill item is marked done. The holding-company findings are parked as `queue/IDEAS.md` §I (v15). Outgoing v53 archived to `archive/queue/TODO_v53_2026-10-20.md`.
 - **v53 — 2026-10-20** — Jakub's review request (attended): new sub-block at the top of `▶ Method re-tests v4.6.0` naming `LULU`, `PYPL`, `1913.HK`, `BBWI`, `TRI.PA`, `KSPI` (its existing line moved up), `ADBE` and `CRM` (the Braze acquisition Jakub named), each a prior below v4.6.0, so the REVIEW routine takes them next after held names (`routines/REVIEW.md` step 2, priority 1b). No register change. Outgoing v52 archived to `archive/queue/TODO_v52_2026-10-20.md`.
 - **v52 — 2026-10-20** — Held SELL-FLAG decisions (attended; Jakub, 2026-10-20): `NOVO-B.CO`, `TROW` and `CROX` Open items record decision HOLD — flags acknowledged and the analyses agreed, held while no better business is in sight; `HFG.DE` HOLD confirmed, its deferral to FY2026 results standing. No position event (§7.3): the held flags, zones and register are unchanged. Outgoing v51 archived to `archive/queue/TODO_v51_2026-10-20.md`.
 - **v51 — 2026-10-20** — INTAKE (register v319) — 8 merged row files (DOV, AME, BRK.B, BMI, TROW REVIEW; COLO-B.CO REVIEW INCOMPLETE; CCL-B.TO, COH.AX ANALYSE) and the QUEUE-SEED 2026-10-15 proposal (no restock): 6 IDEAS candidates added to the head block; `TROW` removed from `▶ Method re-tests v4.6.0` (memo v8 at v4.6.0); `DOV`, `AME`, `BRK.B`, `BMI` removed from `▶ Method re-tests v4.5.0` and `BRK.B` from both `▶ Backfill owed` blocks (memos at v4.5.3); new block `▶ Routed by INTAKE 2026-10-20, register v319` (11 items); audit clean. Outgoing v50 archived to `archive/queue/TODO_v50_2026-10-19.md`.

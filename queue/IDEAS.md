@@ -1,4 +1,4 @@
-# GSC MODEL Ideas — IDEAS.md (v14 · 2026-10-19)
+# GSC MODEL Ideas — IDEAS.md (v15 · 2026-10-21)
 
 **Purpose.** Parking lot for framework questions — everything MODEL-mode-shaped that a session surfaces goes here, never into the register's `## Open items` (routing per MODEL §7.1, v4.2.0). Each entry carries: status, the instances that raised it, the question in one line, a book-grounded recommendation with confidence, and the consequence scan. **Nothing here is operative** until a MODEL session adopts it under its own explicit "commit model"; recommendations below are pre-work, not doctrine. MODEL sessions open from this file and close by updating entry statuses.
 
@@ -352,6 +352,62 @@ Shareholder-friendliness (R8, R9, V1, V3, V4, V13, V17):
 - **Pay coverage:** the three-year table is the union of the latest three proxies' SCTs and director tables; US PvP non-PEO CAP printed only as an average takes the aggregate floor/ceiling rule; contingent tables (termination, change of control) are not totals.
 - **Containment evidence procedure:** read the filer's own attributions of flow or share loss to the substitute in the first, middle and latest window years.
 - **Class:** PATCH (each).
+
+---
+
+## I. Holding companies under v4.6.1 — the INVE-B.ST v3 attended re-test (2026-10-21) — OPEN
+
+*An attended REVIEW of Investor AB (INVE-B.ST v3, MODEL v4.6.1, PR on 2026-10-21) ran every v4.5.0 and v4.6.0 group rule end to end on a pure industrial holding company. The run completes and reaches a verdict: AVOID on three gates and EXPENSIVE (trigger n.m.). Every step is reproducible from the memo's appendix. Three of the four fails are produced by how the rules read a holding company's investment income and capital, not by evidence about the business. The fourth, Patricia Industries' own 3.6–5% return on acquired capital, is real. The same day's BRK.B v3 (PR #164) shows the same G6 pattern: worst-of-eight ROCE 3.1% on the include reading. The entries below park the questions, ranked by verdict weight. Nothing here is operative until a MODEL session adopts it under "commit model".*
+
+**What worked (no change needed).**
+- Gate 0 (G1–G4): the group sentence and part sentences are written, and the old DNAF expectation is gone.
+- The lens test: STD; R4(c) is not met (≈ 29% of assets).
+- P22 materiality: listed holdings above ⅓ of market cap, the largest making ⅔ — ABB, Atlas Copco, Saab, AstraZeneca and SEB.
+- Units and their mixed-unit grading: Patricia graded on Mölnlycke.
+- The dependency mechanics: five holdings ungradeable, so the parent completes instead of stopping.
+- G6 and P31 on a fair-value balance sheet.
+- The P20 build with organic and acquired-revenue data.
+- Gate 2 with `credit owed`.
+- The acquisition stop on a private target via the IFRS 3 B64(q) proxy (Nova Biomedical, 21.3×).
+- The G4 allocation-across-the-parts test.
+
+### I1. G6 include reading on fair-valued listed stakes — dividends against market value, losses in and gains out
+- **Instances (2):**
+  - INVE-B.ST v3: listed stakes, EQT AB and EQT funds are 82% of total assets at FY2025, all S3 or ungradeable H, so all a G6 class. Include-reading worst-of-eight ROCE is 0.4% (5y) and 1.1% (10y).
+  - BRK.B v3: its insurance portfolio and equity-method stakes, worst of eight 3.1%.
+- **Question:** stakes carried at fair value through profit or loss (IFRS 9; IAS 28.18) are read with dividend income, about 1.5–2% of value, against the stake's market value. A year's net fair-value loss is kept in OI while gains stay out (§2·1A G6). For a company whose assets are mostly such stakes, the include reading sits structurally below any ROCE bar, whatever the investees earn. Is that the consistent pairing G6 meant? Ch7's principle is that the adjustments shaping one number shape the others. Here the denominator capitalises the investees' retained earnings, and the numerator excludes them.
+- **Recommendation (~65%):** for listed stakes measured at fair value, the include reading takes the parent's proportionate share of the investee's own reported J1 OI, maintenance-capex FCF and CE. That is the R5 look-through, taken from the investee's filings, so the Past record needs no memo. Fair-value changes stay out on both readings. Dividends against market value remain only where the investee files no usable statements.
+- **Counter-case:** J13 (the harsher reading), and the build cost: thirteen holdings × ten years of investee data, which no routine run can fetch.
+- **Consequence scan:**
+  - INVE-B.ST: Past would read Patricia plus a look-through of mostly high-ROCE industrials. Not certain to reach 10%: Patricia's exclude-reading CE is 60% goodwill and intangibles.
+  - Also: BRK.B (equity portfolio), PSH.L if re-run on STD, and the G6 fair-value names of `▶ Method re-tests v4.6.0` (8002.T, 0700.HK, BABA).
+
+### I2. Group P17 denominator — the NI leg strips a holding company's whole income
+- **Instances (1):** INVE-B.ST v3 (strike); BRK.B v3 read the same leg without effect.
+- **Question:** §2 Group 1C takes the lower of two legs: NI "after the financial-income rule", and FCF × share plus dividends from material holdings. It then says a pure holding company "thus reads its own FCF plus the dividends it actually received".
+  - Read literally, the NI leg removes every dividend and value change. A holding company's NI leg is then near zero or negative every year: Investor's is SEK 285m, −86,189m, 118m, −1,186m and −331m over FY2021–25.
+  - So the FCF leg (≥ SEK 9bn) never governs. Ordinary CEO pay of SEK 38m, about 0.2% of the dividends received, becomes a proportionality strike (FY2023) and a loss-year strike (FY2025). The "thus" sentence never comes true.
+- **Recommendation (~70%):** add the cash income the parent actually receives to the NI leg as well: dividends from all listed holdings and distributions from fund stakes. Both legs would then read what the "thus" sentence describes. Fair-value changes stay out. On Investor this makes the FY2025 leg about SEK 15.9bn, and pay is no longer a finding.
+- **Counter-case:** J13; and the design intent that holdings' income is valued at Gate 2, not counted in P17.
+
+### I3. Dependency bottleneck — a holding company stays WEAK until five or more other memos land
+- **Instances (1):** INVE-B.ST v3. ABB's (MODEL v4.3.0) and Atlas Copco's (v4.0.0) memos are stale; Saab, AstraZeneca and SEB have none. Together they are 67.7% of the P29 base.
+- **Question:** the "more than ⅓ ungradeable" rule makes a holding company's Future WEAK until every large holding has a v4.5.0+ memo. Should a stale memo (no more than 15 months old, any v4.x) supply the holding's Future grade for weighting while its Past, credit and SF stay owed? And should the dependency keys be queued ahead of the parent's next run automatically?
+- **Recommendation (~55%):** keep the rule. This run queued the five keys in `▶ Group dependencies`, and routine ANALYSE and REVIEW clear them. Allow a stale v4.x memo's Future grade where the Future mechanics it ran are unchanged since (R7 concentration aside).
+
+### I4. Gate 2 credit for a holding company's immaterial listed stakes
+- **Instances (1):** INVE-B.ST v3. Eight immaterial listed stakes (≈ SEK 212bn) plus EQT AB (SEK 65bn) at FY2025 are all S3, so none earns credit: the filer calls every holding long-term ownership.
+- **Question:** S3's "strategic" test (the filer calls the stake core or long-term) catches every stake of a holding company. A quarter of its assets therefore earns nothing at Gate 2, even when they are liquid listed shares. Should such stakes take H at their own buy line where a current memo exists, regardless of P22 materiality?
+- **Recommendation (~50%):** H at the holding's own buy line where a current memo exists; otherwise no credit, as now. V14's "intrinsic value, never market" stands. On Investor the verdict does not hinge on this: even every stake credited at market (illustration only) leaves ≈ 50× Patricia's J1 OI.
+- **Counter-case:** V14; Ch14 L2324.
+
+### I5. Smaller patches surfaced by the same run
+- **Vested-basis pay totals (P17, R9).** Swedish remuneration reports print Table A on a grant basis, and the former CEO's vested LTI net value as a separate figure (SEK 27.6m in 2023, 55.7m in 2024). Is a vested-basis per-person total built from printed components a "printed total"? The run read the grant basis as the year total and printed the vested basis beside it. The strike holds on either basis, but the "year total rose" limb flips between FY2024 and FY2025.
+- **P22 unit test when the filer reports segment net asset value.** Investor's EQT segment is 10.5% of segment NAV but 9.7% of gross segment assets. The run took the harsher reading (material); the weight is 0 under revenue weights either way.
+- **Materiality of purchases of listed holdings' shares.** Is the ≈ 1% floor the sum over the trailing three fiscal years plus the live year (Investor ≈ 1.1%), or a per-year test (≈ 0.2–0.4%)?
+- **P17 trailing read with a non-positive leg.** When the fiscal-year leg is positive but the trailing leg is ≤ 0 (INVE-B.ST FY2023), the run read "above 5% of the trailing leg" as met. Say so in the text, or route it to the loss-year limb.
+
+---
 
 ## A. Verdict-affecting — each needs a dedicated MODEL decision
 

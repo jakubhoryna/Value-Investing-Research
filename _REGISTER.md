@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v326
-register_date: 2026-10-20
+register_version: v327
+register_date: 2026-10-21
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
 names_total: 397
-verdict_split: "BUY 0 · WATCH 66 · AVOID 314 (one gate 106 · two+ 208) · DNAF 17"
+verdict_split: "BUY 0 · WATCH 65 · AVOID 315 (one gate 106 · two+ 209) · DNAF 17"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v326 · 2026-10-20)
+# GSC Register — Master Watchlist (v327 · 2026-10-21)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -29,7 +29,7 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 
 None.
 
-## WATCH (66)
+## WATCH (65)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -95,7 +95,6 @@ None.
 | HMS.ST | HMS Networks AB (publ) | 2026-10-04 | v1 | WATCH | ADEQUATE · 16.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 553 | 60 | 37.4 | 39.5 | - | - | 2026-10-21 |
 | IFCN.SW | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG · 22.2% ROCE | ADEQUATE | PASS | 196.8 | 18 | 87.3 | 53.2 | - | - | Mar 2027 |
 | AZA.ST | Avanza Bank Holding AB (publ) | 2026-07-24 | v1 | WATCH | STRONG · 35.1% ROE | STRONG | PASS | 389.3 | 132 | n.m. | n.m. | - | - | 2027-01-21 |
-| INVE-B.ST | Investor AB | 2026-10-05 | v2 | WATCH | ADEQUATE · 13.9% ROE | ADEQUATE | PASS | 403.8 | 318 | n.m. | n.m. | - | - | 2026-10-16 |
 | NU | Nu Holdings Ltd. | 2026-08-27 | v2 | WATCH | ADEQUATE | STRONG | PASS CAUTION · buybacks | 13.43 | 4.75 | n.m. | n.m. | - | - | Feb 2027 |
 | SAVE.ST | Nordnet AB (publ) | 2026-08-01 | v2 | WATCH | ADEQUATE · 29.2% ROE | ADEQUATE | PASS CAUTION · buybacks | 348 | 97.5 | - | n.m. | - | - | Mar 2027 |
 | SDZ.SW | Sandoz Group AG | 2026-06-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | 70 | - | - | - | - | - | Feb 2027 |
@@ -211,7 +210,7 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (208)
+## AVOID - two or more gates failed (209)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -352,6 +351,7 @@ None.
 | PATH | UiPath, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | FAIL · flag pair | 15.05 | 0.61 | 22.1 | 138.8 | - | - | Mar 2027 |
 | OKTA | Okta, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | FAIL · compensation | 148.32 | 3.64 | 29.9 | 175.8 | - | - | Mar 2027 |
 | ATKR | Atkore Inc. | 2026-08-08 | v1 | AVOID | WEAK · ROCE decline | WEAK · 2+ forces | PASS CAUTION · buybacks | 93.71 | n.m. | 10.7 | 176.0 | - | - | Nov 2026 |
+| INVE-B.ST | Investor AB | 2026-10-21 | v3 | AVOID | WEAK · 0.4% ROCE | WEAK · sub dependency | FAIL · compensation | 413.70 | n.m. | 966.6 | 192.8 | 517.0 · 955.6 | 185.3 · 220.9 | 2027-01-22 |
 | PLTR | Palantir Technologies Inc. | 2026-07-14 | v1 | AVOID | WEAK · 0.4% ROCE | ADEQUATE | FAIL · flag pair | 134.83 | 3.8 | 153.9 | 228.8 | - | - | Feb 2027 |
 | FRSH | Freshworks Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | WEAK · forces: substitutes | FAIL · compensation | 11.84 | 0.2 | 13.1 | 236.5 | - | - | Feb 2027 |
 | TWLO | Twilio Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | FAIL · flag pair | 241.28 | 0.23 | 38.7 | 238.8 | - | - | Feb 2027 |
