@@ -1,0 +1,382 @@
+---
+ticker:             KSPI
+company:            Joint Stock Company Kaspi.kz
+exchange:           Nasdaq (ADS 1:1; common line KASE:KSPI)
+isin:               US48581R2058
+currency:           KZT (reporting); USD (ADS price)
+memo_date:          2026-10-20
+memo_version:       v4
+supersedes:         archive/memos/KSPI/KSPI_2026-09-01_GSC.md
+model_version:      v4.6.1
+price_at_memo:      "$92.94 ADS (Nasdaq close 20 Oct 2026) = ₸42,064 at NBK official 452.59 KZT/USD (20 Oct 2026)"
+mcap_at_memo:       "₸8,022,840m ≈ $17.73bn (190.730670m diluted shares, 1H26 weighted)"
+verdict:            AVOID
+quality_past:       WEAK
+quality_future:     ADEQUATE
+sf:                 FAIL
+cheapness:          FAIR
+window:             "FY2021–FY2025 (5y, record-limited; FY2020 balance sheet as the opening base)"
+trigger_band:       "CHEAP ≈ $66.41 (EV/OI no-cash binds, funding-in pairing; all-cash $66.41, converge: no free cash at the balance-sheet date; MCap/FCF leg $74.70); no P12 (Past WEAK)"
+aliases:            "KASE:KSPI common KZ1C00001536; 144A GDR US48581R1068"
+px:                 92.94
+px_unit:            USD
+px_date:            2026-10-20
+trigger:            66.41
+mcap_fcf:           10.0
+ev_oi:              8.1
+ev_oi_all_cash:     8.1
+trigger_basis:      no-cash
+mcap_fcf_3y:        9.0
+mcap_fcf_5y:        11.1
+ev_oi_3y:           9.4
+ev_oi_5y:           12.0
+lens:               STD
+holding_keys:       n.m.
+core_credit:        0
+core_period:        "FY2025 OI; TTM Q2-2026 FCF; BS 2026-06-30"
+core_currency:      KZT
+core_unit:          m
+core_shares_diluted: 190.730670
+core_debt_eq:       8887192
+core_cash:          0
+core_oi:            2088581
+core_oi_basis:      FY2025 J1 · fin. income out
+core_fcf:           806047
+core_fcf_basis:     TTM Q2-2026 CFO − maint. capex (constructed) · fin. income out
+core_oi_3y:         1798519
+core_oi_5y:         1411548
+core_fcf_3y:        892973
+core_fcf_5y:        724230
+core_fcf_all:       794159
+core_fx:            0.002210
+core_fx_date:       2026-10-20
+core_ratio:         1
+past_reason:        ROCE decline
+future_reason:      n.m.
+sf_reason:          acquisitions
+next_review_short:  Mar 2027
+# --- end of machine fields
+next_review:        "Earlier of: 3Q26 results (late Oct–Nov 2026: funding cost after the August deposit-rate cut, Hepsi Bank first consolidation); a HEPS memo landing (parent re-run, Hepsiburada graded from its own memo); FY2026 20-F (~Mar 2027: window roll, Hepsi Bank PPA, parent-only cash at year-end)"
+position:           —
+extraction_conflicts: "USD/KZT: the Yahoo KZT=X bars read 436.3 (19 Oct) and 450.2 (20 Oct, intraday) against the NBK official 452.12 / 452.59 — the NBK official rate is used throughout, Yahoo rejected. Other gains: the FY2025 MD&A prints ₸37,190m against the audited P&L's ₸18,250m — the audited note 4 split (monetary 33,313; FX 2,746; financial assets and liabilities −27,785) governs."
+---
+
+# KSPI — Joint Stock Company Kaspi.kz: GSC Memo
+
+## 1. Verdict
+
+Understanding PASS · Past WEAK (ROCE decline; leverage) · Future ADEQUATE · Shareholder-friendliness FAIL (acquisitions) · Cheapness FAIR → **AVOID**, now on two gates.
+
+Kaspi is a superb Kazakh franchise: the daily payments app, marketplace and consumer lender for most of the country's adults, compounding owners' equity at 50% a year. Two gates fail, and the current rules no longer leave the outcome to a lens choice. Deposits are liabilities, so the balance sheet carries 340% liabilities to book. Returns have fallen three years running as funding costs rose and ₸860bn of Hepsiburada goodwill and intangibles entered capital. And the Hepsiburada deal bought a listed company whose own pre-deal record showed operating losses. That is a hard strike, and no flag count offsets it. Price is near but not inside the line: with deposit funding in enterprise value, the stock trades at 8.1× financing-blind operating income. A flip needs FY2026 to halt the returns slide; the leverage fail and the deal strike stay with the business.
+
+## 2. Understanding
+
+Kaspi.kz is an Almaty-headquartered, Nasdaq- and KASE-listed holding company. Its Kaspi.kz and Kaspi Pay super apps sell three things in Kazakhstan: payment processing and peer-to-peer transfers, paid for by about 900k merchants through fees and by consumers through float interest; a third-party marketplace with fulfilment, travel and e-grocery, paid for by merchants through take rates; and BNPL, consumer, car and merchant loans and deposits through its 98.95%-owned licensed bank, paid for by consumers through interest and fees. Since 2025 it also owns 86.74% of Hepsiburada, Türkiye's number-two e-commerce marketplace (Nasdaq: HEPS), and since July 2026 the start-up Hepsi Bank. **PASS.**
+
+| Part | Kind | Weight | Future · reason | Past (holdings, information) | Source memo |
+|---|---|---|---|---|---|
+| Payments (Kazakhstan) | unit | 19.8% | STRONG | — | this memo |
+| Marketplace ex-Hepsiburada | unit | 24.0% | STRONG | — | this memo |
+| Fintech (Kaspi Bank) | unit | 44.3% | STRONG | — | this memo |
+| Hepsiburada (HEPS) | listed subsidiary | 11.9% | WEAK · sub dependency (no memo) | — | none — ungradeable |
+
+## 3. Quality — past record
+
+STD lens. A bank group with material non-financial parts cannot fit FI. Worst-of-four ROCE (after funding cost) is 13.6% over FY2021–FY2025. FCFROCE, on maintenance-capex FCF (constructed), is 10.5%, and 10.2% on the all-capex reading. The five-year record is the window, so both windows read the same. Per-share growth is strong: OI +25.4% and FCF +27.1% on the harsher reads. P3(b)'s level holds. Two failures decide. First, opening-capital ROCE fell three consecutive years, 19.2% → 19.1% → 18.2% → 15.3%. Second, liabilities are 340% of book at FY2025, 87% of them customer deposits. The P6 carve-out does not reach a balance sheet that borrows to lend. **WEAK.**
+
+## 4. Quality — future
+
+Breadth is clean. No customer comes near 10% of revenue. The top twenty depositors hold 1.3% of deposits, and the capital-market channel (uninsured deposits plus the USD bond) is about 34% of liabilities, under the funding line. In Kazakhstan all four forces read WEAK. Customers are atomised, and 77 transactions a month locks in the habit. Kaspi owns its payment rails. Scale, the banking licence and ecosystem lock deter entrants and substitutes. The moat is a network effect, strengthening. Market growth is YES. The three Kazakh units grade STRONG. Hepsiburada has no memo of its own, so it counts as WEAK at 11.9% weight. S = 2.76, but a WEAK part caps the group. **ADEQUATE.**
+
+## 5. Shareholder-friendliness
+
+Pay is far inside every line. The aggregate for all nine directors and executives was ₸654m in FY2025 and ₸5,350m at most (FY2023), against a 5% proportionality line near ₸35bn. Management is ALIGNED: CEO Lomtadze holds 23.04% plus management 4.03%, on a single share class. Repurchases (2.96m shares since FY2023, at ₸38–44k) sit below worth on every read. The decider is the Hepsiburada acquisition (January 2025, $1.13bn for 65.41%, then to 86.74%). The target was listed, and its last annual report before the deal showed operating losses in FY2021–FY2023: below P3 on its own record. **FAIL** at step 1, hard strike (`acquisitions`).
+
+## 6. Price
+
+| Metric | Current | Threshold | Rank | Pass/Fail |
+|---|---|---|---|---|
+| MCap / FCF (TTM, maint. capex) | 10.0× | ≤ 8 | Primary | FAIL |
+| EV / OI no-cash (deposits in EV, financing-blind OI) | 8.1× | ≤ 7 | Primary | FAIL |
+| EV / OI all-cash | 8.1× | ≤ 7 | Primary | FAIL |
+| *EV / OI, funding out of EV, OI after funding cost* | *6.9×* | *≤ 7* | *pairing context* | *not governing* |
+| MCap / BV | 3.0× | ≤ 3 | Qualifier | BREACH (3.04) |
+| MCap / TBV | 4.5× | ≤ 3 | Qualifier | BREACH |
+| MCap/FCF 3y · 5y | 9.0× · 11.1× | context | — | — |
+| EV/OI 3y · 5y (no-cash/all-cash) | 9.4× · 12.0× / 9.4× · 12.0× | context | — | — |
+
+The trigger is ≈ **$66.41**, the no-cash bound (funding-in EV/OI binds; all-cash converges because there is no free cash at the balance-sheet date). The MCap/FCF leg is $74.70. The stock sits 40% above. BV ≫ TBV runs the acquisition audit, which fails (§5).
+
+## 7. Risks & thesis-breakers
+
+- Funding cost (14.5% in 2Q26) outran loan yield for two years, and the NBK's 2026 countercyclical buffer and reserve rises tax the lending leg further.
+- Hepsiburada still loses money (Türkiye −₸93bn net in FY2025), and Hepsi Bank's ~$300m capitalisation adds a second Turkish start-up.
+- Capital employed jumped ₸2.3tn in FY2025, so the returns slide can continue even with flat operating income.
+- Single-country concentration under an active consumer-credit regulator.
+- Wildberries and Ozon are building Kazakh logistics; none of the filings yet show share loss.
+
+## 8. Flip conditions & next review
+
+Toward WATCH needs all three: two clean years of ROCE (FY2026–FY2027) to clear the decline; leverage no gate can waive while deposits fund the book; and the acquisitions strike to leave the trailing three years, after FY2027. Earlier, nothing flips. Deeper: a write-down of Hepsiburada goodwill, or Hepsi Bank losses. Next review: 3Q26 results, any HEPS memo (parent re-run), FY2026 20-F (~Mar 2027).
+
+*Framework output, not investment advice.*
+
+---
+
+# APPENDIX
+
+## A. Sources & data gaps
+
+**Primary (SEC EDGAR, CIK 1985487; retrieved 2026-10-20 unless stated).**
+1. FY2025 Form 20-F, filed 16 Mar 2026 (acc. 0001985487-26-000008): audited FY2023–FY2025 statements (P&L, balance sheets 2024–2025, cash flows 2023–2025), notes 4 (revenue and other-gains split), 5 (segments, geography), 9 (EPS), 13 (PP&E and intangibles), 14 (goodwill), 18 (customer accounts), 19–20 (debt), 22 (other liabilities), 23 (share capital), 27 (related parties and key-management pay), 31 (parent-only statements), 32 (Hepsiburada business combination); Item 4 capital adequacy; Item 5 uninsured deposits; Item 6 board, officers and aggregate compensation.
+2. FY2023 Form 20-F, filed 29 Apr 2024 (acc. 0000950170-24-049512): FY2021–FY2023 cash flows; 2022–2023 balance sheets; segment FY2021–2023; other liabilities 2022–2023; buyback programmes; key-management pay FY2021–2023; parent-only 2021–2023.
+3. Form F-1/A, 16 Jan 2024 (acc. 0001193125-24-008665): FY2020–FY2022 cash flows; 2021 balance sheet; restated FY2020 revenue (₸602,869m); PP&E roll-forward 2020–2022; other liabilities 2021; parent-only 2020–2022.
+4. Interim condensed consolidated financial information, 6M ended 30 June 2026, 6-K exhibit 99.1 furnished 12 Aug 2026 (acc. 0001985487-26-000026): P&L, 30-Jun-26 balance sheet, equity, cash flows, notes 4, 5, 8, 9, 13, 14, 19.
+5. 2Q & 1H 2026 results release, 6-K exhibit 99.1, 10 Aug 2026 (acc. 0001985487-26-000024).
+6. Interim financial information 6M ended 30 June 2025, 6-K exhibit 99.1, 6 Aug 2025 (acc. 0000950170-25-103549): loans at 30 Jun 2025 (₸6,392,266m), 6M24 revenue, 1H25 Türkiye revenue.
+7. EGM results 6-K, 10 Sep 2026 (acc. 0001985487-26-000028): ₸1,000 2Q26 dividend.
+8. Forms 4 (Vyacheslav Kim), Aug–Oct 2026: open-market ADS sales, 36,329,879 ADS held after 16 Oct 2026.
+9. Audited FY2020 consolidated statements (Deloitte, 26 Feb 2021), ir.kaspi.kz (scanned PDF, read page by page): 31 Dec 2020 balance sheet.
+10. SEC XBRL companyfacts for Kaspi (CIK 1985487; the filer's own tags), used as the multi-year index and tied out below; companyfacts for D-MARKET (Hepsiburada, CIK 1850235): operating profit/(loss) FY2019–FY2024 and shares outstanding (357,225,200 at 31 Dec 2025).
+
+**Quotes and rates.** Price: query1.finance.yahoo.com chart KSPI, close 20 Oct 2026 $92.94 (NMS, USD); HEPS $2.75. FX: National Bank of Kazakhstan official rate, 20 Oct 2026, 452.59 KZT/USD (nationalbank.kz rates feed).
+
+**Exploratory searches (P14 REVIEW ~2):** 2 — Kazakhstan CPI series ([FRED FPCPITOTLZGKAZ](https://fred.stlouisfed.org/series/FPCPITOTLZGKAZ) for 2021–2024 annual averages; [Bureau of National Statistics](https://stat.gov.kz/en/industries/economv/prices/publications/466868/) for 2025, 12.3% Dec/Dec) and the ADS ISIN ([KASE](https://kase.kz/en/investors/depts/KSPId): Reg S US48581R2058, 144A US48581R1068, underlying KZ1C00001536). Ten documents on one name: disclosure is dense and clean, though split across exhibits.
+
+**§4 tie-out (XBRL index against the audited statements, exact).** FY2025: revenue ₸4,046,074m; PBT ₸1,331,918m; total equity ₸2,601,577m; composite cash 903,143 + securities 1,179,819 (FVOCI 1,155,282 + amortised cost 2,073 + FVTPL 22,464) − due to banks 16,183 − customer accounts 7,531,286 − debt securities 331,992 − subordinated debt 161 = −₸5,796,660m. FY2023: revenue ₸1,913,490m; PBT ₸1,022,004m; owners' equity ₸1,078,123m. FY2024 composite cash + securities 619,470 + 1,489,682 + 17,149 = ₸2,126,301m. FY2020 total equity ₸394,660m ties the scanned FY2020 balance sheet. Accepted for FY2020–FY2025 only.
+
+**Data gaps.** (a) **Record-limited** — FY2016–FY2019 audited statements exist (LSE GDR prospectus 2020; earlier bank-group annual reports) but were not retrieved; STRONG is unavailable either way; rebuild flag. (b) The FY2020 NIBCL split was not read from the scanned PDF, so FY2020 capital employed is total assets (the harsher reading); FY2020 parent-only cash was not read, so the FY2021 beginning-of-period CE_xc is n/a. (c) The 1H26 issuer split of debt securities (₸605,368m; ₸331,992m at FY2025 is the parent's USD bond) is not disclosed; all of it sits in both pairings. (d) Parent-only cash and interest are annual only; TTM parent items are held at their FY2025 values (assumption, labelled at use). (e) Lease liabilities at 30 Jun 2026 are not split out in the interim; FY2025's ₸21,585m is carried (latest disclosed). (f) Per-person pay is not disclosed (aggregate only). (g) Hepsiburada's NCI at book is derived (below), not printed.
+
+## B. Financial record (FY2021–FY2025, 5y — record-limited)
+
+### B1 Raw inputs (IFRS, ₸m; diluted WAS in m)
+
+| FY | Revenue | PBT | Fin. inc. out | OI (J1, after funding) | Funding interest | OI financing-blind | CFO | Capex | Maint. capex | Basis | FCF (maint.) | FCF (all-capex) | Diluted WAS | Total assets | NIBCL | Free cash (parent) | Total liab. | Equity (owners) | Goodwill+intang. |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2020 | 602,869 | — | — | — | — | — | — | — | — | — | — | — | — | 2,806,742 | n/a | n/a | 2,412,082 | 391,118 | n/a |
+| 2021 | 884,822 | 528,802 | 4,212 | 524,590 | 171,491 | 696,081 | 70,351 | 24,901 | 12,336 | constructed (floor) | 399,496 | 386,931 | 194.341 | 3,607,924 | 21,543 | 88,253 | 3,103,229 | 499,727 | 14,142 |
+| 2022 | 1,270,592 | 720,574 | 33,146 | 687,428 | 278,676 | 966,104 | 1,020,984 | 59,468 | 39,316 | constructed | 542,732 | 522,580 | 193.991 | 5,121,647 | 19,987 | 226,232 | 4,295,958 | 819,165 | 15,303 |
+| 2023 | 1,913,490 | 1,022,004 | 45,524 | 976,480 | 478,010 | 1,454,490 | 1,106,128 | 50,257 | 25,554 | constructed (floor) | 711,352 | 686,649 | 192.062 | 6,821,932 | 29,844 | 200,484 | 5,718,719 | 1,078,123 | 65,695 |
+| 2024 | 2,532,156 | 1,282,289 | 45,919 | 1,236,370 | 616,116 | 1,852,486 | 581,892 | 95,726 | 59,890 | constructed | 938,935 | 903,099 | 191.430 | 8,377,101 | 41,835 | 324,993 | 6,804,240 | 1,517,224 | 93,522 |
+| 2025 | 4,046,074 | 1,331,918 | 69,186 | 1,279,266 | 809,315 | 2,088,581 | 673,611 | 182,513 | 169,289 | constructed | 1,028,633 | 1,015,409 | 191.901 | 11,081,748 | 415,561 | 700,333 | 8,480,171 | 2,491,843 | 847,590 |
+| TTM Q2-26 | 4,449,504 | 1,352,792 | 99,967 | 1,269,359 | — | — | 1,146,554 | 193,583 | 181,695 | constructed | **806,047** | 794,159 | 190.731 | 12,057,493 | — | — | 9,326,988 | 2,639,116 | 859,580 |
+
+*Fin. inc. out* = positive other-gains sub-items plus parent interest income (C.2). *OI (J1)* = PBT − financial income + parent bond interest (₸16,534m, FY2025 only). *Funding interest* = interest expense less parent bond interest. *FCF* = CFO − customer-account and due-to-bank funding flows + loan-book growth beyond 3% of the prior book − maintenance capex (C.4). The TTM OI holds parent items at FY2025 values (assumption). Averages: OI financing-blind 3y ₸1,798,519m, 5y ₸1,411,548m; OI after funding 3y ₸1,164,039m, 5y ₸940,827m; FCF (maint.) 3y ₸892,973m, 5y ₸724,230m.
+
+### B2 Returns (OI after funding cost; FCFROCE on maintenance-capex FCF; ₸m)
+
+| FY | CE_wc beg | CE_wc end | CE_xc end | ROCE_wc beg | ROCE_wc end | ROCE_xc beg | ROCE_xc end | FCFROCE_wc beg | FCFROCE_wc end | FCFROCE_xc beg | FCFROCE_xc end |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 2021 | 2,806,742 | 3,586,381 | 3,498,128 | 18.7% | 14.6% | n/a | 15.0% | 14.2% | 11.1% | n/a | 11.4% |
+| 2022 | 3,586,381 | 5,101,660 | 4,875,428 | 19.2% | 13.5% | 19.7% | 14.1% | 15.1% | 10.6% | 15.5% | 11.1% |
+| 2023 | 5,101,660 | 6,792,088 | 6,591,604 | 19.1% | 14.4% | 20.0% | 14.8% | 13.9% | 10.5% | 14.6% | 10.8% |
+| 2024 | 6,792,088 | 8,335,266 | 8,010,273 | 18.2% | 14.8% | 18.8% | 15.4% | 13.8% | 11.3% | 14.2% | 11.7% |
+| 2025 | 8,335,266 | 10,666,187 | 9,965,854 | 15.3% | 12.0% | 16.0% | 12.8% | 12.3% | 9.6% | 12.8% | 10.3% |
+
+| Summary (Σ ÷ Σ) | wc beg | wc end | xc beg | xc end | worst |
+|---|---|---|---|---|---|
+| ROCE, P1 window = latest 5 FYs (FY2021–25) | 17.7% | **13.6%** | 18.2% | 14.3% | **13.6%** |
+| FCFROCE (maint.), same | 13.6% | **10.5%** | 14.0% | 11.0% | **10.5%** |
+| FCFROCE all-capex (context) | 13.2% | 10.2% | 13.6% | 10.7% | 10.2% |
+| ROCE latest 3 FYs (J6 limb b) | 17.3% | 13.5% | 17.9% | 14.2% | 13.5% |
+
+The record is five years, so the 10-year and 5-year summary rows coincide. ROCE 13.6% fails P2/P3(a) (15%) and clears P3(b) (10%); FCFROCE 10.5% clears 8%. G6 (P31): no equity-accounted associates or JVs, no S3 stakes, no insurance activity at any balance-sheet date. The classes are nil, so the exclude reading is the one reading.
+
+### B3 Growth & leverage
+
+| FY | ΔOI/sh | ΔFCF/sh | ΔBV/sh | ΔTBV/sh | L/E |
+|---|---|---|---|---|---|
+| 2020 | — | — | — | — | 616.7% |
+| 2021 | — | — | — | — | 621.0% |
+| 2022 | +31.3% | +36.1% | +64.2% | +65.8% | 524.4% |
+| 2023 | +43.5% | +32.4% | +32.9% | +27.2% | 530.4% |
+| 2024 | +27.0% | +32.4% | +41.2% | +41.1% | 448.5% |
+| 2025 | +3.2% | +9.3% | +63.8% | +15.2% | **340.3%** |
+
+Reads (FY2021–25): ΔOI/sh geometric +25.4%, 3-year endpoint +26.8% → **+25.4%** governs; ΔFCF/sh +27.1% / +27.8% → **+27.1%**. BV/sh ₸2,571 → ₸12,985; TBV/sh ₸2,499 → ₸8,568 (FY2025 TBV/sh carries the Hepsiburada goodwill and intangibles out). BV growth is read against dividends of ₸340bn–646bn a year through FY2024, the FY2025 suspension, and the 1H26 resumption (₸323bn). L/E at 30 Jun 2026: 353.4%.
+
+### B4 Division table (group)
+
+| Part | Kind | Rev FY23 | Rev FY24 | Rev FY25 | Seg. NI FY23 | FY24 | FY25 | Seg. assets | Base (3y avg rev) | Weight | Future |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Payments | unit | 478,684 | 587,097 | 658,726 | 308,901 | 381,607 | 433,001 | n/a — not disclosed | 574,836 | 19.8% | STRONG (3) |
+| Marketplace ex-HEPS | unit | 448,223 | 732,943 | 899,880 | 247,955 | 348,400 | 372,791* | n/a | 693,682 | 24.0% | STRONG (3) |
+| Fintech | unit | 1,026,721 | 1,281,827 | 1,542,934 | 291,914 | 326,827 | 354,933 | n/a | 1,283,827 | 44.3% | STRONG (3) |
+| Hepsiburada (HEPS) | controlled listed subsidiary, inside Marketplace | — | — | 1,031,592 | — | — | (93,018)** | n/a | 343,864 | 11.9% | WEAK (1) · ungradeable |
+
+*Marketplace FY2025 less Türkiye: revenue 1,931,472 − 1,031,592; net income 279,773 + 93,018 (Türkiye geographic net loss; derived). **Türkiye geographic net loss (Hepsiburada's own contribution under IFRS 3: revenue ₸1,036,582m, net loss ₸68,034m). Revenue weights apply because a material part's base (Hepsiburada) is ≤ 0. Since 2026 the CODM measure is adjusted EBITDA (1H26: Payments, Marketplace, Fintech), which is not a J1 base. **S = 0.198×3 + 0.240×3 + 0.443×3 + 0.119×1 = 2.76** > 2.5 with a WEAK part → ADEQUATE. Ungradeable parts carry 11.9% < ⅓.
+
+## C. Calculation notes
+
+**C.1 — Lens test.** Kaspi.kz JSC is a "bank holding" under Kazakh law and the parent of a banking group. FI fails on two counts. First, the group publishes no consolidated regulatory capital ratio: Kaspi Bank's K1-2/K2 ratios (12.7%/12.7% at FY2025; Basel III 19.6%) cover the bank only. Bank-attributed assets (loans, securities, mandatory reserves) are about 80% of consolidated assets, short of 90% on any build. Second, it has material non-financial parts (Payments, Marketplace, Hepsiburada). **STD, case (a) of the v4.6.0 rule:** a bank-group parent that does not fit FI. The conservative STD rules applied: deposits in L/E and as debt-equivalents with the funding pairing; the bank's cash, reserves and securities kept in CE and never cash; the lending activity graded on OI after its funding cost.
+
+**C.2 — J1 OI build.** No operating subtotal exists (revenue less costs and operating expenses = PBT), so OI = PBT before net financial items, with the lending activity's funding cost kept in (Ch12 Delta). Financial-income removals, per class and year, positive items only (J3):
+- *Other gains* (a revenue line) split per note 4. FY2023: FX 10,892 + financial assets and liabilities 4,385 + residual 7,923 = 23,200 removed. FY2024: financial assets and liabilities 21,329 + residual 1,883 = 23,212 removed (the FX loss of −11,983 stays). FY2025: monetary-position gain 33,313 + FX 2,746 + residual 9,976 = 46,035 removed (the −27,785 loss stays). FY2022: 16,384 removed (no split printed; one ambiguous item). FY2021: −4,746 stays. TTM: monetary 47,287 + FX 19,642 + residual 9,887 = 76,816 removed (financial assets and liabilities −30,643 stay). The IAS 29 monetary gain is of ambiguous character → leaves when positive.
+- *Parent interest income* on the holding company's own cash and securities (parent-only P&L): 4,212 / 16,762 / 22,324 / 22,707 / 23,151 removed. If part of it is earned on deposits at Kaspi Bank and eliminated on consolidation, the removal overstates by at most that amount (≤ 1.8% of OI). Logged as the harsher reading.
+- *Parent bond interest* (USD 650m 6.25% 2030 notes, March 2025; parent-only interest expense ₸16,534m) is a financing cost of the holding company, not funding of the lending book. It is added back.
+- Interest on the bank's liquidity portfolio stays: it is part of the deposit-taking operating book. Fees for card-receivable collection and deposit insurance stay as operating costs.
+- Totals: B1 *Fin. inc. out*.
+
+**C.3 — Funding pairing (Gate 2).** Pairing A (financing-blind): EV carries customer accounts 8,132,007 + due to banks 6,943 + all debt securities 605,368, against OI before funding interest. FY2025 funding interest = XBRL interest expense 825,849 − parent bond 16,534 = 809,315 → OI_fb ₸2,088,581m. TTM OI_fb is higher on any split: 1H26 interest and fees ran ₸152bn above 1H25, while after-funding OI moved by ₸10bn. So FY2025 governs. Pairing B (funding out): EV carries only the non-funding debt-equivalents, against OI after funding, lower of FY2025 (1,279,266) and TTM (1,269,359, assumption on parent items). A reads 8.1× and B 6.9×. A gives the lower band and governs: trigger $66.41 against B's $94.27. Mixed pairings are not computed. Every debt security sits in both pairings, because the 1H26 issuer is not disclosed (the harsher reading for B).
+
+**C.4 — FCF build (P20 + lending-book rules).** Interest paid is already in CFO (direct method). Per year:
+- Customer-account inflows and due-to-bank flows in CFO are funding principal and leave FCF entirely.
+- The loan-book line leaves FCF beyond 3% of the prior year-end net book: FY2021 1,057,590 − 42,137 retained; FY2022 760,660 − 72,922; FY2023 1,132,091 − 94,644; FY2024 1,612,989 − 127,079; FY2025 1,662,914 − 172,398; TTM 1,327,267 − 191,768 (book at 30 Jun 2025, ₸6,392,266m).
+- Mandatory NBRK reserve changes, FVTPL, inventory, trade and other working-capital lines stay where the filer books them. FY2025's −₸247,819m reserve outflow stays in: the harsher reading.
+
+P20 constructed: k = Σ net fixed capital ÷ Σ revenue = 848,802 ÷ 10,647,134 = **0.0797**.
+- Net fixed capital is year-end PP&E and intangibles net, less intangibles acquired in business combinations (20,255 in 2023, 41,853 in 2024, 381,664 Hepsiburada in 2025, at gross: the harsher reading).
+- π = max(3%, Kazakh CPI): annual averages 8.04% (2021), 15.03% (2022), 14.72% (2023), 8.84% (2024) (World Bank via FRED); 12.3% (2025 and TTM, Bureau Dec/Dec, the only official 2025 print and the higher of the available reads).
+- Organic revenue: FY2025 excludes Hepsiburada's contributed ₸1,036,582m (IFRS 3 B64(q)). TTM excludes Türkiye segment revenue (₸1,186,615m TTM; ₸396,729m in the prior TTM). The FY2023 deal (₸29bn) is below 1% of EV, so reported revenue is used.
+- Real growth and growth capex: 2021 233,482 → 18,613; 2022 252,781 → 20,152; 2023 455,867 → 36,342; 2024 449,513 → 35,836; 2025 165,881 → 13,224; TTM 149,115 → 11,888.
+- Floor (PP&E depreciation + software amortisation): 12,336 / 17,201 / 25,554 / 28,604 / 75,895. FY2025's charge includes acquired-intangible amortisation, kept in (the harsher reading), and the FY2025 floor is used for the TTM. The floor binds in 2021 and 2023.
+- TTM FCF ₸806,047m < FY2025 ₸1,028,633m, so the TTM governs Gate 2.
+
+**C.5 — Capital employed.** CE_wc = total assets − NIBCL. NIBCL = trade payables/payables to suppliers + accrued expenses + current income tax + deferred revenue and contract liabilities (FY2025: 346,401 + 9,825 + 638 + 25,823 + 32,874 = 415,561). Payables for customers' online transactions, other taxes and "other" stay in CE (burden of proof). FY2020: NIBCL not read, so it stays in CE. CE_xc deducts only free cash: the parent-only cash, plus its FVOCI securities at market × 0.9 in FY2025 (215,524 → 193,972; maturity undisclosed). The bank's cash, NBRK reserves and securities back ₸8.1tn of deposits and are never cash.
+
+**C.6 — Leverage and P6.** L/E = total liabilities ÷ owners' equity = 8,480,171 ÷ 2,491,843 = **340.3%** (FY2025); 353.4% at 30 Jun 2026. Above P5. P6 requires every other Past metric at the P2 level, which fails (ROCE 13.6%), and borrowing to repurchase clearly under-priced stock, which fails (the borrowing is deposits funding loans). Breach stands; customer deposits are never a P6 argument.
+
+**C.7 — Sustained decline (J6).** Limb (a): ROCE_wc beginning 19.2% (2022) → 19.1% → 18.2% → 15.3%, three consecutive declines with the last in FY2025, so it **fires**. FCFROCE_wc beginning 15.1% → 13.9% → 13.8% → 12.3% also fires. Limb (b): latest-three pooled ROCE 13.5% against the window's 13.6% (end, wc), not one-third below, so no fire. No P28 year. P2 bars fail, so the decline makes Past WEAK (not the ADEQUATE cap). Cause named in D.
+
+**C.8 — EV build at 30 Jun 2026 (₸m).** Debt-equivalents:
+- customer accounts 8,132,007;
+- due to banks 6,943;
+- debt securities 605,368 (incl. accrued interest);
+- lease liabilities 21,585 (FY2025, latest disclosed);
+- NCI 121,289 = book 91,389 + Hepsiburada uplift to market 29,900. HEPS market NCI: 13.26% × 357,225,200 shares × $2.75 × 452.59 = 58,955. HEPS book NCI is derived at 29,055 from the 1H26 NCI purchase: ₸23,621m booked for 10.78pp, ₸2,191m per pp × 13.26.
+
+Total **₸8,887,192m**. Kaspi Bank preference shares' debt component (₸161m at FY2025) is not separately shown at 30 Jun 2026 and is immaterial. Cash for the all-cash variant: **nil**. The parent's own cash (₸506,361m plus securities at FY2025) is disclosed only at year-end and is not shown at the balance-sheet date, and when in doubt it is not cash. Context: had the FY2025 parent cash and securities (₸700,333m) been deducted, all-cash EV/OI would read 7.8×. MCap = $92.94 × 452.59 × 190.730670m = ₸8,022,840m.
+
+**C.9 — TBV build.** 30 Jun 2026: owners' equity 2,639,116 − goodwill 459,118 − intangibles 400,462 (FY2025 figure; the interim combines PP&E and intangibles, assumption) = ₸1,779,536m.
+
+**C.10 — Bias check.** **Hotness** and **authority**: Kaspi is a celebrated franchise with a famous CEO letter, and Kasper is fresh AI news. Handled by computing every gate before reading the narrative. **Consistency** with v3's PASS on SF: the acquisitions strike is a rule change (v4.5.0 J14 acquisition stop, listed-target limb), stated as parameter-driven in G, not a fresh dislike. **Miscontrast**: B's 6.9× sits beside A's 8.1×; the rule fixes which governs. Not held.
+
+## D. Future-performance worksheet
+
+**Breadth (P15).**
+- *Customers*: consumers and merchants, all atomised. The filer's revenue split and customer counts (≈ 900k merchants; tens of millions of consumer accounts) rule out a 10% payer, and the Kazakh units do not sell to organisations above 10% of revenue in any single relationship. No flag.
+- *Suppliers*: the payment rails are owned. Suppliers of 1P goods (e-grocery; Hepsiburada 1P) are many, and no single vendor is near 10% of COGS + opex. No flag.
+- *Funding* (Fintech, strict). The largest counterparty is under 1.3% of liabilities (top 20 depositors ₸107bn at 30 Jun 2026). The capital-market channel covers uninsured deposits (₸2,189,056m at FY2025, Item 5), corporate deposits (₸352,582m, counted in full in case they overlap the uninsured figure) and debt securities 331,992 + due to banks 16,183 = ₸2,889,813m, i.e. 34.1% of FY2025 liabilities. Under 50%. Insured retail deposits are not a channel. NBRK: none. No `funding conc.`
+
+**Forces — Payments.** Customers WEAK (atomised; QR and P2P habit). Suppliers WEAK (own rails, no card-network dependence). Substitutes WEAK (cash and bank cards are inferior in the ecosystem; take-rate drift is mix, not competition). Entrants WEAK (two-sided density, scale). Tally 0. Moat: network effect, strengthening (TPV +13% in 2Q26). Market YES. **STRONG.**
+
+**Forces — Marketplace ex-Hepsiburada.** Customers WEAK (merchants are atomised and the take rate rose 110bp in 2Q26). Suppliers WEAK. Substitutes WEAK (offline retail is integrated via m-Commerce). Entrants WEAK: Russian marketplaces are expanding in Kazakhstan, but integration with Payments and BNPL is a barrier to success, and e-Commerce purchases per consumer rose 11.6 → 15.8 in a year. Called WEAK on that evidence; it is the call to re-test. Tally 0. Moat: network plus ingrainedness, strengthening. Market YES. **STRONG.**
+
+**Forces — Fintech.** Customers WEAK (atomised borrowers; BNPL tied to the marketplace checkout). Suppliers (funding) WEAK (granular retail deposits). Substitutes WEAK (other banks' digital loans lack the point-of-sale placement). Entrants WEAK (banking licence plus data). Tally 0. Moat: ingrainedness and data at the point of sale, stable: funding cost rose 150bp y/y to 14.5%, and the regulator's buffers and reserve rules bite. Market YES. **STRONG.** Regulatory pressure is a returns risk, not a force call.
+
+**Hepsiburada (HEPS).** A material controlled listed subsidiary (25% of FY2025 group revenue) with no current memo under its own key. Ungradeable (§2 Group dependencies): WEAK with its weight; `HEPS` is owed as a dependency of KSPI. For information only: v3's segment reading called substitutes STRONG in Türkiye (Trendyol leads), and the business lost ₸93bn in FY2025.
+
+**Declines (J6).** Cause: **cycle and acquired capital.** The NBK base-rate cycle raised the cost of funding by more than loan yields could reprice (Fintech adjusted EBITDA +6% on revenue +23% in 2Q26). And the January 2025 Hepsiburada consolidation added ₸860bn of goodwill and intangibles plus a loss-making business to capital employed. The Kazakh moat is not eroding on the evidence (engagement, take rates, GMV all up). So this is not competitive erosion.
+
+## E. Shareholder-friendliness evidence
+
+**Pay worksheet (P17).** A foreign private issuer printing only aggregates. Item 6.B and note 27 give the total for the six directors and three non-director executive officers (nine people):
+
+| FY | Employee benefits | Share-based | Aggregate (ceiling) | Floor (÷ 9) | 5% line, fiscal-year read | 5% line, trailing read |
+|---|---|---|---|---|---|---|
+| 2023 | 535 | 4,815 | 5,350 | 594 | lower(FCF 711,352; NI 841,351) → ₸35,568m | 3y avg FCF 551,193 → ₸27,560m |
+| 2024 | 438 | 1,816 | 2,254 | 250 | lower(938,935; 1,039,739) → ₸46,947m | 730,673 → ₸36,534m |
+| 2025 | 593 | 61 | 654 | 73 | lower(1,028,633; 1,073,177) → ₸51,432m | 892,973 → ₸44,649m |
+
+- **Hairiest number** ≤ ₸5,350m (FY2023 ceiling ≈ $11.7m at 456 KZT/USD), and every ceiling passes. *Proportionality*: ≤ 0.15× the line (determinate pass). *Absolute*: ≤ $11.7m against ≈ $40m (pass). *Big grants*: per-person grant values are withheld, but the full aggregate share-based expense is below 2× every line, so no strike is possible. Whether a flag exists is INDETERMINATE (a). *Home average*: benchmark not set.
+- **Outside directors.** Four independent directors plus a non-executive chair (Kim). Per-person fees are withheld. The combined aggregate (₸654m ≈ $1.28m FY2025) sits above the $666k cap and below the $1.33m strike, and no director-specific floor exists → **INDETERMINATE (a)**, company opacity.
+- No pension plan.
+
+**Alignment (P23).** Executive officers and executive directors: Lomtadze (CEO, director) 23.04%, plus "Management" 4.03% at 30 Jun 2026 → **27.07%** of outstanding shares ≈ ₸2,164bn ≈ $4.8bn at px. That is ≫ 1% and ≫ 10× the hairiest number → **ALIGNED**. Kim (non-executive chair, 20.06%) is outside the management sum. His open-market sales (August–October 2026, ~$92–99 per ADS; 36.33m ADS held after 16 Oct) are recorded as a fact, no flag. Single share class: votes are not separated from economics (each holder's vote share equals its economic share).
+
+**Related parties (note 27).** FY2025: goods from key-management entities ₸7,167m of COGS ₸1,179,141m (0.6%); fee revenue from them ₸4,416m; deposits of key management at market terms. Property and equipment purchased from key-management entities: ₸2,967m (FY2025). Nothing for management, advisory or name-licensing functions. P27 materiality (0.5% of ₸806bn ≈ ₸4.0bn): the goods purchases exceed it in amount, but they are checkable arm's-length supply at 0.6% of the expense line, so they are a caveat, not a flag.
+
+**Worth table (repurchases; material: 2,957,338 shares over FY2023–FY2025 + 1H26 against 1% of average diluted shares ≈ 1.915m).**
+
+| Tranche-year | Cash ₸m | Shares | Avg ₸ | Implied MCap ₸bn | MCap/FCF year · trailing-3 | EV/OI A year · trailing-3 | EV/OI B year · trailing-3 | Read |
+|---|---|---|---|---|---|---|---|---|
+| FY2023 | 60,703 | 1,595,293 | 38,051 | 7,308 | 10.3 · 13.3 | 8.9 · 12.5 | 7.7 · 10.3 | below worth (14 / 16) |
+| FY2024 | 2,852 | 64,914 | 43,935 | 8,410 | 9.0 · 11.5 | 8.2 · 10.6 | 6.9 · 8.9 | below worth |
+| FY2025 | 21,907 | 559,553 | 39,151 | 7,513 | 7.3 · 8.4 | 7.4 · 8.6 | 6.2 · 6.9 | below worth |
+| 1H26 (live) | 28,368 | 737,578 | 38,461 | 7,336 | 9.1 (TTM) | 7.8 | 6.4 | below worth |
+
+- Governing reading: the higher multiple on each line (pairing A on EV/OI). None reaches 14×, and none approaches 25×.
+- The 7th programme (17 Nov 2025 – 27 Feb 2026) bought 1,297,131 ADS for ₸50,274m. No authorisation is disclosed as live since then, and no published price criterion exists.
+- Sterilising share: options exercised 618,788 / 747,178 (incl. 2024 reissue) / 771,756 / 536,912, also below worth. FY2025 average diluted shares (191.90m) are below FY2022's (193.99m), so not dilutive.
+- Allocators in office: Lomtadze (CEO), Mosidze (CFO), Kim (chair). **Repurchases SOUND.**
+
+**Acquisition worksheet.**
+- **Hepsiburada**, completed 29 Jan 2025: 65.41% for ≈ $1,127m (consideration ₸582,444m); +10.55pp (FY2025, ₸33,721m) and +10.78pp (1H26, ₸57,200m) to 86.74%. Deal value is 3.4% of EV (pairing A), above 1%. Goodwill ₸422,225m; trademark ₸225,130m; customer base ₸33,634m.
+  - Target's own pre-deal record (its last annual report before the deal, FY2023 20-F; XBRL): operating profit/(loss) TRY +101m (FY2019), −181m (FY2020), −1,844m (FY2021), −3,103m (FY2022), −725m (FY2023). No positive pre-deal normalised OI, so its ROCE is below the P3 level on its own record.
+  - **Listed target below P3 → ADVERSE (`acquisitions`).** It also fails the no-positive-OI limb (at least CAUTION); ADVERSE governs. FY2024, reported after the deal, was +TRY 17m.
+  - Allocators who made the deal (Lomtadze, Mosidze) are in office. Write-downs: none (FY2025 impairment test passed).
+- **Rabobank A.Ş. / Hepsi Bank** (completed 14 Jul 2026): "not material" per the filer; a licensed shell with no clients. The ~$300m planned capitalisation is forward evidence.
+- **FY2023 deal(s)**: ₸29,052m net cash, below 1% of EV.
+
+**Allocation across the parts (groups).** Segment assets are not disclosed, so the test is **INDETERMINATE (b)**. Re-test: if the FY2026 20-F prints segment assets. Context: all loans sit in Fintech, and the 2025 capital growth (₸2.3tn of CE) went into Hepsiburada and the loan book.
+
+**Payout and funding.** Dividends ₸340bn (FY2021), ₸210bn (FY2022), ₸560bn (FY2023) and ₸646bn (FY2024) were paid against maintenance-capex FCF of ₸399–939bn. That is 85% of FY2021 FCF, and 69–79% in FY2023–24. Dividends were suspended in FY2025 for the Hepsiburada purchase and restored in 2026 (₸850 ×2, ₸1,000). The deal was funded by the USD 650m parent bond plus parent cash; the bank's capital ratios held above requirement.
+
+**Group 1C.** Hepsiburada (controlled listed subsidiary) has no memo → its SF is **INDETERMINATE (b)**. Re-test: the HEPS memo. The parent's own tests ran in full.
+
+**SF ladder.**
+- Hard strikes: **acquisitions ADVERSE** (Hepsiburada; listed target below P3 on its pre-deal record) → step 1.
+- Flags: none beyond the strike (repurchases SOUND; RPT caveat only).
+- INDETERMINATE: (a) director fees; (a) big-grant flag; (b) allocation across parts; (b) Hepsiburada SF.
+- Inputs: ALIGNED (favourable); votes not separated; Kim's sales (fact); dividends restored.
+- **Step 1 decides → FAIL.**
+
+**Recency-weighted reading.** The strike is a trailing-three-year deal by allocators still in office, and capital keeps flowing into Türkiye (Hepsi Bank ~$300m). The repurchase record is disciplined and the dividend posture rational. Neither offsets a strike. **Forward evidence:** 1H26 NCI purchase at ₸57,200m; Hepsi Bank capitalisation intent ($300m, 2Q26 release); Türkiye still loss-making in 1H26; no live buyback authorisation. **Consistency hazard checked:** not held. The analyst's admiration for the franchise was the hazard (C.10); the strike is mechanical on the target's printed record.
+
+## F. Valuation math
+
+**Multiples at px ($92.94; ₸42,064; MCap ₸8,022,840m).**
+
+| Reading | Arithmetic | Result |
+|---|---|---|
+| MCap/FCF (TTM maint.) | 8,022,840 ÷ 806,047 | **10.0×** |
+| MCap/FCF all-capex (context) | 8,022,840 ÷ 794,159 | 10.1× |
+| EV/OI A, no-cash = all-cash | (8,022,840 + 8,887,192) ÷ 2,088,581 | **8.1×** |
+| EV/OI B (funding out, after-funding OI) | (8,022,840 + 748,242) ÷ 1,269,359 | 6.9× |
+| MCap/BV | 8,022,840 ÷ 2,639,116 | 3.04× |
+| MCap/TBV | 8,022,840 ÷ 1,779,536 | 4.51× |
+
+**Trigger band** (N = 190.730670m):
+- FCF leg: 8 × 806,047 ÷ N = ₸33,809 = **$74.70**.
+- EV/OI leg A, no-cash: (7 × 2,088,581 − 8,887,192) ÷ N = ₸30,057 = **$66.41**. The all-cash bound is the same: no cash is deducted, so the bounds converge.
+- Leg B: (7 × 1,269,359 − 748,242) ÷ N = ₸42,664 = $94.27. Not governing: the lower band governs.
+- **Trigger $66.41, EV/OI no-cash binds.** At the trigger, MCap/FCF is 7.1× and EV/OI 7.0×.
+- All-capex band (context): FCF leg $73.6.
+- P12: none (Past WEAK).
+- Distance: 92.94 ÷ 66.41 − 1 = +40%.
+
+**Averaged readings (at px, pairing A).** OI 3y 1,798,519 → EV/OI 9.4×; 5y 1,411,548 → 12.0×. FCF 3y 892,973 → MCap/FCF 9.0×; 5y 724,230 → 11.1×. All-cash equals no-cash.
+
+**P28.** Not run. FY2025 OI (both pairings) is above its 3-year and 5-year averages, and the TTM FCF dip has no named one-off cause.
+
+**Cheapness.** Both primaries are above threshold: MCap/FCF +24%, EV/OI +16%. Both are within the 75% corridor → **FAIR**.
+
+**Qualifier-implied prices (context).** 3 × BV/sh = $91.72; 3 × TBV/sh = $61.84. BV ≫ TBV → acquisition audit → ADVERSE (E).
+
+**Backvaluing:** not applicable (latest OI above prior; not definitively cyclical). **Sell line:** not held.
+
+## G. Change log
+
+**History.**
+- v1 — 2026-06-12 — ANALYSE — WATCH (pre-v3 mechanics) — archive/memos/KSPI/KSPI_2026-06-12_GSC.md
+- v2 — 2026-08-23 — REVIEW — WATCH (FI substitution) — archive/memos/KSPI/KSPI_2026-08-23_GSC.md
+- v3 — 2026-09-01 — REVIEW — AVOID (Past WEAK, leverage) — archive/memos/KSPI/KSPI_2026-09-01_GSC.md
+
+**v4 — 2026-10-20 — REVIEW (attended, Jakub's request) — AVOID (Past WEAK; SF FAIL).** Prior memo v3 was written under MODEL v4.2.0, so this REVIEW re-tests every v4.5.0 and v4.6.0 rule.
+
+*What changed.*
+1. **Lens settled on STD by rule (v4.6.0, G2 case a).** v3 ran STD at the user's direction with IDEAS A2 open; the retired R4 pile would have read DNAF; now STD is mechanical. The deposit-taker's conservative STD rules replace v3's construction (C.1–C.5).
+2. **OI basis changed (J1, R2).** Graded after funding cost: ROCE worst-of-four 21.1% (v3, financing-blind over total assets) → **13.6%**. The financing-blind OI moves to the Gate 2 funding pairing only.
+3. **Past WEAK now on two grounds.** The J6 decline (three consecutive declines) fires on its own, and the register reason becomes `ROCE decline` (vocabulary precedence); leverage (340.3%) is unchanged.
+4. **SF PASS (one flag) → FAIL**, a parameter-driven movement (v4.5.0 J14 acquisition stop, listed-target limb). Hepsiburada's own pre-deal record shows operating losses. v3 read the deal as "judgmental" CAUTION under v4.2.0.
+5. **FCF rebuilt on P20 and the lending-book rule.** Deposits and due-to-bank flows leave; loan growth beyond 3% leaves; maintenance capex constructed. TTM FCF ₸952,971m (v3 reported basis) → **₸806,047m**.
+6. **Cash.** The bank's liquidity is never cash, so the all-cash variant equals the no-cash one (v3 deducted ₸2.57tn).
+7. **Band.** The trigger moves ₸38,604 / $84.86 (v3 no-cash) → **$66.41** (pairing A). MCap/FCF 9.6× → 10.0×; EV/OI 7.8× → 8.1×.
+8. **Group rules (v4.6.0 G3/G4).** Hepsiburada is a material controlled listed subsidiary, read as ungradeable (no HEPS memo). Future stays ADEQUATE by weight (S 2.76 with a WEAK part).
+9. **Data added.** ISIN US48581R2058; FY2020 opening balance sheet (record FY2021–FY2025, one year more of returns); parent-only statements; Hepsiburada pre-deal record; Kim's sales; the ₸1,000 2Q26 dividend; Hepsi Bank completion.
+
+*What did not change.* Gate 0 PASS. Future ADEQUATE. Cheapness FAIR. Verdict AVOID; it now fails two gates, so the register row moves to AVOID — two or more gates.
+
+*Open.* FY2016–FY2019 rebuild (record-limited); HEPS memo (dependency); Hepsi Bank PPA; segment assets for the allocation test; per-person pay.
+
+*Framework output, not investment advice.*

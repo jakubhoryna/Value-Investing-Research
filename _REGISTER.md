@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v324
+register_version: v325
 register_date: 2026-10-20
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
@@ -11,7 +11,7 @@ portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v324 · 2026-10-20)
+# GSC Register — Master Watchlist (v325 · 2026-10-20)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -217,7 +217,7 @@ None.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | EQNR | Equinor ASA | 2026-10-08 | v3 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | PASS CAUTION · acquisitions | 41.61 | 23.39 | 14.2 | 6.1 | 10.3 · 6.5 | 5.0 · 3.8 | Feb 2027 |
 | TUI1.DE | TUI AG | 2026-07-24 | v1 | AVOID | WEAK · 2.9% ROCE | WEAK · 2+ forces | PASS | 6.662 | 7.48 | 3.4 | 6.4 | - | - | Dec 2026 |
-| KSPI | Joint Stock Company Kaspi.kz | 2026-10-20 | v4 | AVOID | WEAK · ROCE decline | ADEQUATE | FAIL · acquisitions | 92.94 | 66.41 | 10.0 | 8.1 | 9.0 · 11.1 | 9.4 · 12.0 | Mar 2027 |
+| KSPI | Joint Stock Company Kaspi.kz | 2026-10-20 | v5 | AVOID | WEAK · ROCE decline | ADEQUATE | FAIL · acquisitions | 92.94 | 66.41 | 10.0 | 8.1 | 9.0 · 11.1 | 9.4 · 12.0 | Mar 2027 |
 | ERIC-B.ST | Telefonaktiebolaget LM Ericsson (publ) | 2026-07-24 | v1 | AVOID | WEAK · 4.7% ROCE | WEAK · customer conc. | FAIL · flag pair | 91.06 | 68.6 | 10.0 | 8.9 | - | - | Jan 2027 |
 | 7213.T | LECIP HOLDINGS CORPORATION (レシップホールディングス株式会社) | 2026-08-17 | v1 | AVOID | WEAK · 9.4% ROCE | WEAK · 2+ forces | PASS CAUTION · buybacks | 670 | 492 | 3.4 | 9.2 | - | - | May 2027 |
 | LIGHT.AS | Signify N.V. | 2026-07-23 | v1 | AVOID | WEAK · 8.3% ROCE | WEAK · 2+ forces | PASS | 15.98 | 8.1 | 5.0 | 9.6 | - | - | Feb 2027 |
