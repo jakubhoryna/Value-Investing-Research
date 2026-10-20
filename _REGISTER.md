@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v319
+register_version: v320
 register_date: 2026-10-20
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
@@ -11,7 +11,7 @@ portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v319 · 2026-10-20)
+# GSC Register — Master Watchlist (v320 · 2026-10-20)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -280,12 +280,12 @@ None.
 | PHIA.AS | Koninklijke Philips N.V. | 2026-07-23 | v1 | AVOID | WEAK · 3.5% ROCE | ADEQUATE | FAIL · buybacks | 22.83 | 4.9 | 28.3 | 21.0 | - | - | Feb 2027 |
 | MICC.AS | The Magnum Ice Cream Company N.V. | 2026-07-14 | v1 | AVOID | WEAK · leverage | WEAK · 2+ forces | PASS | 16.306 | 3.8 | 79.2 | 21.7 | - | - | Mar 2027 |
 | DGE.L | Diageo plc | 2026-10-04 | v1 | AVOID | WEAK · leverage | WEAK · moat eroding | PASS CAUTION · buybacks | 1601.5 | n.m. | 14.7 | 22.6 | - | - | Feb 2027 |
+| NFLX | Netflix, Inc. | 2026-10-20 | v2 | AVOID | WEAK · FCFROCE | WEAK · 2+ forces | FAIL · compensation | 68.69 | 16.36 | 33.6 | 22.9 | 38.0 · 59.3 | 29.9 · 36.0 | Jan 2027 |
 | WAY | Waystar Holding Corp. | 2026-08-07 | v1 | AVOID | WEAK · 2.8% ROCE | ADEQUATE | FAIL · compensation | 23.26 | 1.38 | 15.7 | 23.8 | - | - | Feb 2027 |
 | BA.L | BAE Systems plc | 2026-10-08 | v2 | AVOID | WEAK · 9.6% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 1826 | 306.2 | 27.7 | 23.9 | 24.1 · 26.3 | 26.1 · 27.8 | Feb 2027 |
 | ZM | Zoom Communications, Inc. | 2026-07-29 | v1 | AVOID | WEAK · 9.9% ROCE | WEAK · forces: substitutes | FAIL · buybacks | 91.48 | 26 | 14.3 | 24.5 | - | - | Apr 2027 |
 | UNH | UnitedHealth Group Incorporated | 2026-07-03 | v1 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | FAIL · buybacks | 425 | 52 | 24.0 | 24.9 | - | - | Mar 2027 |
 | TDY | Teledyne Technologies Incorporated | 2026-10-04 | v1 | AVOID | WEAK · 7.8% ROCE | WEAK · customer conc. | PASS CAUTION · acquisitions | 617.17 | 138.26 | 27.0 | 25.1 | - | - | Feb 2027 |
-| NFLX | Netflix, Inc. | 2026-07-04 | v1 | AVOID | ADEQUATE · 14.9% ROCE | WEAK · forces: suppliers | FAIL · compensation | 77.65 | 17.4 | 34.6 | 25.8 | - | - | Jan 2027 |
 | 5332.T | TOTO Ltd. | 2026-07-12 | v1 | AVOID | WEAK · 8% ROCE | ADEQUATE | FAIL · buybacks | 8059 | 1366 | 47.2 | 26.0 | - | - | Apr 2027 |
 | KNIN.SW | Kuehne + Nagel International AG | 2026-10-08 | v2 | AVOID | WEAK · ROCE decline | WEAK · unit 2+ forces | FAIL · director pay | 223.4 | 27.9 | 19.3 | 26.0 | 19.9 · 12.7 | 19.9 · 13.8 | Mar 2027 |
 | ORCL | Oracle Corporation | 2026-07-14 | v2 | AVOID | WEAK · ROCE decline | WEAK · breadth | FAIL · compensation | 129.68 | n.m. | n.m. | 26.1 | - | - | Sep 2026 |
