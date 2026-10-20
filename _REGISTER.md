@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v323
+register_version: v324
 register_date: 2026-10-20
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
@@ -11,7 +11,7 @@ portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v323 · 2026-10-20)
+# GSC Register — Master Watchlist (v324 · 2026-10-20)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -320,10 +320,10 @@ None.
 | CAT | Caterpillar Inc. | 2026-10-04 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 845.42 | 70 | 52.5 | 39.2 | - | - | Feb 2027 |
 | BAS.DE | BASF SE | 2026-07-17 | v1 | AVOID | WEAK · 5.8% ROCE | WEAK · moat eroding | FAIL · buybacks | 48.44 | n.m. | 31.9 | 39.8 | - | - | Feb 2027 |
 | MGNI | Magnite, Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · flag pair | 25.31 | 1.73 | 21.9 | 41.5 | - | - | Feb 2027 |
-| SPOT | Spotify Technology S.A. | 2026-07-10 | v1 | AVOID | WEAK · 4.3% ROCE | WEAK · supplier conc. | FAIL · buybacks | 485.88 | - | 31.1 | 41.6 | - | - | Feb 2027 |
 | AUTO.OL | AutoStore Holdings Ltd. | 2026-10-04 | v1 | AVOID | WEAK · 4.2% ROCE | WEAK · customer conc. | FAIL · compensation | 16.31 | 0.23 | 550.1 | 41.8 | - | - | Apr 2027 |
 | WWD | Woodward, Inc. | 2026-10-04 | v1 | AVOID | WEAK · 8.8% ROCE | ADEQUATE | FAIL · buybacks | 331.62 | 32.3 | 57.5 | 43.7 | - | - | Nov 2026 |
 | BABA | Alibaba Group Holding Limited | 2026-10-06 | v2 | AVOID | WEAK | WEAK | FAIL | 110.8 | 14.4 | n.m. | 44.1 | - | - | Feb 2027 |
+| SPOT | Spotify Technology S.A. | 2026-10-20 | v2 | AVOID | WEAK · 0.3% ROCE | WEAK · unit supplier conc. | FAIL · compensation | 526.08 | 80.19 | 36.9 | 44.7 | 55.7 · 88.2 | 94.7 · 192.7 | Feb 2027 |
 | VSURE.ST | Verisure plc | 2026-10-04 | v1 | AVOID | WEAK · 1.4% ROCE | ADEQUATE | FAIL · compensation | 8.096 | n.m. | n.m. | 45.5 | - | - | Mar 2027 |
 | CROX | Crocs, Inc. | 2026-10-07 | v8 | AVOID | WEAK · leverage | WEAK · unit supplier conc. | FAIL · acquisitions | 115.20 | n.m. | 8.5 | 49.0 | 7.0 · 8.1 | 9.9 · 9.8 | 2026-10-29 |
 | SHOO | Steven Madden, Ltd. | 2026-08-07 | v1 | AVOID | WEAK · growth | WEAK · 2+ forces | FAIL · compensation | 48.45 | 2.2 | 29.7 | 49.0 | - | - | Mar 2027 |
