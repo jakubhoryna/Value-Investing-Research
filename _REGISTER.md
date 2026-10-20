@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v322
+register_version: v323
 register_date: 2026-10-20
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
 names_total: 397
-verdict_split: "BUY 0 · WATCH 66 · AVOID 313 (one gate 107 · two+ 206) · DNAF 18"
+verdict_split: "BUY 0 · WATCH 66 · AVOID 313 (one gate 106 · two+ 207) · DNAF 18"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v322 · 2026-10-20)
+# GSC Register — Master Watchlist (v323 · 2026-10-20)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -100,13 +100,12 @@ None.
 | SAVE.ST | Nordnet AB (publ) | 2026-08-01 | v2 | WATCH | ADEQUATE · 29.2% ROE | ADEQUATE | PASS CAUTION · buybacks | 348 | 97.5 | - | n.m. | - | - | Mar 2027 |
 | SDZ.SW | Sandoz Group AG | 2026-06-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | 70 | - | - | - | - | - | Feb 2027 |
 
-## AVOID - one gate failed (107)
+## AVOID - one gate failed (106)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | LULU | lululemon athletica inc. | 2026-09-04 | v5 | AVOID | ADEQUATE · 33.1% ROCE | WEAK · 2+ forces | PASS CAUTION · buybacks | 97.5 | 67 | 11.7 | 4.9 | - | - | Dec 2026 |
 | BBWI | Bath & Body Works, Inc. | 2026-08-07 | v1 | AVOID | WEAK · growth | ADEQUATE | PASS | 20.14 | 15.72 | 4.7 | 7.8 | - | - | Nov 2026 |
-| KSPI | Joint Stock Company Kaspi.kz | 2026-09-01 | v3 | AVOID | WEAK · leverage | ADEQUATE | PASS | 106.29 | 84.86 | 9.6 | 7.8 | - | - | Nov 2026 |
 | KRN.DE | Krones AG | 2026-07-24 | v1 | AVOID | WEAK · 9.3% ROCE | ADEQUATE | PASS | 110.6 | 66.1 | 13.4 | 8.8 | - | - | Mar 2027 |
 | ANF | Abercrombie & Fitch Co. | 2026-08-07 | v1 | AVOID | ADEQUATE · 10.8% ROCE | WEAK · forces: entrants | PASS | 111.98 | 68.13 | 13.1 | 9.0 | - | - | Mar 2027 |
 | TRI.PA | Trigano S.A. | 2026-08-07 | v1 | AVOID | ADEQUATE · 18.2% ROCE | WEAK · 2+ forces | PASS | 151.2 | 111.2 | 5.6 | 9.3 | - | - | 2026-11-25 |
@@ -212,12 +211,13 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (206)
+## AVOID - two or more gates failed (207)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | EQNR | Equinor ASA | 2026-10-08 | v3 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | PASS CAUTION · acquisitions | 41.61 | 23.39 | 14.2 | 6.1 | 10.3 · 6.5 | 5.0 · 3.8 | Feb 2027 |
 | TUI1.DE | TUI AG | 2026-07-24 | v1 | AVOID | WEAK · 2.9% ROCE | WEAK · 2+ forces | PASS | 6.662 | 7.48 | 3.4 | 6.4 | - | - | Dec 2026 |
+| KSPI | Joint Stock Company Kaspi.kz | 2026-10-20 | v4 | AVOID | WEAK · ROCE decline | ADEQUATE | FAIL · acquisitions | 92.94 | 66.41 | 10.0 | 8.1 | 9.0 · 11.1 | 9.4 · 12.0 | Mar 2027 |
 | ERIC-B.ST | Telefonaktiebolaget LM Ericsson (publ) | 2026-07-24 | v1 | AVOID | WEAK · 4.7% ROCE | WEAK · customer conc. | FAIL · flag pair | 91.06 | 68.6 | 10.0 | 8.9 | - | - | Jan 2027 |
 | 7213.T | LECIP HOLDINGS CORPORATION (レシップホールディングス株式会社) | 2026-08-17 | v1 | AVOID | WEAK · 9.4% ROCE | WEAK · 2+ forces | PASS CAUTION · buybacks | 670 | 492 | 3.4 | 9.2 | - | - | May 2027 |
 | LIGHT.AS | Signify N.V. | 2026-07-23 | v1 | AVOID | WEAK · 8.3% ROCE | WEAK · 2+ forces | PASS | 15.98 | 8.1 | 5.0 | 9.6 | - | - | Feb 2027 |
