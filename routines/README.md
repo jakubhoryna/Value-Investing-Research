@@ -6,7 +6,7 @@ Every routine's saved prompt is one line:
 GSC ROUTINE: <JOB> — follow routines/README.md and routines/<JOB>.md exactly.
 ```
 
-`<JOB>` is one of `ANALYSE · REVIEW · SWEEP · INTAKE · QUEUE-SEED`. Everything a run needs is in this repo. This folder is framework-locked: it changes only under "commit model".
+`<JOB>` is one of `ANALYSE · REVIEW · SWEEP · INTAKE · QUEUE-SEED · WEEKLY`. Everything a run needs is in this repo. This folder is framework-locked: it changes only under "commit model".
 
 ---
 
@@ -19,17 +19,18 @@ GSC ROUTINE: <JOB> — follow routines/README.md and routines/<JOB>.md exactly.
    - the self-test `: gsc-guard-canary`, run as its own Bash command, is **refused** with a message containing `GSC guard canary`. (`:` is a no-op, so the self-test is harmless when the guard is off. Never use a push or a locked-path write as a self-test: the permission classifier reads those as real attempts and then blocks the run's next GitHub calls.)
 
    If the self-test runs (exit 0) or the files are untracked, the guard is off.
-4. **Ledger.** Run the paginated ledger command (§1). Its output is this run's **claim ledger** (§2). If the call fails, stop: without the ledger a run can collide with another.
+4. **Ledger.** Run the paginated ledger command (§1). Its output is this run's **claim ledger** (§2). If the call fails, stop: without the ledger a run can collide with another. WEEKLY claims nothing and skips this step: its page-by-page PR fetch (WEEKLY.md step 4) takes the ledger's place.
 5. **Fix the run date and time, once.** `D=$(TZ=Europe/Prague date +%F)` and `T=$(TZ=Europe/Prague date +%H%M)`. Write both down and reuse them literally (§5: never re-read the clock).
 6. **Exactly one repository.** `git rev-parse --show-toplevel` must print the session's starting directory (`pwd -P`), and so must `$CLAUDE_PROJECT_DIR` if it is set; `ls -d ../*/.git` must list no other clone. With a second repository attached, hooks and deny rules don't load.
 
 **On failure.**
 - Steps 1, 2 and 4: write nothing. End with a session summary that names the failed step.
-- Steps 3 and 6 (guard off): if you can, fix D and T, cut the keyless branch `claude/gsc-{job}-{D}-{T}`, commit only the run note `queue/runs/{D}_{T}_{JOB}.md` saying "guard off: {reason}", push it and open a PR titled `GSC {JOB} {D} — stopped: guard off`. REVIEW has no key at this point and its branches must carry one, so REVIEW only ends with a summary. Then stop.
+- Steps 3 and 6 (guard off), every job except WEEKLY (next bullet): if you can, fix D and T, cut the keyless branch `claude/gsc-{job}-{D}-{T}`, commit only the run note `queue/runs/{D}_{T}_{JOB}.md` saying "guard off: {reason}", push it and open a PR titled `GSC {JOB} {D} — stopped: guard off`. REVIEW has no key at this point and its branches must carry one, so REVIEW only ends with a summary. Then stop.
+- WEEKLY, on any failure: write nothing and push no branch; once its local branch exists (WEEKLY.md step 1) it sends its `GSC WEEKLY · not published · …` push (§5), and it always ends with a session summary.
 
 ## 1. Names, commands and the PR contract
 
-**One run → one branch → one PR.** Ignore any branch name the harness suggests; use the name below.
+**One run → one branch → one PR** (WEEKLY: one local branch and no PR, WEEKLY.md). Ignore any branch name the harness suggests; use the name below. Once the run branch is cut, never switch or create another branch: the guard hook refuses it, and it refuses a push, a GitHub write, a phone push or an artifact call from a branch of another job than the one the session's prompt names.
 
 | Prompt job | Branch token | Title word | Branch | Run note | Output file |
 |---|---|---|---|---|---|
@@ -38,10 +39,11 @@ GSC ROUTINE: <JOB> — follow routines/README.md and routines/<JOB>.md exactly.
 | SWEEP | `sweep` | SWEEP | `claude/gsc-sweep-{D}-{T}` | `queue/runs/{D}_{T}_SWEEP.md` | `queue/rows/{D}_{T}_SWEEP.md` |
 | INTAKE | `intake` | INTAKE | `claude/gsc-intake-{D}-{T}` | `queue/runs/{D}_{T}_INTAKE.md` | register, TODO and queue versions (§3) |
 | QUEUE-SEED | `seed` | SEED | `claude/gsc-seed-{D}-{T}` | `queue/runs/{D}_{T}_SEED.md` | `queue/proposals/{D}_{T}_QUEUE-SEED.md` |
+| WEEKLY | `weekly` | — (no PR) | `claude/gsc-weekly-{D}-{T}`, local only, never pushed | none | the weekly page's datasets (`weekly_page` in `CLAUDE.md`; WEEKLY.md) |
 
 - `D` = `YYYY-MM-DD`, `T` = `HHMM`, both from §0 step 5. KEY uses only `[A-Za-z0-9._-]` (e.g. `7309.T`, `ATCO-B.ST`).
 - In file names and titles, `{JOB}` is the title word (so `SEED` for QUEUE-SEED); in branch names, `{job}` is the branch token.
-- Every branch must match `^claude/gsc-(analyse|review|seed|sweep|intake)-(?:(?P<key>[A-Za-z0-9._-]+)-)?(?P<date>\d{4}-\d{2}-\d{2})-(?P<time>\d{4})$`. A key is required for review, optional for analyse (queue exhausted only), and forbidden for seed, sweep and intake.
+- Every branch must match `^claude/gsc-(analyse|review|seed|sweep|intake|weekly)-(?:(?P<key>[A-Za-z0-9._-]+)-)?(?P<date>\d{4}-\d{2}-\d{2})-(?P<time>\d{4})$`. A key is required for review, optional for analyse (queue exhausted only), and forbidden for seed, sweep, intake and weekly. A weekly branch is never pushed and never heads a PR.
 - INCOMPLETE evidence: `queue/evidence/{KEY}_{D}_INCOMPLETE.md`. The claim stub and the final run note share one path.
 
 **PR title — the claim.** Open as `GSC {JOB} {KEY} {D} [running]` (keyless jobs omit KEY). Finish as `GSC {JOB} {KEY} {D} — {outcome}`. A REVIEW of a name in the portfolio table carries the prefix `HELD · ` on both titles. Every routine title matches `^(HELD · )?GSC (ANALYSE|REVIEW|SEED|SWEEP|INTAKE)\b`.
@@ -87,7 +89,7 @@ gh api -X PATCH "repos/jakubhoryna/Value-Investing-Model/pulls/{n}" -f state=clo
 
 The ledger lists open PRs, closed-unmerged PRs updated in the last 90 days, everything updated in the last 14 days, and `GSC INTAKE` PRs of the last 90 days. It reads the pages one by one (`&page=1`, `2`, … up to the first page with fewer than 100 PRs): `--paginate` follows GitHub's `Link` header, whose `repositories/{id}` URL the cloud proxy refuses with HTTP 403 from page 2 on (v4.5.3). That covers every claim, stall, rejection and audit window in §2 and INTAKE. Older merged PRs are left out on purpose. The closing PATCHes keep the PR body (the printed diff): the reason goes in the title suffix and in the run note.
 
-Never merge. Never comment on any PR or issue: a comment wakes the session watching it, and the `GSC - needs Jakub` and `GSC digest` issues belong to the gsc-automerge and gsc-notify workflows (the guard hook refuses every comment). Never `gh pr …`. Never `gh api graphql`. Never PUT or DELETE. Never PATCH a PR's `base`.
+Never merge. Never comment on any PR or issue: a comment wakes the session watching it, and the `GSC - needs Jakub` issue (like the retired `GSC digest` issues) belongs to the gsc-automerge and gsc-notify workflows (the guard hook refuses every comment). Never `gh pr …`. Never `gh api graphql`. Never PUT or DELETE. Never PATCH a PR's `base`.
 
 **Git commands — exact forms.**
 
@@ -112,7 +114,7 @@ Never rebase, reset, amend, cherry-pick onto or force-push a pushed run branch. 
 
 ## 2. Claim ledger
 
-A key is **claimed** for a job family (ANALYSE or REVIEW) if the ledger shows either of these for it. Match titles with `^(HELD · )?GSC (ANALYSE|REVIEW) {KEY} ` — note the trailing space, so `ABC` never matches `ABCD`.
+A key is **claimed** for a job family (ANALYSE or REVIEW) if the ledger shows either of these for it. Match titles with `^(HELD · )?GSC (ANALYSE|REVIEW) {KEY} ` — note the trailing space, so `ABC` never matches `ABCD`. WEEKLY claims no key and is never a claim: it opens no PR.
 
 - an open PR with that title, whatever its state (`[running]`, finished, `[fixing]`);
 - a closed, unmerged PR with that title updated in the last **90 days for ANALYSE** or the last **7 days for REVIEW**. This means Jakub rejected it. Closed PRs whose title ends `[abandoned]`, `[superseded]` or still ends `[running]` don't count; they were abandoned, not rejected.
@@ -151,6 +153,7 @@ Checked once per routine PR, on its final title, by the `gsc-guard` check (`.git
 | SWEEP | `queue/rows/{D}_{T}_SWEEP.md` · `queue/runs/{D}_{T}_SWEEP.md` | — | nothing |
 | QUEUE-SEED | `queue/proposals/{D}_{T}_QUEUE-SEED.md` · `queue/runs/{D}_{T}_SEED.md` | — | nothing |
 | INTAKE | `archive/registers/{YYYY}/REGISTER_v{N}_{date}.md` · `archive/registers/{YYYY}/REGISTER_v{N}_{date}.csv` · `archive/queue/TODO_v{n}_{date}.md` · `archive/queue/DRAFT_QUEUE_v{n}_{date}.md` · `archive/queue/proposals/{name}.md` · `queue/runs/{D}_{T}_INTAKE.md` | `queue/rows/{name}.md` · `queue/proposals/{name}.md` | `_REGISTER.md` · `register.csv` · `queue/TODO.md` · `queue/DRAFT_QUEUE.md` |
+| WEEKLY | nothing (no commit, no PR) | — | nothing |
 
 - `K` is the branch key or, after a §7.1a re-key, the key of the memo added. `D` and `T` in every added name equal the branch's D and T.
 - No job touches `model/`, `routines/`, `.claude/` or `.github/`, any path with a segment starting with `.`, or any file named `CLAUDE.md`, `CLAUDE.local.md`, `AGENTS.md` or `README.md`. Only `.md` files, plus INTAKE's `register.csv` and its `.csv` snapshot. Only adds, deletes and modifications — no renames (a move shows as a delete plus an add of the same bytes: REVIEW's prior memo, INTAKE's proposal).
@@ -192,7 +195,7 @@ pr_title: GSC … (as final)
 ## TODO additions                   one bullet each, dated trigger, or "none"
 ## Open items                       ADD: <one-line entry> · UPDATE <KEY>: <one-line entry> · CLEAR <KEY>: <reason> · or "none"
 ## IDEAS candidates                 one bullet each, or "none"
-## Portfolio table                  (SWEEP only) | Ticker | Avg cost | Current | Zone (ADD / HOLD / SELL-FLAG) | Distance to ADD band | Distance to sell-flag line | — every held name; the Zone cell starts with the zone word (gsc-automerge holds the PR only when a held name is missing or its Zone cell has no zone word; zone changes merge and appear in the digest, J11)
+## Portfolio table                  (SWEEP only) | Ticker | Avg cost | Current | Zone (ADD / HOLD / SELL-FLAG) | Distance to ADD band | Distance to sell-flag line | — every held name; the Zone cell starts with the zone word (gsc-automerge holds the PR only when a held name is missing or its Zone cell has no zone word; zone changes merge and appear in the weekly report, J11)
 ## Price/ordering refresh           (SWEEP only) | Key | Px | Px unit | Close date | Source |
 ## FX                               (SWEEP only) | Pair | Rate | Date |
 ## Unit or instrument mismatches    (SWEEP only) KEY — unit | instrument | session | split — detail, one per line, or "none"
@@ -211,13 +214,13 @@ pr_title: GSC … (as final)
 
 ## 5. Standing rules for every job
 
-- **Never ask a question.** If something is ambiguous, write a run note naming it and stop.
+- **Never ask a question.** If something is ambiguous, write a run note naming it and stop (WEEKLY: no run note; send the not-published push and end with a session summary, WEEKLY.md).
 - **Never re-read the clock for a date.** D is the memo's `memo_date`, the row's `run_date` and every date the run writes, even after midnight.
-- **REST only.** Every GitHub call is a §1 `gh api` form. No curl, no Python and no other client talks to GitHub. Read repo files from the clone.
+- **REST only.** Every GitHub call is a §1 `gh api` form (WEEKLY: its step-4 GETs). No curl, no Python and no other client talks to GitHub. Read repo files from the clone.
 - **Exactly one repository** stays attached (§0 step 6).
 - **Run every command from the repository root.** Never `cd` into a subfolder; use paths.
 - **Write files with the Write tool**, not shell heredocs: repo files, `/tmp/pr_body.md` and `/tmp` scripts.
-- **Budgets (P14):** ANALYSE ~5 · REVIEW ~2, plus at most 4 due-check operations logged separately · SWEEP ~1 per name · QUEUE-SEED at most 15 discovery searches plus at most 8 decay-pass queries (one issuer each) · INTAKE none. These count exploratory search only. Primary-document retrieval, IR index pages, quote endpoints and GitHub calls are uncounted. Log the counts.
+- **Budgets (P14):** ANALYSE ~5 · REVIEW ~2, plus at most 4 due-check operations logged separately · SWEEP ~1 per name · QUEUE-SEED at most 15 discovery searches plus at most 8 decay-pass queries (one issuer each) · INTAKE and WEEKLY none. These count exploratory search only. Primary-document retrieval, IR index pages, quote endpoints and GitHub calls are uncounted. Log the counts.
 - **Data-completeness gate (D3).** INCOMPLETE means an input required by a gate or the cheapness leg exists in a primary document but could not be retrieved this run. That includes a record-limited shortfall where more years are published. History-limited records, "n/a — not disclosed" and §2·1C INDETERMINATE findings proceed to a memo exactly as in attended runs. On INCOMPLETE, don't write a memo. Write:
   - `queue/evidence/{KEY}_{D}_INCOMPLETE.md`: sourced figures, the named gaps, and the hosts tried; no verdict;
   - a row file with `row_type: INCOMPLETE`.
@@ -270,19 +273,17 @@ pr_title: GSC … (as final)
     A §6.4 Gate-0 memo skips checks 1–4; a REVIEW Gate-0 memo still runs check 5 and carries `## G.`. Paste the five results into the PR body.
   - On a breach: fix it and re-measure. If it can't be fixed, the run is INCOMPLETE.
 - **Register computations run only through `routines/tools/gsc_register.py`** (MODEL §7.1, §7.1b): a register row, a multiple (credits included), a trigger distance or status, a sort order or a register check is never computed by a `/tmp` script. Run it from the repository root as `python3 routines/tools/gsc_register.py <command>`; never edit it (framework-locked).
-- **Register page (MODEL §7.4).** `routines/tools/gsc_site.py` renders the register as one plain-language page for third parties: `python3 routines/tools/gsc_site.py render --out /tmp/gsc-register-page.html` (`stats` prints extraction coverage). It only reads the repo and writes the `--out` file; never edit it (framework-locked). Only INTAKE publishes the page, best-effort, in place to the one private artifact (`register_page` in `CLAUDE.md`; `routines/INTAKE.md` step 9). No other job uses the Artifact tools (the guard hook refuses them), and the page is never committed.
-- **Time budget.** After about 90 minutes of work, or under context pressure, stop. Push what is complete (INCOMPLETE if the memo isn't), finish the run note, and finish the PR (§1).
+- **Register page (MODEL §7.4).** `routines/tools/gsc_site.py` renders the register as one plain-language page for third parties: `python3 routines/tools/gsc_site.py render --out /tmp/gsc-register-page.html` (`stats` prints extraction coverage). It only reads the repo and writes the `--out` file; never edit it (framework-locked). Only INTAKE publishes the page, best-effort, in place to the one private artifact (`register_page` in `CLAUDE.md`; `routines/INTAKE.md` step 9). Apart from WEEKLY on the weekly page (below), no other job uses the Artifact tools (the guard hook refuses them), and the page is never committed.
+- **Weekly report (MODEL §7.4).** `routines/tools/gsc_weekly.py` renders the weekly report offline from git at `origin/main`, the files there and the PR, issue and comment pages WEEKLY fetched; it never talks to GitHub or the network. Only WEEKLY runs it (`window`, `render`, `lint-summary`, `dash-writes`) and publishes the datasets, as dataset updates only, to the one private weekly page (`weekly_page` in `CLAUDE.md`; WEEKLY.md step 8). Never edit it (framework-locked).
+- **Time budget.** After about 90 minutes of work, or under context pressure, stop. Push what is complete (INCOMPLETE if the memo isn't), finish the run note, and finish the PR (§1). WEEKLY: about 30 minutes; past that, the not-published push and a session summary (WEEKLY.md).
 - **Long commands.** A Bash command is cut off after 10 minutes. Run long downloads or extractions in the background, or in chunks.
 - **One name per ANALYSE or REVIEW run.** Never start a second.
-- **Phone pushes (PushNotification) — MODEL §8.7 item 11.** Send at most one push per class per run, after the PR is finished (INTAKE's `STALL` push is the one exception: it goes at step 0, before any PR, and says `PR -`), and only for:
-  - `BUY`: an ANALYSE or REVIEW memo with verdict BUY;
-  - `HELD`: any REVIEW of a held name;
-  - `VERDICT CHANGE`: a REVIEW whose verdict differs from the prior memo's;
-  - `STOPPED` / `BLOCKED`: a run whose final title outcome starts `stopped:` / `blocked:`;
-  - `STALL`: INTAKE's watchdog (INTAKE.md step 0).
+- **Phone pushes (PushNotification) — MODEL §8.7 item 11 [diet v4.6.1].** Two classes only, at most one push per class per run:
+  - `WEEKLY`, from WEEKLY only (WEEKLY.md step 9): `GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly_page}`, or `GSC WEEKLY · not published · {reason}` when the run could not publish. A run that finds its week already published sends none.
+  - `BUY`, from ANALYSE or REVIEW, after the PR is finished: a memo with verdict BUY. Format: `GSC BUY · {JOB} {KEY} {D} · PR {n} · {one-line reason}`, with the run branch's own job, key and date.
 
-  Format: `GSC {CLASS} · {JOB} {KEY} {D} · PR {n} · {one-line reason}` (keyless jobs omit KEY; `PR -` when no PR exists), one line, at most 200 characters, no `#`. Never push for any other outcome: WATCH, AVOID, DNAF, INCOMPLETE, prior found, every SWEEP, SEED and a routine INTAKE reach Jakub through the morning digest (gsc-notify). A SWEEP zone change reaches Jakub through the digest (MODEL §8.7 items 10–11, J11): the SWEEP merges and the digest lists it under `## Held zone changes (SWEEP)`. The guard hook refuses any other push, including a class sent from a job other than the one named above (`HELD` from a SWEEP included). A push that the app reports as not sent is not retried.
-- **Run note** at the §1 path, ≤ 300 words, per `queue/runs/README.md`:
+  Exactly these forms: one line, at most 200 characters, no `#`, no link but the weekly page's. Never push for any other outcome: WATCH, AVOID, DNAF, INCOMPLETE, prior found, a REVIEW of a held name, a verdict change, a `stopped:` or `blocked:` run, INTAKE's stall test, every SWEEP (its held-zone changes included, J11), SEED and INTAKE reach Jakub through the weekly report (MODEL §7.4, §8.7 item 11). The HELD, VERDICT CHANGE, STOPPED, BLOCKED and STALL pushes are retired. Until the v4.6.2 workflow release, gsc-automerge's comment on `GSC - needs Jakub` for a held PR still @mentions him (MODEL §8.7 item 11). The guard hook refuses any other push, including a class sent from a job other than the one named above. A push that the app reports as not sent is not retried.
+- **Run note** at the §1 path, ≤ 300 words, per `queue/runs/README.md` (WEEKLY writes none: it ends with a session summary):
   - `model_version` read and the base sha
   - what was written
   - what failed, with host and reason

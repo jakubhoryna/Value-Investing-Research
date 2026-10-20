@@ -1338,14 +1338,14 @@ def apply_sweep(rows_by_key, fm, sections):
             notes.append("px_unit was '-': the endpoint currency %s adopted" % unit)
         if row["held"] == "true":
             # MODEL section 7.2 (J11): the date moves only when the sweep's zone equals the
-            # Portfolio Zone; a changed held zone keeps it (review request; morning digest).
+            # Portfolio Zone; a changed held zone keeps it (review request; weekly report, v4.6.1).
             reg = ZONE_WORD_RE.match(row["zone"] or "")
             swept = sweep_zones.get(key)
             if reg and swept == reg.group(1):
                 row["last_zone_check"] = close
             else:
                 notes.append("held zone: sweep %s, Portfolio %s - Last zone check %s kept (a REVIEW sets the "
-                             "zone; reported in the digest)" % (swept or "missing", row["zone"],
+                             "zone; listed in the weekly report)" % (swept or "missing", row["zone"],
                                                                  row["last_zone_check"]))
         if notes:
             change["note"] = "; ".join(notes)

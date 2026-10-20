@@ -6,10 +6,24 @@ is read or checked. settings.json gates in the shell as well, so attended
 sessions never even start Python.
 
 In routine sessions it blocks (exit 2, one stderr line):
-  * Edit/Write/NotebookEdit into framework-locked paths;
+  * any job-gated call from a session acting as another job. A routine session's job is the one its
+    prompt names: the first user prompt in the hook's transcript_path begins 'GSC ROUTINE: <JOB>'
+    (CLAUDE.md mode table). git push, a gh api call other than GET, a push notification, the artifact
+    tools and the allowed MCP tool need the current run branch's job to equal it (a gh api write off
+    a run branch, as in INTAKE's step-0 sweep before its branch exists, needs a readable prompt that
+    is not WEEKLY). A readable first prompt naming no routine job is refused; a transcript that cannot
+    be read falls back to the branch alone (the pre-v4.6.1 rule). A run never leaves
+    its run branch: once HEAD is on
+    a claude/gsc-* branch, git switch, git checkout of a branch and git branch <new> are refused;
+  * Edit/Write/NotebookEdit into framework-locked paths, .git anywhere below the root, and the
+    session transcripts (~/.claude/projects);
   * Bash/Monitor commands that push anything but the run's own claude/gsc-*
-    branch, merge or rewrite history, call gh outside the REST allowlist,
-    handle tokens, or visibly write into locked paths;
+    branch (from the root's own repository: a nested or copied .git is refused), merge or rewrite
+    history, call gh outside the REST allowlist, handle tokens, fetch anything but origin main, read
+    curl or wget options from a file, or visibly write into locked paths. WEEKLY (its prompt or its
+    claude/gsc-weekly-* branch, local only: a guard identity, never pushed) is refused every git
+    push, every gh api call other than GET, git add, commit, mv and rm, and editor writes inside the
+    repo (MODEL v4.6.1 section 8.7, routines/WEEKLY.md: WEEKLY never writes to the repo or to GitHub);
   * any edit of the append-only archive/ tree (MODEL v4.5.0 section 7.5):
     Edit/Write/NotebookEdit, redirections, tee, touch, truncate, in-place
     sed/perl/awk into archive/, mv or git mv out of archive/, and rm, git rm
@@ -29,33 +43,60 @@ In routine sessions it blocks (exit 2, one stderr line):
     v4.6.0 section 7.1, G5) are refused, whether the tool runs as a script
     or as a module (python3 -m routines.tools.gsc_register, or a runner
     module such as runpy or pdb in front of it);
-  * PushNotification outside the routine push rule (MODEL v4.5.0 §8.7 item
-    11, routines/README.md §5): the message must start 'GSC {CLASS} · {JOB}'
-    with CLASS one of BUY, HELD, VERDICT CHANGE, STOPPED, BLOCKED, STALL (HELD
-    never from a SWEEP: its zone changes reach Jakub through the digest, J11),
-    be one line of at most 200 characters without '#', and each class is sent
-    at most once per run (a marker file per session and class in the temp dir);
+  * PushNotification outside the routine push rule (MODEL v4.6.1 §8.7 item
+    11, routines/README.md §5): two classes only, each in its exact form. 'GSC BUY · {JOB} {KEY}
+    {D} · PR {n} · {reason}' comes from that ANALYSE or REVIEW run (JOB, KEY and D are its branch's);
+    'GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly page url}' or 'GSC
+    WEEKLY · not published · {reason}' only from the WEEKLY run. The HELD, VERDICT CHANGE, STOPPED,
+    BLOCKED and STALL pushes are retired: their content reaches Jakub in the weekly report. A push is
+    one line of at most 200 characters without '#', control, format or separator characters, or any
+    link but the weekly page's, and each class is sent at most once per run (an O_EXCL marker per
+    session and class in the repo's git dir, which no routine command may touch);
   * any comment on a PR or issue: routines never comment (a comment wakes the
-    session watching it; the needs-Jakub and digest issues belong to the
-    gsc-automerge and gsc-notify workflows);
-  * the claude.ai Artifact tools outside INTAKE's register page step (MODEL
-    v4.5.0 section 7.4, routines/INTAKE.md step 9): Artifact passes only on a
-    claude/gsc-intake-* branch, only as action read or publish, only on the one
-    register page url (REGISTER_PAGE_URL), and a publish only of the rendered
-    file REGISTER_PAGE_FILE from outside the repo, with no other field (no new
+    session watching it; the needs-Jakub issue belongs to the gsc-automerge
+    and gsc-notify workflows);
+  * the claude.ai artifact tools outside two steps. INTAKE's register page
+    (MODEL v4.5.0 section 7.4, routines/INTAKE.md step 9): Artifact passes for INTAKE only,
+    as action read or publish on the one
+    register page url (REGISTER_PAGE_URL), a publish only of the rendered file
+    REGISTER_PAGE_FILE from outside the repo, with no other field (no new
     artifact, delete, list, open, pin, capabilities, assets, type, force or
-    sharing). ArtifactComments, ArtifactData and any other artifact tool are
-    refused.
+    sharing). WEEKLY's report page (MODEL v4.6.1 section 7.4,
+    routines/WEEKLY.md): for WEEKLY only and on the one
+    url WEEKLY_PAGE_URL, Artifact read, and Artifact publish with exactly
+    action, url, file_path and asset: true (an upload to the page's asset
+    store, never the page itself) of one dataset file {id}.json from a
+    gsc-weekly folder outside the repo, read first: a JSON array of flat rows whose keys are that
+    dataset's own fields (DATASET_FIELDS), never a private field; ArtifactData get of one
+    datasets/{id} document, list of the datasets collection (query limit/cursor only), and one batch
+    of exactly one pinned (if_version) update per datasets/{id} document, meta last, each changing
+    exactly source (kind 'file', a /_blob/ asset url, name {id}.json, format json) and updated (one
+    at for the whole batch, within 6 h of the hook's clock, by 'GSC WEEKLY routine'). Never set,
+    delete, str_replace, query, profiles, as_level, out_dir, file_path, the page's files/ or dash/
+    documents, or another url. An artifact file_path with '$' or a leading '~' is refused (the tool
+    takes it literally). ArtifactComments and any other artifact tool are refused;
+  * every MCP tool (mcp__*; settings.json routes them here with a second
+    PreToolUse matcher): MCP servers attached to the account (GitHub,
+    remote sessions and routines, document stores) would bypass the gh api
+    REST allowlist. Only the read-only schedule listing MCP_ALLOWED names
+    passes, and only for WEEKLY (its optional schedule health);
+  * the built-in worktree, cron and design-sync tools (BUILTIN_REFUSED): no routine uses them.
 Any unexpected error also exits 2 (fail closed).
 
-Python 3.11 stdlib only, no network. Subprocesses: `git symbolic-ref`, only
-for `git push` and the Artifact tool; `git ls-files`, only when a command would remove or
+Python 3.11 stdlib only, no network. Files read: the hook's transcript (its first
+lines, up to the first user prompt) for job-gated calls, and a weekly dataset file before its
+upload. Subprocesses: `git symbolic-ref`, for the job-gated calls, a branch move and the WEEKLY
+write rules; `git rev-parse` (the git dir, and the directory a push runs in), only for `git push`
+and PushNotification; `git ls-files`, only when a command would remove or
 overwrite a path under archive/; `git ls-tree origin/main`, only when an
-editor tool targets a path under memos/. This is a guard rail, not a sandbox:
+editor tool targets a path under memos/. The trusted tools under routines/tools/ never spell a
+locked path fragment in their source (the interpreter-code scan cannot tell a read from a write).
+This is a guard rail, not a sandbox:
 gsc_guard_post.py self-heals locked files after each tool call and the
 gsc-guard PR check is the visible second layer (it also rejects any M or D
 under archive/).
 """
+import datetime
 import glob
 import json
 import os
@@ -63,7 +104,7 @@ import re
 import shlex
 import subprocess
 import sys
-import tempfile
+import unicodedata
 
 # ---------------------------------------------------------------- constants
 
@@ -90,19 +131,33 @@ REGISTER_FILES = ("_register.md", "register.csv")
 REGISTER_HINT = ("the register is written only by routines/tools/gsc_register.py (MODEL §7.1): "
                  "run its apply/render commands; never edit _REGISTER.md or register.csv by hand")
 
-# Routine phone pushes (MODEL v4.5.0 §8.7 item 11, routines/README.md §5): these classes
-# only, one per class per run, one line of at most PUSH_MAX characters, no '#'. HELD is a
-# REVIEW of a held name only: a SWEEP zone change reaches Jakub through the digest (J11).
-PUSH_RE = re.compile(r"^GSC (BUY|HELD|VERDICT CHANGE|STOPPED|BLOCKED|STALL) · "
-                     r"(ANALYSE|REVIEW|SWEEP|INTAKE|SEED)\b")
+# Routine phone pushes (MODEL v4.6.1 §8.7 item 11, routines/README.md §5): two classes only,
+# one per class per run, one line of at most PUSH_MAX characters, no '#'.
+#   BUY     'GSC BUY · {JOB} {KEY} {D} · PR {n} · {reason}': an ANALYSE or REVIEW memo with verdict
+#           BUY; JOB must be the job of the current run branch;
+#   WEEKLY  'GSC WEEKLY · {period} · …' or 'GSC WEEKLY · not published · {reason}': the WEEKLY run
+#           only (its local claude/gsc-weekly-* branch).
+# HELD, VERDICT CHANGE, STOPPED, BLOCKED and STALL are retired (v4.6.1): their content reaches
+# Jakub in the weekly report, J11 (SWEEP held-zone changes) included.
+PUSH_RE = re.compile(r"^GSC (BUY|WEEKLY) · (\S+)")
+PUSH_RETIRED_RE = re.compile(r"^GSC (HELD|VERDICT CHANGE|STOPPED|BLOCKED|STALL) · ")
 PUSH_MAX = 200
-PUSH_HINT = ("only 'GSC BUY|HELD|VERDICT CHANGE|STOPPED|BLOCKED|STALL · {JOB} {KEY} {D} · PR {n} · {reason}', "
-             "HELD only for a REVIEW (routines/README.md §5)")
-# The jobs that may send each class (routines/README.md §5): BUY from an ANALYSE or REVIEW
-# memo, HELD and VERDICT CHANGE from a REVIEW, STALL from INTAKE's watchdog. STOPPED and
-# BLOCKED come from any job.
-PUSH_JOBS = {"BUY": ("ANALYSE", "REVIEW"), "HELD": ("REVIEW",), "VERDICT CHANGE": ("REVIEW",),
-             "STALL": ("INTAKE",)}
+PUSH_HINT = ("only 'GSC BUY · {ANALYSE|REVIEW} {KEY} {D} · PR {n} · {reason}' from that ANALYSE or REVIEW run, "
+             "or 'GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly page}' or "
+             "'GSC WEEKLY · not published · {reason}' from the WEEKLY run (routines/README.md §5)")
+# The exact forms (MODEL v4.6.1 review): the BUY key and date are the run branch's; the published WEEKLY
+# line is the one gsc_weekly.py writes, ending with the weekly page url; no other url in any push.
+PUSH_BUY_RE = re.compile(r"^GSC BUY · (?P<job>ANALYSE|REVIEW) (?P<key>[A-Za-z0-9._-]+) (?P<date>\d{4}-\d{2}-\d{2}) · "
+                         r"PR \d+ · \S.*$")
+PUSH_WEEKLY_RE = re.compile(r"^GSC WEEKLY · (?:[A-Z][a-z]{2} \d{1,2} [A-Z][a-z]{2}(?: \d{4})? – [A-Z][a-z]{2} \d{1,2} "
+                            r"[A-Z][a-z]{2} \d{4} · \d{1,4} to decide · \d{1,4} to fix · \d{1,4} memos · "
+                            r"(?P<url>https://claude\.ai/artifact/6L264JT8pg5vuia9dUrcuj)|not published · \S.*)$")
+URL_TEXT_RE = re.compile(r"(?i)://|\bwww\.|\bhttps?:")
+# Characters a push never carries: controls, format characters (zero-width, bidi) and the line and
+# paragraph separators that would break the one-line rule.
+PUSH_BAD_CATEGORIES = ("Cc", "Cf", "Zl", "Zp")
+# The run-branch jobs (BRANCH_RE group 1) that may send each class.
+PUSH_FROM = {"BUY": ("analyse", "review"), "WEEKLY": ("weekly",)}
 
 # The register page (MODEL v4.5.0 §7.4, routines/INTAKE.md step 9): INTAKE refreshes one
 # private claude.ai artifact in place, best-effort. read is the Artifact tool's own
@@ -111,15 +166,88 @@ PUSH_JOBS = {"BUY": ("ANALYSE", "REVIEW"), "HELD": ("REVIEW",), "VERDICT CHANGE"
 # listing, open/pin, capabilities, assets, a type, force or sharing.
 REGISTER_PAGE_URL = "https://claude.ai/artifact/FnU69xTYSTMEjqHB21rVPs"
 REGISTER_PAGE_FILE = "gsc-register-page.html"
-ARTIFACT_FIELDS = {"read": {"action", "url"}, "publish": {"action", "url", "file_path", "label"}}
-ARTIFACT_HINT = ("only INTAKE's register page step may use the Artifact tool: action read or publish on "
-                 + REGISTER_PAGE_URL + ", publishing /tmp/" + REGISTER_PAGE_FILE
-                 + " (routines/INTAKE.md step 9)")
+REGISTER_PAGE_FIELDS = {"read": {"action", "url"}, "publish": {"action", "url", "file_path", "label"}}
+REGISTER_PAGE_HINT = ("only INTAKE's register page step may use the Artifact tool on the register page: action "
+                      "read or publish on " + REGISTER_PAGE_URL + ", publishing /tmp/" + REGISTER_PAGE_FILE
+                      + " (routines/INTAKE.md step 9)")
 
-# Strict run-branch name (spec §1).
+# The weekly report page (MODEL v4.6.1 §7.4, routines/WEEKLY.md): one private claude.ai Dashboard
+# artifact. WEEKLY reads it (the Artifact tool's precondition for an upload), uploads each dataset
+# file rendered outside the repo by routines/tools/gsc_weekly.py to the page's asset store
+# (publish with asset: true; the page itself is never republished), reads the datasets/{id}
+# documents for their versions, and repoints them at the new uploads with one ArtifactData batch
+# of pinned updates of source and updated. Never the page's files/ or dash/ documents, never a
+# set, delete or str_replace, never another url.
+WEEKLY_PAGE_URL = "https://claude.ai/artifact/6L264JT8pg5vuia9dUrcuj"
+WEEKLY_DIR = "gsc-weekly"                    # the render folder: /tmp/gsc-weekly/{id}.json
+DATASET_IDS = ("summary", "meta", "kpis", "attention", "shortlist", "changes", "weekly", "pipeline",
+               "coverage", "backlog", "held")
+WEEKLY_PAGE_FIELDS = {"read": {"action", "url"}, "publish": {"action", "url", "file_path", "asset"}}
+WEEKLY_DATA_FIELDS = {"get": {"action", "url", "collection", "doc_id"},
+                      "list": {"action", "url", "collection", "query"},
+                      "batch": {"action", "url", "writes"}}
+WEEKLY_WRITE_FIELDS = {"op", "collection", "doc_id", "data", "if_version"}
+WEEKLY_SOURCE_FIELDS = {"kind", "url", "name", "format"}
+WEEKLY_UPDATED_FIELDS = {"at", "by"}
+WEEKLY_BY = "GSC WEEKLY routine"
+BLOB_URL_RE = re.compile(r"/_blob/[0-9a-f]{32}")                      # used with fullmatch
+ISO_TS_RE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d{1,6})?)?(?:Z|[+-]\d{2}:\d{2})")
+WEEKLY_PAGE_HINT = ("only the WEEKLY run (a claude/gsc-weekly-* branch) uses the weekly page " + WEEKLY_PAGE_URL
+                    + ": Artifact read; Artifact publish of one /tmp/" + WEEKLY_DIR + "/{id}.json dataset with "
+                    "asset: true; ArtifactData get or list on 'datasets'; one ArtifactData batch of pinned "
+                    "updates of datasets/{id} source and updated (routines/WEEKLY.md)")
+
+# Strict run-branch name (spec §1). WEEKLY's branch is local only: it never reaches origin.
 BRANCH_RE = re.compile(
-    r"^claude/gsc-(analyse|review|seed|sweep|intake)-(?:(?P<key>[A-Za-z0-9._-]+)-)?"
+    r"^claude/gsc-(analyse|review|seed|sweep|intake|weekly)-(?:(?P<key>[A-Za-z0-9._-]+)-)?"
     r"(?P<date>\d{4}-\d{2}-\d{2})-(?P<time>\d{4})$")
+# MCP tools a routine may call, with the run-branch jobs allowed to call each. Every other MCP tool is
+# refused: no routine playbook uses one, and they would bypass the gh api REST allowlist.
+MCP_ALLOWED = {"mcp__claude-code-remote__list_triggers": ("weekly",)}
+# Built-in tools no routine uses that would give the session a second checkout or a schedule of its own;
+# settings.json routes them here and they are refused (MODEL v4.6.1 review).
+BUILTIN_REFUSED = {
+    "EnterWorktree": "worktrees are not used: a second checkout escapes the run-branch checks",
+    "ExitWorktree": "worktrees are not used", "CronCreate": "a routine schedules nothing",
+    "CronDelete": "a routine schedules nothing", "DesignSync": "a routine touches no design system",
+}
+# The job a routine session runs is the one its prompt names (CLAUDE.md mode table: the first prompt
+# begins 'GSC ROUTINE: <JOB>'), read from the hook's transcript_path. Every job-gated check (git push,
+# a GitHub write, a push notification, the artifact and MCP tools) needs the current run branch's job
+# to equal it, so a session cannot act as another job by changing branch; unreadable = refused.
+PROMPT_RE = re.compile(r"^\s*GSC ROUTINE:\s*(ANALYSE|REVIEW|SWEEP|INTAKE|QUEUE-SEED|WEEKLY)\b")
+PROMPT_JOBS = {"ANALYSE": "analyse", "REVIEW": "review", "SWEEP": "sweep", "INTAKE": "intake",
+               "QUEUE-SEED": "seed", "WEEKLY": "weekly"}
+TRANSCRIPT_MAX_LINES = 5000
+# The weekly page's dataset files (MODEL §7.4): each a JSON array of flat rows with these fields only
+# (gsc_weekly.py DATASET_SCHEMA; its test checks the two agree). An upload is read before it leaves.
+DATASET_FIELDS = {
+    "summary": {"order", "kind", "text"},
+    "meta": {"period_label", "since", "until", "report_date", "ref_sha", "ref_time", "register_from",
+             "register_to", "model_live", "decide", "fix", "know", "generated_at", "tool_version"},
+    "kpis": {"order", "metric", "value", "prior", "unit", "basis"},
+    "attention": {"rank", "list", "severity", "item", "detail", "action", "since"},
+    "shortlist": {"key", "company", "region", "px", "px_unit", "px_date", "px_age_d", "trigger", "trigger_basis",
+                  "distance_pct", "needs_fall_pct", "mcap_fcf", "ev_oi", "status", "memo_date", "model_version",
+                  "retest_owed", "all_cash_trigger", "pending", "reliable", "next_review"},
+    "changes": {"key", "company", "job", "from_verdict", "to_verdict", "deciding", "ground_retired", "model_version",
+                "merged_at", "merged_by", "pr"},
+    "weekly": {"week", "week_start", "analyse", "review", "incomplete", "model_releases", "watch_end", "keys_end",
+               "note"},
+    "pipeline": {"job", "scheduled_base", "scheduled_sprint", "prs_opened", "merged_auto", "merged_jakub",
+                 "closed_unmerged", "last_run_failed_usage_limit", "triggers"},
+    "coverage": {"region", "keys", "watch", "avoid", "dnaf", "share_pct"},
+    "backlog": {"item", "start", "end", "unit", "note"},
+    "held": {"key", "company", "verdict", "zone", "last_zone_check", "memo_date", "open_since", "status"},
+}
+DATASET_MAX_BYTES = 1024 * 1024
+PRIVATE_KEY_RE = re.compile(r"(?i)avg_?cost|cost|position|shares|qty|quantity|^core_")
+# How far a batch's updated.at may sit from the hook's clock: a future stamp would make every later
+# WEEKLY run read its week as published and stop silently.
+STAMP_SKEW = datetime.timedelta(hours=6)
+WEEKLY_READ_ONLY = ("WEEKLY never writes to the repo or to GitHub: its claude/gsc-weekly-… branch is a local "
+                    "guard identity, never pushed, and it opens, edits, closes and comments on nothing "
+                    "(routines/WEEKLY.md)")
 
 # Command wrappers skipped before the real program. Value = options taking an argument.
 WRAPPERS = {
@@ -159,7 +287,8 @@ GIT_DENY = {
     "credential-store": "routines never handle credentials",
     "credential-cache": "routines never handle credentials",
     "difftool": "runs an external program", "mergetool": "runs an external program",
-    "clone": "routines work in their own checkout", "daemon": "not needed",
+    "clone": "routines work in their own checkout", "init": "routines work in their own checkout",
+    "daemon": "not needed",
     "instaweb": "not needed", "web--browse": "not needed",
 }
 # GIT_* variables that redirect git to another repo, config or transport.
@@ -188,8 +317,16 @@ REGISTER_ATTENDED = (
     ("retire", "gsc_register.py retire sets or undoes the RETIRED register state, attended only (MODEL "
                "v4.6.0 §7.1, G5); a routine raises a delisting awaiting retirement as an open item"),
 )
+# The trusted tools under routines/tools/ (framework-locked, healed by the post hook) never spell these
+# fragments in their source: this scan cannot tell a read from a write, so gsc_weekly.py builds its
+# MODEL path from parts. The scan is a tripwire for ad-hoc /tmp scripts, not a boundary for those tools.
 LOCKED_FRAG_RE = re.compile(r"model/|routines/|\.claude|\.github|CLAUDE\.md|CLAUDE\.local\.md|"
-                            r"AGENTS\.md|settings\.local\.json|disableAllHooks")
+                            r"AGENTS\.md|settings\.local\.json|disableAllHooks|\.git[/\\]")
+# Interpreter code that names GitHub beside a request body or a write method (routine scripts never
+# talk to GitHub; README §5).
+CODE_GITHUB_RE = re.compile(r"(?i)github\.com")
+CODE_HTTP_WRITE_RE = re.compile(r"\bdata\s*=|\bmethod\s*=|['\"](?:POST|PUT|PATCH|DELETE)['\"]|"
+                                r"\.(?:post|put|patch|delete)\s*\(")
 WRITE_IND_RE = re.compile(
     r"""open\s*\([^)]*['"][rwxabt+]*[wax+][rwxabt+]*['"]|mode\s*=\s*['"][^'"]*[wax+]|write|"""
     r"""unlink|remove|rename|replace\(|shutil|os\.system|subprocess|rmtree|truncate|symlink|"""
@@ -237,6 +374,95 @@ def check_register_tool(rest):
     for sub, reason in REGISTER_ATTENDED:
         if sub in rest:
             block(reason)
+
+
+def prompt_job_of(path):
+    """The job token ('analyse', …, 'seed', 'weekly') that the session's first prompt names
+    ('GSC ROUTINE: <JOB> — …'), read from the hook's transcript (JSON lines: the first entry of type
+    user that is neither meta, a side chain nor a tool result); '' when that prompt names no routine
+    job; None when the transcript cannot be read or holds no such prompt within TRANSCRIPT_MAX_LINES."""
+    if not isinstance(path, str) or not path.strip():
+        return None
+    try:
+        with open(os.path.expanduser(path), encoding="utf-8", errors="replace") as fh:
+            for n, line in enumerate(fh):
+                if n >= TRANSCRIPT_MAX_LINES:
+                    return None
+                try:
+                    entry = json.loads(line)
+                except ValueError:
+                    continue
+                if not isinstance(entry, dict) or entry.get("type") != "user" or entry.get("isMeta") \
+                        or entry.get("isSidechain"):
+                    continue
+                msg = entry.get("message")
+                content = msg.get("content") if isinstance(msg, dict) else None
+                if isinstance(content, list):
+                    if any(isinstance(b, dict) and b.get("type") == "tool_result" for b in content):
+                        continue
+                    content = "".join(b.get("text") or "" for b in content
+                                      if isinstance(b, dict) and b.get("type") == "text")
+                if not isinstance(content, str):
+                    continue
+                m = PROMPT_RE.match(content)
+                return PROMPT_JOBS[m.group(1)] if m else ""
+    except OSError:
+        return None
+    return None
+
+
+def parse_iso(text):
+    """An aware datetime from ISO text with an offset or 'Z' (None when it is not one)."""
+    if not isinstance(text, str) or not ISO_TS_RE.fullmatch(text):
+        return None
+    try:
+        return datetime.datetime.fromisoformat(text[:-1] + "+00:00" if text.endswith("Z") else text)
+    except ValueError:
+        return None
+
+
+def literal_path(path, hint):
+    """An artifact file_path is taken literally by the tool: refuse one the shell would expand ($VAR, ~),
+    since the guard would check a different file from the one sent."""
+    if "$" in path or path.lstrip().startswith("~"):
+        block(f"Artifact file_path '{short(path, 60)}' with '$' or '~': write the path out in full; " + hint)
+
+
+def check_dataset_file(full, doc):
+    """Read a weekly dataset file before it leaves (MODEL §7.4 privacy): at most DATASET_MAX_BYTES, a JSON
+    array of flat objects whose keys are the dataset's own fields (DATASET_FIELDS) and never a private
+    field (average cost, position size, core numbers)."""
+    try:
+        if os.path.getsize(full) > DATASET_MAX_BYTES:
+            block(f"dataset file {doc}.json is larger than {DATASET_MAX_BYTES // 1024} KB; " + WEEKLY_PAGE_HINT)
+        with open(full, encoding="utf-8") as fh:
+            rows = json.load(fh)
+    except (OSError, ValueError) as exc:
+        block(f"dataset file {doc}.json cannot be read as JSON ({type(exc).__name__}); " + WEEKLY_PAGE_HINT)
+    if not isinstance(rows, list):
+        block(f"dataset file {doc}.json is not a JSON array of rows; " + WEEKLY_PAGE_HINT)
+    allowed = DATASET_FIELDS[doc]
+    for i, row in enumerate(rows):
+        if not isinstance(row, dict):
+            block(f"dataset file {doc}.json row {i + 1} is not an object; " + WEEKLY_PAGE_HINT)
+        private = sorted(k for k in row if PRIVATE_KEY_RE.search(str(k)))
+        if private:
+            block(f"dataset file {doc}.json carries the private field(s) {private[:3]} (never average cost, "
+                  "position size or core numbers, MODEL §7.4); " + WEEKLY_PAGE_HINT)
+        extra = sorted(set(row) - allowed)
+        if extra:
+            block(f"dataset file {doc}.json row {i + 1} has field(s) {extra[:3]} that {doc} does not carry; "
+                  + WEEKLY_PAGE_HINT)
+        if any(isinstance(v, (dict, list)) for v in row.values()):
+            block(f"dataset file {doc}.json row {i + 1} is not flat; " + WEEKLY_PAGE_HINT)
+
+
+def push_text_problem(msg):
+    """Why a push text breaks the one-line rule (a control, format or separator character), or None."""
+    for ch in msg:
+        if unicodedata.category(ch) in PUSH_BAD_CATEGORIES:
+            return "routine push contains the character U+%04X (one plain line only)" % ord(ch)
+    return None
 
 
 class Blocked(Exception):
@@ -519,6 +745,7 @@ class Guard:
         self.cwd = norm(cwd) if cwd else self.root
         self.vars = {}          # NAME -> value (None = unknown) for this command
         self._branch = None
+        self._prompt_job = False  # not read yet; prompt_job_of gives None, '' or a job word
 
     # ---- entry point
 
@@ -533,8 +760,23 @@ class Guard:
         if tool == "Artifact":
             self.check_artifact(ti)
             return
+        if tool == "ArtifactData":
+            self.check_artifact_data(ti)
+            return
+        if tool.startswith("mcp__"):
+            jobs = MCP_ALLOWED.get(tool)
+            if not jobs:
+                block(f"{tool} is not allowed in routines: MCP tools bypass the gh api REST allowlist "
+                      f"(only {', '.join(sorted(MCP_ALLOWED))} passes, for WEEKLY)")
+            if self.pinned_job(tool) not in jobs:
+                block(f"{tool} outside {' or '.join(j.upper() for j in jobs)} (current branch "
+                      f"'{self.current_branch() or 'detached HEAD'}')")
+            return
+        if tool in BUILTIN_REFUSED:
+            block(f"{tool} is not allowed in routines: {BUILTIN_REFUSED[tool]}")
         if "artifact" in tool.lower():
-            block(f"{tool} is not allowed in routines: " + ARTIFACT_HINT)
+            block(f"{tool} is not allowed in routines: only Artifact (the register and weekly pages) and "
+                  "ArtifactData (the weekly page's datasets) pass")
         if tool in ("Edit", "Write", "NotebookEdit", "MultiEdit"):
             target = ti.get("file_path") or ti.get("notebook_path") or ""
             if not isinstance(target, str):
@@ -546,6 +788,9 @@ class Guard:
             if arch:
                 block(f"{tool} of '{arch[0]}': {APPEND_ONLY_HINT}")
             self.need_not_register([target], self.cwd, tool)
+            if target.strip() and rel_to(self.resolve(target, self.cwd), self.root) is not None \
+                    and self.weekly_session():
+                block(f"{tool} of '{short(target, 60)}' inside the repo: " + WEEKLY_READ_ONLY)
             memo = self.memo_rel(target, self.cwd)
             if memo:
                 found = self.on_main(memo)
@@ -569,70 +814,289 @@ class Guard:
     # ---- phone pushes
 
     def check_push(self, ti):
-        """A routine push must follow routines/README.md §5: an allowed class,
-        one line, at most PUSH_MAX characters, no '#', once per class per run."""
+        """A routine push must follow routines/README.md §5: class BUY from that ANALYSE or
+        REVIEW run, or class WEEKLY from the WEEKLY run (both checked against the current run
+        branch and the session's prompt), in its exact form, one plain line, at most PUSH_MAX
+        characters, no '#', no url but the weekly page's, once per class per run."""
         msg = ti.get("message")
         if not isinstance(msg, str) or not msg.strip():
             block("routine push without a message; " + PUSH_HINT)
         msg = msg.strip()
+        retired = PUSH_RETIRED_RE.match(msg)
+        if retired:
+            block(f"routine push not allowed: the {retired.group(1)} push is retired (MODEL v4.6.1 §8.7 item 11); "
+                  "its content reaches Jakub in the weekly report")
         m = PUSH_RE.match(msg)
         if not m:
             block("routine push not allowed: " + PUSH_HINT)
-        if m.group(1) == "HELD" and m.group(2) == "SWEEP":
-            block("routine push not allowed: a SWEEP zone change reaches Jakub through the digest, J11 "
-                  "(a SWEEP sends no push; routines/README.md §5)")
-        jobs = PUSH_JOBS.get(m.group(1))
-        if jobs and m.group(2) not in jobs:
-            block("routine push not allowed: a %s push comes only from %s (routines/README.md §5)"
-                  % (m.group(1), " or ".join(jobs)))
+        cls = m.group(1)
+        if cls == "BUY" and m.group(2) not in ("ANALYSE", "REVIEW"):
+            block("routine push not allowed: a BUY push comes only from an ANALYSE or REVIEW memo "
+                  "(routines/README.md §5)")
         if "\n" in msg or "\r" in msg:
             block("routine push must be one line")
+        bad = push_text_problem(msg)
+        if bad:
+            block(bad)
         if len(msg) > PUSH_MAX:
             block(f"routine push longer than {PUSH_MAX} characters")
         if "#" in msg:
             block("routine push contains '#': write 'PR n' (a '#n' may wake the session watching that PR)")
+        exact = (PUSH_BUY_RE if cls == "BUY" else PUSH_WEEKLY_RE).match(msg)
+        if not exact:
+            block("routine push not in its exact form: " + PUSH_HINT)
+        rest = msg.replace(exact.group("url"), "") if cls == "WEEKLY" and exact.group("url") else msg
+        if URL_TEXT_RE.search(rest):
+            block("routine push carries a link: the only link a push may carry is the weekly page's, at the end "
+                  "of the WEEKLY report push")
+        cur = self.current_branch()
+        b = BRANCH_RE.match(cur)
+        job = self.pinned_job(f"a {cls} push")
+        if job not in PUSH_FROM[cls] or (cls == "BUY" and m.group(2) != job.upper()):
+            block(f"routine push not allowed: a {cls} push comes only from "
+                  + (f"the {m.group(2)} run itself" if cls == "BUY" else "the WEEKLY run")
+                  + f" (current branch '{cur or 'detached HEAD'}'; routines/README.md §5)")
+        if cls == "BUY" and (exact.group("key") != b.group("key") or exact.group("date") != b.group("date")):
+            block(f"routine push not allowed: a BUY push names this run's own key and date "
+                  f"({b.group('key') or 'no key'} {b.group('date')}, branch '{cur}')")
+        # One push per class per run: an O_EXCL marker in the git dir, which no routine command may write
+        # or remove (.git is locked), so deleting a temp file cannot buy a second push.
         session = re.sub(r"[^A-Za-z0-9_-]", "", str(self.event.get("session_id") or ""))[:80] or "nosession"
-        marker = os.path.join(tempfile.gettempdir(), "gsc_push_%s_%s" % (session, m.group(1).replace(" ", "_")))
-        if os.path.exists(marker):
-            block(f"one push per class per run: a {m.group(1)} push was already sent (routines/README.md §5)")
-        with open(marker, "w", encoding="utf-8") as fh:
+        folder = os.path.join(self.git_dir(), "gsc-guard")
+        os.makedirs(folder, exist_ok=True)
+        try:
+            fd = os.open(os.path.join(folder, "push_%s_%s" % (session, cls)), os.O_CREAT | os.O_EXCL | os.O_WRONLY,
+                         0o644)
+        except FileExistsError:
+            block(f"one push per class per run: a {cls} push was already sent (routines/README.md §5)")
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
             fh.write(msg[:PUSH_MAX] + "\n")
 
-    # ---- the register page (MODEL v4.5.0 §7.4, routines/INTAKE.md step 9)
+    # ---- the session's job: the prompt pins it, the run branch must match
+
+    def prompt_job(self):
+        """The job the session's routine prompt names (prompt_job_of on transcript_path), read once."""
+        if self._prompt_job is False:
+            self._prompt_job = prompt_job_of(self.event.get("transcript_path"))
+        return self._prompt_job
+
+    def pinned_job(self, what):
+        """The current run branch's job, checked against the job the session's prompt names: a session
+        acts only as the job it was started for, whatever branch it moves to. A transcript that cannot
+        be read falls back to the branch alone (the pre-v4.6.1 rule), so an unexpected transcript
+        format never stops every routine; a readable first prompt that names no routine job, or
+        another job, is refused."""
+        want, job = self.prompt_job(), self.run_job()
+        if want is None:
+            return job
+        if not want:
+            block(f"{what}: the session's first prompt names no routine job ('GSC ROUTINE: <JOB> — …')")
+        if job != want:
+            block(f"{what}: this session runs {want.upper()} (its prompt), but the current branch "
+                  f"'{self.current_branch() or 'detached HEAD'}' is not a claude/gsc-{want}-… run branch; a session "
+                  "acts only as its own job")
+        return job
+
+    def weekly_session(self):
+        """True when the session is WEEKLY by its branch or by its prompt (the read-only job)."""
+        return self.run_job() == "weekly" or self.prompt_job() == "weekly"
+
+    def git_dir(self):
+        """The repo root's absolute git dir (one subprocess); refused when git cannot name it."""
+        try:
+            r = subprocess.run(["git", "-C", self.root, "rev-parse", "--absolute-git-dir"], capture_output=True,
+                               text=True, timeout=10)
+        except (OSError, subprocess.SubprocessError):
+            r = None
+        if r is None or r.returncode != 0 or not r.stdout.strip():
+            block("cannot locate the repo's git dir (fail closed)")
+        return norm(r.stdout.strip())
+
+    # ---- the claude.ai artifact tools (MODEL §7.4): the register page and the weekly page
 
     def check_artifact(self, ti):
-        """Artifact passes only for INTAKE's register page step: read or publish, in place,
+        """Artifact passes only on the two pages a routine maintains: the weekly page
+        (WEEKLY_PAGE_URL, the WEEKLY run) or else the register page (INTAKE)."""
+        if ti.get("url") == WEEKLY_PAGE_URL:
+            self.check_weekly_artifact(ti)
+        else:
+            self.check_register_artifact(ti)
+
+    def run_job(self):
+        """The current run branch's job token ('intake', 'weekly', …), or '' off a run branch."""
+        m = BRANCH_RE.match(self.current_branch())
+        return m.group(1) if m else ""
+
+    def check_register_artifact(self, ti):
+        """INTAKE's register page step (routines/INTAKE.md step 9): read or publish, in place,
         on REGISTER_PAGE_URL; a publish sends only the rendered REGISTER_PAGE_FILE from
         outside the repo. Every other action and every other field is refused."""
         action = ti.get("action", "publish")
-        if not isinstance(action, str) or action not in ARTIFACT_FIELDS:
+        if not isinstance(action, str) or action not in REGISTER_PAGE_FIELDS:
             block(f"Artifact action '{short(action, 30)}' is not allowed in routines (never a new artifact, "
-                  "delete, list, open, pin or quickstart); " + ARTIFACT_HINT)
-        extra = sorted(set(ti) - ARTIFACT_FIELDS[action])
+                  "delete, list, open, pin or quickstart); " + REGISTER_PAGE_HINT)
+        extra = sorted(set(ti) - REGISTER_PAGE_FIELDS[action])
         if extra:
             block(f"Artifact {action} with {extra} is not allowed (no capabilities, assets, files, type, "
-                  "force, pin or sharing); " + ARTIFACT_HINT)
+                  "force, pin or sharing); " + REGISTER_PAGE_HINT)
         if ti.get("url") != REGISTER_PAGE_URL:
             block(f"Artifact {action} of '{short(ti.get('url') or 'no url (a new artifact)', 60)}' is not "
-                  "allowed: routines update only the register page, in place; " + ARTIFACT_HINT)
-        m = BRANCH_RE.match(self.current_branch())
-        if not m or m.group(1) != "intake":
+                  "allowed: routines update only the register page and the weekly page, in place; "
+                  + REGISTER_PAGE_HINT)
+        if self.pinned_job(f"Artifact {action} of the register page") != "intake":
             block(f"Artifact {action} outside INTAKE (current branch '{self.current_branch() or 'detached HEAD'}'): "
-                  + ARTIFACT_HINT)
+                  + REGISTER_PAGE_HINT)
         if action == "read":
             return
         path = ti.get("file_path")
         if not isinstance(path, str) or not path.strip():
-            block("Artifact publish without a file_path; " + ARTIFACT_HINT)
+            block("Artifact publish without a file_path; " + REGISTER_PAGE_HINT)
+        literal_path(path, REGISTER_PAGE_HINT)
         if os.path.basename(path.replace("\\", "/")) != REGISTER_PAGE_FILE:
             block(f"Artifact publish of '{short(path, 60)}': only the rendered {REGISTER_PAGE_FILE} is "
-                  "published; " + ARTIFACT_HINT)
+                  "published; " + REGISTER_PAGE_HINT)
         full = self.resolve(path, self.cwd)
         if rel_to(full, self.root) is not None:
             block(f"Artifact publish of '{short(path, 60)}' inside the repo: the page is rendered outside it "
-                  "and never committed; " + ARTIFACT_HINT)
+                  "and never committed; " + REGISTER_PAGE_HINT)
         if os.path.isdir(full):
-            block(f"Artifact publish of the folder '{short(path, 60)}'; " + ARTIFACT_HINT)
+            block(f"Artifact publish of the folder '{short(path, 60)}'; " + REGISTER_PAGE_HINT)
+
+    # ---- the weekly report page (MODEL v4.6.1 §7.4, routines/WEEKLY.md)
+
+    def need_weekly_run(self, what):
+        if self.pinned_job(what) != "weekly":
+            block(f"{what} outside WEEKLY (current branch '{self.current_branch() or 'detached HEAD'}'): "
+                  + WEEKLY_PAGE_HINT)
+
+    def check_weekly_artifact(self, ti):
+        """WEEKLY's Artifact calls on WEEKLY_PAGE_URL: read, or an upload of one dataset file
+        to the page's asset store (publish with exactly action, url, file_path and asset: true).
+        A publish without asset: true would replace the page itself and is refused."""
+        action = ti.get("action", "publish")
+        if not isinstance(action, str) or action not in WEEKLY_PAGE_FIELDS:
+            block(f"Artifact action '{short(action, 30)}' on the weekly page is not allowed (never delete, list, "
+                  "open, pin or quickstart); " + WEEKLY_PAGE_HINT)
+        extra = sorted(set(ti) - WEEKLY_PAGE_FIELDS[action])
+        if extra:
+            block(f"Artifact {action} of the weekly page with {extra} is not allowed (no label, files, "
+                  "file_paths, asset copies, capabilities, type, force or pin); " + WEEKLY_PAGE_HINT)
+        self.need_weekly_run(f"Artifact {action} of the weekly page")
+        if action == "read":
+            return
+        if ti.get("asset") is not True:
+            block("Artifact publish to the weekly page without asset: true would replace the page itself; "
+                  "WEEKLY only uploads dataset files to its asset store; " + WEEKLY_PAGE_HINT)
+        path = ti.get("file_path")
+        if not isinstance(path, str) or not path.strip():
+            block("Artifact upload without a file_path; " + WEEKLY_PAGE_HINT)
+        literal_path(path, WEEKLY_PAGE_HINT)
+        name = os.path.basename(path.replace("\\", "/"))
+        full = self.resolve(path, self.cwd)
+        if not (name.endswith(".json") and name[:-5] in DATASET_IDS and os.path.basename(full) == name
+                and os.path.basename(os.path.dirname(full)) == WEEKLY_DIR):
+            block(f"Artifact upload of '{short(path, 60)}': only a rendered dataset file "
+                  f"{WEEKLY_DIR}/{{id}}.json is uploaded ({', '.join(DATASET_IDS)}); " + WEEKLY_PAGE_HINT)
+        if rel_to(full, self.root) is not None:
+            block(f"Artifact upload of '{short(path, 60)}' inside the repo: the datasets are rendered outside "
+                  "it and never committed; " + WEEKLY_PAGE_HINT)
+        if os.path.isdir(full):
+            block(f"Artifact upload of the folder '{short(path, 60)}'; " + WEEKLY_PAGE_HINT)
+        check_dataset_file(full, name[:-5])
+
+    def check_artifact_data(self, ti):
+        """ArtifactData passes only for WEEKLY on WEEKLY_PAGE_URL: get of one datasets/{id}
+        document, list of the datasets collection, and one batch of pinned updates of
+        datasets/{id} source and updated. Every other action, field, collection and url is
+        refused (never set, delete, str_replace, query, profiles, as_level or out_dir)."""
+        action = ti.get("action")
+        if not isinstance(action, str) or action not in WEEKLY_DATA_FIELDS:
+            block(f"ArtifactData action '{short(action, 30)}' is not allowed in routines (only get, list and "
+                  "batch; never set, update outside a batch, delete, str_replace, query or profiles); "
+                  + WEEKLY_PAGE_HINT)
+        extra = sorted(set(ti) - WEEKLY_DATA_FIELDS[action])
+        if extra:
+            block(f"ArtifactData {action} with {extra} is not allowed (no as_level, out_dir, file_path, or "
+                  "collection/doc_id beside a batch); " + WEEKLY_PAGE_HINT)
+        if ti.get("url") != WEEKLY_PAGE_URL:
+            block(f"ArtifactData {action} on '{short(ti.get('url') or 'no url', 60)}' is not allowed: routines "
+                  "touch only the weekly page's datasets; " + WEEKLY_PAGE_HINT)
+        self.need_weekly_run(f"ArtifactData {action}")
+        if action == "batch":
+            self.check_dataset_writes(ti.get("writes"))
+            return
+        if ti.get("collection") != "datasets":
+            block(f"ArtifactData {action} of collection '{short(ti.get('collection'), 40)}': only 'datasets' "
+                  "(never the page's files/ or dash/ documents); " + WEEKLY_PAGE_HINT)
+        if action == "get":
+            if ti.get("doc_id") not in DATASET_IDS:
+                block(f"ArtifactData get of datasets/{short(ti.get('doc_id'), 40)}: only the dataset documents "
+                      f"({', '.join(DATASET_IDS)}); " + WEEKLY_PAGE_HINT)
+            return
+        query = ti.get("query")
+        if query is not None and (not isinstance(query, dict) or set(query) - {"limit", "cursor"}):
+            block("ArtifactData list with a query other than limit and cursor; " + WEEKLY_PAGE_HINT)
+
+    def check_dataset_writes(self, writes, now=None):
+        """One batch: exactly one update of each datasets/{id} document (DATASET_IDS), meta last, each
+        pinned with if_version and changing exactly source (a /_blob/ asset url, name {id}.json) and
+        updated (one at for the whole batch, within STAMP_SKEW of the hook's clock, by WEEKLY_BY)."""
+        n = len(DATASET_IDS)
+        if not isinstance(writes, list) or len(writes) != n:
+            block(f"ArtifactData batch needs exactly {n} writes, one per dataset, meta last; " + WEEKLY_PAGE_HINT)
+        seen, stamps = set(), set()
+        for k, w in enumerate(writes, 1):
+            if not isinstance(w, dict):
+                block(f"ArtifactData batch write {k} is not an object; " + WEEKLY_PAGE_HINT)
+            extra = sorted(set(w) - WEEKLY_WRITE_FIELDS)
+            if extra:
+                block(f"ArtifactData batch write {k} with {extra} is not allowed (inline data only, no "
+                      "file_path); " + WEEKLY_PAGE_HINT)
+            if w.get("op") != "update":
+                block(f"ArtifactData batch write {k} with op '{short(w.get('op'), 20)}': only update (never set "
+                      "or delete); " + WEEKLY_PAGE_HINT)
+            if w.get("collection") != "datasets":
+                block(f"ArtifactData batch write {k} to collection '{short(w.get('collection'), 40)}': only "
+                      "'datasets' (never the page's files/ or dash/ documents); " + WEEKLY_PAGE_HINT)
+            doc = w.get("doc_id")
+            if doc not in DATASET_IDS:
+                block(f"ArtifactData batch write {k} to datasets/{short(doc, 40)}: only the dataset documents "
+                      f"({', '.join(DATASET_IDS)}); " + WEEKLY_PAGE_HINT)
+            if doc in seen:
+                block(f"ArtifactData batch writes datasets/{doc} twice; " + WEEKLY_PAGE_HINT)
+            seen.add(doc)
+            if (doc == "meta") != (k == n):
+                block("ArtifactData batch: datasets/meta is written last (the published mark follows the data); "
+                      + WEEKLY_PAGE_HINT)
+            ver = w.get("if_version")
+            if not isinstance(ver, int) or isinstance(ver, bool) or ver < 1:
+                block(f"ArtifactData batch write of datasets/{doc} without an if_version: every write is pinned "
+                      "to the version WEEKLY read; " + WEEKLY_PAGE_HINT)
+            data = w.get("data")
+            if not isinstance(data, dict) or set(data) != {"source", "updated"}:
+                block(f"ArtifactData batch write of datasets/{doc} changes exactly source and updated (never "
+                      "title, description or fixed, never one without the other); " + WEEKLY_PAGE_HINT)
+            # A {"__delete__": true} anywhere fails these exact shapes, so no field is ever removed.
+            src = data.get("source")
+            if not (isinstance(src, dict) and set(src) == WEEKLY_SOURCE_FIELDS and src.get("kind") == "file"
+                    and isinstance(src.get("url"), str) and BLOB_URL_RE.fullmatch(src["url"])
+                    and src.get("name") == doc + ".json" and src.get("format") == "json"):
+                block(f"datasets/{doc} source must be exactly {{kind: 'file', url: '/_blob/<32 hex>', name: "
+                      f"'{doc}.json', format: 'json'}}, an asset url of the page; " + WEEKLY_PAGE_HINT)
+            upd = data.get("updated")
+            if not (isinstance(upd, dict) and set(upd) == WEEKLY_UPDATED_FIELDS and upd.get("by") == WEEKLY_BY
+                    and isinstance(upd.get("at"), str) and ISO_TS_RE.fullmatch(upd["at"])):
+                block(f"datasets/{doc} updated must be exactly {{at: <ISO time with offset>, by: '{WEEKLY_BY}'}}; "
+                      + WEEKLY_PAGE_HINT)
+            stamps.add(upd["at"])
+        if len(stamps) != 1:
+            block("ArtifactData batch: every dataset carries the same updated.at (the run start); " + WEEKLY_PAGE_HINT)
+        at = parse_iso(stamps.pop())
+        now = now or datetime.datetime.now(datetime.timezone.utc)
+        if at is None or abs(at - now) > STAMP_SKEW:
+            block(f"ArtifactData batch: updated.at is more than {int(STAMP_SKEW.total_seconds() // 3600)} h from the "
+                  "clock; a future stamp would make every later WEEKLY run read its week as published; "
+                  + WEEKLY_PAGE_HINT)
 
     # ---- paths
 
@@ -666,15 +1130,17 @@ class Guard:
                 return full
             fwd = full.replace(os.sep, "/")
             # Claude Code settings outside the repo: user, managed (policy) and ~/.claude.json.
-            if re.search(r"/\.claude/settings[^/]*\.json$|/\.claude\.json$|"
+            # The session transcripts too: the guard reads the routine prompt there (prompt_job_of).
+            if re.search(r"/\.claude/settings[^/]*\.json$|/\.claude\.json$|/\.claude/projects(/|$)|"
                          r"/etc/claude-code/|/Library/Application Support/ClaudeCode/", fwd, re.I):
                 return full
             return None
         if rel == ".":
             return "the repo root" if whole else None
         parts = rel.split("/")
-        # .git/ too: a file written there (hooks, config) makes git run arbitrary code.
-        if parts[0].lower() in {d.lower() for d in LOCKED_DIRS} | {".git"}:
+        # .git/ too: a file written there (hooks, config, HEAD) makes git run arbitrary code or moves the
+        # branch the guard reads; and any .git below the root, which would be a second repository.
+        if parts[0].lower() in {d.lower() for d in LOCKED_DIRS} or any(p.lower() == ".git" for p in parts):
             return rel
         if parts[-1].lower() in {n.lower() for n in LOCKED_NAMES}:
             return rel
@@ -1154,6 +1620,9 @@ class Guard:
         if net and (CODE_PUSH_RE.search(code) or CODE_GHAPI_RE.search(code)):
             block("script code mentions git push / gh api; routine scripts never talk to GitHub "
                   "(run git and gh commands directly)")
+        if net and CODE_GITHUB_RE.search(code) and CODE_HTTP_WRITE_RE.search(code):
+            block("script code names github.com beside a request body or write method; routine scripts never "
+                  "write to GitHub (only the gh api REST forms of routines/README.md §1)")
 
     def check_script(self, path, base, shell, depth):
         """Look inside a script file the command runs (small files only)."""
@@ -1285,7 +1754,7 @@ class Guard:
             "rm": self.git_rm_mv, "mv": self.git_rm_mv, "add": self.git_add,
             "clean": self.git_clean, "commit": self.git_commit, "branch": self.git_branch,
             "merge": self.git_merge, "symbolic-ref": self.git_symbolic_ref,
-            "remote": self.git_remote, "lfs": self.git_lfs,
+            "remote": self.git_remote, "lfs": self.git_lfs, "fetch": self.git_fetch,
         }.get(sub)
         if handler:
             handler(sub, rest, gitcwd)
@@ -1293,6 +1762,17 @@ class Guard:
     def git_push(self, sub, rest, gitcwd):
         if rel_to(gitcwd, self.root) is None:
             block("git push is allowed only inside the repo checkout")
+        # The directory git runs in must be the root's own repository: a nested copy of .git (or a
+        # worktree) would push another HEAD while the root still sits on the run branch.
+        try:
+            r = subprocess.run(["git", "-C", gitcwd, "rev-parse", "--show-toplevel", "--absolute-git-dir"],
+                               capture_output=True, text=True, timeout=10)
+            lines = r.stdout.splitlines() if r.returncode == 0 else []
+        except (OSError, subprocess.SubprocessError):
+            lines = []
+        if len(lines) != 2 or norm(lines[0]) != self.root or norm(lines[1]) != self.git_dir():
+            block("git push from a directory that is not the repo checkout's own repository (a nested or copied "
+                  ".git, or a worktree); push only from the repo root")
         pos = []
         for a in rest:
             if a in ("-u", "--set-upstream", "-q", "--quiet"):
@@ -1308,11 +1788,16 @@ class Guard:
                   "set BR=… in the same command, or use the literal branch name or HEAD")
         if dest != "HEAD" and not BRANCH_RE.match(dest):
             block(f"push destination '{short(dest, 60)}' is not this run's claude/gsc-… branch")
+        if dest != "HEAD" and BRANCH_RE.match(dest).group(1) == "weekly":
+            block(f"git push of '{short(dest, 60)}': " + WEEKLY_READ_ONLY)
         cur = self.current_branch()
         if not BRANCH_RE.match(cur):
             block(f"current branch is '{cur or 'detached HEAD'}', not a claude/gsc-… run branch; never push main")
+        if BRANCH_RE.match(cur).group(1) == "weekly" or self.prompt_job() == "weekly":
+            block("git push on a WEEKLY branch: " + WEEKLY_READ_ONLY)
         if dest != "HEAD" and dest != cur:
             block(f"push destination '{dest}' is not the current branch '{cur}'")
+        self.pinned_job("git push")
 
     def git_config(self, sub, rest, gitcwd):
         if any(a in ("--edit", "-e") for a in rest) or rest[:1] == ["edit"]:
@@ -1343,7 +1828,15 @@ class Guard:
         if write and pos and GIT_CONFIG_LOCKED.match(pos[0].lower()):
             block(f"git config write to '{pos[0]}' is not allowed in routines")
 
+    def leave_run_branch(self, what):
+        """A run never leaves its run branch (one run, one branch): refuse branch moves once HEAD is on one."""
+        cur = self.current_branch()
+        if BRANCH_RE.match(cur):
+            block(f"{what} on the run branch '{cur}': a run never leaves or adds a branch once its run branch is "
+                  "cut (routines/README.md §1)")
+
     def git_switch(self, sub, rest, gitcwd):
+        self.leave_run_branch(f"git {sub}")
         create_flags = ("-b",) if sub == "checkout" else ("-c", "--create")
         create, pos, i = None, [], 0
         while i < len(rest):
@@ -1365,7 +1858,8 @@ class Guard:
             if pos not in ([], ["origin/main"]):
                 block("new run branches start from origin/main")
             return
-        if len(pos) == 1 and (BRANCH_RE.match(pos[0]) or pos[0] in ("main", "origin/main")):
+        # origin/main alone would detach HEAD (no branch, no job): never needed
+        if len(pos) == 1 and (BRANCH_RE.match(pos[0]) or pos[0] == "main"):
             return
         block(f"git {sub} form not allowed (use git switch --no-track -c <run branch> origin/main)")
 
@@ -1412,7 +1906,12 @@ class Guard:
         if paths:
             self.git_paths(paths, gitcwd, "git reset")
 
+    def no_weekly_write(self, what):
+        if self.weekly_session():
+            block(f"{what} on a WEEKLY run: " + WEEKLY_READ_ONLY)
+
     def git_rm_mv(self, sub, rest, gitcwd):
+        self.no_weekly_write(f"git {sub}")
         if any(a.startswith("--pathspec-from-file") for a in rest):
             block(f"git {sub} --pathspec-from-file is not allowed")
         k = rest.index("--") if "--" in rest else len(rest)
@@ -1444,6 +1943,7 @@ class Guard:
         self.git_paths(paths, gitcwd, "git clean")
 
     def git_commit(self, sub, rest, gitcwd):
+        self.no_weekly_write("git commit")
         if "--amend" in rest:
             block("git commit --amend is not allowed (never rewrite a pushed run branch)")
 
@@ -1461,6 +1961,8 @@ class Guard:
         pos = [a for a in rest if not a.startswith("-")]
         if pos and not BRANCH_RE.match(pos[0]):
             block(f"new branch '{short(pos[0], 60)}' does not match claude/gsc-{{job}}-[KEY-]D-T")
+        if pos:
+            self.leave_run_branch("git branch (a new branch)")
 
     def git_merge(self, sub, rest, gitcwd):
         if rest in (["--abort"], ["--continue"]):
@@ -1489,6 +1991,19 @@ class Guard:
         if rest[:1] and rest[0] in ("add", "set-url", "rename", "remove", "rm", "set-head",
                                     "set-branches"):
             block(f"git remote {rest[0]} is not allowed in routines")
+
+    def git_fetch(self, sub, rest, gitcwd):
+        """Only git fetch origin main (CLAUDE.md, README §1): a refspec could rewrite refs/remotes/origin/main,
+        which the memo-on-main rule trusts."""
+        pos = []
+        for a in rest:
+            if a in ("-q", "--quiet", "--no-tags", "--prune", "-p"):
+                continue
+            if a.startswith("-"):
+                block(f"git fetch option '{a}' is not allowed (only git fetch origin main)")
+            pos.append(a)
+        if pos not in ([], ["origin"], ["origin", "main"]):
+            block(f"git fetch {' '.join(short(x, 40) for x in pos)}: only git fetch origin main (no refspec)")
 
     def git_lfs(self, sub, rest, gitcwd):
         if "push" in rest:
@@ -1551,6 +2066,12 @@ class Guard:
             block("gh api graphql is not allowed; use REST per routines/README §1")
         if method == "GET":
             return
+        if self.weekly_session():
+            block(f"gh api {method} on a WEEKLY run: " + WEEKLY_READ_ONLY)
+        # Off a run branch (INTAKE's step-0 sweep runs before its branch) the prompt must still name a
+        # job; on one, the branch's job must be the prompt's.
+        if not self.prompt_job() or self.run_job():
+            self.pinned_job(f"gh api {method}")
         if has_input:
             block("gh api --input is not allowed for writes; use -f/-F fields")
         if ep.startswith("$"):
@@ -1571,6 +2092,8 @@ class Guard:
             head = kv.get("head", "")
             if head and "$" not in head and SUBST not in head and not BRANCH_RE.match(head):
                 block(f"PR head '{short(head, 60)}' is not a claude/gsc-… run branch")
+            if head and BRANCH_RE.match(head) and BRANCH_RE.match(head).group(1) == "weekly":
+                block(f"PR from '{short(head, 60)}': " + WEEKLY_READ_ONLY)
             return
         if method == "PATCH" and re.fullmatch(repo + r"/pulls/" + num, ep, re.I):
             extra = set(kv) - {"title", "body", "state"}
@@ -1588,6 +2111,13 @@ class Guard:
     # ---- curl / wget
 
     def check_http(self, prog, args):
+        # Options that read the url, method or body from a file the guard does not see.
+        for a in args:
+            if prog == "curl" and (a == "-K" or a.startswith("--config") or re.match(r"^-[A-Za-z]*K", a)):
+                block("curl -K/--config reads options from a file the guard cannot check; write them out")
+            if prog == "wget" and (a in ("-i", "-e") or re.match(r"^-[ie]\S", a)
+                                   or a.startswith(("--input-file", "--execute", "--config"))):
+                block(f"wget {a.split('=', 1)[0]} reads urls or commands from elsewhere; write the url out")
         if not re.search(r"github\.com", " ".join(args), re.I):
             return
         write = False

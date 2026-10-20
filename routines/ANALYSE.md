@@ -103,7 +103,7 @@ Weekdays 09:00–18:00 are routine-free and 02:00–06:00 is quiet outside the w
      - the final run note
 
      Keep `queue/evidence/{KEY}_draft-evidence_*.md`. Only a full or Gate-0 memo deletes it.
-7. **Re-measure compliance** (README §5, including `python3 routines/tools/gsc_register.py lint-memo memos/{KEY}/{KEY}_{D}_GSC.md` for a memo and `python3 routines/tools/gsc_register.py lint-row queue/rows/{file}` for each row file), commit (`GSC: {KEY} v1 {VERDICT}`, or `GSC: {KEY} INCOMPLETE`), push, and finish the PR (README §1) as `GSC ANALYSE {KEY} {D} — {VERDICT} ({deciding gate})`, or `— INCOMPLETE ({named gap})`. A BUY sends one `BUY` push and a `stopped:` outcome one `STOPPED` push (README §5); every other ANALYSE outcome reaches Jakub through the morning digest, and gsc-automerge merges WATCH, AVOID, DNAF, INCOMPLETE, prior found and queue exhausted (MODEL §8.7 item 10); `stopped: no listed security` (step 5) waits for Jakub.
+7. **Re-measure compliance** (README §5, including `python3 routines/tools/gsc_register.py lint-memo memos/{KEY}/{KEY}_{D}_GSC.md` for a memo and `python3 routines/tools/gsc_register.py lint-row queue/rows/{file}` for each row file), commit (`GSC: {KEY} v1 {VERDICT}`, or `GSC: {KEY} INCOMPLETE`), push, and finish the PR (README §1) as `GSC ANALYSE {KEY} {D} — {VERDICT} ({deciding gate})`, or `— INCOMPLETE ({named gap})`. A BUY sends one `BUY` push (README §5); every other ANALYSE outcome, a `stopped:` one included, reaches Jakub through the weekly report, and gsc-automerge merges WATCH, AVOID, DNAF, INCOMPLETE, prior found and queue exhausted (MODEL §8.7 item 10); `stopped: no listed security` (step 5) waits for Jakub.
 8. **Stop.** One name per run.
 
 **Forbidden:**

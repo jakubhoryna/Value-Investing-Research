@@ -10,7 +10,17 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Edit|Write|NotebookEdit|Bash|Monitor|PushNotification|Artifact|ArtifactComments|ArtifactData",
+        "matcher": "Edit|Write|NotebookEdit|MultiEdit|Bash|Monitor|PushNotification|Artifact|ArtifactComments|ArtifactData|EnterWorktree|ExitWorktree|CronCreate|CronDelete|DesignSync",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ \"$GSC_SESSION\" = routine ] || exit 0; python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/gsc_guard.py\"; rc=$?; [ $rc -eq 0 ] && exit 0; [ $rc -eq 2 ] || echo \"GSC guard: internal error rc=$rc - failing closed\" >&2; exit 2",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*",
         "hooks": [
           {
             "type": "command",

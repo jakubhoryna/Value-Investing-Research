@@ -3,12 +3,17 @@
 
 Builds a throwaway git repo, points CLAUDE_PROJECT_DIR at it, and feeds
 PreToolUse events to gsc_guard.py on stdin with GSC_SESSION=routine.
-Branches are set with `git symbolic-ref HEAD refs/heads/<name>`.
+Branches are set with `git symbolic-ref HEAD refs/heads/<name>` (a detached
+HEAD with `git update-ref --no-deref`). Each event carries a transcript_path
+whose first prompt is 'GSC ROUTINE: <JOB> — …' for the branch's job (main:
+ANALYSE) unless the case names another prompt, none or a missing file; the
+weekly dataset uploads read real files in a temp 'gsc-weekly' folder.
 A few PostToolUse cases for gsc_guard_post.py run in a second repo.
 
 Prints PASS/FAIL per case; the exit code is the number of failures.
 Run: python3 .claude/hooks/test_gsc_guard.py
 """
+import datetime
 import glob
 import hashlib
 import json
@@ -31,6 +36,12 @@ with open(TOOL_SRC, encoding="utf-8") as _fh:
 SITE_SRC = os.path.join(os.path.dirname(TOOL_SRC), "gsc_site.py")
 with open(SITE_SRC, encoding="utf-8") as _fh:
     SITE_TEXT = _fh.read()
+# The real weekly report tool (MODEL v4.6.1, routines/WEEKLY.md): the guard reads its source when WEEKLY
+# runs it, so it must pass the interpreter-code scan (no locked path fragment beside a write, and no
+# 'gh … api' or 'git … push' words anywhere in the file).
+WEEKLY_SRC = os.path.join(os.path.dirname(TOOL_SRC), "gsc_weekly.py")
+with open(WEEKLY_SRC, encoding="utf-8") as _fh:
+    WEEKLY_TEXT = _fh.read()
 # The README §1 ledger command, verbatim (v4.5.3: an explicit page loop, since --paginate
 # follows a repositories/{id} link that the cloud proxy refuses with HTTP 403).
 with open(os.path.join(os.path.dirname(os.path.dirname(HERE)), "routines", "README.md"), encoding="utf-8") as _fh:
@@ -42,7 +53,11 @@ R = "repos/jakubhoryna/Value-Investing-Model"
 BR = "claude/gsc-analyse-7309.T-2026-10-04-2250"
 MAIN_BR = "claude/gsc-analyse-MAIN-2026-10-04-2250"
 INTAKE_BR = "claude/gsc-intake-2026-10-04-0650"
-BRANCHES = ["main", BR, MAIN_BR, INTAKE_BR]
+# WEEKLY's local guard-identity branch (never pushed; MODEL v4.6.1, routines/WEEKLY.md).
+WEEKLY_BR = "claude/gsc-weekly-2026-10-25-0840"
+REVIEW_BR = "claude/gsc-review-TROW-2026-10-25-0610"
+SWEEP_BR = "claude/gsc-sweep-2026-10-24-0630"
+BRANCHES = ["main", BR, MAIN_BR, INTAKE_BR, WEEKLY_BR, REVIEW_BR, SWEEP_BR]
 SET_R = f"R={R}; "
 SET_BR = f"BR={BR}; "
 MSG_RE = re.compile(r"^GSC guard \(routine session\): .+ — see MODEL §8\.7 / routines/README\.md §3\.$")
@@ -59,6 +74,7 @@ FILES = {
     "register.csv": "key,company\n",
     "routines/tools/gsc_register.py": TOOL_TEXT,
     "routines/tools/gsc_site.py": SITE_TEXT,
+    "routines/tools/gsc_weekly.py": WEEKLY_TEXT,
     "queue/TODO.md": "v36\n",
     "queue/DRAFT_QUEUE.md": "- [ ] 7309.T\n",
     "queue/proposals/x.md": "proposal\n",
@@ -109,6 +125,8 @@ def make_repo():
     git(repo, "-c", "user.name=t", "-c", "user.email=t@example.com", "commit", "-q", "-m", "init")
     for b in BRANCHES[1:]:
         git(repo, "branch", b)
+    # A second repository inside the checkout (untracked): pushing from it is refused (GUARD review 5).
+    git(repo, "init", "-q", os.path.join(repo, "nested", "zz"))
     # The routine clone's remote-tracking main (the memo-edit rule reads it).
     git(repo, "update-ref", "refs/remotes/origin/main", "HEAD")
     return repo
@@ -137,12 +155,60 @@ def run_hook(script, repo, payload, session="routine"):
 CASES = []
 
 
-def bash(name, cmd, exp, branch=BR, cwd="", session="routine", tool="Bash"):
-    CASES.append((name, tool, {"command": cmd, "description": "test"}, exp, branch, cwd, session))
+# The routine prompt the hook reads from the transcript (MODEL v4.6.1 review: the session's job is pinned
+# by its prompt). AUTO = the prompt of the branch's job (main: ANALYSE); None = no transcript_path;
+# MISSING = a transcript_path that does not exist; any other value = that prompt job word.
+AUTO, MISSING = "auto", "missing"
+TRANSCRIPTS = tempfile.mkdtemp(prefix="gsc_guard_transcripts_")
+JOB_WORDS = {"analyse": "ANALYSE", "review": "REVIEW", "sweep": "SWEEP", "intake": "INTAKE", "seed": "QUEUE-SEED",
+             "weekly": "WEEKLY"}
+DETACHED = "(detached)"
 
 
-def write(name, rel, exp, tool="Write", session="routine"):
-    CASES.append((name, tool, {"file_path": rel, "content": "x"}, exp, BR, "", session))
+def transcript(prompt_text, name=None, entries=None):
+    """A transcript as Claude Code writes it: JSON lines, queue and attachment entries first, the routine
+    prompt as the first user entry, later turns after it. Returns its path."""
+    path = os.path.join(TRANSCRIPTS, (name or re.sub(r"\W+", "_", prompt_text)[:40]) + ".jsonl")
+    rows = entries if entries is not None else [
+        {"type": "queue-operation", "operation": "enqueue"},
+        {"type": "user", "isMeta": True, "message": {"role": "user", "content": "<session-start-hook>x"}},
+        {"type": "attachment", "attachment": {"type": "nested_memory", "content": "CLAUDE.md"}},
+        {"type": "user", "userType": "external", "message": {"role": "user", "content": prompt_text}},
+        {"type": "assistant", "message": {"role": "assistant", "content": [{"type": "text", "text": "ok"}]}},
+        {"type": "user", "message": {"role": "user", "content": [{"type": "tool_result", "content": "x"}]}},
+        {"type": "user", "message": {"role": "user", "content": "GSC ROUTINE: WEEKLY — a later message never counts"}},
+    ]
+    with open(path, "w", encoding="utf-8") as fh:
+        for row in rows:
+            fh.write(json.dumps(row) + "\n")
+    return path
+
+
+def routine_prompt(word):
+    return "GSC ROUTINE: %s — follow routines/README.md and routines/%s.md exactly." % (word, word)
+
+
+PROMPT_FILES = {w: transcript(routine_prompt(w), "prompt_" + w) for w in JOB_WORDS.values()}
+
+
+def transcript_for(prompt, branch):
+    """The transcript_path of a case, or None (no field)."""
+    if prompt is None:
+        return None
+    if prompt == MISSING:
+        return os.path.join(TRANSCRIPTS, "no_such_transcript.jsonl")
+    if prompt == AUTO:
+        m = re.match(r"^claude/gsc-(analyse|review|seed|sweep|intake|weekly)-", branch or "")
+        prompt = JOB_WORDS[m.group(1)] if m else "ANALYSE"
+    return PROMPT_FILES.get(prompt) or transcript(prompt)
+
+
+def bash(name, cmd, exp, branch=BR, cwd="", session="routine", tool="Bash", prompt=AUTO, says=None):
+    CASES.append((name, tool, {"command": cmd, "description": "test"}, exp, branch, cwd, session, prompt, says))
+
+
+def write(name, rel, exp, tool="Write", session="routine", branch=BR, prompt=AUTO, says=None):
+    CASES.append((name, tool, {"file_path": rel, "content": "x"}, exp, branch, "", session, prompt, says))
 
 
 LEDGER_JQ = "'.[] | [.number, .state, (.merged_at // \"-\"), .updated_at, .head.ref, .title] | @tsv'"
@@ -199,10 +265,9 @@ bash("ledger (README §1 verbatim, v4.5.3: explicit pages)", README_LEDGER, 0)
 bash("INTAKE: supersede a stale INTAKE PR (one PATCH, body kept)",
      f'gh api -X PATCH "{R}/pulls/80" -f state=closed '
      '-f title="GSC INTAKE 2026-10-05 — register v307 (1 rows) [superseded]"', 0, branch=INTAKE_BR)
-bash("INTAKE: stall watchdog reads the newest digest",
-     f'gh api "{R}/issues?state=all&creator=github-actions%5Bbot%5D&sort=created&direction=desc&per_page=100" '
-     '--jq \'[.[] | select(.pull_request == null and .user.login == "github-actions[bot]" and '
-     '(.title | test("^(STALL - )?GSC digest ")))][0].created_at // "-"\'', 0, branch=INTAKE_BR)
+bash("INTAKE: stall watchdog counts open routine PRs (v4.6.1: no digest test, no push)",
+     f'gh api "{R}/pulls?state=open&per_page=100" --jq \'[.[] | select((.title | test("\\\\[(running|fixing)\\\\]$") '
+     '| not) and .updated_at < (now - 86400 | todate))] | length\'', 0, branch=INTAKE_BR)
 bash("INTAKE: confirm a branch has no PR",
      f'gh api "{R}/pulls?state=all&head=jakubhoryna:claude/gsc-analyse-ABC-2026-10-01-2130" --jq length', 0,
      branch=INTAKE_BR)
@@ -592,8 +657,8 @@ PAGE_OUT = os.path.join(tempfile.gettempdir(), "gsc-register-page.html")
 PAGE_PUBLISH = {"action": "publish", "url": PAGE_URL, "file_path": PAGE_OUT}
 
 
-def artifact(name, tool_input, exp, branch=INTAKE_BR, session="routine", tool="Artifact"):
-    CASES.append((name, tool, tool_input, exp, branch, "", session))
+def artifact(name, tool_input, exp, branch=INTAKE_BR, session="routine", tool="Artifact", prompt=AUTO, says=None):
+    CASES.append((name, tool, tool_input, exp, branch, "", session, prompt, says))
 
 
 bash("INTAKE: render the register page outside the repo",
@@ -643,14 +708,526 @@ artifact("SEED: read the register page", {"action": "read", "url": PAGE_URL}, 2,
          branch="claude/gsc-seed-2026-10-08-0620")
 artifact("publish on main", PAGE_PUBLISH, 2, branch="main")
 artifact("ArtifactComments reply", {"action": "reply", "url": PAGE_URL, "body": "x"}, 2, tool="ArtifactComments")
-artifact("ArtifactData write", {"action": "set", "url": PAGE_URL, "collection": "c", "doc_id": "d", "data": {}}, 2,
-         tool="ArtifactData")
-artifact("ArtifactData read", {"action": "get", "url": PAGE_URL, "collection": "c", "doc_id": "d"}, 2,
-         tool="ArtifactData")
+artifact("ArtifactData write on the register page", {"action": "set", "url": PAGE_URL, "collection": "c",
+                                                      "doc_id": "d", "data": {}}, 2, tool="ArtifactData")
+artifact("ArtifactData read on the register page", {"action": "get", "url": PAGE_URL, "collection": "c",
+                                                     "doc_id": "d"}, 2, tool="ArtifactData")
 artifact("no GSC_SESSION: Artifact delete (attended sessions are not guarded)",
          {"action": "delete", "url": PAGE_URL}, 0, session=None)
 artifact("no GSC_SESSION: Artifact publish of a new page", {"action": "publish", "file_path": "/tmp/x.html"}, 0,
          branch=BR, session=None)
+
+# --- WEEKLY (MODEL v4.6.1, routines/WEEKLY.md): a local guard-identity branch that never pushes, GitHub
+# reads only, and the weekly page: Artifact read and dataset uploads, ArtifactData get/list/batch on datasets
+WEEKLY_URL = "https://claude.ai/artifact/6L264JT8pg5vuia9dUrcuj"
+WEEKLY_OUT = os.path.join(tempfile.mkdtemp(prefix="gsc_guard_weekly_"), "gsc-weekly")
+DATASETS = ("summary", "meta", "kpis", "attention", "shortlist", "changes", "weekly", "pipeline", "coverage",
+            "backlog", "held")
+WTOOL = "python3 routines/tools/gsc_weekly.py"
+
+
+# Dataset files as gsc_weekly.py render writes them (one valid row each); the guard reads an upload first.
+DATASET_ROWS = {
+    "summary": {"order": 1, "kind": "takeaway", "text": "9 memos merged."},
+    "meta": {"period_label": "Sun 18 Oct – Sun 25 Oct 2026", "since": "2026-10-18T08:30:00+02:00",
+             "until": "2026-10-25T08:30:00+01:00", "report_date": "2026-10-25", "ref_sha": "e04d7d1",
+             "ref_time": "2026-10-20T06:08:05+02:00", "register_from": "v317", "register_to": "v319",
+             "model_live": "v4.6.1", "decide": 5, "fix": 6, "know": 8, "generated_at": "2026-10-25T08:42:00+01:00",
+             "tool_version": "1.0"},
+    "kpis": {"order": 1, "metric": "Memos merged (period)", "value": 9, "prior": 9, "unit": "memos", "basis": "x"},
+    "attention": {"rank": 1, "list": "Decide", "severity": "high", "item": "x", "detail": "x", "action": "x",
+                  "since": None},
+    "shortlist": {"key": "ABEV", "company": "Ambev", "region": "Latin America", "px": 2.4, "px_unit": "USD",
+                  "px_date": "2026-10-02", "px_age_d": 23, "trigger": 1.9, "trigger_basis": "no-cash",
+                  "distance_pct": 26.3, "needs_fall_pct": 20.8, "mcap_fcf": 10.1, "ev_oi": 8.0, "status": "FAR",
+                  "memo_date": "2026-09-01", "model_version": "v4.5.3", "retest_owed": False,
+                  "all_cash_trigger": False, "pending": None, "reliable": False, "next_review": "FY2026"},
+    "changes": {"key": "COH.AX", "company": "Cochlear", "job": "ANALYSE", "from_verdict": None, "to_verdict": "AVOID",
+                "deciding": "Past", "ground_retired": False, "model_version": "v4.6.0",
+                "merged_at": "2026-10-19T23:44:53+02:00", "merged_by": "gsc-automerge", "pr": 149},
+    "weekly": {"week": "2026-W43", "week_start": "2026-10-18", "analyse": 3, "review": 6, "incomplete": 0,
+               "model_releases": 1, "watch_end": 66, "keys_end": 397, "note": None},
+    "pipeline": {"job": "ANALYSE", "scheduled_base": 10, "scheduled_sprint": 76, "prs_opened": 3, "merged_auto": 3,
+                 "merged_jakub": 0, "closed_unmerged": 0, "last_run_failed_usage_limit": 0, "triggers": 7},
+    "coverage": {"region": "UK", "keys": 19, "watch": 3, "avoid": 10, "dnaf": 6, "share_pct": 4.8},
+    "backlog": {"item": "Register open items", "start": 8, "end": 9, "unit": "items", "note": "x"},
+    "held": {"key": "TROW", "company": "T. Rowe Price", "verdict": "AVOID", "zone": "SELL-FLAG SR2",
+             "last_zone_check": "2026-10-17", "memo_date": "2026-10-19", "open_since": "2026-10-08",
+             "status": "held by your decision on 2026-10-20"},
+}
+
+
+def write_dataset(doc, rows=None, name=None):
+    """Write one dataset file into WEEKLY_OUT (rows: the JSON value; default one valid row)."""
+    os.makedirs(WEEKLY_OUT, exist_ok=True)
+    with open(os.path.join(WEEKLY_OUT, (name or doc) + ".json"), "w", encoding="utf-8") as fh:
+        json.dump([DATASET_ROWS[doc]] if rows is None else rows, fh, ensure_ascii=False)
+
+
+for _doc in DATASET_ROWS:
+    write_dataset(_doc)
+
+
+def upload(doc, **over):
+    """WEEKLY's Artifact upload of one dataset file (README of the Artifact tool: publish, asset: true)."""
+    return dict({"action": "publish", "url": WEEKLY_URL, "asset": True,
+                 "file_path": os.path.join(WEEKLY_OUT, doc + ".json")}, **over)
+
+
+# The batch's updated.at is the run start, which the guard bounds by its own clock (6 h): stamp it now.
+NOW_AT = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).astimezone(
+    datetime.timezone(datetime.timedelta(hours=1))).isoformat()
+NOW_Z = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.5Z")
+FUTURE_AT = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=365)).replace(
+    microsecond=0).isoformat()
+
+
+def ds_write(doc, **over):
+    """One batch entry as gsc_weekly.py dash-writes prints it: a pinned update of source and updated."""
+    w = {"op": "update", "collection": "datasets", "doc_id": doc, "if_version": 3,
+         "data": {"source": {"kind": "file", "url": "/_blob/" + hashlib.md5(doc.encode()).hexdigest(),
+                             "name": doc + ".json", "format": "json"},
+                  "updated": {"at": NOW_AT, "by": "GSC WEEKLY routine"}}}
+    w.update(over)
+    return w
+
+
+def full(doc=None, write=None, **over):
+    """The whole batch, as dash-writes prints it (every dataset once, meta last), with the write for doc
+    replaced by write (a dict) or by ds_write(doc, **over)."""
+    order = [d for d in DATASETS if d != "meta"] + ["meta"]
+    out = []
+    for d in order:
+        if d == doc:
+            out.append(write if write is not None else ds_write(d, **over))
+        else:
+            out.append(ds_write(d))
+    return out
+
+
+def ds_data(doc, source=None, updated=None):
+    """ds_write's data with source and/or updated replaced ('drop' removes the key; None keeps it)."""
+    data = dict(ds_write(doc)["data"])
+    for key, val in (("source", source), ("updated", updated)):
+        if val == "drop":
+            data.pop(key)
+        elif val is not None:
+            data[key] = val
+    return data
+
+
+def adata(name, tool_input, exp, branch=WEEKLY_BR, session="routine", tool="ArtifactData", prompt=AUTO, says=None):
+    CASES.append((name, tool, tool_input, exp, branch, "", session, prompt, says))
+
+
+def batch(writes, **over):
+    return dict({"action": "batch", "url": WEEKLY_URL, "writes": writes}, **over)
+
+
+# routines/WEEKLY.md steps 1-8, verbatim with the placeholders filled in (the guard sees what the run runs).
+WEEKLY_MD = os.path.join(os.path.dirname(os.path.dirname(HERE)), "routines", "WEEKLY.md")
+with open(WEEKLY_MD, encoding="utf-8") as _fh:
+    _weekly_md = _fh.read()
+WEEKLY_FETCH = [line.strip() for line in _weekly_md.split("```")[1].split("\n")
+                if line.strip() and not line.strip().startswith("#")]
+assert len(WEEKLY_FETCH) == 4, WEEKLY_FETCH
+FILL = {"{DETAILS_SINCE}": "2026-10-04T06:30:00Z", "{RUN}": "2026-10-25T08:41:07+01:00",
+        "{SINCE}": "2026-10-18T08:30:00+02:00", "{UNTIL}": "2026-10-25T08:30:00+01:00",
+        "{D}": "2026-10-25", "{T}": "0841", "{updated.at}": "2026-10-18T08:47:12+02:00",
+        "{updated.by}": "GSC WEEKLY routine"}
+
+
+def weekly_cmd(text):
+    for k, v in FILL.items():
+        text = text.replace(k, v)
+    return text
+
+
+def weekly_md_command(prefix):
+    """The one backticked command of routines/WEEKLY.md that starts with prefix, placeholders filled."""
+    found = [c for c in re.findall(r"`([^`\n]+)`", _weekly_md) if c.startswith(prefix)]
+    assert found, prefix
+    return weekly_cmd(found[0])
+
+
+bash("WEEKLY: fix the run start", weekly_md_command("TZ=Europe/Prague date"), 0, branch="main")
+bash("WEEKLY: cut the local guard-identity branch from origin/main",
+     weekly_md_command("git fetch origin main && git switch --no-track -c"), 0, branch="main")
+bash("WEEKLY: the scratch folder", weekly_md_command("rm -rf /tmp/gsc-weekly"), 0, branch=WEEKLY_BR)
+for _i, _cmd in enumerate(WEEKLY_FETCH, start=1):
+    bash("WEEKLY: step 4 fetch command %d, verbatim" % _i, weekly_cmd(_cmd), 0, branch=WEEKLY_BR)
+bash("WEEKLY: gh api --paginate GET still passes the guard (the proxy, not the guard, refuses page 2)",
+     f'gh api --paginate "{R}/pulls?state=all&per_page=100" > /tmp/gsc-weekly/pulls.json', 0, branch=WEEKLY_BR)
+bash("WEEKLY: commits on main, offline",
+     "git log origin/main --since=2026-10-18T08:30:00+02:00 --until=2026-10-25T08:30:00+01:00 --format='%H %cI %s'",
+     0, branch=WEEKLY_BR)
+bash("WEEKLY: window (step 2)", weekly_md_command("python3 routines/tools/gsc_weekly.py window --at \"{RUN}\""), 0,
+     branch=WEEKLY_BR)
+bash("WEEKLY: the published test (step 3)",
+     weekly_md_command("python3 routines/tools/gsc_weekly.py window --at \"{RUN}\" --meta-at"), 0, branch=WEEKLY_BR)
+bash("WEEKLY: render the datasets offline (step 6)",
+     weekly_md_command("python3 routines/tools/gsc_weekly.py render"), 0, branch=WEEKLY_BR)
+bash("WEEKLY: lint and apply the summary (step 7)",
+     weekly_md_command("python3 routines/tools/gsc_weekly.py lint-summary"), 0, branch=WEEKLY_BR)
+bash("WEEKLY: build the batch writes (step 8)",
+     weekly_md_command("python3 routines/tools/gsc_weekly.py dash-writes"), 0, branch=WEEKLY_BR)
+for _name in ("summary_draft.json", "health.json", "blobs.json", "versions.json"):
+    write("WEEKLY: Write /tmp/gsc-weekly/" + _name, os.path.join(WEEKLY_OUT, _name), 0)
+bash("WEEKLY: git push -u origin HEAD refused", "git push -u origin HEAD", 2, branch=WEEKLY_BR)
+bash("WEEKLY: git push of its own branch refused", f"git push -u origin {WEEKLY_BR}", 2, branch=WEEKLY_BR)
+bash("WEEKLY: git push with $BR refused", f'BR={WEEKLY_BR}; git push -u origin "$BR"', 2, branch=WEEKLY_BR)
+bash("ANALYSE: pushing a weekly branch name refused", f"git push -u origin {WEEKLY_BR}", 2)
+bash("WEEKLY: claim PR refused", f'gh api "{R}/pulls" -f head={WEEKLY_BR} -f base=main -f title="GSC WEEKLY x"', 2,
+     branch=WEEKLY_BR)
+bash("ANALYSE: PR from a weekly head refused", f'gh api "{R}/pulls" -f head={WEEKLY_BR} -f base=main -f title=x', 2)
+bash("WEEKLY: closing a PR refused", f'gh api -X PATCH "{R}/pulls/80" -f state=closed -f title="x [abandoned]"', 2,
+     branch=WEEKLY_BR)
+bash("WEEKLY: editing a PR body refused", f'gh api -X PATCH "{R}/pulls/80" -F body=@/tmp/b.md', 2, branch=WEEKLY_BR)
+bash("WEEKLY: comment refused", f'gh api "{R}/issues/7/comments" -f body="weekly"', 2, branch=WEEKLY_BR)
+bash("WEEKLY: an issue refused", f'gh api "{R}/issues" -f title="GSC weekly" -f body=x', 2, branch=WEEKLY_BR)
+bash("WEEKLY: render via python heredoc calling gh api refused",
+     "python3 - <<'EOF'\nimport subprocess\nsubprocess.run(['gh', 'api', 'repos/x/pulls'])\nEOF", 2, branch=WEEKLY_BR)
+# Artifact on the weekly page.
+artifact("WEEKLY: read the weekly page", {"action": "read", "url": WEEKLY_URL}, 0, branch=WEEKLY_BR)
+for _doc in DATASETS:
+    artifact(f"WEEKLY: upload {_doc}.json", upload(_doc), 0, branch=WEEKLY_BR)
+artifact("WEEKLY: upload with action omitted (publish is the default)",
+         {k: v for k, v in upload("kpis").items() if k != "action"}, 0, branch=WEEKLY_BR)
+artifact("WEEKLY: republish the page itself (no asset) refused", {k: v for k, v in upload("kpis").items()
+                                                                  if k != "asset"}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload with asset false refused", upload("kpis", asset=False), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload with asset 'true' (a string) refused", upload("kpis", asset="true"), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload with a label refused", upload("kpis", label="W43"), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload with capabilities refused", upload("kpis", capabilities={"assets": {}}), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload of several files refused",
+         dict({k: v for k, v in upload("kpis").items() if k != "file_path"},
+              file_paths=[os.path.join(WEEKLY_OUT, "kpis.json")]), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: copy assets from another artifact refused",
+         {"action": "publish", "url": WEEKLY_URL, "asset": True, "from_url": PAGE_URL, "asset_ids": ["a" * 32]}, 2,
+         branch=WEEKLY_BR)
+artifact("WEEKLY: upload of supporting files refused", upload("kpis", files={"x.js": "/tmp/x.js"}), 2,
+         branch=WEEKLY_BR)
+artifact("WEEKLY: upload with force refused", upload("kpis", force=True), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload of an unknown dataset name refused", upload("notes"), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload of a dataset outside a gsc-weekly folder refused",
+         upload("kpis", file_path=os.path.join(tempfile.gettempdir(), "kpis.json")), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload of a dataset rendered inside the repo refused",
+         upload("kpis", file_path="gsc-weekly/kpis.json"), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload of the register csv refused", upload("kpis", file_path="register.csv"), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload of a settings file refused",
+         upload("kpis", file_path=os.path.join(os.path.expanduser("~"), ".claude", "settings.json")), 2,
+         branch=WEEKLY_BR)
+artifact("WEEKLY: upload of the folder refused", upload("kpis", file_path=WEEKLY_OUT + "/"), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: upload without a file_path refused",
+         {k: v for k, v in upload("kpis").items() if k != "file_path"}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: read one published file of the weekly page refused",
+         {"action": "read", "url": WEEKLY_URL, "path": "index.html"}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: delete an asset of the weekly page refused",
+         {"action": "delete", "url": WEEKLY_URL, "path": "a" * 32}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: list artifacts refused", {"action": "list"}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: pin the weekly page refused", {"action": "pin", "url": WEEKLY_URL}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: a new artifact refused", {"action": "publish", "file_path": os.path.join(WEEKLY_OUT, "kpis.json"),
+                                            "asset": True}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: weekly url in another case refused", upload("kpis", url=WEEKLY_URL.lower()), 2, branch=WEEKLY_BR)
+artifact("WEEKLY: read the register page refused", {"action": "read", "url": PAGE_URL}, 2, branch=WEEKLY_BR)
+artifact("WEEKLY: publish the register page refused", PAGE_PUBLISH, 2, branch=WEEKLY_BR)
+artifact("INTAKE: upload to the weekly page refused", upload("kpis"), 2)
+artifact("INTAKE: read the weekly page refused", {"action": "read", "url": WEEKLY_URL}, 2)
+artifact("ANALYSE: upload to the weekly page refused", upload("kpis"), 2, branch=BR)
+artifact("weekly page upload on main refused", upload("kpis"), 2, branch="main")
+artifact("WEEKLY: ArtifactComments on the weekly page refused", {"action": "list", "url": WEEKLY_URL}, 2,
+         branch=WEEKLY_BR, tool="ArtifactComments")
+# ArtifactData on the weekly page.
+adata("WEEKLY: idempotency read of datasets/meta",
+      {"action": "get", "url": WEEKLY_URL, "collection": "datasets", "doc_id": "meta"}, 0)
+adata("WEEKLY: list the datasets for their versions", {"action": "list", "url": WEEKLY_URL, "collection": "datasets"}, 0)
+adata("WEEKLY: list with a limit", {"action": "list", "url": WEEKLY_URL, "collection": "datasets",
+                                    "query": {"limit": 50}}, 0)
+adata("WEEKLY: one batch repointing every dataset, meta last", batch(full()), 0)
+adata("WEEKLY: a Z timestamp", batch([dict(w, data=dict(w["data"], updated={"at": NOW_Z, "by": "GSC WEEKLY routine"}))
+                                      for w in full()]), 0)
+# D7: the batch is the whole week or nothing, meta (the published mark) last, one stamp near the clock
+adata("batch: a batch of one dataset refused (the others would point at last week)", batch([ds_write("kpis")]), 2,
+      says="exactly 11 writes")
+adata("batch: meta alone refused (it would mark the week published)", batch([ds_write("meta")]), 2,
+      says="exactly 11 writes")
+adata("batch: ten datasets refused", batch(full()[1:]), 2, says="exactly 11 writes")
+adata("batch: meta not last refused", batch([ds_write("meta")] + full()[:-1]), 2, says="meta is written last")
+adata("batch: updated alone refused", batch(full("meta", data=ds_data("meta", source="drop"))), 2,
+      says="exactly source and updated")
+adata("batch: source alone refused", batch(full("kpis", data=ds_data("kpis", updated="drop"))), 2,
+      says="exactly source and updated")
+adata("batch: two stamps refused", batch(full("kpis", data=ds_data("kpis", updated={
+    "at": "2020-01-01T00:00:00+00:00", "by": "GSC WEEKLY routine"}))), 2, says="the same updated.at")
+adata("batch: a stamp a year ahead refused (it would silence every later week)",
+      batch([dict(w, data=dict(w["data"], updated={"at": FUTURE_AT, "by": "GSC WEEKLY routine"})) for w in full()]),
+      2, says="from the clock")
+adata("batch: a stamp from 2026-01-01 refused",
+      batch([dict(w, data=dict(w["data"], updated={"at": "2026-01-01T08:41:07+01:00", "by": "GSC WEEKLY routine"}))
+             for w in full()]), 2, says="from the clock")
+adata("get dash/meta refused", {"action": "get", "url": WEEKLY_URL, "collection": "dash", "doc_id": "meta"}, 2)
+adata("get files/index.html refused", {"action": "get", "url": WEEKLY_URL, "collection": "files",
+                                       "doc_id": "index.html"}, 2)
+adata("get an unknown dataset refused", {"action": "get", "url": WEEKLY_URL, "collection": "datasets",
+                                         "doc_id": "notes"}, 2)
+adata("get without a doc_id refused", {"action": "get", "url": WEEKLY_URL, "collection": "datasets"}, 2)
+adata("list the dash collection refused", {"action": "list", "url": WEEKLY_URL, "collection": "dash"}, 2)
+adata("list with a where filter refused", {"action": "list", "url": WEEKLY_URL, "collection": "datasets",
+                                           "query": {"where": [["fixed", "==", True]]}}, 2)
+adata("list with out_dir refused (it writes files)", {"action": "list", "url": WEEKLY_URL, "collection": "datasets",
+                                                      "out_dir": "model"}, 2)
+adata("get with as_level refused", {"action": "get", "url": WEEKLY_URL, "collection": "datasets", "doc_id": "meta",
+                                    "as_level": "view"}, 2)
+adata("query refused", {"action": "query", "url": WEEKLY_URL, "collection": "datasets"}, 2)
+adata("profiles refused", {"action": "profiles", "url": WEEKLY_URL, "ids": ["u_" + "a" * 22]}, 2)
+adata("set refused", {"action": "set", "url": WEEKLY_URL, "collection": "datasets", "doc_id": "kpis",
+                      "data": ds_write("kpis")["data"], "if_version": 3}, 2)
+adata("a single update outside a batch refused", {"action": "update", "url": WEEKLY_URL, "collection": "datasets",
+                                                  "doc_id": "kpis", "data": ds_write("kpis")["data"],
+                                                  "if_version": 3}, 2)
+adata("delete refused", {"action": "delete", "url": WEEKLY_URL, "collection": "datasets", "doc_id": "kpis",
+                         "if_version": 3}, 2)
+adata("str_replace on the page html refused", {"action": "str_replace", "url": WEEKLY_URL, "collection": "files",
+                                               "doc_id": "index.html", "field": "text", "old_str": "a",
+                                               "new_str": "b"}, 2)
+adata("no action refused", {"url": WEEKLY_URL, "collection": "datasets", "doc_id": "meta"}, 2)
+adata("batch: a set entry refused", batch(full("kpis", op="set")), 2, says="only update")
+adata("batch: a delete entry refused", batch(full("kpis", write={"op": "delete", "collection": "datasets",
+                                                                  "doc_id": "kpis", "if_version": 3})), 2)
+adata("batch: a dash/meta write refused", batch(full("kpis", write=dict(ds_write("kpis"), collection="dash",
+                                                                         doc_id="meta"))), 2, says="only 'datasets'")
+adata("batch: a files/ write refused", batch(full("kpis", write=dict(ds_write("kpis"), collection="files",
+                                                                      doc_id="index.html"))), 2)
+adata("batch: an unknown dataset refused", batch(full("kpis", write=ds_write("notes"))), 2,
+      says="only the dataset documents")
+adata("batch: the same dataset twice refused", batch(full("kpis", write=ds_write("held"))), 2, says="twice")
+adata("batch: no if_version refused", batch(full("kpis", write={k: v for k, v in ds_write("kpis").items()
+                                                               if k != "if_version"})), 2, says="if_version")
+adata("batch: if_version true refused", batch(full("kpis", if_version=True)), 2, says="if_version")
+adata("batch: if_version as text refused", batch(full("kpis", if_version="3")), 2, says="if_version")
+adata("batch: if_version 0 refused", batch(full("kpis", if_version=0)), 2, says="if_version")
+adata("batch: a file_path entry refused", batch(full("kpis", write=dict(
+    {k: v for k, v in ds_write("kpis").items() if k != "data"}, file_path="/tmp/gsc-weekly/kpis.json"))), 2)
+adata("batch: a title change refused", batch(full("kpis", data=dict(ds_data("kpis"), title="x"))), 2,
+      says="exactly source and updated")
+adata("batch: a fixed change refused", batch(full("kpis", data=dict(ds_data("kpis"), fixed=False))), 2)
+adata("batch: empty data refused", batch(full("kpis", data={})), 2)
+adata("batch: source deleted refused", batch(full("kpis", data=ds_data("kpis", source={"__delete__": True}))), 2,
+      says="source must be exactly")
+adata("batch: an inline source refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "inline", "url": "/_blob/" + "a" * 32, "name": "kpis.json", "format": "json"}))), 2,
+      says="source must be exactly")
+adata("batch: a source url off the asset store refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "file", "url": "https://example.com/kpis.json", "name": "kpis.json", "format": "json"}))),
+      2, says="source must be exactly")
+adata("batch: a blob url with a trailing newline refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "file", "url": "/_blob/" + "a" * 32 + "\n", "name": "kpis.json", "format": "json"}))), 2)
+adata("batch: another dataset's file name refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "file", "url": "/_blob/" + "a" * 32, "name": "held.json", "format": "json"}))), 2)
+adata("batch: a csv format refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "file", "url": "/_blob/" + "a" * 32, "name": "kpis.json", "format": "csv"}))), 2)
+adata("batch: an extra source field refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "file", "url": "/_blob/" + "a" * 32, "name": "kpis.json", "format": "json",
+                    "query": "x"}))), 2)
+adata("batch: a source field deleted refused", batch(full("kpis", data=ds_data(
+    "kpis", source={"kind": "file", "url": {"__delete__": True}, "name": "kpis.json", "format": "json"}))), 2)
+adata("batch: updated by someone else refused", batch(full("kpis", data=ds_data(
+    "kpis", updated={"at": NOW_AT, "by": "Claude"}))), 2, says="updated must be exactly")
+adata("batch: updated without an offset refused", batch(full("kpis", data=ds_data(
+    "kpis", updated={"at": NOW_AT[:19], "by": "GSC WEEKLY routine"}))), 2, says="updated must be exactly")
+adata("batch: an extra updated field refused", batch(full("kpis", data=ds_data(
+    "kpis", updated={"at": NOW_AT, "by": "GSC WEEKLY routine", "note": "x"}))), 2)
+adata("batch: no writes refused", batch([]), 2)
+adata("batch: writes not a list refused", batch(ds_write("kpis")), 2)
+adata("batch: twelve writes refused", batch(full() + [ds_write("x")]), 2)
+adata("batch: a top-level collection refused", batch(full(), collection="datasets"), 2)
+adata("batch: as_level refused", batch(full(), as_level="admin"), 2)
+adata("batch on the register page refused", batch(full(), url=PAGE_URL), 2)
+adata("batch on another artifact refused", batch(full(), url="https://claude.ai/artifact/AAAAAAAAAAAAAAAAAAAAAA"),
+      2)
+adata("INTAKE: batch on the weekly page refused", batch(full()), 2, branch=INTAKE_BR)
+adata("ANALYSE: get datasets/meta refused", {"action": "get", "url": WEEKLY_URL, "collection": "datasets",
+                                             "doc_id": "meta"}, 2, branch=BR)
+adata("SWEEP: list the datasets refused", {"action": "list", "url": WEEKLY_URL, "collection": "datasets"}, 2,
+      branch=SWEEP_BR)
+adata("ArtifactData on main refused", batch(full()), 2, branch="main")
+# MCP tools: refused in routines, except WEEKLY's read-only schedule listing (its optional health input).
+adata("WEEKLY: list the routine schedules (MCP, read-only)", {}, 0, tool="mcp__claude-code-remote__list_triggers")
+adata("WEEKLY: list only enabled schedules", {"enabled": True, "limit": 100}, 0,
+      tool="mcp__claude-code-remote__list_triggers")
+adata("INTAKE: list the routine schedules refused", {}, 2, branch=INTAKE_BR, tool="mcp__claude-code-remote__list_triggers")
+adata("ANALYSE: list the routine schedules refused", {}, 2, branch=BR, tool="mcp__claude-code-remote__list_triggers")
+adata("WEEKLY: fire a routine refused", {"trigger_id": "trig_x"}, 2, tool="mcp__claude-code-remote__fire_trigger")
+adata("WEEKLY: change a routine refused", {"trigger_id": "trig_x", "enabled": False}, 2,
+      tool="mcp__claude-code-remote__update_trigger")
+adata("WEEKLY: message another session refused", {"session_id": "s", "message": "x"}, 2,
+      tool="mcp__claude-code-remote__send_message")
+adata("ANALYSE: merge a PR through the GitHub MCP refused", {"owner": "jakubhoryna", "repo": "Value-Investing-Model",
+                                                             "pullNumber": 5}, 2, branch=BR,
+      tool="mcp__github__merge_pull_request")
+adata("INTAKE: push files to main through the GitHub MCP refused", {"owner": "jakubhoryna", "branch": "main"}, 2,
+      branch=INTAKE_BR, tool="mcp__github__push_files")
+adata("REVIEW: comment through the GitHub MCP refused", {"owner": "jakubhoryna", "issue_number": 7, "body": "x"}, 2,
+      branch=REVIEW_BR, tool="mcp__github__add_issue_comment")
+adata("SWEEP: a document connector write refused", {"pages": []}, 2, branch=SWEEP_BR,
+      tool="mcp__Notion__notion-create-pages")
+# Built-in tools no routine uses (settings.json routes them here).
+for _tool in ("EnterWorktree", "ExitWorktree", "CronCreate", "CronDelete", "DesignSync"):
+    adata(f"{_tool} refused", {"name": "x"}, 2, branch=BR, tool=_tool, says="not allowed in routines")
+adata("no GSC_SESSION: EnterWorktree (attended sessions are not guarded)", {"name": "x"}, 0, session=None,
+      tool="EnterWorktree")
+# MCP list_triggers: pinned to the WEEKLY prompt as well as the branch.
+adata("an ANALYSE session on a weekly branch: list_triggers refused", {}, 2, prompt="ANALYSE",
+      tool="mcp__claude-code-remote__list_triggers", says="this session runs ANALYSE")
+
+# --- GUARD review 2: the job is pinned by the session's prompt (the first prompt in its transcript)
+artifact("WEEKLY session: read the weekly page", {"action": "read", "url": WEEKLY_URL}, 0, branch=WEEKLY_BR,
+         prompt="WEEKLY")
+artifact("an ANALYSE session on a weekly branch: upload refused", upload("kpis"), 2, branch=WEEKLY_BR,
+         prompt="ANALYSE", says="this session runs ANALYSE")
+adata("an INTAKE session on a weekly branch: batch refused", batch(full()), 2, prompt="INTAKE",
+      says="this session runs INTAKE")
+adata("a SWEEP session on a weekly branch: datasets list refused",
+      {"action": "list", "url": WEEKLY_URL, "collection": "datasets"}, 2, prompt="SWEEP")
+artifact("an ANALYSE session on an intake branch: register page refused", PAGE_PUBLISH, 2, prompt="ANALYSE",
+         says="this session runs ANALYSE")
+artifact("INTAKE without a readable transcript: the branch decides (register page passes)", PAGE_PUBLISH, 0,
+         prompt=MISSING)
+adata("WEEKLY without a transcript_path: the branch decides (batch passes)", batch(full()), 0, prompt=None)
+bash("a WEEKLY session on an analyse branch: git push refused", "git push -u origin HEAD", 2, prompt="WEEKLY",
+     says="WEEKLY")
+bash("a WEEKLY session on an analyse branch: PR create refused",
+     f'gh api "{R}/pulls" -f head={BR} -f base=main -f title="GSC ANALYSE 7309.T 2026-10-04 [running]"', 2,
+     prompt="WEEKLY", says="WEEKLY run")
+bash("a REVIEW session on an analyse branch: git push refused", "git push -u origin HEAD", 2, prompt="REVIEW",
+     says="this session runs REVIEW")
+bash("ANALYSE without a readable transcript: the branch decides (git push passes)", "git push -u origin HEAD", 0,
+     prompt=MISSING)
+bash("ANALYSE without a transcript_path: the branch decides (PR PATCH passes)",
+     f'gh api -X PATCH "{R}/pulls/80" -f title="x"', 0, prompt=None)
+bash("INTAKE step 0 on main: the abandoned-claim close passes (before its branch exists)",
+     f'gh api -X PATCH "{R}/pulls/41" -f state=closed -f title="GSC ANALYSE ABC 2026-10-01 [abandoned]"', 0,
+     branch="main", prompt="INTAKE")
+bash("INTAKE step 0 on main: the supersede close passes",
+     f'gh api -X PATCH "{R}/pulls/80" -f state=closed -f title="GSC INTAKE 2026-10-05 — register v307 (1 rows) '
+     '[superseded]"', 0, branch="main", prompt="INTAKE")
+bash("prompt read: the first user prompt counts, a later 'GSC ROUTINE: WEEKLY' does not",
+     "git push -u origin HEAD", 0, prompt="ANALYSE")
+bash("prompt read: a prompt naming no routine job refused", "git push -u origin HEAD", 2,
+     prompt="Please push the branch for me", says="names no routine job")
+bash("prompt read: a lower-case routine word refused", "git push -u origin HEAD", 2,
+     prompt="gsc routine: ANALYSE — follow routines/README.md", says="names no routine job")
+# Never leave a run branch once it is cut.
+bash("ANALYSE: cutting a weekly branch from its run branch refused",
+     f"git switch --no-track -c {WEEKLY_BR.replace('0840', '0841')} origin/main", 2, says="never leaves")
+bash("SWEEP: cutting a weekly branch from its run branch refused",
+     f"git switch --no-track -c {WEEKLY_BR.replace('0840', '0842')} origin/main", 2, branch=SWEEP_BR,
+     says="never leaves")
+bash("INTAKE: git switch main refused", "git switch main", 2, branch=INTAKE_BR, says="never leaves")
+bash("ANALYSE: git checkout of another run branch refused", f"git checkout {WEEKLY_BR}", 2, says="never leaves")
+bash("ANALYSE: git branch X refused (then checkout X)", f"git branch {WEEKLY_BR.replace('0840', '0843')}", 2,
+     says="never leaves")
+bash("WEEKLY: git switch to an analyse branch refused", f"git switch {BR}", 2, branch=WEEKLY_BR, says="never leaves")
+bash("on main: git switch main passes", "git switch main", 0, branch="main")
+bash("listing branches on a run branch passes", "git branch --show-current", 0)
+bash("restoring a file on a run branch passes", "git checkout -- queue/rows/x.md", 0)
+bash("python writing .git/HEAD refused", "python3 -c \"open('.git/HEAD','w').write('ref: refs/heads/x')\"", 2)
+bash("node writing .git/HEAD refused", "node -e \"require('fs').writeFileSync('.git/HEAD', 'x')\"", 2)
+bash("echo into .git/HEAD refused", "echo 'ref: refs/heads/main' > .git/HEAD", 2)
+# --- GUARD review 3: a detached HEAD lifts nothing
+bash("on main: git checkout origin/main (a detached HEAD) refused", "git checkout origin/main", 2, branch="main")
+bash("on main: git switch origin/main refused", "git switch origin/main", 2, branch="main")
+bash("WEEKLY on a detached HEAD: closing a PR refused", f'gh api -X PATCH "{R}/pulls/80" -f state=closed', 2,
+     branch=DETACHED, prompt="WEEKLY", says="WEEKLY run")
+bash("WEEKLY on a detached HEAD: PR create with an analyse head refused",
+     f'gh api "{R}/pulls" -f head={BR} -f base=main -f title="GSC ANALYSE 7309.T 2026-10-04 [running]"', 2,
+     branch=DETACHED, prompt="WEEKLY", says="WEEKLY run")
+bash("WEEKLY on main: closing a PR refused", f'gh api -X PATCH "{R}/pulls/80" -f state=closed', 2, branch="main",
+     prompt="WEEKLY", says="WEEKLY run")
+# --- GUARD review 5: a push runs in the root's own repository
+bash("push from a nested repository refused (git -C)", "git -C nested/zz push -u origin HEAD", 2,
+     says="not the repo checkout's own repository")
+bash("push from a nested repository refused (cd)", "cd nested/zz && git push -u origin HEAD", 2,
+     says="not the repo checkout's own repository")
+bash("push from a subfolder of the checkout passes", "git -C queue push -u origin HEAD", 0)
+bash("copying .git into the checkout refused", "cp -r .git memos/zz/.git", 2)
+bash("making a .git folder below the root refused", "mkdir -p memos/zz/.git", 2)
+bash("git init below the root refused", "git init memos/zz", 2)
+write("Write into a nested .git refused", "nested/zz/.git/config", 2)
+# --- GUARD review 6: the push marker is out of reach
+bash("rm of the push marker refused", "rm -f .git/gsc-guard/push_test_WEEKLY", 2, branch=WEEKLY_BR)
+bash("python removing the push marker refused",
+     "python3 -c \"import os; os.remove('.git/gsc-guard/push_test_WEEKLY')\"", 2, branch=WEEKLY_BR)
+# --- GUARD review 8: an artifact file_path is literal
+artifact("WEEKLY: upload with $HOME refused", upload("kpis", file_path="$HOME/gsc-weekly/kpis.json"), 2,
+         branch=WEEKLY_BR, says="'$' or '~'")
+artifact("WEEKLY: upload with ~ refused", upload("kpis", file_path="~/gsc-weekly/kpis.json"), 2, branch=WEEKLY_BR,
+         says="'$' or '~'")
+artifact("INTAKE: register page with $TMPDIR refused", dict(PAGE_PUBLISH, file_path="$TMPDIR/gsc-register-page.html"),
+         2, says="'$' or '~'")
+# --- GUARD review 9: an upload is read first (MODEL §7.4 privacy)
+write_dataset("held", [dict(DATASET_ROWS["held"], avg_cost=41.2)], name="held_private")
+write_dataset("kpis", [{"key": "TROW", "core_fcf": 1234, "core_oi": 99}], name="kpis_core")
+write_dataset("shortlist", [dict(DATASET_ROWS["shortlist"], zone_note={"x": 1})], name="shortlist_nested")
+write_dataset("attention", {"rows": []}, name="attention_object")
+write_dataset("coverage", [dict(DATASET_ROWS["coverage"], shares=10)], name="coverage_shares")
+for _src, _doc, _say in (("held_private", "held", "private field"), ("kpis_core", "kpis", "private field"),
+                         ("shortlist_nested", "shortlist", "does not carry"),
+                         ("attention_object", "attention", "not a JSON array"),
+                         ("coverage_shares", "coverage", "private field")):
+    _d = os.path.join(os.path.dirname(WEEKLY_OUT), "bad_" + _src, "gsc-weekly")
+    os.makedirs(_d, exist_ok=True)
+    shutil.copyfile(os.path.join(WEEKLY_OUT, _src + ".json"), os.path.join(_d, _doc + ".json"))
+    artifact(f"WEEKLY: upload of {_doc}.json with bad content ({_src}) refused",
+             upload(_doc, file_path=os.path.join(_d, _doc + ".json")), 2, branch=WEEKLY_BR, says=_say)
+_d = os.path.join(os.path.dirname(WEEKLY_OUT), "csv_as_json", "gsc-weekly")
+os.makedirs(_d, exist_ok=True)
+with open(os.path.join(_d, "held.json"), "w", encoding="utf-8") as _fh:
+    _fh.write("key,company,held,avg_cost\nTROW,T. Rowe Price,true,98.1\n")
+artifact("WEEKLY: upload of register.csv copied to held.json refused", upload("held", file_path=os.path.join(
+    _d, "held.json")), 2, branch=WEEKLY_BR, says="cannot be read as JSON")
+artifact("WEEKLY: upload of a missing dataset file refused", upload("held", file_path=os.path.join(
+    os.path.dirname(WEEKLY_OUT), "none", "gsc-weekly", "held.json")), 2, branch=WEEKLY_BR)
+# --- GUARD review 10: WEEKLY writes nothing to the repo
+write("WEEKLY: Write inside the repo refused", "queue/runs/2026-10-25_0840_WEEKLY.md", 2, branch=WEEKLY_BR,
+      says="WEEKLY never writes")
+write("a WEEKLY session on an analyse branch: Write inside the repo refused", "queue/runs/x.md", 2, prompt="WEEKLY",
+      says="WEEKLY never writes")
+CASES.append(("WEEKLY: Edit inside the repo refused", "Edit", {"file_path": "queue/TODO.md", "old_string": "a",
+                                                               "new_string": "b"}, 2, WEEKLY_BR, "", "routine"))
+bash("WEEKLY: git add refused", "git add queue/rows/x.md", 2, branch=WEEKLY_BR, says="WEEKLY never writes")
+bash("WEEKLY: git commit refused", 'git commit -m "weekly"', 2, branch=WEEKLY_BR, says="WEEKLY never writes")
+bash("WEEKLY: git mv refused", "git mv queue/rows/x.md queue/rows/y.md", 2, branch=WEEKLY_BR)
+bash("WEEKLY: git rm refused", "git rm -q queue/rows/x.md", 2, branch=WEEKLY_BR)
+bash("WEEKLY: git status passes", "git status --porcelain", 0, branch=WEEKLY_BR)
+write("WEEKLY: Write outside the repo passes", os.path.join(WEEKLY_OUT, "summary_draft.json"), 0, branch=WEEKLY_BR)
+# --- GUARD review 11: no write path to GitHub around gh api
+bash("curl -K refused", "curl -K /tmp/cfg", 2, says="-K/--config")
+bash("curl --config refused", "curl --config=/tmp/cfg https://example.com", 2, says="-K/--config")
+bash("curl -sK refused", "curl -sK /tmp/cfg", 2)
+bash("wget -i refused", "wget -i /tmp/urls.txt", 2)
+bash("wget --input-file refused", "wget --input-file=/tmp/urls.txt", 2)
+bash("wget -e refused", "wget -e use_proxy=off https://example.com", 2)
+bash("python urllib POST to api.github.com refused",
+     "python3 -c \"import urllib.request as u; u.urlopen(u.Request('https://api.github.com/repos/x/pulls', "
+     "data=b'{}'))\"", 2, says="names github.com")
+bash("python requests.patch to github.com refused",
+     "python3 -c \"import requests; requests.patch('https://api.github.com/repos/x/pulls/1', json={})\"", 2)
+bash("python GET of a github.com page passes", "python3 -c \"print('https://github.com/x')\"", 0)
+bash("curl -sSL of an IR page passes", 'curl -sSL -A "GSC research x@example.com" -o /tmp/a.html https://example.com/ir',
+     0)
+# --- GUARD review 12: only git fetch origin main
+bash("git fetch with a refspec onto origin/main refused", "git fetch origin +refs/heads/x:refs/remotes/origin/main", 2,
+     says="only git fetch origin main")
+bash("git fetch of another remote url refused", "git fetch https://example.com/x.git main", 2)
+bash("git fetch --refmap refused", "git fetch --refmap= origin main", 2)
+bash("git fetch -q origin main passes", "git fetch -q origin main", 0)
+bash("git fetch origin passes", "git fetch origin", 0)
+adata("no GSC_SESSION: GitHub MCP merge (attended sessions are not guarded)", {"pullNumber": 5}, 0, session=None,
+      tool="mcp__github__merge_pull_request")
+adata("no GSC_SESSION: ArtifactData set (attended sessions are not guarded)",
+      {"action": "set", "url": WEEKLY_URL, "collection": "dash", "doc_id": "meta", "data": {"title": "x"}}, 0,
+      session=None)
 
 # --- outside routine sessions nothing is ever blocked (expect 0)
 bash("no GSC_SESSION: canary", ": git push origin main", 0, session=None)
@@ -663,22 +1240,37 @@ write("no GSC_SESSION: Write model/MODEL.md", "model/MODEL.md", 0, session=None)
 
 # ---------------------------------------------------------------- runners
 
+def set_branch(repo, branch):
+    if branch == DETACHED:
+        sha = git(repo, "rev-parse", "refs/heads/main").stdout.decode().strip()
+        git(repo, "update-ref", "--no-deref", "HEAD", sha)
+    else:
+        git(repo, "symbolic-ref", "HEAD", "refs/heads/" + branch)
+
+
 def run_guard_cases(repo):
     failures = 0
-    for name, tool, tool_input, exp, branch, cwd, session in CASES:
+    for case in CASES:
+        name, tool, tool_input, exp, branch, cwd, session, prompt, says = (tuple(case) + (AUTO, None))[:9]
         tool_input = dict(tool_input)
         for key in ("file_path", "notebook_path"):   # Write/Edit paths arrive absolute
             if key in tool_input and isinstance(tool_input[key], str) and not os.path.isabs(tool_input[key]) \
-                    and not tool_input[key].startswith("/"):
+                    and not tool_input[key].startswith(("/", "$", "~")):
                 tool_input[key] = os.path.join(repo, tool_input[key])
-        git(repo, "symbolic-ref", "HEAD", "refs/heads/" + branch)
+        set_branch(repo, branch)
         event = {"session_id": "test", "hook_event_name": "PreToolUse", "tool_name": tool,
                  "tool_input": tool_input, "cwd": os.path.join(repo, cwd) if cwd else repo}
+        path = transcript_for(prompt, branch)
+        if path is not None:
+            event["transcript_path"] = path
         rc, err = run_hook(GUARD, repo, event, session)
         ok = rc == exp
         if ok and rc == 2:                            # exactly one line in the spec's format
             ok = len(err.strip().splitlines()) == 1 and bool(MSG_RE.match(err.strip()))
-        failures += report(ok, f"guard: {name}", f"expected {exp}, got {rc} {err.strip()[:300]}")
+        if ok and says:
+            ok = says in err
+        failures += report(ok, f"guard: {name}", f"expected {exp}" + (f" saying {says!r}" if says else "")
+                           + f", got {rc} {err.strip()[:300]}")
     # Memo-edit rule without origin/main: fail closed (and say why).
     git(repo, "symbolic-ref", "HEAD", "refs/heads/" + BR)
     git(repo, "update-ref", "-d", "refs/remotes/origin/main")
@@ -701,62 +1293,124 @@ def run_guard_cases(repo):
 
 
 def run_push_cases(repo):
-    """PushNotification (MODEL v4.5.0 §8.7 item 11, routines/README.md §5).
-    Returns (failures, cases)."""
+    """PushNotification (MODEL v4.6.1 §8.7 item 11, routines/README.md §5): BUY from that ANALYSE or
+    REVIEW run and WEEKLY from the WEEKLY run, each checked against the current run branch; the HELD,
+    VERDICT CHANGE, STOPPED, BLOCKED and STALL pushes are retired. Returns (failures, cases)."""
     failures, cases = 0, 0
     run_id = "pushtest%d" % os.getpid()
     sessions = []
 
-    def push(name, message, exp, session_id, session="routine", field="message"):
+    def push(name, message, exp, session_id, branch, session="routine", field="message", says=None, prompt=AUTO):
         nonlocal failures, cases
         cases += 1
         sessions.append(session_id)
+        set_branch(repo, branch)
         ti = {"status": "proactive"}
         if message is not None:
             ti[field] = message
         event = {"session_id": session_id, "hook_event_name": "PreToolUse", "tool_name": "PushNotification",
                  "tool_input": ti, "cwd": repo}
+        path = transcript_for(prompt, branch)
+        if path is not None:
+            event["transcript_path"] = path
         rc, err = run_hook(GUARD, repo, event, session)
         ok = rc == exp and (rc == 0 or (len(err.strip().splitlines()) == 1 and bool(MSG_RE.match(err.strip()))))
+        if ok and says:
+            ok = says in err
         failures += report(ok, f"push: {name}", f"expected {exp}, got {rc} {err.strip()[:300]}")
 
+    week = "GSC WEEKLY · Sun 18 Oct – Sun 25 Oct 2026 · 2 to decide · 1 to fix · 9 memos · " + WEEKLY_URL
+    buy_a = "GSC BUY · ANALYSE 7309.T 2026-10-04 · PR 82 · BUY (all four gates; in range)"
+    buy_r = "GSC BUY · REVIEW TROW 2026-10-25 · PR 93 · WATCH → BUY"
     a, b = run_id + "a", run_id + "b"
-    for cls, job in (("BUY", "ANALYSE"), ("HELD", "REVIEW"), ("VERDICT CHANGE", "REVIEW"), ("STOPPED", "SWEEP"),
-                     ("BLOCKED", "INTAKE"), ("STALL", "INTAKE")):
-        push(f"class {cls} passes", f"GSC {cls} · {job} ABC 2026-10-06 · PR 82 · verdict WATCH → AVOID", 0, a)
-    push("a second BUY push in the same run is refused", "GSC BUY · REVIEW XYZ 2026-10-06 · PR 83 · BUY", 2, a)
-    sweep_run = run_id + "s"
-    push("HELD from a SWEEP refused (J11: the digest reports zone changes)",
-         "GSC HELD · SWEEP 2026-10-06 · PR 90 · TROW HOLD -> SELL-FLAG", 2, sweep_run)
-    push("STOPPED from a SWEEP still passes after the HELD refusal",
-         "GSC STOPPED · SWEEP 2026-10-06 · PR 90 · guard off", 0, sweep_run)
-    push("HELD from a REVIEW passes", "GSC HELD · REVIEW TROW 2026-10-06 · PR 91 · zone SELL-FLAG SR2", 0, sweep_run)
-    for cls, job in (("HELD", "INTAKE"), ("HELD", "ANALYSE"), ("BUY", "SWEEP"), ("BUY", "SEED"),
-                     ("VERDICT CHANGE", "ANALYSE"), ("VERDICT CHANGE", "SWEEP"), ("STALL", "REVIEW"),
-                     ("STALL", "SWEEP")):
-        push(f"{cls} from {job} refused (README §5 names the job)",
-             f"GSC {cls} · {job} ABC 2026-10-06 · PR 92 · x", 2, run_id + "j" + cls[:2] + job[:2])
-    push("BUY from a REVIEW passes", "GSC BUY · REVIEW XYZ 2026-10-06 · PR 93 · BUY", 0, run_id + "jbuy")
-    push("BLOCKED from a SEED passes", "GSC BLOCKED · SEED 2026-10-06 · PR 94 · host refused", 0, run_id + "jbl")
-    push("the same class in another run passes", "GSC BUY · REVIEW XYZ 2026-10-06 · PR 83 · BUY", 0, b)
-    push("lowercase class refused", "gsc buy · ANALYSE ABC 2026-10-06 · PR 82 · x", 2, b)
-    push("unknown class refused (WATCH reaches Jakub by the digest)",
-         "GSC WATCH · ANALYSE ABC 2026-10-06 · PR 82 · WATCH (Cheapness)", 2, b)
-    push("unknown job refused", "GSC STOPPED · DRAFT ABC 2026-10-06 · PR 82 · x", 2, b)
-    push("missing message refused", None, 2, b)
-    push("a message in another field refused", "GSC STOPPED · SWEEP 2026-10-06 · PR 9 · x", 2, b, field="body")
-    push("longer than 200 characters refused", "GSC STOPPED · SWEEP 2026-10-06 · PR 9 · " + "x" * 200, 2, b)
-    push("'#' refused", "GSC STOPPED · SWEEP 2026-10-06 · PR #9 · guard off", 2, b)
-    push("two lines refused", "GSC STOPPED · SWEEP 2026-10-06 · PR 9\nsecond line", 2, b)
+    # WEEKLY: one push per run, from the WEEKLY branch only.
+    push("WEEKLY report push from the WEEKLY run", week, 0, a, WEEKLY_BR)
+    push("a second WEEKLY push in the same run is refused", "GSC WEEKLY · not published · upload refused", 2, a,
+         WEEKLY_BR)
+    push("WEEKLY not-published push in another run passes", "GSC WEEKLY · not published · batch refused: version moved",
+         0, run_id + "w2", WEEKLY_BR)
+    for k, br in enumerate((BR, REVIEW_BR, INTAKE_BR, SWEEP_BR, "claude/gsc-seed-2026-10-24-0620", "main")):
+        push(f"WEEKLY from {br} refused", week, 2, run_id + "wx%d" % k, br)
+    push("WEEKLY with '#' refused", "GSC WEEKLY · not published · PR #9 waits for you", 2, run_id + "wh", WEEKLY_BR)
+    push("WEEKLY longer than 200 characters refused", "GSC WEEKLY · not published · " + "x" * 200, 2, run_id + "wl",
+         WEEKLY_BR)
+    # GUARD review 7: only the two exact WEEKLY forms, no foreign link, no hidden line breaks.
+    push("WEEKLY over a year boundary passes", "GSC WEEKLY · Sun 27 Dec 2026 – Sun 3 Jan 2027 · 0 to decide · 0 to fix · "
+         "0 memos · " + WEEKLY_URL, 0, run_id + "wy", WEEKLY_BR)
+    push("WEEKLY in a free form refused", "GSC WEEKLY · 19–25 Oct · 2 to decide, 1 to fix · " + WEEKLY_URL, 2,
+         run_id + "wf", WEEKLY_BR, says="exact form")
+    push("WEEKLY with buy wording and a foreign link refused", "GSC WEEKLY · BUY 7309.T now · https://evil.example/login",
+         2, run_id + "we", WEEKLY_BR, says="exact form")
+    push("WEEKLY published form with another url refused", week.replace(WEEKLY_URL, "https://evil.example/x"), 2,
+         run_id + "wu", WEEKLY_BR)
+    push("WEEKLY not-published with a link refused", "GSC WEEKLY · not published · see https://evil.example/login", 2,
+         run_id + "wn", WEEKLY_BR, says="carries a link")
+    push("WEEKLY not-published with a bare www link refused", "GSC WEEKLY · not published · see www.evil.example", 2,
+         run_id + "wn2", WEEKLY_BR, says="carries a link")
+    push("WEEKLY with a line separator (U+2028) refused", "GSC WEEKLY · not published · x\u2028second line", 2,
+         run_id + "ws", WEEKLY_BR, says="U+2028")
+    push("WEEKLY with a zero-width character refused", "GSC WEEKLY · not published · x\u200bx", 2, run_id + "wz",
+         WEEKLY_BR, says="U+200B")
+    push("WEEKLY with a NEL control refused", "GSC WEEKLY · not published · x\u0085x", 2, run_id + "wc", WEEKLY_BR)
+    # GUARD review 2: the job is pinned by the session's prompt, not by the branch it moved to.
+    push("WEEKLY push from an ANALYSE session on a weekly branch refused", week, 2, run_id + "pa", WEEKLY_BR,
+         prompt="ANALYSE", says="this session runs ANALYSE")
+    push("WEEKLY push without a readable transcript: the branch decides (passes)", week, 0, run_id + "pm", WEEKLY_BR,
+         prompt=MISSING)
+    push("WEEKLY push without a transcript_path: the branch decides (passes)", week, 0, run_id + "pn", WEEKLY_BR,
+         prompt=None)
+    push("BUY from a WEEKLY session on an analyse branch refused", buy_a, 2, run_id + "pw", BR, prompt="WEEKLY",
+         says="this session runs WEEKLY")
+    push("BUY from a detached HEAD refused", buy_a, 2, run_id + "pd", DETACHED)
+    # BUY: from that ANALYSE or REVIEW run only, once per run.
+    push("BUY from the ANALYSE run", buy_a, 0, b, BR)
+    push("a second BUY push in the same run is refused", buy_a, 2, b, BR)
+    push("BUY from the REVIEW run", buy_r, 0, run_id + "br", REVIEW_BR)
+    push("BUY from an ANALYSE run with a MAIN key", "GSC BUY · ANALYSE MAIN 2026-10-04 · PR 84 · BUY", 0,
+         run_id + "bm", MAIN_BR)
+    push("BUY naming another key refused", "GSC BUY · ANALYSE ABC 2026-10-04 · PR 82 · BUY", 2, run_id + "bk", BR,
+         says="this run's own key and date")
+    push("BUY with another date refused", "GSC BUY · ANALYSE 7309.T 2026-10-05 · PR 82 · BUY", 2, run_id + "bd", BR,
+         says="this run's own key and date")
+    push("BUY with a link refused", "GSC BUY · ANALYSE 7309.T 2026-10-04 · PR 82 · see https://evil.example", 2,
+         run_id + "bl", BR, says="carries a link")
+    push("BUY without the PR refused", "GSC BUY · ANALYSE 7309.T 2026-10-04 · BUY (all gates)", 2, run_id + "bp", BR,
+         says="exact form")
+    for k, (msg, br) in enumerate(((buy_r, BR), (buy_a, REVIEW_BR), (buy_a, WEEKLY_BR), (buy_a, SWEEP_BR),
+                                   (buy_a, INTAKE_BR), (buy_a, "main"))):
+        push(f"'{msg[:22]}…' from {br} refused (the job must be the run's own)", msg, 2, run_id + "bx%d" % k, br)
+    for k, (job, br) in enumerate((("SWEEP", SWEEP_BR), ("SEED", "claude/gsc-seed-2026-10-24-0620"),
+                                   ("INTAKE", INTAKE_BR), ("WEEKLY", WEEKLY_BR))):
+        push(f"BUY · {job} refused", f"GSC BUY · {job} 2026-10-25 · PR 90 · x", 2, run_id + "bj%d" % k, br)
+    # The retired classes (v4.6.1): refused from every job, with the reason.
+    for k, (cls, job, br) in enumerate((("HELD", "REVIEW", REVIEW_BR), ("VERDICT CHANGE", "REVIEW", REVIEW_BR),
+                                        ("STOPPED", "SWEEP", SWEEP_BR), ("STOPPED", "ANALYSE", BR),
+                                        ("BLOCKED", "INTAKE", INTAKE_BR), ("BLOCKED", "SEED",
+                                                                           "claude/gsc-seed-2026-10-24-0620"),
+                                        ("STALL", "INTAKE", INTAKE_BR), ("HELD", "SWEEP", SWEEP_BR))):
+        push(f"retired {cls} push from {job} refused", f"GSC {cls} · {job} ABC 2026-10-25 · PR 82 · x", 2,
+             run_id + "r%d" % k, br, says="weekly report")
+    push("the same class in another run passes", buy_a, 0, run_id + "b2", BR)
+    push("lowercase class refused", "gsc buy · ANALYSE ABC 2026-10-06 · PR 82 · x", 2, run_id + "f1", BR)
+    push("unknown class refused (WATCH reaches Jakub in the weekly report)",
+         "GSC WATCH · ANALYSE ABC 2026-10-06 · PR 82 · WATCH (Cheapness)", 2, run_id + "f2", BR)
+    push("missing message refused", None, 2, run_id + "f3", WEEKLY_BR)
+    push("a message in another field refused", week, 2, run_id + "f4", WEEKLY_BR, field="body")
+    push("'#' in a BUY refused", "GSC BUY · ANALYSE 7309.T 2026-10-04 · PR #82 · BUY", 2, run_id + "f5", BR)
+    push("two lines refused", "GSC WEEKLY · 19–25 Oct\nsecond line", 2, run_id + "f6", WEEKLY_BR)
     push("the free-text push of 2026-10-05 is refused",
-         "ANALYSE SPX.L finished: AVOID because Past is WEAK. PR #77 is ready for your review.", 2, b)
-    push("no GSC_SESSION: any push passes", "free text #77", 0, run_id + "c", session=None)
-    for sid in set(sessions):
-        for name in glob.glob(os.path.join(tempfile.gettempdir(), "gsc_push_%s_*" % sid)):
-            try:
-                os.remove(name)
-            except OSError:
-                pass
+         "ANALYSE SPX.L finished: AVOID because Past is WEAK. PR #77 is ready for your review.", 2, run_id + "f7", BR)
+    push("no GSC_SESSION: any push passes", "free text #77", 0, run_id + "c", "main", session=None)
+    # GUARD review 6: the once-per-class marker sits in the git dir (O_EXCL), out of the run's reach.
+    m = run_id + "mk"
+    push("WEEKLY push (marker test)", week, 0, m, WEEKLY_BR)
+    for name in glob.glob(os.path.join(tempfile.gettempdir(), "gsc_push_%s_*" % m)):
+        os.remove(name)                                   # the v4.6.0 marker place: removing it buys nothing
+    push("a second WEEKLY push after deleting a temp-dir marker is refused", week, 2, m, WEEKLY_BR,
+         says="one push per class per run")
+    cases += 1
+    marker = os.path.join(repo, ".git", "gsc-guard", "push_%s_WEEKLY" % m)
+    failures += report(os.path.isfile(marker), "push: the marker is in the repo's git dir", marker)
     cases += 1
     with open(os.path.join(os.path.dirname(HERE), "settings.json"), encoding="utf-8") as fh:
         settings = json.load(fh)
@@ -767,6 +1421,15 @@ def run_push_cases(repo):
     failures += report(any({"Artifact", "ArtifactComments", "ArtifactData"} <= set(m.split("|")) for m in matchers),
                        "settings.json: the PreToolUse guard sees Artifact, ArtifactComments and ArtifactData",
                        matchers)
+    cases += 1
+    mcp = [m for m in matchers if re.search(m, "mcp__claude-code-remote__list_triggers")
+           and re.search(m, "mcp__github__merge_pull_request")]
+    failures += report(bool(mcp), "settings.json: the PreToolUse guard sees every MCP tool (mcp__.*)", matchers)
+    cases += 1
+    seen = [t for t in ("EnterWorktree", "ExitWorktree", "CronCreate", "CronDelete", "DesignSync", "MultiEdit")
+            if any(t in m.split("|") for m in matchers)]
+    failures += report(len(seen) == 6, "settings.json: the PreToolUse guard sees the worktree, cron, design and "
+                       "MultiEdit tools", seen)
     return failures, cases
 
 
@@ -835,6 +1498,8 @@ def main():
     finally:
         remove_tree(repo)
     failures += run_post_cases()
+    remove_tree(TRANSCRIPTS)
+    remove_tree(os.path.dirname(WEEKLY_OUT))
     total = len(CASES) + 1 + 6 + push_cases + 6   # memo fail-closed, malformed input (6), pushes, post cases (6)
     print(f"\n{total - failures}/{total} passed, {failures} failed")
     return failures
