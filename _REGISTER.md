@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v325
+register_version: v326
 register_date: 2026-10-20
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
 names_total: 397
-verdict_split: "BUY 0 · WATCH 66 · AVOID 313 (one gate 106 · two+ 207) · DNAF 18"
+verdict_split: "BUY 0 · WATCH 66 · AVOID 314 (one gate 106 · two+ 208) · DNAF 17"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v325 · 2026-10-20)
+# GSC Register — Master Watchlist (v326 · 2026-10-20)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -211,7 +211,7 @@ None.
 | OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 386.95 | 86 | 28.9 | - | - | - | Mar 2027 |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | - | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (207)
+## AVOID - two or more gates failed (208)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -315,6 +315,7 @@ None.
 | 7011.T | Mitsubishi Heavy Industries, Ltd. (三菱重工業株式会社) | 2026-08-07 | v1 | AVOID | WEAK · 3.9% ROCE | WEAK · customer conc. | PASS | 4018 | 626 | 17.7 | 33.4 | - | - | 2026-11-06 |
 | RRTL.DE | RTL Group S.A. | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | WEAK · 2+ forces | FAIL · flag pair | 28.55 | n.m. | 15.2 | 33.5 | - | - | Mar 2027 |
 | HHH | Howard Hughes Holdings Inc. | 2026-07-14 | v1 | AVOID | WEAK · 3.2% ROCE | WEAK · customer conc. | FAIL · compensation | 71.67 | n.m. | 17.3 | 33.6 | - | - | Feb 2027 |
+| BRK.B | Berkshire Hathaway Inc. | 2026-10-20 | v3 | AVOID | WEAK · 3.1% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 539.82 | 22.40 | 192.8 | 33.8 | 189.2 · 111.3 | 34.0 · 60.6 | Mar 2027 |
 | VOW3.DE | Volkswagen AG | 2026-07-09 | v1 | AVOID | WEAK · 3.4% ROCE | WEAK · 2+ forces | FAIL · control | 72.14 | n.m. | n.m. | 35.7 | - | - | Mar 2027 |
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID | STRONG · 58.2% ROCE | WEAK · customer conc. | FAIL · compensation | 194.28 | 31.5 | 48.8 | 36.3 | - | - | Feb 2027 |
 | CAT | Caterpillar Inc. | 2026-10-04 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 845.42 | 70 | 52.5 | 39.2 | - | - | Feb 2027 |
@@ -423,7 +424,7 @@ None.
 | TRNS | Transcat, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 4.8% ROCE | ADEQUATE | FAIL · compensation | 93.11 | n.m. | - | - | - | - | May 2027 |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK · ROCE decline | WEAK · supplier conc. | FAIL · compensation | 50 | 15.08 | - | - | - | - | Feb 2027 |
 
-## DNAF (18)
+## DNAF (17)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -432,7 +433,6 @@ None.
 | AME | AMETEK, Inc. | 2026-10-14 | v2 | DNAF | n.m. | n.m. | n.m. | 250.48 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | ANDR.VI | ANDRITZ AG | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 80.9 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | BNZL.L | Bunzl plc | 2026-10-13 | v1 | DNAF | n.m. | n.m. | n.m. | 2776 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
-| BRK.B | Berkshire Hathaway Inc. | 2026-10-15 | v2 | DNAF | n.m. | n.m. | n.m. | 526.35 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | DOV | Dover Corporation | 2026-10-14 | v2 | DNAF | n.m. | n.m. | n.m. | 192.48 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | DPLM.L | Diploma PLC | 2026-10-12 | v1 | DNAF | n.m. | n.m. | n.m. | 7870 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
 | EA | Electronic Arts Inc. | 2026-07-11 | v1 | DNAF | ADEQUATE · 14.7% ROCE | WEAK | FAIL | 206.41 | n.m. | n.m. | n.m. | - | - | n.m. |
