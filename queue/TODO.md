@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v54 · 2026-10-21)
+# GSC Work Queue — TODO.md (v55 · 2026-10-21)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -77,6 +77,13 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - 2026-10-19 · TROW REVIEW — G6 and a consolidated fund's securities book inside CFO: when a consolidated investment product's securities are a G6 class, does the exclude reading also take the book's net purchases out of CFO (the capital moving with the income), or does CFO stay as the filer prints it? TROW v8 keeps GAAP CFO on both readings (Appendix C named line); the alternative cannot lift Past there, but it could on a name whose growth turns on it.
 - 2026-10-19 · CCL-B.TO ANALYSE — Customer-breadth arithmetic: a consolidated top-2/top-5 customer table can rule out a >10% customer for the largest unit by bounding (CCL-B.TO, 2026-10-19), but never for smaller units; a line in §2·1B would make the bounding step repeatable.
 - 2026-10-19 · COH.AX ANALYSE — Geographic reportable segments as P22 units: a single-product company reporting by region (COH.AX, 2026-10-19) becomes a three-unit group with three near-identical Future blocks; a line in §2 on whether a geographic segment of one business is a unit would make the grain repeatable.
+- 2026-10-20 · LULU REVIEW — Regional segments of a single-brand retailer (Americas, China Mainland, Rest of World) meet P22 and so make the company a group under G3/G4: unit sentences, a weighted Future and the allocation-across-the-parts test (INDETERMINATE (b) where segment assets are not disclosed). Should a segmentation that is purely geographic, the same products sold to the same kind of paying customer, count as units for the group rules?
+- 2026-10-20 · LULU REVIEW — The R9 hairiest number read on pay-versus-performance CAP: McDonald's FY2023 CAP of $46.9m (SCT $16.5m) breaches the ≈ $40m absolute line mainly through share-price gains on earlier grants. Is a CAP-driven breach of the absolute limb, with every SCT total far inside it, the intended flag?
+- 2026-10-20 · LULU REVIEW — Earlier-window deals: a target with no positive pre-deal OI (Mirror, 2020) was read as clearly above worth under J13, making the earlier-window CAUTION fire because the then interim co-CFO is still CFO. Should "no positive pre-deal OI" count as clearly above worth for the earlier-window limb, as it does as "at least CAUTION" in the trailing window?
+- 2026-10-20 · BXB.AX ANALYSE — Recoveries for customers' lost pooled equipment: Brambles books compensation for irrecoverable pallets (US$191.5–227.5m a year, FY2023–FY2026) as proceeds from sale of PP&E in investing, while the net gain sits in OI; under gross capex (P20) the cash stays outside FCF, and BXB.AX's SF verdict turned on it (FY2025 trailing MCap/FCF 29.5 gross, 21.8 netted). A line in §2·1A on whether such recoveries net against maintenance capex would make the reading repeatable.
+- 2026-10-20 · BXB.AX ANALYSE — Group customer statements and unit breadth: a filer statement that no customer exceeds 10% of group revenue does not rule one out within a reportable segment, so every geographic unit is flagged (BXB.AX, 2026-10-20; COH.AX, 2026-10-19, had no statement at all). A line in §2·1B on whether a group-level statement carries to units that sell the same service would make the grain repeatable.
+- 2026-10-20 · TNE.AX ANALYSE — V13 materiality window: employee-trust purchases of 0.23% (FY2025) and 0.85% (FY2026 live year) were summed over the trailing three FYs plus the live year (1.08%, material) and, with the diluted count rising, read ADVERSE. Read year by year, both tranches sit below the ≈1% floor and nothing is flagged. Should §2·1C·3 state that the floor is tested on the summed recent record (the reading the register's memos apply), or per tranche-year?
+- 2026-10-20 · TNE.AX ANALYSE — J6 limb (a) on ROCE_wc for a cash-accumulating company: the end-of-period ROCE_wc fell five years running (41.5% → 31.6%) only because cash and term deposits tripled, while ROCE_xc held at 78–83% and every level sits at twice the P2 bar. The decline caps Past at ADEQUATE. Should the cash-accumulation cause be able to clear limb (a) when the ex-cash series shows no decline?
 
 ---
 
@@ -112,7 +119,6 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 
 **Jakub's review request (2026-10-20) — first after held names.** Eight AVOID-1 names Jakub asked to have reviewed, read in this order; each prior is below v4.6.0, so its REVIEW re-tests every v4.5.0 rule its prior predates and Gate 0, the lens, the group rules and the G6 pairing of v4.6.0 (MODEL §8.2 step 3). Notes are pointers, never findings.
 
-- `LULU` — Jakub's request 2026-10-20: prior memo v5 (2026-09-04, MODEL v4.2.0) → REVIEW on current rules plus the delta since Q2 FY2026.
 - `PYPL` — Jakub's request 2026-10-20: prior memo v5 (2026-09-13, MODEL v4.3.0) → REVIEW on current rules plus the delta (Q3'26 results due 27 Oct 2026).
 - `1913.HK` — Jakub's request 2026-10-20: prior memo v1 (2026-07-28, framework v3.6.0) → REVIEW on current rules plus the delta (H1 2026 interim, Versace PPA).
 - `BBWI` — Jakub's request 2026-10-20: prior memo v1 (2026-08-07, MODEL v4.1.0) → REVIEW on current rules plus the delta (Q2 FY2026).
@@ -319,7 +325,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `SAVE.ST` — backfill: ISIN, core numbers (FCF) — fill at next REVIEW or attended pass
 - `BABA` — backfill: ISIN, Past reason, core numbers — fill at next REVIEW or attended pass
 - `SDZ.SW` — backfill: ISIN, trigger, Past reason, core numbers — fill at next REVIEW or attended pass
-- `LULU` — backfill: Px date — fill at next REVIEW or attended pass
 - `KSPI` — backfill: ISIN, SF reason, core numbers — fill at next REVIEW or attended pass
 - `KRN.DE` — backfill: ISIN — fill at next REVIEW or attended pass
 - `TRI.PA` — backfill: SF reason — fill at next REVIEW or attended pass
@@ -438,6 +443,18 @@ None: no held name rests on a retired v4.5.x ground.
 *From the MODEL v4.6.0 release (Jakub's Gate-0 decisions G1–G5 of 2026-10-15; `queue/IDEAS.md` §G0). Not routine output.*
 
 - `SYAB.DE` — open item (over the 7-entry cap of `▶ Open items (register)`, routed here by the MODEL v4.6.0 build): SYAB.DE — retire: delisting awaiting retirement (§7.1 RETIRED, v4.6.0) — SYNLAB AG's delisting from the Frankfurt regulated market took effect 12 Jul 2024 and the squeeze-out completed in July 2025 (memo v1 sources: Gleiss Lutz release, 15 Jul 2024; Kirkland & Ellis release, Jul 2025); the row has been DNAF (no listed security) since memo v1 (2026-07-23). Retire by an attended register commit after MODEL v4.6.0 merges (`gsc_register.py retire`, citing the primary notice and dated the last trading day); never a Gate-0 memo; move this line into `▶ Open items (register)` when an entry there clears.
+
+---
+
+## ▶ Routed by INTAKE 2026-10-21, register v328
+
+*From 3 routine row files (LULU REVIEW v6, PR #155; BXB.AX ANALYSE v1, PR #156; TNE.AX ANALYSE v1, PR #157). No proposals. Audit clean: no direct commits, no orphan `claude/gsc-*` branches; the one archive change (BBBY memo deleted from `archive/memos/BBBY/`, #160) is a `GSC: RECONCILE` re-key, expected.*
+
+- `LULU` — Q3 FY2026 results (~early Dec 2026): Americas and China Mainland comparable sales against the moat call, and the live repurchase tranche against worth ($712.5m left on the authorisation at 2 Aug 2026).
+- `LULU` — 2027 proxy (~Apr–May 2027): the FY2026 pay table (O'Neill, Gauger and Godsey sign-on and new-hire awards: big-grant limb), the split of the interim co-CEOs' FY2025 grants into regular and special awards, and the FY2023 CAP leaving the three-year table.
+- `LULU` — allocation across the parts (§2·1C·3) INDETERMINATE (b): segment assets not disclosed; re-test if the filer starts disclosing them.
+- `BXB.AX` — re-test at H1 FY2027 results (Feb 2027): FY2027 buy-back execution prices against worth (the SF ADVERSE rests on the FY2025 trailing MCap/FCF read of 29.5 and the live US$400m programme); allocation-across-the-parts test once the July 2025 segmentation has three fiscal years (FY2027 results); P20 k uses net PP&E only (software and development NBV not read for every year).
+- `TNE.AX` — FY2026 results (Nov 2026): re-test the Employee Share Trust purchases against shares delivered under equity pay (V13), the J6 ROCE_wc decline (second clean year), and the hosting supplier's share of costs (ANALYSE 2026-10-20)
 
 ---
 
@@ -1491,6 +1508,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v55 — 2026-10-21** — INTAKE (register v328) — 3 merged row files (LULU REVIEW, PR #155; BXB.AX ANALYSE, PR #156; TNE.AX ANALYSE, PR #157): 7 IDEAS candidates added to the head block; `LULU` removed from `▶ Method re-tests v4.6.0` (Jakub's 2026-10-20 request; memo v6 at v4.6.1) and from `▶ Backfill owed — register rebuild v308`; new block `▶ Routed by INTAKE 2026-10-21, register v328` (5 items); audit clean. Outgoing v54 archived to `archive/queue/TODO_v54_2026-10-21.md`.
 - **v54 — 2026-10-21** — INVE-B.ST v3 REVIEW (attended; full v4.5.0/v4.6.0 method re-test under MODEL v4.6.1; register v327): AVOID on three gates. `▶ Group dependencies` gains `ABB`, `ATCO-B.ST`, `SAAB-B.ST`, `AZN.L` and `SEB-A.ST` (dependencies of INVE-B.ST, all ungradeable at the run). `INVE-B.ST` is removed from `▶ Method re-tests v4.6.0` and `▶ Method re-tests v4.5.0` and from both `▶ Backfill owed` blocks (ISIN SE0015811963; trigger now n.m. on the no-cash basis), and its v306 ISIN backfill item is marked done. The holding-company findings are parked as `queue/IDEAS.md` §I (v15). Outgoing v53 archived to `archive/queue/TODO_v53_2026-10-20.md`.
 - **v53 — 2026-10-20** — Jakub's review request (attended): new sub-block at the top of `▶ Method re-tests v4.6.0` naming `LULU`, `PYPL`, `1913.HK`, `BBWI`, `TRI.PA`, `KSPI` (its existing line moved up), `ADBE` and `CRM` (the Braze acquisition Jakub named), each a prior below v4.6.0, so the REVIEW routine takes them next after held names (`routines/REVIEW.md` step 2, priority 1b). No register change. Outgoing v52 archived to `archive/queue/TODO_v52_2026-10-20.md`.
 - **v52 — 2026-10-20** — Held SELL-FLAG decisions (attended; Jakub, 2026-10-20): `NOVO-B.CO`, `TROW` and `CROX` Open items record decision HOLD — flags acknowledged and the analyses agreed, held while no better business is in sight; `HFG.DE` HOLD confirmed, its deferral to FY2026 results standing. No position event (§7.3): the held flags, zones and register are unchanged. Outgoing v51 archived to `archive/queue/TODO_v51_2026-10-20.md`.
