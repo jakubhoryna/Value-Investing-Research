@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v55 · 2026-10-21)
+# GSC Work Queue — TODO.md (v56 · 2026-10-22)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -84,6 +84,12 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - 2026-10-20 · BXB.AX ANALYSE — Group customer statements and unit breadth: a filer statement that no customer exceeds 10% of group revenue does not rule one out within a reportable segment, so every geographic unit is flagged (BXB.AX, 2026-10-20; COH.AX, 2026-10-19, had no statement at all). A line in §2·1B on whether a group-level statement carries to units that sell the same service would make the grain repeatable.
 - 2026-10-20 · TNE.AX ANALYSE — V13 materiality window: employee-trust purchases of 0.23% (FY2025) and 0.85% (FY2026 live year) were summed over the trailing three FYs plus the live year (1.08%, material) and, with the diluted count rising, read ADVERSE. Read year by year, both tranches sit below the ≈1% floor and nothing is flagged. Should §2·1C·3 state that the floor is tested on the summed recent record (the reading the register's memos apply), or per tranche-year?
 - 2026-10-20 · TNE.AX ANALYSE — J6 limb (a) on ROCE_wc for a cash-accumulating company: the end-of-period ROCE_wc fell five years running (41.5% → 31.6%) only because cash and term deposits tripled, while ROCE_xc held at 78–83% and every level sits at twice the P2 bar. The decline caps Past at ADEQUATE. Should the cash-accumulation cause be able to clear limb (a) when the ex-cash series shows no decline?
+- 2026-10-21 · PYPL REVIEW — Customer funds of a payment or e-money company that is not deposit-taking (PayPal's $40bn of funds payable to customers): the run kept them in capital employed on the gift-card-float wording of §2·1A and the float interest booked in revenue (ROCE 6.0%; netted as NIBCL it would be 12.6%). A ruling would fix the reading across payment names (WISE.L, ADYEN-type filers) and say whether the safeguarded assets and their interest are the operating book.
+- 2026-10-21 · PYPL REVIEW — R2 lending-book rule for originate-to-sell loans booked in CFO (held for sale): the run measured the ±3% allowance on the prior year-end total loan book (held for investment plus held for sale); the rule does not say which book is the base when only the held-for-sale flows run through CFO.
+- 2026-10-21 · 1913.HK REVIEW — HKEX filers print no per-person pay table for non-director executives, only the "five highest paid individuals" aggregate and HKD bands plus a key-management aggregate. The run read the top non-director earner as an executive officer (key management personnel, the harsher reading) and bounded the person's total from the pair aggregate less the second person's band. A ruling would fix whether key management personnel count as executive officers under R9 and whether band-derived bounds are the floor and ceiling of §2·1C·1.
+- 2026-10-21 · SAAB-B.ST ANALYSE — §2·1C·3 earlier-window floor: LTI-hedging repurchases clearly above worth in FY2018–FY2020 were 0.43%, 0.75% and 0.85% of diluted shares year by year (each below the ≈1% floor) and 2.05% summed; summed, they are a CAUTION while the chair who oversaw them is in office. Should the earlier-window limb test the floor on a summed span (as applied here and in TNE.AX), and over which span?
+- 2026-10-21 · AZN.L ANALYSE — P20 tier 3 in a year of clinical-stage deals: FY2024's business combinations (Gracell, Fusion) exceeded 1% of EV and the filer printed no acquired revenue, so the constructed tier was unavailable and the year took all capex, although the targets had no revenue (no growth capex could be created by them). Should a deal year whose targets are disclosed as pre-revenue (clinical stage) keep the constructed tier, or does the rule stand as written?
+- 2026-10-21 · AZN.L ANALYSE — Listed-subsidiary NCI at market for an immaterial subsidiary on a venue whose share count is unreachable for routine clients (AstraZeneca Pharma India, 75%; BSE, NSE and the company site refused): the run carried the NCI at book and logged that the binding FCF leg cannot move. Should Gate 2 name a fallback (book, or the subsidiary's filed market capitalisation) when the subsidiary is below P22 materiality?
 
 ---
 
@@ -107,9 +113,9 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 
 - `ABB` — dependency of INVE-B.ST (run 2026-10-21)
 - `ATCO-B.ST` — dependency of INVE-B.ST (run 2026-10-21)
-- `SAAB-B.ST` — dependency of INVE-B.ST (run 2026-10-21)
-- `AZN.L` — dependency of INVE-B.ST (run 2026-10-21)
 - `SEB-A.ST` — dependency of INVE-B.ST (run 2026-10-21)
+- `INVE-B.ST` — parent re-run owed (SAAB-B.ST memo 2026-10-21)
+- `INVE-B.ST` — parent re-run owed (AZN.L memo 2026-10-21)
 
 ---
 
@@ -119,8 +125,6 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 
 **Jakub's review request (2026-10-20) — first after held names.** Eight AVOID-1 names Jakub asked to have reviewed, read in this order; each prior is below v4.6.0, so its REVIEW re-tests every v4.5.0 rule its prior predates and Gate 0, the lens, the group rules and the G6 pairing of v4.6.0 (MODEL §8.2 step 3). Notes are pointers, never findings.
 
-- `PYPL` — Jakub's request 2026-10-20: prior memo v5 (2026-09-13, MODEL v4.3.0) → REVIEW on current rules plus the delta (Q3'26 results due 27 Oct 2026).
-- `1913.HK` — Jakub's request 2026-10-20: prior memo v1 (2026-07-28, framework v3.6.0) → REVIEW on current rules plus the delta (H1 2026 interim, Versace PPA).
 - `BBWI` — Jakub's request 2026-10-20: prior memo v1 (2026-08-07, MODEL v4.1.0) → REVIEW on current rules plus the delta (Q2 FY2026).
 - `TRI.PA` — Jakub's request 2026-10-20: prior memo v1 (2026-08-07, MODEL v4.1.0) → REVIEW on current rules plus the delta (FY2026 sales release).
 - `KSPI` — Jakub's request 2026-10-20 (line moved up from the R4 group below): R4 too hard (a bank group with material non-financial parts), retired (G2) → run the full analysis (G1–G4) on STD → memo v3 and its `▶ Method re-tests v4.5.0` line.
@@ -328,9 +332,7 @@ None: no held name rests on a retired v4.5.x ground.
 - `KSPI` — backfill: ISIN, SF reason, core numbers — fill at next REVIEW or attended pass
 - `KRN.DE` — backfill: ISIN — fill at next REVIEW or attended pass
 - `TRI.PA` — backfill: SF reason — fill at next REVIEW or attended pass
-- `PYPL` — backfill: Px date — fill at next REVIEW or attended pass
 - `PIRC.MI` — backfill: ISIN — fill at next REVIEW or attended pass
-- `1913.HK` — backfill: ISIN — fill at next REVIEW or attended pass
 - `HOG` — backfill: core numbers — fill at next REVIEW or attended pass
 - `BTI` — backfill: ISIN, Past reason — fill at next REVIEW or attended pass
 - `BC8.DE` — backfill: ISIN — fill at next REVIEW or attended pass
@@ -443,6 +445,21 @@ None: no held name rests on a retired v4.5.x ground.
 *From the MODEL v4.6.0 release (Jakub's Gate-0 decisions G1–G5 of 2026-10-15; `queue/IDEAS.md` §G0). Not routine output.*
 
 - `SYAB.DE` — open item (over the 7-entry cap of `▶ Open items (register)`, routed here by the MODEL v4.6.0 build): SYAB.DE — retire: delisting awaiting retirement (§7.1 RETIRED, v4.6.0) — SYNLAB AG's delisting from the Frankfurt regulated market took effect 12 Jul 2024 and the squeeze-out completed in July 2025 (memo v1 sources: Gleiss Lutz release, 15 Jul 2024; Kirkland & Ellis release, Jul 2025); the row has been DNAF (no listed security) since memo v1 (2026-07-23). Retire by an attended register commit after MODEL v4.6.0 merges (`gsc_register.py retire`, citing the primary notice and dated the last trading day); never a Gate-0 memo; move this line into `▶ Open items (register)` when an entry there clears.
+
+---
+
+## ▶ Routed by INTAKE 2026-10-22, register v329
+
+*From 4 routine row files (PYPL REVIEW v6, PR #167; 1913.HK REVIEW v2, PR #168; SAAB-B.ST ANALYSE v1, PR #169; AZN.L ANALYSE v1, PR #170). No proposals. Audit clean: no direct commits, no orphan `claude/gsc-*` branches, no archive changes.*
+
+- `PYPL` — Q3'26 results (27 Oct 2026): the third-quarter repurchase tranche against worth, the held-for-sale loan build inside CFO (lending-book rule), transaction margin and active accounts.
+- `PYPL` — 2027 proxy (~Apr 2027): Lores's FY2026 awards (make-whole RSUs, inducement PBRSUs, the 2027 RSU portion) enter the three-year pay table (big-grant and absolute limbs); the FY2023 CAP of $46.35m leaves it.
+- `PYPL` — attended refinement, no verdict impact: acquired-revenue disclosure for the FY2018, FY2020 and FY2021 deal years (P20 tier 3 there) and the composition of accrued expenses and other current liabilities (NIBCL).
+- `1913.HK` — FY2026 results (~early Mar 2027) and the 2026 Annual Report: Versace's final purchase-price allocation and any impairment (acquisition-stop write-down limb), the FY2026 pay bands for the top key manager (the FY2023 trailing-read flag leaves the three-year table only after FY2026), and the rolling window (FY2016 leaves).
+- `1913.HK` — ISIN still not printed in any Prada document read this run (annual and interim reports): backfill from a primary listing source at the next attended pass.
+- `1913.HK` — backfill: isin — fill at the next REVIEW
+- `SAAB-B.ST` — Year-end report 2026 (Feb 2027): re-test the ten-year ROCE level as FY2016 rolls out, any use of the 2026 buy-back authorisations against worth, and the unnamed single-source sub-system suppliers (ANALYSE 2026-10-21)
+- `AZN.L` — Full-year 2026 results (Feb 2027): re-test the ten-year ROCE level as FY2016 rolls out, the chair fee against the $666k director cap (£925.6k agreed for 2026), any deal above 1% of EV, and the AstraZeneca Pharma India NCI at market (share count not retrieved) (ANALYSE 2026-10-21)
 
 ---
 
@@ -1508,6 +1525,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v56 — 2026-10-22** — INTAKE (register v329) — 4 merged row files (PYPL REVIEW, PR #167; 1913.HK REVIEW, PR #168; SAAB-B.ST ANALYSE, PR #169; AZN.L ANALYSE, PR #170): 6 IDEAS candidates added to the head block; `▶ Group dependencies`: the `SAAB-B.ST` and `AZN.L` dependency lines removed (memos landed at v4.6.1) and `INVE-B.ST` listed `parent re-run owed` for each; `ABB` and `ATCO-B.ST` lines kept (`memo exists`, memos stale); `PYPL` and `1913.HK` removed from `▶ Method re-tests v4.6.0` (Jakub's 2026-10-20 request; memos at v4.6.1) and from `▶ Backfill owed — register rebuild v308`; new block `▶ Routed by INTAKE 2026-10-22, register v329` (8 items); audit clean. Outgoing v55 archived to `archive/queue/TODO_v55_2026-10-21.md`.
 - **v55 — 2026-10-21** — INTAKE (register v328) — 3 merged row files (LULU REVIEW, PR #155; BXB.AX ANALYSE, PR #156; TNE.AX ANALYSE, PR #157): 7 IDEAS candidates added to the head block; `LULU` removed from `▶ Method re-tests v4.6.0` (Jakub's 2026-10-20 request; memo v6 at v4.6.1) and from `▶ Backfill owed — register rebuild v308`; new block `▶ Routed by INTAKE 2026-10-21, register v328` (5 items); audit clean. Outgoing v54 archived to `archive/queue/TODO_v54_2026-10-21.md`.
 - **v54 — 2026-10-21** — INVE-B.ST v3 REVIEW (attended; full v4.5.0/v4.6.0 method re-test under MODEL v4.6.1; register v327): AVOID on three gates. `▶ Group dependencies` gains `ABB`, `ATCO-B.ST`, `SAAB-B.ST`, `AZN.L` and `SEB-A.ST` (dependencies of INVE-B.ST, all ungradeable at the run). `INVE-B.ST` is removed from `▶ Method re-tests v4.6.0` and `▶ Method re-tests v4.5.0` and from both `▶ Backfill owed` blocks (ISIN SE0015811963; trigger now n.m. on the no-cash basis), and its v306 ISIN backfill item is marked done. The holding-company findings are parked as `queue/IDEAS.md` §I (v15). Outgoing v53 archived to `archive/queue/TODO_v53_2026-10-20.md`.
 - **v53 — 2026-10-20** — Jakub's review request (attended): new sub-block at the top of `▶ Method re-tests v4.6.0` naming `LULU`, `PYPL`, `1913.HK`, `BBWI`, `TRI.PA`, `KSPI` (its existing line moved up), `ADBE` and `CRM` (the Braze acquisition Jakub named), each a prior below v4.6.0, so the REVIEW routine takes them next after held names (`routines/REVIEW.md` step 2, priority 1b). No register change. Outgoing v52 archived to `archive/queue/TODO_v52_2026-10-20.md`.
