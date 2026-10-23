@@ -1,4 +1,4 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v15 · 2026-10-21)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v16 · 2026-10-23)
 
 **Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `archive/queue/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, or add `retry`. The claude.ai project copy, if any, is a read-only mirror.
 
@@ -101,7 +101,7 @@ A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an
 - [x] 2026-10-20 COH.AX — Cochlear Limited — Australia — re-seed universe; implantable medical devices, installed base + processor upgrades (TODO v36 L537)
 - [x] 2026-10-21 BXB.AX — Brambles Limited — Australia — re-seed universe; pallet pooling, scale network, understandable unit economics (TODO v36 L538)
 - [x] 2026-10-21 TNE.AX — TechnologyOne Limited — Australia — re-seed universe; public-sector enterprise software, founder-anchored, net cash (TODO v36 L540)
-- [ ] REH.AX — Reece Limited — Australia — re-seed universe; plumbing & HVAC distribution, Wilson-family control (TODO v36 L533)
+- [x] 2026-10-23 REH.AX — Reece Limited — Australia — re-seed universe; plumbing & HVAC distribution, Wilson-family control (TODO v36 L533)
 - [ ] ROP — Roper Technologies, Inc. — US SEC filer — decentralised software acquirer; goodwill-heavy capital → acquisition audit; also on TODO candidate list; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [ ] TDG — TransDigm Group Incorporated — US SEC filer — aerospace proprietary-parts acquirer; negative equity from debt-funded distributions → L/E n.m. path; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [ ] DHR — Danaher Corporation — US SEC filer — life-science tools acquirer; Envista (2019) and Veralto (2023) separations in window; serial-acquirer list (Multibagger Ideas, 15 May 2026)
