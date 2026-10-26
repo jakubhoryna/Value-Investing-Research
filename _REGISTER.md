@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v333
+register_version: v334
 register_date: 2026-10-26
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 458
-verdict_split: "BUY 0 · WATCH 69 · AVOID 386 (one gate 116 · two+ 270) · DNAF 3"
+names_total: 462
+verdict_split: "BUY 0 · WATCH 69 · AVOID 390 (one gate 115 · two+ 275) · DNAF 3"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v333 · 2026-10-26)
+# GSC Register — Master Watchlist (v334 · 2026-10-26)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -103,7 +103,7 @@ None.
 | SDZ.SW | Sandoz Group AG | 2026-06-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | 80.66 | - | - | - | - | - | Feb 2027 |
 | ULVR.L | Unilever PLC | 2026-07-14 | v1 | WATCH | STRONG · 18.2% ROCE | ADEQUATE | PASS | 4937.5 | - | - | - | - | - | Feb 2027 |
 
-## AVOID - one gate failed (116)
+## AVOID - one gate failed (115)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -205,7 +205,6 @@ None.
 | TER | Teradyne, Inc. | 2026-08-06 | v3 | AVOID | STRONG · 21.5% ROCE | ADEQUATE | FAIL · buybacks | 308.85 | 22.85 | 108.1 | 75.1 | - | - | Oct 2026 |
 | PDX.ST | Paradox Interactive AB (publ) | 2026-07-26 | v1 | AVOID | ADEQUATE · 25.3% ROCE | WEAK · customer conc. | PASS | 136.3 | 8 | 24.8 | 99.7 | - | - | Apr 2027 |
 | EKTA-B.ST | Elekta AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 7.6% ROCE | ADEQUATE | PASS CAUTION · distributions | 57.6 | n.m. | 15.8 | 125.6 | - | - | Nov 2026 |
-| ABCA.PA | ABC arbitrage SA | 2026-09-04 | v1 | AVOID | ADEQUATE · 15.2% ROE | WEAK · 2+ forces | PASS | 5.83 | 3.36 | - | n.m. | - | - | 2026-09-22 |
 | AZA.ST | Avanza Bank Holding AB (publ) | 2026-10-24 | v2 | AVOID | WEAK · capital | ADEQUATE · customer conc. | PASS | 349.7 | 67.58 | 41.4 | n.m. | 24.3 · 26.3 | n.m. · n.m. | Jan 2027 |
 | TLX.DE | Talanx AG | 2026-07-20 | v1 | AVOID | ADEQUATE · 11.4% ROE | WEAK · 2+ forces | PASS | 125.3 | 48 | n.m. | n.m. | - | - | Mar 2027 |
 | ARQ | Arq, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | PASS | 1.75 | n.m. | - | - | - | - | Mar 2027 |
@@ -224,10 +223,11 @@ None.
 | SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 84.06 | n.m. | - | - | - | - | - |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | 824.4 | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (270)
+## AVOID - two or more gates failed (275)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| OPFI | OppFi Inc. | 2026-10-26 | v1 | AVOID | WEAK · leverage | WEAK · funding conc. | FAIL · compensation | 5.42 | 9.86 | 3.7 | 4.7 | 5.1 · 7.8 | 5.5 · 7.3 | Q4 2026 |
 | EQNR | Equinor ASA | 2026-10-08 | v3 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | PASS CAUTION · acquisitions | 41.61 | 23.39 | 14.2 | 6.1 | 10.3 · 6.5 | 5.0 · 3.8 | Feb 2027 |
 | TUI1.DE | TUI AG | 2026-07-24 | v1 | AVOID | WEAK · 2.9% ROCE | WEAK · 2+ forces | PASS | 6.662 | 7.48 | 3.4 | 6.4 | - | - | Dec 2026 |
 | LULU | lululemon athletica inc. | 2026-10-20 | v6 | AVOID | STRONG · 30.9% ROCE | WEAK · unit moat eroding | FAIL · flag pair | 97.76 | 66.92 | 11.7 | 6.6 | 7.5 · 8.9 | 5.7 · 6.8 | Dec 2026 |
@@ -338,6 +338,7 @@ None.
 | BEIJ-B.ST | Beijer Ref AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 9.3% ROCE | WEAK · unit 2+ forces | PASS CAUTION · acquisitions | 153.7 | 12.68 | 20.6 | 26.9 | 29.9 · 51.5 | 28.1 · 35.6 | Jan 2027 |
 | HOT.DE | HOCHTIEF Aktiengesellschaft | 2026-07-17 | v1 | AVOID | WEAK · 7.2% ROCE | ADEQUATE | FAIL · flag pair | 455.6 | 30 | 21.2 | 26.9 | - | - | Feb 2027 |
 | NESN.SW | Nestlé S.A. | 2026-10-08 | v4 | AVOID | WEAK · leverage | WEAK · unit customer conc. | FAIL · director pay | 75.56 | n.m. | 23.8 | 26.9 | 21.9 · 23.4 | 20.5 · 21.5 | Feb 2027 |
+| DOV.MI | doValue S.p.A. | 2026-10-26 | v1 | AVOID | WEAK · 6.8% ROCE | WEAK · unit customer conc. | FAIL · compensation | 1.636 | n.m. | 19.5 | 27.7 | 5.0 · 6.0 | 23.7 · 20.8 | Mar 2027 |
 | EL.PA | EssilorLuxottica SA | 2026-07-31 | v1 | AVOID | WEAK · 4.5% ROCE | STRONG | FAIL · buybacks | 166.85 | 16.4 | 20.6 | 27.7 | - | - | 2026-10-20 |
 | GPN | Global Payments Inc. | 2026-08-27 | v1 | AVOID | WEAK · 3.4% ROCE | WEAK · forces: suppliers | FAIL · buybacks | 92.32 | n.m. | 12.0 | 27.8 | - | - | Feb 2027 |
 | 6503.T | Mitsubishi Electric Corporation | 2026-07-13 | v1 | AVOID | WEAK · 7.3% ROCE | ADEQUATE | FAIL · buybacks | 5647 | 1232 | 34.7 | 27.9 | - | - | Apr 2027 |
@@ -431,6 +432,8 @@ None.
 | TSLA | Tesla, Inc. | 2026-07-02 | v1 | AVOID | WEAK · ROCE decline | WEAK · moat eroding | FAIL · compensation | 425.3 | 16 | 256.8 | 360.2 | - | - | - |
 | HUBS | HubSpot, Inc. | 2026-07-12 | v1 | AVOID | WEAK · losses | WEAK · 2+ forces | FAIL · compensation | 207.48 | n.m. | 19.0 | 519.0 | - | - | Feb 2027 |
 | 1COV.DE | Covestro AG | 2026-07-22 | v1 | AVOID | WEAK · 7.4% ROCE | WEAK · 2+ forces | FAIL · compensation | 59.46 | n.m. | n.m. | n.m. | - | - | 2026-07-31 |
+| 4324.KL | Hengyuan Refining Company Berhad | 2026-10-26 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · RPT | 4.13 | n.m. | 25.3 | n.m. | n.m. · n.m. | n.m. · n.m. | Apr 2027 |
+| ABCA.PA | ABC arbitrage SA | 2026-10-26 | v2 | AVOID | WEAK · losses | WEAK · no moat | FAIL · flag pair | 5.83 | n.m. | n.m. | n.m. | n.m. · 974.5 | n.m. · 2771.8 | Apr 2027 |
 | AIP | Arteris, Inc. | 2026-08-08 | v1 | AVOID | WEAK · losses | WEAK · forces: substitutes | FAIL · compensation | 29.78 | n.m. | 258.0 | n.m. | - | - | Feb 2027 |
 | AMV0.DE | Aumovio SE | 2026-07-23 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | PASS | 35.9 | n.m. | 32.1 | n.m. | - | - | Mar 2027 |
 | ASH | Ashland Inc. | 2026-08-18 | v1 | AVOID | WEAK · losses | WEAK · 2+ forces | FAIL · flag pair | 73.15 | n.m. | 93.0 | n.m. | - | - | Nov 2026 |
@@ -459,6 +462,7 @@ None.
 | KVYO | Klaviyo, Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | ADEQUATE | FAIL · flag pair | 16.73 | n.m. | 25.1 | n.m. | - | - | Feb 2027 |
 | KWY | Kingsway Corporation | 2026-08-11 | v1 | AVOID | WEAK · losses | WEAK · 2+ forces | FAIL · compensation | 10.04 | n.m. | n.m. | n.m. | - | - | Mar 2027 |
 | LMND | Lemonade, Inc. | 2026-10-24 | v2 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · compensation | 44.92 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | Feb 2027 |
+| LSPD | Lightspeed Commerce Inc. | 2026-10-26 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · compensation | 11.13 | n.m. | 901.3 | n.m. | n.m. · n.m. | n.m. · n.m. | May 2027 |
 | LYFT | Lyft, Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | WEAK · moat eroding | PASS CAUTION · buybacks | 16.3 | n.m. | 5.5 | n.m. | - | - | Feb 2027 |
 | MBLY | Mobileye Global Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | PASS | 8.73 | n.m. | 19.0 | n.m. | - | - | Mar 2027 |
 | NGVT | Ingevity Corporation | 2026-08-08 | v1 | AVOID | WEAK · 4.9% ROCE | WEAK · 2+ forces | PASS CAUTION · acquisitions | 73.11 | n.m. | 9.2 | n.m. | - | - | Feb 2027 |

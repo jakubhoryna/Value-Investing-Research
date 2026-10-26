@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v60 · 2026-10-26)
+# GSC Work Queue — TODO.md (v61 · 2026-10-26)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -79,7 +79,6 @@
 - `KEYS` — move -18.2% — 314.77 USD (2026-10-23) vs the register's 384.64 (2026-10-02), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
 - `TER` — move -20.7% — 308.85 USD (2026-10-23) vs the register's 389.39 (2026-08-05), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
 - `EKTA-B.ST` — move +22.6% — 57.6 SEK (2026-10-23) vs the register's 47 (2026-07-24), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
-- `ABCA.PA` — move +13.9% — 5.83 EUR (2026-10-23) vs the register's 5.12 (2026-08-31), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
 - `ARQ` — move -15.9% — 1.75 USD (2026-10-23) vs the register's 2.08 (2026-08-07), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
 - `S` — move +12.1% — 24 USD (2026-10-23) vs the register's 21.4 (2026-08-07), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
 - `TLX.DE` — move +11.2% — 125.3 EUR (2026-10-23) vs the register's 112.7 (2026-07-20), confirmed on Google Finance; AVOID-1 — sweep 2026-10-24
@@ -508,7 +507,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `CON.DE` — backfill: ISIN — fill at next REVIEW or attended pass
 - `PDX.ST` — backfill: ISIN, core numbers (cash) — fill at next REVIEW or attended pass
 - `EKTA-B.ST` — backfill: ISIN — fill at next REVIEW or attended pass
-- `ABCA.PA` — backfill: SF reason, core numbers (FCF) — fill at next REVIEW or attended pass
 - `ARQ` — backfill: ISIN, SF reason, core numbers — fill at next REVIEW or attended pass
 - `PSH.L` — backfill: ISIN, core numbers — fill at next REVIEW or attended pass
 - `S` — backfill: core numbers — fill at next REVIEW or attended pass
@@ -561,7 +559,6 @@ None: no held name rests on a retired v4.5.x ground.
 - `005930.KS` — trigger 41700 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `CON.DE` — trigger 36 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `PDX.ST` — trigger 8 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
-- `ABCA.PA` — trigger 3.36 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `TLX.DE` — trigger 48 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `FTK.DE` — trigger 12.55 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `OR.PA` — trigger 86 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
@@ -576,6 +573,17 @@ None: no held name rests on a retired v4.5.x ground.
 - `SYAB.DE` — open item (over the 7-entry cap of `▶ Open items (register)`, routed here by the MODEL v4.6.0 build): SYAB.DE — retire: delisting awaiting retirement (§7.1 RETIRED, v4.6.0) — SYNLAB AG's delisting from the Frankfurt regulated market took effect 12 Jul 2024 and the squeeze-out completed in July 2025 (memo v1 sources: Gleiss Lutz release, 15 Jul 2024; Kirkland & Ellis release, Jul 2025); the row has been DNAF (no listed security) since memo v1 (2026-07-23). Retire by an attended register commit after MODEL v4.6.0 merges (`gsc_register.py retire`, citing the primary notice and dated the last trading day); never a Gate-0 memo; move this line into `▶ Open items (register)` when an entry there clears.
 
 ---
+
+## ▶ Routed by the attended coverage initiation 2026-10-26, register v334
+
+*From the attended ANALYSE of LSPD, DOV.MI, 4324.KL and OPFI (memos v1) and the REVIEW of ABCA.PA (memo v2), all under MODEL v4.6.1.*
+
+- `LSPD` — record-limited rebuild (MODEL §2·1A; memo v1 Appendix A flag): the FY2017 statements, the 31 Mar 2017 balance sheet and the FY2018 operating-lease commitments (P18) exist in audited form only in Lightspeed POS Inc.'s March 2019 TSX IPO prospectus (SEDAR+ Radware-blocked, IR site Cloudflare 403, not on EDGAR before Sep 2020, Wayback reset); non-determinative at v1 (J1 OI negative in all nine retrieved years) — fill at the next REVIEW, or when Jakub supplies the prospectus
+- `LSPD` — FY2027 annual results and 40-F (~May 2027): J1 OI against the USD 2.8m restoring level, FY2027 pay against the loss-year line, the 2026 NCIB's execution against worth (ANALYSE 2026-10-26)
+- `OPFI` — BNCCORP / BNC National Bank acquisition (expected Q4 2026): on closing, a REVIEW re-tests the lens (FI against STD) and the funding test once insured deposits fund the book; the Q3 2026 10-Q (~November 2026) refreshes the TTM and records the $75m term-loan draw (ANALYSE 2026-10-26)
+- `4324.KL` — FY2026 integrated annual report (~April 2027): the first FY after the 2025 rights issue (H1 2026 pre-tax profit MYR 1,126.1m, so FY2026 replaces the loss-making FY2025 as the latest FY), the renewal or expiry of the 10-year Shell product offtake agreement of 22 Dec 2016, the controller-group management and advisory charges (the v1 RPT strike), and per-person executive pay (INDETERMINATE (a) in v1) (ANALYSE 2026-10-26)
+- `DOV.MI` — FY2026 annual financial report (~March 2027): Gardant's own profit contribution (memo v1 read it from the 2024 prospectus), the CFO in office for the Altamira (2019) and FPS (2020) deals (earlier-window acquisition limb), and the escrow's release in the cash-flow build (ANALYSE 2026-10-26)
+- `ABCA.PA` — FY2026 Annual Financial Report (~April 2027): the first full year of Momentum 2028 costs, take-up of the December 2026 scrip option, external fees and client assets, the FY2026 pay table and treasury-share purchases; memo v2 closes the v1 backfills (SF reason, core numbers, no-cash trigger) and the expected R4/J3 move AVOID-1 → AVOID-2 (REVIEW 2026-10-26)
 
 ## ▶ Routed by INTAKE 2026-10-26, register v333
 
@@ -1796,6 +1804,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v61 — 2026-10-26** — Attended coverage initiation (register v334): ANALYSE `LSPD`, `DOV.MI`, `4324.KL`, `OPFI` (memos v1) and REVIEW `ABCA.PA` (memo v2, v4.5.0/v4.6.0 method re-test), all AVOID; new block `▶ Routed by the attended coverage initiation 2026-10-26, register v334` (6 items, LSPD's record-limited rebuild first); `ABCA.PA` removed from `▶ Review requests (SWEEP)` (memo reviewed) and from both `▶ Backfill owed` blocks (filled by memo v2). Outgoing v60 archived to `archive/queue/TODO_v60_2026-10-26.md`.
 - **v60 — 2026-10-26** — INTAKE (register v333) — 40 merged row files (23 REVIEW, 14 ANALYSE, 3 INCOMPLETE: HTRO.ST, 6758.T, TUI1.DE; PRs #151–#273): 42 IDEAS candidates added to the head block; lines removed as memos landed at v4.6.x — `▶ Method re-tests v4.6.0` −22; `Review requests (SWEEP)` −4; `▶ Method re-tests v4.5.0` −5; `▶ Backfill owed — register rebuild v308 (2026-10-06)` −3; `▶ Backfill owed — retrigger v310 (2026-10-07)` −3; `▶ Open items (register)`: `HFG.DE` updated; `▶ Group dependencies` unchanged (`ABB` and `ATCO-B.ST` kept: BUFAB.ST's `memo exists` markers, memos stale); `6758.T` and `TUI1.DE` re-test lines kept (INCOMPLETE, method re-test exceeds budget: `attended re-test owed` items routed); new block `▶ Routed by INTAKE 2026-10-26, register v333` (54 items). Outgoing v59 archived at `archive/queue/TODO_v59_2026-10-24.md`.
 - **v59 — 2026-10-24** — INTAKE 18:03 (register v332) — 25 merged row files (SWEEP, PR #215; UNH REVIEW, PR #233; SAVE.ST REVIEW, PR #244; 8002.T and 6752.T REVIEW INCOMPLETE, PRs #223 and #231; 19 ANALYSE memos and LAGR-B.ST INCOMPLETE, PRs #216–#246): `▶ Review requests (SWEEP)` merged with the 2026-10-24 sweep (5 replaced, 68 added); 24 IDEAS candidates added to the head block; `UNH` and `SAVE.ST` removed from both method re-test blocks (memos at v4.6.1), and `SAVE.ST` from both `▶ Backfill owed` blocks; `▶ Group dependencies` unchanged (`ABB` and `ATCO-B.ST` kept: ETON's `memo exists` markers, memos stale); new block `▶ Routed by INTAKE 2026-10-24 (18:03), register v332` (23 items). v58 archived to `archive/queue/TODO_v58_2026-10-24.md`.
 - **v58 — 2026-10-24** — INTAKE (register v331) — 25 merged row files (ADBE REVIEW, PR #178; CRM REVIEW, PR #186; 23 ANALYSE, PRs #179–#211: 22 memos and FERG INCOMPLETE, PR #195): 35 IDEAS candidates added to the head block; `ADBE` and `CRM` removed from `▶ Method re-tests v4.6.0` (Jakub's 2026-10-20 request; memos v3 at v4.6.1); `▶ Group dependencies` unchanged (`ABB` and `ATCO-B.ST` kept: DHR's `memo exists` markers, memos stale); new block `▶ Routed by INTAKE 2026-10-24, register v331` (29 items). v57 archived to `archive/queue/TODO_v57_2026-10-23.md`.
