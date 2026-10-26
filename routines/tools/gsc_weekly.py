@@ -164,7 +164,7 @@ SUMMARY_SLOTS = ("takeaway", "decide", "fix", "fix", "know", "know")
 SUMMARY_KINDS = ("takeaway", "decide", "fix", "know")
 SUMMARY_MAX_CHARS = 300
 # The needs-Jakub issue the workflows keep, and their comment forms there (MODEL section 8.7 items 10-11):
-# 'PR n held - reason' (an @mention prefix until the v4.6.2 workflow release) and '<workflow> ... failed: ...'.
+# 'PR n held - reason' (an @mention prefix until the v4.7.1 workflow release) and '<workflow> ... failed: ...'.
 NEEDS_TITLE = "GSC - needs Jakub"
 HOLD_COMMENT_RE = re.compile(r"^(?:@[\w-]+\s+)?PR (?P<pr>\d+) held - (?P<reason>[^\n]*)")
 FAIL_COMMENT_RE = re.compile(r"^(?:@[\w-]+\s+)?(?P<what>gsc-(?:automerge|notify)\b[^\n:]*failed): (?P<why>[^\n]*)")

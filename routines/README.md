@@ -54,7 +54,7 @@ GSC ROUTINE: <JOB> — follow routines/README.md and routines/<JOB>.md exactly.
 - SWEEP: `{n}/{N} priced · …`
 - SEED: free text
 - INTAKE: `register v{N} ({k} rows)`, `no register change ({k} rows)`
-- any job: `stopped: {reason}`, `blocked: {reason}` (ANALYSE's `stopped: no listed security`, ANALYSE.md step 5, among them [v4.6.0])
+- any job: `stopped: {reason}`, `blocked: {reason}` (ANALYSE's `stopped: no listed security`, ANALYSE.md step 5, among them [v4.6.0]). A reason is never company size, market cap, liquidity, free float or venue tier (MODEL §8.7 item 6) [v4.7.0].
 
 `{VERDICT}` is one of BUY, WATCH, AVOID, DNAF. The title's key and date equal the branch's. The row file's `pr_title:` equals the final title byte for byte, so a title never contains ` #` (the front-matter reader drops a ` # …` tail). A title outside this grammar is held for Jakub.
 
@@ -282,7 +282,7 @@ pr_title: GSC … (as final)
   - `WEEKLY`, from WEEKLY only (WEEKLY.md step 9): `GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly_page}`, or `GSC WEEKLY · not published · {reason}` when the run could not publish. A run that finds its week already published sends none.
   - `BUY`, from ANALYSE or REVIEW, after the PR is finished: a memo with verdict BUY. Format: `GSC BUY · {JOB} {KEY} {D} · PR {n} · {one-line reason}`, with the run branch's own job, key and date.
 
-  Exactly these forms: one line, at most 200 characters, no `#`, no link but the weekly page's. Never push for any other outcome: WATCH, AVOID, DNAF, INCOMPLETE, prior found, a REVIEW of a held name, a verdict change, a `stopped:` or `blocked:` run, INTAKE's stall test, every SWEEP (its held-zone changes included, J11), SEED and INTAKE reach Jakub through the weekly report (MODEL §7.4, §8.7 item 11). The HELD, VERDICT CHANGE, STOPPED, BLOCKED and STALL pushes are retired. Until the v4.6.2 workflow release, gsc-automerge's comment on `GSC - needs Jakub` for a held PR still @mentions him (MODEL §8.7 item 11). The guard hook refuses any other push, including a class sent from a job other than the one named above. A push that the app reports as not sent is not retried.
+  Exactly these forms: one line, at most 200 characters, no `#`, no link but the weekly page's. Never push for any other outcome: WATCH, AVOID, DNAF, INCOMPLETE, prior found, a REVIEW of a held name, a verdict change, a `stopped:` or `blocked:` run, INTAKE's stall test, every SWEEP (its held-zone changes included, J11), SEED and INTAKE reach Jakub through the weekly report (MODEL §7.4, §8.7 item 11). The HELD, VERDICT CHANGE, STOPPED, BLOCKED and STALL pushes are retired. Until the v4.7.1 workflow release, gsc-automerge's comment on `GSC - needs Jakub` for a held PR still @mentions him (MODEL §8.7 item 11). The guard hook refuses any other push, including a class sent from a job other than the one named above. A push that the app reports as not sent is not retried.
 - **Run note** at the §1 path, ≤ 300 words, per `queue/runs/README.md` (WEEKLY writes none: it ends with a session summary):
   - `model_version` read and the base sha
   - what was written
