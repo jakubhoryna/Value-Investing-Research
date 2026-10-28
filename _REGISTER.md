@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v335
-register_date: 2026-10-27
+register_version: v336
+register_date: 2026-10-28
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 463
-verdict_split: "BUY 0 · WATCH 69 · AVOID 391 (one gate 115 · two+ 276) · DNAF 3"
+names_total: 465
+verdict_split: "BUY 0 · WATCH 69 · AVOID 393 (one gate 115 · two+ 278) · DNAF 3"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v335 · 2026-10-27)
+# GSC Register — Master Watchlist (v336 · 2026-10-28)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -223,7 +223,7 @@ None.
 | SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 84.06 | n.m. | - | - | - | - | - |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | 824.4 | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (276)
+## AVOID - two or more gates failed (278)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -281,6 +281,7 @@ None.
 | XANO-B.ST | XANO Industri AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · ROCE decline | WEAK · unit customer conc. | FAIL · compensation | 51.4 | 11.87 | 17.7 | 16.4 | 10.9 · 13.7 | 18.0 · 13.9 | Feb 2027 |
 | 3382.T | Seven & i Holdings Co., Ltd. | 2026-08-07 | v1 | AVOID | WEAK · 5.6% ROCE | ADEQUATE | FAIL · flag pair | 2066 | 304 | 18.2 | 16.6 | - | - | Apr 2027 |
 | ISS.CO | ISS A/S | 2026-10-25 | v1 | AVOID | WEAK · 6.1% ROCE | WEAK · unit 2+ forces | FAIL · flag pair | 287.8 | 46.2 | 14.4 | 16.6 | 15.8 · 16.7 | 18.0 · 21.1 | Feb 2027 |
+| BERNER-B.ST | Berner Industrier AB | 2026-10-27 | v1 | AVOID | ADEQUATE · 11.7% ROCE | WEAK · unit customer conc. | FAIL · compensation | 74.20 | 23.94 | 20.2 | 16.7 | 16.3 · 25.0 | 22.1 · 28.1 | 2026-11-03 |
 | RHIM.L | RHI Magnesita N.V. | 2026-10-04 | v1 | AVOID | WEAK · 7.4% ROCE | WEAK · 2+ forces | PASS CAUTION · acquisitions | 2850 | n.m. | 9.3 | 16.7 | - | - | 2026-10-27 |
 | ELUX-B.ST | AB Electrolux (publ) | 2026-07-25 | v1 | AVOID | WEAK · 5% ROCE | WEAK · 2+ forces | FAIL · buybacks | 22.83 | n.m. | n.m. | 17.2 | - | - | 2026-07-29 |
 | NKE | NIKE, Inc. | 2026-09-12 | v4 | AVOID | WEAK · ROCE decline | WEAK · moat eroding | PASS CAUTION · buybacks | 36.85 | 10.5 | 25.0 | 17.3 | - | - | Oct 2026 |
@@ -381,7 +382,6 @@ None.
 | NVDA | NVIDIA Corporation | 2026-07-03 | v1 | AVOID | STRONG · 58.2% ROCE | WEAK · customer conc. | FAIL · compensation | 194.28 | 31.5 | 48.8 | 36.3 | - | - | Feb 2027 |
 | TMO | Thermo Fisher Scientific Inc. | 2026-10-23 | v1 | AVOID | WEAK · 8.6% ROCE | ADEQUATE · unit customer conc. | FAIL · compensation | 676.54 | 27.82 | 47.3 | 38.0 | 42.9 · 39.5 | 40.3 · 36.5 | Feb 2027 |
 | CAT | Caterpillar Inc. | 2026-10-04 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 845.42 | 70 | 52.5 | 39.2 | - | - | Feb 2027 |
-| BAS.DE | BASF SE | 2026-07-17 | v1 | AVOID | WEAK · 5.8% ROCE | WEAK · moat eroding | FAIL · buybacks | 48.44 | n.m. | 31.9 | 39.8 | - | - | Feb 2027 |
 | 9166.T | GENDA Inc. | 2026-10-24 | v1 | AVOID | WEAK · 5.2% ROCE | WEAK · 2+ forces | FAIL · buybacks | 645 | n.m. | n.m. | 40.2 | n.m. · 72.5 | 40.9 · 50.2 | Mar 2027 |
 | SDIP-B.ST | Sdiptech AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 7.3% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 264.0 | n.m. | 16.9 | 40.3 | 17.1 · 20.6 | 21.0 · 24.0 | Feb 2027 |
 | DHR | Danaher Corporation | 2026-10-23 | v1 | AVOID | WEAK · 7.2% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 229.75 | 5.51 | 31.0 | 40.8 | 32.0 · 28.3 | 38.9 · 32.1 | Feb 2027 |
@@ -413,6 +413,7 @@ None.
 | CELH | Celsius Holdings, Inc. | 2026-08-06 | v1 | AVOID | WEAK · 5% ROCE | WEAK · customer conc. | FAIL · compensation | 29.15 | n.m. | 23.4 | 71.1 | - | - | Aug 2026 |
 | CERT | Certara, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 0.3% ROCE | ADEQUATE | FAIL · compensation | 8.2 | n.m. | 16.8 | 73.9 | - | - | Apr 2027 |
 | INIO | INNIO N.V. | 2026-07-22 | v1 | AVOID | WEAK · 9.1% ROCE | WEAK · breadth | FAIL · control | 30.37 | n.m. | 60.5 | 74.2 | - | - | Mar 2027 |
+| BAS.DE | BASF SE | 2026-10-27 | v2 | AVOID | WEAK · 4.2% ROCE | WEAK · unit customer conc. | FAIL · buybacks | 52.24 | n.m. | n.m. | 78.6 | 95.6 · 36.2 | 48.3 · 21.7 | Feb 2027 |
 | SHA0.DE | Schaeffler AG | 2026-07-16 | v1 | AVOID | WEAK · 8% ROCE | WEAK · customer conc. | FAIL · compensation | 8.53 | n.m. | 21.2 | 84.0 | - | - | Mar 2027 |
 | CALX | Calix, Inc. | 2026-08-08 | v1 | AVOID | WEAK · 1.9% ROCE | ADEQUATE | FAIL · compensation | 37.36 | 2.11 | 20.4 | 112.7 | - | - | Feb 2027 |
 | UPST | Upstart Holdings, Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · flag pair | 29.71 | n.m. | n.m. | 116.1 | - | - | Feb 2027 |
@@ -440,6 +441,7 @@ None.
 | ASH | Ashland Inc. | 2026-08-18 | v1 | AVOID | WEAK · losses | WEAK · 2+ forces | FAIL · flag pair | 73.15 | n.m. | 93.0 | n.m. | - | - | Nov 2026 |
 | AXP | American Express Company | 2026-07-04 | v1 | AVOID | STRONG | WEAK · breadth | FAIL · compensation | 348.08 | 184 | 14.8 | n.m. | - | - | Jan 2027 |
 | BAYN.DE | Bayer AG | 2026-07-16 | v1 | AVOID | WEAK · 1.5% ROCE | WEAK · forces: substitutes | FAIL · compensation | 47.17 | n.m. | 22.2 | n.m. | - | - | Mar 2027 |
+| BICO.ST | BICO Group AB (publ) | 2026-10-27 | v1 | AVOID | WEAK · losses | WEAK · unit customer conc. | FAIL · compensation | 24.15 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | 2026-11-11 |
 | BRZE | Braze, Inc. | 2026-07-14 | v1 | AVOID | WEAK · ROCE decline | WEAK · no moat | FAIL · compensation | 26.6 | n.m. | 51.7 | n.m. | - | - | Mar 2027 |
 | CC | The Chemours Company | 2026-08-08 | v1 | AVOID | WEAK · 3.4% ROCE | WEAK · 2+ forces | FAIL · compensation | 15.11 | n.m. | 44.6 | n.m. | - | - | Feb 2027 |
 | COHU | Cohu, Inc. | 2026-08-08 | v1 | AVOID | WEAK · 0.7% ROCE | ADEQUATE | FAIL · compensation | 52.88 | n.m. | 233.0 | n.m. | - | - | Mar 2027 |

@@ -1,4 +1,4 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v21 · 2026-10-27)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v22 · 2026-10-28)
 
 **Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `archive/queue/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, add `retry`, or record a decision of his in this header or in a line's notes. The claude.ai project copy, if any, is a read-only mirror.
 
@@ -157,8 +157,8 @@ A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an
 - [!] incomplete 2026-10-24 — queue/evidence/HTRO.ST_2026-10-24_INCOMPLETE.md HTRO.ST — Hexatronic Group AB (publ) — Sweden — fibre-network products; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [x] 2026-10-24 STOR-B.ST — Storskogen Group AB (publ) — Sweden — diversified acquirer; IPO 2021 → history-limited check; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [x] 2026-10-24 VIMIAN.ST — Vimian Group AB (publ) — Sweden — animal-health roll-up; IPO 2021 → history-limited check; serial-acquirer list (Multibagger Ideas, 15 May 2026)
-- [ ] BERNER-B.ST — Berner Industrier AB — Sweden — verify listing, share class and history before the run; serial-acquirer list (Multibagger Ideas, 15 May 2026) — retry (PR #262)
-- [ ] BICO.ST — BICO Group AB (publ) — Sweden — life-science tools roll-up; loss history; serial-acquirer list (Multibagger Ideas, 15 May 2026) — retry (PR #263)
+- [x] 2026-10-27 BERNER-B.ST — Berner Industrier AB — Sweden — verify listing, share class and history before the run; serial-acquirer list (Multibagger Ideas, 15 May 2026) — retry (PR #262)
+- [x] 2026-10-27 BICO.ST — BICO Group AB (publ) — Sweden — life-science tools roll-up; loss history; serial-acquirer list (Multibagger Ideas, 15 May 2026) — retry (PR #263)
 - [x] 2026-10-25 EMBRAC-B.ST — Embracer Group AB (publ) — Sweden — games and media roll-up; 2024–25 restructuring and spin-offs → perimeter; consumer/media; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [x] 2026-10-25 HUMBLE.ST — Humble Group AB (publ) — Sweden — consumer-goods roll-up; consumer; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [x] 2026-10-25 SECARE.ST — Swedencare AB (publ) — Sweden — pet-health products roll-up; consumer; serial-acquirer list (Multibagger Ideas, 15 May 2026)
