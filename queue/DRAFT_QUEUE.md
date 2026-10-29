@@ -1,4 +1,4 @@
-# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v22 · 2026-10-28)
+# GSC DRAFT QUEUE — DRAFT_QUEUE.md (v23 · 2026-10-29)
 
 **Operative copy: this file (MODEL §8.7).** It is written only by INTAKE, from merged row and proposal files, and versioned: each outgoing version is archived to `archive/queue/DRAFT_QUEUE_v{n}_{date}.md` (MODEL §7.5). Runs claim a key by PR title (`GSC ANALYSE {KEY} {D} [running]`), never by editing lines. Jakub edits by hand, in an attended commit, only to reset a line, strike it, add `retry`, or record a decision of his in this header or in a line's notes. The claude.ai project copy, if any, is a read-only mirror.
 
@@ -166,9 +166,9 @@ A trailing `retry` (added by Jakub) makes a reset `[ ]` line eligible despite an
 - [x] 2026-10-25 ISS.CO — ISS A/S — Denmark — facility services; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [x] 2026-10-25 BEWI.OL — BEWI ASA — Norway (Oslo Børs) — packaging and insulation roll-up; verify leverage; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [x] 2026-10-25 NEM.DE — Nemetschek SE — Germany — AEC software acquirer; family control; also on TODO candidate list; serial-acquirer list (Multibagger Ideas, 15 May 2026)
-- [ ] BKHT.DE — Brockhaus Technologies AG — Germany — tech-company acquirer; IPO 2020 → history-limited; serial-acquirer list (Multibagger Ideas, 15 May 2026) — retry (PR #278)
+- [x] 2026-10-28 BKHT.DE — Brockhaus Technologies AG — Germany — tech-company acquirer; IPO 2020 → history-limited; serial-acquirer list (Multibagger Ideas, 15 May 2026) — retry (PR #278)
 - [x] 2026-10-26 RXL.PA — Rexel S.A. — France — electrical-supplies distribution; serial-acquirer list (Multibagger Ideas, 15 May 2026)
-- [ ] ERF.PA — Eurofins Scientific SE — France (Euronext Paris; Luxembourg SE) — testing-lab roll-up; founder control; serial-acquirer list (Multibagger Ideas, 15 May 2026)
+- [!] incomplete 2026-10-28 — queue/evidence/ERF.PA_2026-10-28_INCOMPLETE.md ERF.PA — Eurofins Scientific SE — France (Euronext Paris; Luxembourg SE) — testing-lab roll-up; founder control; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [ ] DKSH.SW — DKSH Holding AG — Switzerland — market-expansion services in Asia; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [ ] CICN.SW — Cicor Technologies Ltd. — Switzerland — electronics manufacturing services acquirer; serial-acquirer list (Multibagger Ideas, 15 May 2026)
 - [ ] REY.MI — Reply S.p.A. — Italy (Euronext Milan) — IT consulting network; serial-acquirer list (Multibagger Ideas, 15 May 2026)
