@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v337
+register_version: v338
 register_date: 2026-10-29
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
@@ -11,7 +11,7 @@ portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v337 · 2026-10-29)
+# GSC Register — Master Watchlist (v338 · 2026-10-29)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -20,7 +20,7 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 
 | Ticker | Zone | Px | ADD band | Sell line | Last zone check | Next review |
 |---|---|---|---|---|---|---|
-| CROX | SELL-FLAG SR2 | 119.23 | n.m. | 45.07 | 2026-10-23 | 2026-10-29 |
+| CROX | SELL-FLAG SR2 | 119.69 | n.m. | 47.36 | 2026-10-28 | Feb 2027 |
 | HFG.DE | SELL-FLAG SR2 | 3.087 | n.m. | n.m. | 2026-10-23 | 2026-11-05 |
 | NOVO-B.CO | SELL-FLAG SR2 | 260.15 | 57.5 | 696.8 | 2026-10-23 | 2026-11-04 |
 | TROW | SELL-FLAG SR2 | 104.2 | 41.9 | 248.6 | 2026-10-23 | 2026-10-30 |
@@ -392,11 +392,11 @@ None.
 | BABA | Alibaba Group Holding Limited | 2026-10-06 | v2 | AVOID | WEAK | WEAK | FAIL | 110.8 | 14.4 | n.m. | 44.1 | - | - | Feb 2027 |
 | SPOT | Spotify Technology S.A. | 2026-10-20 | v2 | AVOID | WEAK · 0.3% ROCE | WEAK · unit supplier conc. | FAIL · compensation | 526.08 | 80.19 | 36.9 | 44.7 | 55.7 · 88.2 | 94.7 · 192.7 | Feb 2027 |
 | VSURE.ST | Verisure plc | 2026-10-04 | v1 | AVOID | WEAK · 1.4% ROCE | ADEQUATE | FAIL · compensation | 8.096 | n.m. | n.m. | 45.5 | - | - | Mar 2027 |
+| CROX | Crocs, Inc. | 2026-10-29 | v9 | AVOID | WEAK · leverage | WEAK · unit supplier conc. | FAIL · acquisitions | 119.69 | n.m. | 8.5 | 48.7 | 7.0 · 8.1 | 9.9 · 9.7 | Feb 2027 |
 | SHOO | Steven Madden, Ltd. | 2026-08-07 | v1 | AVOID | WEAK · growth | WEAK · 2+ forces | FAIL · compensation | 48.45 | 2.2 | 29.7 | 49.0 | - | - | Mar 2027 |
 | TYL | Tyler Technologies, Inc. | 2026-10-24 | v1 | AVOID | WEAK · 6.3% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 390.14 | 24.78 | 27.5 | 49.1 | 32.8 · 38.0 | 60.1 · 69.0 | Feb 2027 |
 | FLUT | Flutter Entertainment plc | 2026-08-31 | v1 | AVOID | WEAK · 1.1% ROCE | WEAK · supplier conc. | FAIL · buybacks | 101.78 | n.m. | 42.9 | 50.1 | - | - | Nov 2026 |
 | 6752.T | Panasonic Holdings Corporation | 2026-08-07 | v1 | AVOID | WEAK · 4.6% ROCE | WEAK · 2+ forces | PASS | 4355 | n.m. | 622.0 | 50.3 | - | - | Oct 2026 |
-| CROX | Crocs, Inc. | 2026-10-07 | v8 | AVOID | WEAK · leverage | WEAK · unit supplier conc. | FAIL · acquisitions | 119.23 | n.m. | 8.8 | 50.3 | 7.2 · 8.4 | 10.2 · 10.0 | 2026-10-29 |
 | SMSH.TA | Smart Shooter Ltd. | 2026-08-27 | v1 | AVOID | WEAK · 0.1% ROCE | WEAK · customer conc. | PASS | 1796 | 240 | 41.5 | 50.7 | - | - | 2026-08-31 |
 | KAR.ST | Karnov Group AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 2.5% ROCE | WEAK · unit forces: customers | FAIL · compensation | 82.5 | n.m. | 47.7 | 51.5 | 51.3 · 44.6 | 61.0 · 73.1 | 2026-11-12 |
 | TRS | TriMas Corporation | 2026-08-08 | v1 | AVOID | WEAK · 4.1% ROCE | WEAK · moat eroding | FAIL · flag pair | 40.24 | n.m. | 20.9 | 53.4 | - | - | Mar 2027 |
