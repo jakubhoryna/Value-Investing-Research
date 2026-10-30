@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v338
-register_date: 2026-10-29
+register_version: v339
+register_date: 2026-10-30
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 466
-verdict_split: "BUY 0 · WATCH 69 · AVOID 394 (one gate 115 · two+ 279) · DNAF 3"
+names_total: 468
+verdict_split: "BUY 0 · WATCH 69 · AVOID 396 (one gate 115 · two+ 281) · DNAF 3"
 portfolio_names: 4
 ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v338 · 2026-10-29)
+# GSC Register — Master Watchlist (v339 · 2026-10-30)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -223,7 +223,7 @@ None.
 | SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 84.06 | n.m. | - | - | - | - | - |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | 824.4 | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (279)
+## AVOID - two or more gates failed (281)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -292,6 +292,7 @@ None.
 | PTC | PTC Inc. | 2026-10-04 | v1 | AVOID | WEAK · 9.5% ROCE | STRONG | FAIL · flag pair | 144.03 | 45.66 | 18.2 | 17.9 | - | - | Nov 2026 |
 | SWEC-B.ST | Sweco AB (publ) | 2026-10-24 | v1 | AVOID | ADEQUATE · 12.4% ROCE | WEAK · unit customer conc. | FAIL · acquisitions | 138.2 | 41.71 | 14.6 | 17.9 | 16.1 · 18.6 | 20.0 · 22.5 | Feb 2027 |
 | BILI-A.ST | Bilia AB (publ) | 2026-07-28 | v1 | AVOID | WEAK · ROCE decline | WEAK · forces: suppliers | FAIL · flag pair | 152.4 | n.m. | 23.5 | 18.1 | - | - | Mar 2027 |
+| DKSH.SW | DKSH Holding AG | 2026-10-29 | v1 | AVOID | WEAK · leverage | WEAK · unit customer conc. | FAIL · flag pair | 77.20 | 19.69 | 18.5 | 18.7 | 16.5 · 17.0 | 18.4 · 19.0 | Feb 2027 |
 | ADS.DE | adidas AG | 2026-07-04 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 185.3 | - | 613.0 | 19.0 | - | - | Mar 2027 |
 | PAYO | Payoneer Global Inc. | 2026-08-08 | v1 | AVOID | WEAK · 8.7% ROCE | WEAK · forces: substitutes | FAIL · compensation | 7.1 | 2.27 | 11.6 | 19.3 | - | - | Mar 2027 |
 | RUSTA.ST | Rusta AB (publ) | 2026-07-27 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 84.9 | 8.1 | 11.0 | 19.3 | - | - | Aug 2026 |
@@ -348,6 +349,7 @@ None.
 | DSV.CO | DSV A/S | 2026-10-25 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE · unit customer conc. | FAIL · flag pair | 1372.5 | 35.2 | 40.9 | 28.1 | 24.2 · 21.2 | 26.5 · 24.1 | Feb 2027 |
 | GRND | Grindr Inc. | 2026-08-08 | v1 | AVOID | WEAK · leverage | WEAK · breadth | FAIL · compensation | 17.78 | 2.75 | 22.4 | 28.1 | - | - | Mar 2027 |
 | RSW.L | Renishaw plc | 2026-10-24 | v3 | AVOID | WEAK · ROCE decline | WEAK · unit customer conc. | FAIL · alignment | 5160 | 893.4 | 46.2 | 28.1 | 51.2 · 61.0 | 32.4 · 30.2 | Sep 2027 |
+| CICN.SW | Cicor Technologies Ltd. | 2026-10-29 | v1 | AVOID | WEAK · 6.9% ROCE | WEAK · forces: suppliers | FAIL · compensation | 135.60 | 9.10 | 22.2 | 28.3 | 13.8 · 27.1 | 23.4 · 31.2 | Mar 2027 |
 | 7309.T | Shimano Inc. (株式会社シマノ) | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | PASS CAUTION · buybacks | 17485 | 1696 | 82.5 | 28.9 | - | - | 2027-01-31 |
 | SAF.PA | Safran SA | 2026-10-25 | v3 | AVOID | WEAK · leverage | ADEQUATE · unit customer conc. | FAIL · buybacks | 271.8 | 53.77 | 31.7 | 29.1 | 37.0 · 44.5 | 33.0 · 43.7 | 2027-02-09 |
 | KER.PA | Kering SA | 2026-07-02 | v1 | AVOID | WEAK · ROCE decline | WEAK · moat eroding | FAIL · acquisitions | 266.3 | 150 | 14.4 | 29.2 | - | - | Feb 2027 |
