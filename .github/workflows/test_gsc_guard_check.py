@@ -488,6 +488,28 @@ case("ANALYSE re-keyed without memo deletes the resolved key's evidence",
          "A queue/rows/2026-10-04_2250_ANALYSE_SHEL.L.md",
          "D queue/evidence/SHEL.L_draft-evidence_2026-09.md",
      ), "fail", msg="not in the ANALYSE write contract")
+# v4.8.0 review: evidence leaves only alongside the name's memo (MODEL 8.7 item 4), never on INCOMPLETE.
+case("REVIEW INCOMPLETE deletes the first resume record", RV_TROW, "GSC REVIEW TROW 2026-10-04 — INCOMPLETE", E(
+    "A queue/evidence/TROW_2026-10-04_INCOMPLETE.md",
+    "D queue/evidence/TROW_2026-10-01_INCOMPLETE.md",
+    "A queue/rows/2026-10-04_2250_REVIEW_TROW.md",
+    "A queue/runs/2026-10-04_2250_REVIEW_TROW.md",
+), "fail", msg="not in the REVIEW write contract")
+case("REVIEW claim stub deletes evidence", RV_HFG, "HELD · GSC REVIEW HFG.DE 2026-10-04 [running]", E(
+    "A queue/runs/2026-10-04_2250_REVIEW_HFG.DE.md",
+    "D queue/evidence/HFG.DE_draft-evidence_2026-09.md",
+), "fail", msg="not in the REVIEW write contract")
+case("ANALYSE INCOMPLETE deletes its own key's evidence", AN_CARL, "GSC ANALYSE CARL-B.CO 2026-10-04 — INCOMPLETE", E(
+    "A queue/evidence/CARL-B.CO_2026-10-04_INCOMPLETE.md",
+    "D queue/evidence/CARL-B.CO_2026-10-01_INCOMPLETE.md",
+    "A queue/rows/2026-10-04_2250_ANALYSE_CARL-B.CO.md",
+    "A queue/runs/2026-10-04_2250_ANALYSE_CARL-B.CO.md",
+), "fail", msg="not in the ANALYSE write contract")
+case("ANALYSE PRIOR deletes evidence", AN_CGNX, "GSC ANALYSE CGNX 2026-10-04 — PRIOR", E(
+    "A queue/rows/2026-10-04_2250_ANALYSE_CGNX.md",
+    "A queue/runs/2026-10-04_2250_ANALYSE_CGNX.md",
+    "D queue/evidence/CGNX_draft-evidence_2026-09.md",
+), "fail", msg="not in the ANALYSE write contract")
 case("ANALYSE keyless branch writes a keyed row", AN_KEYLESS, "GSC ANALYSE 2026-10-04 — queue exhausted",
      E("A queue/rows/2026-10-04_2250_ANALYSE_CGNX.md"), "fail", msg="not in the ANALYSE write contract")
 case("ANALYSE modifies the register", AN_CGNX, "GSC ANALYSE CGNX 2026-10-04 — BUY",

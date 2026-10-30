@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GSC weekly report tool v1.0 (MODEL v4.6.1, sections 7.4 and 8.7 items 11-12; the WEEKLY job).
+"""GSC weekly report tool v1.1 (MODEL v4.6.1, sections 7.4 and 8.7 items 11-12; the WEEKLY job; v1.1 for MODEL v4.8.0).
 
 One report a week of what the system did and what waits for Jakub, in place of the retired morning
 digest and the retired per-event notifications. It renders eleven flat JSON datasets for the private
@@ -14,15 +14,21 @@ Subcommands (Python 3.11+, standard library only; exit 0 ok, 1 lint or check fai
         change lasts 167 or 169 hours and every catch-up of the same week prints the same window),
         period (its label), details_since (since minus 14 days, UTC, the GitHub time format) and
         run (--at). With --meta-at and --meta-by (the weekly page's datasets/meta 'updated' fields,
-        '-' when missing) it adds published: true when by is 'GSC WEEKLY routine' and at lies
+        '-' when missing; the routines pass 'other' for a writer that is not the routine and '-' for an
+        at that is not an ISO time, never the raw text, which the guard hook refuses) it adds published: true when by is 'GSC WEEKLY routine' and at lies
         between until and five minutes after --at (a stamp after the run, such as a mistyped run
-        time, never counts: it would silence every later week; the next run overwrites it).
+        time, never counts: it would silence every later week; the next run overwrites it);
+        meta_ok: true when at is an ISO time and by is given (a stamp INTAKE could read); and alarm
+        (INTAKE's weekly watchdog, MODEL v4.8.0): true only when the week is not published and --at
+        is on the Prague day after until's (the Monday) at or after 06:00 Prague, so one INTAKE run
+        a week can raise it (the Saturday sprint and the Tuesday-to-Sunday runs never do).
 
   render --repo-dir DIR --ref REF --since ISO --until ISO --fetch-dir DIR [--health-json FILE]
          --out-dir DIR [--out-md FILE] [--out-json FILE] [--allow-stale-ref]
         Offline. Reads git (log, ls-tree, show, cat-file; read only), the files at REF, the GitHub
         pages the routine fetched into --fetch-dir and the optional schedule health; it never talks
-        to GitHub or the network itself. Writes one dataset file per dataset id (DATASET_IDS) into
+        to GitHub or the network itself. A shallow repository is refused first (exit 2, 'shallow
+        clone: run git fetch --unshallow origin main …'): the report reads the ref's whole history. Writes one dataset file per dataset id (DATASET_IDS) into
         --out-dir, summary.json included (the tool's own deterministic sentences), and
         notification.txt (the one-line WEEKLY notification). --out-md and --out-json add a readable
         report and a full JSON dump for attended checks. Refuses (exit 2) an output inside the
@@ -97,6 +103,12 @@ items, never average cost, position size or core numbers. Every figure is comput
 files at the ref, the fetched pages or the health input; one that cannot be derived is null.
 A re-render of the same inputs is byte-identical except for meta.generated_at.
 
+v1.1 (MODEL v4.8.0). window prints meta_ok and alarm for INTAKE's weekly watchdog; render refuses a shallow
+clone first; the schedule health reads each routine's last-run duration and lists a likely no-op run under Fix
+(a run that SUCCEEDED in under 120 s with no PR of its job from its fire to 10 min after it finished; for SEED and
+SWEEP also none open at the fire; never WEEKLY); the re-test blocks are read by version
+('▶ Method re-tests vX.Y.Z', any version), and a line marked ' — partial {date}' counts open and is listed.
+
 Helpers come from gsc_register.py (CSV and front-matter reading, status_hint for IN RANGE / NEAR
 / FAR under MODEL section 8.3 step 3, section_for, review_last_day, batch_show) and gsc_site.py
 (listing countries, memo sections, the business sentence, distance), the sibling tools in the
@@ -116,7 +128,7 @@ from decimal import Decimal, ROUND_HALF_UP
 
 sys.dont_write_bytecode = True
 
-TOOL_VERSION = "1.0"
+TOOL_VERSION = "1.1"
 TOOL = "gsc_weekly.py v" + TOOL_VERSION
 UTC = datetime.timezone.utc
 ONE_SECOND = datetime.timedelta(seconds=1)
@@ -142,6 +154,14 @@ ROUTINE_GAP = datetime.timedelta(hours=48)
 INTAKE_STALL = datetime.timedelta(hours=30)
 ROWS_WAITING = datetime.timedelta(hours=6)
 USAGE_LIMIT = "USAGE_LIMIT_REACHED"
+# Likely no-op runs (MODEL v4.8.0): a routine whose last run SUCCEEDED in under NOOP_SECONDS and opened no PR of
+# its job from its fire to NOOP_GRACE after it finished (a session without the repository ends this way). The
+# jobs that open a PR on every working run; WEEKLY opens none and INTAKE's weekly watchdog covers it. SEED and
+# SWEEP stop at once, legitimately, while a PR of their job is still open at the fire.
+NOOP_SECONDS = 120
+NOOP_GRACE = datetime.timedelta(minutes=10)
+NOOP_JOBS = ("ANALYSE", "REVIEW", "SWEEP", "INTAKE", "SEED")
+NOOP_OPEN_PR_JOBS = ("SWEEP", "SEED")
 SEVERITIES = ("high", "medium", "low")
 # gsc-automerge's first merge (PR 92, 2026-10-08 00:59 Prague): a routine PR merged by Jakub that was
 # opened before it waited under the pre-auto-merge regime, so the held-PR wait compares only PRs
@@ -164,7 +184,7 @@ SUMMARY_SLOTS = ("takeaway", "decide", "fix", "fix", "know", "know")
 SUMMARY_KINDS = ("takeaway", "decide", "fix", "know")
 SUMMARY_MAX_CHARS = 300
 # The needs-Jakub issue the workflows keep, and their comment forms there (MODEL section 8.7 items 10-11):
-# 'PR n held - reason' (an @mention prefix until the v4.7.1 workflow release) and '<workflow> ... failed: ...'.
+# 'PR n held - reason' (an @mention prefix before the v4.8.0 workflow release) and '<workflow> ... failed: ...'.
 NEEDS_TITLE = "GSC - needs Jakub"
 HOLD_COMMENT_RE = re.compile(r"^(?:@[\w-]+\s+)?PR (?P<pr>\d+) held - (?P<reason>[^\n]*)")
 FAIL_COMMENT_RE = re.compile(r"^(?:@[\w-]+\s+)?(?P<what>gsc-(?:automerge|notify)\b[^\n:]*failed): (?P<why>[^\n]*)")
@@ -730,23 +750,53 @@ def todo_block(text, prefix):
     return []
 
 
+# The release re-test blocks, any version (v4.5.0, v4.6.0, v4.8.0 read first, …): '▶ Method re-tests vX.Y.Z'.
+RETEST_BLOCK_RE = re.compile(r"^▶ Method re-tests (v\d+\.\d+\.\d+)\b")
+RETEST_KEY_RE = re.compile(r"^-\s+`([A-Za-z0-9._-]+)`")
+# A re-test line a run left part-done (MODEL v4.8.0 two-run resume): ' — partial {D}', optionally followed by
+# ' (queue/evidence/{KEY}_{D}_INCOMPLETE.md)'. The line stays open: it counts as owed and is listed as partial.
+RETEST_PARTIAL_RE = re.compile(r" — partial (?P<date>\d{4}-\d{2}-\d{2})(?: \((?P<evidence>[^()\s]+)\))?")
+
+
+def retest_blocks(text):
+    """[(heading, version label, bullets)] of the '▶ Method re-tests vX.Y.Z' blocks, file order."""
+    out = []
+    for title, bullets in todo_blocks(text):
+        m = RETEST_BLOCK_RE.match(title)
+        if m:
+            out.append((title, m.group(1), bullets))
+    return out
+
+
 def retest_keys(text):
     """{block heading: [keys]} of the '▶ Method re-tests …' blocks (keys as their bullets open)."""
     out = collections.OrderedDict()
-    for title, bullets in todo_blocks(text):
-        if title.startswith("▶ Method re-tests"):
-            keys = []
-            for line in bullets:
-                m = re.match(r"^-\s+`([A-Za-z0-9._-]+)`", line)
-                if m and m.group(1) not in keys:
-                    keys.append(m.group(1))
-            out[title] = keys
+    for title, _version, bullets in retest_blocks(text):
+        keys = []
+        for line in bullets:
+            m = RETEST_KEY_RE.match(line)
+            if m and m.group(1) not in keys:
+                keys.append(m.group(1))
+        out[title] = keys
     return out
 
 
 def retest_lines(text):
-    """{block heading: bullet count} of the '▶ Method re-tests …' blocks."""
-    return collections.OrderedDict((t, len(b)) for t, b in todo_blocks(text) if t.startswith("▶ Method re-tests"))
+    """{block heading: bullet count} of the '▶ Method re-tests …' blocks (a partial line counts: it is open)."""
+    return collections.OrderedDict((t, len(b)) for t, _v, b in retest_blocks(text))
+
+
+def retest_partial(text):
+    """{block heading: [(key, date, evidence path or None)]} of the re-test lines marked ' — partial {D}'."""
+    out = collections.OrderedDict()
+    for title, _version, bullets in retest_blocks(text):
+        found = []
+        for line in bullets:
+            k, m = RETEST_KEY_RE.match(line), RETEST_PARTIAL_RE.search(line)
+            if k and m:
+                found.append((k.group(1), m.group("date"), m.group("evidence")))
+        out[title] = found
+    return out
 
 
 USER_MARK_RE = re.compile(r"^\s*user,\s*(\d{4}-\d{2}-\d{2})")
@@ -860,6 +910,24 @@ def retired_check(fm, text, live_version):
 
 
 # ------------------------------------------------------------------ git
+
+# A routine session starts from a shallow clone; the report reads the whole first-parent history of the ref
+# (memo history, MODEL releases, the weekly series), so render refuses a shallow repository up front with one
+# clear line (MODEL v4.8.0). The playbook path is built from parts: this file names no framework path.
+WEEKLY_PLAYBOOK = "/".join(("routines", "WEEKLY.md"))
+SHALLOW_ERROR = "shallow clone: run git fetch --unshallow origin main (%s step 1)" % WEEKLY_PLAYBOOK
+
+
+def need_full_history(repo_dir):
+    """Refuse a shallow repository (ToolError SHALLOW_ERROR); a folder git cannot read is left to the render."""
+    try:
+        proc = subprocess.run(["git", "-C", repo_dir, "rev-parse", "--is-shallow-repository"],
+                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+    except OSError as exc:
+        raise ToolError("git failed: %s" % exc)
+    if proc.returncode == 0 and proc.stdout.decode("utf-8", "replace").strip() == "true":
+        raise ToolError(SHALLOW_ERROR)
+
 
 class Repo:
     def __init__(self, root):
@@ -1240,6 +1308,9 @@ def hold_comments(doc, until):
 # ------------------------------------------------------------------ the report window
 
 WEEK_END = datetime.time(8, 30)          # the window ends on Sunday at 08:30 Europe/Prague
+# INTAKE's weekly watchdog (MODEL v4.8.0): its Monday run at or after 06:00 Prague raises the alarm for a week
+# whose report is not published; every other run (Sunday, the Saturday sprint, Tuesday to Sunday) stays quiet.
+ALARM_AT = datetime.time(6, 0)
 # The most a page stamp may run ahead of the run (window's published test) or a batch's --at ahead of the
 # clock (dash-writes): a future stamp would make every later WEEKLY run read its week as published.
 CLOCK_SKEW = datetime.timedelta(minutes=5)
@@ -1263,8 +1334,17 @@ def gh_time(moment):
     return moment.astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def alarm_day(at, until):
+    """True for a run on the Prague day after until's (the Monday) at or after ALARM_AT Prague: the one INTAKE
+    run a week that raises the weekly alarm (DST-safe: both sides are read in Prague local time)."""
+    local = to_prague(at)
+    return local.date() == prague_date(until) + datetime.timedelta(days=1) and local.time() >= ALARM_AT
+
+
 def window_doc(at, meta_at=None, meta_by=None):
-    """The 'window' command's object; 'published' only when the meta fields are given."""
+    """The 'window' command's object; 'published', 'meta_ok' and 'alarm' only when the meta fields are given.
+    meta_ok: the stamp was readable (an ISO at and a non-empty by). alarm (INTAKE's weekly watchdog, MODEL
+    v4.8.0): the week ending at until is not published and the run is its Monday run (alarm_day)."""
     since, until = window_of(at)
     out = collections.OrderedDict([
         ("since", iso_prague(since)), ("until", iso_prague(until)), ("period", period_label(since, until)),
@@ -1278,6 +1358,8 @@ def window_doc(at, meta_at=None, meta_by=None):
                 stamp = None
         # A stamp after the run (a mistyped run time) never counts: it would silence every later week.
         out["published"] = bool(meta_by == WEEKLY_BY and stamp is not None and until <= stamp <= at + CLOCK_SKEW)
+        out["meta_ok"] = bool(stamp is not None and meta_by not in (None, "", "-"))
+        out["alarm"] = bool(not out["published"] and alarm_day(at, until))
     return out
 
 
@@ -1540,8 +1622,9 @@ def rows_after_pending(rows, overlay):
 def retest_lists_of(todo_text):
     lists = collections.defaultdict(list)       # {norm key: [block version labels]}
     for title, keys in retest_keys(todo_text).items():
+        version = RETEST_BLOCK_RE.match(title).group(1)
         for k in keys:
-            lists[norm_key(k)].append(title.replace("▶ Method re-tests", "").strip())
+            lists[norm_key(k)].append(version)
     return lists
 
 
@@ -1652,6 +1735,7 @@ def register_state(repo, sha, as_of, live_version):
     return {
         "sha": sha, "rows": rows, "fm": fm, "memos": memos, "todo": todo, "retest_lists": lists,
         "retest_blocks": retest_keys(todo), "retest_lines": retest_lines(todo), "retest_union": retest_union,
+        "retest_partial": retest_partial(todo),
         "overlay": overlay, "keyless_rows": keyless, "after": after, "counts": counts(rows),
         "counts_after": counts(after), "shortlist": shortlist, "ranked": ranked,
         "pending_changes": pending_changes, "status_counts": collections.Counter(r["status"] for r in ranked),
@@ -1704,6 +1788,17 @@ def load_health(path):
                 or not isinstance(t.get("enabled"), bool) or not isinstance(t.get("sprint"), bool) \
                 or not isinstance(t.get("last_run") or {}, dict):
             raise ToolError("--health-json: bad routine %r" % (t.get("name"),))
+        # fired_at and finished_at are optional (an older health file has no finished_at); one given is a time.
+        for field in ("fired_at", "finished_at"):
+            value = (t.get("last_run") or {}).get(field)
+            if value in (None, ""):
+                continue
+            try:
+                if not isinstance(value, str):
+                    raise ToolError("not text")
+                parse_when(value)
+            except ToolError:
+                raise ToolError("--health-json: bad last_run %s %r of routine %r" % (field, value, t.get("name")))
         parse_cron(t["cron"])
         triggers.append(t)
     disabled = doc.get("disabled")
@@ -1722,12 +1817,15 @@ def health_view(doc, since, until):
     for t in doc["triggers"]:
         fires = cron_fires(t["cron"], since, until) if t["enabled"] else []
         last = t.get("last_run") or {}
+        fired, finished = parse_gh_time(last.get("fired_at")), parse_gh_time(last.get("finished_at"))
         triggers.append(collections.OrderedDict([
             ("name", t.get("name", "")), ("job", t["job"]), ("cron", t["cron"]), ("enabled", t["enabled"]),
             ("sprint", t["sprint"]), ("fires", len(fires)), ("first_fire", fires[0] if fires else None),
             ("last_fire", fires[-1] if fires else None), ("last_status", last.get("status") or None),
-            ("last_fired_at", parse_gh_time(last.get("fired_at"))),
-            ("last_finished_at", parse_gh_time(last.get("finished_at"))),
+            ("last_fired_at", fired), ("last_finished_at", finished),
+            # the last run's duration in whole seconds; None without both times or when they run backwards
+            ("last_duration_s", int((finished - fired).total_seconds())
+             if fired is not None and finished is not None and finished >= fired else None),
             ("failure_reason", last.get("failure_reason") or None),
         ]))
     by_job = collections.OrderedDict()
@@ -1742,6 +1840,29 @@ def health_view(doc, since, until):
     return {"source": doc.get("source", ""), "read_at": parse_gh_time(doc.get("read_at")),
             "triggers": triggers, "by_job": by_job, "failures": failures,
             "disabled": list(doc.get("disabled") or []), "doc": doc}
+
+
+def noop_runs_of(health, pr_rows):
+    """The routines whose last run was likely a no-op (MODEL v4.8.0): status SUCCEEDED, a duration under
+    NOOP_SECONDS, a job in NOOP_JOBS (never WEEKLY), no routine PR of that job created from fired_at to
+    finished_at + NOOP_GRACE, and, for SEED and SWEEP, no PR of that job open at fired_at. [] without a
+    health input; a trigger without both times is never flagged."""
+    if health is None:
+        return []
+    out = []
+    for t in health["triggers"]:
+        fired, finished, took = t["last_fired_at"], t["last_finished_at"], t.get("last_duration_s")
+        if t["job"] not in NOOP_JOBS or t["last_status"] != "SUCCEEDED" or took is None or took >= NOOP_SECONDS:
+            continue
+        mine = [r for r in pr_rows if is_routine(r["parsed"]) and r["parsed"]["job"] == t["job"]]
+        if any(r["created"] is not None and fired <= r["created"] <= finished + NOOP_GRACE for r in mine):
+            continue
+        if t["job"] in NOOP_OPEN_PR_JOBS and any(
+                r["created"] is not None and r["created"] < fired and (r["closed"] is None or r["closed"] >= fired)
+                for r in mine):
+            continue
+        out.append(t)
+    return out
 
 
 def fires_between(health, start, end, sprint=None, jobs=None):
@@ -1762,6 +1883,7 @@ def build(repo_dir, ref, since, until, prs_doc, health_doc=None, allow_stale_ref
     load_tools(repo_dir)
     if until <= since:
         raise ToolError("--until must be after --since")
+    need_full_history(repo_dir)
     repo = Repo(repo_dir)
     ref_sha = repo.resolve(ref)
     commits = repo.history(ref_sha)
@@ -1979,6 +2101,7 @@ def build(repo_dir, ref, since, until, prs_doc, health_doc=None, allow_stale_ref
 
     # ---------------- schedule health
     health = health_view(health_doc, since, until)
+    noop_runs = noop_runs_of(health, pr_rows) if prs_doc is not None else []
     gap_fires = None
     if gap is not None and health is not None:
         gap_fires = {"base": fires_between(health, gap[1], gap[2], False, JOBS),
@@ -2109,7 +2232,7 @@ def build(repo_dir, ref, since, until, prs_doc, health_doc=None, allow_stale_ref
         "abandoned": abandoned, "merged_after_ref": merged_after_ref, "merged_after_until": merged_after_until,
         "stale": stale, "merged_by_missing": merged_by_missing, "latency_bot": latency_bot,
         "latency_human": latency_human, "latency_human_prior": latency_human_prior, "gap": gap, "gap_fires": gap_fires,
-        "day_grid": day_grid, "health": health, "health_problem": health_problem,
+        "day_grid": day_grid, "health": health, "health_problem": health_problem, "noop_runs": noop_runs,
         "workflow_failures": [f for f in workflow_failures if in_window(f[0])], "holds": holds,
         "intakes": intakes, "last_run": last_run, "sweeps_ever": sweeps_ever, "evidence": evidence,
         "zone_changes": zone_changes, "held_now": held_now, "open_items_parsed": en["items"],
@@ -2237,6 +2360,15 @@ def attention(c):
                                          ", ".join("%s %d" % kv for kv in fires.items()) or "0"),
                 "Disable or re-time the sprint routines, or raise the usage limit.",
                 min((t["last_fired_at"] for t in sprint_fail if t["last_fired_at"]), default=None))
+    for t in c.get("noop_runs") or []:
+        add(fix, "medium" if t["sprint"] else "high", "%s routine '%s': likely no-op run" % (t["job"], t["name"]),
+            "Last run SUCCEEDED in %d s (fired %s, finished %s); no %s PR was opened from its fire to %d min after it "
+            "finished%s. A session that cannot see the repository ends this way (inference)." % (
+                t["last_duration_s"], fmt_when(t["last_fired_at"], True), fmt_when(t["last_finished_at"]), t["job"],
+                int(NOOP_GRACE.total_seconds() // 60),
+                ", and none was open at its fire" if t["job"] in NOOP_OPEN_PR_JOBS else ""),
+            "Check the routine's repository and environment in the Routines settings, then fire it once and watch "
+            "for its PR.", t["last_fired_at"])
     sweep = c["last_run"].get("SWEEP")
     if sweep is None or c["until"] - sweep[0] > SWEEP_STALE:
         watch = [r for r in en["shortlist"] if r["section"] in ("WATCH", "BUY")]
@@ -2571,8 +2703,21 @@ def datasets(c, generated_at):
     en_pending = len(en["overlay"]) + len(en["keyless_rows"])
     blocks = sorted({t for t in list(st["retest_lines"]) + list(en["retest_lines"])},
                     key=lambda t: (version_tuple(t) or (0, 0, 0), t))
-    backlog = [(block_label(t), lines(st, t), lines(en, t), "lines", "bullets in queue/TODO.md %s" % t)
-               for t in blocks]
+    def partial(state, title=None):
+        return [x for t, xs in state["retest_partial"].items() if title is None or t == title for x in xs]
+
+    def partial_note(title):
+        found = partial(en, title)
+        return ("; %d marked partial at the end, still open: %s" % (
+            len(found), ", ".join("%s (%s)" % (k, d) for k, d, _e in found))) if found else ""
+    backlog = [(block_label(t), lines(st, t), lines(en, t), "lines",
+                "bullets in queue/TODO.md %s%s" % (t, partial_note(t))) for t in blocks]
+    st_partial, en_partial = partial(st), partial(en)
+    if st_partial or en_partial:
+        backlog.append(("Re-test lines marked partial", len(st_partial), len(en_partial), "lines",
+                        "▶ Method re-tests lines a run left part-done (' — partial {date}'), counted open above; end: "
+                        + (", ".join("%s (%s%s)" % (k, d, (", " + e) if e else "") for k, d, e in en_partial)
+                           or "none")))
     st_items, en_items = st["items"], en["items"]
     backlog += [
         ("Distinct re-test keys", len(st["retest_union"]), len(en["retest_union"]), "keys",
@@ -3260,9 +3405,12 @@ def render_md(c):
         L.append("**Trigger last runs** (health input; only the last run of each trigger is visible, so a failure "
                  "here says nothing about the earlier runs):")
         L.append("")
-        L += table(("Trigger", "Job", "Sprint", "Cron", "Fires in period", "Last run", "Fired", "Failure reason"),
+        L += table(("Trigger", "Job", "Sprint", "Cron", "Fires in period", "Last run", "Fired", "Took",
+                    "Failure reason"),
                    [(t["name"], t["job"], "yes" if t["sprint"] else "no", t["cron"], t["fires"], t["last_status"],
-                     fmt_when(t["last_fired_at"]), t["failure_reason"] or "-") for t in h["triggers"]])
+                     fmt_when(t["last_fired_at"]),
+                     ("%d s" % t["last_duration_s"]) if t.get("last_duration_s") is not None else "n/a",
+                     t["failure_reason"] or "-") for t in h["triggers"]])
         L.append("")
         if h["disabled"]:
             L.append("Disabled triggers (not expanded): " + "; ".join(h["disabled"]) + ".")
@@ -3480,6 +3628,7 @@ def render_all(ctx, generated_at):
 
 
 def cmd_render(args):
+    need_full_history(args.repo_dir)          # up front: the first line WEEKLY reports names the fix
     since, until = parse_when(args.since), parse_when(args.until)
     for path, what in ((args.out_dir, "--out-dir"), (args.out_md, "--out-md"), (args.out_json, "--out-json")):
         if path:

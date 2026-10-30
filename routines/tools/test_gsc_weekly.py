@@ -23,7 +23,12 @@ the kpis, advice words, private figures), the notification line, dash-writes (an
 published test's upper bound, an incomplete fetch refused, held zones compared by their zone word, private
 figures scrubbed from copied text, outputs refused inside the repository, byte-identical re-renders
 except generated_at, and that the tool's own source passes the routine guard hook's code scan.
+v4.8.0: INTAKE's weekly alarm in the window object (the Monday run at or after 06:00 Prague after an
+unpublished week, across both DST changes; meta_ok), the shallow-clone refusal on a real depth-1 clone
+and WEEKLY.md's step-1 unshallow fetch healing it, the last-run duration and the likely no-op run under
+Fix (and the optional fired_at/finished_at), and version-generic re-test blocks with partial lines.
 """
+import collections
 import copy
 import datetime
 import io
@@ -272,6 +277,27 @@ TODO_TEXT = """# TODO
 
 
 
+# The v4.8.0 release block, read first, with a line a run left part-done (MODEL v4.8.0 two-run resume), an
+# unversioned block (not a re-test block) and a future version.
+TODO_V480 = """## ▶ Method re-tests v4.8.0
+
+*intro*
+
+- `KSPI` — customer funds net out as NIBCL — partial 2026-11-01 (queue/evidence/KSPI_2026-11-01_INCOMPLETE.md)
+- `PYPL` — customer funds — partial 2026-11-02
+- `6383.T` — growth n.m.: endpoint read governs
+
+## ▶ Method re-tests (draft, no version)
+
+- `NOPE` — not a release block
+
+## ▶ Method re-tests v10.0.0
+
+- `ZZZ` — a future release
+
+"""
+
+
 class QueueAndTodoTests(unittest.TestCase):
     def test_blocks_and_retests(self):
         self.assertEqual([t for t, _b in gw.todo_blocks(TODO_TEXT)],
@@ -284,6 +310,31 @@ class QueueAndTodoTests(unittest.TestCase):
         self.assertEqual(gw.retest_owed(lists, "6383.T", "v4.5.1"), ["v4.6.0"])
         self.assertEqual(gw.retest_owed(lists, "NVS", "v4.5.3"), [])          # v4.5.0 block already run
         self.assertEqual(gw.retest_note(lists, "NVS", "v4.5.3"), "re-test done, line clears at INTAKE")
+
+    def test_version_generic_blocks_and_partial_lines(self):
+        text = TODO_TEXT.replace("## ▶ Method re-tests v4.6.0", TODO_V480 + "## ▶ Method re-tests v4.6.0")
+        titles = [t for t, _b in gw.todo_blocks(text)]
+        self.assertEqual(titles[2:], ["▶ Method re-tests v4.8.0", "▶ Method re-tests (draft, no version)",
+                                      "▶ Method re-tests v10.0.0", "▶ Method re-tests v4.6.0",
+                                      "▶ Method re-tests v4.5.0"])
+        keys = gw.retest_keys(text)
+        self.assertEqual(list(keys), ["▶ Method re-tests v4.8.0", "▶ Method re-tests v10.0.0",
+                                      "▶ Method re-tests v4.6.0", "▶ Method re-tests v4.5.0"])  # no version: no block
+        self.assertEqual(keys["▶ Method re-tests v4.8.0"], ["KSPI", "PYPL", "6383.T"])
+        # a partial line is open: it counts in its block and stays owed
+        self.assertEqual(dict(gw.retest_lines(text))["▶ Method re-tests v4.8.0"], 3)
+        self.assertEqual(gw.retest_partial(text)["▶ Method re-tests v4.8.0"],
+                         [("KSPI", "2026-11-01", "queue/evidence/KSPI_2026-11-01_INCOMPLETE.md"),
+                          ("PYPL", "2026-11-02", None)])
+        self.assertEqual(gw.retest_partial(text)["▶ Method re-tests v4.6.0"], [])
+        lists = gw.retest_lists_of(text)
+        self.assertEqual(lists["6383.T"], ["v4.8.0", "v4.6.0", "v4.5.0"])
+        self.assertEqual(gw.retest_owed(lists, "6383.T", "v4.6.0"), ["v4.8.0"])
+        self.assertEqual(gw.retest_owed(lists, "KSPI", "v4.6.0"), ["v4.8.0"])
+        self.assertEqual(gw.retest_owed(lists, "KSPI", "v4.8.0"), [])
+        self.assertEqual(gw.retest_note(lists, "PYPL", "v4.7.0"), "re-test v4.8.0 owed")
+        self.assertEqual(gw.retest_owed(lists, "ZZZ", "v4.8.0"), ["v10.0.0"])
+        self.assertNotIn("NOPE", lists)
 
     def test_open_items(self):
         items = [gw.parse_open_item(x) for x in gw.todo_block(TODO_TEXT, "▶ Open items (register)")]
@@ -719,6 +770,76 @@ class WindowTests(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertIn("not an ISO time", err)
 
+    def alarm(self, at, meta_at="-", meta_by="-"):
+        return gw.window_doc(when(at), meta_at, meta_by)["alarm"]
+
+    def test_alarm_on_the_monday_after_a_missed_week(self):
+        # the week Sun 25 Oct 08:30 – Sun 1 Nov 08:30 2026 (CET) with no report
+        for at, want in (("2026-11-01T09:10+01:00", False),     # Sunday: WEEKLY's own day
+                         ("2026-11-01T21:00+01:00", False),
+                         ("2026-11-02T05:59+01:00", False),     # Monday before 06:00
+                         ("2026-11-02T05:59:59+01:00", False),
+                         ("2026-11-02T06:00+01:00", True),      # the Monday INTAKE
+                         ("2026-11-02T06:03:41+01:00", True),
+                         ("2026-11-02T05:00:00Z", True),        # 06:00 Prague written in UTC
+                         ("2026-11-02T23:59+01:00", True),
+                         ("2026-11-03T06:00+01:00", False),     # Tuesday: never again for that week
+                         ("2026-11-07T18:00+01:00", False),     # the Saturday sprint INTAKE
+                         ("2026-11-08T06:00+01:00", False)):    # Sunday daily INTAKE (before the new week's end)
+            self.assertEqual(self.alarm(at), want, at)
+        doc = gw.window_doc(when("2026-11-02T06:00+01:00"), "-", "-")
+        self.assertEqual((doc["period"], doc["published"], doc["meta_ok"]),
+                         ("Sun 25 Oct – Sun 1 Nov 2026", False, False))
+        self.assertNotIn("alarm", gw.window_doc(when("2026-11-02T06:00+01:00")))      # WEEKLY step 2: no meta
+        # a stamp from the week before is not this week's report
+        self.assertTrue(self.alarm("2026-11-02T06:00+01:00", "2026-10-25T09:12:00+01:00", gw.WEEKLY_BY))
+
+    def test_published_or_attended_stamp(self):
+        mon = "2026-11-02T06:00+01:00"
+        self.assertFalse(self.alarm(mon, "2026-11-01T09:14:02+01:00", gw.WEEKLY_BY))   # published Sunday
+        self.assertFalse(self.alarm(mon, "2026-11-01T07:30:00Z", gw.WEEKLY_BY))        # stamp == until
+        self.assertFalse(self.alarm(mon, "2026-11-02T06:04:59+01:00", gw.WEEKLY_BY))   # within 5 min of the run
+        self.assertTrue(self.alarm(mon, "2026-11-01T09:14:02+01:00", "Claude (attended)"))   # attended stamp only
+        self.assertTrue(self.alarm(mon, "2026-11-02T06:05:01+01:00", gw.WEEKLY_BY))    # a stamp after the run
+        doc = gw.window_doc(when(mon), "2026-11-01T09:14:02+01:00", "Claude (attended)")
+        self.assertEqual((doc["published"], doc["meta_ok"], doc["alarm"]), (False, True, True))
+        doc = gw.window_doc(when(mon), "not a time", gw.WEEKLY_BY)
+        self.assertEqual((doc["published"], doc["meta_ok"], doc["alarm"]), (False, False, True))
+        self.assertFalse(gw.window_doc(when(mon), "2026-11-01T09:14:02+01:00", "-")["meta_ok"])
+        self.assertTrue(gw.window_doc(when(mon), "2026-11-01T09:14:02+01:00", gw.WEEKLY_BY)["meta_ok"])
+        self.assertFalse(gw.window_doc(when("2026-11-03T06:00+01:00"), "not a time", "-")["alarm"])
+
+    def test_alarm_across_dst(self):
+        # autumn: clocks went back on Sun 25 Oct 2026 (03:00 CEST -> 02:00 CET); the week ends 08:30 CET
+        self.assertEqual(gw.window_doc(when("2026-10-26T06:00+01:00"), "-", "-")["until"], "2026-10-25T08:30:00+01:00")
+        self.assertTrue(self.alarm("2026-10-26T06:00+01:00"))
+        self.assertTrue(self.alarm("2026-10-26T05:00:00Z"))
+        self.assertFalse(self.alarm("2026-10-26T04:59:59Z"))
+        self.assertFalse(self.alarm("2026-10-26T06:00+02:00"))        # 05:00 CET written with the summer offset
+        self.assertFalse(self.alarm("2026-10-25T21:40+01:00"))        # the Sunday catch-up's day
+        # spring: clocks go forward on Sun 28 Mar 2027 (02:00 CET -> 03:00 CEST); the week ends 08:30 CEST
+        self.assertEqual(gw.window_doc(when("2027-03-29T06:00+02:00"), "-", "-")["until"], "2027-03-28T08:30:00+02:00")
+        self.assertTrue(self.alarm("2027-03-29T06:00+02:00"))
+        self.assertTrue(self.alarm("2027-03-29T04:00:00Z"))
+        self.assertFalse(self.alarm("2027-03-29T03:59:59Z"))
+        self.assertTrue(self.alarm("2027-03-29T06:00+01:00"))         # 07:00 CEST
+        self.assertFalse(self.alarm("2027-03-30T06:00+02:00"))
+        self.assertFalse(self.alarm("2027-03-29T06:00+02:00", "2027-03-28T09:12:00+02:00", gw.WEEKLY_BY))
+
+    def test_cli_alarm(self):
+        code, out, _err = run_main(["window", "--at", "2026-11-02T06:01:12+01:00", "--meta-at", "-", "--meta-by", "-"])
+        doc = json.loads(out)
+        self.assertEqual((code, doc["published"], doc["meta_ok"], doc["alarm"]), (0, False, False, True))
+        code, out, _err = run_main(["window", "--at", "2026-11-02T06:01:12+01:00", "--meta-at",
+                                    "2026-11-01T09:14:02+01:00", "--meta-by", gw.WEEKLY_BY])
+        self.assertEqual((code, json.loads(out)["alarm"]), (0, False))
+        # v4.8.0 review: a writer other than the routine is passed as 'other' (INTAKE step 0, WEEKLY step 3):
+        # a readable stamp, never published, so the Monday run alarms with 'no report'.
+        code, out, _err = run_main(["window", "--at", "2026-11-02T06:01:12+01:00", "--meta-at",
+                                    "2026-11-01T09:14:02+01:00", "--meta-by", "other"])
+        doc = json.loads(out)
+        self.assertEqual((code, doc["published"], doc["meta_ok"], doc["alarm"]), (0, False, True, True))
+
 
 class HealthInputTests(unittest.TestCase):
     def test_array_form_and_queue_seed(self):
@@ -761,6 +882,26 @@ class HealthInputTests(unittest.TestCase):
         self.assertEqual(([t["name"] for t in h["failures"]], h["by_job"]["SWEEP"]["usage_limit"]), (["GSC SWEEP"], 1))
         self.assertEqual(doc["disabled"], ["GSC BURST"])
 
+    def test_optional_run_times(self):
+        doc = gw.load_health(HEALTH)                          # no finished_at at all: still read
+        h = gw.health_view(doc, when("2026-10-18T08:30+02:00"), when("2026-10-25T08:30+01:00"))
+        self.assertTrue(all(t["last_duration_s"] is None for t in h["triggers"]))
+        path = os.path.join(TMP, "health_times.json")
+        rows = [health_row("GSC INTAKE", "INTAKE", "SUCCEEDED", "2026-10-26T05:00:10Z", "2026-10-26T05:07:40Z"),
+                health_row("GSC SWEEP", "SWEEP", "SUCCEEDED", "2026-10-24T04:30:00Z", None),
+                health_row("GSC ODD", "REVIEW", "SUCCEEDED", "2026-10-24T04:30:00Z", "2026-10-24T04:29:00Z")]
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(rows, fh)
+        h = gw.health_view(gw.load_health(path), when("2026-10-18T08:30+02:00"), when("2026-10-25T08:30+01:00"))
+        self.assertEqual([t["last_duration_s"] for t in h["triggers"]], [450, None, None])
+        for field, value in (("fired_at", "yesterday"), ("finished_at", "2026-13-01T00:00:00Z"), ("finished_at", 5)):
+            bad = [dict(rows[0], last_run=dict(rows[0]["last_run"], **{field: value}))]
+            with open(path, "w", encoding="utf-8") as fh:
+                json.dump(bad, fh)
+            with self.assertRaises(gw.ToolError, msg=repr(value)) as caught:
+                gw.load_health(path)
+            self.assertIn("bad last_run " + field, str(caught.exception))
+
     def test_bad_input(self):
         for bad in ({"triggers": [{"name": "x", "job": "DIGEST", "cron": "0 0 * * *", "enabled": True,
                                    "sprint": False}]}, {"no": "triggers"}, "text",
@@ -772,6 +913,109 @@ class HealthInputTests(unittest.TestCase):
                 json.dump(bad, fh)
             with self.assertRaises(gw.ToolError, msg=repr(bad)):
                 gw.load_health(path)
+
+
+def health_row(name, job, status, fired, finished, sprint=False, cron="CRON_TZ=Europe/Prague 0 6 * * *"):
+    """One routine as WEEKLY step 5 writes it, with the last run's fire and finish times."""
+    return {"name": name, "job": job, "cron": cron, "enabled": True, "sprint": sprint,
+            "last_run": {"status": status, "fired_at": fired, "finished_at": finished, "failure_reason": None}}
+
+
+def pr_rows_of(prs):
+    """The build's pr_rows from raw PRs."""
+    return [{"pr": pr, "parsed": gw.parse_title(pr.get("title")), "created": gw.parse_gh_time(pr.get("created_at")),
+             "merged": gw.parse_gh_time(pr.get("merged_at")), "closed": gw.parse_gh_time(pr.get("closed_at"))}
+            for pr in prs]
+
+
+# The smallest context attention() reads: nothing to report but what a test puts in.
+ATTENTION_BASE = {
+    "en": {"rows": [], "shortlist": [], "overlay": {}, "keyless_rows": [], "ranked": [], "overdue_watch": [],
+           "dnaf_after": {}},
+    "report_date": datetime.date(2026, 11, 1), "until": when("2026-11-01T08:30+01:00"), "held_now": [],
+    "open_items_parsed": [], "held_prs": [], "zone_changes": [], "events": [], "health_problem": None, "health": None,
+    "noop_runs": [], "last_run": {"SWEEP": (when("2026-10-31T07:00+01:00"), 302, "60/62 priced")}, "sweeps_ever": 1,
+    "gap": None, "gap_fires": None, "stopped": [], "incomplete_prs": [], "abandoned": [], "workflow_failures": [],
+    "finished_waiting": [], "open_old": [], "running_old": [], "watched_changes": [], "superseded": [], "timeline": [],
+}
+
+
+class NoopRunTests(unittest.TestCase):
+    """A routine whose last run SUCCEEDED in under 120 s and opened no PR of its job (MODEL v4.8.0)."""
+    PERIOD = (when("2026-10-25T08:30+01:00"), when("2026-11-01T08:30+01:00"))
+    ROWS = [
+        # flagged: 45 s, no ANALYSE PR (an INTAKE PR in its span does not count)
+        health_row("GSC ANALYSE", "ANALYSE", "SUCCEEDED", "2026-10-29T20:30:20Z", "2026-10-29T20:31:05Z"),
+        # not flagged: its REVIEW PR (a HELD one) opened 3 min after the fire
+        health_row("GSC REVIEW", "REVIEW", "SUCCEEDED", "2026-10-29T05:10:00Z", "2026-10-29T05:10:50Z"),
+        # not flagged: 120 s is not under 120 s; flagged: 119 s
+        health_row("GSC INTAKE", "INTAKE", "SUCCEEDED", "2026-10-30T05:00:00Z", "2026-10-30T05:02:00Z"),
+        health_row("GSC SPRINT INTAKE - Sat 18:00", "INTAKE", "SUCCEEDED", "2026-10-31T17:00:00Z",
+                   "2026-10-31T17:01:59Z", sprint=True),
+        # not flagged: a SWEEP PR was open at the fire (SWEEP stops at once, legitimately)
+        health_row("GSC SWEEP", "SWEEP", "SUCCEEDED", "2026-10-31T05:30:00Z", "2026-10-31T05:30:40Z"),
+        # flagged: the only SEED PR closed before the fire
+        health_row("GSC QUEUE-SEED", "QUEUE-SEED", "SUCCEEDED", "2026-10-29T05:20:00Z", "2026-10-29T05:20:30Z"),
+        # never flagged: WEEKLY opens no PR (INTAKE's watchdog covers it); FAILED runs are listed as failures
+        health_row("GSC WEEKLY", "WEEKLY", "SUCCEEDED", "2026-11-01T08:10:00Z", "2026-11-01T08:10:20Z",
+                   cron="CRON_TZ=Europe/Prague 10 9 * * 0"),
+        health_row("GSC ANALYSE B", "ANALYSE", "FAILED", "2026-10-29T22:30:00Z", "2026-10-29T22:30:20Z"),
+        # not flagged: no finish time (an older health file)
+        health_row("GSC ANALYSE C", "ANALYSE", "SUCCEEDED", "2026-10-29T22:31:00Z", None),
+        # grace: a REVIEW PR 9 min after the finish counts, one 11 min after does not
+        health_row("GSC REVIEW B", "REVIEW", "SUCCEEDED", "2026-10-30T20:10:00Z", "2026-10-30T20:11:00Z"),
+        health_row("GSC REVIEW C", "REVIEW", "SUCCEEDED", "2026-10-31T20:10:00Z", "2026-10-31T20:11:00Z"),
+    ]
+    PRS = [
+        raw_pr(300, "GSC INTAKE 2026-10-29 — no register change (0 rows)", "2026-10-29T20:30:40Z",
+               merged="2026-10-29T20:40:00Z"),
+        raw_pr(301, "HELD · GSC REVIEW TROW 2026-10-29 — AVOID (Past); was AVOID", "2026-10-29T05:13:00Z"),
+        raw_pr(302, "GSC SWEEP 2026-10-24 — 60/62 priced · 2 stale", "2026-10-24T05:35:00Z"),
+        raw_pr(303, "GSC SEED 2026-10-26 — 12 candidates", "2026-10-26T05:25:00Z", closed="2026-10-27T10:00:00Z"),
+        raw_pr(304, "GSC REVIEW BMI 2026-10-30 [running]", "2026-10-30T20:20:00Z"),
+        raw_pr(305, "GSC REVIEW NMAN.ST 2026-10-31 [running]", "2026-10-31T20:22:00Z"),
+    ]
+
+    def flagged(self, rows=None, prs=None):
+        path = os.path.join(TMP, "health_noop.json")
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(rows or self.ROWS, fh)
+        h = gw.health_view(gw.load_health(path), *self.PERIOD)
+        return h, [t["name"] for t in gw.noop_runs_of(h, pr_rows_of(self.PRS if prs is None else prs))]
+
+    def test_the_rule(self):
+        h, names = self.flagged()
+        self.assertEqual(names, ["GSC ANALYSE", "GSC SPRINT INTAKE - Sat 18:00", "GSC QUEUE-SEED", "GSC REVIEW C"])
+        by = {t["name"]: t for t in h["triggers"]}
+        self.assertEqual((by["GSC ANALYSE"]["last_duration_s"], by["GSC INTAKE"]["last_duration_s"],
+                          by["GSC SPRINT INTAKE - Sat 18:00"]["last_duration_s"]), (45, 120, 119))
+        # without the open SWEEP PR the quick SWEEP is flagged too
+        _h, names = self.flagged(prs=[p for p in self.PRS if p["number"] != 302])
+        self.assertIn("GSC SWEEP", names)
+        # a SWEEP PR open at the fire spares SWEEP, never ANALYSE
+        _h, names = self.flagged(prs=self.PRS + [raw_pr(306, "GSC ANALYSE ABC 2026-10-28 — WATCH (G3)",
+                                                         "2026-10-28T20:00:00Z")])
+        self.assertIn("GSC ANALYSE", names)
+        self.assertEqual(gw.noop_runs_of(None, []), [])
+
+    def test_fix_item(self):
+        h, _names = self.flagged()
+        ctx = {"health": h, "noop_runs": gw.noop_runs_of(h, pr_rows_of(self.PRS))}
+        items = gw.attention(dict(ATTENTION_BASE, **ctx))["Fix"]
+        noop = [x for x in items if x["item"].endswith("likely no-op run")]
+        self.assertEqual([x["item"] for x in noop],          # high by fire time, then the sprint routine (medium)
+                         ["SEED routine 'GSC QUEUE-SEED': likely no-op run",
+                          "ANALYSE routine 'GSC ANALYSE': likely no-op run",
+                          "REVIEW routine 'GSC REVIEW C': likely no-op run",
+                          "INTAKE routine 'GSC SPRINT INTAKE - Sat 18:00': likely no-op run"])
+        self.assertEqual(gw.attention(ATTENTION_BASE)["Fix"], [])
+        first = noop[1]
+        self.assertEqual(first["severity"], "high")
+        self.assertIn("SUCCEEDED in 45 s", first["detail"])
+        self.assertIn("no ANALYSE PR was opened from its fire to 10 min after it finished", first["detail"])
+        seed = next(x for x in noop if x["item"].startswith("SEED"))
+        self.assertIn("none was open at its fire", seed["detail"])
+        self.assertEqual(noop[-1]["severity"], "medium")                      # a sprint routine
 
 
 class WeeklySeriesTests(unittest.TestCase):
@@ -1144,6 +1388,67 @@ class GuardScanTests(unittest.TestCase):
         self.assertNotIn("subprocess.run([\"gh\"", source)
 
 
+def git_in(folder, *args):
+    return subprocess.run(["git", "-C", folder, "-c", "user.name=t", "-c", "user.email=t@example.com",
+                           "-c", "commit.gpgsign=false"] + list(args), check=True, capture_output=True)
+
+
+class ShallowCloneTests(unittest.TestCase):
+    """A routine session starts from a shallow clone; render refuses one up front with one clear line, and
+    WEEKLY.md's step-1 fetch (git fetch --unshallow origin main) heals it (MODEL v4.8.0)."""
+
+    @classmethod
+    def setUpClass(cls):
+        base = tempfile.mkdtemp(prefix="shallow-", dir=TMP)
+        cls.origin, cls.shallow, cls.full = (os.path.join(base, n) for n in ("origin", "shallow", "full"))
+        os.makedirs(cls.origin)
+        git_in(cls.origin, "init", "-q")
+        git_in(cls.origin, "symbolic-ref", "HEAD", "refs/heads/main")
+        for n in range(3):
+            with open(os.path.join(cls.origin, "f.md"), "w", encoding="utf-8") as fh:
+                fh.write("v%d\n" % n)
+            git_in(cls.origin, "add", "f.md")
+            git_in(cls.origin, "commit", "-q", "-m", "GSC: commit %d (#%d)" % (n, n + 1))
+        url = "file://" + cls.origin
+        subprocess.run(["git", "clone", "-q", "--depth", "1", url, cls.shallow], check=True, capture_output=True)
+        subprocess.run(["git", "clone", "-q", url, cls.full], check=True, capture_output=True)
+
+    def test_render_refuses_a_shallow_clone_first(self):
+        self.assertEqual(git_in(self.shallow, "rev-parse", "--is-shallow-repository").stdout.strip(), b"true")
+        with self.assertRaises(gw.ToolError) as caught:
+            gw.need_full_history(self.shallow)
+        self.assertEqual(str(caught.exception), gw.SHALLOW_ERROR)
+        self.assertEqual(gw.SHALLOW_ERROR, "shallow clone: run git fetch --unshallow origin main "
+                                           "(routines/WEEKLY.md step 1)")
+        # the CLI: exit 2, and the first error line names the fix (WEEKLY's not-published reason)
+        code, _out, err = run_main(["render", "--repo-dir", self.shallow, "--ref", "origin/main", "--since",
+                                    "2026-10-25T08:30+01:00", "--until", "2026-11-01T08:30+01:00", "--fetch-dir",
+                                    os.path.join(TMP, "no-such-fetch"), "--out-dir", os.path.join(TMP, "sh-out")])
+        self.assertEqual(code, 2)
+        self.assertEqual(err.splitlines()[0], "gsc_weekly: " + gw.SHALLOW_ERROR)
+        with self.assertRaises(gw.ToolError) as caught:
+            gw.build(self.shallow, "origin/main", when("2026-10-25T08:30+01:00"), when("2026-11-01T08:30+01:00"), None)
+        self.assertEqual(str(caught.exception), gw.SHALLOW_ERROR)
+        gw.need_full_history(self.full)                        # a full clone passes
+
+    def test_the_weekly_step_1_fetch_heals_it(self):
+        with open(os.path.join(REPO, "routines", "WEEKLY.md"), encoding="utf-8") as fh:
+            playbook = fh.read()
+        cmd = next(c for c in __import__("re").findall(r"`([^`\n]+)`", playbook)
+                   if c.startswith('if [ "$(git rev-parse --is-shallow-repository)" = true ]'))
+        fetch, _sep, switch = cmd.partition(" && ")
+        self.assertTrue(switch.startswith('git switch --no-track -c "claude/gsc-weekly-{D}-{T}" origin/main'), switch)
+        healed = os.path.join(os.path.dirname(self.shallow), "healed")
+        subprocess.run(["git", "clone", "-q", "--depth", "1", "file://" + self.origin, healed], check=True,
+                       capture_output=True)
+        self.assertEqual(git_in(healed, "rev-list", "--count", "origin/main").stdout.strip(), b"1")
+        subprocess.run(["bash", "-c", fetch], cwd=healed, check=True, capture_output=True)
+        self.assertEqual(git_in(healed, "rev-parse", "--is-shallow-repository").stdout.strip(), b"false")
+        self.assertEqual(git_in(healed, "rev-list", "--count", "origin/main").stdout.strip(), b"3")
+        gw.need_full_history(healed)
+        subprocess.run(["bash", "-c", fetch], cwd=healed, check=True, capture_output=True)   # a full clone: plain fetch
+
+
 FIXED_SHA = "d989ade0ec1ca584713956ebfc66791fcf23d915"       # origin/main 2026-10-19 23:44 Prague (PR 149)
 OLDER_SHA = "58df8c32872ba5b4626645594274b79a0ea72e97"       # one commit earlier (PR 139)
 INTAKE_SHA = "e04d7d12d444832e2bf946e26eceadf941839cb4"      # origin/main 2026-10-20 06:08 Prague (PR 150)
@@ -1393,6 +1698,42 @@ class EndToEndTests(unittest.TestCase):
             d.pop("generated_at")
             d["datasets"]["meta"][0].pop("generated_at")
         self.assertEqual(a, b)
+
+    def test_partial_retest_lines_are_listed_and_counted_open(self):
+        self.assertFalse(any(b["item"] == "Re-test lines marked partial" for b in self.data["backlog"]))
+        ctx = copy.copy(self.ctx)
+        en = dict(self.ctx["en"])
+        title = next(iter(en["retest_lines"]))
+        en["retest_partial"] = collections.OrderedDict((t, []) for t in en["retest_lines"])
+        en["retest_partial"][title] = [("KSPI", "2026-11-01", "queue/evidence/KSPI_2026-11-01_INCOMPLETE.md")]
+        ctx["en"] = en
+        data = gw.jsonable(gw.datasets(ctx, self.gen))
+        self.assertEqual(gw.check_datasets(gw.scrub_private(collections.OrderedDict(
+            (n, data[n] if n != "summary" else []) for n in gw.DATASET_IDS))), [])
+        row = next(b for b in data["backlog"] if b["item"] == "Re-test lines marked partial")
+        self.assertEqual((row["start"], row["end"]), (0, 1))
+        self.assertIn("KSPI (2026-11-01, queue/evidence/KSPI_2026-11-01_INCOMPLETE.md)", row["note"])
+        block = next(b for b in data["backlog"] if b["note"].startswith("bullets in queue/TODO.md " + title))
+        self.assertEqual(block["end"], en["retest_lines"][title])                   # still counted
+        self.assertIn("1 marked partial at the end, still open: KSPI (2026-11-01)", block["note"])
+
+    def test_noop_run_from_the_health_input(self):
+        rows = HEALTH_DOC + [health_row("GSC ANALYSE QUICK", "ANALYSE", "SUCCEEDED", "2026-10-16T19:30:00Z",
+                                        "2026-10-16T19:30:40Z"),
+                             health_row("GSC REVIEW QUICK", "REVIEW", "SUCCEEDED", "2026-10-19T04:05:00Z",
+                                        "2026-10-19T04:06:00Z")]
+        path = os.path.join(TMP, "health_e2e_noop.json")
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(rows, fh)
+        ctx = gw.build(REPO, FIXED_SHA, when(SINCE), when(UNTIL), self.doc, gw.load_health(path))
+        # REVIEW QUICK opened PR 144 (COLO-B.CO) at 04:06:30Z, inside its span; ANALYSE QUICK opened nothing
+        self.assertEqual([t["name"] for t in ctx["noop_runs"]], ["GSC ANALYSE QUICK"])
+        fix = [x["item"] for x in ctx["attention"]["Fix"]]
+        self.assertIn("ANALYSE routine 'GSC ANALYSE QUICK': likely no-op run", fix)
+        self.assertEqual(self.ctx["noop_runs"], [])                                # no finish times: no flag
+        md = gw.render_md(ctx)
+        self.assertIn("| Took |", md)
+        self.assertIn("| 40 s |", md)
 
     def test_bad_health_is_reported_not_fatal(self):
         ctx = gw.build(REPO, FIXED_SHA, when(SINCE), when(UNTIL), self.doc, None, False,

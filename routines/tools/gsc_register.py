@@ -22,7 +22,8 @@ Subcommands
   sweep-scope                        the keys a SWEEP prices, with endpoint symbols (and
                                      holding_keys)
   check [--base REV] [--tree REV]    INTAKE step 7: register integrity
-  lint-memo MEMO                     the v4.5.0 front-matter re-measure
+  lint-memo MEMO                     the v4.5.0 front-matter re-measure (from v4.8.0 also
+                                     roce_worst and fcfroce_worst, IDEAS C9)
   lint-row ROWFILE                   a row file against its name, its title and what
                                      row-from-memo --table prints for its memo (v4.5.2)
   rebuild --base REV --out DIR [--assisted FILE] [--version vN --date D]
@@ -220,6 +221,19 @@ NEW_MEMO_FIELDS = (
     "core_fx", "core_fx_date", "core_ratio",
     "past_reason", "future_reason", "sf_reason", "next_review_short",
 )
+# MODEL v4.8.0 section 6.1 (IDEAS C9): the governing return levels - the lower of the two
+# windows' worst-of-four averages (worst of eight under G6, section 2·1A Level bars), as a
+# percent ('19.3%', '-8.7%') or n.m. Every ANALYSE and REVIEW memo produced under v4.8.0 or
+# later writes them, in this order just before past_reason; older memos lack them (a memo is
+# never edited in place). They are no register column: the register page (gsc_site.py) reads
+# them from the memo it already opens, and nothing else consumes them.
+RETURN_FIELDS = ("roce_worst", "fcfroce_worst")
+RETURN_FIELDS_FROM = (4, 8, 0)
+RETURN_LEVEL_RE = re.compile(r"^-?\d{1,4}\.\d%$", re.ASCII)      # one decimal (section 5 rounding)
+# The P2 and P3 floors a graded Past's levels must reach: (ROCE, FCFROCE) in percent. A
+# necessary check only - the fields are rounded to one decimal, so a printed level below its
+# floor cannot have cleared it.
+RETURN_FLOORS = {"STRONG": (Decimal("15"), Decimal("8")), "ADEQUATE": (Decimal("10"), Decimal("5.3"))}
 CORE_FIELDS = ("core_period", "core_currency", "core_unit", "core_shares_diluted", "core_debt_eq",
                "core_cash", "core_oi", "core_oi_basis", "core_fcf", "core_fcf_basis", "core_fx",
                "core_fx_date", "core_ratio")
@@ -227,7 +241,7 @@ CORE_NUMBERS = ("core_shares_diluted", "core_debt_eq", "core_cash", "core_oi", "
                 "core_fx", "core_ratio")
 MULTIPLES = ("mcap_fcf", "ev_oi", "ev_oi_all_cash")
 # Fields a Gate-0 (DNAF) memo may set to n.m. (MODEL section 6.4).
-DNAF_NM_FIELDS = set(CORE_FIELDS) | set(MULTIPLES) | set(R10_FIELDS) | {
+DNAF_NM_FIELDS = set(CORE_FIELDS) | set(MULTIPLES) | set(R10_FIELDS) | set(RETURN_FIELDS) | {
     "trigger", "past_reason", "future_reason", "sf_reason", "px", "px_unit", "px_date",
     "next_review_short", "quality_past", "quality_future", "sf", "cheapness", "lens"}
 # MODEL section 6.1 core_oi_basis and core_fcf_basis grammar for memos at v4.5.0 or later:
@@ -2024,6 +2038,11 @@ def lint_memo(memo_rel, text):
                                    "quality_past", "quality_future", "sf", "cheapness"):
         if fm.get(name) in (None, ""):
             fails.append("%s: missing" % name)
+    if model_at_least(fm.get("model_version"), RETURN_FIELDS_FROM):
+        for name in RETURN_FIELDS:
+            if fm.get(name) in (None, ""):
+                fails.append("%s: missing (MODEL v4.8.0 section 6.1: every memo produced under v4.8.0 or later "
+                             "writes it)" % name)
     if fails:
         return fails, warns
     for name, value in fm.items():
@@ -2090,6 +2109,8 @@ def lint_memo(memo_rel, text):
         elif lens != "FI" and measure == "ROE":
             fails.append("past_reason: %r — ROE is the FI lens; lens %s grades ROCE (a group's Past is one "
                          "consolidated or look-through record)" % (pr, lens))
+    if model_at_least(fm.get("model_version"), RETURN_FIELDS_FROM):
+        fails += lint_return_fields(fm, nm_ok)
     # Price, trigger and units.
     unit = fm["px_unit"]
     if not nm_ok("px_unit") and not UNIT_RE.match(unit):
@@ -2173,6 +2194,58 @@ def lint_memo(memo_rel, text):
             if not (is_num(value) or value == NM):
                 fails.append("%s: %r is not a number in px_unit or n.m." % (name, value))
     return fails, warns
+
+
+def lint_return_fields(fm, nm_ok):
+    """MODEL v4.8.0 section 6.1 (IDEAS C9): roce_worst and fcfroce_worst are the governing
+    levels - the lower of the two windows' worst-of-four averages, worst of eight under G6 -
+    as '{x}%' (one decimal, section 5; ASCII minus) or n.m. A section 6.4 Gate-0 (DNAF) memo
+    writes n.m. for both, and so does the FI lens (ROE is graded, P24; FCFROCE is n.m.,
+    section 2·1A). Under STD, roce_worst is the level past_reason prints where it prints
+    '{x}% ROCE' (at that level's precision), and a STRONG or ADEQUATE Past has both levels at
+    or above its P2 or P3 floors. Returns failures."""
+    fails, levels = [], {}
+    for name in RETURN_FIELDS:
+        value = fm[name]
+        if value == NM:
+            levels[name] = None
+        elif value == OWED:
+            fails.append("%s: '-' (not established); a full memo establishes it or the run is INCOMPLETE" % name)
+        elif not RETURN_LEVEL_RE.match(value):
+            fails.append("%s: %r is not a percent to one decimal like '19.3%%', '-8.7%%' or '112.0%%' (ASCII "
+                         "minus, no space) or n.m." % (name, value))
+        else:
+            levels[name] = Decimal(value[:-1])
+    if fails:
+        return fails
+    if fm.get("verdict") == "DNAF":
+        for name in RETURN_FIELDS:
+            if levels[name] is not None:
+                fails.append("%s: %s — a section 6.4 Gate-0 (DNAF) memo grades no Past: it writes n.m."
+                             % (name, fm[name]))
+        return fails
+    lens, past, pr = fm.get("lens"), fm.get("quality_past"), fm.get("past_reason", "")
+    if lens == "FI":
+        for name in RETURN_FIELDS:
+            if levels[name] is not None:
+                fails.append("%s: %s — under the FI lens it is n.m. (ROE is graded, P24, and past_reason carries "
+                             "its level; FCFROCE is n.m., section 2·1A)" % (name, fm[name]))
+        return fails
+    roce, fcf = levels["roce_worst"], levels["fcfroce_worst"]
+    if PAST_LEVEL_RE.match(pr) and pr.endswith(" ROCE"):
+        stated = Decimal(pr.split("%")[0])
+        if roce is None:
+            fails.append("roce_worst: n.m., but past_reason prints the level %r" % pr)
+        elif roce.quantize(Decimal(1).scaleb(stated.as_tuple().exponent), rounding=ROUND_HALF_UP) != stated:
+            fails.append("roce_worst: %s, but past_reason prints %r: both are the governing level, the lower "
+                         "window's worst-of-four (worst of eight under G6)" % (fm["roce_worst"], pr))
+    if past in RETURN_FLOORS and not nm_ok("quality_past"):
+        for name, level, floor in (("roce_worst", roce, RETURN_FLOORS[past][0]),
+                                   ("fcfroce_worst", fcf, RETURN_FLOORS[past][1])):
+            if level is None or level < floor:
+                fails.append("%s: %s, but Past %s needs a level of at least %s%% on the lower window (P2/P3)"
+                             % (name, fm[name], past, floor))
+    return fails
 
 
 # ------------------------------------------------------------------ lint-row (README section 4) [v4.5.2]

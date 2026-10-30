@@ -22,6 +22,16 @@ row names the one Gate-0 ground left (G2, P30: the filings do not show what
 the business sells, and who pays for it, for most of its revenue); ROE and
 the capital test are for banks and insurers on the bank lens only; every
 '▶ Method re-tests' block in queue/TODO.md counts (v4.6.0 above v4.5.0).
+v4.8.0 (IDEAS C9): the ROCE / FCFROCE shown is the governing level, the lower
+window's worst-of-four (worst of eight under G6): the memo's roce_worst and
+fcfroce_worst fields (MODEL section 6.1) where it carries them, else the
+register's '{x}% ROCE' level, else the lowest reading section 3 ties to the
+metric: its first reading and the readings chained to it, both windows and
+both G6 readings. A chain never takes a threshold, a single year, the latest
+three years (J6), a growth rate or another metric's reading. From a v4.5.0
+memo an all-capex reading stated beside a maintenance-capex one is passed over
+(R6); a memo before v4.5.0 was graded on the P1 window and, under P20, on
+all-capex FCF, so its first reading stays until its method re-test.
 
 Subcommands
   render --out PATH [--repo DIR] [--no-held]   write the page: artifact page content, no
@@ -750,10 +760,69 @@ THRESHOLD_BEFORE_RE = re.compile(r"(?i)(?:\bthe|\bP\d+'s|\babove|\bbelow|\bunder
                                  r"[≥≤<>])\s*$")
 THRESHOLD_AFTER_RE = re.compile(r"(?i)^\s*(?:floor|bar|line|threshold|hurdle|level|strong|adequate|test|cap|"
                                 r"minimum|requirement|mark|limit)s?\b")
-OTHER_METRIC_RE = re.compile(r"(?i)FCFROCE|\bROE\b|\bROIC\b|\bOI/sh|\bFCF/sh|\bL/E\b|\bgrowth\b|\bmargin")
+OTHER_METRIC_RE = re.compile(r"(?i)FCFROCE|\bROE\b|\bROIC\b|\bOI/sh|\bFCF/sh|\bL/E\b|\bgrowth\b|\bmargin|"
+                             r"\bper[- ]share\b|Δ|\bCAGR\b")
 
-
-PAIR_RE = re.compile(r"^\s*(?:to|/|or)\s*(?P<value>[−-]?\d{1,3}(?:\.\d{1,2})?)\s?%")
+# MODEL v4.8.0 (IDEAS C9): the level bars test the lower of the two windows' worst-of-four
+# averages (worst of eight under G6, section 2·1A Level bars), and memos state both windows
+# as a chain of readings: '13.1% over the record and 11.8% over five years', '22.9% and
+# 19.3%', '14.1%, with 14.3% for the latest five years', '−9.1% / −13.5%'. The page shows
+# the lowest reading of the chain. A link joins two readings only when every word between
+# them names a window, a G6 reading or a connector (CHAIN_WORD_RE); anything else ends the
+# chain - an all-capex reading, a sensitivity ('before lease capitalisation'), a single
+# year ('for the latest year', 'in FY2022', 'one-year'), the J6 limb (b) latest-three-year
+# average ('over the latest three years', NON_WINDOW_RE), a threshold, another metric.
+# Plural counts stay window words, so a history-limited record ('over seven years') chains.
+CHAIN_WORD_RE = re.compile(
+    r"(?i)^(?:and|but|with|to|or|/|the|a|its|both|of|is|are|was|on|over|for|in|across|during|"
+    r"latest|last|recent|full|whole|entire|window|windows|record|period|decade|history|history-limited|"
+    r"record-limited|retrievable|usable|available|fiscal|years|worst(?:-of-(?:four|eight))?|"
+    r"averages?|normali[sz]ed|reading|readings|read|reads|include|exclude|include-both|exclude-both|"
+    r"variants?|constructions?|basis|bases|each|"
+    r"\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|"
+    r"(?:[2-9]|\d{2}|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)(?:-year|y)|"
+    r"(?:FY)?\d{2,4}[–-](?:FY)?\d{2,4}|P1)$")
+# Window words that still name no level window: the latest three years (J6 limb (b), a
+# decline test that never sets a grade's level, MODEL section 2·1A).
+NON_WINDOW_RE = re.compile(r"(?i)\b(?:latest|last|recent|trailing)[\s-]+(?:three|3)(?:y\b|\b)")
+CHAIN_CONNECTOR_RE = re.compile(r"(?i)^(?:and|but|with|to|or|/)$")
+# A tight pair ('−9.1% / −13.5%', '−3.8% to −3.9%', '12.0% or 11.2%') is one statement of
+# two readings: its second reading needs no window words after it.
+TIGHT_PAIR_RE = re.compile(r"^\s*(?:to|/|or)\s*$")
+CHAIN_BREAK_RE = re.compile(r"[;:—()\[\]=≈~]|\s[–-]\s")
+CHAIN_REACH = 160          # characters after the metric name a chain may run
+FIRST_REACH = 70           # the first reading starts within this many characters of the name
+# A reading written before the metric's name: 'The worst of eight is −61.1% ROCE over ten years ...'.
+LEAD_FIGURE_RE = re.compile(r"(?<![\d.,])(?P<value>[−-]?\d{1,3}(?:\.\d{1,2})?)\s?%\s+"
+                            r"(?:(?:worst-of-(?:four|eight)|worst|normali[sz]ed|average|avg\.?)\s+)*$")
+# A figure right after a metric's name is that metric's reading, never a lead for the next name
+# ('ROCE 8.0% FCFROCE 12.0%').
+OWNED_BEFORE_RE = re.compile(r"(?i)(?:ROCE|FCFROCE|\bROE|\bROIC)\s*(?:is|was|of|at|=|:)?\s*$")
+# An all-capex reading is context, never governing (MODEL section 2·1A, R6): its metric name is skipped
+# (from v4.5.0, as below).
+ALL_CAPEX_BEFORE_RE = re.compile(r"(?i)\ball[- ]capex\s+(?:maintenance[- ]capex\s+)?$")
+# ... and so is a reading the memo qualifies as all-capex right after it when a maintenance-capex
+# reading follows it ('6.5% all-capex and 8.1% on the maintenance basis'): the page moves on to
+# that reading (P20). An all-capex reading with no maintenance reading beside it stays: from
+# v4.5.0 it is the '= all capex' tier, the governing FCF where no maintenance build exists
+# ('FCFROCE 4.8%, on all capex because the P20 constructed build was not assembled', 6501.T).
+# Only from v4.5.0 (R6): an earlier memo's quality gates read all-capex FCF under P20 ('quality
+# gates stay all-capex'), so its first reading is the one its grade was set on and stays
+# (ESSITY-B.ST v4.0.0, BRG.OL v4.4.1).
+ALL_CAPEX_AFTER_RE = re.compile(r"(?i)^[\s*]*(?:(?:on|as)\s+)?(?:an?\s+|the\s+)?all[- ]capex\b"
+                                r"(?:\s+(?:basis|reading|FCF)\b)?(?!\s*[−-]?\d)")
+MAINTENANCE_RE = re.compile(r"(?i)\bmaint(?:enance|\.)|\breplacement\b|\bP20\b")
+R6_FROM = (4, 5, 0)
+# A name that follows another metric's reading ('ROCE 9.0% and FCFROCE 14.0% over ten years,
+# and 8.0% and 13.0% over five'; '21.5% ROCE and 17.7% FCFROCE') may open an alternating
+# statement: a later reading followed by nothing but a connector and another reading ('8.0% and
+# 13.0%') is one reading of each metric, so the chain ends before it (chained_readings, `paired`).
+PAIRED_BEFORE_RE = re.compile(r"(?i)(?:ROCE|\bROE|\bROIC)(?![\w])[\s*]*(?:(?:is|was|of|at|are)\s+)?[=:]?[\s*]*"
+                              r"[−-]?\d{1,3}(?:\.\d{1,2})?\s?%[\s*]*(?:,|and|/|&|with|but|while|vs\.?)?[\s*]*$|"
+                              r"(?:ROCE|\bROE|\bROIC)(?![\w])[\s*]*(?:and|/|&|,)[\s*]*$")   # '9.0% ROCE and 14.0% FCFROCE'
+# Two names side by side ('ROCE and FCFROCE are 9.0% and 14.0%', 'ROCE / FCFROCE'): the readings
+# after them are shared, so the second name ties to none of them.
+SHARED_NAMES_RE = re.compile(r"(?i)(?:ROCE|\bROE|\bROIC)(?![\w])[\s*]*(?:and|/|&|,|or)[\s*]*$")
 
 
 def pct_value(text):
@@ -761,40 +830,219 @@ def pct_value(text):
     return Decimal(text.replace("−", "-"))
 
 
-def first_figure(after):
-    """The first clear percentage in `after` (a stretch of text following a metric
-    name): not a range bound, not a threshold, not past another metric's name. A
-    figure given as a pair or a span of readings ('−9.1% / −13.5%', '−3.8% to −3.9%')
-    gives the lower one, the worst case. At most one decimal ('8.42%' -> '8.4%')."""
+def is_bound_or_threshold(before, after):
+    """True when the figure between `before` and `after` is a range bound or a threshold."""
+    if re.search(r"\d\s?[–-]\s?$", before) or THRESHOLD_BEFORE_RE.search(before[-12:]):
+        return True
+    tail = after[:16]
+    return bool(re.match(r"^\s?[–-]\s?\d", tail) or THRESHOLD_AFTER_RE.match(tail))
+
+
+def chain_words_ok(text, need_connector):
+    """True when `text` (between or after readings) holds only window, reading and connector
+    words, and - between two readings - at least one connector or comma; never the latest
+    three years (NON_WINDOW_RE)."""
+    if CHAIN_BREAK_RE.search(text) or NON_WINDOW_RE.search(text):
+        return False
+    words = [w for w in re.split(r"[\s,]+", text.replace("/", " / ")) if w]
+    if not all(CHAIN_WORD_RE.match(w) for w in words):
+        return False
+    return not need_connector or "," in text or any(CHAIN_CONNECTOR_RE.match(w) for w in words)
+
+
+def chained_readings(after, start, paired=False):
+    """The readings that follow a first reading ending at `start` in `after`, as long as
+    each link holds (chain_words_ok) and each reading is no bound or threshold and closes
+    on window words only, up to a clause break. `paired`: the name follows another
+    metric's reading (PAIRED_BEFORE_RE), and a reading followed by only a connector and
+    another reading opens a pair of the two metrics' readings: the chain ends before it."""
+    out = []
+    pos = start
+    while True:
+        m = FIGURE_RE.search(after, pos)
+        if not m or not chain_words_ok(after[pos:m.start()], True):
+            return out
+        rest = after[m.end():]
+        if is_bound_or_threshold(after[:m.start()], rest):
+            return out
+        nxt = FIGURE_RE.search(rest)
+        if paired and nxt and all(CHAIN_CONNECTOR_RE.match(w) for w in
+                                  re.split(r"[\s,*]+", rest[:nxt.start()].replace("/", " / ")) if w):
+            return out
+        clause = re.split(r"[,;:.]|\s[—–-]\s|—", rest[:nxt.start()] if nxt else rest, maxsplit=1)[0]
+        if not TIGHT_PAIR_RE.match(after[pos:m.start()]) and not chain_words_ok(clause, False):
+            return out
+        out.append(m.group("value"))
+        pos = m.end()
+
+
+def readings(after, lead=None, paired=False, r6=False):
+    """The readings a metric name ties to: the first clear percentage in `after` (or `lead`,
+    a reading written just before the name), then the readings chained to it (`paired`:
+    chained_readings). With `r6` (a memo from v4.5.0) a first reading qualified as all-capex
+    right after it is passed over for a maintenance-capex reading chained after the
+    qualifier (maintenance_reading). [] if none."""
     stop = OTHER_METRIC_RE.search(after)
     if stop:
         after = after[:stop.start()]
+        owned = LEAD_FIGURE_RE.search(after)          # '21.5% ROCE and 17.7% FCFROCE': 17.7% is FCFROCE's
+        if owned and (lead is not None or FIGURE_RE.search(after[:owned.start()])):
+            after = after[:owned.start()]
+    after = after[:CHAIN_REACH]
+    if lead is not None:
+        return [lead] + chained_readings(after, 0, paired)
     for m in FIGURE_RE.finditer(after):
-        before = after[:m.start()]
-        if re.search(r"\d\s?[–-]\s?$", before) or THRESHOLD_BEFORE_RE.search(before[-12:]):
+        if m.start() >= FIRST_REACH:
+            break
+        if is_bound_or_threshold(after[:m.start()], after[m.end():]):
             continue
-        tail = after[m.end():m.end() + 16]
-        if re.match(r"^\s?[–-]\s?\d", tail) or THRESHOLD_AFTER_RE.match(tail):
-            continue
-        value = m.group("value")
-        pair = PAIR_RE.match(after[m.end():])
-        if pair and pct_value(pair.group("value")) < pct_value(value):
-            value = pair.group("value")
-        return one_decimal_pct(("−" + value[1:] if value[0] in "−-" else value) + "%")
-    return ""
+        capex = ALL_CAPEX_AFTER_RE.match(after[m.end():]) if r6 else None
+        if capex:
+            nxt = maintenance_reading(after, m.end() + capex.end())
+            if nxt:
+                m = nxt
+        return [m.group("value")] + chained_readings(after, m.end(), paired)
+    return []
+
+
+def maintenance_reading(after, pos):
+    """The reading linked at `pos` (chain words only between) whose own words up to the
+    clause break name the maintenance-capex basis ('and 8.07% on the maintenance basis'),
+    or None."""
+    m = FIGURE_RE.search(after, pos)
+    if not m or not chain_words_ok(after[pos:m.start()], True) or is_bound_or_threshold(
+            after[:m.start()], after[m.end():]):
+        return None
+    rest = after[m.end():]
+    nxt = FIGURE_RE.search(rest)
+    clause = re.split(r"[,;:.]|\s[—–-]\s|—", rest[:nxt.start()] if nxt else rest, maxsplit=1)[0]
+    return m if MAINTENANCE_RE.search(clause) else None
+
+
+def lowest_pct(values):
+    """The lowest of the readings as the page prints it, at most one decimal; '' if none."""
+    if not values:
+        return ""
+    value = min(values, key=pct_value)
+    return one_decimal_pct(("−" + value[1:] if value[0] in "−-" else value) + "%")
+
+
+def first_figure(after, lead=None, paired=False, r6=False):
+    """The figure a metric name ties to in `after` (the text following the name): the
+    lowest of its chain of readings - the first clear percentage (not a range bound, not a
+    threshold, not past another metric's name) and every reading chained to it ('X% over
+    ten years and Y% over five', 'X% and Y%', '−9.1% / −13.5%', '−3.8% to −3.9%'), so the
+    lower window, the governing level, is shown [v4.8.0, C9]. `lead` is a reading written
+    before the name; `paired` and `r6` as in readings. At most one decimal ('8.42%' ->
+    '8.4%'); '' when there is none."""
+    return lowest_pct(readings(after, lead, paired, r6))
+
+
+def metric_figure(sentence, m, r6=False):
+    """The figure for the metric name matched by `m` in `sentence`: a reading written just
+    before the name ('−61.1% ROCE over ten years and 0.7% over five') leads the chain;
+    otherwise the readings after it. A name written right after another metric's name
+    (SHARED_NAMES_RE) gives '', and so does one read as an all-capex reading where `r6`
+    holds: the memo is at v4.5.0 or later (readings)."""
+    before = sentence[:m.start()]
+    if (r6 and ALL_CAPEX_BEFORE_RE.search(before)) or SHARED_NAMES_RE.search(before):
+        return ""
+    lead = LEAD_FIGURE_RE.search(before)
+    after = sentence[m.end():]
+    if lead and not is_bound_or_threshold(before[:lead.start()], after) and not OWNED_BEFORE_RE.search(
+            before[:lead.start()]):
+        values = [lead.group("value")]
+        head = before[:lead.start()]
+        while True:                      # '9.3% / 9.8% / 11.3% / 11.7% ROCE': the pair runs back
+            prev = None
+            for prev in FIGURE_RE.finditer(head):
+                pass
+            if not prev or not TIGHT_PAIR_RE.match(head[prev.end():]) or is_bound_or_threshold(
+                    head[:prev.start()], head[prev.end():]):
+                break
+            values.append(prev.group("value"))
+            head = head[:prev.start()]
+        paired = bool(PAIRED_BEFORE_RE.search(head))
+        return lowest_pct(values + readings(after, lead.group("value"), paired)[1:])
+    return first_figure(after, paired=bool(PAIRED_BEFORE_RE.search(before)), r6=r6)
+
+
+# MODEL v4.8.0 section 6.1 (IDEAS C9): every memo produced under v4.8.0 or later carries the
+# governing levels as machine fields - the lower of the two windows' worst-of-four averages
+# (worst of eight under G6), e.g. '19.3%' or '-8.7%', or n.m. where undefined. The page reads
+# them first and falls back to the section-3 prose only for a memo without them.
+RETURN_FIELDS = ("roce_worst", "fcfroce_worst")
+RETURN_FIELD_RE = re.compile(r"^(?P<value>-?\d{1,4}(?:\.\d{1,2})?)%$")
+
+
+def return_fields(fm):
+    """(roce, fcfroce) from a memo's roce_worst and fcfroce_worst as the page prints them
+    ('19.3%', '−8.7%', 'n.m.'); '' for a field that is absent or not in its form. Under the
+    FI lens ROCE is not graded (ROE is, from the register's level), so its n.m. gives ''."""
+    out = []
+    for name in RETURN_FIELDS:
+        value = re.sub(r"\s+#.*$", "", fm.get(name, "")).strip()
+        m = RETURN_FIELD_RE.match(value)
+        if m:
+            number = m.group("value")
+            out.append(one_decimal_pct(("−" + number[1:] if number.startswith("-") else number) + "%"))
+        elif value == NM and not (name == "roce_worst" and fm.get("lens") == "FI"):
+            out.append(NM)
+        else:
+            out.append("")
+    return tuple(out)
 
 
 NEGATIVE_RE = r"(?<![A-Za-z_])%s(?![\w])[^.;%%\d]{0,50}?\bnegative\b"
+PAREN_RE = re.compile(r"\((?P<body>[^()\[\]]*)\)")
+
+
+def keep_reading_parentheticals(text):
+    """A parenthesis that holds only a reading and its window ('12.3% (11.7% over five
+    years)', 'FCFROCE 12.3% (11.3%)') is the other window of the reading before it, and one
+    that holds only readings each with its window ('is negative (−5.8% over the latest five
+    years, −4.6% over the window)') states the windows of the statement before it: either
+    is kept as chained readings ('and 11.7% over five years'); every other parenthesis is
+    dropped by drop_parentheticals, an all-capex aside and a pair of bars ('(15% / 8%)')
+    among them."""
+    def keep(m):
+        body = m.group("body").strip()
+        fig = FIGURE_RE.match(body)
+        if not fig:
+            return m.group(0)
+        figures = list(FIGURE_RE.finditer(body))
+        if len(figures) == 1:
+            return "and " + body if chain_words_ok(body[fig.end():], False) else m.group(0)
+        for this, nxt in zip(figures, figures[1:] + [None]):
+            tail = body[this.end():nxt.start() if nxt else len(body)]
+            words = [w for w in re.split(r"[\s,]+", tail.replace("/", " / ")) if w]
+            # each reading names its window: some word after it is no bare connector
+            if not chain_words_ok(tail, nxt is not None) or all(CHAIN_CONNECTOR_RE.match(w) for w in words) or (
+                    nxt and is_bound_or_threshold(body[:nxt.start()], body[nxt.end():])):
+                return m.group(0)
+        return "and " + body
+    return PAREN_RE.sub(keep, text)
+
+
+def memo_from(text, version):
+    """True when the memo's front matter model_version is `version` or later."""
+    m = re.match(r"^v?(\d+)\.(\d+)\.(\d+)", parse_front_matter(text).get("model_version", ""))
+    return bool(m) and tuple(int(x) for x in m.groups()) >= version
 
 
 def extract_returns(text):
-    """(ROCE, FCFROCE) as printed in memo section 3: the worst-of-four (or
-    normalised) figure each, 'n.m.' for a stated n.m. FCFROCE, 'negative' where
-    the memo says every reading is negative without a figure, '' where unclear."""
+    """(ROCE, FCFROCE) as printed in memo section 3: the governing worst-of-four (or
+    normalised) figure each - the lowest reading of the first worst-of statement, both
+    windows and both G6 readings where the sentence chains them [v4.8.0, C9] - 'n.m.' for a
+    stated n.m. FCFROCE, 'negative' where the memo says every reading is negative without a
+    figure, '' where unclear. In a memo from v4.5.0 an all-capex reading stated beside a
+    maintenance-capex one is passed over (R6); an earlier memo's is kept, as its quality
+    gates read it under P20 (ALL_CAPEX_AFTER_RE)."""
+    r6 = memo_from(text, R6_FROM)
     roce = fcf = ""
     negative = {"ROCE": False, "FCFROCE": False}
     for paragraph in memo_section(text, 3):
-        for sentence in split_sentences(drop_parentheticals(paragraph)):
+        for sentence in split_sentences(drop_parentheticals(keep_reading_parentheticals(paragraph))):
             worst = re.search(r"(?i)\bworst|\bnormali[sz]ed", sentence)
             for metric in negative:
                 if worst and re.search(NEGATIVE_RE % metric, sentence):
@@ -803,7 +1051,7 @@ def extract_returns(text):
                 for m in re.finditer(r"(?<![A-Za-z_])ROCE(?![\w])", sentence):
                     if sentence[max(0, m.start() - 3):m.start()] == "FCF":
                         continue
-                    roce = first_figure(sentence[m.end():m.end() + 70])
+                    roce = metric_figure(sentence, m, r6)
                     if roce:
                         break
             if not fcf:
@@ -811,7 +1059,7 @@ def extract_returns(text):
                     fcf = NM
                 elif worst or roce:
                     for m in re.finditer(r"FCFROCE(?![\w])", sentence):
-                        fcf = first_figure(sentence[m.end():m.end() + 60])
+                        fcf = metric_figure(sentence, m, r6)
                         if fcf:
                             break
             if roce and fcf:
@@ -954,7 +1202,10 @@ def page_row(row, memo_text, extra, as_of, held_marker, retest, dated=True):
         out["na"] = 1
     out["m"] = (extra.get("moat") or "") if assessed else ""
     level = LEVEL_RE.match(row["past_reason"] or "")
-    if level and not level.group("prefix"):
+    # The memo's roce_worst (v4.8.0) comes first; then the register's level, which is the
+    # governing worst-of-four the grade was decided on; then the memo's prose.
+    if level and not level.group("prefix") and not (extra.get("roce_from") == "fields"
+                                                     and level.group("metric") == "ROCE"):
         out["rl"] = level.group("metric")
         out["ro"] = one_decimal_pct(level.group("value") + "%")
     else:
@@ -1059,13 +1310,17 @@ def extract_all(root, rows):
     for row in rows:
         text, source = read_memo(root, row)
         info = {"text": text, "source": source, "business": "", "moat": "", "roce": "", "fcfroce": "",
-                "business_from": "", "moat_from": ""}
+                "business_from": "", "moat_from": "", "roce_from": "", "fcfroce_from": ""}
         if text is not None:
             info["business"] = extract_business(text, row["section"])
             info["business_from"] = source if info["business"] else ""
             info["moat"], strength = extract_moat(text)
             info["moat_from"] = source if info["moat"] else ""
-            info["roce"], info["fcfroce"] = extract_returns(text)
+            fields = return_fields(parse_front_matter(text))
+            prose = extract_returns(text) if not all(fields) else ("", "")
+            for name, field, read in zip(("roce", "fcfroce"), fields, prose):
+                info[name] = field or read
+                info[name + "_from"] = "fields" if field else (source if read else "")
             # A section that says 'Unchanged' or 'Restated' points back to the previous memo:
             # what it leaves out is read from the newest archived memo of the key.
             need_business = not info["business"] and is_unchanged(memo_section(text, 2))
@@ -1082,9 +1337,9 @@ def extract_all(root, rows):
                     if old_strength > strength:
                         info["moat"], strength, info["moat_from"] = moat, old_strength, "archive"
                 if need_returns:
-                    roce, fcf = extract_returns(old)
-                    info["roce"] = info["roce"] or roce
-                    info["fcfroce"] = info["fcfroce"] or fcf
+                    for name, read in zip(("roce", "fcfroce"), extract_returns(old)):
+                        if not info[name] and read:
+                            info[name], info[name + "_from"] = read, "archive"
                 if info["business"] and strength == 2 and info["roce"] and info["fcfroce"]:
                     break
         out[row["key"]] = info
@@ -1713,7 +1968,9 @@ def stats_text(root):
     with_moat = [r["key"] for r in rows if extraction[r["key"]]["moat"]]
     page = {r["k"]: r for s in sections for r in s["rows"]}
     roce_register = sum(1 for r in rows if LEVEL_RE.match(r["past_reason"]) and r["section"] != "DNAF" and
-                        not LEVEL_RE.match(r["past_reason"]).group("prefix"))     # a DNAF row shows no returns
+                        not LEVEL_RE.match(r["past_reason"]).group("prefix") and not (
+                            extraction[r["key"]]["roce_from"] == "fields" and
+                            LEVEL_RE.match(r["past_reason"]).group("metric") == "ROCE"))  # DNAF: no returns
     roce_any = sum(1 for k in page if page[k]["ro"])
     fcf_any = sum(1 for k in page if page[k]["fr"])
     # Cross-check: the memo's own worst-of-four ROCE against the register's deciding level.
@@ -1732,9 +1989,11 @@ def stats_text(root):
         % (len(with_business), n, by("business_from", "memo"), by("business_from", "archive")),
         "  moat line          %3d/%d  (current memo %d, archived memo %d)"
         % (len(with_moat), n, by("moat_from", "memo"), by("moat_from", "archive")),
-        "  ROCE / ROE shown   %3d/%d  (register level %d, memo figure %d)"
+        "  ROCE / ROE shown   %3d/%d  (register level %d, memo field or figure %d)"
         % (roce_any, n, roce_register, roce_any - roce_register),
         "  FCFROCE shown      %3d/%d" % (fcf_any, n),
+        "  returns from the memo's roce_worst / fcfroce_worst fields (v4.8.0): %d / %d"
+        % (by("roce_from", "fields"), by("fcfroce_from", "fields")),
         "  memo ROCE agrees with the register level (±0.15 pt) on %d of %d rows" % (agree, compared),
         "  sections: " + " · ".join("%s %d" % (s, ctx["counts"][s]) for s in SECTION_ORDER)
         + " · re-test %d (%s)" % (ctx["retest_count"], (", ".join("%s %d" % item for item in ctx["retest_versions"])

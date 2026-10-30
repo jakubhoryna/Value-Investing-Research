@@ -1,25 +1,28 @@
 #!/usr/bin/env python3
 """gsc-automerge: squash-merges finished routine PRs in a merge class
-(MODEL v4.5.0 §8.7 item 10). Run by .github/workflows/gsc-automerge.yml.
+(MODEL v4.8.0 §8.7 item 10). Run by .github/workflows/gsc-automerge.yml.
 
 Inputs (environment): GH_TOKEN (the per-run GITHUB_TOKEN), REPO, GSC_AUTOMERGE
 (off | dry-run | on; anything else, including unset, is off), EVENT_NAME and
 TRIGGER_BRANCH (the guard run's head branch on a workflow_run event).
 
-decide(ctx, pr) is the classifier; it never merges and never comments, so the
-digest (gsc_notify.py) imports it to list what needs Jakub. Outcomes:
+decide(ctx, pr) is the classifier; it never merges and never comments.
+Outcomes:
   MERGE        finished, guard success on the exact head sha, contract clean,
                in a merge class: ANALYSE WATCH/AVOID/DNAF, INCOMPLETE, prior
                found, queue exhausted; REVIEW with the prior memo's verdict
                (INCOMPLETE included); SWEEP, held-zone changes included (J11:
-               the changes go to the job summary and the morning digest);
+               the changes go to the job summary; they reach Jakub in the
+               WEEKLY routine's report, which reads the merged SWEEP row);
                INTAKE whose base has not moved on main.
   WAIT         silent; a later event retries ([running], guard not finished,
                an incident-cancelled guard run on attempt 1, head moved).
   HOLD         silent ([fixing] is Jakub's; an INTAKE whose base moved is
                superseded by the next INTAKE, F2).
-  HOLD_NOTIFY  one comment on the standing 'GSC - needs Jakub' issue per
-               (PR, head sha, reason): BUY, HELD name in an ANALYSE or REVIEW,
+  HOLD_NOTIFY  one record comment on the standing 'GSC - needs Jakub' issue
+               per (PR, head sha, reason), mentioning no one [v4.8.0: the
+               held PR reaches Jakub in the weekly report, not as a ping]:
+               BUY, HELD name in an ANALYSE or REVIEW,
                verdict change, every SEED, guard not success, title/memo/row
                mismatch, unexpected files, re-key, a SWEEP whose portfolio
                table lacks a held name or a held name's zone word
@@ -414,7 +417,8 @@ def held_zone_changes(held, cells):
     """(problem, changes) for the held names against a SWEEP's Zone cells: a
     held name missing from the table, or a Zone cell without a zone word, is a
     problem (a contract defect, MODEL §8.7 item 10); otherwise the list of
-    'KEY Portfolio → sweep' changes (J11: they merge and go to the digest)."""
+    'KEY Portfolio → sweep' changes (J11: they merge and reach Jakub in the
+    weekly report)."""
     changes = []
     for k, entry in sorted(held.items()):
         if k not in cells:
@@ -441,14 +445,14 @@ def _sweep_rules(d):
     if fm.get("pr_title") != d["title"]:
         return out(HOLD_NOTIFY, "mismatch", "row pr_title differs from the live title", "SWEEP")
     # J11 (MODEL §8.7 item 10): a held-zone change merges ("it's just register") and is
-    # reported in the job summary and the morning digest; only a held name missing from
+    # reported in the job summary and the weekly report; only a held name missing from
     # the portfolio table, or a Zone cell without a zone word, holds the PR.
     problem, changes = held_zone_changes(held_keys(ctx), sweep_zone_cells(ctx, text))
     if problem:
         return out(HOLD_NOTIFY, "held-missing", problem, "SWEEP")
     o = out(MERGE, "sweep", "SWEEP", "SWEEP")
     if changes:
-        o.note = "held zone changes (digest): " + ", ".join(changes)
+        o.note = "held zone changes (weekly report): " + ", ".join(changes)
     return o
 
 
@@ -570,13 +574,15 @@ def _analyse_review_rules(d):
 # ---------------------------------------------------------------- act
 
 def notify(ctx, pr, outcome):
-    """One needs-Jakub comment per (PR, head sha, reason); none in mode off."""
+    """One needs-Jakub record comment per (PR, head sha, reason); none in mode
+    off. It mentions no one [v4.8.0]: held PRs reach Jakub in the weekly
+    report, and the comment is the record."""
     if ctx.mode == "off":
         return False
     n = int(pr["number"])
     sha7 = (outcome.sha or "0000000")[:7]
     marker = "<!-- gsc-hold pr=%d sha=%s code=%s -->" % (n, sha7, outcome.code)
-    body = "@jakubhoryna PR %d held - %s\n%s\nOpen: %s\n%s" % (
+    body = "PR %d held - %s\n%s\nOpen: %s\n%s" % (
         n, gsc_gh.no_hash_ref(outcome.text), gsc_gh.no_hash_ref(outcome.title or pr.get("title") or ""),
         gsc_gh.search_link(ctx.repo, n), marker)
     return gsc_gh.post_needs_comment(ctx.gh, body, marker, pr.get("created_at"))
@@ -698,7 +704,7 @@ def main(env=None, gh=None, git=None, sleep=None, now=None, clock=time.monotonic
             raise AutomergeError("cannot load routines/tools/gsc_register.py")
         fetch_main(ctx)
         results = sweep(ctx, only or None, clock)
-    except Exception as exc:  # no merges past this point; tell Jakub once a day
+    except Exception as exc:  # no merges past this point; one record comment a day
         ctx.log("failed: %s" % type(exc).__name__)
         if mode != "off":
             try:
@@ -706,7 +712,7 @@ def main(env=None, gh=None, git=None, sleep=None, now=None, clock=time.monotonic
                 day = local.strftime("%Y-%m-%d")
                 start = local.replace(hour=0, minute=0, second=0, microsecond=0).astimezone(datetime.timezone.utc)
                 marker = "<!-- gsc-hold pr=0 sha=0000000 code=automerge-error-%s -->" % day
-                gsc_gh.post_needs_comment(gh, "@jakubhoryna gsc-automerge failed: %s\n%s"
+                gsc_gh.post_needs_comment(gh, "gsc-automerge failed: %s\n%s"
                                           % (type(exc).__name__, marker), marker,
                                           start.strftime("%Y-%m-%dT%H:%M:%SZ"))
             except Exception:

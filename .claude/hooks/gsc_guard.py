@@ -11,7 +11,9 @@ In routine sessions it blocks (exit 2, one stderr line):
     (CLAUDE.md mode table). git push, a gh api call other than GET, a push notification, the artifact
     tools and the allowed MCP tool need the current run branch's job to equal it (a gh api write off
     a run branch, as in INTAKE's step-0 sweep before its branch exists, needs a readable prompt that
-    is not WEEKLY). A readable first prompt naming no routine job is refused; a transcript that cannot
+    is not WEEKLY; INTAKE's step-0 weekly watchdog, its one ArtifactData get and its one not-published
+    push, passes on INTAKE's run branch or, before it is cut, with a readable INTAKE prompt, MODEL
+    v4.8.0). A readable first prompt naming no routine job is refused; a transcript that cannot
     be read falls back to the branch alone (the pre-v4.6.1 rule). A run never leaves
     its run branch: once HEAD is on
     a claude/gsc-* branch, git switch, git checkout of a branch and git branch <new> are refused;
@@ -19,7 +21,13 @@ In routine sessions it blocks (exit 2, one stderr line):
     session transcripts (~/.claude/projects);
   * Bash/Monitor commands that push anything but the run's own claude/gsc-*
     branch (from the root's own repository: a nested or copied .git is refused), merge or rewrite
-    history, call gh outside the REST allowlist, handle tokens, fetch anything but origin main, read
+    history, call gh outside the REST allowlist, handle tokens, fetch anything but origin main (plain,
+    or as git fetch --unshallow origin main to complete a shallow clone's history of the same ref,
+    MODEL v4.8.0), run git outside the checkout (git -C, cd, env -C or sudo -D to another directory;
+    git or gh behind xargs, find -exec or another command runner; a computed command name), let a config
+    name a program for git (git config writes only plain settings; git's user and system config files
+    are locked; HOME, XDG_CONFIG_HOME, PATH and the loader variables are never set), run
+    gsc_weekly.py window other than as the whole command in its written form, read
     curl or wget options from a file, or visibly write into locked paths. WEEKLY (its prompt or its
     claude/gsc-weekly-* branch, local only: a guard identity, never pushed) is refused every git
     push, every gh api call other than GET, git add, commit, mv and rm, and editor writes inside the
@@ -47,11 +55,17 @@ In routine sessions it blocks (exit 2, one stderr line):
     11, routines/README.md §5): two classes only, each in its exact form. 'GSC BUY · {JOB} {KEY}
     {D} · PR {n} · {reason}' comes from that ANALYSE or REVIEW run (JOB, KEY and D are its branch's);
     'GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly page url}' or 'GSC
-    WEEKLY · not published · {reason}' only from the WEEKLY run. The HELD, VERDICT CHANGE, STOPPED,
+    WEEKLY · not published · {reason}' only from the WEEKLY run, and 'GSC WEEKLY · not published ·
+    INTAKE {D}: no report for {period}' or '… INTAKE {D}: weekly check failed ({reason})' only from
+    INTAKE's weekly watchdog (MODEL v4.8.0; never the published form; D is its branch's once the
+    branch is cut, and the hook's UTC day ±1 before). The HELD, VERDICT CHANGE, STOPPED,
     BLOCKED and STALL pushes are retired: their content reaches Jakub in the weekly report. A push is
-    one line of at most 200 characters without '#', control, format or separator characters, or any
-    link but the weekly page's, and each class is sent at most once per run (an O_EXCL marker per
-    session and class in the repo's git dir, which no routine command may touch);
+    one line of at most 200 characters without '#' (or its full-width forms), control, format or
+    separator characters, or any link (a scheme, www., mailto: or a bare host.tld/ path) but the
+    weekly page's, and each class is sent at most once per run (an O_EXCL marker per session and
+    class in the repo's git dir, which no routine command may touch);
+  * gsc_weekly.py window with a --at, --meta-at or --meta-by value that is not written out
+    literally (an ISO time, '-', 'GSC WEEKLY routine' or 'other'): the meta stamp is data;
   * any comment on a PR or issue: routines never comment (a comment wakes the
     session watching it; the needs-Jakub issue belongs to the gsc-automerge
     and gsc-notify workflows);
@@ -73,8 +87,11 @@ In routine sessions it blocks (exit 2, one stderr line):
     exactly source (kind 'file', a /_blob/ asset url, name {id}.json, format json) and updated (one
     at for the whole batch, within 6 h of the hook's clock, by 'GSC WEEKLY routine'). Never set,
     delete, str_replace, query, profiles, as_level, out_dir, file_path, the page's files/ or dash/
-    documents, or another url. An artifact file_path with '$' or a leading '~' is refused (the tool
-    takes it literally). ArtifactComments and any other artifact tool are refused;
+    documents, or another url. INTAKE's weekly watchdog (MODEL v4.8.0, routines/INTAKE.md step 0):
+    exactly one ArtifactData get, {action: get, url: WEEKLY_PAGE_URL, collection: datasets, doc_id:
+    meta} (INTAKE_META), on INTAKE's run branch or before it is cut; no other action, document or
+    field, and no Artifact call on the weekly page. An artifact file_path with '$' or a leading '~' is
+    refused (the tool takes it literally). ArtifactComments and any other artifact tool are refused;
   * every MCP tool (mcp__*; settings.json routes them here with a second
     PreToolUse matcher): MCP servers attached to the account (GitHub,
     remote sessions and routines, document stores) would bypass the gh api
@@ -136,28 +153,48 @@ REGISTER_HINT = ("the register is written only by routines/tools/gsc_register.py
 #   BUY     'GSC BUY · {JOB} {KEY} {D} · PR {n} · {reason}': an ANALYSE or REVIEW memo with verdict
 #           BUY; JOB must be the job of the current run branch;
 #   WEEKLY  'GSC WEEKLY · {period} · …' or 'GSC WEEKLY · not published · {reason}': the WEEKLY run
-#           only (its local claude/gsc-weekly-* branch).
+#           (its local claude/gsc-weekly-* branch); and 'GSC WEEKLY · not published · INTAKE {D}: …' in its
+#           two forms from INTAKE's weekly watchdog only, on its branch or before it is cut (MODEL v4.8.0).
 # HELD, VERDICT CHANGE, STOPPED, BLOCKED and STALL are retired (v4.6.1): their content reaches
 # Jakub in the weekly report, J11 (SWEEP held-zone changes) included.
 PUSH_RE = re.compile(r"^GSC (BUY|WEEKLY) · (\S+)")
 PUSH_RETIRED_RE = re.compile(r"^GSC (HELD|VERDICT CHANGE|STOPPED|BLOCKED|STALL) · ")
 PUSH_MAX = 200
 PUSH_HINT = ("only 'GSC BUY · {ANALYSE|REVIEW} {KEY} {D} · PR {n} · {reason}' from that ANALYSE or REVIEW run, "
-             "or 'GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly page}' or "
-             "'GSC WEEKLY · not published · {reason}' from the WEEKLY run (routines/README.md §5)")
+             "'GSC WEEKLY · {period} · {d} to decide · {f} to fix · {m} memos · {weekly page}' or "
+             "'GSC WEEKLY · not published · {reason}' from the WEEKLY run, or 'GSC WEEKLY · not published · "
+             "INTAKE {D}: no report for {period}' or '… INTAKE {D}: weekly check failed ({reason})' from INTAKE's "
+             "weekly watchdog (routines/README.md §5)")
 # The exact forms (MODEL v4.6.1 review): the BUY key and date are the run branch's; the published WEEKLY
 # line is the one gsc_weekly.py writes, ending with the weekly page url; no other url in any push.
 PUSH_BUY_RE = re.compile(r"^GSC BUY · (?P<job>ANALYSE|REVIEW) (?P<key>[A-Za-z0-9._-]+) (?P<date>\d{4}-\d{2}-\d{2}) · "
                          r"PR \d+ · \S.*$")
-PUSH_WEEKLY_RE = re.compile(r"^GSC WEEKLY · (?:[A-Z][a-z]{2} \d{1,2} [A-Z][a-z]{2}(?: \d{4})? – [A-Z][a-z]{2} \d{1,2} "
-                            r"[A-Z][a-z]{2} \d{4} · \d{1,4} to decide · \d{1,4} to fix · \d{1,4} memos · "
+# The weekly period label gsc_weekly.py window prints ('Sun 25 Oct – Sun 1 Nov 2026').
+PERIOD_TEXT = r"[A-Z][a-z]{2} \d{1,2} [A-Z][a-z]{2}(?: \d{4})? – [A-Z][a-z]{2} \d{1,2} [A-Z][a-z]{2} \d{4}"
+PUSH_WEEKLY_RE = re.compile(r"^GSC WEEKLY · (?:" + PERIOD_TEXT + r" · \d{1,4} to decide · \d{1,4} to fix · "
+                            r"\d{1,4} memos · "
                             r"(?P<url>https://claude\.ai/artifact/6L264JT8pg5vuia9dUrcuj)|not published · \S.*)$")
-URL_TEXT_RE = re.compile(r"(?i)://|\bwww\.|\bhttps?:")
+# A link in any form a phone may open: a scheme, www., mailto:, or a bare host.tld/ path (v4.8.0 review).
+URL_TEXT_RE = re.compile(r"(?i)://|\bwww\.|\bhttps?:|\bmailto:|\b[a-z0-9-]+(?:\.[a-z0-9-]+)+/")
+# '#' and its full-width and small forms: a '#n' may wake the session watching that PR.
+PUSH_HASH_CHARS = ("#", "\uff03", "\ufe5f")
 # Characters a push never carries: controls, format characters (zero-width, bidi) and the line and
 # paragraph separators that would break the one-line rule.
 PUSH_BAD_CATEGORIES = ("Cc", "Cf", "Zl", "Zp")
-# The run-branch jobs (BRANCH_RE group 1) that may send each class.
-PUSH_FROM = {"BUY": ("analyse", "review"), "WEEKLY": ("weekly",)}
+# The run-branch jobs (BRANCH_RE group 1) that may send each class. INTAKE sends a WEEKLY push only in
+# its weekly watchdog's not-published form (PUSH_INTAKE_RE), on its branch or before it is cut.
+PUSH_FROM = {"BUY": ("analyse", "review"), "WEEKLY": ("weekly", "intake")}
+# INTAKE's weekly watchdog (MODEL v4.8.0 §8.7 item 11, routines/INTAKE.md step 0): on the Monday after a
+# week the weekly page does not show as published, one 'GSC WEEKLY · not published · INTAKE {D}: …' push.
+# Exactly its two forms (routines/INTAKE.md step 0, README §5): 'no report for {PERIOD}' or 'weekly check failed
+# ({reason})', the reason in plain words and digits (no parentheses, no dotted name, no link) [v4.8.0 review].
+PUSH_INTAKE_RE = re.compile(r"^GSC WEEKLY · not published · INTAKE (?P<date>\d{4}-\d{2}-\d{2}): "
+                            r"(?:no report for " + PERIOD_TEXT + r"|weekly check failed \([A-Za-z0-9 ,:;'_-]{1,120}\))$")
+# The INTAKE marker of that form: WEEKLY's own not-published push never carries it.
+PUSH_INTAKE_MARK_RE = re.compile(r"^GSC WEEKLY · not published · INTAKE\b")
+# Off its branch (step 0 runs before the branch is cut) the watchdog's {D} must be the run's day: the hook's
+# UTC date or the day either side (Prague is UTC+1 or +2, and a run may straddle midnight).
+PUSH_INTAKE_DAYS = 1
 
 # The register page (MODEL v4.5.0 §7.4, routines/INTAKE.md step 9): INTAKE refreshes one
 # private claude.ai artifact in place, best-effort. read is the Artifact tool's own
@@ -192,6 +229,12 @@ WEEKLY_UPDATED_FIELDS = {"at", "by"}
 WEEKLY_BY = "GSC WEEKLY routine"
 BLOB_URL_RE = re.compile(r"/_blob/[0-9a-f]{32}")                      # used with fullmatch
 ISO_TS_RE = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d{1,6})?)?(?:Z|[+-]\d{2}:\d{2})")
+# INTAKE's weekly watchdog (MODEL v4.8.0, routines/INTAKE.md step 0) reads the page's published mark and
+# nothing else: this one ArtifactData get, exactly, on INTAKE's run branch or before it is cut.
+INTAKE_META = {"action": "get", "url": WEEKLY_PAGE_URL, "collection": "datasets", "doc_id": "meta"}
+INTAKE_META_HINT = ("INTAKE's weekly watchdog reads only the weekly page's datasets/meta: ArtifactData get with "
+                    "exactly url " + WEEKLY_PAGE_URL + ", collection 'datasets' and doc_id 'meta' (routines/INTAKE.md "
+                    "step 0); never list, batch, another document or the Artifact tool")
 WEEKLY_PAGE_HINT = ("only the WEEKLY run (a claude/gsc-weekly-* branch) uses the weekly page " + WEEKLY_PAGE_URL
                     + ": Artifact read; Artifact publish of one /tmp/" + WEEKLY_DIR + "/{id}.json dataset with "
                     "asset: true; ArtifactData get or list on 'datasets'; one ArtifactData batch of pinned "
@@ -269,10 +312,11 @@ GIT_C_OK = re.compile(r"^(core\.quotepath|core\.autocrlf|core\.safecrlf|color\..
 GIT_GLOBAL_OK = {"--no-pager", "-p", "-P", "--paginate", "--no-replace-objects",
                  "--literal-pathspecs", "--glob-pathspecs", "--noglob-pathspecs",
                  "--icase-pathspecs", "--no-optional-locks", "--no-advice"}
-# git config keys a routine may never write.
-GIT_CONFIG_LOCKED = re.compile(r"^(remote\.|push\.|branch\.|credential|url\.|http\.|include\.|"
-                               r"includeif\.|alias\.|core\.(hookspath|sshcommand|askpass|"
-                               r"fsmonitor|gitproxy|pager|editor))")
+# git config keys a routine may write: plain settings only, the git -c allowlist without pager.* (v4.8.0 review 2).
+# A denylist missed filter.*.clean, diff.*.textconv and merge.*.driver, which name a program git runs unseen.
+GIT_CONFIG_WRITE_OK = re.compile(r"^(core\.quotepath|core\.autocrlf|core\.safecrlf|color\..*|user\.name|"
+                                 r"user\.email|advice\..*|log\..*|merge\.conflictstyle|"
+                                 r"init\.defaultbranch|safe\.directory|gc\.auto|commit\.gpgsign)$")
 # git subcommands never needed by a routine.
 GIT_DENY = {
     "rebase": "rebase rewrites history", "cherry-pick": "cherry-pick is not part of the run",
@@ -297,6 +341,16 @@ GIT_ENV_LOCKED = re.compile(r"^GIT_(DIR|WORK_TREE|COMMON_DIR|SSH.*|ASKPASS|CONFI
                             r"EDITOR|SEQUENCE_EDITOR|EXTERNAL_DIFF)$")
 # Variables naming a program that git (or another tool) would run.
 PROGRAM_VARS = {"EDITOR", "VISUAL", "PAGER", "GIT_PAGER"}
+# Variables that make git, a shell or an interpreter load config or code from elsewhere (v4.8.0 review 2): HOME and
+# XDG_CONFIG_HOME move git's user config (a core.fsmonitor there runs on a plain git status), PATH swaps the program a
+# name runs, the rest load code before the command the guard checked.
+LOADER_VARS = {"HOME", "XDG_CONFIG_HOME", "PATH", "BASH_ENV", "ENV", "LD_PRELOAD", "LD_LIBRARY_PATH", "LD_AUDIT",
+               "PYTHONPATH", "PYTHONSTARTUP", "PYTHONHOME", "PYTHONUSERBASE"}
+# Programs that run another program given in their arguments, in a directory or with arguments the guard cannot
+# follow: git or gh behind one of them is refused (v4.8.0 review 2). find's -exec family is checked in check_find.
+RUNNERS = {"xargs", "flock", "setsid", "chroot", "unshare", "nsenter", "watch", "parallel", "strace", "ltrace",
+           "taskset", "ionice", "chrt", "runuser", "su", "doas", "script", "systemd-run", "fakeroot", "proot",
+           "bwrap", "firejail", "numactl", "sg", "newgrp", "busybox", "valgrind", "gdb", "dbus-run-session"}
 # git options that make git run another program, for any subcommand.
 GIT_EXEC_OPTS = ("--upload-pack", "--receive-pack", "--exec", "--open-files-in-pager",
                  "--extcmd", "--ext-diff", "--tool")
@@ -321,7 +375,8 @@ REGISTER_ATTENDED = (
 # fragments in their source: this scan cannot tell a read from a write, so gsc_weekly.py builds its
 # MODEL path from parts. The scan is a tripwire for ad-hoc /tmp scripts, not a boundary for those tools.
 LOCKED_FRAG_RE = re.compile(r"model/|routines/|\.claude|\.github|CLAUDE\.md|CLAUDE\.local\.md|"
-                            r"AGENTS\.md|settings\.local\.json|disableAllHooks|\.git[/\\]")
+                            r"AGENTS\.md|settings\.local\.json|disableAllHooks|\.git[/\\]|"
+                            r"(?:\.|/etc/)gitconfig|\.config/git\b")
 # Interpreter code that names GitHub beside a request body or a write method (routine scripts never
 # talk to GitHub; README §5).
 CODE_GITHUB_RE = re.compile(r"(?i)github\.com")
@@ -374,6 +429,69 @@ def check_register_tool(rest):
     for sub, reason in REGISTER_ATTENDED:
         if sub in rest:
             block(reason)
+
+
+def weekly_tool_word(word):
+    """True when a word names the weekly tool: its script or its module (as register_tool_word)."""
+    w = word.replace("\\", "/")
+    if os.path.basename(w).lower() == "gsc_weekly.py":
+        return True
+    return "/" not in w and w.rsplit(".", 1)[-1].lower() == "gsc_weekly"
+
+
+# gsc_weekly.py window's stamp arguments (routines/INTAKE.md step 0, WEEKLY.md step 3) carry values read from the
+# weekly page's meta document: data, never shell text. Only these literal forms pass [v4.8.0 review].
+WEEKLY_WINDOW_ARGS = {"--at": "an ISO time", "--meta-at": "an ISO time or -",
+                      "--meta-by": "'GSC WEEKLY routine', other or -"}
+
+
+# The whole command, when it runs gsc_weekly.py window (v4.8.0 review 2): the per-word check above sees the words only
+# after the shell has split them, so a value that closes its own quote ("…'; curl …; echo '") leaves every segment
+# valid. The raw command must therefore be exactly one of the written forms (WEEKLY.md steps 2 and 3, INTAKE.md
+# step 0), with nothing before or after it: no ';', '&', '|', newline, '#', '$', backtick, extra quote or repeat.
+_ISO = ISO_TS_RE.pattern
+_WIN_AT = r"(?:'%s'|\"%s\"|%s)" % (_ISO, _ISO, _ISO)
+_WIN_META_AT = r"(?:'(?:%s|-)'|\"(?:%s|-)\"|%s|-)" % (_ISO, _ISO, _ISO)
+_WIN_META_BY = r"(?:'(?:GSC WEEKLY routine|other|-)'|\"(?:GSC WEEKLY routine|other|-)\"|other|-)"
+WINDOW_CMD_RE = re.compile(r"[ \t\r\n]*python3? (?:routines/tools/gsc_weekly\.py|-m routines\.tools\.gsc_weekly) window "
+                           r"--at[ =]" + _WIN_AT + r"(?: --meta-at[ =]" + _WIN_META_AT + r" --meta-by[ =]" + _WIN_META_BY
+                           + r")?[ \t\r\n]*")
+WINDOW_CMD_HINT = ("gsc_weekly.py window runs only as the whole command, exactly as written: python3 routines/tools/"
+                   "gsc_weekly.py window --at \"{RUN}\" [--meta-at '{META_AT}' --meta-by '{META_BY}'], nothing before or "
+                   "after it (no ;, &, |, newline, # or repeated option; routines/INTAKE.md step 0, WEEKLY.md steps 2-3): "
+                   "the meta stamp is data, never shell text")
+
+
+def weekly_window_value_ok(opt, value):
+    if opt == "--meta-by":
+        return value in (WEEKLY_BY, "other", "-")
+    if opt == "--meta-at" and value == "-":
+        return True
+    return bool(ISO_TS_RE.fullmatch(value))
+
+
+def check_weekly_tool(rest):
+    """The words after the weekly tool: the window command's --at, --meta-at and --meta-by take only literal
+    values (an ISO time, '-', the routine's own name or 'other'), so no command substitution, variable or other
+    shell text from the page's meta document can reach the command line."""
+    if "window" not in rest:
+        return
+    i, seen = 0, set()
+    while i < len(rest):
+        word = rest[i]
+        opt, value = (word.split("=", 1) + [None])[:2] if word.startswith("--") else (word, None)
+        if opt in WEEKLY_WINDOW_ARGS:
+            if opt in seen:
+                block(f"gsc_weekly.py window {opt} given twice: the meta stamp is data, never shell text "
+                      "(routines/INTAKE.md step 0, WEEKLY.md step 3)")
+            seen.add(opt)
+            if value is None:
+                value = rest[i + 1] if i + 1 < len(rest) else ""
+                i += 1
+            if not weekly_window_value_ok(opt, value):
+                block(f"gsc_weekly.py window {opt} takes only {WEEKLY_WINDOW_ARGS[opt]}, written out literally "
+                      f"(routines/INTAKE.md step 0, WEEKLY.md step 3): the meta stamp is data, never shell text")
+        i += 1
 
 
 def prompt_job_of(path):
@@ -744,6 +862,7 @@ class Guard:
         self.root = norm(os.environ.get("CLAUDE_PROJECT_DIR") or cwd or os.getcwd())
         self.cwd = norm(cwd) if cwd else self.root
         self.vars = {}          # NAME -> value (None = unknown) for this command
+        self.raw = ""           # the whole Bash/Monitor command as the tool received it
         self._branch = None
         self._prompt_job = False  # not read yet; prompt_job_of gives None, '' or a job word
 
@@ -809,6 +928,7 @@ class Guard:
                 block("GSC guard canary — the guard is live; this refusal is the expected preflight self-test")
             if TOKEN_LITERAL_RE.search(cmd):
                 block("a GitHub token literal appeared in the command")
+            self.raw = cmd
             self.check_command(cmd, 0, self.cwd)
 
     # ---- phone pushes
@@ -840,7 +960,7 @@ class Guard:
             block(bad)
         if len(msg) > PUSH_MAX:
             block(f"routine push longer than {PUSH_MAX} characters")
-        if "#" in msg:
+        if any(ch in msg for ch in PUSH_HASH_CHARS):
             block("routine push contains '#': write 'PR n' (a '#n' may wake the session watching that PR)")
         exact = (PUSH_BUY_RE if cls == "BUY" else PUSH_WEEKLY_RE).match(msg)
         if not exact:
@@ -851,14 +971,38 @@ class Guard:
                   "of the WEEKLY report push")
         cur = self.current_branch()
         b = BRANCH_RE.match(cur)
-        job = self.pinned_job(f"a {cls} push")
+        intake = cls == "WEEKLY" and "intake" in (self.prompt_job(), self.run_job())
+        # INTAKE's weekly watchdog may run before INTAKE's branch is cut (step 0): its prompt pins the job.
+        job = self.acting_job(f"a {cls} push") if intake else self.pinned_job(f"a {cls} push")
         if job not in PUSH_FROM[cls] or (cls == "BUY" and m.group(2) != job.upper()):
             block(f"routine push not allowed: a {cls} push comes only from "
-                  + (f"the {m.group(2)} run itself" if cls == "BUY" else "the WEEKLY run")
+                  + (f"the {m.group(2)} run itself" if cls == "BUY" else "the WEEKLY run or INTAKE's weekly watchdog")
                   + f" (current branch '{cur or 'detached HEAD'}'; routines/README.md §5)")
         if cls == "BUY" and (exact.group("key") != b.group("key") or exact.group("date") != b.group("date")):
             block(f"routine push not allowed: a BUY push names this run's own key and date "
                   f"({b.group('key') or 'no key'} {b.group('date')}, branch '{cur}')")
+        if cls == "WEEKLY" and job != "intake" and PUSH_INTAKE_MARK_RE.match(msg):
+            block("routine push not allowed: 'GSC WEEKLY · not published · INTAKE …' is INTAKE's weekly watchdog "
+                  "form; the WEEKLY run sends 'GSC WEEKLY · not published · {reason}' (routines/README.md §5)")
+        if cls == "WEEKLY" and job == "intake":
+            w = PUSH_INTAKE_RE.match(msg)
+            if not w:
+                block("routine push not allowed: INTAKE sends only its weekly watchdog's 'GSC WEEKLY · not published "
+                      "· INTAKE {D}: no report for {PERIOD}' or '… INTAKE {D}: weekly check failed ({reason})' "
+                      "(never the published form; routines/INTAKE.md step 0)")
+            try:
+                day = datetime.date.fromisoformat(w.group("date"))
+            except ValueError:
+                day = None
+            if day is None:
+                block(f"routine push not allowed: '{w.group('date')}' is not a date")
+            if b and w.group("date") != b.group("date"):
+                block(f"routine push not allowed: INTAKE's weekly watchdog push names this run's own date "
+                      f"({b.group('date')}, branch '{cur}')")
+            today = datetime.datetime.now(datetime.timezone.utc).date()
+            if not b and abs((day - today).days) > PUSH_INTAKE_DAYS:
+                block(f"routine push not allowed: INTAKE's weekly watchdog push names this run's own date; "
+                      f"{day.isoformat()} is not today ({today.isoformat()} UTC, ±{PUSH_INTAKE_DAYS} day)")
         # One push per class per run: an O_EXCL marker in the git dir, which no routine command may write
         # or remove (.git is locked), so deleting a temp file cannot buy a second push.
         session = re.sub(r"[^A-Za-z0-9_-]", "", str(self.event.get("session_id") or ""))[:80] or "nosession"
@@ -896,6 +1040,14 @@ class Guard:
                   f"'{self.current_branch() or 'detached HEAD'}' is not a claude/gsc-{want}-… run branch; a session "
                   "acts only as its own job")
         return job
+
+    def acting_job(self, what):
+        """The job a call acts as when it may also run before the run branch is cut (INTAKE's step 0): on a
+        run branch, or without a readable routine prompt, pinned_job; off a run branch, the job the
+        readable prompt names (the off-branch rule of a gh api write, MODEL v4.6.1; v4.8.0)."""
+        if self.run_job() or not self.prompt_job():
+            return self.pinned_job(what)
+        return self.prompt_job()
 
     def weekly_session(self):
         """True when the session is WEEKLY by its branch or by its prompt (the read-only job)."""
@@ -1005,10 +1157,11 @@ class Guard:
         check_dataset_file(full, name[:-5])
 
     def check_artifact_data(self, ti):
-        """ArtifactData passes only for WEEKLY on WEEKLY_PAGE_URL: get of one datasets/{id}
+        """ArtifactData passes only on WEEKLY_PAGE_URL: for WEEKLY, get of one datasets/{id}
         document, list of the datasets collection, and one batch of pinned updates of
-        datasets/{id} source and updated. Every other action, field, collection and url is
-        refused (never set, delete, str_replace, query, profiles, as_level or out_dir)."""
+        datasets/{id} source and updated; for INTAKE (its weekly watchdog, MODEL v4.8.0), exactly
+        INTAKE_META. Every other action, field, collection and url is refused (never set, delete,
+        str_replace, query, profiles, as_level or out_dir)."""
         action = ti.get("action")
         if not isinstance(action, str) or action not in WEEKLY_DATA_FIELDS:
             block(f"ArtifactData action '{short(action, 30)}' is not allowed in routines (only get, list and "
@@ -1021,6 +1174,9 @@ class Guard:
         if ti.get("url") != WEEKLY_PAGE_URL:
             block(f"ArtifactData {action} on '{short(ti.get('url') or 'no url', 60)}' is not allowed: routines "
                   "touch only the weekly page's datasets; " + WEEKLY_PAGE_HINT)
+        if "intake" in (self.prompt_job(), self.run_job()):
+            self.check_intake_meta(ti)
+            return
         self.need_weekly_run(f"ArtifactData {action}")
         if action == "batch":
             self.check_dataset_writes(ti.get("writes"))
@@ -1036,6 +1192,19 @@ class Guard:
         query = ti.get("query")
         if query is not None and (not isinstance(query, dict) or set(query) - {"limit", "cursor"}):
             block("ArtifactData list with a query other than limit and cursor; " + WEEKLY_PAGE_HINT)
+
+    def check_intake_meta(self, ti):
+        """INTAKE's weekly watchdog (MODEL v4.8.0, routines/INTAKE.md step 0): exactly the one ArtifactData get
+        INTAKE_META, on INTAKE's run branch or, before it is cut, with a readable INTAKE prompt."""
+        job = self.acting_job(f"ArtifactData {short(ti.get('action'), 20)} on the weekly page")
+        if job != "intake":
+            block(f"ArtifactData get of the weekly meta outside INTAKE (current branch "
+                  f"'{self.current_branch() or 'detached HEAD'}'): " + INTAKE_META_HINT)
+        if ti != INTAKE_META:
+            fields = sorted(set(ti) - set(INTAKE_META))
+            block(f"ArtifactData {short(ti.get('action'), 20)} of '{short(ti.get('collection'), 30)}/"
+                  f"{short(ti.get('doc_id'), 30)}'" + (f" with {fields}" if fields else "") + " from INTAKE: "
+                  + INTAKE_META_HINT)
 
     def check_dataset_writes(self, writes, now=None):
         """One batch: exactly one update of each datasets/{id} document (DATASET_IDS), meta last, each
@@ -1134,6 +1303,13 @@ class Guard:
             if re.search(r"/\.claude/settings[^/]*\.json$|/\.claude\.json$|/\.claude/projects(/|$)|"
                          r"/etc/claude-code/|/Library/Application Support/ClaudeCode/", fwd, re.I):
                 return full
+            # git's user and system config (v4.8.0 review 2): a core.fsmonitor or filter there runs on a plain git
+            # status inside the checkout, unseen. A folder above one counts too (cp -r onto ~/.config, tar -C ~).
+            if re.search(r"/\.gitconfig$|/\.config/git(/|$)|^/etc/gitconfig$", fwd, re.I):
+                return full
+            for cfg in self.git_config_paths():
+                if full == cfg or full.startswith(cfg + os.sep) or cfg.startswith(full.rstrip(os.sep) + os.sep):
+                    return full
             return None
         if rel == ".":
             return "the repo root" if whole else None
@@ -1145,6 +1321,16 @@ class Guard:
         if parts[-1].lower() in {n.lower() for n in LOCKED_NAMES}:
             return rel
         return None
+
+    @staticmethod
+    def git_config_paths():
+        """git's user and system config: ~/.gitconfig, ~/.config/git, $XDG_CONFIG_HOME/git when set, /etc/gitconfig."""
+        home = os.path.expanduser("~")
+        paths = [os.path.join(home, ".gitconfig"), os.path.join(home, ".config", "git"), "/etc/gitconfig"]
+        xdg = os.environ.get("XDG_CONFIG_HOME", "")
+        if os.path.isabs(xdg):
+            paths.append(os.path.join(xdg, "git"))
+        return [norm(p) for p in paths]
 
     def need_unlocked(self, paths, base, what, whole=False):
         for p in paths:
@@ -1269,6 +1455,9 @@ class Guard:
             block(f"setting {name} is not allowed (routines never handle tokens)")
         if GIT_ENV_LOCKED.match(name):
             block(f"setting {name} is not allowed (it redirects git)")
+        if name in LOADER_VARS:
+            block(f"setting {name} is not allowed (it makes git, a shell or an interpreter load config or code from "
+                  "elsewhere, which the guard never reads)")
         if name in PROGRAM_VARS and value not in (None, "", "cat"):
             block(f"setting {name} to a program is not allowed (only {name}=cat)")
 
@@ -1335,10 +1524,25 @@ class Guard:
                         # env -S splits one string into the command and its arguments, which the guard
                         # cannot read word by word (MODEL v4.6.0 review): run the command directly.
                         block("env -S (split string) runs a command the guard cannot check; run the command directly")
-                    if ((long_opt and "=" not in a and ("--unset".startswith(name) or "--chdir".startswith(name)))
-                            or re.match(r"^-[A-Za-z0-9]*[uC]$", a)):
-                        j += 2                     # --unset NAME, --chdir DIR, a cluster ending in -u or -C
+                    # env -C DIR / --chdir DIR runs the command in a directory the guard does not track, so git
+                    # would run outside the checkout unseen (v4.8.0 review 2). Short clusters: -u (and -a) take the
+                    # rest of the cluster as their value; a C before them is the chdir option.
+                    short_c = re.match(r"^-[A-Za-z0-9]*?([uaC])", a) if not a.startswith("--") else None
+                    if (long_opt and "--chdir".startswith(name)) or (short_c and short_c.group(1) == "C"):
+                        block("env -C/--chdir runs the command in a directory the guard does not track; run it from "
+                              "the repo root (git runs only inside the checkout)")
+                    if (long_opt and "=" not in a and "--unset".startswith(name)) or re.match(r"^-[A-Za-z0-9]*u$", a):
+                        j += 2                     # --unset NAME, a cluster ending in -u
                         continue
+                if w == "sudo":
+                    # sudo -D/--chdir, -R/--chroot and -i/--login (the target user's home) move the command to a
+                    # directory the guard does not track (v4.8.0 review 2).
+                    name = a.split("=", 1)[0]
+                    if (re.match(r"^-[A-Za-z]*[DRi]", a) and not a.startswith("--")) or (
+                            a.startswith("--") and len(name) >= 4
+                            and any(full.startswith(name) for full in ("--chdir", "--chroot", "--login"))):
+                        block(f"sudo {name} runs the command in another directory, which the guard does not track; run "
+                              "it from the repo root")
                 if a in opts:
                     j += 2
                 elif a.startswith("-") and a != "-":
@@ -1400,6 +1604,33 @@ class Guard:
         if not words:
             return base
         prog, args = os.path.basename(words[0]), words[1:]
+        # A computed command name ($(echo git), `…`, an unset $VAR, a glob or brace pattern) hides the program from
+        # every check below: '$(echo git) push origin HEAD:main' would read as an unknown program (v4.8.0 review 2).
+        if SUBST in words[0] or "$" in words[0] or (
+                words[0] not in ("[", "[[") and not words[0].endswith(")")       # test, a case pattern
+                and re.search(r"[*?\[]|\{.*[,.].*\}", words[0])):
+            block(f"a computed command name ('{short(words[0], 40)}') hides the program the guard checks; write the "
+                  "program name out")
+        # Builtins that assign a variable without NAME=: for/select, read, mapfile/readarray, printf -v. HOME and PATH
+        # are already exported, so 'for HOME in /tmp/x; do git status; done' reaches git (v4.8.0 review 2).
+        if prog in ("for", "select") and args:
+            self.check_assign(args[0], SUBST)
+        elif prog in ("read", "mapfile", "readarray"):
+            for a in args:
+                if re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", a):
+                    self.check_assign(a, SUBST)
+        elif prog == "printf":
+            for k, a in enumerate(args):
+                if a == "-v" and k + 1 < len(args):
+                    self.check_assign(args[k + 1], SUBST)
+                elif a.startswith("-v") and len(a) > 2:
+                    self.check_assign(a[2:], SUBST)
+        elif prog in ("declare", "typeset", "local") and any(re.match(r"^-[A-Za-z]*n", a) for a in args):
+            block(f"{prog} -n (a name reference) hides which variable a later assignment sets; assign it directly")
+        # git or gh behind a command runner (xargs, flock, setsid …) runs in a directory or with arguments the guard
+        # cannot follow (v4.8.0 review 2).
+        if prog in RUNNERS and any(os.path.basename(a) in ("git", "gh") for a in args):
+            block(f"git or gh run through {prog}: the guard cannot check its directory or arguments; run it directly")
 
         # git push / gh api text that is not a direct git/gh call cannot be checked.
         # Read-only text tools may mention it (searching the playbooks), but sed/awk only
@@ -1594,11 +1825,15 @@ class Guard:
                 self.need_not_archive([dest], base, f"{prog} extraction")
 
     def check_find(self, args, base):
-        """find … -delete / -exec <writer>: the start paths must not hold locked files."""
+        """find … -delete / -exec <writer>: the start paths must not hold locked files. git or gh behind -exec,
+        -execdir, -ok or -okdir is refused: -execdir runs it in each match's directory (v4.8.0 review 2)."""
         writes = "-delete" in args
         for k, a in enumerate(args):
             if a in ("-exec", "-execdir", "-ok", "-okdir") and k + 1 < len(args):
-                if os.path.basename(args[k + 1]) in WRITE_PROGS | {"git"}:
+                if os.path.basename(args[k + 1]) in ("git", "gh"):
+                    block(f"git or gh run through find {a}: the guard cannot check its directory or arguments; run it "
+                          "directly")
+                if os.path.basename(args[k + 1]) in WRITE_PROGS:
                     writes = True
         if not writes:
             return
@@ -1697,16 +1932,28 @@ class Guard:
         if script:
             if os.path.basename(script.replace("\\", "/")).lower() == "gsc_register.py":
                 check_register_tool(args[i + 1:])
+            if weekly_tool_word(script):
+                self.check_weekly(args[i + 1:])
             self.check_script(script, base, shell, depth)
         for k, word in enumerate(module_words):
             if register_tool_word(word):
                 check_register_tool(module_words[k + 1:])
+                break
+            if weekly_tool_word(word):
+                self.check_weekly(module_words[k + 1:])
                 break
         # A module may read its stdin as code (code, pdb), so a heredoc fed to it is checked as code too.
         if not codes and not script:
             stdin = True
         if stdin:
             lvl["stdin_shell" if shell else "stdin_code"] = True
+
+    def check_weekly(self, rest):
+        """The weekly tool's words (check_weekly_tool), then, for window, the whole command: exactly one written form
+        and nothing else (WINDOW_CMD_RE; v4.8.0 review 2). A window run from a script, eval or bash -c never matches."""
+        check_weekly_tool(rest)
+        if "window" in rest and not WINDOW_CMD_RE.fullmatch(self.raw):
+            block(WINDOW_CMD_HINT)
 
     # ---- git
 
@@ -1743,6 +1990,12 @@ class Guard:
         if i >= len(args):
             return
         sub, rest = args[i], args[i + 1:]
+        # Every git command runs inside the checkout (v4.8.0 review): a repository a routine made elsewhere
+        # (git -C <dir>, cd <dir>) could name a program in its own config (core.fsmonitor, a diff or filter
+        # driver, remote.origin.uploadpack) that git would run unseen. push and fetch also check the repository.
+        if rel_to(gitcwd, self.root) is None:
+            block(f"git {short(sub, 20)} is allowed only inside the repo checkout (never git -C or cd to another "
+                  "directory)")
         if sub in GIT_DENY:
             block(f"git {sub} is blocked: {GIT_DENY[sub]}")
         for a in rest:
@@ -1759,11 +2012,13 @@ class Guard:
         if handler:
             handler(sub, rest, gitcwd)
 
-    def git_push(self, sub, rest, gitcwd):
+    def need_own_repo(self, gitcwd, what):
+        """git runs in the repo checkout's own repository. Outside the root (git -C <dir>, cd <dir>) a repository a
+        routine made itself could name a program in its config (remote.origin.uploadpack, core.fsmonitor) that git
+        would run; inside it, a nested copy of .git (or a worktree) would act on another HEAD while the root still
+        sits on the run branch."""
         if rel_to(gitcwd, self.root) is None:
-            block("git push is allowed only inside the repo checkout")
-        # The directory git runs in must be the root's own repository: a nested copy of .git (or a
-        # worktree) would push another HEAD while the root still sits on the run branch.
+            block(f"{what} is allowed only inside the repo checkout")
         try:
             r = subprocess.run(["git", "-C", gitcwd, "rev-parse", "--show-toplevel", "--absolute-git-dir"],
                                capture_output=True, text=True, timeout=10)
@@ -1771,8 +2026,11 @@ class Guard:
         except (OSError, subprocess.SubprocessError):
             lines = []
         if len(lines) != 2 or norm(lines[0]) != self.root or norm(lines[1]) != self.git_dir():
-            block("git push from a directory that is not the repo checkout's own repository (a nested or copied "
-                  ".git, or a worktree); push only from the repo root")
+            block(f"{what} from a directory that is not the repo checkout's own repository (a nested or copied "
+                  f".git, or a worktree); run it from the repo root")
+
+    def git_push(self, sub, rest, gitcwd):
+        self.need_own_repo(gitcwd, "git push")
         pos = []
         for a in rest:
             if a in ("-u", "--set-upstream", "-q", "--quiet"):
@@ -1825,8 +2083,9 @@ class Guard:
             i += 1
         if not read and len(pos) >= 2:
             write = True
-        if write and pos and GIT_CONFIG_LOCKED.match(pos[0].lower()):
-            block(f"git config write to '{pos[0]}' is not allowed in routines")
+        if write and pos and not GIT_CONFIG_WRITE_OK.match(pos[0].lower()):
+            block(f"git config write to '{pos[0]}' is not allowed in routines (only plain settings: user.name, "
+                  "user.email, color, line endings; never a key that names a program)")
 
     def leave_run_branch(self, what):
         """A run never leaves its run branch (one run, one branch): refuse branch moves once HEAD is on one."""
@@ -1994,16 +2253,26 @@ class Guard:
 
     def git_fetch(self, sub, rest, gitcwd):
         """Only git fetch origin main (CLAUDE.md, README §1): a refspec could rewrite refs/remotes/origin/main,
-        which the memo-on-main rule trusts."""
-        pos = []
+        which the memo-on-main rule trusts. --unshallow (bare: no value) completes a shallow clone's history
+        of that same ref, read only, and names it: exactly git fetch --unshallow origin main (routines/WEEKLY.md
+        step 1: the weekly report reads first-parent history; MODEL v4.8.0). --depth, --deepen, --shallow-* and
+        every other option stay refused. Only in the repo checkout's own repository (need_own_repo)."""
+        self.need_own_repo(gitcwd, "git fetch")
+        pos, unshallow = [], False
         for a in rest:
+            if a == "--unshallow":
+                unshallow = True
+                continue
             if a in ("-q", "--quiet", "--no-tags", "--prune", "-p"):
                 continue
             if a.startswith("-"):
-                block(f"git fetch option '{a}' is not allowed (only git fetch origin main)")
+                block(f"git fetch option '{a}' is not allowed (only git fetch origin main, or git fetch --unshallow "
+                      "origin main)")
             pos.append(a)
         if pos not in ([], ["origin"], ["origin", "main"]):
             block(f"git fetch {' '.join(short(x, 40) for x in pos)}: only git fetch origin main (no refspec)")
+        if unshallow and pos != ["origin", "main"]:
+            block("git fetch --unshallow names its remote and ref: only git fetch --unshallow origin main")
 
     def git_lfs(self, sub, rest, gitcwd):
         if "push" in rest:

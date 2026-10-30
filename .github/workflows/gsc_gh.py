@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""GitHub REST helper for gsc-automerge and gsc-notify (MODEL v4.5.0 §8.7
-items 10-11), with an endpoint allowlist checked before any I/O.
+"""GitHub REST helper for gsc-automerge and gsc-notify (MODEL v4.8.0 §8.7
+items 10-12), with an endpoint allowlist checked before any I/O.
 
 The token is the per-run GITHUB_TOKEN that the workflow passes as env
 GH_TOKEN (`GH_TOKEN: ${{ github.token }}`). GitHub mints it for the run and
@@ -11,17 +11,20 @@ Allowlist (paths relative to repos/{REPO}/; anything else raises NotAllowed):
   GET    pulls?…, pulls/{n}, issues?…, issues/{n}, issues/{n}/comments?…,
          actions/workflows/{gsc-guard|gsc-automerge|gsc-notify}.yml/runs?…,
          actions/runs?…, actions/runs/{id}, actions/runs/{id}/jobs?…
-  POST   issues                      fields ⊆ {title, body, assignees}; title is
-                                     'GSC - needs Jakub' or a digest title
+  POST   issues                      exactly {title, body}; title is 'GSC - needs Jakub'
+                                     (created once, unassigned)
          issues/{n}/comments         only the verified 'GSC - needs Jakub' issue
          actions/runs/{id}/rerun     only with allow_actions (gsc-notify maintenance)
          actions/workflows/gsc-automerge.yml/dispatches   {ref: main}, allow_actions
-  PATCH  issues/{n}                  exactly {state: closed, state_reason: completed},
-                                     only a verified digest issue
   PUT    pulls/{n}/merge             exactly {merge_method: squash, sha, commit_title},
                                      only with allow_merge (gsc-automerge)
-Never: labels, assignees endpoints, requested_reviewers, reviews, any PATCH of a
-pull request, git/, contents/, graphql, or a comment on a pull request.
+No body written to an issue or a comment may @mention anyone (v4.8.0: the
+comments are a record that the weekly report and Jakub read, not a ping);
+post_needs_comment() neutralises '@name' with no_mention() and check()
+refuses whatever is left. Since v4.8.0 there is no digest issue and no
+PATCH of any kind (the morning digest is retired).
+Never: labels, assignees endpoints or fields, requested_reviewers, reviews,
+any PATCH, git/, contents/, graphql, or a comment on a pull request.
 
 Python 3.11+ standard library only. Tests: test_gsc_automerge.py and
 test_gsc_notify.py use a fake transport (no network).
@@ -33,13 +36,14 @@ import urllib.error
 import urllib.request
 
 API = "https://api.github.com/"
-OWNER = "jakubhoryna"
 BOT = "github-actions[bot]"
 NEEDS_TITLE = "GSC - needs Jakub"
-DIGEST_TITLE_RE = re.compile(r"^(STALL - )?GSC digest ")
-NEEDS_BODY = ("@jakubhoryna Standing issue. gsc-automerge posts one comment here for each routine PR "
-              "it holds for you, with the reason and a link; gsc-notify posts here when a guard run "
-              "never ran or a workflow failed. Pin this issue (once, by hand). Do not close it.")
+NEEDS_BODY = ("Standing record issue (MODEL §8.7 item 10). gsc-automerge posts one comment here for each "
+              "routine PR it holds, with the reason and a search link; gsc-notify's daily maintenance posts "
+              "here when a guard run never ran or is stuck, and either workflow when it fails. The comments "
+              "mention no one: held PRs reach Jakub in the weekly report. Do not close this issue.")
+# '@' directly before a letter or digit: a GitHub @mention (a user or org/team).
+MENTION_RE = re.compile(r"@(?=[A-Za-z0-9])")
 
 # Query strings: no '/', '#' or whitespace, so a query can never smuggle a path.
 _Q = r"(?:\?[^/#\s]*)?"
@@ -131,7 +135,6 @@ class Gh:
         self.allow_merge = allow_merge
         self.allow_actions = allow_actions
         self.needs_issue = None      # set only by verify_needs_issue()
-        self.closable = set()        # digest issues verified by verify_digest()
 
     # ---- allowlist
 
@@ -148,12 +151,13 @@ class Gh:
         if "?" in rel:
             raise NotAllowed("%s %s: no query string on a write" % (method, rel))
         if method == "POST" and path == "issues":
-            if not set(fields) <= {"title", "body", "assignees"} or "title" not in fields:
-                raise NotAllowed("POST issues with fields %s" % sorted(fields))
-            if fields["title"] != NEEDS_TITLE and not DIGEST_TITLE_RE.match(str(fields["title"])):
-                raise NotAllowed("POST issues: only the needs-Jakub issue or a digest")
-            if fields.get("assignees") not in (None, [OWNER]):
-                raise NotAllowed("POST issues: assignee may only be %s" % OWNER)
+            if set(fields) != {"title", "body"}:
+                raise NotAllowed("POST issues with fields %s (exactly title and body; never assigned)"
+                                 % sorted(fields))
+            if fields["title"] != NEEDS_TITLE:
+                raise NotAllowed("POST issues: only the needs-Jakub issue")
+            if MENTION_RE.search(str(fields["body"])):
+                raise NotAllowed("POST issues: the body may not @mention anyone")
             return
         m = re.fullmatch(r"issues/(\d+)/comments", path)
         if method == "POST" and m:
@@ -161,6 +165,8 @@ class Gh:
                 raise NotAllowed("comments go only to the verified 'GSC - needs Jakub' issue")
             if set(fields) != {"body"}:
                 raise NotAllowed("comment fields %s" % sorted(fields))
+            if MENTION_RE.search(str(fields["body"])):
+                raise NotAllowed("a comment may not @mention anyone")
             return
         if method == "POST" and re.fullmatch(r"actions/runs/\d+/rerun", path):
             if not self.allow_actions or fields:
@@ -169,13 +175,6 @@ class Gh:
         if method == "POST" and path == "actions/workflows/gsc-automerge.yml/dispatches":
             if not self.allow_actions or fields != {"ref": "main"}:
                 raise NotAllowed("dispatch of gsc-automerge on main only, maintenance only")
-            return
-        m = re.fullmatch(r"issues/(\d+)", path)
-        if method == "PATCH" and m:
-            if int(m.group(1)) not in self.closable:
-                raise NotAllowed("PATCH issues/%s: not a verified digest issue" % m.group(1))
-            if fields != {"state": "closed", "state_reason": "completed"}:
-                raise NotAllowed("PATCH issues: only state=closed, state_reason=completed")
             return
         m = re.fullmatch(r"pulls/(\d+)/merge", path)
         if method == "PUT" and m:
@@ -248,21 +247,6 @@ class Gh:
         self.needs_issue = int(number) if ok else None
         return ok
 
-    def verify_digest(self, number):
-        issue = self.get("issues/%d" % int(number))
-        ok = (isinstance(issue, dict) and "pull_request" not in issue
-              and (issue.get("user") or {}).get("login") == BOT
-              and bool(DIGEST_TITLE_RE.match(issue.get("title") or "")))
-        if ok:
-            self.closable.add(int(number))
-        return ok
-
-    def close_digest(self, number):
-        if not self.verify_digest(number):
-            raise NotAllowed("issue %s is not a digest" % number)
-        return self.request("PATCH", "issues/%d" % int(number),
-                            {"state": "closed", "state_reason": "completed"})[0]
-
     def merge(self, number, sha, title):
         return self.request("PUT", "pulls/%d/merge" % int(number),
                             {"merge_method": "squash", "sha": sha, "commit_title": title})[0]
@@ -284,11 +268,12 @@ def find_needs_issue(gh):
 
 
 def ensure_needs_issue(gh, create=True):
-    """The verified needs-Jakub issue number, created once when absent."""
+    """The verified needs-Jakub issue number, created once when absent:
+    unassigned and mentioning no one, so it pings no one by assignment or
+    mention [v4.8.0]."""
     number = find_needs_issue(gh)
     if number is None and create:
-        created = gh.request("POST", "issues", {"title": NEEDS_TITLE, "body": NEEDS_BODY,
-                                                "assignees": [OWNER]})[0]
+        created = gh.request("POST", "issues", {"title": NEEDS_TITLE, "body": NEEDS_BODY})[0]
         number = created["number"]
     if number is None or not gh.verify_needs_issue(number):
         raise NotAllowed("no verifiable 'GSC - needs Jakub' issue")
@@ -298,7 +283,10 @@ def ensure_needs_issue(gh, create=True):
 def post_needs_comment(gh, body, marker, since):
     """Post `body` on the needs-Jakub issue unless a comment carrying `marker`
     exists among those updated since `since` (ISO time). Returns True when
-    posted. The body never names an open PR as '#n' (callers write 'PR n')."""
+    posted. The body never names an open PR as '#n' (callers write 'PR n') and
+    never @mentions anyone: '@name' anywhere in it, a PR title included, is
+    neutralised here [v4.8.0]."""
+    body = no_mention(body)
     number = ensure_needs_issue(gh)
     query = "issues/%d/comments?per_page=100" % number
     if since:
@@ -351,6 +339,12 @@ def no_hash_ref(text):
     """'#12' -> '# 12', so GitHub never cross-references a PR from a comment
     or an issue body. URLs written by gsc-notify carry no '#<digit>'."""
     return re.sub(r"#(?=\d)", "# ", str(text))
+
+
+def no_mention(text):
+    """'@name' -> '@ name', so a comment or an issue body never @mentions
+    (and so never notifies) anyone [v4.8.0]."""
+    return MENTION_RE.sub("@ ", str(text))
 
 
 # ---------------------------------------------------------------- Europe/Prague

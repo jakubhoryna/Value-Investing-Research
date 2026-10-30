@@ -50,7 +50,11 @@ or moved after retirement), refusing a folder that does not hold exactly
 one memo; a parent whose holding_keys names a RETIRED key listed once
 ('holding HKEY retired — re-test the parent'), a RETIRED parent never; and
 the Future tokens `unit dependency` (an undescribed material unit, new) and
-`sub dependency` (MODEL v4.6.0 section 7.1).
+`sub dependency` (MODEL v4.6.0 section 7.1). v4.8.0 (IDEAS C9): lint-memo's
+roce_worst and fcfroce_worst - required from v4.8.0 only, their form, roce_worst
+equal to the past_reason level at its precision, the P2/P3 floors of a STRONG or
+ADEQUATE Past, n.m. under FI and in a Gate-0 memo, no register column - and
+MODEL section 6.1 listing both before past_reason once MODEL.md is at v4.8.0.
 """
 import contextlib
 import datetime
@@ -2731,6 +2735,112 @@ class DependencyTokenTests(unittest.TestCase):
         fails, _ = r.lint_memo(LintTests.PATH, memo_text(TROW_FM, verdict="AVOID", quality_future="WEAK",
                                                          future_reason="unit dependency"))
         self.assertTrue(any("carries the group prefix 'unit'" in f for f in fails), fails)
+
+class ReturnFieldTests(unittest.TestCase):
+    """MODEL v4.8.0 section 6.1 (IDEAS C9): roce_worst and fcfroce_worst, the governing levels (the lower
+    window's worst-of-four, worst of eight under G6), required from v4.8.0 and absent before."""
+    PATH = LintTests.PATH
+    # TROW's memo of 2026-10-19 (section 3): 'Worst-of-eight ROCE is 22.9% (window) and 19.3% (five years) ...
+    # FCFROCE ... is 12.7% and 13.7%' -> Past WEAK on growth; the governing levels are 19.3% and 12.7%.
+    V480 = {"model_version": "v4.8.0", "verdict": "AVOID", "quality_past": "WEAK", "past_reason": "growth",
+            "roce_worst": "19.3%", "fcfroce_worst": "12.7%"}
+
+    def lint(self, drop=(), **over):
+        fm = dict(TROW_FM, **self.V480)
+        fm.update(over)
+        return r.lint_memo(self.PATH, memo_text(fm, drop=drop))
+
+    def test_required_from_v480_only(self):
+        self.assertEqual(self.lint()[0], [])
+        fails, _ = self.lint(drop=r.RETURN_FIELDS)
+        self.assertEqual([f.split(":")[0] for f in fails], ["roce_worst", "fcfroce_worst"], fails)
+        # A memo under an earlier MODEL carries neither field (memos are never edited in place).
+        for version in ("v4.7.0", "v4.6.1", "v4.5.0"):
+            fails, _ = self.lint(drop=r.RETURN_FIELDS, model_version=version)
+            self.assertEqual(fails, [], version)
+        self.assertEqual(r.RETURN_FIELDS, ("roce_worst", "fcfroce_worst"))
+        self.assertFalse(set(r.RETURN_FIELDS) & set(r.CSV_HEADER))       # no register column (nothing consumes it)
+        self.assertFalse(set(r.RETURN_FIELDS) & set(r.NEW_MEMO_FIELDS))  # not required of a v4.5.0-v4.7.x memo
+
+    def test_forms(self):
+        for value in ("19.3%", "-8.7%", "0.0%", "112.0%", "-61.1%", "n.m."):
+            self.assertEqual(self.lint(roce_worst=value)[0], [], value)
+        # One decimal, as MODEL section 5 rounds return ratios: never an integer or two decimals.
+        for value in ("19.3", "19.3 %", "19.33%", "16.10%", "19%", "112%", "−8.7%", "+19.3%", "19,3%", "high",
+                      "n/a"):
+            fails, _ = self.lint(roce_worst=value)
+            self.assertTrue(any(f.startswith("roce_worst: %r is not a percent" % value) for f in fails),
+                            (value, fails))
+        fails, _ = self.lint(fcfroce_worst="-")
+        self.assertTrue(any(f.startswith("fcfroce_worst: '-' (not established)") for f in fails), fails)
+
+    def test_roce_worst_is_the_past_reason_level(self):
+        # DOV.MI's memo of 2026-10-26: 'The worst-of-eight ROCE is 8.0% over ten years and 6.8% over five'
+        # -> past_reason '6.8% ROCE' (the lower window decides).
+        dov = dict(past_reason="6.8% ROCE", fcfroce_worst="4.6%")
+        self.assertEqual(self.lint(roce_worst="6.8%", **dov)[0], [])
+        fails, _ = self.lint(roce_worst="8.0%", **dov)
+        self.assertTrue(any(f.startswith("roce_worst: 8.0%, but past_reason prints '6.8% ROCE'") for f in fails),
+                        fails)
+        fails, _ = self.lint(roce_worst="n.m.", **dov)
+        self.assertTrue(any(f.startswith("roce_worst: n.m., but past_reason prints the level") for f in fails), fails)
+        # past_reason's own precision governs the comparison ('24% ROCE' is 23.9% rounded).
+        self.assertEqual(self.lint(quality_past="ADEQUATE", verdict="WATCH", past_reason="24% ROCE",
+                                   roce_worst="23.9%")[0], [])
+        # A WEAK reason other than a level leaves roce_worst free (TROW: growth; ABCA.PA: losses at -61.1%).
+        self.assertEqual(self.lint(past_reason="losses", roce_worst="-61.1%", fcfroce_worst="-7.2%")[0], [])
+
+    def test_graded_levels_reach_their_floors(self):
+        strong = dict(verdict="WATCH", quality_past="STRONG", past_reason="23.9% ROCE", roce_worst="23.9%")
+        self.assertEqual(self.lint(fcfroce_worst="8.0%", **strong)[0], [])
+        fails, _ = self.lint(fcfroce_worst="7.9%", **strong)
+        self.assertTrue(any(f.startswith("fcfroce_worst: 7.9%, but Past STRONG needs a level of at least 8%")
+                            for f in fails), fails)
+        adequate = dict(verdict="WATCH", quality_past="ADEQUATE")
+        self.assertEqual(self.lint(past_reason="10.0% ROCE", roce_worst="10.0%", fcfroce_worst="5.3%",
+                                   **adequate)[0], [])
+        fails, _ = self.lint(past_reason="9.9% ROCE", roce_worst="9.9%", fcfroce_worst="5.2%", **adequate)
+        self.assertTrue(any(f.startswith("roce_worst: 9.9%, but Past ADEQUATE needs a level of at least 10%")
+                            for f in fails), fails)
+        self.assertTrue(any(f.startswith("fcfroce_worst: 5.2%, but Past ADEQUATE needs a level of at least 5.3%")
+                            for f in fails), fails)
+        fails, _ = self.lint(past_reason="12.0% ROCE", roce_worst="12.0%", fcfroce_worst="n.m.", **adequate)
+        self.assertTrue(any(f.startswith("fcfroce_worst: n.m., but Past ADEQUATE") for f in fails), fails)
+
+    def test_fi_lens_writes_nm(self):
+        fi = dict(LintTests.FI, verdict="WATCH", quality_past="ADEQUATE")
+        self.assertEqual(self.lint(roce_worst="n.m.", fcfroce_worst="n.m.", **fi)[0], [])
+        fails, _ = self.lint(roce_worst="23.9%", fcfroce_worst="n.m.", **fi)
+        self.assertTrue(any(f.startswith("roce_worst: 23.9% — under the FI lens it is n.m.") for f in fails), fails)
+
+    def test_dnaf_gate0_writes_nm(self):
+        fm = {k: "n.m." for k in TROW_FM if k in r.DNAF_NM_FIELDS}
+        base = dict(TROW_FM, verdict="DNAF", position="—", model_version="v4.8.0", roce_worst="n.m.",
+                    fcfroce_worst="n.m.")
+        base.update(fm)
+        base["next_review_short"] = "n.m."
+        fails, _ = r.lint_memo(self.PATH, memo_text(base, drop=("zone", "add_band", "sell_flag_line")))
+        self.assertEqual(fails, [])
+        self.assertTrue(set(r.RETURN_FIELDS) <= r.DNAF_NM_FIELDS)
+        # A Gate-0 memo grades no Past: a level in either field fails (MODEL section 6.4).
+        for name in r.RETURN_FIELDS:
+            fails, _ = r.lint_memo(self.PATH, memo_text(dict(base, **{name: "5.0%"}),
+                                                        drop=("zone", "add_band", "sell_flag_line")))
+            self.assertEqual(fails, ["%s: 5.0%% — a section 6.4 Gate-0 (DNAF) memo grades no Past: it writes "
+                                     "n.m." % name], name)
+
+    def test_model_lists_the_fields_from_v480(self):
+        """MODEL section 6.1 lists both fields, before past_reason, once MODEL.md is at v4.8.0 or later."""
+        import re
+        with open(os.path.join(REPO, "model", "MODEL.md"), encoding="utf-8") as fh:
+            text = fh.read()
+        if not r.model_at_least(r.parse_front_matter(text).get("model_version"), r.RETURN_FIELDS_FROM):
+            self.skipTest("MODEL.md is below v4.8.0")
+        lines = {n: re.search(r"(?m)^%s:" % n, text) for n in r.RETURN_FIELDS + ("past_reason",)}
+        self.assertTrue(all(lines.values()), lines)
+        self.assertLess(lines["roce_worst"].start(), lines["fcfroce_worst"].start())
+        self.assertLess(lines["fcfroce_worst"].start(), lines["past_reason"].start())
+
 
 if __name__ == "__main__":
     result = unittest.main(exit=False, verbosity=1).result

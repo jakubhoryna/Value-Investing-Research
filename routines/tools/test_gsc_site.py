@@ -35,7 +35,18 @@ pile (G2); the one Gate-0 ground left (G2, P30) in the not-analysed reason,
 its definition and the first question, and ROE for banks and insurers on the
 bank lens only; every '▶ Method re-tests' block counts, the v4.6.0 block
 above the v4.5.0 one (the union of their keys, each under its first block's
-version), on the page, the banner and stats.
+version), on the page, the banner and stats. v4.8.0 (IDEAS C9): the governing
+return level - the C9 instances read from their current memos' section 3 and
+shown on the page (ABCA.PA, 4324.KL, OPFI, DOV.MI, NOVO-B.CO, TROW), the
+window phrasings ('but', 'with', a kept parenthesis, figure first, a run of
+pairs before the name, a span), what never counts (another metric's figure,
+the bars, an all-capex reading, a sensitivity, a growth rate, a single year,
+the latest three years, two metrics' alternating readings, two names side by
+side), the all-capex reading by memo version (passed over beside a maintenance
+reading from v4.5.0; the '= all capex' tier and a pre-v4.5.0 memo's graded
+reading kept), a parenthesis holding each window's reading (PRM), and the
+roce_worst / fcfroce_worst fields read first (FI's n.m. ROCE falls back to the
+register's ROE level; a field out of form falls back to the prose).
 """
 import collections
 import contextlib
@@ -1039,6 +1050,245 @@ class RealRegisterTests(unittest.TestCase):
                 if sec["id"] not in s.DATED_SECTIONS:
                     self.assertEqual(r["pd"], "", r["k"])
         self.assertLess(len(page.encode("utf-8")), 2 * 1024 * 1024)
+
+
+# MODEL v4.8.0 (IDEAS C9): section-3 excerpts of the current memos (2026-10-30) named in C9.
+C9_PAST = {
+    "ABCA.PA": "STD lens, ten full years. The pledged, fair-valued trading book is 72–88% of total assets, so both "
+               "G6 readings run. The worst of eight is −61.1% ROCE over ten years and 0.7% over five. FCFROCE on "
+               "maintenance capex (constructed, mostly equal to all capex) is −7.2% and 2.1%. With the book in, ROCE "
+               "is 10.2% and 14.4%. ΔOI/sh and ΔFCF/sh are n.m. A sustained decline fires. L/E is 9.1%. **WEAK** "
+               "(`losses`; FCFROCE, growth and the decline also fail).",
+    "4324.KL": "STD lens; no G6 classes. Operating income (J1, with net currency and derivative gains taken out in the "
+               "years they were positive) was negative in six of ten years, so every worst-of-four average is "
+               "negative: ROCE −1.9% over FY2016–FY2025 and −8.7% over five years; FCFROCE on maintenance-capex FCF "
+               "(constructed tier) −3.4% and −4.8%, all-capex −4.3%. Even the operating line as reported, hedging "
+               "and currency gains included, gives 3.1% and −7.9%. **WEAK** — losses (leverage, decline and growth "
+               "also fail).",
+    "OPFI": "STD lens, graded on operating income after funding cost, FY2019–FY2025 (history-limited: no balance sheet "
+            "before December 2019 was published). Worst-of-four ROCE is 13.1% over the record and 11.8% over five "
+            "years; FCFROCE on maintenance-capex FCF (P20 constructed, book growth beyond 3% taken out) is 12.4% and "
+            "10.5% (all-capex 12.2% and 10.3%). FY2022 lost $7.8m at the operating line, so both per-share growth "
+            "series cross zero and their geometric reads are n.m.; P3 fails. **WEAK** (leverage; growth also fails).",
+    "DOV.MI": "STD lens (no licence since 2019). Investments above the P31 line, so two readings. The worst-of-eight "
+              "ROCE is 8.0% over ten years and 6.8% over five; FCFROCE on constructed maintenance capex (P20; all "
+              "capex in deal years) is 8.1% and 4.6% (all-capex 7.8% and 4.3%). Operating income per share fell "
+              "22.0% a year and FCF per share 17.1% (harsher reads), with heavy dilution in 2024. **WEAK**.",
+    "NOVO-B.CO": "Worst-of-four ROCE is 56.0% over ten years and 49.1% over five; maintenance-capex FCFROCE "
+                 "(constructed) is 38.6% and 33.7%, with the all-capex reading at 33.6%. Operating income per share "
+                 "compounded 12.1% a year on the harsher read; maintenance FCF per share only 0.3%. **ADEQUATE.**",
+    "TROW": "Investment classes are 32–40% of total assets every year, so both readings run (P31). Worst-of-eight ROCE "
+            "is 22.9% (window) and 19.3% (five years), set by the include reading; FCFROCE on maintenance-capex FCF "
+            "(P20 constructed, all-capex close beside) is 12.7% and 13.7%. Levels clear P2. Growth fails on the lower "
+            "(exclude) reading: ΔOI/sh 2.8% geometric, 1.3% endpoints; ΔFCF/sh −0.05% geometric, negative. **WEAK** — "
+            "growth.",
+}
+# The register rows as register.csv holds them for those keys (section, Past, past_reason, held).
+C9_ROWS = {
+    "ABCA.PA": dict(past="WEAK", past_reason="losses"),
+    "4324.KL": dict(past="WEAK", past_reason="losses"),
+    "OPFI": dict(past="WEAK", past_reason="leverage"),
+    "DOV.MI": dict(past="WEAK", past_reason="6.8% ROCE"),
+    "NOVO-B.CO": dict(past="ADEQUATE", past_reason="49.1% ROCE", held="true"),
+    "TROW": dict(past="WEAK", past_reason="growth", held="true"),
+}
+# What the page showed at register v334 (C9) -> the governing level it shows now.
+C9_FIGURES = {
+    "ABCA.PA": ("−61.1%", "−7.2%"),
+    "4324.KL": ("−8.7%", "−4.8%"),
+    "OPFI": ("11.8%", "10.5%"),
+    "DOV.MI": ("6.8%", "4.6%"),
+    "NOVO-B.CO": ("49.1%", "33.7%"),
+    "TROW": ("19.3%", "12.7%"),
+}
+
+
+def past_memo(key, body, front=None):
+    return memo(key, [("3. Quality — past record", body)], front)
+
+
+class GoverningReturnTests(unittest.TestCase):
+    """v4.8.0 (IDEAS C9): the page shows the governing level - the lower window's worst-of-four (worst of eight
+    under G6) - from the memo's roce_worst / fcfroce_worst fields, else the lowest reading its section 3 ties
+    to the metric."""
+
+    def returns(self, body):
+        return s.extract_returns(past_memo("X", body))
+
+    def test_c9_instances_from_the_memos(self):
+        for key, body in C9_PAST.items():
+            self.assertEqual(self.returns(body), C9_FIGURES[key], key)
+
+    def test_c9_instances_on_the_page(self):
+        rows = [row(key, "AVOID-2", **C9_ROWS[key]) for key in C9_PAST]
+        files = {"memos/%s/%s_2026-09-01_GSC.md" % (key, key): past_memo(key, body) for key, body in C9_PAST.items()}
+        fx = Fixture(rows=rows, files=files)
+        try:
+            page = page_data(render(fx))
+        finally:
+            fx.close()
+        shown = {r["k"]: (r["ro"], r["fr"]) for sec in page["sections"] for r in sec["rows"]}
+        self.assertEqual(shown, C9_FIGURES)
+
+    def test_window_phrasings(self):
+        cases = [
+            # 'but' joins the windows (INSTAL.ST, 2026-10)
+            ("Worst-of-four ROCE is 11.2% over ten years but 9.8% over five; FCFROCE (constructed maintenance capex, "
+             "near all capex) is 11.3% and 9.9%.", ("9.8%", "9.9%")),
+            # a parenthesis holding the other window is kept; one holding an all-capex reading is not (BERNER-B.ST)
+            ("Over FY2016–FY2025 the worst-of-four ROCE is 12.3% (11.7% over five years) and FCFROCE 12.3% (11.3%), "
+             "on maintenance capex that equals all capex (SEK 2–14m a year).", ("11.7%", "11.3%")),
+            # 'with' and a second window named after it (6383.T)
+            ("The worst of eight ROCE averages is 14.1%, with 14.3% for the latest five years. FCFROCE on "
+             "maintenance-capex FCF is 8.1% and 10.4%; the all-capex reading is 7.3%.", ("14.1%", "8.1%")),
+            # figure first, the lower window second (BH)
+            ("The worst of eight is 2.5% ROCE over the window and −0.6% over the latest five years, where the include "
+             "reading's pooled OI is a loss; that negative level prints as losses. FCFROCE on maintenance capex is "
+             "0.9% and 2.1%, the all-capex reading identical.", ("−0.6%", "0.9%")),
+            # the include reading named, both windows (COH.AX)
+            ("On the harsher include reading the worst-of-eight ROCE is 16.8% and 18.4%, and maintenance-capex "
+             "FCFROCE is 10.2% and 12.1%.", ("16.8%", "10.2%")),
+            # four variants written as a run of pairs before the name (KRN.DE)
+            ("On the conservative capital-employed basis the four normalized FY2019–FY2025 averages run 9.3% / 9.8% / "
+             "11.3% / 11.7% ROCE — worst 9.3%, below P3 — and 7.6% / 8.1% / 9.3% / 9.7% FCFROCE, worst 7.6%.",
+             ("9.3%", "7.6%")),
+            # a span of readings stays one statement (TENB)
+            ("Operating income negative in all five reported years; normalized average ROCE −3.8% to −3.9% on both "
+             "computable variants — the level test fails outright.", ("−3.9%", "")),
+        ]
+        for body, want in cases:
+            self.assertEqual(self.returns(body), want, body[:60])
+
+    def test_what_never_counts_as_a_reading(self):
+        cases = [
+            # a figure written before the next metric's name is that metric's; the bars are thresholds (TER)
+            ("Worst-of-four normalized averages over FY2016–25 remain **21.5% ROCE** and **17.7% FCFROCE** (both the "
+             "end-of-period, cash-inclusive cut) against 15%/8% floors; all four cuts clear.", ("21.5%", "17.7%")),
+            # the all-capex FCFROCE is context, never governing, even when lower (LULU)
+            ("On the full FY2016–FY2025 window the worst-of-four ROCE is 30.9% (latest five years 33.5%) and FCFROCE "
+             "21.0% (21.4%), on maintenance-capex FCF with the P20 tier constructed; the all-capex FCFROCE is 18.5%.",
+             ("30.9%", "21.0%")),
+            # a sensitivity after a dash is no reading of the governing level (ANF)
+            ("Worst-of-four normalized ROCE **10.77%** (end-wc; range 10.77–15.93%) — 0.77pp above the ADEQUATE floor, "
+             "and the data bracket matters: capitalising the pre-842 leases (FY16–18) pulls it to ≈9.4%; adding the "
+             "missing accrued-NIBCL for FY16–20 pushes it to ≈11.8%. Worst-of-four FCFROCE 9.22%.", ("10.8%", "9.2%")),
+            # a per-share growth rate is no return (DLB): the range gives no figure, so the cell is a dash
+            ("Worst-of-four normalized ROCE (FY2016–25): 9.9% ceiling. FCFROCE 11.5–13.0% — comfortably real. "
+             "ΔOI/sh +2.0%/yr, ΔFCF/sh +6.5%/yr; L/E 22.6%.", ("9.9%", "")),
+            # a growth rate after the readings ends the chain (DOV.MI's next sentence, REH.AX)
+            ("Worst-of-four ROCE is 10.6% over ten years and 10.5% over five; maintenance-capex FCFROCE is 7.0% on "
+             "both. ΔOI/sh is 3.9% on the geometric read and ΔFCF/sh 8.5%.", ("10.5%", "7.0%")),
+        ]
+        for body, want in cases:
+            self.assertEqual(self.returns(body), want, body[:60])
+        # Two names side by side: each keeps its own figure, whichever is lower.
+        self.assertEqual(self.returns("Worst-of-four ROCE 8.0% FCFROCE 12.0%."), ("8.0%", "12.0%"))
+        self.assertEqual(self.returns("Worst-of-four ROCE 12.0% FCFROCE 8.0%."), ("12.0%", "8.0%"))
+        # A single year is no window: the chain stops at it.
+        self.assertEqual(s.first_figure(" fell from 40.9% in FY2022 to 16.7% in FY2024"), "40.9%")
+        # A reading followed by a qualifier that is no window ('before lease capitalisation') is not chained.
+        self.assertEqual(s.first_figure(" is 12.0% and 9.0% before lease capitalisation"), "12.0%")
+
+    def test_no_window_ends_the_chain(self):
+        """Review round (2026-10-30): a single year and the J6 limb (b) latest-three-year average name no
+        level window, and a statement that alternates two metrics' readings never lends one metric's
+        figure to the other."""
+        cases = [
+            # a single latest year
+            ("Worst-of-four ROCE is 12.0% over ten years and 9.0% for the latest year.", ("12.0%", "")),
+            ("Worst-of-four ROCE is 12.0% over ten years and 9.0% in the latest fiscal year.", ("12.0%", "")),
+            ("Worst-of-four ROCE is 12.0% over ten years and 9.0% on the latest year.", ("12.0%", "")),
+            ("Worst-of-four ROCE is 12.0% over ten years and 9.0% over one year.", ("12.0%", "")),
+            # the latest three years (J6 limb (b)), however written
+            ("Worst-of-four FCFROCE is 3.5% over ten years and 2.0% over five, and 1.1% over the latest three "
+             "years.", ("", "2.0%")),
+            ("Worst-of-four FCFROCE is 9.0% over ten years and 7.0% over the last 3 years.", ("", "9.0%")),
+            ("Worst-of-four FCFROCE is 9.0% over ten years and 7.0% over the latest 3y.", ("", "9.0%")),
+            # two metrics' readings alternating: FCFROCE's own first reading, never ROCE's five-year 8.0%
+            ("Worst-of-four ROCE 9.0% and FCFROCE 14.0% over ten years, and 8.0% and 13.0% over five.",
+             ("9.0%", "14.0%")),
+            ("The worst of four is 9.0% ROCE and 14.0% FCFROCE over ten years, and 8.0% and 13.0% over five.",
+             ("9.0%", "14.0%")),
+            # two names side by side share the readings: neither name owns one
+            ("Worst-of-four ROCE and FCFROCE are 9.0% and 14.0% over ten years, and 8.0% and 13.0% over five.",
+             ("", "")),
+            # a parenthesis of bars is no reading
+            ("Worst-of-four ROCE is 14.4% (15% / 8%) and FCFROCE 9.0%.", ("14.4%", "9.0%")),
+        ]
+        for body, want in cases:
+            self.assertEqual(self.returns(body), want, body[:70])
+        # Plural counts stay windows, so a history-limited record chains (OPFI-style, seven years).
+        self.assertEqual(self.returns("Worst-of-four ROCE is 13.1% over seven years and 11.8% over five years; "
+                                      "FCFROCE is 9.0% and 8.5%."), ("11.8%", "8.5%"))
+        # A name after another metric's single reading still chains its own windows (LULU, NFLX).
+        self.assertEqual(self.returns("Worst-of-four ROCE is 13.1% and FCFROCE 12.4% and 10.5%."), ("13.1%", "10.5%"))
+
+    def test_all_capex_and_parenthesised_windows(self):
+        """Review round (2026-10-30): from v4.5.0 an all-capex reading stated beside a maintenance-capex one is
+        passed over (R6); a lone all-capex reading is the '= all capex' tier and stays; a memo before v4.5.0
+        keeps its first reading, the one its quality gates read under P20. A parenthesis holding each
+        window's reading is kept (PRM)."""
+        def returns(body, version):
+            return s.extract_returns(past_memo("X", body, {"model_version": version}))
+        essity = ("Unchanged: worst-of-four ten-year ROCE **10.32%**, FCFROCE 6.54% all-capex and 8.07% on the "
+                  "maintenance basis. Quality gates stay on all-capex free cash flow whatever P20 does to the "
+                  "valuation and allocation legs.")
+        self.assertEqual(returns(essity, "v4.0.0"), ("10.3%", "6.5%"))      # ESSITY-B.ST, graded on all capex
+        self.assertEqual(returns(essity, "v4.7.0"), ("10.3%", "8.1%"))      # the same words under R6
+        brg = ("Worst-of-four normalized ROCE is 14.4% (closing capital, cash included); the best read is 16.2%. "
+               "Worst FCFROCE is 5.5% on all capex (9.3% on replacement capex): the 2017–2018 Florida plant build "
+               "and steady expansion spending absorb cash.")
+        self.assertEqual(returns(brg, "v4.4.1"), ("14.4%", "5.5%"))         # BRG.OL, graded on all capex
+        tier = ("Removing ¥1.42tn of business-disposal gains puts the worst of eight ROCE averages at **6.7%** on "
+                "the ten-year window (include reading) and 8.6% on the five-year; FCFROCE 4.8%, on all capex "
+                "because the P20 constructed build was not assembled (Appendix C).")
+        self.assertEqual(returns(tier, "v4.6.1"), ("6.7%", "4.8%"))         # 6501.T: the '= all capex' tier
+        nu = ("Worst-of-four ROCE is **3.0%** (window) and 3.4% (latest five years). Single years run from −4.7% "
+              "to 7.5%. FCFROCE on constructed maintenance capex (lending-book and funding rules applied) is "
+              "−1.4%, all-capex −1.7%.")
+        self.assertEqual(returns(nu, "v4.6.1"), ("3.0%", "−1.4%"))          # NU: the all-capex label is the next one's
+        prm = ("STD lens, seven fiscal years (history-limited). Cumulative OI is negative, so every worst-of-four "
+               "ROCE is negative (−5.8% over the latest five years, −4.6% over the window). FCFROCE on maintenance "
+               "capex is 3.0% over the window and 3.1% over five years. ΔOI/sh and ΔFCF/sh are n.m. on the harsher "
+               "reads.")
+        self.assertEqual(returns(prm, "v4.6.1"), ("−5.8%", "3.0%"))         # PRM: was 'negative' and a dash
+
+    def test_fields_come_first(self):
+        prose = "Worst-of-four ROCE is 25.0% over ten years and 24.0% over five; FCFROCE is 15.0% and 14.0%."
+        front = {"lens": "STD", "roce_worst": "19.3%", "fcfroce_worst": "-4.8%"}
+        rows = [row("FLD", "AVOID-2", past="WEAK", past_reason="growth"),
+                row("LVL", "WATCH", past="ADEQUATE", past_reason="24% ROCE"),
+                row("FIB", "WATCH", past="ADEQUATE", past_reason="9.5% ROE"),
+                row("BAD", "AVOID-2", past="WEAK", past_reason="losses"),
+                row("OLD", "AVOID-2", past="WEAK", past_reason="losses")]
+        files = {
+            "memos/FLD/FLD_2026-09-01_GSC.md": past_memo("FLD", prose, front),
+            "memos/LVL/LVL_2026-09-01_GSC.md": past_memo("LVL", prose, {"roce_worst": "23.9%",
+                                                                        "fcfroce_worst": "n.m."}),
+            "memos/FIB/FIB_2026-09-01_GSC.md": past_memo("FIB", "Worst ROE 9.5%.", {"lens": "FI", "roce_worst": "n.m.",
+                                                                                     "fcfroce_worst": "n.m."}),
+            "memos/BAD/BAD_2026-09-01_GSC.md": past_memo("BAD", prose, {"roce_worst": "−8.7 %",
+                                                                        "fcfroce_worst": "high"}),
+            "memos/OLD/OLD_2026-09-01_GSC.md": past_memo("OLD", prose),
+        }
+        fx = Fixture(rows=rows, files=files)
+        try:
+            ctx, sections, extraction, _rows = s.build(fx.path)
+            page = page_data(s.render_page(ctx, sections))
+            stats = s.stats_text(fx.path)
+        finally:
+            fx.close()
+        shown = {r["k"]: (r["rl"], r["ro"], r["fr"]) for sec in page["sections"] for r in sec["rows"]}
+        self.assertEqual(shown["FLD"], ("ROCE", "19.3%", "−4.8%"))      # the fields, not the prose
+        self.assertEqual(shown["LVL"], ("ROCE", "23.9%", "n.m."))       # the field before the register's level
+        self.assertEqual(shown["FIB"], ("ROE", "9.5%", ""))             # FI: ROE from the register, no FCFROCE
+        self.assertEqual(shown["BAD"], ("ROCE", "24.0%", "14.0%"))      # fields not in their form: the prose
+        self.assertEqual(shown["OLD"], ("ROCE", "24.0%", "14.0%"))      # a memo before v4.8.0: the prose
+        self.assertEqual((extraction["FLD"]["roce_from"], extraction["OLD"]["roce_from"]), ("fields", "memo"))
+        self.assertIn("roce_worst / fcfroce_worst fields (v4.8.0): 2 / 3", stats)    # FI's FCFROCE n.m. counts
+        self.assertIn("(register level 1, memo field or figure 4)", stats)
+        self.assertEqual(s.return_fields({"roce_worst": "19.3%  # lower window", "fcfroce_worst": "n.m."}),
+                         ("19.3%", "n.m."))
 
 
 if __name__ == "__main__":

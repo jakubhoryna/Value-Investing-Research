@@ -379,7 +379,10 @@ def _check_analyse_review(job, entries, date, time, branch_key, blob_lookup=None
     # evidence file by the resolved key (routines/ANALYSE.md step 5). Take
     # that key from the run's single keyed ANALYSE row. It allows adds only:
     # without a memo, no evidence of the resolved key may be deleted.
-    deletable = ["queue/evidence/%s_*.md" % k for k in keys]
+    # Evidence leaves only alongside the name's one valid memo (MODEL 8.7
+    # item 4, v4.8.0): an INCOMPLETE run, a claim stub or a PRIOR deletes
+    # none, so the first record of a two-run resume survives a second overrun.
+    deletable = ["queue/evidence/%s_*.md" % k for k in keys] if memo_key is not None else []
     if job == "analyse" and branch_key is not None and not memo_adds:
         row_re = re.compile(r"queue/rows/%s_%s_ANALYSE_(?P<key>[A-Za-z0-9._-]+)\.md"
                             % (re.escape(date), re.escape(time)), re.ASCII)

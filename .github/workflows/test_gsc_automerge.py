@@ -630,7 +630,7 @@ def run_classifier_cases():
         o = fx.decide(fx.pr(nxt(), br("sweep", None, "0630"), title, ch))
         expect("merge: SWEEP with a held zone change (J11)", o, am.MERGE, "sweep")
         record("merge: the held zone change is carried as a note for the job summary",
-               o.note == "held zone changes (digest): HLD HOLD → ADD", repr(o.note))
+               o.note == "held zone changes (weekly report): HLD HOLD → ADD", repr(o.note))
         title, ch = sweep_changes(zones={"HLD": "HOLD"})
         expect("hold: SWEEP missing a held name's zone", fx.decide(fx.pr(nxt(), br("sweep", None, "0630"), title, ch)),
                am.HOLD_NOTIFY, "held-missing")
@@ -850,7 +850,8 @@ def run_held_zone_cases():
         title, ch = sweep_changes()
         o = fx.decide(fx.pr(70, br("sweep", None, "0630"), title, ch))
         expect("merge: register zone '-' with a sweep zone HOLD (J11)", o, am.MERGE, "sweep")
-        record("note: '-' → HOLD listed for the digest", o.note == "held zone changes (digest): HLD - → HOLD", o.note)
+        record("note: '-' → HOLD listed for the weekly report",
+               o.note == "held zone changes (weekly report): HLD - → HOLD", o.note)
     finally:
         fx.close()
     fx = Fixture()
@@ -974,7 +975,8 @@ def run_sweep_cases():
     # Dedupe, no '#n', exceptions, workflow_run scope.
     fx = Fixture()
     try:
-        title, ch = analyse_changes(verdict="BUY", title="GSC ANALYSE NEW %s — BUY (all gates; PR#12)" % D)
+        title, ch = analyse_changes(verdict="BUY", title="GSC ANALYSE NEW %s — BUY (all gates; PR#12, cc @octocat)"
+                                    % D)
         fx.pr(60, br("analyse", "NEW", "2130"), title, ch)
         am.sweep(fx.ctx)
         am.sweep(fx.ctx)
@@ -983,7 +985,10 @@ def run_sweep_cases():
         record("comment: names 'PR 60', never '#60' or '#12', with a search link and the marker",
                comments and "PR 60 held - BUY NEW" in comments[0] and "#6" not in comments[0]
                and "#1" not in comments[0] and "pulls?q=is%3Apr+is%3Aopen+60" in comments[0]
-               and "<!-- gsc-hold pr=60 sha=" in comments[0] and comments[0].startswith("@jakubhoryna"), comments)
+               and "<!-- gsc-hold pr=60 sha=" in comments[0], comments)
+        record("comment: a record that @mentions no one [v4.8.0] (starts 'PR 60 held'; a title's '@x' neutralised)",
+               comments and comments[0].startswith("PR 60 held - ") and "@jakubhoryna" not in comments[0]
+               and not gsc_gh.MENTION_RE.search(comments[0]) and "cc @ octocat" in comments[0], comments)
     finally:
         fx.close()
 
@@ -1023,8 +1028,9 @@ def run_sweep_cases():
         rc = am.main({"REPO": REPO, "GSC_AUTOMERGE": "on", "EVENT_NAME": "workflow_dispatch"}, gh=fx.client,
                      git=fx.repo.runner(), sleep=fx.slept.append, now=lambda: NOW)
         comments = fx.gh.posted_comments()
-        record("listing fails: exit 1, no merge, one dated error comment",
-               rc == 1 and not fx.gh.puts() and len(comments) == 1 and "automerge-error-2026-10-06" in comments[0],
+        record("listing fails: exit 1, no merge, one dated error comment, no @mention",
+               rc == 1 and not fx.gh.puts() and len(comments) == 1 and "automerge-error-2026-10-06" in comments[0]
+               and comments[0].startswith("gsc-automerge failed") and not gsc_gh.MENTION_RE.search(comments[0]),
                "rc %s %s" % (rc, comments))
     finally:
         fx.close()
@@ -1063,9 +1069,15 @@ def run_allowlist_cases():
         ("POST", "actions/runs/5/rerun", None),
         ("POST", "actions/workflows/gsc-automerge.yml/dispatches", {"ref": "main"}),
         ("PATCH", "issues/5", {"state": "closed", "state_reason": "completed"}),
+        ("PATCH", "issues/5", {"title": "x"}),
         ("POST", "issues", {"title": "anything", "body": "x"}),
+        ("POST", "issues", {"title": "GSC digest Tue 6 Oct - 1 merged, 0 needs you", "body": "x"}),
+        ("POST", "issues", {"title": "STALL - GSC digest Tue 6 Oct - 1 merged, 0 needs you", "body": "x"}),
+        ("POST", "issues", {"title": gsc_gh.NEEDS_TITLE}),
         ("POST", "issues", {"title": gsc_gh.NEEDS_TITLE, "body": "x", "labels": ["x"]}),
         ("POST", "issues", {"title": gsc_gh.NEEDS_TITLE, "body": "x", "assignees": ["someone"]}),
+        ("POST", "issues", {"title": gsc_gh.NEEDS_TITLE, "body": "x", "assignees": ["jakubhoryna"]}),
+        ("POST", "issues", {"title": gsc_gh.NEEDS_TITLE, "body": "@jakubhoryna standing issue"}),
         ("GET", "../other/repo", None), ("GET", "collaborators", None), ("DELETE", "issues/5", None),
         ("GET", "pulls?state=open/../x", None),
     ]
@@ -1093,6 +1105,20 @@ def run_allowlist_cases():
     except gsc_gh.NotAllowed:
         ok = True
     record("allowlist: dispatch on a ref other than main refused", ok)
+    # A comment on the verified needs-Jakub issue may not @mention anyone [v4.8.0].
+    gh.needs_issue = 7
+    for body, refused in (("@jakubhoryna PR 5 held - x", True), ("PR 5 held - cc @some-org/team", True),
+                          ("PR 5 held - see x@example.com", True), ("PR 5 held - BUY X\nOpen: link", False),
+                          ("PR 5 held - '@ name' and a lone @ are not mentions", False)):
+        try:
+            gh.check("POST", "issues/7/comments", {"body": body})
+            ok = not refused
+        except gsc_gh.NotAllowed:
+            ok = refused
+        record("allowlist: comment %r %s" % (body[:40], "refused" if refused else "allowed"), ok)
+    record("no_mention: '@name' becomes '@ name'; plain text unchanged",
+           gsc_gh.no_mention("cc @jakubhoryna, @a/b and x@y.com") == "cc @ jakubhoryna, @ a/b and x@ y.com"
+           and gsc_gh.no_mention("PR 5 held - x") == "PR 5 held - x")
     record("allowlist: nothing reached the network", not calls, calls)
     # The token never appears in an error.
     gh2 = gsc_gh.Gh("SECRET-t0ken", REPO, transport=lambda m, u, h, b: (403, {}, b'{"message": "denied"}'))
@@ -1148,16 +1174,23 @@ def run_allowlist_cases():
     fake.add_issue("GSC ANALYSE X", pr=True)                          # a pull request
     gh3 = gsc_gh.Gh("t", REPO, transport=fake)
     number = gsc_gh.ensure_needs_issue(gh3)
-    record("needs-Jakub issue: created once by the bot when none is verifiable",
-           fake.issues[number]["user"]["login"] == gsc_gh.BOT and fake.issues[number]["assignees"] == ["jakubhoryna"]
+    record("needs-Jakub issue: created once by the bot when none is verifiable, unassigned, no @mention",
+           fake.issues[number]["user"]["login"] == gsc_gh.BOT and fake.issues[number]["assignees"] is None
+           and not gsc_gh.MENTION_RE.search(fake.issues[number]["body"])
            and gsc_gh.ensure_needs_issue(gh3) == number
            and sum(1 for m, p, _d in fake.calls if m == "POST" and p == "issues") == 1)
     try:
-        gh3.close_digest(number)
+        gh3.request("PATCH", "issues/%d" % number, {"state": "closed", "state_reason": "completed"})
         ok = False
     except gsc_gh.NotAllowed:
         ok = True
-    record("close_digest refuses a non-digest issue", ok)
+    record("no digest path [v4.8.0]: no close helper, and PATCH is refused even on the verified needs issue",
+           ok and not any(hasattr(gsc_gh.Gh, name) for name in ("close_digest", "verify_digest"))
+           and not hasattr(gsc_gh, "DIGEST_TITLE_RE"))
+    posted = gsc_gh.post_needs_comment(gh3, "PR 5 held - BUY X (cc @octocat)\n<!-- m1 -->", "<!-- m1 -->", None)
+    bodies = [d["body"] for m, p, d in fake.calls if m == "POST" and p.endswith("/comments")]
+    record("post_needs_comment neutralises a mention before posting",
+           posted and bodies == ["PR 5 held - BUY X (cc @ octocat)\n<!-- m1 -->"], bodies)
 
 
 def main():
