@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v339
+register_version: v340
 register_date: 2026-10-30
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
 names_total: 468
-verdict_split: "BUY 0 · WATCH 69 · AVOID 396 (one gate 115 · two+ 281) · DNAF 3"
+verdict_split: "BUY 0 · WATCH 69 · AVOID 396 (one gate 115 · two+ 281) · DNAF 2 · RETIRED 1"
 portfolio_names: 4
-ordering: "v4.5.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF; EV/OI ascending, n.m. then - last; DNAF alphabetical"
+ordering: "v4.6.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF → RETIRED; EV/OI ascending, n.m. then - last; DNAF and RETIRED alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v339 · 2026-10-30)
+# GSC Register — Master Watchlist (v340 · 2026-10-30)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -23,7 +23,7 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 | CROX | SELL-FLAG SR2 | 119.69 | n.m. | 47.36 | 2026-10-28 | Feb 2027 |
 | HFG.DE | SELL-FLAG SR2 | 3.087 | n.m. | n.m. | 2026-10-23 | 2026-11-05 |
 | NOVO-B.CO | SELL-FLAG SR2 | 260.15 | 57.5 | 696.8 | 2026-10-23 | 2026-11-04 |
-| TROW | SELL-FLAG SR2 | 104.2 | 41.9 | 248.6 | 2026-10-23 | 2026-10-30 |
+| TROW | SELL-FLAG SR2 | 106.63 | 41.9 | 249.6 | 2026-10-29 | Feb 2027 |
 
 ## BUY (0)
 
@@ -177,7 +177,7 @@ None.
 | BUFAB.ST | Bufab AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · growth | ADEQUATE · unit customer conc. | PASS | 132.6 | 13.80 | 31.1 | 30.5 | 23.8 · 39.5 | 31.3 · 33.2 | 2027-02-11 |
 | ROK | Rockwell Automation, Inc. | 2026-07-31 | v3 | AVOID | ADEQUATE · 17.4% ROCE | ADEQUATE | FAIL · buybacks | 426.11 | 77 | 35.5 | 30.5 | - | - | 2026-08-04 |
 | RACE.MI | Ferrari N.V. | 2026-07-31 | v2 | AVOID | STRONG · 23.6% ROCE | ADEQUATE | FAIL · buybacks | 349.5 | 63 | 44.3 | 30.9 | - | - | Aug 2026 |
-| ABB | ABB Ltd | 2026-09-25 | v4 | AVOID | ADEQUATE · 13.2% ROCE | STRONG | FAIL · buybacks | 97.88 | 18.1 | 41.9 | 31.0 | - | - | Oct 2026 |
+| ABBN.SW | ABB Ltd | 2026-09-25 | v4 | AVOID | ADEQUATE · 13.2% ROCE | STRONG | FAIL · buybacks | 97.88 | 18.1 | 41.9 | 31.0 | - | - | Oct 2026 |
 | HLAG.DE | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID | ADEQUATE · 17.8% ROCE | WEAK · 2+ forces | PASS | 128.4 | 20.3 | 32.1 | 31.1 | - | - | Mar 2027 |
 | VIT-B.ST | Vitec Software Group AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 6.7% ROCE | ADEQUATE | PASS | 300.6 | n.m. | 18.4 | 31.3 | 23.4 · 28.6 | 28.5 · 34.7 | Feb 2027 |
 | NEM.DE | Nemetschek SE | 2026-10-25 | v1 | AVOID | STRONG · 18.5% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 75.70 | 12.86 | 25.3 | 31.4 | 29.9 · 34.4 | 38.3 · 42.4 | Mar 2027 |
@@ -248,10 +248,10 @@ None.
 | NOMD | Nomad Foods Limited | 2026-08-18 | v1 | AVOID | WEAK · 6.6% ROCE | WEAK · 2+ forces | PASS CAUTION · distributions | 11.73 | n.m. | 9.9 | 11.5 | - | - | Feb 2027 |
 | CSG.AS | CSG N.V. (Czechoslovak Group) | 2026-07-10 | v1 | AVOID | WEAK · leverage | WEAK · customer conc. | FAIL · flag pair | 13.6 | n.m. | n.m. | 11.6 | - | - | 2026-08-07 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID | WEAK · leverage | WEAK · 2+ forces | FAIL · flag pair | 26.57 | 11.3 | 10.8 | 11.7 | - | - | May 2027 |
-| TROW | T. Rowe Price Group, Inc. | 2026-10-19 | v8 | AVOID | WEAK · growth | WEAK · forces: substitutes | FAIL · buybacks | 104.2 | 41.9 | 19.9 | 11.7 | 24.6 · 14.5 | 12.1 · 10.4 | 2026-10-30 |
 | HUSQ-B.ST | Husqvarna AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 9.1% ROCE | WEAK · moat eroding | PASS | 37.13 | 12.43 | 10.9 | 11.9 | - | - | Feb 2027 |
 | DG.PA | VINCI SA | 2026-08-01 | v1 | AVOID | WEAK · 8.4% ROCE | WEAK · 2+ forces | PASS CAUTION · acquisitions | 122.55 | 38.8 | 8.9 | 12.0 | - | - | Feb 2027 |
 | BOL.ST | Boliden AB | 2026-07-24 | v1 | AVOID | ADEQUATE · 14.1% ROCE | WEAK · breadth | FAIL · buybacks | 480.4 | 146 | 26.3 | 12.1 | - | - | Mar 2027 |
+| TROW | T. Rowe Price Group, Inc. | 2026-10-30 | v9 | AVOID | WEAK · growth | WEAK · moat eroding | FAIL · buybacks | 106.63 | 41.9 | 20.3 | 12.1 | 25.2 · 14.8 | 12.5 · 10.7 | Feb 2027 |
 | GAP | The Gap, Inc. | 2026-09-04 | v3 | AVOID | WEAK · 8.6% ROCE | WEAK · 2+ forces | PASS CAUTION · buybacks | 22.07 | 5.82 | 9.6 | 12.2 | - | - | 2026-11-19 |
 | APTV | Aptiv PLC | 2026-08-18 | v1 | AVOID | WEAK · 8.1% ROCE | WEAK · customer conc. | FAIL · flag pair | 49.19 | 15.93 | n.m. | 12.5 | - | - | Feb 2027 |
 | AKZA.AS | Akzo Nobel N.V. | 2026-07-23 | v1 | AVOID | WEAK · 7.6% ROCE | ADEQUATE | FAIL · buybacks | 56.28 | 28 | 16.0 | 12.6 | - | - | - |
@@ -509,10 +509,15 @@ None.
 | TRNS | Transcat, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 4.8% ROCE | ADEQUATE | FAIL · compensation | 93.11 | n.m. | - | - | - | - | May 2027 |
 | XPEL | XPEL, Inc. | 2026-08-09 | v1 | AVOID | WEAK · ROCE decline | WEAK · supplier conc. | FAIL · compensation | 50 | 15.08 | - | - | - | - | Feb 2027 |
 
-## DNAF (3)
+## DNAF (2)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 8002.T | Marubeni Corporation | 2026-10-08 | v2 | DNAF | n.m. | n.m. | n.m. | 4787 | n.m. | n.m. | n.m. | n.m. · n.m. | n.m. · n.m. | n.m. |
-| EA | Electronic Arts Inc. | 2026-07-11 | v1 | DNAF | ADEQUATE · 14.7% ROCE | WEAK | FAIL | 206.41 | n.m. | n.m. | n.m. | - | - | n.m. |
 | SYAB.DE | SYNLAB AG | 2026-07-23 | v1 | DNAF | n.m. | n.m. | n.m. | - | n.m. | n.m. | n.m. | - | - | n.m. |
+
+## RETIRED (1)
+
+| Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| EA | Electronic Arts Inc. | 2026-07-11 | v1 | RETIRED | ADEQUATE · 14.7% ROCE | WEAK | FAIL | 206.41 | n.m. | n.m. | n.m. | - | - | retired 2026-08-04 |

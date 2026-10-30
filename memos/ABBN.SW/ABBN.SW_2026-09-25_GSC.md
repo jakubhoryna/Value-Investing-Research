@@ -1,5 +1,5 @@
 ---
-ticker: ABB
+ticker: ABBN.SW
 company: ABB Ltd
 exchange: "OTC US (ABBNY ADR, 1:1 — priced line); primary SIX Swiss Exchange (ABBN); Nasdaq Stockholm (ABB)"
 isin: CH0012221716
@@ -20,7 +20,7 @@ next_review: "Q3 2026 results (~late Oct 2026): programme pace, Robotics closing
 position: —
 ---
 
-# ABB — ABB Ltd: GSC Memo
+# ABBN.SW — ABB Ltd: GSC Memo
 
 ## 1. Verdict
 
