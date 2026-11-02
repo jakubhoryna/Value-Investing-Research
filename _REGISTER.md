@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v341
-register_date: 2026-10-31
+register_version: v342
+register_date: 2026-11-02
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 485
-verdict_split: "BUY 0 · WATCH 69 · AVOID 413 (one gate 119 · two+ 294) · DNAF 2 · RETIRED 1"
+names_total: 493
+verdict_split: "BUY 0 · WATCH 69 · AVOID 421 (one gate 123 · two+ 298) · DNAF 2 · RETIRED 1"
 portfolio_names: 4
 ordering: "v4.6.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF → RETIRED; EV/OI ascending, n.m. then - last; DNAF and RETIRED alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v341 · 2026-10-31)
+# GSC Register — Master Watchlist (v342 · 2026-11-02)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -20,10 +20,10 @@ Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price u
 
 | Ticker | Zone | Px | ADD band | Sell line | Last zone check | Next review |
 |---|---|---|---|---|---|---|
-| CROX | SELL-FLAG SR2 | 119.69 | n.m. | 47.36 | 2026-10-28 | Feb 2027 |
-| HFG.DE | SELL-FLAG SR2 | 3.087 | n.m. | n.m. | 2026-10-23 | 2026-11-05 |
-| NOVO-B.CO | SELL-FLAG SR2 | 260.15 | 57.5 | 696.8 | 2026-10-23 | 2026-11-04 |
-| TROW | SELL-FLAG SR2 | 106.63 | 41.9 | 249.6 | 2026-10-29 | Feb 2027 |
+| CROX | SELL-FLAG SR2 | 150.52 | n.m. | 47.36 | 2026-10-30 | Feb 2027 |
+| HFG.DE | SELL-FLAG SR2 | 2.696 | n.m. | n.m. | 2026-10-30 | 2026-11-05 |
+| NOVO-B.CO | SELL-FLAG SR2 | 266.1 | 57.5 | 696.8 | 2026-10-30 | 2026-11-04 |
+| TROW | SELL-FLAG SR2 | 103.9 | 41.9 | 249.6 | 2026-10-30 | Feb 2027 |
 
 ## BUY (0)
 
@@ -33,201 +33,205 @@ None.
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 6626.T | SEMITEC Corporation (SEMITEC株式会社) | 2026-09-04 | v1 | WATCH | ADEQUATE · 14.6% ROCE | ADEQUATE | PASS | 2318 | 1403 | 75.9 | 6.9 | - | - | Nov 2026 |
-| SGO.PA | Compagnie de Saint-Gobain S.A. | 2026-08-03 | v1 | WATCH | ADEQUATE · 10.1% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 66.92 | 39.7 | 9.4 | 9.5 | - | - | Feb 2027 |
-| KALMAR.HE | Kalmar Corporation | 2026-10-04 | v1 | WATCH | ADEQUATE · 14.3% ROCE | ADEQUATE | PASS | 36.12 | 17.9 | 16.2 | 11.8 | - | - | 2026-10-29 |
-| GSK.L | GSK plc | 2026-07-14 | v1 | WATCH | ADEQUATE · 14.5% ROCE | ADEQUATE | PASS | 1894 | 908 | 13.6 | 12.1 | - | - | Feb 2027 |
-| ABEV | Ambev S.A. | 2026-08-09 | v1 | WATCH | STRONG · 20.6% ROCE | STRONG | PASS | 3.3 | 1.86 | - | 12.3 | - | - | Feb 2027 |
-| KCR.HE | Konecranes Plc | 2026-10-04 | v1 | WATCH | ADEQUATE · 10% ROCE | ADEQUATE | PASS | 26.44 | 14.27 | 12.1 | 12.3 | - | - | 2026-10-23 |
-| ESSITY-B.ST | Essity Aktiebolag (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE · 10.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 276.6 | 124 | 22.5 | 12.5 | - | - | 2027-01-21 |
-| RBREW.CO | Royal Unibrew A/S | 2026-10-04 | v1 | WATCH | ADEQUATE · 16.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 433.8 | 182 | 13.5 | 12.5 | - | - | Feb 2027 |
-| BRG.OL | Borregaard ASA | 2026-10-04 | v1 | WATCH | ADEQUATE · 14.4% ROCE | ADEQUATE | PASS | 141 | 63 | 25.0 | 12.7 | - | - | 2026-10-28 |
-| FIE.DE | Fielmann Group AG | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.9% ROCE | ADEQUATE | PASS | 39.8 | 19.44 | 9.6 | 12.9 | - | - | Apr 2027 |
-| IP.MI | Interpump Group S.p.A. | 2026-10-04 | v1 | WATCH | ADEQUATE · 13.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 35.58 | 15.3 | 16.1 | 13.4 | - | - | Nov 2026 |
-| MC.PA | LVMH Moët Hennessy Louis Vuitton SE | 2026-09-27 | v3 | WATCH | ADEQUATE · 14.1% ROCE | STRONG | PASS CAUTION · buybacks | 383 | 151 | 13.3 | 13.7 | - | - | Dec 2026 |
-| CRCT | Cricut, Inc. | 2026-08-09 | v1 | WATCH | ADEQUATE · 12.6% ROCE | ADEQUATE | PASS | 6.25 | 3.15 | 7.4 | 13.8 | - | - | Mar 2027 |
-| 6841.T | Yokogawa Electric Corporation (横河電機株式会社) | 2026-10-04 | v1 | WATCH | ADEQUATE · 10.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 4527 | 1874 | 19.3 | 14.2 | - | - | Nov 2026 |
-| 0700.HK | Tencent Holdings Limited | 2026-08-12 | v1 | WATCH | ADEQUATE · 12.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 386 | 142 | 17.1 | 14.6 | - | - | Mar 2027 |
-| SNA | Snap-on Incorporated | 2026-10-04 | v1 | WATCH | STRONG · 18.9% ROCE | STRONG | PASS CAUTION · buybacks | 357.02 | 152 | 18.6 | 15.1 | - | - | Feb 2027 |
-| THULE.ST | Thule Group AB (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE · 16.6% ROCE | ADEQUATE | PASS | 192.5 | 58 | 26.5 | 15.3 | - | - | Feb 2027 |
-| BVI.PA | Bureau Veritas S.A. | 2026-08-06 | v1 | WATCH | ADEQUATE · 15.2% ROCE | STRONG | PASS | 29.21 | 8.67 | 15.8 | 16.2 | - | - | 2027-02-25 |
-| 6845.T | Azbil Corporation (アズビル株式会社) | 2026-10-04 | v1 | WATCH | ADEQUATE · 13% ROCE | ADEQUATE | PASS CAUTION · buybacks | 1498.5 | 480 | 25.0 | 16.5 | - | - | 2026-10-30 |
-| INRN.SW | Interroll Holding AG | 2026-10-08 | v2 | WATCH | ADEQUATE · 19.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 1380 | 373.7 | 29.5 | 16.7 | 17.1 · 21.4 | 15.2 · 13.5 | Mar 2027 |
-| FDS | FactSet Research Systems Inc. | 2026-08-09 | v1 | WATCH | STRONG · 21% ROCE | ADEQUATE | PASS | 331.32 | 103.12 | 19.1 | 17.8 | - | - | Sep 2026 |
-| JKHY | Jack Henry & Associates, Inc. | 2026-10-24 | v1 | WATCH | STRONG · 23.1% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · buybacks | 162.55 | 58.54 | 22.2 | 18.1 | 27.0 · 32.1 | 20.4 · 21.7 | Aug 2027 |
-| COLO-B.CO | Coloplast A/S | 2026-08-08 | v1 | WATCH | ADEQUATE · 18.7% ROCE | STRONG | PASS CAUTION · acquisitions | 484.7 | 123.3 | 20.4 | 18.3 | - | - | Nov 2026 |
-| 6758.T | Sony Group Corporation | 2026-08-06 | v2 | WATCH | ADEQUATE · 10% ROCE | ADEQUATE | PASS CAUTION · buybacks | 4137 | 1328 | 16.2 | 18.5 | - | - | 2026-11-10 |
-| IMI.L | IMI plc | 2026-10-24 | v2 | WATCH | STRONG · 16.3% ROCE | STRONG | PASS CAUTION · buybacks | 2796 | 825.1 | 22.8 | 18.9 | 24.9 · 28.1 | 21.1 · 23.3 | Mar 2027 |
-| DCI | Donaldson Company, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 20.4% ROCE | STRONG | PASS CAUTION · buybacks | 84.79 | 23.9 | 23.5 | 19.0 | - | - | Oct 2026 |
-| DNP.WA | Dino Polska S.A. | 2026-08-07 | v1 | WATCH | ADEQUATE · 22.1% ROCE | STRONG | PASS | 39.65 | 4.98 | 63.7 | 19.3 | - | - | Mar 2027 |
-| MORN | Morningstar, Inc. | 2026-07-31 | v2 | WATCH | ADEQUATE · 13.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 224.89 | 61 | 19.1 | 19.6 | - | - | Feb 2027 |
-| RMS.PA | Hermès International SCA | 2026-07-31 | v2 | WATCH | STRONG · 29.8% ROCE | STRONG | PASS CAUTION · buybacks | 1238.5 | 321 | 30.9 | 20.2 | - | - | Mar 2027 |
-| METSO.HE | Metso Oyj | 2026-10-04 | v1 | WATCH | ADEQUATE · 12.4% ROCE | STRONG | PASS CAUTION · distributions | 16.41 | 4.27 | 21.7 | 20.7 | - | - | Oct 2026 |
-| ALFA.ST | Alfa Laval AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE · 12.5% ROCE | STRONG | PASS CAUTION · acquisitions | 539.8 | 119 | 36.3 | 20.8 | - | - | Mar 2027 |
-| 6383.T | Daifuku Co., Ltd. | 2026-10-20 | v3 | WATCH | ADEQUATE · 14.1% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · buybacks | 5434 | 1188 | 36.6 | 21.1 | 34.3 · 43.2 | 27.7 · 31.8 | Feb 2027 |
-| META | Meta Platforms, Inc. | 2026-09-13 | v5 | WATCH | STRONG · 24.7% ROCE | ADEQUATE | PASS CAUTION · buybacks | 642.62 | 183 | 35.9 | 21.2 | - | - | Jan 2027 |
-| AXFO.ST | Axfood AB (publ) | 2026-07-07 | v1 | WATCH | ADEQUATE · 16.6% ROCE | STRONG | PASS | 278.4 | 46 | 12.0 | 21.4 | - | - | 2026-07-15 |
-| LECO | Lincoln Electric Holdings, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 20.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 255.96 | 68.4 | 26.8 | 21.6 | - | - | Feb 2027 |
-| LR.PA | Legrand SA | 2026-08-06 | v1 | WATCH | ADEQUATE · 11.6% ROCE | STRONG | PASS CAUTION · buybacks | 124.1 | 18.4 | 24.9 | 22.6 | - | - | Feb 2027 |
-| SAND.ST | Sandvik AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE · 14% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 346.6 | 87.51 | 28.3 | 22.9 | - | - | Mar 2027 |
-| SCHN.SW | Schindler Holding AG | 2026-08-01 | v2 | WATCH | ADEQUATE · 20.5% ROCE | STRONG | PASS CAUTION · buybacks | 291.5 | 103 | 22.6 | 23.2 | - | - | Aug 2026 |
-| SIKA.SW | Sika AG | 2026-08-06 | v2 | WATCH | ADEQUATE · 14.1% ROCE | STRONG | PASS CAUTION · buybacks | 180.2 | 27 | 21.7 | 23.5 | - | - | 2027-02-19 |
-| 3064.T | MonotaRO Co., Ltd. (株式会社MonotaRO) | 2026-10-04 | v1 | WATCH | STRONG · 28.4% ROCE | ADEQUATE | PASS CAUTION · buybacks | 2245 | 343 | - | 24.7 | - | - | 2026-11-04 |
-| 7936.T | ASICS Corporation | 2026-08-27 | v3 | WATCH | ADEQUATE · 12.8% ROCE | ADEQUATE | PASS | 4862 | 890 | 43.7 | 25.1 | - | - | Nov 2026 |
-| HLMA.L | Halma plc | 2026-10-07 | v1 | WATCH | ADEQUATE · 14.2% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · acquisitions | 3244 | 724.8 | 30.2 | 25.2 | 32.5 · 40.3 | 30.5 · 35.0 | Jun 2027 |
-| ATCO-B.ST | Atlas Copco AB (publ) | 2026-07-31 | v2 | WATCH | STRONG · 24.6% ROCE | STRONG | PASS CAUTION · buybacks | 156.8 | 39.8 | 31.8 | 25.6 | - | - | Mar 2027 |
-| INDT.ST | Indutrade AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.1% ROCE | ADEQUATE | PASS | 247.6 | 44.5 | 24.5 | 25.9 | - | - | Mar 2027 |
-| EPI-A.ST | Epiroc AB (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE · 18.4% ROCE | STRONG | PASS CAUTION · buybacks | 250.7 | 54.2 | 33.3 | 26.0 | - | - | Mar 2027 |
-| LIFCO-B.ST | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.4% ROCE | ADEQUATE | PASS | 280.4 | 59.3 | 27.8 | 26.8 | - | - | 2027-01-29 |
-| TRI | Thomson Reuters Corporation | 2026-08-27 | v3 | WATCH | ADEQUATE · 11.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 123.17 | 26.7 | 26.8 | 26.9 | - | - | Feb 2027 |
-| ADYEN.AS | Adyen N.V. | 2026-06-11 | v1 | WATCH | ADEQUATE · 24.6% ROCE | ADEQUATE | PASS | 945.4 | 286 | 33.0 | 27.2 | - | - | Aug 2026 |
-| 7974.T | Nintendo Co., Ltd. | 2026-08-07 | v1 | WATCH | STRONG · 16.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 8539 | 1822 | 37.5 | 27.3 | - | - | Nov 2026 |
-| SAP.DE | SAP SE | 2026-07-31 | v2 | WATCH | ADEQUATE · 12.2% ROCE | STRONG | PASS CAUTION · buybacks | 214.4 | 48.6 | 30.5 | 27.3 | - | - | Jan 2027 |
-| WTS | Watts Water Technologies, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 16% ROCE | STRONG | PASS CAUTION · buybacks | 358.73 | 85 | 33.7 | 27.3 | - | - | Nov 2026 |
-| SIE.DE | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS CAUTION · buybacks | 256.8 | 6.4 | 18.2 | 27.4 | - | - | 2026-08-07 |
-| SOON.SW | Sonova Holding AG | 2026-08-06 | v2 | WATCH | ADEQUATE · 13.9% ROCE | ADEQUATE | PASS CAUTION · buybacks | 283.2 | 50.2 | 29.2 | 27.6 | - | - | Nov 2026 |
-| ADDT-B.ST | Addtech AB (publ) | 2026-10-24 | v1 | WATCH | STRONG · 16.1% ROCE | ADEQUATE · unit customer conc. | PASS | 300.2 | 46.39 | 29.2 | 29.9 | 32.2 · 39.3 | 33.1 · 38.2 | Feb 2027 |
-| MYCR.ST | Mycronic AB (publ) | 2026-07-31 | v3 | WATCH | STRONG · 24.5% ROCE | ADEQUATE | PASS CAUTION · buybacks | 296.2 | 51 | 46.6 | 30.0 | - | - | Apr 2027 |
-| CSU.TO | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE · 17.2% ROCE | STRONG | PASS | 3395 | 513 | 19.3 | 30.1 | - | - | Mar 2027 |
-| HUBN.SW | HUBER+SUHNER AG | 2026-07-31 | v2 | WATCH | ADEQUATE · 12.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 155 | 31.2 | 39.8 | 31.5 | - | - | Aug 2026 |
-| 6861.T | Keyence Corporation (株式会社キーエンス) | 2026-10-04 | v1 | WATCH | STRONG · 17.7% ROCE | STRONG | PASS | 78380 | 12210 | 51.4 | 31.9 | - | - | Oct 2026 |
-| 2330.TW | Taiwan Semiconductor Manufacturing Company Limited | 2026-09-13 | v2 | WATCH | STRONG · 23.3% ROCE | ADEQUATE | PASS | 2385 | 306 | 62.3 | 32.5 | - | - | Jan 2027 |
-| HMS.ST | HMS Networks AB (publ) | 2026-10-04 | v1 | WATCH | ADEQUATE · 16.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 478.8 | 60 | 32.3 | 34.6 | - | - | 2026-10-21 |
+| 6626.T | SEMITEC Corporation (SEMITEC株式会社) | 2026-09-04 | v1 | WATCH | ADEQUATE · 14.6% ROCE | ADEQUATE | PASS | 2314 | 1403 | 75.8 | 6.9 | - | - | Nov 2026 |
+| SGO.PA | Compagnie de Saint-Gobain S.A. | 2026-08-03 | v1 | WATCH | ADEQUATE · 10.1% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 67.88 | 39.7 | 9.6 | 9.6 | - | - | Feb 2027 |
+| ABEV | Ambev S.A. | 2026-08-09 | v1 | WATCH | STRONG · 20.6% ROCE | STRONG | PASS | 2.66 | 1.86 | - | 10.0 | - | - | Feb 2027 |
+| GSK.L | GSK plc | 2026-07-14 | v1 | WATCH | ADEQUATE · 14.5% ROCE | ADEQUATE | PASS | 1855 | 908 | 13.4 | 11.9 | - | - | Feb 2027 |
+| KALMAR.HE | Kalmar Corporation | 2026-10-04 | v1 | WATCH | ADEQUATE · 14.3% ROCE | ADEQUATE | PASS | 36.24 | 17.9 | 16.2 | 11.9 | - | - | 2026-10-29 |
+| ESSITY-B.ST | Essity Aktiebolag (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE · 10.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 280 | 124 | 22.7 | 12.6 | - | - | 2027-01-21 |
+| KCR.HE | Konecranes Plc | 2026-10-04 | v1 | WATCH | ADEQUATE · 10% ROCE | ADEQUATE | PASS | 27.28 | 14.27 | 12.5 | 12.7 | - | - | 2026-10-23 |
+| RBREW.CO | Royal Unibrew A/S | 2026-10-04 | v1 | WATCH | ADEQUATE · 16.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 442.6 | 182 | 13.8 | 12.7 | - | - | Feb 2027 |
+| FIE.DE | Fielmann Group AG | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.9% ROCE | ADEQUATE | PASS | 39.4 | 19.44 | 9.5 | 12.8 | - | - | Apr 2027 |
+| CRCT | Cricut, Inc. | 2026-08-09 | v1 | WATCH | ADEQUATE · 12.6% ROCE | ADEQUATE | PASS | 6.08 | 3.15 | 7.2 | 13.4 | - | - | Mar 2027 |
+| BRG.OL | Borregaard ASA | 2026-10-04 | v1 | WATCH | ADEQUATE · 14.4% ROCE | ADEQUATE | PASS | 153.8 | 63 | 27.2 | 13.7 | - | - | 2026-10-28 |
+| MC.PA | LVMH Moët Hennessy Louis Vuitton SE | 2026-09-27 | v3 | WATCH | ADEQUATE · 14.1% ROCE | STRONG | PASS CAUTION · buybacks | 387 | 151 | 13.4 | 13.8 | - | - | Dec 2026 |
+| IP.MI | Interpump Group S.p.A. | 2026-10-04 | v1 | WATCH | ADEQUATE · 13.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 37.38 | 15.3 | 16.9 | 13.9 | - | - | Nov 2026 |
+| 6841.T | Yokogawa Electric Corporation (横河電機株式会社) | 2026-10-04 | v1 | WATCH | ADEQUATE · 10.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 4572 | 1874 | 19.5 | 14.3 | - | - | Nov 2026 |
+| 0700.HK | Tencent Holdings Limited | 2026-08-12 | v1 | WATCH | ADEQUATE · 12.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 383.6 | 142 | 17.0 | 14.5 | - | - | Mar 2027 |
+| SNA | Snap-on Incorporated | 2026-10-04 | v1 | WATCH | STRONG · 18.9% ROCE | STRONG | PASS CAUTION · buybacks | 355.66 | 152 | 18.6 | 15.1 | - | - | Feb 2027 |
+| THULE.ST | Thule Group AB (publ) | 2026-07-25 | v1 | WATCH | ADEQUATE · 16.6% ROCE | ADEQUATE | PASS | 195.2 | 58 | 26.8 | 15.4 | - | - | Feb 2027 |
+| BVI.PA | Bureau Veritas S.A. | 2026-08-06 | v1 | WATCH | ADEQUATE · 15.2% ROCE | STRONG | PASS | 29.3 | 8.67 | 15.8 | 16.3 | - | - | 2027-02-25 |
+| 6845.T | Azbil Corporation (アズビル株式会社) | 2026-10-04 | v1 | WATCH | ADEQUATE · 13% ROCE | ADEQUATE | PASS CAUTION · buybacks | 1493.5 | 480 | 24.9 | 16.4 | - | - | 2026-10-30 |
+| INRN.SW | Interroll Holding AG | 2026-10-08 | v2 | WATCH | ADEQUATE · 19.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 1432 | 373.7 | 30.7 | 17.3 | 17.8 · 22.2 | 15.8 · 14.0 | Mar 2027 |
+| 6758.T | Sony Group Corporation | 2026-08-06 | v2 | WATCH | ADEQUATE · 10% ROCE | ADEQUATE | PASS CAUTION · buybacks | 3958 | 1328 | 15.5 | 17.8 | - | - | 2026-11-10 |
+| FDS | FactSet Research Systems Inc. | 2026-08-09 | v1 | WATCH | STRONG · 21% ROCE | ADEQUATE | PASS | 329.57 | 103.12 | 19.0 | 17.8 | - | - | Sep 2026 |
+| JKHY | Jack Henry & Associates, Inc. | 2026-10-24 | v1 | WATCH | STRONG · 23.1% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · buybacks | 161.34 | 58.54 | 22.1 | 18.0 | 26.8 · 31.8 | 20.2 · 21.5 | Aug 2027 |
+| COLO-B.CO | Coloplast A/S | 2026-08-08 | v1 | WATCH | ADEQUATE · 18.7% ROCE | STRONG | PASS CAUTION · acquisitions | 482.3 | 123.3 | 20.3 | 18.2 | - | - | Nov 2026 |
+| DNP.WA | Dino Polska S.A. | 2026-08-07 | v1 | WATCH | ADEQUATE · 22.1% ROCE | STRONG | PASS | 37.92 | 4.98 | 60.9 | 18.4 | - | - | Mar 2027 |
+| DCI | Donaldson Company, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 20.4% ROCE | STRONG | PASS CAUTION · buybacks | 82.96 | 23.9 | 22.9 | 18.6 | - | - | Oct 2026 |
+| IMI.L | IMI plc | 2026-10-24 | v2 | WATCH | STRONG · 16.3% ROCE | STRONG | PASS CAUTION · buybacks | 2878 | 825.1 | 23.4 | 19.3 | 25.7 · 28.9 | 21.7 · 23.9 | Mar 2027 |
+| MORN | Morningstar, Inc. | 2026-07-31 | v2 | WATCH | ADEQUATE · 13.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 226.19 | 61 | 19.2 | 19.7 | - | - | Feb 2027 |
+| 6383.T | Daifuku Co., Ltd. | 2026-10-20 | v3 | WATCH | ADEQUATE · 14.1% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · buybacks | 5193 | 1188 | 35.0 | 20.2 | 32.8 · 41.3 | 26.5 · 30.4 | Feb 2027 |
+| META | Meta Platforms, Inc. | 2026-09-13 | v5 | WATCH | STRONG · 24.7% ROCE | ADEQUATE | PASS CAUTION · buybacks | 614.99 | 183 | 34.3 | 20.4 | - | - | Jan 2027 |
+| ALFA.ST | Alfa Laval AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE · 12.5% ROCE | STRONG | PASS CAUTION · acquisitions | 545.6 | 119 | 36.7 | 21.0 | - | - | Mar 2027 |
+| RMS.PA | Hermès International SCA | 2026-07-31 | v2 | WATCH | STRONG · 29.8% ROCE | STRONG | PASS CAUTION · buybacks | 1293.5 | 321 | 32.2 | 21.0 | - | - | Mar 2027 |
+| METSO.HE | Metso Oyj | 2026-10-04 | v1 | WATCH | ADEQUATE · 12.4% ROCE | STRONG | PASS CAUTION · distributions | 16.77 | 4.27 | 22.1 | 21.1 | - | - | Oct 2026 |
+| AXFO.ST | Axfood AB (publ) | 2026-07-07 | v1 | WATCH | ADEQUATE · 16.6% ROCE | STRONG | PASS | 276.1 | 46 | 11.9 | 21.2 | - | - | 2026-07-15 |
+| LECO | Lincoln Electric Holdings, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 20.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 276.92 | 68.4 | 29.0 | 23.2 | - | - | Feb 2027 |
+| SCHN.SW | Schindler Holding AG | 2026-08-01 | v2 | WATCH | ADEQUATE · 20.5% ROCE | STRONG | PASS CAUTION · buybacks | 293 | 103 | 22.7 | 23.3 | - | - | Aug 2026 |
+| SIKA.SW | Sika AG | 2026-08-06 | v2 | WATCH | ADEQUATE · 14.1% ROCE | STRONG | PASS CAUTION · buybacks | 179.1 | 27 | 21.6 | 23.4 | - | - | 2027-02-19 |
+| LR.PA | Legrand SA | 2026-08-06 | v1 | WATCH | ADEQUATE · 11.6% ROCE | STRONG | PASS CAUTION · buybacks | 131 | 18.4 | 26.3 | 23.6 | - | - | Feb 2027 |
+| SAND.ST | Sandvik AB (publ) | 2026-07-31 | v2 | WATCH | ADEQUATE · 14% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 358.9 | 87.51 | 29.3 | 23.6 | - | - | Mar 2027 |
+| ADYEN.AS | Adyen N.V. | 2026-06-11 | v1 | WATCH | ADEQUATE · 24.6% ROCE | ADEQUATE | PASS | 826.9 | 286 | 28.9 | 23.8 | - | - | Aug 2026 |
+| 3064.T | MonotaRO Co., Ltd. (株式会社MonotaRO) | 2026-10-04 | v1 | WATCH | STRONG · 28.4% ROCE | ADEQUATE | PASS CAUTION · buybacks | 2242.5 | 343 | - | 24.6 | - | - | 2026-11-04 |
+| EPI-A.ST | Epiroc AB (publ) | 2026-07-31 | v3 | WATCH | ADEQUATE · 18.4% ROCE | STRONG | PASS CAUTION · buybacks | 239.5 | 54.2 | 31.8 | 24.9 | - | - | Mar 2027 |
+| 7936.T | ASICS Corporation | 2026-08-27 | v3 | WATCH | ADEQUATE · 12.8% ROCE | ADEQUATE | PASS | 4838 | 890 | 43.5 | 25.0 | - | - | Nov 2026 |
+| TRI | Thomson Reuters Corporation | 2026-08-27 | v3 | WATCH | ADEQUATE · 11.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 118.25 | 26.7 | 25.7 | 25.8 | - | - | Feb 2027 |
+| ATCO-B.ST | Atlas Copco AB (publ) | 2026-07-31 | v2 | WATCH | STRONG · 24.6% ROCE | STRONG | PASS CAUTION · buybacks | 160.4 | 39.8 | 32.5 | 26.2 | - | - | Mar 2027 |
+| WTS | Watts Water Technologies, Inc. | 2026-10-04 | v1 | WATCH | STRONG · 16% ROCE | STRONG | PASS CAUTION · buybacks | 347.6 | 85 | 32.7 | 26.4 | - | - | Nov 2026 |
+| 7974.T | Nintendo Co., Ltd. | 2026-08-07 | v1 | WATCH | STRONG · 16.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 8289 | 1822 | 36.4 | 26.5 | - | - | Nov 2026 |
+| LIFCO-B.ST | Lifco AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.4% ROCE | ADEQUATE | PASS | 276.8 | 59.3 | 27.4 | 26.5 | - | - | 2027-01-29 |
+| HLMA.L | Halma plc | 2026-10-07 | v1 | WATCH | ADEQUATE · 14.2% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · acquisitions | 3448 | 724.8 | 32.1 | 26.6 | 34.6 · 42.9 | 32.3 · 37.0 | Jun 2027 |
+| SAP.DE | SAP SE | 2026-07-31 | v2 | WATCH | ADEQUATE · 12.2% ROCE | STRONG | PASS CAUTION · buybacks | 211.25 | 48.6 | 30.0 | 26.9 | - | - | Jan 2027 |
+| INDT.ST | Indutrade AB (publ) | 2026-07-24 | v1 | WATCH | ADEQUATE · 14.1% ROCE | ADEQUATE | PASS | 265.8 | 44.5 | 26.3 | 27.6 | - | - | Mar 2027 |
+| SOON.SW | Sonova Holding AG | 2026-08-06 | v2 | WATCH | ADEQUATE · 13.9% ROCE | ADEQUATE | PASS CAUTION · buybacks | 283.8 | 50.2 | 29.3 | 27.6 | - | - | Nov 2026 |
+| SIE.DE | Siemens AG | 2026-08-01 | v3 | WATCH | ADEQUATE | ADEQUATE | PASS CAUTION · buybacks | 265.65 | 6.4 | 18.8 | 28.1 | - | - | 2026-08-07 |
+| CSU.TO | Constellation Software Inc. | 2026-07-14 | v1 | WATCH | ADEQUATE · 17.2% ROCE | STRONG | PASS | 3393.39 | 513 | 19.3 | 30.1 | - | - | Mar 2027 |
+| MYCR.ST | Mycronic AB (publ) | 2026-07-31 | v3 | WATCH | STRONG · 24.5% ROCE | ADEQUATE | PASS CAUTION · buybacks | 301 | 51 | 47.3 | 30.5 | - | - | Apr 2027 |
+| ADDT-B.ST | Addtech AB (publ) | 2026-10-24 | v1 | WATCH | STRONG · 16.1% ROCE | ADEQUATE · unit customer conc. | PASS | 310.6 | 46.39 | 30.2 | 30.8 | 33.4 · 40.6 | 34.1 · 39.4 | Feb 2027 |
+| 6861.T | Keyence Corporation (株式会社キーエンス) | 2026-10-04 | v1 | WATCH | STRONG · 17.7% ROCE | STRONG | PASS | 78000 | 12210 | 51.1 | 31.8 | - | - | Oct 2026 |
+| 2330.TW | Taiwan Semiconductor Manufacturing Company Limited | 2026-09-13 | v2 | WATCH | STRONG · 23.3% ROCE | ADEQUATE | PASS | 2370 | 306 | 61.9 | 32.3 | - | - | Jan 2027 |
+| HUBN.SW | HUBER+SUHNER AG | 2026-07-31 | v2 | WATCH | ADEQUATE · 12.3% ROCE | ADEQUATE | PASS CAUTION · buybacks | 161.2 | 31.2 | 41.4 | 32.8 | - | - | Aug 2026 |
+| HMS.ST | HMS Networks AB (publ) | 2026-10-04 | v1 | WATCH | ADEQUATE · 16.1% ROCE | ADEQUATE | PASS CAUTION · buybacks | 487.8 | 60 | 33.0 | 35.2 | - | - | 2026-10-21 |
+| AMZN | Amazon.com, Inc. | 2026-09-13 | v3 | WATCH | ADEQUATE · 11.1% ROCE | ADEQUATE | PASS | 240.35 | 31 | 234.1 | 35.6 | - | - | 2026-10-30 |
 | FAST | Fastenal Company | 2026-10-04 | v1 | WATCH | STRONG · 34.3% ROCE | STRONG | PASS CAUTION · buybacks | 51.91 | 7.31 | 56.8 | 36.3 | - | - | Oct 2026 |
-| AMZN | Amazon.com, Inc. | 2026-09-13 | v3 | WATCH | ADEQUATE · 11.1% ROCE | ADEQUATE | PASS | 248 | 31 | 241.6 | 36.6 | - | - | 2026-10-30 |
-| DPLM.L | Diploma PLC | 2026-10-23 | v2 | WATCH | ADEQUATE · 13.3% ROCE | ADEQUATE | PASS | 6890 | 976.1 | 36.8 | 36.9 | 46.6 · 56.6 | 45.8 · 55.9 | Nov 2026 |
-| HEI | HEICO Corporation | 2026-10-04 | v1 | WATCH | ADEQUATE · 12.6% ROCE | STRONG | PASS | 297.36 | 26.2 | 40.8 | 37.8 | - | - | Dec 2026 |
-| IFCN.SW | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG · 22.2% ROCE | ADEQUATE | PASS | 165 | 18 | 72.2 | 44.0 | - | - | Mar 2027 |
-| NCAB.ST | NCAB Group AB (publ) | 2026-10-24 | v1 | WATCH | ADEQUATE · 18.2% ROCE | ADEQUATE · unit customer conc. | PASS | 81.2 | 4.59 | 55.3 | 51.3 | 36.6 · 41.8 | 39.1 · 37.9 | 2027-02-12 |
-| SAVE.ST | Nordnet AB (publ) | 2026-10-24 | v3 | WATCH | ADEQUATE · 32.8% ROE | ADEQUATE | PASS CAUTION · buybacks | 320.2 | 47.67 | 53.7 | n.m. | 29.5 · 34.3 | n.m. · n.m. | Jan 2027 |
-| SDZ.SW | Sandoz Group AG | 2026-06-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | 80.66 | - | - | - | - | - | Feb 2027 |
-| ULVR.L | Unilever PLC | 2026-07-14 | v1 | WATCH | STRONG · 18.2% ROCE | ADEQUATE | PASS | 4937.5 | - | - | - | - | - | Feb 2027 |
+| DPLM.L | Diploma PLC | 2026-10-23 | v2 | WATCH | ADEQUATE · 13.3% ROCE | ADEQUATE | PASS | 7195 | 976.1 | 38.4 | 38.5 | 48.6 · 59.1 | 47.7 · 58.2 | Nov 2026 |
+| HEI | HEICO Corporation | 2026-10-04 | v1 | WATCH | ADEQUATE · 12.6% ROCE | STRONG | PASS | 321.36 | 26.2 | 44.0 | 40.6 | - | - | Dec 2026 |
+| IFCN.SW | INFICON Holding AG | 2026-07-22 | v1 | WATCH | STRONG · 22.2% ROCE | ADEQUATE | PASS | 173 | 18 | 75.8 | 46.2 | - | - | Mar 2027 |
+| NCAB.ST | NCAB Group AB (publ) | 2026-10-24 | v1 | WATCH | ADEQUATE · 18.2% ROCE | ADEQUATE · unit customer conc. | PASS | 87.5 | 4.59 | 59.6 | 54.9 | 39.4 · 45.1 | 41.9 · 40.5 | 2027-02-12 |
+| SAVE.ST | Nordnet AB (publ) | 2026-10-24 | v3 | WATCH | ADEQUATE · 32.8% ROE | ADEQUATE | PASS CAUTION · buybacks | 329.6 | 47.67 | 55.3 | n.m. | 30.4 · 35.3 | n.m. · n.m. | Jan 2027 |
+| SDZ.SW | Sandoz Group AG | 2026-06-12 | v1 | WATCH | ADEQUATE | ADEQUATE | PASS | 82.38 | - | - | - | - | - | Feb 2027 |
+| ULVR.L | Unilever PLC | 2026-07-14 | v1 | WATCH | STRONG · 18.2% ROCE | ADEQUATE | PASS | 4870.5 | - | - | - | - | - | Feb 2027 |
 
-## AVOID - one gate failed (119)
+## AVOID - one gate failed (123)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| VC | Visteon Corporation | 2026-08-08 | v1 | AVOID | ADEQUATE · 10.7% ROCE | WEAK · customer conc. | PASS CAUTION · compensation | 76.37 | 65.24 | 7.4 | 7.9 | - | - | Feb 2027 |
-| KRN.DE | Krones AG | 2026-07-24 | v1 | AVOID | WEAK · 9.3% ROCE | ADEQUATE | PASS | 110.2 | 66.1 | 13.3 | 8.8 | - | - | Mar 2027 |
-| PIRC.MI | Pirelli & C. S.p.A. | 2026-07-29 | v1 | AVOID | WEAK · 6.2% ROCE | STRONG | PASS | 6.57 | 2.86 | 9.2 | 11.5 | - | - | Mar 2027 |
-| 7751.T | Canon Inc. | 2026-08-07 | v1 | AVOID | WEAK · 6.1% ROCE | ADEQUATE | PASS CAUTION · distributions | 4891 | 1946 | 20.1 | 11.8 | - | - | Jan 2027 |
-| ANF | Abercrombie & Fitch Co. | 2026-08-07 | v1 | AVOID | ADEQUATE · 10.8% ROCE | WEAK · forces: entrants | PASS | 155.82 | 68.13 | 18.3 | 11.8 | - | - | Mar 2027 |
-| ML.PA | Compagnie Générale des Établissements Michelin SCA | 2026-08-06 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS CAUTION · buybacks | 31.27 | 12.53 | 11.6 | 12.4 | - | - | Feb 2027 |
+| VC | Visteon Corporation | 2026-08-08 | v1 | AVOID | ADEQUATE · 10.7% ROCE | WEAK · customer conc. | PASS CAUTION · compensation | 73.32 | 65.24 | 7.1 | 7.7 | - | - | Feb 2027 |
+| KRN.DE | Krones AG | 2026-07-24 | v1 | AVOID | WEAK · 9.3% ROCE | ADEQUATE | PASS | 113.4 | 66.1 | 13.7 | 9.0 | - | - | Mar 2027 |
+| PIRC.MI | Pirelli & C. S.p.A. | 2026-07-29 | v1 | AVOID | WEAK · 6.2% ROCE | STRONG | PASS | 6.55 | 2.86 | 9.2 | 11.5 | - | - | Mar 2027 |
+| 7751.T | Canon Inc. | 2026-08-07 | v1 | AVOID | WEAK · 6.1% ROCE | ADEQUATE | PASS CAUTION · distributions | 4744 | 1946 | 19.5 | 11.6 | - | - | Jan 2027 |
+| ANF | Abercrombie & Fitch Co. | 2026-08-07 | v1 | AVOID | ADEQUATE · 10.8% ROCE | WEAK · forces: entrants | PASS | 164.44 | 68.13 | 19.3 | 12.3 | - | - | Mar 2027 |
+| 6301.T | Komatsu Ltd. (株式会社小松製作所) | 2026-08-07 | v1 | AVOID | WEAK · 9.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 6182 | 2101 | 23.5 | 12.5 | - | - | Apr 2027 |
+| ML.PA | Compagnie Générale des Établissements Michelin SCA | 2026-08-06 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS CAUTION · buybacks | 31.88 | 12.53 | 11.8 | 12.6 | - | - | Feb 2027 |
 | SJ.TO | Stella-Jones Inc. | 2026-10-31 | v1 | AVOID | ADEQUATE · 12.8% ROCE | ADEQUATE · customer conc. | FAIL · buybacks | 66.99 | 22.00 | 8.2 | 13.0 | 16.8 · 17.9 | 10.5 · 12.1 | Mar 2027 |
-| BTI | British American Tobacco p.l.c. | 2026-07-16 | v2 | AVOID | WEAK | ADEQUATE | PASS | 59.48 | 22.91 | 16.6 | 13.3 | - | - | 2026-07-30 |
-| 6301.T | Komatsu Ltd. (株式会社小松製作所) | 2026-08-07 | v1 | AVOID | WEAK · 9.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 6708 | 2101 | 25.5 | 13.4 | - | - | Apr 2027 |
-| AD.AS | Koninklijke Ahold Delhaize N.V. | 2026-07-07 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS | 33.14 | 7 | 8.1 | 13.6 | - | - | Feb 2027 |
+| AD.AS | Koninklijke Ahold Delhaize N.V. | 2026-07-07 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS | 32.75 | 7 | 8.0 | 13.5 | - | - | Feb 2027 |
+| BTI | British American Tobacco p.l.c. | 2026-07-16 | v2 | AVOID | WEAK | ADEQUATE | PASS | 61.52 | 22.91 | 17.1 | 13.6 | - | - | 2026-07-30 |
 | REY.MI | Reply S.p.A. | 2026-10-30 | v1 | AVOID | ADEQUATE · 14.8% ROCE | WEAK · unit customer conc. | PASS CAUTION · RPT | 133.70 | 55.50 | 19.3 | 13.8 | 19.0 · 22.5 | 15.9 · 17.8 | Mar 2027 |
-| MONC.MI | Moncler S.p.A. | 2026-07-28 | v1 | AVOID | ADEQUATE · 17.8% ROCE | ADEQUATE | FAIL · flag pair | 42.66 | 19.4 | 15.6 | 13.9 | - | - | Feb 2027 |
-| RI.PA | Pernod Ricard SA | 2026-10-04 | v1 | AVOID | WEAK · 7.8% ROCE | ADEQUATE | PASS | 67.64 | 5.66 | 14.4 | 14.2 | - | - | 2027-02-18 |
-| DLG.MI | De' Longhi S.p.A. | 2026-07-28 | v2 | AVOID | ADEQUATE · 13.3% ROCE | ADEQUATE | FAIL · flag pair | 40.8 | 23.79 | 13.7 | 14.9 | - | - | Mar 2027 |
+| MONC.MI | Moncler S.p.A. | 2026-07-28 | v1 | AVOID | ADEQUATE · 17.8% ROCE | ADEQUATE | FAIL · flag pair | 43.14 | 19.4 | 15.8 | 14.0 | - | - | Feb 2027 |
+| RI.PA | Pernod Ricard SA | 2026-10-04 | v1 | AVOID | WEAK · 7.8% ROCE | ADEQUATE | PASS | 67.68 | 5.66 | 14.4 | 14.2 | - | - | 2027-02-18 |
+| BC8.DE | Bechtle AG | 2026-07-23 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS | 33.5 | 9.2 | 29.1 | 14.9 | - | - | Mar 2027 |
 | JMT.LS | Jerónimo Martins, SGPS, S.A. | 2026-10-31 | v1 | AVOID | WEAK · 12.8% ROCE | ADEQUATE | PASS | 18.46 | 3.24 | 11.3 | 15.0 | 11.1 · 10.2 | 15.6 · 17.1 | Mar 2027 |
-| 5108.T | Bridgestone Corporation | 2026-08-07 | v1 | AVOID | WEAK · 9.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 3985 | 1473 | 13.3 | 15.2 | - | - | Feb 2027 |
-| BC8.DE | Bechtle AG | 2026-07-23 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS | 35.74 | 9.2 | 31.0 | 15.7 | - | - | Mar 2027 |
-| BXB.AX | Brambles Limited | 2026-10-20 | v1 | AVOID | ADEQUATE · 14.7% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 21.65 | 7.68 | 22.7 | 15.7 | 25.4 · 38.9 | 17.0 · 19.1 | Feb 2027 |
-| ALIG.ST | Alimak Group AB (publ) | 2026-10-04 | v1 | AVOID | WEAK · 7.5% ROCE | ADEQUATE | PASS | 120 | 33 | 19.8 | 16.5 | - | - | 2026-10-23 |
-| NOLA-B.ST | Nolato AB (publ) | 2026-08-06 | v3 | AVOID | ADEQUATE · 15.1% ROCE | ADEQUATE | FAIL · flag pair | 55.4 | 8.1 | 54.7 | 16.5 | - | - | Apr 2027 |
-| GGG | Graco Inc. | 2026-10-04 | v1 | AVOID | STRONG · 23.5% ROCE | WEAK · customer conc. | PASS CAUTION · acquisitions | 66.99 | 27.78 | 17.4 | 16.8 | - | - | Oct 2026 |
-| ACP.WA | Asseco Poland S.A. | 2026-08-07 | v1 | AVOID | WEAK · 7.9% ROCE | ADEQUATE | PASS | 247 | 54.4 | - | 16.9 | - | - | Mar 2027 |
-| NMAN.ST | Nederman Holding AB (publ) | 2026-10-08 | v2 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · compensation | 137.6 | 11.0 | 35.5 | 17.0 | 17.8 · 16.8 | 13.4 · 14.3 | 2027-02-12 |
-| 6367.T | Daikin Industries, Ltd. | 2026-08-07 | v1 | AVOID | WEAK · 9.1% ROCE | STRONG | PASS | 21185 | 6859 | 24.2 | 17.1 | - | - | May 2027 |
-| SUN.SW | Sulzer AG | 2026-10-04 | v1 | AVOID | WEAK · 6.8% ROCE | ADEQUATE | PASS | 171.4 | 43 | 27.7 | 17.1 | - | - | Feb 2027 |
-| INTU | Intuit Inc. | 2026-10-24 | v4 | AVOID | ADEQUATE · 13.7% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 343.39 | 121.44 | 10.9 | 17.2 | 14.6 · 16.9 | 21.0 · 25.1 | Nov 2026 |
-| CCL-B.TO | CCL Industries Inc. | 2026-10-19 | v1 | AVOID | ADEQUATE · 12.3% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 99.12 | 29.40 | 21.2 | 17.4 | 25.5 · 27.2 | 19.9 · 21.3 | Feb 2027 |
+| 5108.T | Bridgestone Corporation | 2026-08-07 | v1 | AVOID | WEAK · 9.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 3987 | 1473 | 13.4 | 15.2 | - | - | Feb 2027 |
+| BXB.AX | Brambles Limited | 2026-10-31 | v2 | AVOID | ADEQUATE · 14.7% ROCE | STRONG | FAIL · buybacks | 21.39 | 7.63 | 22.4 | 15.5 | 25.1 · 38.4 | 16.9 · 18.9 | Feb 2027 |
+| NOLA-B.ST | Nolato AB (publ) | 2026-08-06 | v3 | AVOID | ADEQUATE · 15.1% ROCE | ADEQUATE | FAIL · flag pair | 52.1 | 8.1 | 51.4 | 15.6 | - | - | Apr 2027 |
+| DLG.MI | De' Longhi S.p.A. | 2026-07-28 | v2 | AVOID | ADEQUATE · 13.3% ROCE | ADEQUATE | FAIL · flag pair | 43.38 | 23.79 | 14.6 | 15.8 | - | - | Mar 2027 |
+| ALIG.ST | Alimak Group AB (publ) | 2026-10-04 | v1 | AVOID | WEAK · 7.5% ROCE | ADEQUATE | PASS | 118.4 | 33 | 19.5 | 16.3 | - | - | 2026-10-23 |
+| ACP.WA | Asseco Poland S.A. | 2026-08-07 | v1 | AVOID | WEAK · 7.9% ROCE | ADEQUATE | PASS | 244.5 | 54.4 | - | 16.8 | - | - | Mar 2027 |
+| GGG | Graco Inc. | 2026-10-04 | v1 | AVOID | STRONG · 23.5% ROCE | WEAK · customer conc. | PASS CAUTION · acquisitions | 67.44 | 27.78 | 17.5 | 16.9 | - | - | Oct 2026 |
+| 6367.T | Daikin Industries, Ltd. | 2026-08-07 | v1 | AVOID | WEAK · 9.1% ROCE | STRONG | PASS | 21060 | 6859 | 24.0 | 17.0 | - | - | May 2027 |
+| INTU | Intuit Inc. | 2026-10-24 | v4 | AVOID | ADEQUATE · 13.7% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 341.09 | 121.44 | 10.8 | 17.1 | 14.5 · 16.8 | 20.9 · 24.9 | Nov 2026 |
+| NMAN.ST | Nederman Holding AB (publ) | 2026-10-08 | v2 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · compensation | 138.4 | 11.0 | 35.7 | 17.1 | 17.9 · 16.9 | 13.4 · 14.4 | 2027-02-12 |
+| CCL-B.TO | CCL Industries Inc. | 2026-10-19 | v1 | AVOID | ADEQUATE · 12.3% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 98.19 | 29.40 | 21.0 | 17.2 | 25.2 · 27.0 | 19.8 · 21.1 | Feb 2027 |
 | COR.LS | Corticeira Amorim, S.G.P.S., S.A. | 2026-10-31 | v1 | AVOID | WEAK · 9.7% ROCE | ADEQUATE | PASS CAUTION · compensation | 6.86 | 1.65 | 6.1 | 17.6 | 17.0 · 16.9 | 11.2 · 11.1 | Feb 2027 |
-| DBX | Dropbox, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 6% ROCE | ADEQUATE | PASS CAUTION · buybacks | 37.83 | 3.75 | 9.1 | 18.1 | - | - | Feb 2027 |
-| G1A.DE | GEA Group Aktiengesellschaft | 2026-10-04 | v1 | AVOID | WEAK · 8.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 68.55 | 22.1 | 24.8 | 18.1 | - | - | Mar 2027 |
-| CARL-B.CO | Carlsberg A/S | 2026-10-04 | v1 | AVOID | WEAK · 9.5% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 968.4 | 27 | 19.6 | 18.4 | - | - | Feb 2027 |
-| ZAB.WA | Żabka Group S.A. | 2026-08-07 | v1 | AVOID | WEAK · leverage | STRONG | PASS | 31.7 | 8.78 | 12.7 | 18.5 | - | - | Mar 2027 |
-| WEIR.L | The Weir Group PLC | 2026-10-04 | v1 | AVOID | WEAK · 5.5% ROCE | STRONG | PASS CAUTION · acquisitions | 2502 | 465 | 26.2 | 19.1 | - | - | Mar 2027 |
-| HEIA.AS | Heineken N.V. | 2026-10-04 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS | 77.52 | 1.12 | 16.3 | 19.3 | - | - | Feb 2027 |
-| MAERSK-B.CO | A.P. Møller - Mærsk A/S | 2026-10-02 | v2 | AVOID | ADEQUATE · 10.8% ROCE | WEAK · 2+ forces | PASS | 22870 | 2700 | 10.0 | 19.5 | - | - | Feb 2027 |
+| DBX | Dropbox, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 6% ROCE | ADEQUATE | PASS CAUTION · buybacks | 36.25 | 3.75 | 8.8 | 17.6 | - | - | Feb 2027 |
+| SUN.SW | Sulzer AG | 2026-10-04 | v1 | AVOID | WEAK · 6.8% ROCE | ADEQUATE | PASS | 181.7 | 43 | 29.4 | 17.9 | - | - | Feb 2027 |
+| G1A.DE | GEA Group Aktiengesellschaft | 2026-10-04 | v1 | AVOID | WEAK · 8.8% ROCE | ADEQUATE | PASS CAUTION · buybacks | 67.9 | 22.1 | 24.6 | 18.0 | - | - | Mar 2027 |
+| 6702.T | Fujitsu Limited | 2026-08-07 | v1 | AVOID | WEAK · record-limited | ADEQUATE | PASS CAUTION · buybacks | 3622 | 1060 | 27.3 | 18.4 | - | - | Apr 2027 |
+| CARL-B.CO | Carlsberg A/S | 2026-10-04 | v1 | AVOID | WEAK · 9.5% ROCE | ADEQUATE | PASS CAUTION · acquisitions | 971 | 27 | 19.7 | 18.5 | - | - | Feb 2027 |
+| ZAB.WA | Żabka Group S.A. | 2026-08-07 | v1 | AVOID | WEAK · leverage | STRONG | PASS | 31.75 | 8.78 | 12.7 | 18.5 | - | - | Mar 2027 |
+| WEIR.L | The Weir Group PLC | 2026-10-04 | v1 | AVOID | WEAK · 5.5% ROCE | STRONG | PASS CAUTION · acquisitions | 2556 | 465 | 26.7 | 19.4 | - | - | Mar 2027 |
+| HEIA.AS | Heineken N.V. | 2026-10-04 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS | 79.56 | 1.12 | 16.7 | 19.6 | - | - | Feb 2027 |
+| KBX.DE | Knorr-Bremse AG | 2026-07-22 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS | 90.4 | 19.6 | 22.1 | 19.6 | - | - | Mar 2027 |
+| MAERSK-B.CO | A.P. Møller - Mærsk A/S | 2026-10-02 | v2 | AVOID | ADEQUATE · 10.8% ROCE | WEAK · 2+ forces | PASS | 23070 | 2700 | 10.1 | 19.6 | - | - | Feb 2027 |
 | 300750.SZ | Contemporary Amperex Technology Co., Limited | 2026-10-30 | v3 | AVOID | WEAK · 8.9% ROCE | ADEQUATE · customer conc. | PASS CAUTION · compensation | 232.92 | 27.8 | 23.3 | 20.0 | 15.1 · 18.8 | 25.1 · 32.6 | Mar 2027 |
-| BNR.DE | Brenntag SE | 2026-07-23 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS | 62.3 | 12 | 13.4 | 20.0 | - | - | Aug 2026 |
-| WINA | Winmark Corporation | 2026-08-08 | v1 | AVOID | ADEQUATE | STRONG | FAIL · compensation | 279.71 | 86.68 | 23.1 | 20.0 | - | - | Apr 2027 |
-| 6273.T | SMC Corporation | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · buybacks | 61820 | 18311 | 111.8 | 20.3 | - | - | Nov 2026 |
-| ASSA-B.ST | ASSA ABLOY AB (publ) | 2026-07-24 | v1 | AVOID | WEAK · ROCE decline | STRONG | PASS | 369.5 | 88 | 22.0 | 20.6 | - | - | Mar 2027 |
-| KBX.DE | Knorr-Bremse AG | 2026-07-22 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS | 95.8 | 19.6 | 23.4 | 20.6 | - | - | Mar 2027 |
-| IBE.MC | Iberdrola, S.A. | 2026-08-09 | v1 | AVOID | WEAK · 6% ROCE | STRONG | PASS CAUTION · buybacks | 21.9 | 0.63 | n.m. | 21.5 | - | - | Feb 2027 |
-| EXPN.L | Experian plc | 2026-10-24 | v2 | AVOID | STRONG · 16.2% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 3108 | 660.9 | 23.8 | 21.6 | 27.4 · 28.7 | 23.9 · 26.9 | May 2027 |
-| RVLV | Revolve Group, Inc. | 2026-08-08 | v1 | AVOID | WEAK · growth | ADEQUATE | PASS | 22.26 | 4.95 | 36.0 | 21.9 | - | - | Feb 2027 |
-| WSO | Watsco, Inc. | 2026-10-23 | v1 | AVOID | ADEQUATE · 20.6% ROCE | ADEQUATE · supplier conc. | FAIL · compensation | 322.98 | 86.62 | 25.8 | 21.9 | 22.7 · 25.3 | 19.5 · 19.8 | Nov 2026 |
-| AIT | Applied Industrial Technologies, Inc. | 2026-10-23 | v1 | AVOID | STRONG · 15.3% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 317.00 | 90.15 | 26.2 | 22.4 | 28.9 · 34.5 | 23.9 · 25.9 | Jan 2027 |
-| DLB | Dolby Laboratories, Inc. | 2026-08-07 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · buybacks | 62.85 | 18.7 | 13.5 | 22.4 | - | - | Nov 2026 |
-| KNEBV.HE | KONE Oyj | 2026-07-31 | v2 | AVOID | ADEQUATE · 29.5% ROCE | STRONG | FAIL · flag pair | 56.32 | 16.3 | 25.2 | 22.6 | - | - | Jan 2027 |
-| 6702.T | Fujitsu Limited | 2026-08-07 | v1 | AVOID | WEAK · record-limited | ADEQUATE | PASS CAUTION · buybacks | 4477 | 1060 | 33.8 | 22.7 | - | - | Apr 2027 |
-| GETI-B.ST | Getinge AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 6.8% ROCE | ADEQUATE | PASS | 267.7 | 48.5 | 27.7 | 22.8 | - | - | Mar 2027 |
-| VLTO | Veralto Corporation | 2026-10-23 | v1 | AVOID | ADEQUATE · 23.5% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 104.33 | 21.65 | 25.0 | 22.8 | 27.8 · 28.8 | 24.1 · 25.2 | Feb 2027 |
-| BEIA-B.ST | Beijer Alma AB (publ) | 2026-10-24 | v1 | AVOID | ADEQUATE · 11.0% ROCE | ADEQUATE · unit customer conc. | FAIL · alignment | 299.0 | 49.38 | 26.3 | 22.9 | 29.7 · 33.2 | 25.3 · 26.4 | Feb 2027 |
-| SU.PA | Schneider Electric SE | 2026-08-06 | v2 | AVOID | ADEQUATE · 10.4% ROCE | STRONG | FAIL · buybacks | 231.4 | 44.2 | 28.7 | 22.9 | - | - | Feb 2027 |
-| ENB.TO | Enbridge Inc. | 2026-07-14 | v1 | AVOID | WEAK · 4.2% ROCE | ADEQUATE | PASS | 67.37 | n.m. | 44.7 | 24.0 | - | - | Feb 2027 |
-| IBM | International Business Machines Corp. | 2026-07-14 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS | 253.56 | 37 | 19.7 | 24.7 | - | - | Feb 2027 |
-| 6506.T | Yaskawa Electric Corporation (株式会社安川電機) | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · buybacks | 4022 | 183 | 175.9 | 24.8 | - | - | Oct 2026 |
-| AS | Amer Sports, Inc. | 2026-08-07 | v1 | AVOID | WEAK · 5.6% ROCE | ADEQUATE | PASS | 28.24 | 6.7 | 32.0 | 24.9 | - | - | Mar 2027 |
-| AQ.ST | AQ Group AB (publ) | 2026-10-24 | v1 | AVOID | ADEQUATE · 13.4% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 226.6 | 49.21 | 36.8 | 25.4 | 25.2 · 39.9 | 25.8 · 31.2 | 2027-02-11 |
-| MSFT | Microsoft Corporation | 2026-09-13 | v4 | AVOID | ADEQUATE · 24.7% ROCE | ADEQUATE | FAIL · buybacks | 524.51 | 128.52 | - | 26.0 | - | - | Sep 2026 |
-| GEBN.SW | Geberit AG | 2026-10-08 | v3 | AVOID | ADEQUATE · 23.9% ROCE | ADEQUATE · customer conc. | FAIL · flag pair | 564.2 | 113.0 | 28.5 | 26.1 | 26.2 · 25.7 | 26.2 · 25.3 | Mar 2027 |
-| BLDR | Builders FirstSource, Inc. | 2026-10-24 | v1 | AVOID | ADEQUATE · 21.7% ROCE | ADEQUATE | FAIL · buybacks | 56.85 | n.m. | 9.7 | 26.3 | 4.4 · 3.5 | 7.6 · 5.4 | Feb 2027 |
-| FORTUM.HE | Fortum Oyj | 2026-08-07 | v1 | AVOID | WEAK · 7% ROCE | ADEQUATE | PASS | 23.09 | 2.93 | 60.8 | 26.3 | - | - | Feb 2027 |
-| ALE.WA | Allegro.eu S.A. | 2026-08-07 | v1 | AVOID | WEAK · 6.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 58.44 | 11.57 | 29.7 | 26.7 | - | - | Mar 2027 |
-| BMI | Badger Meter, Inc. | 2026-10-19 | v2 | AVOID | STRONG · 18.9% ROCE | STRONG | FAIL · buybacks | 151.24 | 38.40 | 30.1 | 27.1 | 33.2 · 39.7 | 28.9 · 35.4 | Oct 2026 |
-| IEX | IDEX Corporation | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | STRONG | PASS CAUTION · buybacks | 229.05 | 39.29 | 27.6 | 27.1 | - | - | Feb 2027 |
-| NDSN | Nordson Corporation | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | STRONG | PASS CAUTION · buybacks | 318.84 | 56.5 | 27.0 | 27.7 | - | - | Dec 2026 |
-| 6954.T | FANUC Corporation | 2026-08-07 | v1 | AVOID | WEAK · 9.6% ROCE | ADEQUATE | PASS CAUTION · buybacks | 5587 | 1359 | 22.7 | 28.5 | - | - | Apr 2027 |
-| STMN.SW | Straumann Holding AG | 2026-08-27 | v3 | AVOID | STRONG · 19% ROCE | STRONG | FAIL · buybacks | 98.88 | 14.1 | 56.3 | 29.7 | - | - | 2027-02-24 |
-| AME | AMETEK, Inc. | 2026-10-24 | v3 | AVOID | ADEQUATE · 12.6% ROCE | STRONG | FAIL · acquisitions | 240.03 | 47.93 | 33.1 | 30.1 | 33.5 · 39.3 | 32.0 · 35.0 | Nov 2026 |
-| MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID | STRONG · 42.7% ROCE | ADEQUATE | FAIL · compensation | 623.6 | 128 | 33.4 | 30.1 | - | - | Feb 2027 |
-| GRMN | Garmin Ltd | 2026-07-31 | v2 | AVOID | STRONG · 17.4% ROCE | ADEQUATE | FAIL · buybacks | 293.74 | 56.3 | 41.7 | 30.4 | - | - | Oct 2026 |
-| BUFAB.ST | Bufab AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · growth | ADEQUATE · unit customer conc. | PASS | 132.6 | 13.80 | 31.1 | 30.5 | 23.8 · 39.5 | 31.3 · 33.2 | 2027-02-11 |
-| ROK | Rockwell Automation, Inc. | 2026-07-31 | v3 | AVOID | ADEQUATE · 17.4% ROCE | ADEQUATE | FAIL · buybacks | 426.11 | 77 | 35.5 | 30.5 | - | - | 2026-08-04 |
-| RACE.MI | Ferrari N.V. | 2026-07-31 | v2 | AVOID | STRONG · 23.6% ROCE | ADEQUATE | FAIL · buybacks | 349.5 | 63 | 44.3 | 30.9 | - | - | Aug 2026 |
+| BNR.DE | Brenntag SE | 2026-07-23 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS | 63.26 | 12 | 13.6 | 20.2 | - | - | Aug 2026 |
+| WINA | Winmark Corporation | 2026-08-08 | v1 | AVOID | ADEQUATE | STRONG | FAIL · compensation | 285.69 | 86.68 | 23.5 | 20.4 | - | - | Apr 2027 |
+| WSO | Watsco, Inc. | 2026-10-23 | v1 | AVOID | ADEQUATE · 20.6% ROCE | ADEQUATE · supplier conc. | FAIL · compensation | 303.56 | 86.62 | 24.2 | 20.7 | 21.3 · 23.8 | 18.4 · 18.7 | Nov 2026 |
+| AIT | Applied Industrial Technologies, Inc. | 2026-10-23 | v1 | AVOID | STRONG · 15.3% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 294.12 | 90.15 | 24.3 | 20.8 | 26.8 · 32.0 | 22.3 · 24.1 | Jan 2027 |
+| 6273.T | SMC Corporation | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · buybacks | 63670 | 18311 | 115.1 | 20.9 | - | - | Nov 2026 |
+| EXPN.L | Experian plc | 2026-10-24 | v2 | AVOID | STRONG · 16.2% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 2987 | 660.9 | 22.9 | 20.9 | 26.4 · 27.7 | 23.1 · 26.1 | May 2027 |
+| ASSA-B.ST | ASSA ABLOY AB (publ) | 2026-07-24 | v1 | AVOID | WEAK · ROCE decline | STRONG | PASS | 393.1 | 88 | 23.4 | 21.7 | - | - | Mar 2027 |
+| IBE.MC | Iberdrola, S.A. | 2026-08-09 | v1 | AVOID | WEAK · 6% ROCE | STRONG | PASS CAUTION · buybacks | 22.18 | 0.63 | n.m. | 21.7 | - | - | Feb 2027 |
+| DLB | Dolby Laboratories, Inc. | 2026-08-07 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · buybacks | 61.99 | 18.7 | 13.3 | 22.1 | - | - | Nov 2026 |
+| RVLV | Revolve Group, Inc. | 2026-08-08 | v1 | AVOID | WEAK · growth | ADEQUATE | PASS | 22.43 | 4.95 | 36.3 | 22.1 | - | - | Feb 2027 |
+| KNEBV.HE | KONE Oyj | 2026-07-31 | v2 | AVOID | ADEQUATE · 29.5% ROCE | STRONG | FAIL · flag pair | 55.3 | 16.3 | 24.7 | 22.2 | - | - | Jan 2027 |
+| BEIA-B.ST | Beijer Alma AB (publ) | 2026-10-24 | v1 | AVOID | ADEQUATE · 11.0% ROCE | ADEQUATE · unit customer conc. | FAIL · alignment | 303 | 49.38 | 26.6 | 23.2 | 30.0 · 33.6 | 25.6 · 26.7 | Feb 2027 |
+| SU.PA | Schneider Electric SE | 2026-08-06 | v2 | AVOID | ADEQUATE · 10.4% ROCE | STRONG | FAIL · buybacks | 237.5 | 44.2 | 29.5 | 23.4 | - | - | Feb 2027 |
+| GETI-B.ST | Getinge AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 6.8% ROCE | ADEQUATE | PASS | 277.7 | 48.5 | 28.7 | 23.5 | - | - | Mar 2027 |
+| VLTO | Veralto Corporation | 2026-10-23 | v1 | AVOID | ADEQUATE · 23.5% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 111.1 | 21.65 | 26.6 | 24.1 | 29.6 · 30.6 | 25.5 · 26.7 | Feb 2027 |
+| ENB.TO | Enbridge Inc. | 2026-07-14 | v1 | AVOID | WEAK · 4.2% ROCE | ADEQUATE | PASS | 69.11 | n.m. | 45.8 | 24.4 | - | - | Feb 2027 |
+| 6506.T | Yaskawa Electric Corporation (株式会社安川電機) | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · buybacks | 3992 | 183 | 174.6 | 24.7 | - | - | Oct 2026 |
+| IBM | International Business Machines Corp. | 2026-07-14 | v1 | AVOID | WEAK · 8.4% ROCE | ADEQUATE | PASS | 257.81 | 37 | 20.0 | 25.0 | - | - | Feb 2027 |
+| AQ.ST | AQ Group AB (publ) | 2026-10-24 | v1 | AVOID | ADEQUATE · 13.4% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 231 | 49.21 | 37.6 | 25.8 | 25.7 · 40.7 | 26.3 · 31.8 | 2027-02-11 |
+| AS | Amer Sports, Inc. | 2026-08-07 | v1 | AVOID | WEAK · 5.6% ROCE | ADEQUATE | PASS | 29.43 | 6.7 | 33.4 | 25.8 | - | - | Mar 2027 |
+| MSFT | Microsoft Corporation | 2026-09-13 | v4 | AVOID | ADEQUATE · 24.7% ROCE | ADEQUATE | FAIL · buybacks | 521.91 | 128.52 | - | 25.9 | - | - | Sep 2026 |
+| FORTUM.HE | Fortum Oyj | 2026-08-07 | v1 | AVOID | WEAK · 7% ROCE | ADEQUATE | PASS | 22.99 | 2.93 | 60.5 | 26.2 | - | - | Feb 2027 |
+| BMI | Badger Meter, Inc. | 2026-10-19 | v2 | AVOID | STRONG · 18.9% ROCE | STRONG | FAIL · buybacks | 148.38 | 38.40 | 29.6 | 26.5 | 32.5 · 38.9 | 28.4 · 34.7 | Oct 2026 |
+| GEBN.SW | Geberit AG | 2026-10-08 | v3 | AVOID | ADEQUATE · 23.9% ROCE | ADEQUATE · customer conc. | FAIL · flag pair | 574.6 | 113.0 | 29.0 | 26.5 | 26.7 · 26.1 | 26.6 · 25.8 | Mar 2027 |
+| ALE.WA | Allegro.eu S.A. | 2026-08-07 | v1 | AVOID | WEAK · 6.2% ROCE | ADEQUATE | PASS CAUTION · buybacks | 59.55 | 11.57 | 30.2 | 27.2 | - | - | Mar 2027 |
+| IEX | IDEX Corporation | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | STRONG | PASS CAUTION · buybacks | 233.84 | 39.29 | 28.1 | 27.6 | - | - | Feb 2027 |
+| NDSN | Nordson Corporation | 2026-10-04 | v1 | AVOID | WEAK · ROCE decline | STRONG | PASS CAUTION · buybacks | 322.67 | 56.5 | 27.3 | 28.0 | - | - | Dec 2026 |
+| GRMN | Garmin Ltd | 2026-07-31 | v2 | AVOID | STRONG · 17.4% ROCE | ADEQUATE | FAIL · buybacks | 272.67 | 56.3 | 38.7 | 28.2 | - | - | Oct 2026 |
+| BLDR | Builders FirstSource, Inc. | 2026-10-24 | v1 | AVOID | ADEQUATE · 21.7% ROCE | ADEQUATE | FAIL · buybacks | 64.91 | n.m. | 11.0 | 28.3 | 5.1 · 3.9 | 8.1 · 5.8 | Feb 2027 |
+| 6954.T | FANUC Corporation | 2026-08-07 | v1 | AVOID | WEAK · 9.6% ROCE | ADEQUATE | PASS CAUTION · buybacks | 5704 | 1359 | 23.2 | 29.1 | - | - | Apr 2027 |
+| STMN.SW | Straumann Holding AG | 2026-08-27 | v3 | AVOID | STRONG · 19% ROCE | STRONG | FAIL · buybacks | 97.42 | 14.1 | 55.4 | 29.3 | - | - | 2027-02-24 |
+| AIAENG.NS | AIA Engineering Limited | 2026-10-31 | v1 | AVOID | STRONG · 15.1% ROCE | ADEQUATE | FAIL · flag pair | 3595.90 | 387.8 | 74.2 | 29.5 | 47.4 · 58.4 | 29.5 · 32.3 | May 2027 |
+| AME | AMETEK, Inc. | 2026-10-24 | v3 | AVOID | ADEQUATE · 12.6% ROCE | STRONG | FAIL · acquisitions | 241.12 | 47.93 | 33.3 | 30.2 | 33.6 · 39.4 | 32.1 · 35.2 | Nov 2026 |
+| BUFAB.ST | Bufab AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · growth | ADEQUATE · unit customer conc. | PASS | 134 | 13.80 | 31.5 | 30.8 | 24.1 · 40.0 | 31.6 · 33.5 | 2027-02-11 |
+| MA | Mastercard Incorporated | 2026-07-03 | v1 | AVOID | STRONG · 42.7% ROCE | ADEQUATE | FAIL · compensation | 638.01 | 128 | 34.2 | 30.8 | - | - | Feb 2027 |
 | ABBN.SW | ABB Ltd | 2026-09-25 | v4 | AVOID | ADEQUATE · 13.2% ROCE | STRONG | FAIL · buybacks | 97.88 | 18.1 | 41.9 | 31.0 | - | - | Oct 2026 |
-| HLAG.DE | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID | ADEQUATE · 17.8% ROCE | WEAK · 2+ forces | PASS | 128.4 | 20.3 | 32.1 | 31.1 | - | - | Mar 2027 |
-| VIT-B.ST | Vitec Software Group AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 6.7% ROCE | ADEQUATE | PASS | 300.6 | n.m. | 18.4 | 31.3 | 23.4 · 28.6 | 28.5 · 34.7 | Feb 2027 |
-| NEM.DE | Nemetschek SE | 2026-10-25 | v1 | AVOID | STRONG · 18.5% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 75.70 | 12.86 | 25.3 | 31.4 | 29.9 · 34.4 | 38.3 · 42.4 | Mar 2027 |
-| 005930.KS | Samsung Electronics Co., Ltd. | 2026-07-04 | v1 | AVOID | ADEQUATE · 10.6% ROCE | WEAK · 2+ forces | PASS | 215500 | 41700 | 41.4 | 32.3 | - | - | Mar 2027 |
-| MTD | Mettler-Toledo International Inc. | 2026-10-04 | v1 | AVOID | STRONG · 39.9% ROCE | STRONG | FAIL · buybacks | 1670.29 | 272 | 39.7 | 32.6 | - | - | Nov 2026 |
-| CSW | CSW Industrials, Inc. | 2026-10-24 | v1 | AVOID | ADEQUATE · 11.9% ROCE | ADEQUATE · unit customer conc. | FAIL · compensation | 295.82 | 12.90 | 36.5 | 34.4 | 33.4 · 40.3 | 34.2 · 38.9 | Jan 2027 |
-| WMT | Walmart Inc. | 2026-08-06 | v2 | AVOID | ADEQUATE · 15% ROCE | STRONG | FAIL · buybacks | 119.89 | 14.9 | 64.3 | 34.8 | - | - | Aug 2026 |
-| CTAS | Cintas Corporation | 2026-10-23 | v1 | AVOID | STRONG · 21.1% ROCE | STRONG | FAIL · buybacks | 224.1 | 38.45 | 46.3 | 35.8 | 49.2 · 55.6 | 39.7 · 44.8 | Dec 2026 |
-| APH | Amphenol Corporation | 2026-10-04 | v1 | AVOID | STRONG · 18.1% ROCE | STRONG | FAIL · buybacks | 74.09 | 8.37 | 43.6 | 35.9 | - | - | 2026-10-28 |
-| SY1.DE | Symrise AG | 2026-07-23 | v1 | AVOID | WEAK · 7.9% ROCE | STRONG | PASS | 102 | 11.5 | 28.3 | 36.4 | - | - | Mar 2027 |
-| CRL.MI | CAREL Industries S.p.A. | 2026-10-08 | v2 | AVOID | ADEQUATE · 12.7% ROCE | ADEQUATE | FAIL · acquisitions | 25.55 | 3.48 | 37.1 | 37.3 | 37.6 · 44.6 | 36.3 · 37.8 | Mar 2027 |
-| AAPL | Apple Inc. | 2026-07-03 | v1 | AVOID | STRONG · 33.2% ROCE | ADEQUATE | FAIL · compensation | 347.725 | 53 | 52.8 | 40.1 | - | - | Nov 2026 |
-| ABNB | Airbnb, Inc. | 2026-07-31 | v3 | AVOID | ADEQUATE · 19% ROCE | ADEQUATE | FAIL · buybacks | 172.01 | 25.4 | 23.3 | 42.9 | - | - | 2026-08-12 |
-| COST | Costco Wholesale Corporation | 2026-07-31 | v2 | AVOID | STRONG · 19.3% ROCE | STRONG | FAIL · buybacks | 1003.32 | 140.95 | 56.9 | 43.9 | - | - | 2026-08-30 |
-| IBKR | Interactive Brokers Group, Inc. | 2026-10-08 | v3 | AVOID | WEAK · 1.7% ROCE | ADEQUATE · customer conc. | PASS CAUTION · compensation | 80.28 | n.m. | 36.8 | 44.0 | 45.9 · 55.3 | 50.8 · 69.1 | Feb 2027 |
-| LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID | STRONG · 19% ROCE | ADEQUATE | FAIL · buybacks | 1273.46 | 119 | 127.7 | 45.2 | - | - | Feb 2027 |
-| COH.AX | Cochlear Limited | 2026-10-19 | v1 | AVOID | WEAK · growth | ADEQUATE · unit customer conc. | PASS | 146.81 | 19.90 | 36.0 | 45.3 | 40.5 · 37.0 | 24.4 · 24.8 | Feb 2027 |
-| SAAB-B.ST | Saab AB (publ) | 2026-10-21 | v1 | AVOID | WEAK · 7.3% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · buybacks | 646.5 | 70.28 | 39.9 | 48.1 | 59.2 · 73.6 | 64.7 · 79.1 | Feb 2027 |
+| NEM.DE | Nemetschek SE | 2026-10-25 | v1 | AVOID | STRONG · 18.5% ROCE | ADEQUATE · unit customer conc. | FAIL · acquisitions | 74.8 | 12.86 | 25.0 | 31.0 | 29.6 · 34.0 | 37.9 · 41.9 | Mar 2027 |
+| ROK | Rockwell Automation, Inc. | 2026-07-31 | v3 | AVOID | ADEQUATE · 17.4% ROCE | ADEQUATE | FAIL · buybacks | 436.2 | 77 | 36.3 | 31.1 | - | - | 2026-08-04 |
+| RACE.MI | Ferrari N.V. | 2026-07-31 | v2 | AVOID | STRONG · 23.6% ROCE | ADEQUATE | FAIL · buybacks | 355.1 | 63 | 45.0 | 31.4 | - | - | Aug 2026 |
+| VIT-B.ST | Vitec Software Group AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 6.7% ROCE | ADEQUATE | PASS | 308.6 | n.m. | 18.9 | 31.9 | 24.0 · 29.4 | 29.1 · 35.4 | Feb 2027 |
+| HLAG.DE | Hapag-Lloyd AG | 2026-07-21 | v1 | AVOID | ADEQUATE · 17.8% ROCE | WEAK · 2+ forces | PASS | 133.5 | 20.3 | 33.4 | 32.1 | - | - | Mar 2027 |
+| MTD | Mettler-Toledo International Inc. | 2026-10-04 | v1 | AVOID | STRONG · 39.9% ROCE | STRONG | FAIL · buybacks | 1674.81 | 272 | 39.8 | 32.7 | - | - | Nov 2026 |
+| CSW | CSW Industrials, Inc. | 2026-10-24 | v1 | AVOID | ADEQUATE · 11.9% ROCE | ADEQUATE · unit customer conc. | FAIL · compensation | 286.16 | 12.90 | 35.3 | 33.5 | 32.3 · 39.0 | 33.3 · 37.9 | Jan 2027 |
+| 005930.KS | Samsung Electronics Co., Ltd. | 2026-07-04 | v1 | AVOID | ADEQUATE · 10.6% ROCE | WEAK · 2+ forces | PASS | 225000 | 41700 | 43.2 | 33.7 | - | - | Mar 2027 |
+| SY1.DE | Symrise AG | 2026-07-23 | v1 | AVOID | WEAK · 7.9% ROCE | STRONG | PASS | 93.02 | 11.5 | 25.8 | 33.7 | - | - | Mar 2027 |
+| ELGIEQUIP.NS | Elgi Equipments Limited | 2026-10-31 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE | PASS CAUTION · RPT | 509.05 | 79.7 | 51.1 | 34.9 | 60.0 · 88.1 | 37.4 · 43.7 | May 2027 |
+| CTAS | Cintas Corporation | 2026-10-23 | v1 | AVOID | STRONG · 21.1% ROCE | STRONG | FAIL · buybacks | 219.82 | 38.45 | 45.4 | 35.1 | 48.2 · 54.6 | 39.0 · 44.0 | Dec 2026 |
+| WMT | Walmart Inc. | 2026-08-06 | v2 | AVOID | ADEQUATE · 15% ROCE | STRONG | FAIL · buybacks | 123.51 | 14.9 | 66.2 | 35.7 | - | - | Aug 2026 |
+| APH | Amphenol Corporation | 2026-10-04 | v1 | AVOID | STRONG · 18.1% ROCE | STRONG | FAIL · buybacks | 79.3 | 8.37 | 46.7 | 38.2 | - | - | 2026-10-28 |
+| PAGEIND.NS | Page Industries Limited | 2026-10-31 | v1 | AVOID | STRONG · 40.7% ROCE | WEAK · customer conc. | PASS | 34150.00 | 4566.8 | 59.8 | 38.6 | 43.0 · 72.0 | 42.4 · 45.6 | May 2027 |
+| CRL.MI | CAREL Industries S.p.A. | 2026-10-08 | v2 | AVOID | ADEQUATE · 12.7% ROCE | ADEQUATE | FAIL · acquisitions | 27.1 | 3.48 | 39.3 | 39.4 | 39.9 · 47.3 | 38.3 · 39.9 | Mar 2027 |
+| AAPL | Apple Inc. | 2026-07-03 | v1 | AVOID | STRONG · 33.2% ROCE | ADEQUATE | FAIL · compensation | 344.63 | 53 | 52.4 | 39.7 | - | - | Nov 2026 |
+| ABNB | Airbnb, Inc. | 2026-07-31 | v3 | AVOID | ADEQUATE · 19% ROCE | ADEQUATE | FAIL · buybacks | 164.39 | 25.4 | 22.3 | 41.0 | - | - | 2026-08-12 |
+| IBKR | Interactive Brokers Group, Inc. | 2026-10-08 | v3 | AVOID | WEAK · 1.7% ROCE | ADEQUATE · customer conc. | PASS CAUTION · compensation | 76.9 | n.m. | 35.2 | 43.2 | 44.0 · 53.0 | 50.0 · 68.0 | Feb 2027 |
+| COST | Costco Wholesale Corporation | 2026-07-31 | v2 | AVOID | STRONG · 19.3% ROCE | STRONG | FAIL · buybacks | 1012.28 | 140.95 | 57.5 | 44.3 | - | - | 2026-08-30 |
+| COH.AX | Cochlear Limited | 2026-10-19 | v1 | AVOID | WEAK · growth | ADEQUATE · unit customer conc. | PASS | 143.64 | 19.90 | 35.2 | 44.4 | 39.6 · 36.2 | 23.9 · 24.3 | Feb 2027 |
+| PIDILITIND.NS | Pidilite Industries Limited | 2026-10-31 | v1 | AVOID | STRONG · 22.4% ROCE | ADEQUATE | FAIL · flag pair | 1461.60 | 146.8 | 79.6 | 48.0 | 73.1 · 97.2 | 55.7 · 65.8 | May 2027 |
 | TXN | Texas Instruments Incorporated | 2026-10-31 | v2 | AVOID | WEAK · ROCE decline | ADEQUATE · unit customer conc. | PASS CAUTION · distributions | 300.84 | 25.59 | 94.1 | 48.4 | 173.5 · 77.0 | 46.5 · 38.4 | Feb 2027 |
-| ASML.AS | ASML Holding N.V. | 2026-07-31 | v3 | AVOID | STRONG · 21% ROCE | ADEQUATE | FAIL · buybacks | 1407.2 | 192 | 49.4 | 48.8 | - | - | Jan 2027 |
-| NOKIA.HE | Nokia Oyj | 2026-08-07 | v1 | AVOID | WEAK · 4.7% ROCE | ADEQUATE | PASS CAUTION · dilution | 7.37 | 0.48 | 77.1 | 50.6 | - | - | Jan 2027 |
-| TNE.AX | Technology One Limited | 2026-10-20 | v1 | AVOID | ADEQUATE · 32.9% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 32.25 | 3.56 | 55.7 | 61.0 | 72.8 · 90.8 | 72.4 · 81.5 | Nov 2026 |
-| KEYS | Keysight Technologies, Inc. | 2026-10-04 | v1 | AVOID | ADEQUATE · 11.1% ROCE | STRONG | FAIL · buybacks | 314.77 | 19.57 | 42.5 | 65.3 | - | - | Nov 2026 |
-| CON.DE | Continental AG | 2026-07-18 | v1 | AVOID | WEAK · 6.6% ROCE | ADEQUATE | PASS | 66.54 | 36 | 14.1 | 74.8 | - | - | Mar 2027 |
-| TER | Teradyne, Inc. | 2026-08-06 | v3 | AVOID | STRONG · 21.5% ROCE | ADEQUATE | FAIL · buybacks | 308.85 | 22.85 | 108.1 | 75.1 | - | - | Oct 2026 |
-| PDX.ST | Paradox Interactive AB (publ) | 2026-07-26 | v1 | AVOID | ADEQUATE · 25.3% ROCE | WEAK · customer conc. | PASS | 136.3 | 8 | 24.8 | 99.7 | - | - | Apr 2027 |
-| EKTA-B.ST | Elekta AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 7.6% ROCE | ADEQUATE | PASS CAUTION · distributions | 57.6 | n.m. | 15.8 | 125.6 | - | - | Nov 2026 |
-| AZA.ST | Avanza Bank Holding AB (publ) | 2026-10-24 | v2 | AVOID | WEAK · capital | ADEQUATE · customer conc. | PASS | 349.7 | 67.58 | 41.4 | n.m. | 24.3 · 26.3 | n.m. · n.m. | Jan 2027 |
-| TLX.DE | Talanx AG | 2026-07-20 | v1 | AVOID | ADEQUATE · 11.4% ROE | WEAK · 2+ forces | PASS | 125.3 | 48 | n.m. | n.m. | - | - | Mar 2027 |
-| ARQ | Arq, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | PASS | 1.75 | n.m. | - | - | - | - | Mar 2027 |
-| FTK.DE | flatexDEGIRO SE | 2026-07-20 | v1 | AVOID | ADEQUATE | WEAK · forces: substitutes | PASS | 22.34 | 12.55 | 14.2 | - | - | - | Mar 2027 |
-| HEXA-B.ST | Hexagon AB (publ) | 2026-08-28 | v3 | AVOID | WEAK · 9.3% ROCE | ADEQUATE | PASS | 106.05 | 8.95 | - | - | - | - | Mar 2027 |
-| HLN.L | Haleon plc | 2026-08-08 | v1 | AVOID | WEAK · 7.2% ROCE | ADEQUATE | PASS | 381.2 | 93 | - | - | - | - | Feb 2027 |
-| HOG | Harley-Davidson, Inc. | 2026-08-08 | v1 | AVOID | WEAK · 5.8% ROCE | ADEQUATE | PASS | 28.96 | n.m. | - | - | - | - | Feb 2027 |
-| LISN.SW | Chocoladefabriken Lindt & Sprüngli AG | 2026-07-31 | v2 | AVOID | STRONG · 19% ROCE | ADEQUATE | FAIL · buybacks | 86400 | 16700 | - | - | - | - | Mar 2027 |
-| LSS.PA | Lectra SA | 2026-10-05 | v1 | AVOID | WEAK | ADEQUATE | PASS | 22.55 | 1.1 | - | - | - | - | 2026-10-28 |
-| NEE | NextEra Energy, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 82.1 | n.m. | - | - | - | - | Feb 2027 |
-| ONON | On Holding AG | 2026-07-18 | v1 | AVOID | WEAK · 8.2% ROCE | ADEQUATE | PASS | 32.51 | - | - | - | - | - | Mar 2027 |
-| OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 436.3 | 86 | 32.6 | - | - | - | Mar 2027 |
-| PSH.L | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID | ADEQUATE · 10.5% ROE | ADEQUATE | FAIL · RPT | 3732 | n.m. | - | - | - | - | Feb 2027 |
-| S | SentinelOne, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | PASS | 24 | n.m. | - | - | - | - | Mar 2027 |
-| SPX.L | Spirax Group plc | 2026-10-05 | v1 | AVOID | WEAK | ADEQUATE | PASS | 7260 | 1044 | - | - | - | - | Mar 2027 |
-| SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 84.06 | n.m. | - | - | - | - | - |
-| WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | 824.4 | - | - | - | - | - | Nov 2026 |
+| ASML.AS | ASML Holding N.V. | 2026-07-31 | v3 | AVOID | STRONG · 21% ROCE | ADEQUATE | FAIL · buybacks | 1412.8 | 192 | 49.6 | 49.0 | - | - | Jan 2027 |
+| LLY | Eli Lilly and Company | 2026-07-06 | v2 | AVOID | STRONG · 19% ROCE | ADEQUATE | FAIL · buybacks | 1417.54 | 119 | 142.1 | 50.1 | - | - | Feb 2027 |
+| SAAB-B.ST | Saab AB (publ) | 2026-10-21 | v1 | AVOID | WEAK · 7.3% ROCE | ADEQUATE · unit customer conc. | PASS CAUTION · buybacks | 675.2 | 70.28 | 41.6 | 50.1 | 61.8 · 76.9 | 67.5 · 82.4 | Feb 2027 |
+| NOKIA.HE | Nokia Oyj | 2026-08-07 | v1 | AVOID | WEAK · 4.7% ROCE | ADEQUATE | PASS CAUTION · dilution | 7.746 | 0.48 | 81.1 | 53.0 | - | - | Jan 2027 |
+| TNE.AX | Technology One Limited | 2026-10-20 | v1 | AVOID | ADEQUATE · 32.9% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 31.73 | 3.56 | 54.8 | 60.0 | 71.7 · 89.4 | 71.2 · 80.1 | Nov 2026 |
+| KEYS | Keysight Technologies, Inc. | 2026-10-04 | v1 | AVOID | ADEQUATE · 11.1% ROCE | STRONG | FAIL · buybacks | 307.2 | 19.57 | 41.5 | 63.8 | - | - | Nov 2026 |
+| TER | Teradyne, Inc. | 2026-08-06 | v3 | AVOID | STRONG · 21.5% ROCE | ADEQUATE | FAIL · buybacks | 274.37 | 22.85 | 96.0 | 66.8 | - | - | Oct 2026 |
+| CON.DE | Continental AG | 2026-07-18 | v1 | AVOID | WEAK · 6.6% ROCE | ADEQUATE | PASS | 66.58 | 36 | 14.1 | 74.9 | - | - | Mar 2027 |
+| PDX.ST | Paradox Interactive AB (publ) | 2026-07-26 | v1 | AVOID | ADEQUATE · 25.3% ROCE | WEAK · customer conc. | PASS | 144.9 | 8 | 26.3 | 106.0 | - | - | Apr 2027 |
+| EKTA-B.ST | Elekta AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 7.6% ROCE | ADEQUATE | PASS CAUTION · distributions | 59.7 | n.m. | 16.4 | 129.1 | - | - | Nov 2026 |
+| AZA.ST | Avanza Bank Holding AB (publ) | 2026-10-24 | v2 | AVOID | WEAK · capital | ADEQUATE · customer conc. | PASS | 353.1 | 67.58 | 41.8 | n.m. | 24.5 · 26.5 | n.m. · n.m. | Jan 2027 |
+| TLX.DE | Talanx AG | 2026-07-20 | v1 | AVOID | ADEQUATE · 11.4% ROE | WEAK · 2+ forces | PASS | 128.4 | 48 | n.m. | n.m. | - | - | Mar 2027 |
+| ARQ | Arq, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | PASS | 1.77 | n.m. | - | - | - | - | Mar 2027 |
+| FTK.DE | flatexDEGIRO SE | 2026-07-20 | v1 | AVOID | ADEQUATE | WEAK · forces: substitutes | PASS | 23.62 | 12.55 | 15.1 | - | - | - | Mar 2027 |
+| HEXA-B.ST | Hexagon AB (publ) | 2026-08-28 | v3 | AVOID | WEAK · 9.3% ROCE | ADEQUATE | PASS | 109.7 | 8.95 | - | - | - | - | Mar 2027 |
+| HLN.L | Haleon plc | 2026-08-08 | v1 | AVOID | WEAK · 7.2% ROCE | ADEQUATE | PASS | 319.4 | 93 | - | - | - | - | Feb 2027 |
+| HOG | Harley-Davidson, Inc. | 2026-08-08 | v1 | AVOID | WEAK · 5.8% ROCE | ADEQUATE | PASS | 31.22 | n.m. | - | - | - | - | Feb 2027 |
+| LISN.SW | Chocoladefabriken Lindt & Sprüngli AG | 2026-07-31 | v2 | AVOID | STRONG · 19% ROCE | ADEQUATE | FAIL · buybacks | 86200 | 16700 | - | - | - | - | Mar 2027 |
+| LSS.PA | Lectra SA | 2026-10-05 | v1 | AVOID | WEAK | ADEQUATE | PASS | 18.72 | 1.1 | - | - | - | - | 2026-10-28 |
+| NEE | NextEra Energy, Inc. | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 83.71 | n.m. | - | - | - | - | Feb 2027 |
+| ONON | On Holding AG | 2026-07-18 | v1 | AVOID | WEAK · 8.2% ROCE | ADEQUATE | PASS | 33.78 | - | - | - | - | - | Mar 2027 |
+| OR.PA | L'Oréal S.A. | 2026-07-31 | v2 | AVOID | ADEQUATE · 16.6% ROCE | ADEQUATE | FAIL · acquisitions | 436.95 | 86 | 32.6 | - | - | - | Mar 2027 |
+| PSH.L | Pershing Square Holdings, Ltd. | 2026-07-09 | v1 | AVOID | ADEQUATE · 10.5% ROE | ADEQUATE | FAIL · RPT | 3778 | n.m. | - | - | - | - | Feb 2027 |
+| S | SentinelOne, Inc. | 2026-08-09 | v1 | AVOID | WEAK · losses | ADEQUATE | PASS | 25.15 | n.m. | - | - | - | - | Mar 2027 |
+| SPX.L | Spirax Group plc | 2026-10-05 | v1 | AVOID | WEAK | ADEQUATE | PASS | 7475 | 1044 | - | - | - | - | Mar 2027 |
+| SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 86.06 | n.m. | - | - | - | - | - |
+| WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | 807.4 | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (294)
+## AVOID - two or more gates failed (298)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -246,7 +250,7 @@ None.
 | ANGI | Angi Inc. | 2026-08-05 | v1 | AVOID | WEAK · losses | WEAK · supplier conc. | FAIL · compensation | 4.82 | 0.5 | 4.3 | 9.7 | - | - | Nov 2026 |
 | BKE | The Buckle, Inc. | 2026-08-23 | v2 | AVOID | ADEQUATE · 32.7% ROCE | WEAK · forces: substitutes | FAIL · compensation | 43.81 | 27.35 | 11.0 | 10.2 | - | - | Apr 2027 |
 | EVO.ST | Evolution AB (publ) | 2026-07-24 | v1 | AVOID | STRONG · 24.6% ROCE | WEAK · customer conc. | FAIL · acquisitions | 694.4 | 475 | 10.7 | 10.2 | - | - | 2027-02-04 |
-| NOVO-B.CO | Novo Nordisk A/S | 2026-10-08 | v11 | AVOID | ADEQUATE · 49.1% ROCE | WEAK · moat eroding | FAIL · buybacks | 260.15 | 57.5 | 36.2 | 10.2 | 16.3 · 17.1 | 10.8 · 13.2 | 2026-11-04 |
+| NOVO-B.CO | Novo Nordisk A/S | 2026-10-08 | v11 | AVOID | ADEQUATE · 49.1% ROCE | WEAK · moat eroding | FAIL · buybacks | 266.1 | 57.5 | 37.0 | 10.4 | 16.7 · 17.5 | 11.1 · 13.4 | 2026-11-04 |
 | PKN.WA | ORLEN S.A. | 2026-08-07 | v1 | AVOID | WEAK · growth | ADEQUATE | FAIL · flag pair | 149.04 | 91.9 | 10.0 | 10.6 | - | - | Feb 2027 |
 | EDEN.PA | Edenred SE | 2026-09-27 | v2 | AVOID | WEAK · 7% ROCE | WEAK · 2+ forces | PASS CAUTION · acquisitions | 27.46 | 9.2 | 5.9 | 11.0 | - | - | 2026-10-21 |
 | PYPL | PayPal Holdings, Inc. | 2026-10-21 | v6 | AVOID | WEAK · 6.0% ROCE | WEAK · supplier conc. | FAIL · flag pair | 57.14 | 29.20 | 7.4 | 11.1 | 8.2 · 8.8 | 12.0 · 13.4 | 2026-10-27 |
@@ -254,10 +258,10 @@ None.
 | NOMD | Nomad Foods Limited | 2026-08-18 | v1 | AVOID | WEAK · 6.6% ROCE | WEAK · 2+ forces | PASS CAUTION · distributions | 11.73 | n.m. | 9.9 | 11.5 | - | - | Feb 2027 |
 | CSG.AS | CSG N.V. (Czechoslovak Group) | 2026-07-10 | v1 | AVOID | WEAK · leverage | WEAK · customer conc. | FAIL · flag pair | 13.6 | n.m. | n.m. | 11.6 | - | - | 2026-08-07 |
 | GEN | Gen Digital Inc. | 2026-07-15 | v1 | AVOID | WEAK · leverage | WEAK · 2+ forces | FAIL · flag pair | 26.57 | 11.3 | 10.8 | 11.7 | - | - | May 2027 |
+| TROW | T. Rowe Price Group, Inc. | 2026-10-30 | v9 | AVOID | WEAK · growth | WEAK · moat eroding | FAIL · buybacks | 103.9 | 41.9 | 19.8 | 11.8 | 24.5 · 14.4 | 12.2 · 10.5 | Feb 2027 |
 | HUSQ-B.ST | Husqvarna AB (publ) | 2026-07-25 | v1 | AVOID | WEAK · 9.1% ROCE | WEAK · moat eroding | PASS | 37.13 | 12.43 | 10.9 | 11.9 | - | - | Feb 2027 |
 | DG.PA | VINCI SA | 2026-08-01 | v1 | AVOID | WEAK · 8.4% ROCE | WEAK · 2+ forces | PASS CAUTION · acquisitions | 122.55 | 38.8 | 8.9 | 12.0 | - | - | Feb 2027 |
 | BOL.ST | Boliden AB | 2026-07-24 | v1 | AVOID | ADEQUATE · 14.1% ROCE | WEAK · breadth | FAIL · buybacks | 480.4 | 146 | 26.3 | 12.1 | - | - | Mar 2027 |
-| TROW | T. Rowe Price Group, Inc. | 2026-10-30 | v9 | AVOID | WEAK · growth | WEAK · moat eroding | FAIL · buybacks | 106.63 | 41.9 | 20.3 | 12.1 | 25.2 · 14.8 | 12.5 · 10.7 | Feb 2027 |
 | GAP | The Gap, Inc. | 2026-09-04 | v3 | AVOID | WEAK · 8.6% ROCE | WEAK · 2+ forces | PASS CAUTION · buybacks | 22.07 | 5.82 | 9.6 | 12.2 | - | - | 2026-11-19 |
 | APTV | Aptiv PLC | 2026-08-18 | v1 | AVOID | WEAK · 8.1% ROCE | WEAK · customer conc. | FAIL · flag pair | 49.19 | 15.93 | n.m. | 12.5 | - | - | Feb 2027 |
 | AKZA.AS | Akzo Nobel N.V. | 2026-07-23 | v1 | AVOID | WEAK · 7.6% ROCE | ADEQUATE | FAIL · buybacks | 56.28 | 28 | 16.0 | 12.6 | - | - | - |
@@ -304,6 +308,7 @@ None.
 | BILI-A.ST | Bilia AB (publ) | 2026-07-28 | v1 | AVOID | WEAK · ROCE decline | WEAK · forces: suppliers | FAIL · flag pair | 152.4 | n.m. | 23.5 | 18.1 | - | - | Mar 2027 |
 | DKSH.SW | DKSH Holding AG | 2026-10-29 | v1 | AVOID | WEAK · leverage | WEAK · unit customer conc. | FAIL · flag pair | 77.20 | 19.69 | 18.5 | 18.7 | 16.5 · 17.0 | 18.4 · 19.0 | Feb 2027 |
 | ADS.DE | adidas AG | 2026-07-04 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 185.3 | - | 613.0 | 19.0 | - | - | Mar 2027 |
+| VINATIORGA.NS | Vinati Organics Limited | 2026-10-31 | v1 | AVOID | WEAK · ROCE decline | STRONG | FAIL · flag pair | 992.20 | 222.2 | 35.7 | 19.0 | 175.7 · 157.2 | 21.6 · 22.1 | May 2027 |
 | PAYO | Payoneer Global Inc. | 2026-08-08 | v1 | AVOID | WEAK · 8.7% ROCE | WEAK · forces: substitutes | FAIL · compensation | 7.1 | 2.27 | 11.6 | 19.3 | - | - | Mar 2027 |
 | RUSTA.ST | Rusta AB (publ) | 2026-07-27 | v1 | AVOID | WEAK · leverage | ADEQUATE | FAIL · buybacks | 84.9 | 8.1 | 11.0 | 19.3 | - | - | Aug 2026 |
 | DEC.PA | JCDecaux SE | 2026-07-29 | v1 | AVOID | WEAK · 3% ROCE | WEAK · 2+ forces | PASS | 22.08 | 1.87 | 5.4 | 19.4 | - | - | Mar 2027 |
@@ -409,8 +414,9 @@ None.
 | BABA | Alibaba Group Holding Limited | 2026-10-06 | v2 | AVOID | WEAK | WEAK | FAIL | 110.8 | 14.4 | n.m. | 44.1 | - | - | Feb 2027 |
 | BYD.TO | Boyd Group Services Inc. | 2026-10-31 | v1 | AVOID | WEAK · 4.7% ROCE | WEAK · customer conc. | FAIL · compensation | 117.26 | n.m. | 11.0 | 44.5 | 11.2 · 12.3 | 35.6 · 41.7 | Mar 2027 |
 | SPOT | Spotify Technology S.A. | 2026-10-20 | v2 | AVOID | WEAK · 0.3% ROCE | WEAK · unit supplier conc. | FAIL · compensation | 526.08 | 80.19 | 36.9 | 44.7 | 55.7 · 88.2 | 94.7 · 192.7 | Feb 2027 |
+| PERSISTENT.NS | Persistent Systems Limited | 2026-10-31 | v1 | AVOID | STRONG · 18.8% ROCE | WEAK · unit customer conc. | FAIL · compensation | 6048.00 | 653.3 | 74.1 | 45.5 | 88.5 · 114.7 | 57.7 · 69.2 | Apr 2027 |
 | VSURE.ST | Verisure plc | 2026-10-04 | v1 | AVOID | WEAK · 1.4% ROCE | ADEQUATE | FAIL · compensation | 8.096 | n.m. | n.m. | 45.5 | - | - | Mar 2027 |
-| CROX | Crocs, Inc. | 2026-10-29 | v9 | AVOID | WEAK · leverage | WEAK · unit supplier conc. | FAIL · acquisitions | 119.69 | n.m. | 8.5 | 48.7 | 7.0 · 8.1 | 9.9 · 9.7 | Feb 2027 |
+| CUMMINSIND.NS | Cummins India Limited | 2026-10-31 | v1 | AVOID | STRONG · 21.5% ROCE | WEAK · unit customer conc. | FAIL · RPT | 4452.60 | 445.0 | 80.1 | 48.3 | 89.1 · 114.3 | 57.1 · 71.3 | May 2027 |
 | SHOO | Steven Madden, Ltd. | 2026-08-07 | v1 | AVOID | WEAK · growth | WEAK · 2+ forces | FAIL · compensation | 48.45 | 2.2 | 29.7 | 49.0 | - | - | Mar 2027 |
 | TYL | Tyler Technologies, Inc. | 2026-10-24 | v1 | AVOID | WEAK · 6.3% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 390.14 | 24.78 | 27.5 | 49.1 | 32.8 · 38.0 | 60.1 · 69.0 | Feb 2027 |
 | FLUT | Flutter Entertainment plc | 2026-08-31 | v1 | AVOID | WEAK · 1.1% ROCE | WEAK · supplier conc. | FAIL · buybacks | 101.78 | n.m. | 42.9 | 50.1 | - | - | Nov 2026 |
@@ -421,6 +427,7 @@ None.
 | DUOL | Duolingo, Inc. | 2026-09-27 | v2 | AVOID | WEAK · 1.4% ROCE | WEAK · supplier conc. | FAIL · buybacks | 143.51 | 17.1 | 19.9 | 53.6 | - | - | Apr 2027 |
 | NESTE.HE | Neste Oyj | 2026-08-07 | v1 | AVOID | WEAK · growth | WEAK · moat eroding | PASS | 28.41 | n.m. | 26.5 | 53.7 | - | - | Feb 2027 |
 | CDR.WA | CD PROJEKT RED S.A. | 2026-10-08 | v2 | AVOID | WEAK · growth | ADEQUATE · customer conc. | FAIL · compensation | 253.5 | n.m. | n.m. | 54.4 | 144.7 · 87.3 | 58.8 · 66.8 | Mar 2027 |
+| CROX | Crocs, Inc. | 2026-10-29 | v9 | AVOID | WEAK · leverage | WEAK · unit supplier conc. | FAIL · acquisitions | 150.52 | n.m. | 10.7 | 58.3 | 8.8 · 10.2 | 11.8 · 11.7 | Feb 2027 |
 | NOVT | Novanta Inc. | 2026-10-04 | v1 | AVOID | WEAK · 7.9% ROCE | WEAK · customer conc. | FAIL · compensation | 149.27 | n.m. | 131.6 | 59.8 | - | - | Nov 2026 |
 | BH | Biglari Holdings Inc. | 2026-10-24 | v2 | AVOID | WEAK · losses | WEAK · unit customer conc. | FAIL · compensation | 396.19 | n.m. | 44.3 | 64.0 | 30.1 · 43.3 | 51.6 · 35.7 | Mar 2027 |
 | ENR.DE | Siemens Energy AG | 2026-07-20 | v1 | AVOID | WEAK · 0.1% ROCE | WEAK · 2+ forces | FAIL · buybacks | 152 | 12.39 | 32.8 | 64.4 | - | - | Dec 2026 |
@@ -433,6 +440,7 @@ None.
 | INIO | INNIO N.V. | 2026-07-22 | v1 | AVOID | WEAK · 9.1% ROCE | WEAK · breadth | FAIL · control | 30.37 | n.m. | 60.5 | 74.2 | - | - | Mar 2027 |
 | BAS.DE | BASF SE | 2026-10-27 | v2 | AVOID | WEAK · 4.2% ROCE | WEAK · unit customer conc. | FAIL · buybacks | 52.24 | n.m. | n.m. | 78.6 | 95.6 · 36.2 | 48.3 · 21.7 | Feb 2027 |
 | SHA0.DE | Schaeffler AG | 2026-07-16 | v1 | AVOID | WEAK · 8% ROCE | WEAK · customer conc. | FAIL · compensation | 8.53 | n.m. | 21.2 | 84.0 | - | - | Mar 2027 |
+| DIVISLAB.NS | Divi's Laboratories Limited | 2026-10-31 | v1 | AVOID | WEAK · ROCE decline | WEAK · customer conc. | FAIL · compensation | 9780.00 | 243.3 | 321.6 | 89.6 | 388.6 · 232.2 | 107.0 · 100.9 | May 2027 |
 | JDG.L | Judges Scientific plc | 2026-10-30 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE · unit customer conc. | FAIL · compensation | 3400 | n.m. | 22.7 | 89.6 | 12.5 · 14.1 | 17.7 · 17.7 | Apr 2027 |
 | CALX | Calix, Inc. | 2026-08-08 | v1 | AVOID | WEAK · 1.9% ROCE | ADEQUATE | FAIL · compensation | 37.36 | 2.11 | 20.4 | 112.7 | - | - | Feb 2027 |
 | UPST | Upstart Holdings, Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · flag pair | 29.71 | n.m. | n.m. | 116.1 | - | - | Feb 2027 |
@@ -478,7 +486,7 @@ None.
 | FSLY | Fastly, Inc. | 2026-08-07 | v1 | AVOID | WEAK · losses | WEAK · forces: entrants | FAIL · compensation | 22.74 | n.m. | 55.1 | n.m. | - | - | Feb 2027 |
 | FTRE | Fortrea Holdings Inc. | 2026-08-08 | v1 | AVOID | WEAK · losses | WEAK · customer conc. | FAIL · compensation | 18.43 | n.m. | 19.8 | n.m. | - | - | Feb 2027 |
 | GTLB | GitLab Inc. | 2026-07-13 | v1 | AVOID | WEAK · losses | WEAK · forces: substitutes | FAIL · compensation | 32.42 | n.m. | 24.6 | n.m. | - | - | Mar 2027 |
-| HFG.DE | HelloFresh SE | 2026-10-24 | v6 | AVOID | WEAK · 5.8% ROCE | WEAK · unit moat eroding | FAIL · flag pair | 3.087 | n.m. | 16.3 | n.m. | 5.2 · 3.9 | n.m. · 11.1 | 2026-11-05 |
+| HFG.DE | HelloFresh SE | 2026-10-24 | v6 | AVOID | WEAK · 5.8% ROCE | WEAK · unit moat eroding | FAIL · flag pair | 2.696 | n.m. | 14.2 | n.m. | 4.5 · 3.4 | n.m. · 10.6 | 2026-11-05 |
 | HUMBLE.ST | Humble Group AB (publ) | 2026-10-25 | v1 | AVOID | WEAK · 2.0% ROCE | WEAK · unit customer conc. | FAIL · compensation | 5.44 | n.m. | 14.1 | n.m. | 7.5 · 17.5 | 18.0 · 29.3 | Feb 2027 |
 | KLAR | Klarna Group plc | 2026-07-24 | v1 | AVOID | WEAK · losses | WEAK · forces: substitutes | FAIL · compensation | 17.36 | n.m. | - | n.m. | - | - | Mar 2027 |
 | KNOW.ST | Knowit AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 3.8% ROCE | ADEQUATE · unit customer conc. | FAIL · compensation | 120.0 | n.m. | 11.0 | n.m. | 8.0 · 7.9 | 46.6 · 19.0 | 2027-02-05 |
