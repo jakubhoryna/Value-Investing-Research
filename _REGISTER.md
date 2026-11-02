@@ -1,6 +1,6 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v342
+register_version: v343
 register_date: 2026-11-02
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
@@ -11,7 +11,7 @@ portfolio_names: 4
 ordering: "v4.6.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF → RETIRED; EV/OI ascending, n.m. then - last; DNAF and RETIRED alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v342 · 2026-11-02)
+# GSC Register — Master Watchlist (v343 · 2026-11-02)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -359,7 +359,6 @@ None.
 | BEIJ-B.ST | Beijer Ref AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 9.3% ROCE | WEAK · unit 2+ forces | PASS CAUTION · acquisitions | 153.7 | 12.68 | 20.6 | 26.9 | 29.9 · 51.5 | 28.1 · 35.6 | Jan 2027 |
 | NESN.SW | Nestlé S.A. | 2026-10-08 | v4 | AVOID | WEAK · leverage | WEAK · unit customer conc. | FAIL · director pay | 75.56 | n.m. | 23.8 | 26.9 | 21.9 · 23.4 | 20.5 · 21.5 | Feb 2027 |
 | DOV.MI | doValue S.p.A. | 2026-10-26 | v1 | AVOID | WEAK · 6.8% ROCE | WEAK · unit customer conc. | FAIL · compensation | 1.636 | n.m. | 19.5 | 27.7 | 5.0 · 6.0 | 23.7 · 20.8 | Mar 2027 |
-| EL.PA | EssilorLuxottica SA | 2026-07-31 | v1 | AVOID | WEAK · 4.5% ROCE | STRONG | FAIL · buybacks | 166.85 | 16.4 | 20.6 | 27.7 | - | - | 2026-10-20 |
 | GPN | Global Payments Inc. | 2026-08-27 | v1 | AVOID | WEAK · 3.4% ROCE | WEAK · forces: suppliers | FAIL · buybacks | 92.32 | n.m. | 12.0 | 27.8 | - | - | Feb 2027 |
 | 6503.T | Mitsubishi Electric Corporation | 2026-07-13 | v1 | AVOID | WEAK · 7.3% ROCE | ADEQUATE | FAIL · buybacks | 5647 | 1232 | 34.7 | 27.9 | - | - | Apr 2027 |
 | NIBE-B.ST | NIBE Industrier AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 8.6% ROCE | WEAK · unit 2+ forces | FAIL · flag pair | 44.44 | 1.63 | 30.8 | 27.9 | 129.5 · 83.7 | 26.5 · 24.9 | Feb 2027 |
@@ -377,6 +376,7 @@ None.
 | V | Visa Inc. | 2026-07-03 | v1 | AVOID | STRONG · 21.9% ROCE | WEAK · customer conc. | FAIL · compensation | 362.13 | 72 | 32.4 | 30.2 | - | - | Nov 2026 |
 | HLE.DE | HELLA GmbH & Co. KGaA (FORVIA HELLA) | 2026-07-23 | v1 | AVOID | WEAK · 7.1% ROCE | WEAK · customer conc. | PASS | 72.2 | 8.7 | 27.2 | 30.3 | - | - | Mar 2027 |
 | LIN | Linde plc | 2026-07-14 | v1 | AVOID | WEAK · 8.1% ROCE | STRONG | FAIL · buybacks | 522.97 | 81 | 48.5 | 30.4 | - | - | Feb 2027 |
+| EL.PA | EssilorLuxottica SA | 2026-11-02 | v2 | AVOID | WEAK · 4.6% ROCE | STRONG | FAIL · buybacks | 184.30 | 13.72 | 22.0 | 30.6 | 24.7 · 24.5 | 31.0 · 33.5 | Feb 2027 |
 | FTV | Fortive Corporation | 2026-10-23 | v1 | AVOID | WEAK · 6.9% ROCE | ADEQUATE · unit customer conc. | FAIL · buybacks | 60.05 | 4.54 | 19.7 | 30.6 | 21.0 · n.m. | 32.9 · n.m. | Feb 2027 |
 | ZBRA | Zebra Technologies Corporation | 2026-10-08 | v3 | AVOID | WEAK · ROCE decline | WEAK · unit customer conc. | FAIL · buybacks | 386.05 | 38.95 | 22.0 | 30.7 | 34.8 · 30.6 | 33.5 · 31.3 | Feb 2027 |
 | BERG-B.ST | Bergman & Beving AB (publ) | 2026-10-24 | v1 | AVOID | WEAK · 5.5% ROCE | ADEQUATE · unit customer conc. | FAIL · flag pair | 260.5 | n.m. | 17.1 | 31.0 | 15.0 · 18.9 | 38.5 · 36.9 | Feb 2027 |
