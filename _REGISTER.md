@@ -1,17 +1,17 @@
 ---
 register_title: GSC Register — Master Watchlist
-register_version: v343
-register_date: 2026-11-02
+register_version: v344
+register_date: 2026-11-03
 register_format: "lean-2 (MODEL v4.5.0)"
 data: "register.csv — every column plus core numbers (MODEL §7.1b)"
 archive: "archive/registers/{YYYY}/ — one verbatim snapshot per outgoing version, .md and .csv"
-names_total: 493
-verdict_split: "BUY 0 · WATCH 69 · AVOID 421 (one gate 123 · two+ 298) · DNAF 2 · RETIRED 1"
+names_total: 494
+verdict_split: "BUY 0 · WATCH 69 · AVOID 422 (one gate 123 · two+ 299) · DNAF 2 · RETIRED 1"
 portfolio_names: 4
 ordering: "v4.6.0 — PORTFOLIO → BUY → WATCH → AVOID one gate → AVOID two+ → DNAF → RETIRED; EV/OI ascending, n.m. then - last; DNAF and RETIRED alphabetical"
 ---
 
-# GSC Register — Master Watchlist (v343 · 2026-11-02)
+# GSC Register — Master Watchlist (v344 · 2026-11-03)
 
 Grades carry their deciding reason · Px and Trigger in the listing's quote unit (register.csv px_unit) · Trigger: the no-cash bound, the strict all-pass line (register.csv trigger_basis; all-cash marks an older reading until the next memo) · MCap/FCF and EV/OI (no-cash, strict) at the Px shown · 3y · 5y: the same multiples on 3- and 5-year average OI and FCF · n.m. not meaningful · - backfill owed.
 Px: the latest SWEEP close for held, BUY, WATCH and one-gate AVOID (memo price until a SWEEP prices the key's line; register.csv px_source); memo price otherwise. Rows come from current memos; the memo wins (MODEL §7.1).
@@ -231,7 +231,7 @@ None.
 | SRE | Sempra | 2026-08-09 | v1 | AVOID | WEAK · 3% ROCE | STRONG | PASS | 86.06 | n.m. | - | - | - | - | - |
 | WISE.L | Wise Group plc | 2026-08-06 | v3 | AVOID | ADEQUATE · 36% ROE | ADEQUATE | FAIL · flag pair | 807.4 | - | - | - | - | - | Nov 2026 |
 
-## AVOID - two or more gates failed (298)
+## AVOID - two or more gates failed (299)
 
 | Ticker | Company | Memo date | Ver | Verdict | Past | Future | SF | Px | Trigger | MCap/FCF | EV/OI | MCap/FCF 3y · 5y | EV/OI 3y · 5y | Next review |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -281,6 +281,7 @@ None.
 | ANDR.VI | ANDRITZ AG | 2026-10-24 | v3 | AVOID | WEAK · leverage | ADEQUATE · unit customer conc. | FAIL · flag pair | 77.4 | 29.62 | 18.2 | 15.1 | 22.8 · 19.5 | 13.8 · 14.9 | Mar 2027 |
 | CDI.PA | Christian Dior SE | 2026-07-29 | v1 | AVOID | WEAK · ROCE decline | STRONG | FAIL · acquisitions | 434 | n.m. | 5.5 | 15.1 | - | - | Jan 2027 |
 | POOL | Pool Corporation | 2026-10-23 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE · supplier conc. | FAIL · buybacks | 199.08 | 68.93 | 23.1 | 15.1 | 12.3 · 14.5 | 13.4 · 11.4 | Feb 2027 |
+| TCS.NS | Tata Consultancy Services Limited | 2026-11-02 | v1 | AVOID | STRONG · 41.5% ROCE | WEAK · unit no moat | FAIL · RPT | 2502.60 | 1040.3 | 19.2 | 15.2 | 20.6 · 21.9 | 15.4 · 16.4 | Apr 2027 |
 | ATD.TO | Alimentation Couche-Tard Inc. | 2026-10-31 | v1 | AVOID | WEAK · ROCE decline | ADEQUATE · customer conc. | FAIL · acquisitions | 80.98 | 23.27 | 16.6 | 15.3 | 19.0 · 19.8 | 17.3 · 17.5 | Jun 2027 |
 | ABM | ABM Industries Incorporated | 2026-08-20 | v1 | AVOID | WEAK · 6.2% ROCE | WEAK · 2+ forces | FAIL · compensation | 47.72 | 3.58 | 18.2 | 15.4 | - | - | Dec 2026 |
 | RXL.PA | Rexel S.A. | 2026-10-26 | v1 | AVOID | WEAK · 7.4% ROCE | WEAK · unit customer conc. | FAIL · flag pair | 33.64 | 3.50 | 15.5 | 15.7 | 13.9 · 14.4 | 15.6 · 15.2 | Feb 2027 |
