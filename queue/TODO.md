@@ -1,4 +1,4 @@
-# GSC Work Queue — TODO.md (v74 · 2026-11-09)
+# GSC Work Queue — TODO.md (v75 · 2026-11-10)
 
 **Purpose.** The single work sink for the project: every future-work item any session surfaces — re-tests, rebuilds, backfills, corporate actions, queue seeds — routes **here** (routing per MODEL §7.1, v4.2.0). The register's own open items — pending user decisions and register-integrity holds, cap 7 — live in the head block `▶ Open items (register)` below (MODEL v4.5.0). This file is *not* authoritative state: `_REGISTER.md` wins on state, `MODEL.md` on rules, memo appendices on per-name detail. Nothing here is a verdict or a recommendation. Framework ideas go to `queue/IDEAS.md`, not here.
 
@@ -163,6 +163,7 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - 2026-11-07 · TIH.TO REVIEW — §2·1C·3 OI-basis proxy (v4.8.0): the "printed amortisation of that deal's acquired intangibles" is often printed only by intangible class in the roll-forward (several deals mixed) or inside a combined MD&A non-cash figure for the acquiree. TIH.TO v3 read AVL's amortisation through those printed figures (lower bound 82.2 from the class roll-forward, 82.5 from the MD&A total less the printed purchase-commitment change) and applied the gross-up (96× → 1.3×); the J13 skip limb would keep 70×. A line on whether an amount derivable only by subtraction or as a bound counts as "printed" would make the stop repeatable (verdict unaffected here: step 1 fails on buybacks).
 - 2026-11-08 · SDI.L ANALYSE — Acquisition-stop deal EV (§2·1C·3): "price paid incl. assumed debt" does not say whether the target's acquired cash and cash-like receivables (here a target receivable from the acquirer settled by netting, and a loan the target repaid right after completion) are deducted. SDI.L's FY2025 aggregate reads 25.7× gross and 19.6× net, straddling the clearly-above-worth line; the memo let the less flattering govern (ADVERSE). Should the stop name both EV variants as the P19 worth reads do?
 - 2026-11-08 · SDI.L ANALYSE — Level-bar rounding (§2·1A, §5): SDI.L's 5-year worst-of-four ROCE is 9.97%, printed 10.0%, against P3(b)'s 10% floor. The memo read the printed level as at the floor and gave `ROCE decline` as the Past reason (the decline decides WEAK either way). Should the bars be tested on the unrounded average, and which reason token then leads?
+- 2026-11-09 · BMAG.SW ANALYSE — Past level token below zero (§7.1 vocabulary; `gsc_register.py` PAST_LEVEL_RE): BMAG.SW's governing worst-of-eight ROCE is -12.5% (five-year window, exclude reading), but the `{x}% ROCE` token admits only non-negative levels, so lint-memo refuses `-12.5% ROCE` while `roce_worst` carries the minus. The memo fell back to the next failing token in order (`ROCE decline`). Should the level token admit an ASCII minus, as `roce_worst` does, so a negative level leads per the precedence rule?
 
 ---
 
@@ -190,7 +191,7 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 - `INVE-B.ST` — parent re-run owed (AZN.L memo 2026-10-21)
 - `INVE-B.ST` — parent re-run owed (SEB-A.ST memo 2026-10-22)
 - `DKSH.SW` — parent re-run owed (5908.KL memo 2026-10-30)
-- `BMAG.SW` — dependency of BAJAJ-AUTO.NS (run 2026-11-06)
+- `BAJAJ-AUTO.NS` — parent re-run owed (BMAG.SW memo 2026-11-09)
 
 ---
 
@@ -209,7 +210,6 @@ The 51 candidates of 2026-10-04/05 were triaged at the MODEL v4.5.0 build (2026-
 **Turned — Past.**
 
 - `PYPL` — memo v6 (2026-10-21, MODEL v4.6.1) customer funds: Past WEAK on 6.0% worst-of-eight ROCE, with the $40bn of customer balances in CE (C.2), and on L/E of 295.8% (Appendix G). Netted, the memo reads ROCE 12.6% (§3). The REVIEW tests which balances are segregated; the $2.0bn designated to fund loans stays funding (C.7). Future WEAK and SF FAIL keep AVOID → REVIEW on v4.8.0 rules. — incomplete 2026-11-05: data access: price endpoint HTTP 429
-- `EDEN.PA` — memo v2 (2026-09-27, MODEL v4.3.0) customer funds: Past WEAK on 6.97% ROCE, keeping €6.1bn of funds to be redeemed and €0.8bn of client funds in CE. "deducting both reads ≈23%" (§3; Appendix C, with restricted cash of €1,661m). Also deal proxy: Reward Gateway at ≈25× pre-PPA and ≈46× post-PPA (Appendix E). The memo predates v4.5.0, so every v4.5.0 and v4.6.0 rule also applies. Future WEAK keeps AVOID → REVIEW on v4.8.0 rules. — partial 2026-11-06 (queue/evidence/EDEN.PA_2026-11-06_INCOMPLETE.md)
 - `WISE.L` — memo v3 (2026-08-06, MODEL v4.1.0) customer funds: Past ADEQUATE on 36% ROE, substituted for ROCE "because roughly $27.8bn of safeguarded customer money would otherwise flow through capital employed" (§3). Past is rebuilt on ROCE with the safeguarded funds netted; every v4.5.0 and v4.6.0 rule also applies. SF FAIL keeps AVOID → REVIEW on v4.8.0 rules. — partial 2026-11-06 (queue/evidence/WISE.L_2026-11-06_INCOMPLETE.md)
 
 **Turned — Future (unit statement).**
@@ -536,6 +536,15 @@ None: no held name rests on a retired v4.5.x ground.
 - `FTK.DE` — trigger 12.55 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - `OR.PA` — trigger 86 (all-cash): no figure labelled no-cash — fill at next REVIEW or attended pass
 - AVOID two-or-more-gate and DNAF rows: 43 keys still at all-cash, never priced — set by each name's next REVIEW memo; list in the RETRIGGER report. `BABA` among them: its memo prints the no-cash bound as `n.m.` ("EV/OI n.m./$21.7"), which the v310 parser missed; the parser now reads it (review fix, 2026-10-07), and the row takes trigger n.m. on the no-cash basis at its next memo or an attended `retrigger`.
+
+---
+
+## ▶ Routed by INTAKE 2026-11-10, register v347
+
+*From 3 routine row files (PRs #403, #405, #406; ANALYSE BMAG.SW; ANALYSE INCOMPLETE MBG.DE; REVIEW EDEN.PA). Items grouped by key.*
+
+- `BMAG.SW` — FY2026 annual financial report (about Mar–Apr 2027): first post-restructuring year's J1 OI and maintenance-capex FCF (OI of about EUR 139m restores a positive no-cash bound), European and North American registration shares against FY2025's 4.7% and 9.0%, and the FY2026 executive pay table against the loss-year line (FY2025 strike) (ANALYSE 2026-11-09)
+- `MBG.DE` — attended group build owed (ANALYSE 2026-11-09; partial 2026-11-06) — still owed: Q3 2026 interim; B1 FY2016–FY2025 with the 2015 opening balance sheet (FY2016–FY2020 include Daimler Trucks & Buses; AR2022 404 on the EQS store); R2/P20 book adjustments and the constructed maintenance capex; G6 two readings (BBAC, Daimler Truck, BAIC and other associates; above the P31 line); FS funding test (capital-market channel ≈ 98% of refinancing instruments FY2025, derived) and funding pairing; breadth (no customer statement found; dealer/importer share owed) and Appendix D for Cars, Vans, FS; Appendix E (remuneration reports 2023–2025, worth table for the FY2022–FY2025 buyback tranches, allocation-across-the-parts window); Gate 2 with the P28 test. Records: queue/evidence/MBG.DE_2026-11-06_INCOMPLETE.md and queue/evidence/MBG.DE_2026-11-09_INCOMPLETE.md
 
 ---
 
@@ -1937,6 +1946,7 @@ Design sketch for an unattended runner that processes this queue on a schedule. 
 ---
 
 ## Change log
+- **v75 — 2026-11-10** — INTAKE 2026-11-10 (register v347): ANALYSE `BMAG.SW` (memo v1, AVOID on Past + Future + SF) added, so its `▶ Group dependencies` line becomes `BAJAJ-AUTO.NS` — parent re-run owed; its `memo exists` updates leave the `ABBN.SW` and `ATCO-B.ST` lines (memos below v4.5.0); REVIEW `EDEN.PA` v3 (AVOID held, MODEL v4.8.0) removes its `▶ Method re-tests v4.8.0` line (partial resumed); ANALYSE `MBG.DE` INCOMPLETE (group build exceeds budget, second overrun) routes `attended group build owed`; 1 IDEAS candidate; new block `▶ Routed by INTAKE 2026-11-10, register v347` (2 items). Outgoing v74 archived to `archive/queue/TODO_v74_2026-11-09.md`.
 - **v74 — 2026-11-09** — INTAKE 2026-11-09 (register v346): ANALYSE `BAJAJ-AUTO.NS`, `LGCY`, `BOREO.HE`, `ALSTI.PA` and `SDI.L` (memos v1, all AVOID) added; REVIEW `TROW` v10, `CROX` v10, `HFG.DE` v7, `NOVO-B.CO` v12 (held, AVOID held), `MCAP.ST` v2, `TRI.PA` v3, `TIH.TO` v3 (AVOID held), `BUFAB.ST` v2 and `TNE.AX` v2 (AVOID → WATCH) applied, which removes six `▶ Method re-tests v4.8.0` lines (TROW, BUFAB.ST, TNE.AX, MCAP.ST, TRI.PA, TIH.TO); review requests for `CROX` and `HFG.DE` dropped (reviewed); open items for TROW, CROX, HFG.DE and NOVO-B.CO updated (decisions kept); REVIEW `EDEN.PA` and `WISE.L` first budget overruns mark their `▶ Method re-tests v4.8.0` lines ` — partial 2026-11-06`; `BMAG.SW` — dependency of BAJAJ-AUTO.NS added to `▶ Group dependencies` (`ABBN.SW` and `ATCO-B.ST` memos still below v4.5.0, lines kept); 16 IDEAS candidates; 15 TODO additions routed to `▶ Routed by INTAKE 2026-11-09, register v346`. Outgoing v73 archived to `archive/queue/TODO_v73_2026-11-06.md`.
 - **v73 — 2026-11-06** — INTAKE 2026-11-06 (register v345): ANALYSE `BG.VI`, `AVARDA.ST`, `KGX.DE` and `JUN3.DE` (memos v1, all AVOID) added; REVIEW `RXL.PA` v2 and `INTU` v5 applied (AVOID held), which removes their `▶ Method re-tests v4.8.0` lines; REVIEW `PYPL` INCOMPLETE (data access: price endpoint HTTP 429) marks its `▶ Method re-tests v4.8.0` line ` — incomplete 2026-11-05`; ANALYSE `CRISIL.NS` second group-build overrun routes `attended group build owed` (DRAFT_QUEUE `[!] incomplete`, partial note kept); ANALYSE `BAJAJ-AUTO.NS` first group-build overrun (DRAFT_QUEUE partial note) routes the `BMAG.SW` item; 10 IDEAS candidates; `▶ Group dependencies` unchanged (`ABBN.SW` and `ATCO-B.ST` memos still below v4.5.0); 7 items routed to `▶ Routed by INTAKE 2026-11-06, register v345`. Outgoing v72 archived to `archive/queue/TODO_v72_2026-11-03.md`.
 - **v72 — 2026-11-03** — INTAKE 2026-11-03 (register v344): ANALYSE `TCS.NS` (memo v1, AVOID on Future + SF) added; REVIEW `POOL` INCOMPLETE (data access: price endpoint HTTP 429) marks its `▶ Method re-tests v4.8.0` line ` — incomplete 2026-11-02`; ANALYSE `MARICO.NS` INCOMPLETE (data access) routes one item; two IDEAS candidates (TCS.NS 2); `▶ Group dependencies` unchanged (`ABBN.SW` and `ATCO-B.ST` memos still below v4.5.0). Outgoing v71 archived to `archive/queue/TODO_v71_2026-11-02.md`.
