@@ -1,5 +1,9 @@
 # Value-Investing-Model
 
+> **Public copy.** A snapshot of my private working repository, taken on 11 Nov 2026 from source commit `e77f24b`, with its full history.
+> Position sizes, average purchase prices and return-versus-cost figures are replaced with `[redacted]` throughout, and commit e-mails are mapped to my GitHub no-reply address.
+> The automation is kept for reading but switched off: the GitHub workflows sit in `.github/workflows-disabled/`, and the hooks in `.claude/` only arm inside my scheduled runs.
+
 **A personal equity-research system: Kenneth Jeffrey Marshall's *Good Stocks Cheap* value-investing model, run by AI agents (Claude Code) under rules I write, version and audit.** Built and run by Jakub Horyna since July 2026. Not affiliated with or endorsed by Kenneth Jeffrey Marshall. Nothing here is investment advice.
 
 ## Start here (about 15 minutes)
